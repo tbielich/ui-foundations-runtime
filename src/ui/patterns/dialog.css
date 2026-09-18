@@ -1,0 +1,59 @@
+@layer components {
+  dialog.uif-dialog {
+    position: relative;
+    display: grid;
+    gap: var(--size-spacing-400);
+    inline-size: min(100% - (var(--size-spacing-400) * 2), var(--container-400));
+    max-block-size: calc(100dvh - (var(--size-spacing-400) * 2));
+    overflow: auto;
+    padding: var(--size-spacing-500);
+    margin: auto;
+    color: var(--color-text-default);
+    background: var(--color-fill-surface);
+    border: var(--brand-size-border-default) solid var(--color-border-default);
+    border-radius: var(--size-radius-400);
+  }
+
+  dialog.uif-dialog:not([open]) {
+    display: none;
+  }
+
+  dialog.uif-dialog::backdrop {
+    background: color-mix(in srgb, var(--color-text-default) 45%, transparent);
+  }
+
+  .uif-dialog-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: var(--size-spacing-300);
+  }
+
+  .uif-dialog-title {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+  }
+
+  .uif-dialog-description {
+    margin: 0;
+    color: var(--color-text-subtle);
+  }
+
+  .uif-dialog-body {
+    display: grid;
+    gap: var(--size-spacing-300);
+    min-inline-size: 0;
+  }
+
+  .uif-dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: var(--size-spacing-200);
+  }
+
+  .uif-dialog-close {
+    flex: none;
+  }
+}
