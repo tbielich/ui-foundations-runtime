@@ -42,3 +42,25 @@ test("Tabs migration guide and registrations use the canonical public namespace"
     assert.match(elements, new RegExp(`define\\("${tag}"`));
   }
 });
+
+test("Tabs Web Component implements documented keyboard activation and panel sync", async () => {
+  const element = await read("src/elements/ui-tabs.js");
+
+  for (const key of [
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowUp",
+    "ArrowDown",
+    "Home",
+    "End",
+    "Enter",
+  ]) {
+    assert.match(element, new RegExp(`event\\.key === "${key}"`));
+  }
+  assert.match(element, /event\.key === " "/);
+  assert.match(element, /candidate\.toggleAttribute\("selected", selected\)/);
+  assert.match(element, /panel\.toggleAttribute\("hidden", tab !== selectedTab\)/);
+  assert.match(element, /this\._buttonFor\(tab\)\?\.focus\(\)/);
+  assert.match(element, /this\.setAttribute\("role", "tabpanel"\)/);
+  assert.match(element, /this\.tabIndex = 0;/);
+});
