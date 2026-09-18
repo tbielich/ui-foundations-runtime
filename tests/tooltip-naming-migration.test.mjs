@@ -55,7 +55,10 @@ test("Tooltip Web Component maintains a stable accessible description relationsh
 
   assert.match(element, /let tooltipIdSequence = 0;/);
   assert.match(element, /this\._tooltipId = `uif-tooltip-\$\{\+\+tooltipIdSequence\}`/);
-  assert.match(element, /return \["text", "placement", "tooltip-id"\];/);
+  assert.match(
+    element,
+    /return \["text", "placement", "tooltip-id", "show-delay", "hide-delay"\];/,
+  );
   assert.match(element, /const tooltipId = explicitId \|\| this\._tooltipId;/);
   assert.match(element, /tooltip\.id = tooltipId;/);
   assert.match(element, /trigger\.getAttribute\("aria-describedby"\)/);
