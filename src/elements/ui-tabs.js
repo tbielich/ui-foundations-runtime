@@ -27,6 +27,114 @@ class UITabList extends UIElement {
     if (ariaLabel) attrs.push(`aria-label="${ariaLabel}"`);
 
     this.innerHTML = `<div ${attrs.join(" ")}>${children}</div>`;
+
+    const tabList = this.querySelector(":scope > .uif-tab-list");
+    tabList?.addEventListener("click", (event) => this._handleClick(event));
+    tabList?.addEventListener("keydown", (event) => this._handleKeydown(event));
+
+    queueMicrotask(() => this._ensureInitialSelection());
+  }
+
+  _tabs() {
+    return Array.from(
+      this.querySelectorAll(":scope > .uif-tab-list > uif-tab"),
+    );
+  }
+
+  _enabledTabs() {
+    return this._tabs().filter((tab) => !tab.hasAttribute("disabled"));
+  }
+
+  _buttonFor(tab) {
+    return tab?.querySelector(":scope > .uif-tab") ?? null;
+  }
+
+  _tabFromEvent(event) {
+    const button = event.target?.closest?.(".uif-tab");
+    const tab = button?.closest?.("uif-tab");
+    return tab && this.contains(tab) ? tab : null;
+  }
+
+  _ensureInitialSelection() {
+    const tabs = this._enabledTabs();
+    if (tabs.length === 0) return;
+
+    const selected = tabs.find((tab) => tab.hasAttribute("selected")) ?? tabs[0];
+    this._activateTab(selected, { focus: false });
+  }
+
+  _syncPanels(selectedTab) {
+    for (const tab of this._tabs()) {
+      const controls = tab.getAttribute("controls");
+      if (!controls) continue;
+
+      const panel = this.ownerDocument?.getElementById(controls);
+      if (!panel || panel.tagName.toLowerCase() !== "uif-tab-panel") continue;
+
+      panel.toggleAttribute("hidden", tab !== selectedTab);
+    }
+  }
+
+  _activateTab(tab, { focus = true } = {}) {
+    if (!tab || tab.hasAttribute("disabled")) return;
+
+    for (const candidate of this._tabs()) {
+      const selected = candidate === tab;
+      if (candidate.hasAttribute("selected") !== selected) {
+        candidate.toggleAttribute("selected", selected);
+      }
+    }
+
+    this._syncPanels(tab);
+
+    if (focus) {
+      this._buttonFor(tab)?.focus();
+    }
+  }
+
+  _handleClick(event) {
+    const tab = this._tabFromEvent(event);
+    if (!tab || tab.hasAttribute("disabled")) return;
+    this._activateTab(tab);
+  }
+
+  _handleKeydown(event) {
+    const current = this._tabFromEvent(event);
+    if (!current || current.hasAttribute("disabled")) return;
+
+    const tabs = this._enabledTabs();
+    const currentIndex = tabs.indexOf(current);
+    if (currentIndex < 0) return;
+
+    const orientation = this.getAttr("orientation", "horizontal");
+    let nextIndex = null;
+
+    if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = tabs.length - 1;
+    } else if (
+      orientation === "horizontal" &&
+      (event.key === "ArrowLeft" || event.key === "ArrowRight")
+    ) {
+      const offset = event.key === "ArrowRight" ? 1 : -1;
+      nextIndex = (currentIndex + offset + tabs.length) % tabs.length;
+    } else if (
+      orientation === "vertical" &&
+      (event.key === "ArrowUp" || event.key === "ArrowDown")
+    ) {
+      const offset = event.key === "ArrowDown" ? 1 : -1;
+      nextIndex = (currentIndex + offset + tabs.length) % tabs.length;
+    } else if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      this._activateTab(current);
+      return;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    this._activateTab(tabs[nextIndex]);
   }
 }
 
@@ -81,16 +189,19 @@ class UITabPanel extends UIElement {
     return ["hidden"];
   }
 
+  constructor() {
+    super();
+    this._authoredContent = null;
+  }
+
   render() {
-    const hidden = this.getBool("hidden");
-    const content = this.innerHTML;
-    const id = this.id;
+    if (this._authoredContent === null) {
+      this._authoredContent = this.innerHTML;
+    }
 
-    const attrs = ['class="uif-tab-panel"', 'role="tabpanel"', 'tabindex="0"'];
-    if (id) attrs.push(`id="${id}"`);
-    if (hidden) attrs.push("hidden");
-
-    this.innerHTML = `<div ${attrs.join(" ")}>${content}</div>`;
+    this.setAttribute("role", "tabpanel");
+    this.tabIndex = 0;
+    this.innerHTML = `<div class="uif-tab-panel">${this._authoredContent}</div>`;
   }
 }
 
