@@ -55,7 +55,10 @@ test("Tooltip Web Component maintains a stable accessible description relationsh
 
   assert.match(element, /let tooltipIdSequence = 0;/);
   assert.match(element, /this\._tooltipId = `uif-tooltip-\$\{\+\+tooltipIdSequence\}`/);
-  assert.match(element, /return \["text", "placement", "tooltip-id"\];/);
+  assert.match(
+    element,
+    /return \["text", "placement", "tooltip-id", "show-delay", "hide-delay"\];/,
+  );
   assert.match(element, /const tooltipId = explicitId \|\| this\._tooltipId;/);
   assert.match(element, /tooltip\.id = tooltipId;/);
   assert.match(element, /trigger\.getAttribute\("aria-describedby"\)/);
@@ -64,4 +67,43 @@ test("Tooltip Web Component maintains a stable accessible description relationsh
     element,
     /trigger\.setAttribute\("aria-describedby", Array\.from\(describedBy\)\.join\(" "\)\);/,
   );
+});
+
+
+test("Tooltip exposes bounded delay and pointer behavior across Runtime surfaces", async () => {
+  const [element, css, macro, docs, playground, renderer, generators, codeConnect] =
+    await Promise.all([
+      read("src/elements/ui-tooltip.js"),
+      read("src/ui/patterns/tooltip.css"),
+      read("site/_includes/macros/ui.njk"),
+      read("site/patterns/tooltip.md"),
+      read("site/patterns/tooltip-playground.md"),
+      read("site/assets/playground/renderers.js"),
+      read("site/assets/playground/code-generators.js"),
+      read("schemas/web-tooltip.figma.ts"),
+    ]);
+
+  assert.match(element, /"show-delay", "hide-delay"/);
+  assert.match(element, /--uif-tooltip-show-delay: \$\{showDelay\}ms/);
+  assert.match(element, /--uif-tooltip-hide-delay: \$\{hideDelay\}ms/);
+  assert.match(css, /\.uif-tooltip, \.tooltip\)::after/);
+  assert.match(css, /var\(--size-spacing-200\)/);
+  assert.match(css, /--uif-tooltip-show-delay, 300ms/);
+  assert.match(css, /--uif-tooltip-hide-delay, 0ms/);
+  assert.match(css, /:hover > :is\(\.uif-tooltip, \.tooltip\)/);
+  assert.match(css, /:focus-within > :is\(\.uif-tooltip, \.tooltip\)/);
+  for (const placement of ["top", "bottom", "left", "right"]) {
+    assert.match(css, new RegExp(`data-placement="${placement}"\\]::after`));
+  }
+
+  assert.match(macro, /showDelay=300, hideDelay=0, tooltipId=''/);
+  assert.match(docs, /show-delay/);
+  assert.match(docs, /hide-delay/);
+  assert.match(playground, /name: showDelay/);
+  assert.match(playground, /name: hideDelay/);
+  assert.match(renderer, /tooltip-playground-preview/);
+  assert.match(generators, /show-delay=/);
+  assert.match(generators, /hide-delay=/);
+  assert.match(codeConnect, /aria-describedby="uif-tooltip-code-connect"/);
+  assert.match(codeConnect, /id="uif-tooltip-code-connect"/);
 });

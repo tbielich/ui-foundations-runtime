@@ -290,7 +290,9 @@
         var p = state.props;
         var text = p.text || "Tooltip text";
         var placement = p.placement || "top";
-        return '{% call uif.tooltip("' + quoteAttr(text) + '", placement="' + placement + '") %}<button class="uif-button">Hover me</button>{% endcall %}';
+        var showDelay = p.showDelay || "300";
+        var hideDelay = p.hideDelay || "0";
+        return '{% call uif.tooltip("' + quoteAttr(text) + '", placement="' + placement + '", showDelay=' + showDelay + ', hideDelay=' + hideDelay + ') %}<button class="uif-button">Hover me</button>{% endcall %}';
       },
       table: function (state) {
         var p = state.props;
@@ -353,7 +355,9 @@
         var p = state.props;
         var text = p.text || "Tooltip text";
         var placement = p.placement || "top";
-        return '<uif-tooltip text="' + quoteAttr(text) + '" placement="' + placement + '">\n  <button class="uif-button">Hover me</button>\n</uif-tooltip>';
+        var showDelay = p.showDelay || "300";
+        var hideDelay = p.hideDelay || "0";
+        return '<uif-tooltip text="' + quoteAttr(text) + '" placement="' + placement + '" show-delay="' + showDelay + '" hide-delay="' + hideDelay + '">\n  <button class="uif-button">Hover me</button>\n</uif-tooltip>';
       },
       table: function () {
         return "<!-- Table is a CSS/JS pattern — no Web Component variant. Use the HTML output directly. -->";

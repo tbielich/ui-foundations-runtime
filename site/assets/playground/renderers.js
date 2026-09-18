@@ -950,26 +950,33 @@
   const renderVanillaTooltip = ({ props, children }) => {
     const text = String(props.text || "Tooltip");
     const placement = String(props.placement || "top");
+    const showDelay = String(props.showDelay ?? "300");
+    const hideDelay = String(props.hideDelay ?? "0");
+    const tooltipId = "tooltip-playground-preview";
 
     const trigger = document.createElement("span");
     trigger.className = "uif-tooltip-trigger";
+    trigger.style.setProperty("--uif-tooltip-show-delay", `${showDelay}ms`);
+    trigger.style.setProperty("--uif-tooltip-hide-delay", `${hideDelay}ms`);
 
     const btn = document.createElement("button");
     btn.className = "uif-button outline";
     btn.type = "button";
+    btn.setAttribute("aria-describedby", tooltipId);
     btn.textContent = String(children || "Hover me");
     trigger.append(btn);
 
     const tip = document.createElement("span");
-    tip.className = "uif-tooltip is-visible";
+    tip.className = "uif-tooltip";
+    tip.id = tooltipId;
     tip.setAttribute("role", "tooltip");
     tip.setAttribute("data-placement", placement);
     tip.textContent = text;
     trigger.append(tip);
 
-    const code = `<span class="uif-tooltip-trigger">
-  <button class="uif-button outline" type="button">${quoteAttr(String(children || "Hover me"))}</button>
-  <span class="uif-tooltip" role="tooltip" data-placement="${quoteAttr(placement)}">${quoteAttr(text)}</span>
+    const code = `<span class="uif-tooltip-trigger" style="--uif-tooltip-show-delay: ${quoteAttr(showDelay)}ms; --uif-tooltip-hide-delay: ${quoteAttr(hideDelay)}ms">
+  <button class="uif-button outline" type="button" aria-describedby="${tooltipId}">${quoteAttr(String(children || "Hover me"))}</button>
+  <span class="uif-tooltip" id="${tooltipId}" role="tooltip" data-placement="${quoteAttr(placement)}">${quoteAttr(text)}</span>
 </span>`;
 
     return { element: trigger, code };

@@ -35,6 +35,27 @@ playground:
         - bottom
         - left
         - right
+    - kind: select
+      name: showDelay
+      label: Show Delay
+      query: true
+      default: "300"
+      options:
+        - "0"
+        - "150"
+        - "300"
+        - "500"
+        - "1000"
+    - kind: select
+      name: hideDelay
+      label: Hide Delay
+      query: true
+      default: "0"
+      options:
+        - "0"
+        - "150"
+        - "300"
+        - "500"
     - kind: text
       name: children
       label: Trigger Text

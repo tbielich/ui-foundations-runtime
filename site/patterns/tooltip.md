@@ -86,6 +86,8 @@ playgroundLabel: Open Tooltip Playground
   <tbody>
     <tr><td>text</td><td>text</td><td>—</td></tr>
     <tr><td>placement</td><td><code>top</code> / <code>bottom</code> / <code>left</code> / <code>right</code></td><td><code>top</code></td></tr>
+    <tr><td>show-delay</td><td>milliseconds, zero or greater</td><td><code>300</code></td></tr>
+    <tr><td>hide-delay</td><td>milliseconds, zero or greater</td><td><code>0</code></td></tr>
   </tbody>
 </table>
 
@@ -100,7 +102,7 @@ playgroundLabel: Open Tooltip Playground
     </div>
     <div class="docs-behavior-body">
       <h3>Show on hover and focus</h3>
-      <p>Tooltips appear when the trigger is hovered or receives keyboard focus. They disappear when the pointer leaves or focus moves away.</p>
+      <p>Tooltips appear after the configured show delay (300 ms by default) when the trigger is hovered or receives keyboard focus. They disappear after the configured hide delay when the pointer leaves or focus moves away.</p>
     </div>
   </div>
 </div>
@@ -135,16 +137,17 @@ playgroundLabel: Open Tooltip Playground
 <h2 id="accessibility">Accessibility</h2>
 
 - Uses `role="tooltip"` on the tooltip element.
-- Trigger should have `aria-describedby` pointing to the tooltip ID for screen readers.
+- The Web Component generates or accepts a stable tooltip ID and applies it to the trigger through `aria-describedby`.
+- Static/Nunjucks usage should provide a tooltip ID and the matching `aria-describedby` value on the trigger.
 - Tooltips are non-interactive — they cannot contain links or buttons.
-
 - Shows on both hover and focus to support keyboard users.
+- The directional pointer is presentational and inherits the tooltip surface color.
 
 <h2 id="design-checklist">Design checklist</h2>
 
 <div class="docs-checklist">
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>All brand/mode contexts</strong><span>Works across light and dark modes.</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Defined options</strong><span>Placement and text documented.</span></div></div>
+  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Defined options</strong><span>Placement, text, show delay, and hide delay documented.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Usage guidelines</strong><span>Do/don't for content length.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Design tokens</strong><span>Component-scoped tokens (<code>--uif-tooltip-*</code>).</span></div></div>
 </div>
