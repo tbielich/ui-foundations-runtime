@@ -126,4 +126,13 @@ permalink: /patterns/
   </a>
     </div>
   </div>
+  <a class="docs-component-card" href="/patterns/progress-circle/">
+    <div class="docs-component-card-preview">
+      {{ uif.progressCircle(value=64, label="Progress") }}
+    </div>
+    <div class="docs-component-card-body">
+      <strong>ProgressCircle</strong>
+      <p>Circular indicator for determinate progress and indeterminate loading.</p>
+    </div>
+  </a>
 </div>
