@@ -30,6 +30,8 @@ playground:
         - "3"
         - "4"
         - "5"
+        - "8"
+        - "10"
     - kind: select
       name: active
       label: Active Tab
