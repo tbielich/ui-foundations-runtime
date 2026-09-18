@@ -7,17 +7,21 @@
   :is(.uif-tab-list, .tab-list) {
     display: flex;
     gap: 0;
+    max-inline-size: 100%;
+    overflow-x: auto;
     border-block-end: var(--size-border-100) solid var(--uif-tabs-border-color-default);
   }
 
   :is(.uif-tab-list, .tab-list)[aria-orientation="vertical"] {
     flex-direction: column;
+    overflow-x: visible;
     border-block-end: none;
     border-inline-end: var(--size-border-100) solid var(--uif-tabs-border-color-default);
   }
 
   :is(.uif-tab, .tab) {
     display: inline-flex;
+    flex: 0 0 auto;
     align-items: center;
     justify-content: center;
     padding-inline: var(--uif-tabs-padding-inline);
@@ -65,23 +69,13 @@
     pointer-events: none;
   }
 
-  /* --- Panel container: CSS-only scroll-snap switching --- */
+  /* Panel visibility is owned by the selected/hidden state, not scroll position. */
 
   :is(.uif-tab-panels, .tab-panels) {
-    display: flex;
-    overflow-x: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    display: block;
   }
 
-  :is(.uif-tab-panels, .tab-panels) > :is(.uif-tab-panel, .tab-panel) {
-    flex: 0 0 100%;
-    min-inline-size: 100%;
-    scroll-snap-align: start;
-    padding-block: var(--size-spacing-400);
-  }
-
-  /* Legacy: standalone panel with hidden attribute (JS-driven) */
+  /* Standalone and grouped panels share the same spacing. */
   :is(.uif-tab-panel, .tab-panel) {
     padding-block: var(--size-spacing-400);
   }
