@@ -112,6 +112,12 @@ playgroundLabel: Open Tabs Playground
   </tbody>
 </table>
 
+### Overflow
+
+Horizontal tab lists use native inline scrolling when labels exceed the available width. Tab triggers do not shrink, so labels stay readable and focused tabs can be brought into view by the browser. Vertical tab lists do not use horizontal scrolling.
+
+Panel switching is state-driven through the selected tab and the controlled panel's `hidden` state; panel scroll position is not an alternate activation model.
+
 <h2 id="keyboard-interactions">Keyboard interactions</h2>
 
 <table class="docs-keyboard-table">
