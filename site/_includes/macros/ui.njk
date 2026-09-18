@@ -338,3 +338,8 @@
 {%- macro calendar(month='2026-07', selectedDate='', todayDate='', state='default', disabled=false, container=true, className='', id='', rangeStart='', rangeEnd='') -%}
 {{- _cal(month, selectedDate, todayDate, state, disabled, container, className, id, rangeStart, rangeEnd) }}
 {%- endmacro -%}
+
+
+{% macro dialog(title='', description='', dismissible=true, open=false, confirmLabel='Confirm', cancelLabel='Cancel') -%}
+<uif-dialog title="{{ title }}"{% if description %} description="{{ description }}"{% endif %} dismissible="{{ 'true' if dismissible else 'false' }}"{% if open %} open{% endif %} confirm-label="{{ confirmLabel }}" cancel-label="{{ cancelLabel }}">{{ caller() }}</uif-dialog>
+{%- endmacro %}
