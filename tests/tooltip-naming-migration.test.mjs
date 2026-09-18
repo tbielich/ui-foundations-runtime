@@ -87,6 +87,8 @@ test("Tooltip exposes bounded delay and pointer behavior across Runtime surfaces
   assert.match(css, /var\(--size-spacing-200\)/);
   assert.match(css, /--uif-tooltip-show-delay, 300ms/);
   assert.match(css, /--uif-tooltip-hide-delay, 0ms/);
+  assert.match(css, /:hover > :is\(\.uif-tooltip, \.tooltip\)/);
+  assert.match(css, /:focus-within > :is\(\.uif-tooltip, \.tooltip\)/);
   for (const placement of ["top", "bottom", "left", "right"]) {
     assert.match(css, new RegExp(`data-placement="${placement}"\\]::after`));
   }
