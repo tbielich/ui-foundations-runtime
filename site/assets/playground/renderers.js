@@ -1255,6 +1255,45 @@
     return { element, code: html };
   };
 
+
+  const renderVanillaDialog = ({ props }) => {
+    const title = String(props.title || "Confirm action");
+    const description = String(
+      props.description || "Review the information before continuing.",
+    );
+    const dismissible =
+      props.dismissible === undefined ? true : asBoolean(props.dismissible);
+    const open = props.open === undefined ? true : asBoolean(props.open);
+    const confirmLabel = String(props.confirmLabel || "Confirm");
+    const cancelLabel = String(props.cancelLabel || "Cancel");
+
+    const element = document.createElement("uif-dialog");
+    element.setAttribute("title", title);
+    if (description) element.setAttribute("description", description);
+    element.setAttribute("dismissible", String(dismissible));
+    element.setAttribute("confirm-label", confirmLabel);
+    element.setAttribute("cancel-label", cancelLabel);
+    if (open) element.setAttribute("open", "");
+
+    const content = document.createElement("p");
+    content.textContent = "Dialog content";
+    element.append(content);
+
+    const attrs = [
+      `title="${quoteAttr(title)}"`,
+      description ? `description="${quoteAttr(description)}"` : "",
+      `dismissible="${dismissible ? "true" : "false"}"`,
+      `confirm-label="${quoteAttr(confirmLabel)}"`,
+      `cancel-label="${quoteAttr(cancelLabel)}"`,
+      open ? "open" : "",
+    ].filter(Boolean);
+
+    const code =
+      `<uif-dialog ${attrs.join(" ")}>\n  <p>Dialog content</p>\n</uif-dialog>`;
+
+    return { element, code };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1262,6 +1301,7 @@
       "button-group": renderVanillaButtonGroup,
       checkbox: renderVanillaCheckbox,
       divider: renderVanillaDivider,
+      dialog: renderVanillaDialog,
       icon: renderVanillaIcon,
       input: renderVanillaInput,
       label: renderVanillaLabel,
