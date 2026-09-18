@@ -40,6 +40,5 @@ Consumer migration guidance:
 - `docs/migrations/public-api-namespace-v1.md` — `ui` → `uif` public API
   namespace migration.
 
-The package version remains at 0.9.0 until the final human-approved release cut.
-The repository's `npm run release:major` command performs the verified major
-version bump and tag after `npm run release:check` passes.
+Published as `ui-foundations@1.0.0` on 2026-09-18 via npm staged publishing.
+The `latest` dist-tag points to `1.0.0`.
