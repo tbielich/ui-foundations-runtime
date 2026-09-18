@@ -7078,5 +7078,79 @@
         }
       }
     }
+  },
+  "ProgressCircle": {
+    "Track": {
+      "Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Color/Border/Subtle"
+        },
+        "$extensions": {
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-progress-circle-track-color)"
+          }
+        }
+      }
+    },
+    "Indicator": {
+      "Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Color/Fill/Brand"
+        },
+        "$extensions": {
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-progress-circle-indicator-color)"
+          }
+        }
+      }
+    },
+    "Stroke Width": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Size/Border/300"
+      },
+      "$extensions": {
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-progress-circle-stroke-width)"
+        }
+      }
+    },
+    "Size": {
+      "SM": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Size/Target/Compact"
+        },
+        "$extensions": {
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-progress-circle-size-sm)"
+          }
+        }
+      },
+      "MD": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Size/Target/Default"
+        },
+        "$extensions": {
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-progress-circle-size-md)"
+          }
+        }
+      },
+      "LG": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Size/Target/Large"
+        },
+        "$extensions": {
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-progress-circle-size-lg)"
+          }
+        }
+      }
+    }
   }
 }
