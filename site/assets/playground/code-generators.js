@@ -239,8 +239,66 @@
     return "{{ uif.calendar(" + parts.join(", ") + ") }}";
   }
 
+
+  function njkDialog(state) {
+    var p = state.props;
+    var title = p.title || "Confirm action";
+    var description = p.description || "Review the information before continuing.";
+    var dismissible =
+      p.dismissible === undefined
+        ? true
+        : p.dismissible === true || p.dismissible === "true";
+    var open =
+      p.open === undefined ? true : p.open === true || p.open === "true";
+    var confirmLabel = p.confirmLabel || "Confirm";
+    var cancelLabel = p.cancelLabel || "Cancel";
+    return (
+      '{% call uif.dialog(title="' +
+      quoteAttr(title) +
+      '", description="' +
+      quoteAttr(description) +
+      '", dismissible=' +
+      (dismissible ? "true" : "false") +
+      ", open=" +
+      (open ? "true" : "false") +
+      ', confirmLabel="' +
+      quoteAttr(confirmLabel) +
+      '", cancelLabel="' +
+      quoteAttr(cancelLabel) +
+      '") %}Dialog content{% endcall %}'
+    );
+  }
+
+  function wcDialog(state) {
+    var p = state.props;
+    var title = p.title || "Confirm action";
+    var description = p.description || "Review the information before continuing.";
+    var dismissible =
+      p.dismissible === undefined
+        ? true
+        : p.dismissible === true || p.dismissible === "true";
+    var open =
+      p.open === undefined ? true : p.open === true || p.open === "true";
+    var confirmLabel = p.confirmLabel || "Confirm";
+    var cancelLabel = p.cancelLabel || "Cancel";
+    var attrs = [
+      'title="' + quoteAttr(title) + '"',
+      'description="' + quoteAttr(description) + '"',
+      'dismissible="' + (dismissible ? "true" : "false") + '"',
+      'confirm-label="' + quoteAttr(confirmLabel) + '"',
+      'cancel-label="' + quoteAttr(cancelLabel) + '"',
+    ];
+    if (open) attrs.push("open");
+    return (
+      "<uif-dialog " +
+      attrs.join(" ") +
+      ">\n  <p>Dialog content</p>\n</uif-dialog>"
+    );
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
+      dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
       "switch": njkSwitch, icon: njkIcon, radio: njkRadio, badge: njkBadge,
       label: function () { return '{{ uif.labelContent("text", "icon") }}'; },
@@ -304,6 +362,7 @@
       },
     },
     wc: {
+      dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,
       "switch": wcSwitch, icon: wcIcon, radio: wcRadio, badge: wcBadge,
       label: function () { return "<uif-field-label>...</uif-field-label>"; },

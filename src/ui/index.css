@@ -6,6 +6,7 @@
 @import url("./patterns/checkbox.css") layer(components);
 @import url("./patterns/date-input.css") layer(components);
 @import url("./patterns/divider.css") layer(components);
+@import url("./patterns/dialog.css") layer(components);
 @import url("./patterns/form.css") layer(components);
 @import url("./patterns/icon.css") layer(components);
 @import url("./patterns/input.css") layer(components);

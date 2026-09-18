@@ -32,6 +32,7 @@ export declare class UITabList extends UIElement {}
 export declare class UITab extends UIElement {}
 export declare class UITabPanel extends UIElement {}
 export declare class UITooltip extends UIElement {}
+export declare class UIDialog extends UIElement {}
 export declare class UISelect extends UIElement {}
 export declare class UILink extends UIElement {}
 export declare class UIFieldLabel extends UIElement {}
@@ -62,6 +63,7 @@ declare global {
     "uif-tab": UITab;
     "uif-tab-panel": UITabPanel;
     "uif-tooltip": UITooltip;
+    "uif-dialog": UIDialog;
     "uif-select": UISelect;
     "uif-link": UILink;
     "uif-field-label": UIFieldLabel;
