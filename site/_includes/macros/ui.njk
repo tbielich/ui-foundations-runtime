@@ -222,10 +222,10 @@
 <div class="uif-tab-panel" role="tabpanel"{% if id %} id="{{ id }}"{% endif %}{% if hidden %} hidden{% endif %} tabindex="0">{{ caller() }}</div>
 {%- endmacro %}
 
-{% macro tooltip(text='', placement='top', className='') -%}
+{% macro tooltip(text='', placement='top', className='', showDelay=300, hideDelay=0, tooltipId='') -%}
 {%- set classes = "uif-tooltip-trigger" -%}
 {%- if className -%}{%- set classes = classes + " " + className -%}{%- endif -%}
-<span class="{{ classes }}">{{ caller() }}<span class="uif-tooltip" role="tooltip" data-placement="{{ placement }}">{{ text }}</span></span>
+<span class="{{ classes }}" style="--uif-tooltip-show-delay: {{ showDelay }}ms; --uif-tooltip-hide-delay: {{ hideDelay }}ms">{{ caller() }}<span class="uif-tooltip"{% if tooltipId %} id="{{ tooltipId }}"{% endif %} role="tooltip" data-placement="{{ placement }}">{{ text }}</span></span>
 {%- endmacro %}
 
 {% macro form(borderless=false, className='') -%}
