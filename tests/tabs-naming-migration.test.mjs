@@ -64,3 +64,24 @@ test("Tabs Web Component implements documented keyboard activation and panel syn
   assert.match(element, /this\.setAttribute\("role", "tabpanel"\)/);
   assert.match(element, /this\.tabIndex = 0;/);
 });
+
+
+test("Tabs use native tab-list overflow without panel scroll-snap switching", async () => {
+  const [css, docs, playground] = await Promise.all([
+    read("src/ui/patterns/tabs.css"),
+    read("site/patterns/tabs.md"),
+    read("site/patterns/tabs-playground.md"),
+  ]);
+
+  assert.match(css, /overflow-x: auto;/);
+  assert.match(css, /flex: 0 0 auto;/);
+  assert.match(
+    css,
+    /\[aria-orientation="vertical"\][\s\S]*?overflow-x: visible;/,
+  );
+  assert.doesNotMatch(css, /scroll-snap/);
+  assert.match(css, /\.uif-tab-panels, \.tab-panels\) \{\n    display: block;/);
+  assert.match(docs, /Horizontal tab lists use native inline scrolling/);
+  assert.match(docs, /panel scroll position is not an alternate activation model/);
+  assert.match(playground, /- "10"/);
+});
