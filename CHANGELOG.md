@@ -23,6 +23,10 @@ All notable UI Foundations release changes are documented here.
   through the v1.x observation window; their removal is reserved for v2.0 or
   later.
 - Runtime naming now consumes the Vault Governance Pack 0.8.0 naming contract.
+- Tabs now implement the documented keyboard interaction model and synchronize
+  the active tab with its controlled panel.
+- Tooltip triggers now reference a stable tooltip ID through `aria-describedby`,
+  preserving any pre-existing description references.
 - Build, naming, token, DTCG, asset, documentation, and package checks are
   included in the repository release gate.
 
