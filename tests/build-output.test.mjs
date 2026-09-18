@@ -1,12 +1,16 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const BUILD_SCRIPT = resolve(ROOT, 'scripts/build.mjs');
+const PKG_VERSION = JSON.parse(
+  readFileSync(resolve(ROOT, 'package.json'), 'utf8'),
+).version;
 
 function runBuild(env = {}) {
   const output = execFileSync('node', [BUILD_SCRIPT], {
@@ -28,7 +32,7 @@ describe('Build Output', () => {
 
   it('prints header with version', () => {
     assert.ok(output.includes('FOUNDATIONS'));
-    assert.ok(output.includes('BUILD 0.'));
+    assert.ok(output.includes(`BUILD ${PKG_VERSION}`));
   });
 
   it('prints ICONS section with count', () => {
