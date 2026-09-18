@@ -49,3 +49,19 @@ test("Tooltip migration guide and registration use the canonical namespace", asy
   assert.match(documentation, /\| Tooltip \|.*`--uif-tooltip-\*`/);
   assert.match(element, /define\("uif-tooltip", UITooltip\)/);
 });
+
+test("Tooltip Web Component maintains a stable accessible description relationship", async () => {
+  const element = await read("src/elements/ui-tooltip.js");
+
+  assert.match(element, /let tooltipIdSequence = 0;/);
+  assert.match(element, /this\._tooltipId = `uif-tooltip-\$\{\+\+tooltipIdSequence\}`/);
+  assert.match(element, /return \["text", "placement", "tooltip-id"\];/);
+  assert.match(element, /const tooltipId = explicitId \|\| this\._tooltipId;/);
+  assert.match(element, /tooltip\.id = tooltipId;/);
+  assert.match(element, /trigger\.getAttribute\("aria-describedby"\)/);
+  assert.match(element, /describedBy\.add\(tooltipId\);/);
+  assert.match(
+    element,
+    /trigger\.setAttribute\("aria-describedby", Array\.from\(describedBy\)\.join\(" "\)\);/,
+  );
+});
