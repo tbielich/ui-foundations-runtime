@@ -5,10 +5,9 @@ type: adr
 issue: 154
 vault_decision: adr.uif-public-api-namespace
 implementation_issue: 197
-governance_pack_published: 0.6.0
-governance_pack_consumed_snapshot: 0.7.0
-governance_pack_planned: 0.8.0
-governance_pack_note: "The namespace decision is forward-referenced to planned governance pack 0.8.0. Runtime currently records consumption at 0.7.0, while published pack artifacts remain 0.6.0."
+governance_pack_consumed_snapshot: 0.8.0
+governance_pack_channel: review
+governance_pack_note: "Runtime consumes the Governance Pack 0.8.0 naming contract; the consumed JSON matches the current Vault export."
 ---
 
 # ADR: UIF Public API Namespace
@@ -16,8 +15,8 @@ governance_pack_note: "The namespace decision is forward-referenced to planned g
 ## Context
 
 UI Foundations already uses `uif-` for public CSS classes and `--uif-` for
-UIF-owned public CSS custom properties. Public Nunjucks examples currently use
-the consumer-selected alias `ui`, while autonomous Custom Elements are
+UIF-owned public CSS custom properties. Public Nunjucks examples previously
+used the consumer-selected alias `ui`, while autonomous Custom Elements were
 registered with `ui-*` tag names.
 
 Version 1.0 is intentionally breaking. Issue
@@ -28,8 +27,9 @@ points before approving the canonical namespace for these two surfaces.
 ## Decision
 
 Adopt the canonical UIF namespace defined by Vault decision
-`adr.uif-public-api-namespace` with forward reference to planned Governance Pack
-`0.8.0` (Runtime consumed snapshot: `0.7.0`, published pack artifacts: `0.6.0`):
+`adr.uif-public-api-namespace` and Governance Pack 0.8.0 (review channel).
+Runtime consumes the corresponding 0.8.0 machine-readable naming contract,
+which matches the current Vault export:
 
 - Public Nunjucks documentation and generated snippets import the existing
   macro module with the consumer-selected alias `uif` and invoke macros as
@@ -65,10 +65,10 @@ migration.
 
 ## Consequences
 
-- New and migrated macro examples will use `uif.*`.
-- New and migrated Custom Element examples will use `<uif-*>`.
-- Existing `ui.*` examples and `<ui-*>` registrations are removed from owned
-  public output in v1.
+- New and migrated macro examples use `uif.*`.
+- New and migrated Custom Element examples use `<uif-*>`.
+- Existing `ui.*` examples and `<ui-*>` registrations are removed from
+  owned public output in v1.
 - Consumers must migrate authored tags; legacy tag aliases are not provided.
 - Runtime package paths, module filenames, and JavaScript identifiers remain
   unchanged.
