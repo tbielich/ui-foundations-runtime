@@ -3,6 +3,14 @@
   publish = "_site"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
   SITE_URL = "https://ui-foundations.com"
   SITE_BASE_PATH = ""
+
+# GitHub Pages is the pre-release/visual-verification gate.
+# Netlify only publishes the production branch after merge.
+[context.deploy-preview]
+  ignore = "exit 0"
+
+[context.branch-deploy]
+  ignore = "exit 0"
