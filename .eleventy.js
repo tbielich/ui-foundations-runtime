@@ -38,10 +38,15 @@ module.exports = function (eleventyConfig) {
     if (!siteConfig.basePath || this.page.outputPath?.endsWith(".html") !== true) {
       return content;
     }
-    return content.replace(
-      /(href|src|action)=(["'])\/(?!\/)/g,
-      `$1=$2${siteConfig.basePath}/`,
-    );
+    return content
+      .replace(
+        /(href|src|action)=(["'])\/(?!\/)/g,
+        `$1=$2${siteConfig.basePath}/`,
+      )
+      .replace(
+        /url\((['"]?)\/(?!\/)/g,
+        `url($1${siteConfig.basePath}/`,
+      );
   });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
