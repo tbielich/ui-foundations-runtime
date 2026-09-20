@@ -4,3 +4,5 @@
 
 [build.environment]
   NODE_VERSION = "20"
+  SITE_URL = "https://ui-foundations.com"
+  SITE_BASE_PATH = ""
