@@ -33,6 +33,16 @@ function vaultDocumentationUrl(path = "") {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("componentTokenTable", renderComponentTokenTable);
   eleventyConfig.addFilter("vaultDocumentationUrl", vaultDocumentationUrl);
+  eleventyConfig.addFilter("sitePath", (value) => siteConfig.path(value));
+  eleventyConfig.addTransform("hostingBasePath", function (content) {
+    if (!siteConfig.basePath || this.page.outputPath?.endsWith(".html") !== true) {
+      return content;
+    }
+    return content.replace(
+      /(href|src|action)=(["'])\/(?!\/)/g,
+      `$1=$2${siteConfig.basePath}/`,
+    );
+  });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
   });
@@ -42,7 +52,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "site/_headers": "_headers" });
-  eleventyConfig.addPassthroughCopy({ "site/site.webmanifest": "site.webmanifest" });
   eleventyConfig.addPassthroughCopy({
     "node_modules/prismjs/themes/prism-okaidia.min.css":
       "assets/vendor/prism/prism.css",
@@ -167,7 +176,7 @@ module.exports = function (eleventyConfig) {
       entries.push({
         title: page.data.title,
         description: page.data.description || "",
-        url: page.url,
+        url: siteConfig.path(page.url),
         type: "token",
       });
     }
@@ -176,7 +185,7 @@ module.exports = function (eleventyConfig) {
       entries.push({
         title: page.data.title,
         description: page.data.description || "",
-        url: page.url,
+        url: siteConfig.path(page.url),
         type: "pattern",
       });
     }
