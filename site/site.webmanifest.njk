@@ -1,14 +1,18 @@
+---
+permalink: /site.webmanifest
+eleventyExcludeFromCollections: true
+---
 {
   "name": "UI Foundations Docs",
   "short_name": "UI Foundations",
   "icons": [
     {
-      "src": "/assets/favicon/icon-192.png",
+      "src": "{{ '/assets/favicon/icon-192.png' | sitePath }}",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/favicon/icon-512.png",
+      "src": "{{ '/assets/favicon/icon-512.png' | sitePath }}",
       "sizes": "512x512",
       "type": "image/png"
     }
@@ -16,5 +20,5 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/"
+  "start_url": "{{ '/' | sitePath }}"
 }

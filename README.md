@@ -20,7 +20,7 @@ Keep Figma and code in sync by default — with tokens, not guesswork.
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
 
-[Documentation](https://ui-foundations.netlify.app/) · [Starter Template](https://github.com/tbielich/ui-foundations-starter) · [npm](https://www.npmjs.com/package/ui-foundations) · [Figma Library](https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations)
+[Documentation](https://ui-foundations.com/) · [Starter Template](https://github.com/tbielich/ui-foundations-starter) · [npm](https://www.npmjs.com/package/ui-foundations) · [Figma Library](https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations)
 
 ---
 
@@ -199,7 +199,7 @@ document.documentElement.dataset.brand = "a";     // "a" | "b" | "c"
 document.documentElement.dataset.mode  = "light";  // "light" | "dark"
 ```
 
-Explore the [docs site](https://ui-foundations.netlify.app/) or the
+Explore the [docs site](https://ui-foundations.com/) or the
 [vanilla starter](https://github.com/tbielich/ui-foundations-starter)
 to see it in action.
 
