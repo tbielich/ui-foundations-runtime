@@ -1,7 +1,7 @@
 function normalizeBasePath(value) {
   const raw = String(value || "").trim();
   if (!raw || raw === "/") return "";
-  return `/${raw.replace(/^\\/+/, "").replace(/\\/+$/, "")}`;
+  const segments = raw.split("/").filter(Boolean);\n  return segments.length ? `/${segments.join("/")}` : "";
 }
 
 function normalizeSiteUrl(value) {
