@@ -1,9 +1,9 @@
-name: Deploy docs to GitHub Pages
+name: Deploy PR preview to GitHub Pages
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "site/**"
       - "src/**"
@@ -20,11 +20,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-prerelease
   cancel-in-progress: true
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -44,12 +45,13 @@ jobs:
           path: _site
 
   deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.draft == false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy
+      - name: Deploy pre-release
         id: deployment
         uses: actions/deploy-pages@v4
