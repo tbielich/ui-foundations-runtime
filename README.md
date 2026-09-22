@@ -320,6 +320,20 @@ npm run docs:dev        # build + serve docs site
 BUILD OK · READY · 503ms
 ```
 
+### Documentation deployment
+
+The documentation uses a two-stage publication flow:
+
+1. A non-draft pull request deploys its current revision to the shared
+   [GitHub Pages pre-release](https://tbielich.github.io/ui-foundations-runtime/)
+   for visual verification.
+2. After approval and merge to `main`, Netlify publishes the canonical
+   production site at [ui-foundations.com](https://ui-foundations.com/).
+
+New commits replace the current Pages pre-release. Netlify Deploy Previews and
+branch deploys are intentionally disabled so production remains the only
+Netlify publication target.
+
 ### Figma Sync
 
 ```bash
@@ -416,9 +430,15 @@ npm run release:publish
 
 ## Roadmap
 
-- **Calendar Component** — first functional component with state, date logic, and keyboard navigation. Built on top of existing patterns.
-- **Navigation Key Tips** — experimental Alt-triggered keyboard shortcuts for fast docs navigation (available now).
-- **UIF public namespace** — migrate Custom Element tags from the legacy `ui-*` namespace to the approved `uif-*` namespace for v1.0.
+### Next
+
+- **Calendar Component** — first functional component with state, date logic, and keyboard navigation, built on existing patterns.
+
+### Delivered
+
+- **GitHub Pages pre-release gate** — pull requests can be reviewed visually before merge; Netlify publishes the canonical production site after merge.
+- **Navigation Key Tips** — Alt-triggered keyboard shortcuts are available in the documentation.
+- **UIF public namespace** — the approved `uif-*` Custom Element namespace is the canonical v1 API.
 
 ---
 
