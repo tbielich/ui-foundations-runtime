@@ -1,0 +1,117 @@
+name: Cloud-ready task
+description: Define a bounded Runtime task that may be executed by the UIF-INT cloud pipeline after explicit human authorization.
+title: "[Cloud-ready] <artifact>: <short outcome>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template only for bounded, reproducible work that can be independently verified.
+        Creating the issue does not authorize execution. Add `agent:ready` only after human review.
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: State the concrete result. Keep it small enough for one branch and one pull request.
+      placeholder: "Example: Add a short Runtime guide for cloud-ready documentation tasks."
+    validations:
+      required: true
+
+  - type: textarea
+    id: allowed-paths
+    attributes:
+      label: Allowed paths
+      description: List the exact files or narrow directories the executor may change.
+      placeholder: |
+        docs/agentic/cloud-ready-tasks.md
+    validations:
+      required: true
+
+  - type: textarea
+    id: forbidden-paths
+    attributes:
+      label: Forbidden paths
+      description: List explicit boundaries. Anything outside Allowed paths is implicitly forbidden.
+      placeholder: |
+        .github/
+        src/
+        tokens/
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: Give the executor the complete implementation instruction without requiring reinterpretation.
+      placeholder: "Describe the bounded change, required content, and any references to preserve."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: subtask-kind
+    attributes:
+      label: Subtask kind
+      options:
+        - docs
+    validations:
+      required: true
+
+  - type: input
+    id: base-branch
+    attributes:
+      label: Base branch
+      value: main
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Define observable completion and scope checks.
+      placeholder: |
+        - Required content is present and accurate.
+        - Diff changes only the allowed paths.
+        - Repository validation relevant to the change passes.
+        - A pull request is created; no automatic merge occurs.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Required evidence
+      description: State the evidence that must correlate execution, publication, and independent verification.
+      placeholder: |
+        - Issue/task identity
+        - Published branch and commit SHA
+        - Pull request URL
+        - Changed-path evidence
+        - Independent read-only verification result
+        - Acceptance-gate result and recommendation
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Execution boundaries
+      options:
+        - label: The task is deterministic or safely idempotent.
+          required: true
+        - label: No local-only capability is required.
+          required: true
+        - label: Execution must fail closed if required cloud capability is unavailable.
+          required: true
+        - label: Publication is limited to a branch and pull request; no automatic merge is authorized.
+          required: true
+        - label: Independent read-only verification is required before acceptance.
+          required: true
+        - label: Human review remains the final merge gate.
+          required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Authorization: after reviewing the completed issue, a human may add `agent:ready`.
