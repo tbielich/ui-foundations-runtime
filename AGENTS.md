@@ -89,7 +89,20 @@ Do not edit generated files in `dist/`.
 ## Implementation Rules
 
 - Use existing patterns and file structure
-- Do not introduce new frameworks
+- Do not introduce new frameworks.
+  - Exception: verification capabilities explicitly approved by an accepted
+    UIF-VLT decision are permitted, scoped strictly to that decision.
+  - The only capability approved under this exception today is the bounded
+    real-browser verification layer accepted in the Vault ADR
+    `decisions/bounded-browser-verification.md` (acceptance PR
+    `tbielich/ui-foundations-vault#47`, accepted commit
+    `376bca99cc9baaa873a7e8a8f3ea855ee763ec5d`). Playwright is permitted as the
+    Runtime implementation of that layer, using headless Chromium only for the
+    initial slice.
+  - This exception does not weaken the default prohibition: introducing any
+    other framework still requires its own accepted UIF-VLT decision. It must
+    not be used to justify unrelated frameworks, and it is not a
+    `.uif/workspace/` local override.
 - Keep docs and implementation in sync
 
 ---
