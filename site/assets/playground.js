@@ -143,6 +143,105 @@ if (!hasRequiredApis) {
 
       render();
     });
+
+    // Date Picker: the calendar preview is re-rendered from the controls on
+    // every render(), so selection must write back to the day/month/year
+    // controls (the source of truth) rather than to the throwaway preview DOM.
+    if (rendererId === "datePicker") {
+      const setControl = (name, value) => {
+        const control = controlByName.get(name);
+        if (control) control.value = value;
+      };
+      const readMonthControl = () => {
+        const control = controlByName.get("month");
+        const parsed = control ? parseInt(control.value, 10) : NaN;
+        return Number.isFinite(parsed) ? parsed : new Date().getMonth() + 1;
+      };
+      const readYearControl = () => {
+        const control = controlByName.get("year");
+        const parsed = control ? parseInt(control.value, 10) : NaN;
+        return Number.isFinite(parsed) && parsed >= 1900 && parsed <= 2100
+          ? parsed
+          : new Date().getFullYear();
+      };
+      const setState = (value) => {
+        const stateControl = controlByName.get("state");
+        if (stateControl instanceof HTMLSelectElement) {
+          stateControl.value = value;
+        }
+      };
+      const shiftMonth = (delta) => {
+        let month = readMonthControl() - 1 + delta; // 0-based
+        let year = readYearControl();
+        month += year * 12;
+        year = Math.floor(month / 12);
+        month = ((month % 12) + 12) % 12;
+        setControl("month", String(month + 1));
+        setControl("year", String(year));
+      };
+
+      mountNode.addEventListener("click", (event) => {
+        const cell = event.target.closest("button.uif-calendar-cell");
+        if (cell && !cell.disabled) {
+          event.preventDefault();
+          const day = parseInt(cell.textContent.trim(), 10);
+          if (day) {
+            // Pin day AND the currently visible month/year so the selection is
+            // unambiguous and gets highlighted on the next render.
+            setControl("day", String(day));
+            setControl("month", String(readMonthControl()));
+            setControl("year", String(readYearControl()));
+            setState("default");
+            render();
+          }
+          return;
+        }
+
+        const trigger = event.target.closest("[aria-label='Open calendar']");
+        if (trigger && !trigger.disabled) {
+          event.preventDefault();
+          const stateControl = controlByName.get("state");
+          const isOpen =
+            stateControl instanceof HTMLSelectElement &&
+            stateControl.value === "open";
+          setState(isOpen ? "default" : "open");
+          render();
+          return;
+        }
+
+        const prev = event.target.closest("[aria-label='Previous month']");
+        if (prev && !prev.disabled) {
+          event.preventDefault();
+          shiftMonth(-1);
+          setState("open");
+          render();
+          return;
+        }
+        const next = event.target.closest("[aria-label='Next month']");
+        if (next && !next.disabled) {
+          event.preventDefault();
+          shiftMonth(1);
+          setState("open");
+          render();
+          return;
+        }
+      });
+
+      mountNode.addEventListener("change", (event) => {
+        const select = event.target;
+        if (!(select instanceof HTMLSelectElement)) return;
+        const name = select.getAttribute("name");
+        if (name === "month") {
+          setControl("month", String(parseInt(select.value, 10) + 1));
+          setState("open");
+          render();
+        } else if (name === "year") {
+          setControl("year", select.value);
+          setState("open");
+          render();
+        }
+      });
+    }
     if (resetButton) {
       resetButton.addEventListener("click", () => {
         form.reset();
