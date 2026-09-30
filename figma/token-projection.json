@@ -1,0 +1,3948 @@
+{
+  "schemaVersion": 1,
+  "sourceFileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "adr": "https://github.com/tbielich/ui-foundations-vault/blob/agent/uif-token-projection-migration/decisions/token-model-and-figma-projection.md",
+  "ownerOverride": "2026-09-30 bounded migration; ADR review, consumed governance pack unchanged",
+  "collectionFiles": {
+    "Core (Primitives)": "Core (Primitives).tokens.json",
+    "Appearance (Brand)": "Semantics (Brands).tokens.json",
+    "Appearance (Scheme)": "Appearance (Modes).tokens.json",
+    "Appearance (Scale)": "Typography (Fluid).tokens.json",
+    "Semantics (Roles)": "Semantics (Roles).tokens.json",
+    "Patterns (UI)": "Patterns (UI).tokens.json"
+  },
+  "variables": {
+    "VariableID:1:201": {
+      "figmaName": "Size/Border/100",
+      "exportPath": "Size/Border/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:202": {
+      "figmaName": "Size/Border/200",
+      "exportPath": "Size/Border/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:203": {
+      "figmaName": "Size/Border/300",
+      "exportPath": "Size/Border/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:204": {
+      "figmaName": "Font/Size/md",
+      "exportPath": "Font/Size/md",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:205": {
+      "figmaName": "Font/Size/xs",
+      "exportPath": "Font/Size/xs",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:206": {
+      "figmaName": "Font/Size/sm",
+      "exportPath": "Font/Size/sm",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:208": {
+      "figmaName": "Font/Size/lg",
+      "exportPath": "Font/Size/lg",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:209": {
+      "figmaName": "Font/Size/xl",
+      "exportPath": "Font/Size/xl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:210": {
+      "figmaName": "Font/Size/xxl",
+      "exportPath": "Font/Size/xxl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:211": {
+      "figmaName": "Font/Size/xxxl",
+      "exportPath": "Font/Size/xxxl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:212": {
+      "figmaName": "Size/Border/000",
+      "exportPath": "Size/Border/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:213": {
+      "figmaName": "Font/Weight/100",
+      "exportPath": "Font/Weight/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:214": {
+      "figmaName": "Font/Weight/200",
+      "exportPath": "Font/Weight/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:215": {
+      "figmaName": "Font/Weight/300",
+      "exportPath": "Font/Weight/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:216": {
+      "figmaName": "Font/Weight/400",
+      "exportPath": "Font/Weight/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:217": {
+      "figmaName": "Font/Weight/500",
+      "exportPath": "Font/Weight/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:218": {
+      "figmaName": "Font/Weight/600",
+      "exportPath": "Font/Weight/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:219": {
+      "figmaName": "Font/Weight/700",
+      "exportPath": "Font/Weight/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:220": {
+      "figmaName": "Font/Weight/800",
+      "exportPath": "Font/Weight/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:221": {
+      "figmaName": "Font/Weight/900",
+      "exportPath": "Font/Weight/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:228": {
+      "figmaName": "Size/Spacing/000",
+      "exportPath": "Size/Spacing/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:229": {
+      "figmaName": "Size/Spacing/100",
+      "exportPath": "Size/Spacing/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:230": {
+      "figmaName": "Size/Spacing/200",
+      "exportPath": "Size/Spacing/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:231": {
+      "figmaName": "Size/Spacing/300",
+      "exportPath": "Size/Spacing/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:232": {
+      "figmaName": "Size/Spacing/400",
+      "exportPath": "Size/Spacing/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:233": {
+      "figmaName": "Size/Spacing/500",
+      "exportPath": "Size/Spacing/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:234": {
+      "figmaName": "Size/Spacing/600",
+      "exportPath": "Size/Spacing/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:235": {
+      "figmaName": "Size/Spacing/700",
+      "exportPath": "Size/Spacing/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:236": {
+      "figmaName": "Size/Spacing/800",
+      "exportPath": "Size/Spacing/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:237": {
+      "figmaName": "Size/Spacing/900",
+      "exportPath": "Size/Spacing/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:238": {
+      "figmaName": "Size/Spacing/1000",
+      "exportPath": "Size/Spacing/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:241": {
+      "figmaName": "Size/Radius/000",
+      "exportPath": "Size/Radius/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:242": {
+      "figmaName": "Size/Radius/100",
+      "exportPath": "Size/Radius/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:243": {
+      "figmaName": "Size/Radius/200",
+      "exportPath": "Size/Radius/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:244": {
+      "figmaName": "Size/Radius/300",
+      "exportPath": "Size/Radius/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:245": {
+      "figmaName": "Size/Radius/400",
+      "exportPath": "Size/Radius/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:246": {
+      "figmaName": "Size/Radius/500",
+      "exportPath": "Size/Radius/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:247": {
+      "figmaName": "Size/Radius/600",
+      "exportPath": "Size/Radius/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:248": {
+      "figmaName": "Size/Radius/700",
+      "exportPath": "Size/Radius/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:249": {
+      "figmaName": "Size/Radius/800",
+      "exportPath": "Size/Radius/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:250": {
+      "figmaName": "Size/Radius/900",
+      "exportPath": "Size/Radius/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:251": {
+      "figmaName": "Size/Radius/full",
+      "exportPath": "Size/Radius/full",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:1:267": {
+      "figmaName": "Button/Border/Size/Hover",
+      "exportPath": "Button/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:268": {
+      "figmaName": "Button/Solid/Border/Color/Default",
+      "exportPath": "Button/Solid/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:269": {
+      "figmaName": "Button/Solid/Text/Color/Default",
+      "exportPath": "Button/Solid/Text Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:270": {
+      "figmaName": "Button/Solid/Container/Background/Default",
+      "exportPath": "Button/Solid/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:271": {
+      "figmaName": "Button/Outline/Border/Color/Default",
+      "exportPath": "Button/Outline/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:272": {
+      "figmaName": "Button/Ghost/Container/Background/Default",
+      "exportPath": "Button/Ghost/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:273": {
+      "figmaName": "Button/Outline/Text/Color/Default",
+      "exportPath": "Button/Outline/Text Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:276": {
+      "figmaName": "Button/Ghost/Border/Color/Default",
+      "exportPath": "Button/Ghost/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:277": {
+      "figmaName": "Button/Outline/Container/Background/Default",
+      "exportPath": "Button/Outline/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:278": {
+      "figmaName": "Button/Ghost/Text/Color/Default",
+      "exportPath": "Button/Ghost/Text Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:1:281": {
+      "figmaName": "Button/Border/Size/Default",
+      "exportPath": "Button/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:5": {
+      "figmaName": "Font/Family/Sans",
+      "exportPath": "Font/Family/Sans",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3:6": {
+      "figmaName": "Font/Family/Serif",
+      "exportPath": "Font/Family/Serif",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3:7": {
+      "figmaName": "Font/Family/Mono",
+      "exportPath": "Font/Family/Mono",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3:11": {
+      "figmaName": "Button/Font/Family",
+      "exportPath": "Button/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:12": {
+      "figmaName": "Button/Line/Height",
+      "exportPath": "Button/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:14": {
+      "figmaName": "Button/Border/Radius",
+      "exportPath": "Button/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:15": {
+      "figmaName": "Button/Font/Weight",
+      "exportPath": "Button/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:20": {
+      "figmaName": "Button/Font/Size",
+      "exportPath": "Button/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3:21": {
+      "figmaName": "Button/Padding/Inline",
+      "exportPath": "Button/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:9:8": {
+      "figmaName": "Button/Gap",
+      "exportPath": "Button/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:9:9": {
+      "figmaName": "Button/Padding/Block",
+      "exportPath": "Button/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:12:21": {
+      "figmaName": "Button/Solid/Container/Background/Hover",
+      "exportPath": "Button/Solid/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:12:22": {
+      "figmaName": "Button/Solid/Container/Background/Active",
+      "exportPath": "Button/Solid/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:12:23": {
+      "figmaName": "Button/Container/Background/Disabled",
+      "exportPath": "Button/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:15:30": {
+      "figmaName": "Button/Solid/Border/Color/Hover",
+      "exportPath": "Button/Solid/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:15:31": {
+      "figmaName": "Button/Outline/Border/Color/Hover",
+      "exportPath": "Button/Outline/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:15:32": {
+      "figmaName": "Button/Ghost/Border/Color/Hover",
+      "exportPath": "Button/Ghost/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:15:56": {
+      "figmaName": "Line/Height/xs",
+      "exportPath": "Line Height/xs",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:57": {
+      "figmaName": "Line/Height/sm",
+      "exportPath": "Line Height/sm",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:58": {
+      "figmaName": "Line/Height/md",
+      "exportPath": "Line Height/md",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:60": {
+      "figmaName": "Line/Height/lg",
+      "exportPath": "Line Height/lg",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:61": {
+      "figmaName": "Line/Height/xl",
+      "exportPath": "Line Height/xl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:62": {
+      "figmaName": "Line/Height/xxl",
+      "exportPath": "Line Height/xxl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:15:63": {
+      "figmaName": "Line/Height/xxxl",
+      "exportPath": "Line Height/xxxl",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:79": {
+      "figmaName": "Container/300",
+      "exportPath": "Container/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:80": {
+      "figmaName": "Container/100",
+      "exportPath": "Container/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:81": {
+      "figmaName": "Container/500",
+      "exportPath": "Container/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:82": {
+      "figmaName": "Breakpoint/100",
+      "exportPath": "Breakpoint/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:83": {
+      "figmaName": "Breakpoint/300",
+      "exportPath": "Breakpoint/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:84": {
+      "figmaName": "Breakpoint/400",
+      "exportPath": "Breakpoint/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:85": {
+      "figmaName": "Breakpoint/500",
+      "exportPath": "Breakpoint/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:86": {
+      "figmaName": "Container/400",
+      "exportPath": "Container/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:87": {
+      "figmaName": "Container/600",
+      "exportPath": "Container/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:88": {
+      "figmaName": "Container/200",
+      "exportPath": "Container/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:89": {
+      "figmaName": "Breakpoint/600",
+      "exportPath": "Breakpoint/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:21:90": {
+      "figmaName": "Breakpoint/200",
+      "exportPath": "Breakpoint/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:26": {
+      "figmaName": "Layout/Columns",
+      "exportPath": "Layout/Columns",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:27": {
+      "figmaName": "Layout/Gutter",
+      "exportPath": "Layout/Gutter",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:28": {
+      "figmaName": "Layout/Max/Width",
+      "exportPath": "Layout/Max Width",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:29": {
+      "figmaName": "Layout/Column/Max/Width",
+      "exportPath": "Layout/Column Max Width",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:30": {
+      "figmaName": "Layout/Float/Breakpoint",
+      "exportPath": "Layout/Float Breakpoint",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:31": {
+      "figmaName": "Layout/Base/Grid",
+      "exportPath": "Layout/Base Grid",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:57": {
+      "figmaName": "ZIndex/Fixed",
+      "exportPath": "ZIndex/Fixed",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:58": {
+      "figmaName": "ZIndex/Sticky",
+      "exportPath": "ZIndex/Sticky",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:59": {
+      "figmaName": "ZIndex/Dropdown",
+      "exportPath": "ZIndex/Dropdown",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:60": {
+      "figmaName": "ZIndex/Dropdown/Base",
+      "exportPath": "ZIndex/Dropdown Base",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:61": {
+      "figmaName": "ZIndex/Modal",
+      "exportPath": "ZIndex/Modal",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:62": {
+      "figmaName": "ZIndex/Base",
+      "exportPath": "ZIndex/Base",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:63": {
+      "figmaName": "ZIndex/Tooltip",
+      "exportPath": "ZIndex/Tooltip",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:64": {
+      "figmaName": "ZIndex/Raised",
+      "exportPath": "ZIndex/Raised",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:65": {
+      "figmaName": "ZIndex/Popover",
+      "exportPath": "ZIndex/Popover",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:66": {
+      "figmaName": "ZIndex/Modal/Overlay",
+      "exportPath": "ZIndex/Modal Overlay",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:22:67": {
+      "figmaName": "ZIndex/Hidden",
+      "exportPath": "ZIndex/Hidden",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:53:74": {
+      "figmaName": "Button/Border/Color/Disabled",
+      "exportPath": "Button/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:75": {
+      "figmaName": "Button/Text/Color/Disabled",
+      "exportPath": "Button/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:76": {
+      "figmaName": "Button/Solid/Text/Color/Hover",
+      "exportPath": "Button/Solid/Text Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:77": {
+      "figmaName": "Button/Solid/Text/Color/Active",
+      "exportPath": "Button/Solid/Text Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:78": {
+      "figmaName": "Button/Solid/Border/Color/Active",
+      "exportPath": "Button/Solid/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:79": {
+      "figmaName": "Button/Solid/Border/Color/Focus",
+      "exportPath": "Button/Solid/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:80": {
+      "figmaName": "Button/Solid/Container/Background/Focus",
+      "exportPath": "Button/Solid/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:81": {
+      "figmaName": "Button/Outline/Border/Color/Active",
+      "exportPath": "Button/Outline/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:82": {
+      "figmaName": "Button/Outline/Border/Color/Focus",
+      "exportPath": "Button/Outline/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:83": {
+      "figmaName": "Button/Outline/Container/Background/Active",
+      "exportPath": "Button/Outline/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:84": {
+      "figmaName": "Button/Outline/Container/Background/Hover",
+      "exportPath": "Button/Outline/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:85": {
+      "figmaName": "Button/Outline/Container/Background/Focus",
+      "exportPath": "Button/Outline/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:86": {
+      "figmaName": "Button/Ghost/Border/Color/Focus",
+      "exportPath": "Button/Ghost/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:87": {
+      "figmaName": "Button/Ghost/Border/Color/Active",
+      "exportPath": "Button/Ghost/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:88": {
+      "figmaName": "Button/Ghost/Container/Background/Hover",
+      "exportPath": "Button/Ghost/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:89": {
+      "figmaName": "Button/Ghost/Container/Background/Focus",
+      "exportPath": "Button/Ghost/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:53:90": {
+      "figmaName": "Button/Ghost/Container/Background/Active",
+      "exportPath": "Button/Ghost/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:77:77": {
+      "figmaName": "Modal/Backdrop/Color",
+      "exportPath": "Modal/Backdrop/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:77:78": {
+      "figmaName": "Modal/Surface/Color",
+      "exportPath": "Modal/Surface/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:77:79": {
+      "figmaName": "Modal/Surface/Border/Radius",
+      "exportPath": "Modal/Surface/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2006:149": {
+      "figmaName": "Color/Neutral/Alpha/900",
+      "exportPath": "Color/Neutral/Alpha/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:151": {
+      "figmaName": "Color/Neutral/Alpha/800",
+      "exportPath": "Color/Neutral/Alpha/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:153": {
+      "figmaName": "Color/Neutral/Alpha/700",
+      "exportPath": "Color/Neutral/Alpha/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:155": {
+      "figmaName": "Color/Neutral/Alpha/600",
+      "exportPath": "Color/Neutral/Alpha/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:157": {
+      "figmaName": "Color/Neutral/Alpha/500",
+      "exportPath": "Color/Neutral/Alpha/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:159": {
+      "figmaName": "Color/Neutral/Alpha/400",
+      "exportPath": "Color/Neutral/Alpha/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:161": {
+      "figmaName": "Color/Neutral/Alpha/300",
+      "exportPath": "Color/Neutral/Alpha/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:163": {
+      "figmaName": "Color/Neutral/Alpha/200",
+      "exportPath": "Color/Neutral/Alpha/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:165": {
+      "figmaName": "Color/Neutral/Alpha/100",
+      "exportPath": "Color/Neutral/Alpha/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:167": {
+      "figmaName": "Color/Neutral/1000",
+      "exportPath": "Color/Neutral/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:169": {
+      "figmaName": "Color/Neutral/800",
+      "exportPath": "Color/Neutral/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:171": {
+      "figmaName": "Color/Neutral/500",
+      "exportPath": "Color/Neutral/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:173": {
+      "figmaName": "Color/Neutral/200",
+      "exportPath": "Color/Neutral/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:175": {
+      "figmaName": "Color/Neutral/000",
+      "exportPath": "Color/Neutral/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:178": {
+      "figmaName": "Color/Brand/B/Purple/200",
+      "exportPath": "Color/Brand B/Purple/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:179": {
+      "figmaName": "Color/Brand/B/Purple/300",
+      "exportPath": "Color/Brand B/Purple/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:180": {
+      "figmaName": "Color/Brand/B/Purple/600",
+      "exportPath": "Color/Brand B/Purple/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:181": {
+      "figmaName": "Color/Brand/B/Purple/700",
+      "exportPath": "Color/Brand B/Purple/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:182": {
+      "figmaName": "Color/Brand/B/Purple/800",
+      "exportPath": "Color/Brand B/Purple/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:183": {
+      "figmaName": "Color/Brand/B/Purple/900",
+      "exportPath": "Color/Brand B/Purple/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:184": {
+      "figmaName": "Color/Brand/B/Blue/100",
+      "exportPath": "Color/Brand B/Blue/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:185": {
+      "figmaName": "Color/Brand/B/Blue/200",
+      "exportPath": "Color/Brand B/Blue/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:186": {
+      "figmaName": "Color/Brand/B/Blue/300",
+      "exportPath": "Color/Brand B/Blue/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:187": {
+      "figmaName": "Color/Brand/B/Blue/400",
+      "exportPath": "Color/Brand B/Blue/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:188": {
+      "figmaName": "Color/Brand/B/Blue/500",
+      "exportPath": "Color/Brand B/Blue/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:189": {
+      "figmaName": "Color/Brand/B/Blue/600",
+      "exportPath": "Color/Brand B/Blue/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:190": {
+      "figmaName": "Color/Brand/B/Blue/900",
+      "exportPath": "Color/Brand B/Blue/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:191": {
+      "figmaName": "Color/Brand/B/Blue/800",
+      "exportPath": "Color/Brand B/Blue/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:193": {
+      "figmaName": "Color/Neutral/Alpha/000",
+      "exportPath": "Color/Neutral/Alpha/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:195": {
+      "figmaName": "Color/Transparent",
+      "exportPath": "Color/Transparent",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:198": {
+      "figmaName": "Brand/Color/Functional/Success",
+      "exportPath": "Brand/Color/Functional/Success",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:200": {
+      "figmaName": "Brand/Color/Primary",
+      "exportPath": "Brand/Color/Primary",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:203": {
+      "figmaName": "Brand/Color/Accent",
+      "exportPath": "Brand/Color/Accent",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:206": {
+      "figmaName": "Brand/Color/Functional/Danger",
+      "exportPath": "Brand/Color/Functional/Danger",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:207": {
+      "figmaName": "Color/Brand/A/Green/600",
+      "exportPath": "Color/Brand A/Green/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:208": {
+      "figmaName": "Color/Brand/A/Red/600",
+      "exportPath": "Color/Brand A/Red/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:209": {
+      "figmaName": "Color/Brand/A/Red/700",
+      "exportPath": "Color/Brand A/Red/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:210": {
+      "figmaName": "Color/Brand/A/Green/700",
+      "exportPath": "Color/Brand A/Green/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2006:211": {
+      "figmaName": "Brand/Color/Functional/Base",
+      "exportPath": "Brand/Color/Functional/Base",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:213": {
+      "figmaName": "Brand/Font/Base",
+      "exportPath": "Brand/Font/Base",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:214": {
+      "figmaName": "Brand/Font/Lead",
+      "exportPath": "Brand/Font/Lead",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:215": {
+      "figmaName": "Brand/Shape/Corner/Control",
+      "exportPath": "Brand/Corner/Button",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:216": {
+      "figmaName": "Brand/Shape/Corner/Panel",
+      "exportPath": "Brand/Corner/Card",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:217": {
+      "figmaName": "Brand/Shape/Corner/Dialog",
+      "exportPath": "Brand/Corner/Modal",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2006:218": {
+      "figmaName": "Button/Outline/Text/Color/Hover",
+      "exportPath": "Button/Outline/Text Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2006:219": {
+      "figmaName": "Button/Outline/Text/Color/Active",
+      "exportPath": "Button/Outline/Text Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2006:220": {
+      "figmaName": "Button/Ghost/Text/Color/Hover",
+      "exportPath": "Button/Ghost/Text Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2006:221": {
+      "figmaName": "Button/Ghost/Text/Color/Active",
+      "exportPath": "Button/Ghost/Text Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2007:326": {
+      "figmaName": "Color/Text/Default",
+      "exportPath": "Color/Text/Default",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:327": {
+      "figmaName": "Color/Text/Inverse",
+      "exportPath": "Color/Text/Inverse",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:328": {
+      "figmaName": "Color/Text/Disabled",
+      "exportPath": "Color/Text/Disabled",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:329": {
+      "figmaName": "Color/Fill/Surface",
+      "exportPath": "Color/Fill/Surface",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:330": {
+      "figmaName": "Color/Fill/Disabled",
+      "exportPath": "Color/Fill/Disabled",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:331": {
+      "figmaName": "Color/Fill/Hover",
+      "exportPath": "Color/Fill/Hover",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:337": {
+      "figmaName": "Color/Fill/Brand",
+      "exportPath": "Color/Fill/Brand",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:338": {
+      "figmaName": "Color/Fill/Subtle",
+      "exportPath": "Color/Fill/Subtle",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:339": {
+      "figmaName": "Color/Fill/Active",
+      "exportPath": "Color/Fill/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:340": {
+      "figmaName": "Color/Text/Brand",
+      "exportPath": "Color/Text/Brand",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:341": {
+      "figmaName": "Color/Text/Subtle",
+      "exportPath": "Color/Text/Subtle",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:342": {
+      "figmaName": "Color/Border/Default",
+      "exportPath": "Color/Border/Default",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:343": {
+      "figmaName": "Color/Border/Subtle",
+      "exportPath": "Color/Border/Subtle",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:344": {
+      "figmaName": "Color/Border/Strong",
+      "exportPath": "Color/Border/Strong",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:345": {
+      "figmaName": "Color/Border/Brand",
+      "exportPath": "Color/Border/Brand",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:346": {
+      "figmaName": "Color/Border/Disabled",
+      "exportPath": "Color/Border/Disabled",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:355": {
+      "figmaName": "Color/Text/Strong",
+      "exportPath": "Color/Text/Strong",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:356": {
+      "figmaName": "Color/Border/Danger",
+      "exportPath": "Color/Border/Danger",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:357": {
+      "figmaName": "Color/Fill/Danger",
+      "exportPath": "Color/Fill/Danger",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:358": {
+      "figmaName": "Color/Text/Danger",
+      "exportPath": "Color/Text/Danger",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:371": {
+      "figmaName": "Color/Overlay/Backdrop",
+      "exportPath": "Color/Overlay/Backdrop",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:375": {
+      "figmaName": "Color/Text/Success",
+      "exportPath": "Color/Text/Success",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:376": {
+      "figmaName": "Color/Fill/Success",
+      "exportPath": "Color/Fill/Success",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2007:377": {
+      "figmaName": "Brand/Color/Primary/Dark",
+      "exportPath": "Brand/Color/Primary Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2007:378": {
+      "figmaName": "Brand/Color/Accent/Dark",
+      "exportPath": "Brand/Color/Accent Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2007:379": {
+      "figmaName": "Brand/Color/Functional/Base/Dark",
+      "exportPath": "Brand/Color/Functional/Base Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2012:292": {
+      "figmaName": "Brand/Color/Subtle",
+      "exportPath": "Brand/Color/Subtle",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2016:1880": {
+      "figmaName": "Button/Border/Size/Active",
+      "exportPath": "Button/Border/Size Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2016:1881": {
+      "figmaName": "Color/Overlay/Hover",
+      "exportPath": "Color/Overlay/Hover",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2016:1882": {
+      "figmaName": "Color/Overlay/Active",
+      "exportPath": "Color/Overlay/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2016:1883": {
+      "figmaName": "Color/Overlay/Selected",
+      "exportPath": "Color/Overlay/Selected",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2016:1884": {
+      "figmaName": "Button/Overlay/Hover",
+      "exportPath": "Button/Overlay Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2016:1885": {
+      "figmaName": "Button/Overlay/Active",
+      "exportPath": "Button/Overlay Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2026:2178": {
+      "figmaName": "Button/Padding/Inline/Icon/Only",
+      "exportPath": "Button/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:241": {
+      "figmaName": "Brand/Color/Subtle/Dark",
+      "exportPath": "Brand/Color/Subtle Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2028:242": {
+      "figmaName": "Brand/Color/Subtle/Light",
+      "exportPath": "Brand/Color/Subtle Light",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2028:289": {
+      "figmaName": "Input/Text/Color/Default",
+      "exportPath": "Input/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:293": {
+      "figmaName": "Input/Text/Color/Hover",
+      "exportPath": "Input/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:294": {
+      "figmaName": "Input/Text/Color/Active",
+      "exportPath": "Input/Text/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:295": {
+      "figmaName": "Input/Border/Color/Default",
+      "exportPath": "Input/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:297": {
+      "figmaName": "Input/Border/Color/Hover",
+      "exportPath": "Input/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:298": {
+      "figmaName": "Input/Border/Color/Active",
+      "exportPath": "Input/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:299": {
+      "figmaName": "Input/Border/Color/Focus",
+      "exportPath": "Input/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:300": {
+      "figmaName": "Input/Font/Family",
+      "exportPath": "Input/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:303": {
+      "figmaName": "Input/Font/Weight",
+      "exportPath": "Input/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:304": {
+      "figmaName": "Input/Font/Size",
+      "exportPath": "Input/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:305": {
+      "figmaName": "Input/Line/Height",
+      "exportPath": "Input/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:306": {
+      "figmaName": "Input/Border/Size/Default",
+      "exportPath": "Input/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:307": {
+      "figmaName": "Input/Border/Size/Hover",
+      "exportPath": "Input/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:309": {
+      "figmaName": "Input/Border/Size/Active",
+      "exportPath": "Input/Border/Size Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:310": {
+      "figmaName": "Input/Border/Radius",
+      "exportPath": "Input/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:318": {
+      "figmaName": "Input/Container/Background/Default",
+      "exportPath": "Input/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:319": {
+      "figmaName": "Input/Container/Background/Hover",
+      "exportPath": "Input/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:320": {
+      "figmaName": "Input/Container/Background/Focus",
+      "exportPath": "Input/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:321": {
+      "figmaName": "Input/Container/Background/Active",
+      "exportPath": "Input/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:326": {
+      "figmaName": "Input/Padding/Inline",
+      "exportPath": "Input/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:327": {
+      "figmaName": "Input/Padding/Inline/Icon/Only",
+      "exportPath": "Input/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:328": {
+      "figmaName": "Input/Padding/Block",
+      "exportPath": "Input/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:329": {
+      "figmaName": "Input/Gap",
+      "exportPath": "Input/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:330": {
+      "figmaName": "Input/Text/Color/Disabled",
+      "exportPath": "Input/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:331": {
+      "figmaName": "Input/Border/Color/Disabled",
+      "exportPath": "Input/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:332": {
+      "figmaName": "Input/Container/Background/Disabled",
+      "exportPath": "Input/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:333": {
+      "figmaName": "Input/Overlay/Hover",
+      "exportPath": "Input/Overlay Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:334": {
+      "figmaName": "Input/Overlay/Active",
+      "exportPath": "Input/Overlay Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2028:335": {
+      "figmaName": "Brand/Shape/Corner/Field",
+      "exportPath": "Brand/Corner/Input",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:2039:350": {
+      "figmaName": "Input/Text/Color/Placeholder",
+      "exportPath": "Input/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2039:351": {
+      "figmaName": "Color/Neutral/600",
+      "exportPath": "Color/Neutral/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2039:352": {
+      "figmaName": "Color/Neutral/100",
+      "exportPath": "Color/Neutral/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2039:353": {
+      "figmaName": "Color/Neutral/300",
+      "exportPath": "Color/Neutral/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2039:354": {
+      "figmaName": "Color/Neutral/400",
+      "exportPath": "Color/Neutral/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2039:355": {
+      "figmaName": "Color/Neutral/700",
+      "exportPath": "Color/Neutral/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2039:356": {
+      "figmaName": "Color/Neutral/900",
+      "exportPath": "Color/Neutral/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2040:380": {
+      "figmaName": "Color/Focus",
+      "exportPath": "Color/Focus",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2040:381": {
+      "figmaName": "Shadow/Focus",
+      "exportPath": "Shadow/Focus",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2056:364": {
+      "figmaName": "Input/Height",
+      "exportPath": "Input/Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2056:368": {
+      "figmaName": "Button/Height/Min",
+      "exportPath": "Button/Height Min",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:486": {
+      "figmaName": "Form/Group/Gap",
+      "exportPath": "Form/Group/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:487": {
+      "figmaName": "Form/Padding/Inline",
+      "exportPath": "Form/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:488": {
+      "figmaName": "Form/Padding/Block",
+      "exportPath": "Form/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:531": {
+      "figmaName": "Form/Border/Radius",
+      "exportPath": "Form/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:588": {
+      "figmaName": "Form/Gap",
+      "exportPath": "Form/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:589": {
+      "figmaName": "Form/Field/Gap",
+      "exportPath": "Form/Field/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:590": {
+      "figmaName": "Form/Container/Background",
+      "exportPath": "Form/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:591": {
+      "figmaName": "Form/Container/Border/Color",
+      "exportPath": "Form/Container/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:593": {
+      "figmaName": "Form/Border/Size",
+      "exportPath": "Form/Border/Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:595": {
+      "figmaName": "Form/Group/Title/Color",
+      "exportPath": "Form/Group/Title Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:603": {
+      "figmaName": "Form/Field/Helper/Text/Color/Default",
+      "exportPath": "Form/Field/Helper Text Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:606": {
+      "figmaName": "Form/Field/Helper/Text/Color/Invalid",
+      "exportPath": "Form/Field/Helper Text Color Invalid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:607": {
+      "figmaName": "Input/Border/Color/Invalid",
+      "exportPath": "Input/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2070:608": {
+      "figmaName": "Input/Border/Color/Valid",
+      "exportPath": "Input/Border/Color Valid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2075:348": {
+      "figmaName": "Button/Group/Gap",
+      "exportPath": "Button/Group/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:553": {
+      "figmaName": "Checkbox/Text/Color/Default",
+      "exportPath": "Checkbox/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:554": {
+      "figmaName": "Checkbox/Text/Color/Hover",
+      "exportPath": "Checkbox/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:555": {
+      "figmaName": "Checkbox/Text/Color/Active",
+      "exportPath": "Checkbox/Text/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:556": {
+      "figmaName": "Checkbox/Border/Color/Default",
+      "exportPath": "Checkbox/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:557": {
+      "figmaName": "Checkbox/Border/Color/Hover",
+      "exportPath": "Checkbox/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:558": {
+      "figmaName": "Checkbox/Border/Color/Active",
+      "exportPath": "Checkbox/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:559": {
+      "figmaName": "Checkbox/Border/Color/Focus",
+      "exportPath": "Checkbox/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:560": {
+      "figmaName": "Checkbox/Border/Color/Invalid",
+      "exportPath": "Checkbox/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:561": {
+      "figmaName": "Checkbox/Border/Color/Valid",
+      "exportPath": "Checkbox/Border/Color Valid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:562": {
+      "figmaName": "Checkbox/Container/Background/Default",
+      "exportPath": "Checkbox/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:563": {
+      "figmaName": "Checkbox/Container/Background/Hover",
+      "exportPath": "Checkbox/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:564": {
+      "figmaName": "Checkbox/Container/Background/Focus",
+      "exportPath": "Checkbox/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2142:565": {
+      "figmaName": "Checkbox/Container/Background/Active",
+      "exportPath": "Checkbox/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2228:321": {
+      "figmaName": "Input/Height/Min",
+      "exportPath": "Input/Height Min",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2228:502": {
+      "figmaName": "Button/Width/Min",
+      "exportPath": "Button/Width Min",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2258:69": {
+      "figmaName": "Color/Brand/A/Red/800",
+      "exportPath": "Color/Brand A/Red/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:70": {
+      "figmaName": "Color/Brand/A/Red/900",
+      "exportPath": "Color/Brand A/Red/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:71": {
+      "figmaName": "Color/Brand/A/Red/500",
+      "exportPath": "Color/Brand A/Red/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:72": {
+      "figmaName": "Color/Brand/A/Red/400",
+      "exportPath": "Color/Brand A/Red/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:73": {
+      "figmaName": "Color/Brand/A/Red/300",
+      "exportPath": "Color/Brand A/Red/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:74": {
+      "figmaName": "Color/Brand/A/Red/200",
+      "exportPath": "Color/Brand A/Red/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:75": {
+      "figmaName": "Color/Brand/A/Red/100",
+      "exportPath": "Color/Brand A/Red/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:395": {
+      "figmaName": "Color/Brand/B/Blue/700",
+      "exportPath": "Color/Brand B/Blue/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:396": {
+      "figmaName": "Color/Brand/B/Red/100",
+      "exportPath": "Color/Brand B/Red/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:397": {
+      "figmaName": "Color/Brand/B/Red/200",
+      "exportPath": "Color/Brand B/Red/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:398": {
+      "figmaName": "Color/Brand/B/Red/300",
+      "exportPath": "Color/Brand B/Red/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:399": {
+      "figmaName": "Color/Brand/B/Red/400",
+      "exportPath": "Color/Brand B/Red/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:400": {
+      "figmaName": "Color/Brand/B/Red/500",
+      "exportPath": "Color/Brand B/Red/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:401": {
+      "figmaName": "Color/Brand/B/Red/600",
+      "exportPath": "Color/Brand B/Red/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:402": {
+      "figmaName": "Color/Brand/B/Red/700",
+      "exportPath": "Color/Brand B/Red/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:403": {
+      "figmaName": "Color/Brand/B/Red/800",
+      "exportPath": "Color/Brand B/Red/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:404": {
+      "figmaName": "Color/Brand/B/Red/900",
+      "exportPath": "Color/Brand B/Red/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:405": {
+      "figmaName": "Color/Brand/B/Green/600",
+      "exportPath": "Color/Brand B/Green/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:406": {
+      "figmaName": "Color/Brand/B/Green/700",
+      "exportPath": "Color/Brand B/Green/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:407": {
+      "figmaName": "Color/Brand/B/Green/800",
+      "exportPath": "Color/Brand B/Green/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:408": {
+      "figmaName": "Color/Brand/B/Green/900",
+      "exportPath": "Color/Brand B/Green/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:409": {
+      "figmaName": "Color/Brand/B/Green/500",
+      "exportPath": "Color/Brand B/Green/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:410": {
+      "figmaName": "Color/Brand/B/Green/400",
+      "exportPath": "Color/Brand B/Green/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:411": {
+      "figmaName": "Color/Brand/B/Green/300",
+      "exportPath": "Color/Brand B/Green/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:412": {
+      "figmaName": "Color/Brand/B/Green/200",
+      "exportPath": "Color/Brand B/Green/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:413": {
+      "figmaName": "Color/Brand/B/Green/100",
+      "exportPath": "Color/Brand B/Green/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:414": {
+      "figmaName": "Color/Brand/A/Sand/100",
+      "exportPath": "Color/Brand A/Sand/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:415": {
+      "figmaName": "Color/Brand/A/Sand/200",
+      "exportPath": "Color/Brand A/Sand/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:416": {
+      "figmaName": "Color/Brand/A/Sand/300",
+      "exportPath": "Color/Brand A/Sand/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:417": {
+      "figmaName": "Color/Brand/A/Sand/400",
+      "exportPath": "Color/Brand A/Sand/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:418": {
+      "figmaName": "Color/Brand/A/Sand/500",
+      "exportPath": "Color/Brand A/Sand/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:419": {
+      "figmaName": "Color/Brand/A/Sand/600",
+      "exportPath": "Color/Brand A/Sand/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:420": {
+      "figmaName": "Color/Brand/A/Sand/700",
+      "exportPath": "Color/Brand A/Sand/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:421": {
+      "figmaName": "Color/Brand/A/Sand/800",
+      "exportPath": "Color/Brand A/Sand/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:422": {
+      "figmaName": "Color/Brand/A/Sand/900",
+      "exportPath": "Color/Brand A/Sand/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:423": {
+      "figmaName": "Color/Brand/A/Green/200",
+      "exportPath": "Color/Brand A/Green/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:424": {
+      "figmaName": "Color/Brand/A/Green/300",
+      "exportPath": "Color/Brand A/Green/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:425": {
+      "figmaName": "Color/Brand/A/Green/400",
+      "exportPath": "Color/Brand A/Green/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:426": {
+      "figmaName": "Color/Brand/A/Green/500",
+      "exportPath": "Color/Brand A/Green/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:427": {
+      "figmaName": "Color/Brand/A/Green/800",
+      "exportPath": "Color/Brand A/Green/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:428": {
+      "figmaName": "Color/Brand/A/Green/100",
+      "exportPath": "Color/Brand A/Green/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2258:595": {
+      "figmaName": "Color/Brand/A/Green/900",
+      "exportPath": "Color/Brand A/Green/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2281:719": {
+      "figmaName": "Checkbox/Container/Background/Disabled",
+      "exportPath": "Checkbox/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2281:720": {
+      "figmaName": "Checkbox/Border/Color/Disabled",
+      "exportPath": "Checkbox/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2281:721": {
+      "figmaName": "Checkbox/Text/Color/Disabled",
+      "exportPath": "Checkbox/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2287:831": {
+      "figmaName": "Checkbox/Border/Size/Hover",
+      "exportPath": "Checkbox/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2287:832": {
+      "figmaName": "Checkbox/Border/Size/Disabled",
+      "exportPath": "Checkbox/Border/Size Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2287:833": {
+      "figmaName": "Checkbox/Border/Size/Default",
+      "exportPath": "Checkbox/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:2": {
+      "figmaName": "Radio/Text/Color/Default",
+      "exportPath": "Radio/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:3": {
+      "figmaName": "Radio/Text/Color/Disabled",
+      "exportPath": "Radio/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:4": {
+      "figmaName": "Radio/Border/Color/Default",
+      "exportPath": "Radio/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:5": {
+      "figmaName": "Radio/Border/Color/Hover",
+      "exportPath": "Radio/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:6": {
+      "figmaName": "Radio/Border/Color/Active",
+      "exportPath": "Radio/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:7": {
+      "figmaName": "Radio/Border/Color/Disabled",
+      "exportPath": "Radio/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:8": {
+      "figmaName": "Radio/Container/Background/Default",
+      "exportPath": "Radio/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:9": {
+      "figmaName": "Radio/Container/Background/Disabled",
+      "exportPath": "Radio/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:10": {
+      "figmaName": "Radio/Border/Size/Default",
+      "exportPath": "Radio/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:11": {
+      "figmaName": "Radio/Border/Size/Hover",
+      "exportPath": "Radio/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2327:12": {
+      "figmaName": "Radio/Border/Size/Disabled",
+      "exportPath": "Radio/Border/Size Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1160": {
+      "figmaName": "Badge/Default/Text/Color",
+      "exportPath": "Badge/Default/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1163": {
+      "figmaName": "Badge/Default/Border/Color",
+      "exportPath": "Badge/Default/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1164": {
+      "figmaName": "Badge/Brand/Text/Color",
+      "exportPath": "Badge/Brand/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1170": {
+      "figmaName": "Badge/Brand/Border/Color",
+      "exportPath": "Badge/Brand/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1172": {
+      "figmaName": "Badge/Success/Text/Color",
+      "exportPath": "Badge/Success/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1175": {
+      "figmaName": "Badge/Font/Family",
+      "exportPath": "Badge/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1178": {
+      "figmaName": "Badge/Font/Weight",
+      "exportPath": "Badge/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1181": {
+      "figmaName": "Badge/Border/Size/Default",
+      "exportPath": "Badge/Border Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1183": {
+      "figmaName": "Badge/Success/Border/Color",
+      "exportPath": "Badge/Success/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1186": {
+      "figmaName": "Badge/Border/Radius",
+      "exportPath": "Badge/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1189": {
+      "figmaName": "Badge/Default/Container/Background",
+      "exportPath": "Badge/Default/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1193": {
+      "figmaName": "Badge/Brand/Container/Background",
+      "exportPath": "Badge/Brand/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1197": {
+      "figmaName": "Badge/Success/Container/Background",
+      "exportPath": "Badge/Success/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1201": {
+      "figmaName": "Badge/Padding/Inline/MD",
+      "exportPath": "Badge/Padding Inline MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1202": {
+      "figmaName": "Badge/Padding/Inline/Icon/Only",
+      "exportPath": "Badge/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1203": {
+      "figmaName": "Badge/Padding/Block/MD",
+      "exportPath": "Badge/Padding Block MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1204": {
+      "figmaName": "Badge/Gap",
+      "exportPath": "Badge/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1211": {
+      "figmaName": "Badge/Height/Min",
+      "exportPath": "Badge/Height Min",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2385:1212": {
+      "figmaName": "Badge/Width/Min",
+      "exportPath": "Badge/Width Min",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2438:2": {
+      "figmaName": "Color/Brand/C/Blue/100",
+      "exportPath": "Color/Brand C/Blue/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:3": {
+      "figmaName": "Color/Brand/C/Blue/200",
+      "exportPath": "Color/Brand C/Blue/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:4": {
+      "figmaName": "Color/Brand/C/Blue/300",
+      "exportPath": "Color/Brand C/Blue/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:5": {
+      "figmaName": "Color/Brand/C/Blue/400",
+      "exportPath": "Color/Brand C/Blue/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:6": {
+      "figmaName": "Color/Brand/C/Blue/500",
+      "exportPath": "Color/Brand C/Blue/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:7": {
+      "figmaName": "Color/Brand/C/Blue/600",
+      "exportPath": "Color/Brand C/Blue/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:8": {
+      "figmaName": "Color/Brand/C/Blue/700",
+      "exportPath": "Color/Brand C/Blue/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:9": {
+      "figmaName": "Color/Brand/C/Blue/800",
+      "exportPath": "Color/Brand C/Blue/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:10": {
+      "figmaName": "Color/Brand/C/Blue/900",
+      "exportPath": "Color/Brand C/Blue/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:11": {
+      "figmaName": "Color/Brand/C/Coolblue/100",
+      "exportPath": "Color/Brand C/Coolblue/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:12": {
+      "figmaName": "Color/Brand/C/Coolblue/200",
+      "exportPath": "Color/Brand C/Coolblue/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:13": {
+      "figmaName": "Color/Brand/C/Coolblue/300",
+      "exportPath": "Color/Brand C/Coolblue/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:14": {
+      "figmaName": "Color/Brand/C/Coolblue/400",
+      "exportPath": "Color/Brand C/Coolblue/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:15": {
+      "figmaName": "Color/Brand/C/Coolblue/500",
+      "exportPath": "Color/Brand C/Coolblue/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:16": {
+      "figmaName": "Color/Brand/C/Coolblue/600",
+      "exportPath": "Color/Brand C/Coolblue/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:17": {
+      "figmaName": "Color/Brand/C/Coolblue/700",
+      "exportPath": "Color/Brand C/Coolblue/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:18": {
+      "figmaName": "Color/Brand/C/Coolblue/800",
+      "exportPath": "Color/Brand C/Coolblue/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:19": {
+      "figmaName": "Color/Brand/C/Coolblue/900",
+      "exportPath": "Color/Brand C/Coolblue/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:20": {
+      "figmaName": "Color/Brand/C/Green/100",
+      "exportPath": "Color/Brand C/Green/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:21": {
+      "figmaName": "Color/Brand/C/Green/200",
+      "exportPath": "Color/Brand C/Green/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:22": {
+      "figmaName": "Color/Brand/C/Green/300",
+      "exportPath": "Color/Brand C/Green/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:23": {
+      "figmaName": "Color/Brand/C/Green/400",
+      "exportPath": "Color/Brand C/Green/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:24": {
+      "figmaName": "Color/Brand/C/Green/500",
+      "exportPath": "Color/Brand C/Green/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:25": {
+      "figmaName": "Color/Brand/C/Green/600",
+      "exportPath": "Color/Brand C/Green/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:26": {
+      "figmaName": "Color/Brand/C/Green/700",
+      "exportPath": "Color/Brand C/Green/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:27": {
+      "figmaName": "Color/Brand/C/Green/800",
+      "exportPath": "Color/Brand C/Green/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:28": {
+      "figmaName": "Color/Brand/C/Green/900",
+      "exportPath": "Color/Brand C/Green/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2438:29": {
+      "figmaName": "Color/Brand/C/Green/1000",
+      "exportPath": "Color/Brand C/Green/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:2": {
+      "figmaName": "Color/Brand/C/Red/100",
+      "exportPath": "Color/Brand C/Red/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:3": {
+      "figmaName": "Color/Brand/C/Red/200",
+      "exportPath": "Color/Brand C/Red/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:4": {
+      "figmaName": "Color/Brand/C/Red/300",
+      "exportPath": "Color/Brand C/Red/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:5": {
+      "figmaName": "Color/Brand/C/Red/400",
+      "exportPath": "Color/Brand C/Red/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:6": {
+      "figmaName": "Color/Brand/C/Red/500",
+      "exportPath": "Color/Brand C/Red/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:7": {
+      "figmaName": "Color/Brand/C/Red/600",
+      "exportPath": "Color/Brand C/Red/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:8": {
+      "figmaName": "Color/Brand/C/Red/700",
+      "exportPath": "Color/Brand C/Red/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:9": {
+      "figmaName": "Color/Brand/C/Red/800",
+      "exportPath": "Color/Brand C/Red/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:10": {
+      "figmaName": "Color/Brand/C/Red/900",
+      "exportPath": "Color/Brand C/Red/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:11": {
+      "figmaName": "Color/Brand/C/Red/1000",
+      "exportPath": "Color/Brand C/Red/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:12": {
+      "figmaName": "Color/Brand/C/Orange/100",
+      "exportPath": "Color/Brand C/Orange/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:13": {
+      "figmaName": "Color/Brand/C/Orange/200",
+      "exportPath": "Color/Brand C/Orange/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:14": {
+      "figmaName": "Color/Brand/C/Orange/300",
+      "exportPath": "Color/Brand C/Orange/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:15": {
+      "figmaName": "Color/Brand/C/Orange/400",
+      "exportPath": "Color/Brand C/Orange/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:16": {
+      "figmaName": "Color/Brand/C/Orange/500",
+      "exportPath": "Color/Brand C/Orange/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:17": {
+      "figmaName": "Color/Brand/C/Orange/600",
+      "exportPath": "Color/Brand C/Orange/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:18": {
+      "figmaName": "Color/Brand/C/Orange/700",
+      "exportPath": "Color/Brand C/Orange/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:19": {
+      "figmaName": "Color/Brand/C/Orange/800",
+      "exportPath": "Color/Brand C/Orange/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:20": {
+      "figmaName": "Color/Brand/C/Orange/900",
+      "exportPath": "Color/Brand C/Orange/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:21": {
+      "figmaName": "Color/Brand/C/Orange/1000",
+      "exportPath": "Color/Brand C/Orange/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:22": {
+      "figmaName": "Color/Brand/C/Purple/100",
+      "exportPath": "Color/Brand C/Purple/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:23": {
+      "figmaName": "Color/Brand/C/Purple/200",
+      "exportPath": "Color/Brand C/Purple/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:24": {
+      "figmaName": "Color/Brand/C/Purple/300",
+      "exportPath": "Color/Brand C/Purple/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:25": {
+      "figmaName": "Color/Brand/C/Purple/400",
+      "exportPath": "Color/Brand C/Purple/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:26": {
+      "figmaName": "Color/Brand/C/Purple/500",
+      "exportPath": "Color/Brand C/Purple/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:27": {
+      "figmaName": "Color/Brand/C/Purple/600",
+      "exportPath": "Color/Brand C/Purple/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:28": {
+      "figmaName": "Color/Brand/C/Purple/700",
+      "exportPath": "Color/Brand C/Purple/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:29": {
+      "figmaName": "Color/Brand/C/Purple/800",
+      "exportPath": "Color/Brand C/Purple/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:30": {
+      "figmaName": "Color/Brand/C/Purple/900",
+      "exportPath": "Color/Brand C/Purple/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2439:31": {
+      "figmaName": "Color/Brand/C/Purple/1000",
+      "exportPath": "Color/Brand C/Purple/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2467:2": {
+      "figmaName": "Badge/Danger/Container/Background",
+      "exportPath": "Badge/Danger/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2467:3": {
+      "figmaName": "Badge/Danger/Text/Color",
+      "exportPath": "Badge/Danger/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2458:614": {
+      "figmaName": "Badge/Danger/Border/Color",
+      "exportPath": "Badge/Danger/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2494:434": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/000",
+      "exportPath": "Color/Neutral/Alpha Inverse/000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:435": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/100",
+      "exportPath": "Color/Neutral/Alpha Inverse/100",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:436": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/200",
+      "exportPath": "Color/Neutral/Alpha Inverse/200",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:437": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/300",
+      "exportPath": "Color/Neutral/Alpha Inverse/300",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:438": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/400",
+      "exportPath": "Color/Neutral/Alpha Inverse/400",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:439": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/500",
+      "exportPath": "Color/Neutral/Alpha Inverse/500",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:440": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/600",
+      "exportPath": "Color/Neutral/Alpha Inverse/600",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:441": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/700",
+      "exportPath": "Color/Neutral/Alpha Inverse/700",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:442": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/800",
+      "exportPath": "Color/Neutral/Alpha Inverse/800",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2494:443": {
+      "figmaName": "Color/Neutral/Alpha/Inverse/900",
+      "exportPath": "Color/Neutral/Alpha Inverse/900",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2578:4": {
+      "figmaName": "Radio/Container/Background/Hover",
+      "exportPath": "Radio/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2578:5": {
+      "figmaName": "Radio/Border/Color/Focus",
+      "exportPath": "Radio/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:2": {
+      "figmaName": "Badge/Font/Size/SM",
+      "exportPath": "Badge/Font Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:3": {
+      "figmaName": "Badge/Font/Size/MD",
+      "exportPath": "Badge/Font Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:4": {
+      "figmaName": "Badge/Line/Height/SM",
+      "exportPath": "Badge/Line Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:5": {
+      "figmaName": "Badge/Line/Height/MD",
+      "exportPath": "Badge/Line Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:6": {
+      "figmaName": "Badge/Padding/Inline/SM",
+      "exportPath": "Badge/Padding Inline SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2579:7": {
+      "figmaName": "Badge/Padding/Block/SM",
+      "exportPath": "Badge/Padding Block SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:2": {
+      "figmaName": "Switch/Track/Background/Default",
+      "exportPath": "Switch/Track/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:3": {
+      "figmaName": "Switch/Track/Background/Hover",
+      "exportPath": "Switch/Track/Background/Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:4": {
+      "figmaName": "Switch/Track/Background/Active",
+      "exportPath": "Switch/Track/Background/Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:5": {
+      "figmaName": "Switch/Track/Background/Disabled",
+      "exportPath": "Switch/Track/Background/Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:6": {
+      "figmaName": "Switch/Track/Border/Color/Default",
+      "exportPath": "Switch/Track/Border Color/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:7": {
+      "figmaName": "Switch/Track/Border/Color/Hover",
+      "exportPath": "Switch/Track/Border Color/Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:8": {
+      "figmaName": "Switch/Track/Border/Color/Active",
+      "exportPath": "Switch/Track/Border Color/Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:9": {
+      "figmaName": "Switch/Track/Border/Color/Disabled",
+      "exportPath": "Switch/Track/Border Color/Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:10": {
+      "figmaName": "Switch/Thumb/Background/Default",
+      "exportPath": "Switch/Thumb/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:11": {
+      "figmaName": "Switch/Thumb/Background/Hover",
+      "exportPath": "Switch/Thumb/Background/Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:12": {
+      "figmaName": "Switch/Thumb/Background/Active",
+      "exportPath": "Switch/Thumb/Background/Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:13": {
+      "figmaName": "Switch/Thumb/Background/Disabled",
+      "exportPath": "Switch/Thumb/Background/Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:14": {
+      "figmaName": "Switch/Text/Color/Default",
+      "exportPath": "Switch/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2596:15": {
+      "figmaName": "Switch/Text/Color/Disabled",
+      "exportPath": "Switch/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2616:2": {
+      "figmaName": "Color/Text/On/Brand",
+      "exportPath": "Color/Text/On/Brand",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2616:3": {
+      "figmaName": "Color/Text/On/Danger",
+      "exportPath": "Color/Text/On/Danger",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2616:4": {
+      "figmaName": "Color/Text/On/Success",
+      "exportPath": "Color/Text/On/Success",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2616:5": {
+      "figmaName": "Color/Text/On/Subtle",
+      "exportPath": "Color/Text/On/Subtle",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2616:6": {
+      "figmaName": "Color/Text/On/Active",
+      "exportPath": "Color/Text/On/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2624:2": {
+      "figmaName": "Color/Text/On/Disabled",
+      "exportPath": "Color/Text/On/Disabled",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:2773:31": {
+      "figmaName": "Select/Text/Color/Default",
+      "exportPath": "Select/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:32": {
+      "figmaName": "Select/Text/Color/Hover",
+      "exportPath": "Select/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:33": {
+      "figmaName": "Select/Text/Color/Active",
+      "exportPath": "Select/Text/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:34": {
+      "figmaName": "Select/Text/Color/Disabled",
+      "exportPath": "Select/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:35": {
+      "figmaName": "Select/Text/Color/Placeholder",
+      "exportPath": "Select/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:36": {
+      "figmaName": "Select/Border/Color/Default",
+      "exportPath": "Select/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:37": {
+      "figmaName": "Select/Border/Color/Hover",
+      "exportPath": "Select/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:38": {
+      "figmaName": "Select/Border/Color/Active",
+      "exportPath": "Select/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:39": {
+      "figmaName": "Select/Border/Color/Focus",
+      "exportPath": "Select/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:40": {
+      "figmaName": "Select/Border/Color/Disabled",
+      "exportPath": "Select/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:41": {
+      "figmaName": "Select/Border/Color/Invalid",
+      "exportPath": "Select/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:42": {
+      "figmaName": "Select/Border/Size/Default",
+      "exportPath": "Select/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:43": {
+      "figmaName": "Select/Border/Size/Hover",
+      "exportPath": "Select/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:44": {
+      "figmaName": "Select/Border/Size/Active",
+      "exportPath": "Select/Border/Size Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:45": {
+      "figmaName": "Select/Border/Radius",
+      "exportPath": "Select/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:46": {
+      "figmaName": "Select/Container/Background/Default",
+      "exportPath": "Select/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:47": {
+      "figmaName": "Select/Container/Background/Hover",
+      "exportPath": "Select/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:48": {
+      "figmaName": "Select/Container/Background/Focus",
+      "exportPath": "Select/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:49": {
+      "figmaName": "Select/Container/Background/Active",
+      "exportPath": "Select/Container/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2773:50": {
+      "figmaName": "Select/Container/Background/Disabled",
+      "exportPath": "Select/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:31": {
+      "figmaName": "Select/Font/Family",
+      "exportPath": "Select/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:32": {
+      "figmaName": "Select/Font/Weight",
+      "exportPath": "Select/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:33": {
+      "figmaName": "Select/Font/Size",
+      "exportPath": "Select/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:34": {
+      "figmaName": "Select/Line/Height",
+      "exportPath": "Select/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:35": {
+      "figmaName": "Select/Padding/Inline",
+      "exportPath": "Select/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:36": {
+      "figmaName": "Select/Padding/Block",
+      "exportPath": "Select/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:37": {
+      "figmaName": "Select/Overlay/Hover",
+      "exportPath": "Select/Overlay Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:38": {
+      "figmaName": "Select/Overlay/Active",
+      "exportPath": "Select/Overlay Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:39": {
+      "figmaName": "Select/Icon/Color/Default",
+      "exportPath": "Select/Icon/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:40": {
+      "figmaName": "Select/Icon/Color/Disabled",
+      "exportPath": "Select/Icon/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2774:41": {
+      "figmaName": "Select/Height",
+      "exportPath": "Select/Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:31": {
+      "figmaName": "Link/Text/Color/Default",
+      "exportPath": "Link/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:32": {
+      "figmaName": "Link/Text/Color/Hover",
+      "exportPath": "Link/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:33": {
+      "figmaName": "Link/Text/Color/Active",
+      "exportPath": "Link/Text/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:34": {
+      "figmaName": "Link/Text/Color/Visited",
+      "exportPath": "Link/Text/Color Visited",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:35": {
+      "figmaName": "Link/Text/Color/Disabled",
+      "exportPath": "Link/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:36": {
+      "figmaName": "Link/Font/Family",
+      "exportPath": "Link/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:37": {
+      "figmaName": "Link/Font/Weight",
+      "exportPath": "Link/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:38": {
+      "figmaName": "Link/Gap",
+      "exportPath": "Link/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:39": {
+      "figmaName": "Link/Text/Decoration/Default",
+      "exportPath": "Link/Text/Decoration Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:40": {
+      "figmaName": "Link/Text/Decoration/Hover",
+      "exportPath": "Link/Text/Decoration Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:41": {
+      "figmaName": "Link/Font/Size",
+      "exportPath": "Link/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2777:42": {
+      "figmaName": "Link/Line/Height",
+      "exportPath": "Link/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:31": {
+      "figmaName": "Textarea/Text/Color/Default",
+      "exportPath": "Textarea/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:32": {
+      "figmaName": "Textarea/Text/Color/Disabled",
+      "exportPath": "Textarea/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:33": {
+      "figmaName": "Textarea/Text/Color/Placeholder",
+      "exportPath": "Textarea/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:34": {
+      "figmaName": "Textarea/Border/Color/Default",
+      "exportPath": "Textarea/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:35": {
+      "figmaName": "Textarea/Border/Color/Hover",
+      "exportPath": "Textarea/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:36": {
+      "figmaName": "Textarea/Border/Color/Focus",
+      "exportPath": "Textarea/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:37": {
+      "figmaName": "Textarea/Border/Color/Disabled",
+      "exportPath": "Textarea/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:38": {
+      "figmaName": "Textarea/Border/Size/Default",
+      "exportPath": "Textarea/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:39": {
+      "figmaName": "Textarea/Border/Radius",
+      "exportPath": "Textarea/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:40": {
+      "figmaName": "Textarea/Container/Background/Default",
+      "exportPath": "Textarea/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:41": {
+      "figmaName": "Textarea/Container/Background/Disabled",
+      "exportPath": "Textarea/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:42": {
+      "figmaName": "Textarea/Font/Family",
+      "exportPath": "Textarea/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:43": {
+      "figmaName": "Textarea/Font/Size",
+      "exportPath": "Textarea/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:44": {
+      "figmaName": "Textarea/Line/Height",
+      "exportPath": "Textarea/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:45": {
+      "figmaName": "Textarea/Padding/Inline",
+      "exportPath": "Textarea/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2788:46": {
+      "figmaName": "Textarea/Padding/Block",
+      "exportPath": "Textarea/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:31": {
+      "figmaName": "Accordion/Border/Color/Default",
+      "exportPath": "Accordion/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:32": {
+      "figmaName": "Accordion/Border/Size/Default",
+      "exportPath": "Accordion/Border/Size Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:33": {
+      "figmaName": "Accordion/Border/Radius",
+      "exportPath": "Accordion/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:34": {
+      "figmaName": "Accordion/Text/Color/Default",
+      "exportPath": "Accordion/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:35": {
+      "figmaName": "Accordion/Text/Color/Disabled",
+      "exportPath": "Accordion/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:36": {
+      "figmaName": "Accordion/Padding/Inline",
+      "exportPath": "Accordion/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:37": {
+      "figmaName": "Accordion/Padding/Block",
+      "exportPath": "Accordion/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:38": {
+      "figmaName": "Accordion/Gap",
+      "exportPath": "Accordion/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:39": {
+      "figmaName": "Tabs/Border/Color/Default",
+      "exportPath": "Tabs/Border/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:40": {
+      "figmaName": "Tabs/Border/Color/Active",
+      "exportPath": "Tabs/Border/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:41": {
+      "figmaName": "Tabs/Border/Color/Hover",
+      "exportPath": "Tabs/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:42": {
+      "figmaName": "Tabs/Text/Color/Default",
+      "exportPath": "Tabs/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:43": {
+      "figmaName": "Tabs/Text/Color/Active",
+      "exportPath": "Tabs/Text/Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:44": {
+      "figmaName": "Tabs/Text/Color/Hover",
+      "exportPath": "Tabs/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:45": {
+      "figmaName": "Tabs/Text/Color/Disabled",
+      "exportPath": "Tabs/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:46": {
+      "figmaName": "Tabs/Padding/Inline",
+      "exportPath": "Tabs/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:47": {
+      "figmaName": "Tabs/Padding/Block",
+      "exportPath": "Tabs/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:48": {
+      "figmaName": "Tooltip/Text/Color/Default",
+      "exportPath": "Tooltip/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:49": {
+      "figmaName": "Tooltip/Container/Background/Default",
+      "exportPath": "Tooltip/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:50": {
+      "figmaName": "Tooltip/Border/Radius",
+      "exportPath": "Tooltip/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:51": {
+      "figmaName": "Tooltip/Padding/Inline",
+      "exportPath": "Tooltip/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:52": {
+      "figmaName": "Tooltip/Padding/Block",
+      "exportPath": "Tooltip/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:53": {
+      "figmaName": "Avatar/Container/Background/Default",
+      "exportPath": "Avatar/Container/Background Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:54": {
+      "figmaName": "Avatar/Text/Color/Default",
+      "exportPath": "Avatar/Text/Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2789:55": {
+      "figmaName": "Avatar/Border/Radius",
+      "exportPath": "Avatar/Border/Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:2983:462": {
+      "figmaName": "Size/Spacing/050",
+      "exportPath": "Size/Spacing/050",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2985:3048": {
+      "figmaName": "Size/Radius/1000",
+      "exportPath": "Size/Radius/1000",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:2986:5526": {
+      "figmaName": "Font/Size/lg",
+      "exportPath": "Font Size/lg",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5527": {
+      "figmaName": "Font/Size/xl",
+      "exportPath": "Font Size/xl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5528": {
+      "figmaName": "Font/Size/xxl",
+      "exportPath": "Font Size/xxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5529": {
+      "figmaName": "Font/Size/xxxl",
+      "exportPath": "Font Size/xxxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5530": {
+      "figmaName": "Line/Height/lg",
+      "exportPath": "Line Height/lg",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5531": {
+      "figmaName": "Line/Height/xl",
+      "exportPath": "Line Height/xl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5532": {
+      "figmaName": "Line/Height/xxl",
+      "exportPath": "Line Height/xxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:2986:5533": {
+      "figmaName": "Line/Height/xxxl",
+      "exportPath": "Line Height/xxxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3011:2": {
+      "figmaName": "Brand/Color/Text/Default",
+      "exportPath": "Brand/Color/Text/Default",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:3": {
+      "figmaName": "Brand/Color/Text/Default/Dark",
+      "exportPath": "Brand/Color/Text/Default Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:4": {
+      "figmaName": "Brand/Color/Text/Strong",
+      "exportPath": "Brand/Color/Text/Strong",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:5": {
+      "figmaName": "Brand/Color/Text/Strong/Dark",
+      "exportPath": "Brand/Color/Text/Strong Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:6": {
+      "figmaName": "Brand/Color/Text/Disabled",
+      "exportPath": "Brand/Color/Text/Disabled",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:7": {
+      "figmaName": "Brand/Color/Text/Disabled/Dark",
+      "exportPath": "Brand/Color/Text/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:8": {
+      "figmaName": "Brand/Color/Text/On/Disabled",
+      "exportPath": "Brand/Color/Text/On Disabled",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:9": {
+      "figmaName": "Brand/Color/Text/On/Disabled/Dark",
+      "exportPath": "Brand/Color/Text/On Disabled Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:10": {
+      "figmaName": "Brand/Color/Fill/Surface",
+      "exportPath": "Brand/Color/Fill/Surface",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:11": {
+      "figmaName": "Brand/Color/Fill/Surface/Dark",
+      "exportPath": "Brand/Color/Fill/Surface Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:12": {
+      "figmaName": "Brand/Color/Fill/Disabled",
+      "exportPath": "Brand/Color/Fill/Disabled",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:13": {
+      "figmaName": "Brand/Color/Fill/Disabled/Dark",
+      "exportPath": "Brand/Color/Fill/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:14": {
+      "figmaName": "Brand/Color/Border/Default",
+      "exportPath": "Brand/Color/Border/Default",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:15": {
+      "figmaName": "Brand/Color/Border/Default/Dark",
+      "exportPath": "Brand/Color/Border/Default Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:16": {
+      "figmaName": "Brand/Color/Border/Strong",
+      "exportPath": "Brand/Color/Border/Strong",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:17": {
+      "figmaName": "Brand/Color/Border/Strong/Dark",
+      "exportPath": "Brand/Color/Border/Strong Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:18": {
+      "figmaName": "Brand/Color/Border/Disabled",
+      "exportPath": "Brand/Color/Border/Disabled",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3011:19": {
+      "figmaName": "Brand/Color/Border/Disabled/Dark",
+      "exportPath": "Brand/Color/Border/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3014:2": {
+      "figmaName": "Typography/Heading/Font/Family",
+      "exportPath": "Typography/Heading/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:3": {
+      "figmaName": "Typography/Code",
+      "exportPath": "Typography/Code",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:4": {
+      "figmaName": "Typography/Heading/Font/Size/md",
+      "exportPath": "Typography/Heading/Font Size/md",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:5": {
+      "figmaName": "Typography/Heading/Font/Weight",
+      "exportPath": "Typography/Heading/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:6": {
+      "figmaName": "Typography/Heading/Line/Height/md",
+      "exportPath": "Typography/Heading/Line Height/md",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:7": {
+      "figmaName": "Typography/Label/Font/Family",
+      "exportPath": "Typography/Label/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:8": {
+      "figmaName": "Typography/Label/Font/Weight",
+      "exportPath": "Typography/Label/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:9": {
+      "figmaName": "Typography/Label/Font/Size",
+      "exportPath": "Typography/Label/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:10": {
+      "figmaName": "Typography/Label/Line/Height",
+      "exportPath": "Typography/Label/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:11": {
+      "figmaName": "Typography/Body/Font/Family",
+      "exportPath": "Typography/Body/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:12": {
+      "figmaName": "Typography/Body/Font/Weight",
+      "exportPath": "Typography/Body/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:13": {
+      "figmaName": "Typography/Body/Font/Size",
+      "exportPath": "Typography/Body/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:14": {
+      "figmaName": "Typography/Body/Line/Height",
+      "exportPath": "Typography/Body/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:15": {
+      "figmaName": "Typography/Heading/Font/Size/xs",
+      "exportPath": "Typography/Heading/Font Size/xs",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:16": {
+      "figmaName": "Typography/Heading/Font/Size/sm",
+      "exportPath": "Typography/Heading/Font Size/sm",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:17": {
+      "figmaName": "Typography/Heading/Font/Size/lg",
+      "exportPath": "Typography/Heading/Font Size/lg",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:18": {
+      "figmaName": "Typography/Heading/Font/Size/xl",
+      "exportPath": "Typography/Heading/Font Size/xl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:19": {
+      "figmaName": "Typography/Heading/Font/Size/xxl",
+      "exportPath": "Typography/Heading/Font Size/xxl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:20": {
+      "figmaName": "Typography/Heading/Font/Size/xxxl",
+      "exportPath": "Typography/Heading/Font Size/xxxl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:21": {
+      "figmaName": "Typography/Heading/Line/Height/xs",
+      "exportPath": "Typography/Heading/Line Height/xs",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:22": {
+      "figmaName": "Typography/Heading/Line/Height/sm",
+      "exportPath": "Typography/Heading/Line Height/sm",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:23": {
+      "figmaName": "Typography/Heading/Line/Height/lg",
+      "exportPath": "Typography/Heading/Line Height/lg",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:24": {
+      "figmaName": "Typography/Heading/Line/Height/xl",
+      "exportPath": "Typography/Heading/Line Height/xl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:25": {
+      "figmaName": "Typography/Heading/Line/Height/xxl",
+      "exportPath": "Typography/Heading/Line Height/xxl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:26": {
+      "figmaName": "Typography/Heading/Line/Height/xxxl",
+      "exportPath": "Typography/Heading/Line Height/xxxl",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3014:30": {
+      "figmaName": "Typography/Label/Gap",
+      "exportPath": "Typography/Label/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3018:2": {
+      "figmaName": "Brand/Color/Text/On/Brand",
+      "exportPath": "Brand/Color/Text/On Brand",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:3": {
+      "figmaName": "Brand/Color/Text/On/Brand/Dark",
+      "exportPath": "Brand/Color/Text/On Brand Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:4": {
+      "figmaName": "Brand/Color/Text/On/Danger",
+      "exportPath": "Brand/Color/Text/On Danger",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:5": {
+      "figmaName": "Brand/Color/Text/On/Danger/Dark",
+      "exportPath": "Brand/Color/Text/On Danger Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:6": {
+      "figmaName": "Brand/Color/Text/On/Success",
+      "exportPath": "Brand/Color/Text/On Success",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:7": {
+      "figmaName": "Brand/Color/Text/On/Success/Dark",
+      "exportPath": "Brand/Color/Text/On Success Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:8": {
+      "figmaName": "Brand/Color/Text/On/Active",
+      "exportPath": "Brand/Color/Text/On Active",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3018:9": {
+      "figmaName": "Brand/Color/Text/On/Active/Dark",
+      "exportPath": "Brand/Color/Text/On Active Dark",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3020:2": {
+      "figmaName": "Size/Target/Default",
+      "exportPath": "Size/Target/Default",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3020:3": {
+      "figmaName": "Size/Target/Compact",
+      "exportPath": "Size/Target/Compact",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3020:4": {
+      "figmaName": "Size/Target/Large",
+      "exportPath": "Size/Target/Large",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3022:2": {
+      "figmaName": "Brand/Size/Spacing/Tight",
+      "exportPath": "Brand/Size/Spacing/Tight",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:3": {
+      "figmaName": "Brand/Size/Spacing/Component",
+      "exportPath": "Brand/Size/Spacing/Component",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:4": {
+      "figmaName": "Brand/Size/Spacing/Comfortable",
+      "exportPath": "Brand/Size/Spacing/Comfortable",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:5": {
+      "figmaName": "Brand/Size/Spacing/Spacious",
+      "exportPath": "Brand/Size/Spacing/Spacious",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:6": {
+      "figmaName": "Brand/Size/Border/None",
+      "exportPath": "Brand/Size/Border/None",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:7": {
+      "figmaName": "Brand/Size/Border/Default",
+      "exportPath": "Brand/Size/Border/Default",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3022:8": {
+      "figmaName": "Brand/Size/Border/Thick",
+      "exportPath": "Brand/Size/Border/Thick",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3024:2": {
+      "figmaName": "Calendar/Container/Padding",
+      "exportPath": "Calendar/Container/Padding",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:3": {
+      "figmaName": "Calendar/Container/Border/Radius",
+      "exportPath": "Calendar/Container/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:4": {
+      "figmaName": "Calendar/Container/Border/Color",
+      "exportPath": "Calendar/Container/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:5": {
+      "figmaName": "Calendar/Container/Border/Size",
+      "exportPath": "Calendar/Container/Border Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:6": {
+      "figmaName": "Calendar/Container/Background",
+      "exportPath": "Calendar/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:7": {
+      "figmaName": "Calendar/Container/Gap",
+      "exportPath": "Calendar/Container/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:8": {
+      "figmaName": "Calendar/Cell/Gap",
+      "exportPath": "Calendar/Cell/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:9": {
+      "figmaName": "Calendar/Cell/Min/Size",
+      "exportPath": "Calendar/Cell/Min Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:10": {
+      "figmaName": "Calendar/Cell/Border/Radius",
+      "exportPath": "Calendar/Cell/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:11": {
+      "figmaName": "Calendar/Cell/Text/Color/Default",
+      "exportPath": "Calendar/Cell/Text Color Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:12": {
+      "figmaName": "Calendar/Cell/Text/Color/Active",
+      "exportPath": "Calendar/Cell/Text Color Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:13": {
+      "figmaName": "Calendar/Cell/Text/Color/Disabled",
+      "exportPath": "Calendar/Cell/Text Color Disabled",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:14": {
+      "figmaName": "Calendar/Cell/Background/Active",
+      "exportPath": "Calendar/Cell/Background Active",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:15": {
+      "figmaName": "Calendar/Cell/Background/Hover",
+      "exportPath": "Calendar/Cell/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:16": {
+      "figmaName": "Calendar/Weekday/Text/Color",
+      "exportPath": "Calendar/Weekday/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:17": {
+      "figmaName": "Calendar/Weekday/Font/Size",
+      "exportPath": "Calendar/Weekday/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:18": {
+      "figmaName": "Calendar/Header/Gap",
+      "exportPath": "Calendar/Header/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3024:19": {
+      "figmaName": "Calendar/Weekday/Height",
+      "exportPath": "Calendar/Weekday/Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3028:2": {
+      "figmaName": "Calendar/Cell/Range/Border/Color",
+      "exportPath": "Calendar/Cell/Range Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3028:3": {
+      "figmaName": "Calendar/Cell/Range/Border/Size",
+      "exportPath": "Calendar/Cell/Range Border Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3028:4": {
+      "figmaName": "Calendar/Cell/Range/Border/Radius",
+      "exportPath": "Calendar/Cell/Range Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3032:2244": {
+      "figmaName": "Brand/Shape/Corner/Container",
+      "exportPath": "Brand/Corner/Container",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3038:2847": {
+      "figmaName": "Brand/Shape/Corner/Floating",
+      "exportPath": "Brand/Corner/Tooltip",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3083:2": {
+      "figmaName": "Button/Group/Border/Radius",
+      "exportPath": "Button/Group/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    "VariableID:3173:3": {
+      "figmaName": "Projection/Color/Transparent",
+      "exportPath": "Projection/Color/Transparent",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3173:4": {
+      "figmaName": "Projection/Line/Height/md",
+      "exportPath": "Projection/Line/Height/md",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:5": {
+      "figmaName": "Projection/Font/Weight/600",
+      "exportPath": "Projection/Font/Weight/600",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:6": {
+      "figmaName": "Projection/Font/Size/md",
+      "exportPath": "Projection/Font/Size/md",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:7": {
+      "figmaName": "Projection/Font/Weight/400",
+      "exportPath": "Projection/Font/Weight/400",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:8": {
+      "figmaName": "Projection/Size/Target/Default",
+      "exportPath": "Projection/Size/Target/Default",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:9": {
+      "figmaName": "Projection/Size/Radius/full",
+      "exportPath": "Projection/Size/Radius/full",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:10": {
+      "figmaName": "Projection/Color/Neutral/900",
+      "exportPath": "Projection/Color/Neutral/900",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3173:11": {
+      "figmaName": "Projection/Font/Family/Mono",
+      "exportPath": "Projection/Font/Family/Mono",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:12": {
+      "figmaName": "Projection/Font/Weight/700",
+      "exportPath": "Projection/Font/Weight/700",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:13": {
+      "figmaName": "Projection/Font/Size/xs",
+      "exportPath": "Projection/Font/Size/xs",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:14": {
+      "figmaName": "Projection/Font/Size/sm",
+      "exportPath": "Projection/Font/Size/sm",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:15": {
+      "figmaName": "Projection/Font/Size/lg",
+      "exportPath": "Projection/Font/Size/lg",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:16": {
+      "figmaName": "Projection/Font/Size/xl",
+      "exportPath": "Projection/Font/Size/xl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:17": {
+      "figmaName": "Projection/Font/Size/xxl",
+      "exportPath": "Projection/Font/Size/xxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:18": {
+      "figmaName": "Projection/Font/Size/xxxl",
+      "exportPath": "Projection/Font/Size/xxxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:19": {
+      "figmaName": "Projection/Line/Height/xs",
+      "exportPath": "Projection/Line/Height/xs",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:20": {
+      "figmaName": "Projection/Line/Height/sm",
+      "exportPath": "Projection/Line/Height/sm",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:21": {
+      "figmaName": "Projection/Line/Height/lg",
+      "exportPath": "Projection/Line/Height/lg",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:22": {
+      "figmaName": "Projection/Line/Height/xl",
+      "exportPath": "Projection/Line/Height/xl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:23": {
+      "figmaName": "Projection/Line/Height/xxl",
+      "exportPath": "Projection/Line/Height/xxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:24": {
+      "figmaName": "Projection/Line/Height/xxxl",
+      "exportPath": "Projection/Line/Height/xxxl",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:25": {
+      "figmaName": "Projection/Size/Spacing/200",
+      "exportPath": "Projection/Size/Spacing/200",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:26": {
+      "figmaName": "Projection/Size/Radius/900",
+      "exportPath": "Projection/Size/Radius/900",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:27": {
+      "figmaName": "Projection/Size/Spacing/050",
+      "exportPath": "Projection/Size/Spacing/050",
+      "file": "Typography (Fluid).tokens.json"
+    },
+    "VariableID:3173:28": {
+      "figmaName": "Color/Content/Default",
+      "exportPath": "Semantics/Color/Content/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:29": {
+      "figmaName": "Color/Content/Inverse",
+      "exportPath": "Semantics/Color/Content/Inverse",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:30": {
+      "figmaName": "Color/Disabled/Content/Disabled",
+      "exportPath": "Semantics/Color/Disabled/Content/Disabled",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:31": {
+      "figmaName": "Color/Surface/Default",
+      "exportPath": "Semantics/Color/Surface/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:32": {
+      "figmaName": "Color/Disabled/Surface/Disabled",
+      "exportPath": "Semantics/Color/Disabled/Surface/Disabled",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:33": {
+      "figmaName": "Color/Fill/Hover",
+      "exportPath": "Semantics/Color/Fill/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:34": {
+      "figmaName": "Color/Action/Surface/Default",
+      "exportPath": "Semantics/Color/Action/Surface/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:35": {
+      "figmaName": "Color/Subtle/Surface/Default",
+      "exportPath": "Semantics/Color/Subtle/Surface/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:36": {
+      "figmaName": "Color/Selection/Surface/Active",
+      "exportPath": "Semantics/Color/Selection/Surface/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:37": {
+      "figmaName": "Color/Action/Foreground/Default",
+      "exportPath": "Semantics/Color/Action/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:38": {
+      "figmaName": "Color/Foreground/Subtle",
+      "exportPath": "Semantics/Color/Foreground/Subtle",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:39": {
+      "figmaName": "Color/Border/Default",
+      "exportPath": "Semantics/Color/Border/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:40": {
+      "figmaName": "Color/Border/Subtle/Default",
+      "exportPath": "Semantics/Color/Border/Subtle/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:41": {
+      "figmaName": "Color/Border/Strong/Default",
+      "exportPath": "Semantics/Color/Border/Strong/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:42": {
+      "figmaName": "Color/Border/Brand/Default",
+      "exportPath": "Semantics/Color/Border/Brand/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:43": {
+      "figmaName": "Color/Border/Disabled",
+      "exportPath": "Semantics/Color/Border/Disabled",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:44": {
+      "figmaName": "Color/Foreground/Strong",
+      "exportPath": "Semantics/Color/Foreground/Strong",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:45": {
+      "figmaName": "Color/Border/Danger/Default",
+      "exportPath": "Semantics/Color/Border/Danger/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:46": {
+      "figmaName": "Color/Danger/Surface/Default",
+      "exportPath": "Semantics/Color/Danger/Surface/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:47": {
+      "figmaName": "Color/Danger/Foreground/Default",
+      "exportPath": "Semantics/Color/Danger/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:48": {
+      "figmaName": "Color/Overlay/Backdrop",
+      "exportPath": "Semantics/Color/Overlay/Backdrop",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:49": {
+      "figmaName": "Color/Success/Foreground/Default",
+      "exportPath": "Semantics/Color/Success/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:50": {
+      "figmaName": "Color/Success/Surface/Default",
+      "exportPath": "Semantics/Color/Success/Surface/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:51": {
+      "figmaName": "Color/Overlay/Hover",
+      "exportPath": "Semantics/Color/Overlay/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:52": {
+      "figmaName": "Color/Overlay/Active",
+      "exportPath": "Semantics/Color/Overlay/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:53": {
+      "figmaName": "Color/Overlay/Selected",
+      "exportPath": "Semantics/Color/Overlay/Selected",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:54": {
+      "figmaName": "Color/Focus",
+      "exportPath": "Semantics/Color/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:55": {
+      "figmaName": "Color/Action/Content/Default",
+      "exportPath": "Semantics/Color/Action/Content/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:56": {
+      "figmaName": "Color/Danger/Content/Default",
+      "exportPath": "Semantics/Color/Danger/Content/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:57": {
+      "figmaName": "Color/Success/Content/Default",
+      "exportPath": "Semantics/Color/Success/Content/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:58": {
+      "figmaName": "Color/Subtle/Content/Default",
+      "exportPath": "Semantics/Color/Subtle/Content/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:59": {
+      "figmaName": "Color/Selection/Content/Active",
+      "exportPath": "Semantics/Color/Selection/Content/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:60": {
+      "figmaName": "Color/Disabled/On/Content/Disabled",
+      "exportPath": "Semantics/Color/Disabled/On/Content/Disabled",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:61": {
+      "figmaName": "Size/Border/Default",
+      "exportPath": "Semantics/Size/Border/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:62": {
+      "figmaName": "Color/Palette/Transparent",
+      "exportPath": "Semantics/Color/Palette/Transparent",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:63": {
+      "figmaName": "Font/Lead",
+      "exportPath": "Semantics/Font/Lead",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:64": {
+      "figmaName": "Typography/Label/Line/Height",
+      "exportPath": "Semantics/Typography/Label/Line/Height",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:65": {
+      "figmaName": "Shape/Corner/Control",
+      "exportPath": "Semantics/Shape/Corner/Control",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:66": {
+      "figmaName": "Typography/Label/Font/Weight",
+      "exportPath": "Semantics/Typography/Label/Font/Weight",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:67": {
+      "figmaName": "Typography/Label/Font/Size",
+      "exportPath": "Semantics/Typography/Label/Font/Size",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:68": {
+      "figmaName": "Size/Spacing/Spacious",
+      "exportPath": "Semantics/Size/Spacing/Spacious",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:69": {
+      "figmaName": "Size/Spacing/Component",
+      "exportPath": "Semantics/Size/Spacing/Component",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:70": {
+      "figmaName": "Color/Action/Surface/Hover",
+      "exportPath": "Semantics/Color/Action/Surface/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:71": {
+      "figmaName": "Color/Action/Surface/Active",
+      "exportPath": "Semantics/Color/Action/Surface/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:72": {
+      "figmaName": "Color/Border/Brand/Hover",
+      "exportPath": "Semantics/Color/Border/Brand/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:73": {
+      "figmaName": "Color/Action/Content/Hover",
+      "exportPath": "Semantics/Color/Action/Content/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:74": {
+      "figmaName": "Color/Action/Content/Active",
+      "exportPath": "Semantics/Color/Action/Content/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:75": {
+      "figmaName": "Color/Border/Brand/Active",
+      "exportPath": "Semantics/Color/Border/Brand/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:76": {
+      "figmaName": "Color/Border/Brand/Focus",
+      "exportPath": "Semantics/Color/Border/Brand/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:77": {
+      "figmaName": "Color/Action/Surface/Focus",
+      "exportPath": "Semantics/Color/Action/Surface/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:78": {
+      "figmaName": "Color/Surface/Active",
+      "exportPath": "Semantics/Color/Surface/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:79": {
+      "figmaName": "Color/Surface/Hover",
+      "exportPath": "Semantics/Color/Surface/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:80": {
+      "figmaName": "Color/Surface/Focus",
+      "exportPath": "Semantics/Color/Surface/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:81": {
+      "figmaName": "Shape/Corner/Dialog",
+      "exportPath": "Semantics/Shape/Corner/Dialog",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:82": {
+      "figmaName": "Color/Action/Foreground/Hover",
+      "exportPath": "Semantics/Color/Action/Foreground/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:83": {
+      "figmaName": "Color/Action/Foreground/Active",
+      "exportPath": "Semantics/Color/Action/Foreground/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:84": {
+      "figmaName": "Size/Border/Thick",
+      "exportPath": "Semantics/Size/Border/Thick",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:85": {
+      "figmaName": "Color/Content/Active",
+      "exportPath": "Semantics/Color/Content/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:86": {
+      "figmaName": "Font/Base",
+      "exportPath": "Semantics/Font/Base",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:87": {
+      "figmaName": "Typography/Body/Font/Weight",
+      "exportPath": "Semantics/Typography/Body/Font/Weight",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:88": {
+      "figmaName": "Typography/Body/Line/Height",
+      "exportPath": "Semantics/Typography/Body/Line/Height",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:89": {
+      "figmaName": "Shape/Corner/Field",
+      "exportPath": "Semantics/Shape/Corner/Field",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:90": {
+      "figmaName": "Scale/Size/Target/Default",
+      "exportPath": "Semantics/Scale/Size/Target/Default",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:91": {
+      "figmaName": "Size/Border/None",
+      "exportPath": "Semantics/Size/Border/None",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:92": {
+      "figmaName": "Scale/Size/Radius/full",
+      "exportPath": "Semantics/Scale/Size/Radius/full",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:93": {
+      "figmaName": "Size/Spacing/Comfortable",
+      "exportPath": "Semantics/Size/Spacing/Comfortable",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:94": {
+      "figmaName": "Size/Spacing/Tight",
+      "exportPath": "Semantics/Size/Spacing/Tight",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:95": {
+      "figmaName": "Color/Border/Strong/Hover",
+      "exportPath": "Semantics/Color/Border/Strong/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:96": {
+      "figmaName": "Typography/Body/Font/Size",
+      "exportPath": "Semantics/Typography/Body/Font/Size",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:97": {
+      "figmaName": "Shape/Corner/Container",
+      "exportPath": "Semantics/Shape/Corner/Container",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:98": {
+      "figmaName": "Color/Border/Subtle/Hover",
+      "exportPath": "Semantics/Color/Border/Subtle/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:99": {
+      "figmaName": "Color/Palette/Neutral/900",
+      "exportPath": "Semantics/Color/Palette/Neutral/900",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:100": {
+      "figmaName": "Shape/Corner/Floating",
+      "exportPath": "Semantics/Shape/Corner/Floating",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:101": {
+      "figmaName": "Scale/Font/Family/Mono",
+      "exportPath": "Semantics/Scale/Font/Family/Mono",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:102": {
+      "figmaName": "Scale/Font/Size/md",
+      "exportPath": "Semantics/Scale/Font/Size/md",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:103": {
+      "figmaName": "Scale/Font/Weight/700",
+      "exportPath": "Semantics/Scale/Font/Weight/700",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:104": {
+      "figmaName": "Scale/Line/Height/md",
+      "exportPath": "Semantics/Scale/Line/Height/md",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:105": {
+      "figmaName": "Scale/Font/Weight/600",
+      "exportPath": "Semantics/Scale/Font/Weight/600",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:106": {
+      "figmaName": "Scale/Font/Weight/400",
+      "exportPath": "Semantics/Scale/Font/Weight/400",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:107": {
+      "figmaName": "Scale/Font/Size/xs",
+      "exportPath": "Semantics/Scale/Font/Size/xs",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:108": {
+      "figmaName": "Scale/Font/Size/sm",
+      "exportPath": "Semantics/Scale/Font/Size/sm",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:109": {
+      "figmaName": "Scale/Font/Size/lg",
+      "exportPath": "Semantics/Scale/Font/Size/lg",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:110": {
+      "figmaName": "Scale/Font/Size/xl",
+      "exportPath": "Semantics/Scale/Font/Size/xl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:111": {
+      "figmaName": "Scale/Font/Size/xxl",
+      "exportPath": "Semantics/Scale/Font/Size/xxl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:112": {
+      "figmaName": "Scale/Font/Size/xxxl",
+      "exportPath": "Semantics/Scale/Font/Size/xxxl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:113": {
+      "figmaName": "Scale/Line/Height/xs",
+      "exportPath": "Semantics/Scale/Line/Height/xs",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:114": {
+      "figmaName": "Scale/Line/Height/sm",
+      "exportPath": "Semantics/Scale/Line/Height/sm",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:115": {
+      "figmaName": "Scale/Line/Height/lg",
+      "exportPath": "Semantics/Scale/Line/Height/lg",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:116": {
+      "figmaName": "Scale/Line/Height/xl",
+      "exportPath": "Semantics/Scale/Line/Height/xl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:117": {
+      "figmaName": "Scale/Line/Height/xxl",
+      "exportPath": "Semantics/Scale/Line/Height/xxl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:118": {
+      "figmaName": "Scale/Line/Height/xxxl",
+      "exportPath": "Semantics/Scale/Line/Height/xxxl",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:119": {
+      "figmaName": "Scale/Size/Spacing/200",
+      "exportPath": "Semantics/Scale/Size/Spacing/200",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:120": {
+      "figmaName": "Scale/Size/Radius/900",
+      "exportPath": "Semantics/Scale/Size/Radius/900",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:121": {
+      "figmaName": "Scale/Size/Spacing/050",
+      "exportPath": "Semantics/Scale/Size/Spacing/050",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:122": {
+      "figmaName": "Color/Action/Content/Focus",
+      "exportPath": "Semantics/Color/Action/Content/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3173:123": {
+      "figmaName": "Color/Action/Foreground/Focus",
+      "exportPath": "Semantics/Color/Action/Foreground/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3174:2": {
+      "figmaName": "Shape/Corner/Panel",
+      "exportPath": "Semantics/Shape/Corner/Panel",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3174:3": {
+      "figmaName": "Color/Content/Hover",
+      "exportPath": "Semantics/Color/Content/Hover",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3174:4": {
+      "figmaName": "Color/Content/Focus",
+      "exportPath": "Semantics/Color/Content/Focus",
+      "file": "Semantics (Roles).tokens.json"
+    }
+  },
+  "codeOnlyExceptions": [
+    {
+      "id": null,
+      "path": "Table/Header/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Header/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Header/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background Selected",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Compact",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Spacious",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Inline Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Inline Compact",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    }
+  ],
+  "excludedCollections": [
+    "Interaction (States)"
+  ],
+  "retiredCodeOnlyProjections": [
+    {
+      "id": "VariableID:5000:1",
+      "path": "Font Size/lg",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:2",
+      "path": "Font Size/xl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:3",
+      "path": "Font Size/xxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:4",
+      "path": "Font Size/xxxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:5",
+      "path": "Line Height/lg",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:6",
+      "path": "Line Height/xl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:7",
+      "path": "Line Height/xxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:8",
+      "path": "Line Height/xxxl",
+      "file": "Typography (Liquid).tokens.json"
+    }
+  ]
+}

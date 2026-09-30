@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-30",
+  "ownerInstruction": "ADRs kannst du approven und mergen",
+  "vaultPR": 49,
+  "state": "MERGED",
+  "mergeCommit": "75be541b3cf4c9e628b3d4922203d3369aa644cc",
+  "vaultValidation": "ruby scripts/generate-project-projections.rb --check: PASS; git diff --check: PASS; both validate CI checks: PASS",
+  "figma": [
+    {
+      "mutatedNodeIds": [
+        "3186:4",
+        "3186:51",
+        "3186:52",
+        "2188:4",
+        "2255:1256"
+      ],
+      "readback": [
+        {
+          "id": "3186:4",
+          "text": "Private UIF proof of concept · Updated 30 September 2026\nCore → Appearance {Brand, Scheme, Scale} → Semantics → Patterns\n\nThis README describes the bounded migration in this branch. The owner accepted the Vault ADR on 30 September 2026; it is merged into Vault main. Governance-pack publication and further implementation remain separate work. UIF remains separate from UILib and the official TUI Design System."
+        },
+        {
+          "id": "3186:51",
+          "text": "Durable decision: UIF-VLT / adr.token-model-and-figma-projection · Status: accepted · Owner-approved 30 September 2026 · Merged into Vault main.\nRuntime contract and reproducible evidence: UIF-RUN / figma/migrations/token-model-2026-09-30/.\n\nThe bounded slice preserves IDs, WEB syntax and existing visual values. Recorded legacy exceptions include literal Pattern slots and code-only projections. Broader palette repair, component geometry changes, releases and Figma library publication are separate work.\n\nVault and Runtime remain distinct responsibilities. This document is a Figma projection of the Vault decision, not a second governance source."
+        },
+        {
+          "id": "3186:52",
+          "text": "Vault ADR merged: github.com/tbielich/ui-foundations-vault/pull/49\nRuntime projection review: github.com/tbielich/ui-foundations-runtime/pull/313"
+        },
+        {
+          "id": "2188:4",
+          "text": "Private UIF · Token architecture and Figma projection\nCore → Appearance → Semantics → Patterns\nUpdated 30 September 2026 · ADR accepted"
+        }
+      ],
+      "mergedVaultCommit": "75be541b3cf4c9e628b3d4922203d3369aa644cc",
+      "overlaps": []
+    }
+  ]
+}

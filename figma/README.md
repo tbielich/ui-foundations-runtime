@@ -75,3 +75,15 @@ Design in Figma → Export via Token Foundry → figma/exports/*.json → npm ru
 - npm package: https://www.npmjs.com/package/ui-foundations
 - Starter template: https://github.com/tbielich/ui-foundations-starter
 - Code repo: https://github.com/tbielich/ui-foundations
+
+## Token projection migration (2026-09-30)
+
+Physical collections now distinguish Brand, Scheme, Scale and Roles.
+`token-projection.json` records each variable ID, current Figma display name and
+compatible export path. New semantic export paths are qualified with Semantics
+because legacy scheme paths can share their names. `tokens:sync` uses this
+adapter and preserves code-only sibling projections on partial imports.
+
+`migrations/token-model-2026-09-30/` contains the bounded execution contract,
+before/after Figma reads, reconciliation and verification evidence. The older
+Liquid scale conflicted with Figma; its prior values are preserved as evidence.

@@ -49,25 +49,22 @@ entry file and `tests/plugin-code.test.mjs` covers its color utilities.
 
 ## Token Architecture
 
-Four layers:
+Current bounded projection: Core → Appearance {Brand, Scheme, Scale} →
+Semantics → Patterns. See DESIGN.md for the canonical accepted Vault ADR. `figma/token-projection.json` maps physical Figma collections and variable
+IDs onto compatible export paths; existing package subpaths remain unchanged.
 
-- Core (Primitives)
-- Appearance (Modes)
-- Semantics (Brands)
-- Patterns (UI) / Components
+- Brand: `Semantics (Brands).tokens.json` (compatibility filename)
+- Scheme: `Appearance (Modes).tokens.json` (compatibility filename)
+- Scale: `Typography (Fluid).tokens.json`; Min/Max compile globally to clamp()
+- Roles: `Semantics (Roles).tokens.json`; export paths have a Semantics prefix
+  to avoid collisions with legacy scheme paths
+- Patterns: `Patterns (UI).tokens.json`; aliases consume Roles
 
-Locations:
-
-- Core: `dist/tokens/css/core-primitives.tokens.css`
-- Appearance: `dist/tokens/css/appearance-modes.tokens.mode-*.css`
-- Brand semantics: `dist/tokens/css/semantics-brands.tokens.brand-*.css`
-- Patterns: `dist/tokens/css/patterns-ui.tokens.css`
-
-Notes:
-
-- Pattern and component tokens reference semantic roles or Core tokens
-- Typography tokens never include color
-- Generated files in `dist/` are not edited directly
+Do not edit generated dist files. Use the ID-aware `tokens:sync` adapter;
+new dump mode aliases include target IDs. Partial sync preserves explicitly
+recorded code-only siblings. Alpha must survive color serialization.
+The previous code-only Liquid endpoints conflicted with Figma and are retained
+as historical migration evidence, not as a second live scale.
 
 ---
 

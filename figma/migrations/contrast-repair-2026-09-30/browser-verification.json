@@ -1,0 +1,620 @@
+{
+  "result": "PASS",
+  "engine": "Chromium",
+  "command": "npx playwright test tests/browser/token-contrast.spec.mjs --reporter=json",
+  "contexts": [
+    {
+      "brand": "a",
+      "mode": "light",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 21
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 21
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 13.076546777106755
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 7.3709355625018365
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 13.076546777106755
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 7.3709355625018365
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(0, 0, 0)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 21
+        }
+      ]
+    },
+    {
+      "brand": "a",
+      "mode": "dark",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        }
+      ]
+    },
+    {
+      "brand": "b",
+      "mode": "light",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(151, 71, 255)",
+          "overlay": "none",
+          "ratio": 4.505319025662607
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(151, 71, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 6.48907219278957
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(151, 71, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 9.434389708482302
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(151, 71, 255)",
+          "overlay": "none",
+          "ratio": 4.505319025662607
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 9.13373774659073
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 5.148468745034138
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 9.13373774659073
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 5.148468745034138
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(58, 18, 95)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        }
+      ]
+    },
+    {
+      "brand": "b",
+      "mode": "dark",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(58, 18, 95)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(58, 18, 95)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 11.14256121004097
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(58, 18, 95)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 8.168481371167962
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(58, 18, 95)",
+          "overlay": "none",
+          "ratio": 14.668130351830076
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        }
+      ]
+    },
+    {
+      "brand": "c",
+      "mode": "light",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(12, 75, 243)",
+          "overlay": "none",
+          "ratio": 6.332403674063665
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(12, 75, 243)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 8.617268145958342
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(12, 75, 243)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 11.670211916257568
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(12, 75, 243)",
+          "overlay": "none",
+          "ratio": 6.332403674063665
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 10.205502214089949
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 5.752596651489249
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none",
+          "ratio": 10.205502214089949
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), none",
+          "ratio": 5.752596651489249
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(27, 17, 92)",
+          "background": "rgb(255, 255, 255)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        }
+      ]
+    },
+    {
+      "brand": "c",
+      "mode": "dark",
+      "rows": [
+        {
+          "variant": "solid",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(27, 17, 92)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        },
+        {
+          "variant": "solid",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(27, 17, 92)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 12.579828618198322
+        },
+        {
+          "variant": "solid",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(27, 17, 92)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 9.130637034001243
+        },
+        {
+          "variant": "solid",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(27, 17, 92)",
+          "overlay": "none",
+          "ratio": 16.389307525064137
+        },
+        {
+          "variant": "outline",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "outline",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "outline",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "outline",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Default",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        },
+        {
+          "variant": "ghost",
+          "state": "Hover",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), none",
+          "ratio": 17.40432753274219
+        },
+        {
+          "variant": "ghost",
+          "state": "Active",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), none",
+          "ratio": 12.63465434445799
+        },
+        {
+          "variant": "ghost",
+          "state": "Focus",
+          "color": "rgb(255, 255, 255)",
+          "background": "rgb(0, 0, 0)",
+          "overlay": "none",
+          "ratio": 21
+        }
+      ]
+    }
+  ],
+  "limitation": "Computed enabled Button text against composited background; no full WCAG or focus-visibility certification."
+}
