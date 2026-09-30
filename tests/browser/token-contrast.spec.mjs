@@ -60,7 +60,17 @@ for (const brand of ["a", "b", "c"]) {
             ctx.fillRect(0, 0, 1, 1);
             const content = [...ctx.getImageData(0, 0, 1, 1).data];
             const a = luminance(surface), b = luminance(content);
+            ctx.clearRect(0, 0, 1, 1);
+            ctx.fillStyle = getComputedStyle(document.body).backgroundColor;
+            ctx.fillRect(0, 0, 1, 1);
+            const surrounding = [...ctx.getImageData(0, 0, 1, 1).data];
+            ctx.fillStyle = style.borderTopColor;
+            ctx.fillRect(0, 0, 1, 1);
+            const border = [...ctx.getImageData(0, 0, 1, 1).data];
+            const c = luminance(surrounding), d = luminance(border);
             rows.push({ variant, state, color: style.color, background: style.backgroundColor,
+              border: style.borderTopColor, borderWidth: style.borderTopWidth, borderStyle: style.borderTopStyle,
+              borderRatio: (Math.max(c, d) + 0.05) / (Math.min(c, d) + 0.05),
               overlay: style.backgroundImage, ratio: (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) });
             button.remove();
           }
@@ -74,7 +84,15 @@ for (const brand of ["a", "b", "c"]) {
         expect(solid.color).toBe(mode === "dark" ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)");
       }
       test.info().annotations.push({ type: "contrast-evidence", description: JSON.stringify({ brand, mode, rows }) });
-      for (const row of rows) expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+      for (const row of rows) {
+        expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+        if (row.variant === "outline") {
+          expect(parseFloat(row.borderWidth), JSON.stringify(row)).toBeGreaterThan(0);
+          expect(row.borderStyle).toBe("solid");
+          expect(row.borderRatio, JSON.stringify(row)).toBeGreaterThanOrEqual(3);
+          if (brand === "a" && mode === "dark") expect(row.border).toBe("rgb(255, 255, 255)");
+        }
+      }
     });
   }
 }
