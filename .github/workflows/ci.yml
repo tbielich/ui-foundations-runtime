@@ -32,3 +32,15 @@ jobs:
 
       - name: Run CI checks
         run: npm run ci:check
+
+      - name: Preserve accessibility evidence and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-${{ github.sha }}-node-${{ matrix.node-version }}
+          path: |
+            artifacts/accessibility/
+            test-results/
+            _site/patterns/button/index.html
+            _site/patterns/checkbox/index.html
+            _site/evidence/accessibility/

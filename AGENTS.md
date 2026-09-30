@@ -99,6 +99,11 @@ Do not edit generated files in `dist/`.
     `376bca99cc9baaa873a7e8a8f3ea855ee763ec5d`). Playwright is permitted as the
     Runtime implementation of that layer, using headless Chromium only for the
     initial slice.
+  - The accepted component accessibility verification ADR permits only the bounded
+    Button/Checkbox headless Chromium pilot and `@axe-core/playwright` dev integration:
+    https://github.com/tbielich/ui-foundations-vault/blob/c960b3cbb21ed8c3527e0f21b6cd046c8ca3c802/decisions/component-accessibility-verification.md
+    (acceptance PR `tbielich/ui-foundations-vault#48`). Pure scoring stays in
+    `node --test`; screenreader verification remains separate and manual.
   - This exception does not weaken the default prohibition: introducing any
     other framework still requires its own accepted UIF-VLT decision. It must
     not be used to justify unrelated frameworks, and it is not a

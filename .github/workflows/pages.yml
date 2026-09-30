@@ -6,6 +6,10 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "site/**"
+      - "tests/browser/accessibility/**"
+      - "scripts/accessibility-evidence.mjs"
+      - "docs/validation/accessibility-criteria.json"
+      - "playwright.config.js"
       - "src/**"
       - "dist/**"
       - "config/site.js"
@@ -34,11 +38,23 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Build docs
-        run: npm run docs:site
+      - name: Install bounded Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Build, test and render matching evidence
+        run: npm run test:a11y
         env:
           SITE_URL: https://tbielich.github.io
           SITE_BASE_PATH: /ui-foundations-runtime
+      - name: Preserve accessibility evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-accessibility-${{ github.sha }}
+          path: |
+            artifacts/accessibility/
+            test-results/
+            _site/patterns/button/index.html
+            _site/patterns/checkbox/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,15 @@
+{% set evidence = accessibilityEvidence.components[accessibilityComponent] %}
+<section class="docs-accessibility-evidence" aria-label="Automated accessibility evidence">
+  <h3>Automated accessibility evidence</h3>
+  {% if accessibilityEvidence.available %}
+  <p><strong>{{ evidence.P }}/{{ evidence.A }} — {{ evidence.percentage }}%</strong> · Gate: <strong>{{ evidence.gate }}</strong></p>
+  <p>Results: {{ evidence.counts.pass }} pass; {{ evidence.counts.fail }} fail; {{ evidence.counts["not-tested"] }} not tested; {{ evidence.counts.blocked }} blocked; {{ evidence.counts["not-applicable"] }} reviewed N/A.</p>
+  <p>Revision: <code>{{ evidence.revision }}</code>{% if evidence.dirty %} (dirty local evidence, not a published clean revision){% endif %}. Run: {{ evidence.runId }} · {{ evidence.date }}</p>
+  <p><a href="{{ '/evidence/accessibility/result.json' | sitePath }}">Machine-readable evidence and raw findings</a></p>
+  {% else %}
+  <p><strong>Not assessed</strong> · 0/{{ evidence.A }} current passing criteria · Gate: <strong>BLOCKED</strong></p>
+  <p>Evidence unavailable: {{ accessibilityEvidence.reason | escape }}. No previous PASS is reused.</p>
+  {% endif %}
+  <p>Scope: {{ accessibilityComponent | capitalize }} pilot macro examples only; headless Chromium; brand A / light. Accessible structure, real keyboard/focus and default axe rules. {% if accessibilityComponent == "button" %}States: enabled and disabled; Tab, Enter and Space activation.{% else %}States: unchecked, checked, mixed and disabled; pointer toggle, Tab and Space.{% endif %} Other components, variants, brands, modes and browsers are not measured.</p>
+  <p><strong>Screenreader: not tested</strong>. Automated evidence is not WCAG certification or manual accessibility readiness. Manual screenreader and keyboard verification remains required before stable status; lifecycle badges are unchanged.</p>
+</section>
