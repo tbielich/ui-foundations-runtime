@@ -1370,6 +1370,43 @@
             "com.figma.variableCollectionName": "Appearance (Brand)",
             "com.figma.hiddenFromPublishing": false
           }
+        },
+        "Brand": {
+          "Dark": {
+            "$type": "color",
+            "$value": {
+              "$ref": "Color/Neutral/000"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3214:2",
+              "com.figma.variableName": "Brand/Color/Border/Brand/Dark",
+              "com.figma.scopes": [
+                "STROKE_COLOR"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-appearance-brand-color-border-brand-dark)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:2006:175",
+                "targetVariableName": "Color/Neutral/000",
+                "targetVariableSetId": "VariableCollectionId:1:200",
+                "targetVariableSetName": "Core (Primitives)"
+              },
+              "com.figma.isOverride": true,
+              "com.figma.modeValues": {
+                "Brand A": {
+                  "$ref": "Color/Neutral/000"
+                },
+                "Brand B": {
+                  "$ref": "Color/Brand B/Purple/600"
+                },
+                "Brand C": {
+                  "$ref": "Color/Brand C/Blue/600"
+                }
+              }
+            }
+          }
         }
       },
       "Action": {
