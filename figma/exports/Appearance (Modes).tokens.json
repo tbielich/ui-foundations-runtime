@@ -879,7 +879,7 @@
               "$ref": "Brand/Color/Primary"
             },
             "Dark Mode": {
-              "$ref": "Brand/Color/Border/Strong Dark"
+              "$ref": "Brand/Color/Border/Brand/Dark"
             }
           },
           "com.figma.variableName": "Color/Border/Brand",

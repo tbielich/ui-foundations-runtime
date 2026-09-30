@@ -90,7 +90,10 @@ for (const brand of ["a", "b", "c"]) {
           expect(parseFloat(row.borderWidth), JSON.stringify(row)).toBeGreaterThan(0);
           expect(row.borderStyle).toBe("solid");
           expect(row.borderRatio, JSON.stringify(row)).toBeGreaterThanOrEqual(3);
-          if (brand === "a" && mode === "dark") expect(row.border).toBe("rgb(255, 255, 255)");
+          if (mode === "dark") {
+            const expectedBorder = { a: "rgb(255, 255, 255)", b: "rgb(151, 71, 255)", c: "rgb(12, 75, 243)" };
+            expect(row.border).toBe(expectedBorder[brand]);
+          }
         }
       }
     });

@@ -3821,6 +3821,11 @@
       "figmaName": "Brand/Color/Action/Surface/Dark",
       "exportPath": "Brand/Color/Action/Surface/Dark",
       "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3214:2": {
+      "figmaName": "Brand/Color/Border/Brand/Dark",
+      "exportPath": "Brand/Color/Border/Brand/Dark",
+      "file": "Semantics (Brands).tokens.json"
     }
   },
   "codeOnlyExceptions": [
