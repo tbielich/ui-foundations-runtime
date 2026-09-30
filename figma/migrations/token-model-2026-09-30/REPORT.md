@@ -11,9 +11,17 @@ connections now consume Roles. All 641 original IDs, WEB syntax and resolved
 Figma values are preserved across 7,692 context checks. Four prototype helper
 variables are excluded; 761 variables have ID-based Runtime projections.
 
-The existing Figma README was corrected in place, including the flow and actual
-alias examples. Its missing Menlo font was replaced with the already-used UIF
-SF Mono on affected documentation labels. Component geometry was not changed.
+The Figma README follow-up replaces the visible incomplete documentation with
+14 editable sections on the same page (`2004:103`, current frame `3185:2`).
+It covers all collections including Scale, dependency direction, state-last
+naming, Surface/Content and Foreground, brand shape, scopes, checked Button
+aliases, Runtime compatibility, and separate structural/accessibility outcomes.
+Previous documentation frames and the historical widget remain hidden on that
+page. The cover is updated. The new frame uses existing Inter/SF Mono fonts and
+bound UIF surface/content/spacing variables with explicit Brand A / Light Mode.
+`readme-followup.json` persists all write IDs and independent readback: 14 frames,
+37 text nodes, zero images, zero text sizing defects, zero overlapping sections.
+The composition screenshot passed visual review. Component geometry was not changed.
 
 Runtime keeps public CSS/package paths and legacy export paths through
 `figma/token-projection.json`. New role exports are qualified by Semantics to
