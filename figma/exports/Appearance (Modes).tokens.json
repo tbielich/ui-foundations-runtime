@@ -106,7 +106,7 @@
       "Brand": {
         "$type": "color",
         "$value": {
-          "$ref": "Brand/Color/Primary"
+          "$ref": "Brand/Color/Primary Dark"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2007:340",
@@ -118,18 +118,18 @@
             "WEB": "var(--color-text-brand)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:2006:200",
-            "targetVariableName": "Brand/Color/Primary",
+            "targetVariableId": "VariableID:2007:377",
+            "targetVariableName": "Brand/Color/Primary Dark",
             "targetVariableSetId": "VariableCollectionId:1:177",
             "targetVariableSetName": "Appearance (Brand)"
           },
           "com.figma.isOverride": true,
           "com.figma.modeValues": {
             "Light Mode": {
-              "$ref": "Brand/Color/Primary"
+              "$ref": "Brand/Color/Primary Dark"
             },
             "Dark Mode": {
-              "$ref": "Brand/Color/Primary Dark"
+              "$ref": "Brand/Color/Text/Strong Dark"
             }
           },
           "com.figma.variableName": "Color/Text/Brand",
@@ -379,7 +379,7 @@
         "Subtle": {
           "$type": "color",
           "$value": {
-            "$ref": "Brand/Color/Primary"
+            "$ref": "Brand/Color/Text/Strong"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:2616:5",
@@ -391,18 +391,18 @@
               "WEB": "var(--color-text-on-subtle)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:2006:200",
-              "targetVariableName": "Brand/Color/Primary",
+              "targetVariableId": "VariableID:3011:4",
+              "targetVariableName": "Brand/Color/Text/Strong",
               "targetVariableSetId": "VariableCollectionId:1:177",
               "targetVariableSetName": "Appearance (Brand)"
             },
             "com.figma.isOverride": true,
             "com.figma.modeValues": {
               "Light Mode": {
-                "$ref": "Brand/Color/Primary"
+                "$ref": "Brand/Color/Text/Strong"
               },
               "Dark Mode": {
-                "$ref": "Brand/Color/Primary Dark"
+                "$ref": "Brand/Color/Text/Strong"
               }
             },
             "com.figma.variableName": "Color/Text/On/Subtle",
@@ -609,7 +609,7 @@
               "$ref": "Brand/Color/Primary"
             },
             "Dark Mode": {
-              "$ref": "Brand/Color/Primary"
+              "$ref": "Brand/Color/Primary Dark"
             }
           },
           "com.figma.variableName": "Color/Fill/Brand",

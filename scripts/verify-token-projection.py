@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
 """Read-only verification of the persisted Figma readback and Runtime projection."""
-import itertools,json,pathlib,sys,collections,re
+import itertools,json,pathlib,sys,collections,re,argparse
 root=pathlib.Path(__file__).resolve().parent.parent
 evidence=root/'figma/migrations/token-model-2026-09-30'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--repair-dir',type=pathlib.Path,help='Verify a persisted, explicitly authorized contrast repair instead of the historical migration.')
+args=parser.parse_args()
+repair={}
+if args.repair_dir:
+ evidence=root/args.repair_dir
+ repair=json.loads((evidence/'execution-contract.json').read_text())
 before=json.loads((evidence/'before.json').read_text());after=json.loads((evidence/'after.json').read_text());manifest=json.loads((root/'figma/token-projection.json').read_text())
 vs={v['id']:v for v in after['variables']};old={v['id']:v for v in before['variables']};cs={c['id']:c for c in after['collections']};oldcs={c['id']:c for c in before['collections']};errors=[]
 def require(test,msg):
@@ -11,14 +18,40 @@ def resolve(v,variables,collections,context,seen=()):
  if v['id'] in seen:raise ValueError('cycle '+v['id'])
  c=collections[v['variableCollectionId']];mode=context.get(c['id'],c['defaultModeId']);x=v['valuesByMode'][mode]
  return resolve(variables[x['id']],variables,collections,context,seen+(v['id'],)) if isinstance(x,dict) and x.get('type')=='VARIABLE_ALIAS' else x
-axes=[c for c in before['collections'] if c['name'] in ['Semantics (Brands)','Appearance (Modes)','Typography (Fluid)']]
+axes=[c for c in before['collections'] if c['name'] in ['Semantics (Brands)','Appearance (Modes)','Typography (Fluid)','Appearance (Brand)','Appearance (Scheme)','Appearance (Scale)']]
 contexts=[dict(zip([c['id'] for c in axes],values)) for values in itertools.product(*[[m['modeId'] for m in c['modes']] for c in axes])]
+authorized={(x['id'],x['mode']):x for x in repair.get('changes',[])}
+if repair:
+ require(set(old)==set(vs),'Repair changed the variable ID set')
+ require(before['collections']==after['collections'],'Repair changed collection contracts')
+ for id,v in old.items():
+  if id not in vs:continue
+  for key,value in v.items():
+   if key!='valuesByMode':require(vs[id].get(key)==value,'Repair changed metadata '+id+' '+key)
+  require(set(v['valuesByMode'])==set(vs[id]['valuesByMode']),'Repair changed mode set '+id)
+  for mode,value in v['valuesByMode'].items():
+   change=authorized.get((id,mode))
+   if change:require(value==change['before'],'Repair baseline differs '+id+' '+mode)
+   require(vs[id]['valuesByMode'][mode]==(change['after'] if change else value),'Unauthorized repair mutation '+id+' '+mode)
+ for id,mode in authorized:require(id in old and mode in old[id]['valuesByMode'],'Unknown authorized slot '+id+' '+mode)
+def reaches_authorized(v,variables,collections,context,seen=()):
+ if v['id'] in seen:raise ValueError('cycle '+v['id'])
+ c=collections[v['variableCollectionId']];mode=context.get(c['id'],c['defaultModeId'])
+ if (v['id'],mode) in authorized:return True
+ x=v['valuesByMode'][mode]
+ return reaches_authorized(variables[x['id']],variables,collections,context,seen+(v['id'],)) if isinstance(x,dict) and x.get('type')=='VARIABLE_ALIAS' else False
+preserved=0;changed=0
 for id,v in old.items():
  require(id in vs,'Removed ID '+id)
  if id not in vs:continue
  require(v['codeSyntax']==vs[id]['codeSyntax'],'CSS syntax changed '+id)
  require(v['variableCollectionId']==vs[id]['variableCollectionId'],'Membership changed '+id)
- for context in contexts:require(resolve(v,old,oldcs,context)==resolve(vs[id],vs,cs,context),'Resolved value changed '+id+' '+str(context))
+ for context in contexts:
+  equal=resolve(v,old,oldcs,context)==resolve(vs[id],vs,cs,context)
+  if equal:preserved+=1
+  else:
+   changed+=1
+   require(reaches_authorized(v,old,oldcs,context) or reaches_authorized(vs[id],vs,cs,context),'Unauthorized resolved value changed '+id+' '+str(context))
 allowed={'Patterns (UI)':{'Semantics (Roles)'},'Semantics (Roles)':{'Appearance (Brand)','Appearance (Scheme)','Appearance (Scale)'},'Appearance (Brand)':{'Core (Primitives)'},'Appearance (Scheme)':{'Core (Primitives)','Appearance (Brand)'},'Appearance (Scale)':{'Core (Primitives)'},'Core (Primitives)':set()}
 edges=collections.Counter();names=set();webs={};scope_exceptions=[]
 for v in vs.values():
@@ -105,5 +138,5 @@ for b,m in itertools.product(brandc['modes'],schemec['modes']):
   fg=resolve(roles['Color/Action/Foreground/'+state],vs,cs,ctx);ratio=contrast(composite(fg,canvas),canvas);foreground_rows.append({'brand':b['name'],'scheme':m['name'],'state':state,'surroundingSurface':'Color/Surface/Default','ratio':round(ratio,4),'result':'PASS' if ratio>=4.5 else 'FAIL'})
  for state in ['Hover','Active']:
   surface=resolve(roles['Color/Action/Surface/'+state],vs,cs,ctx);overlay=resolve(roles['Color/Overlay/'+state],vs,cs,ctx);rendered=composite(overlay,composite(surface,canvas));content=resolve(roles['Color/Action/Content/'+state],vs,cs,ctx);ratio=contrast(composite(content,rendered),rendered);overlay_rows.append({'brand':b['name'],'scheme':m['name'],'state':state,'ratio':round(ratio,4),'result':'PASS' if ratio>=4.5 else 'FAIL'})
-report={'structuralGate':'FAIL' if errors else 'PASS','errors':errors,'counts':{'beforeVariables':len(old),'afterVariables':len(vs),'projectedVariables':len(manifest['variables']),'roles':len(roles),'valuePreservationChecks':len(old)*len(contexts)},'edges':[{'from':a,'to':b,'count':n} for (a,b),n in edges.items()],'scopeExceptions':scope_exceptions,'legacyLiteralPatternSlots':[v['name'] for v in vs.values() if cs[v['variableCollectionId']]['name']=='Patterns (UI)' and not isinstance(next(iter(v['valuesByMode'].values())),dict)],'accessibility':{'pairGate':'FAIL' if any(x['result']=='FAIL' for x in contrast_rows) else 'PASS','surfaceContent':contrast_rows,'foreground':foreground_rows,'actionOverlay':overlay_rows,'limitation':'Declared token pair checks only; existing Foreground/overlay failures preserved, no full rendered component certification.'}}
-print(json.dumps(report,indent=2));sys.exit(1 if errors else 0)
+report={'structuralGate':'FAIL' if errors else 'PASS','errors':errors,'counts':{'beforeVariables':len(old),'afterVariables':len(vs),'projectedVariables':len(manifest['variables']),'roles':len(roles),'valuePreservationChecks':len(old)*len(contexts),'unchangedContextValues':preserved,'authorizedChangedContextValues':changed},'edges':[{'from':a,'to':b,'count':n} for (a,b),n in edges.items()],'scopeExceptions':scope_exceptions,'legacyLiteralPatternSlots':[v['name'] for v in vs.values() if cs[v['variableCollectionId']]['name']=='Patterns (UI)' and not isinstance(next(iter(v['valuesByMode'].values())),dict)],'accessibility':{'pairGate':'FAIL' if any(x['result']=='FAIL' for x in contrast_rows+foreground_rows+overlay_rows) else 'PASS','surfaceContent':contrast_rows,'foreground':foreground_rows,'actionOverlay':overlay_rows,'limitation':'Declared Surface/Content, Foreground and composited action-state checks only; no full rendered component certification.'}}
+print(json.dumps(report,indent=2));sys.exit(1 if errors or report['accessibility']['pairGate']=='FAIL' else 0)

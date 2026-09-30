@@ -1,0 +1,242 @@
+{
+  "date": "2026-09-30",
+  "mode": "REPAIR",
+  "authorization": "User: kannst du die kontrastfeler korrigieren?",
+  "sourceEvidence": "../token-model-2026-09-30/verification.json",
+  "scope": "Repair persisted token contrast failures plus demonstrated Chromium light outline/ghost overlay failures. Existing palette primitives, IDs, scopes and public CSS names remain unchanged.",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "changes": [
+    {
+      "id": "VariableID:2007:340",
+      "name": "Color/Text/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:5"
+      },
+      "reason": "Dark action Foreground uses existing light Strong text on the dark canvas."
+    },
+    {
+      "id": "VariableID:2007:337",
+      "name": "Color/Fill/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:200"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      },
+      "reason": "Dark filled actions use existing brand dark primary; white content remains readable after inverse overlays."
+    },
+    {
+      "id": "VariableID:2616:5",
+      "name": "Color/Text/On/Subtle",
+      "mode": "2007:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:200"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:4"
+      },
+      "reason": "Subtle gray surfaces require existing Strong dark content rather than brand primary."
+    },
+    {
+      "id": "VariableID:2616:5",
+      "name": "Color/Text/On/Subtle",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:4"
+      },
+      "reason": "Subtle gray surfaces require existing Strong dark content rather than brand primary."
+    },
+    {
+      "id": "VariableID:3018:4",
+      "name": "Brand/Color/Text/On/Danger",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Brand B red Surface requires dark Content."
+    },
+    {
+      "id": "VariableID:3018:5",
+      "name": "Brand/Color/Text/On/Danger/Dark",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Brand B red Surface requires dark Content."
+    },
+    {
+      "id": "VariableID:3018:6",
+      "name": "Brand/Color/Text/On/Success",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:6",
+      "name": "Brand/Color/Text/On/Success",
+      "mode": "2435:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:7",
+      "name": "Brand/Color/Text/On/Success/Dark",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:7",
+      "name": "Brand/Color/Text/On/Success/Dark",
+      "mode": "2435:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:8",
+      "name": "Brand/Color/Text/On/Active",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:8",
+      "name": "Brand/Color/Text/On/Active",
+      "mode": "2435:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:9",
+      "name": "Brand/Color/Text/On/Active/Dark",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:3018:9",
+      "name": "Brand/Color/Text/On/Active/Dark",
+      "mode": "2435:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      },
+      "reason": "Bright Brand B/C success and selection Surfaces require dark Content."
+    },
+    {
+      "id": "VariableID:2007:340",
+      "name": "Color/Text/Brand",
+      "mode": "2007:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:200"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      },
+      "reason": "Rendered light outline/ghost overlays need darker brand foreground."
+    },
+    {
+      "id": "VariableID:2007:377",
+      "name": "Brand/Color/Primary/Dark",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:182"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:183"
+      },
+      "reason": "Existing Brand B Purple/900 preserves hue and passes on the 40% black Active overlay."
+    }
+  ],
+  "checks": [
+    "Exact mutation allowlist and Figma/Runtime export parity",
+    "All 6 Brand \u00d7 Scheme contexts, all declared pairs and composited action states >=4.5:1; disabled exemptions retained",
+    "Rendered Chromium state contrast",
+    "npm run lint",
+    "npm run test:unit",
+    "npm run ci:check"
+  ]
+}

@@ -1,0 +1,56 @@
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+Running 6 tests using 1 worker
+
+  ✓  1 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / light, all enabled variants and states (238ms)
+  ✓  2 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / dark, all enabled variants and states (77ms)
+  ✘  3 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states (96ms)
+  ✓  4 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / dark, all enabled variants and states (73ms)
+  ✘  5 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states (88ms)
+  ✓  6 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / dark, all enabled variants and states (65ms)
+
+
+  1) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states 
+
+    Error: {"variant":"outline","state":"Hover","color":"rgb(151, 71, 255)","background":"rgb(255, 255, 255)","overlay":"linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none","ratio":2.8054292849936244}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    2.8054292849936244
+
+      69 |       });
+      70 |       expect(rows).toHaveLength(12);
+    > 71 |       for (const row of rows) expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+         |                                                                      ^
+      72 |     });
+      73 |   }
+      74 | }
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/uif-runtime-token-migration/tests/browser/token-contrast.spec.mjs:71:70
+
+    Error Context: test-results/token-contrast-Button-cont-0a622-enabled-variants-and-states-chromium/error-context.md
+
+  2) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states 
+
+    Error: {"variant":"outline","state":"Hover","color":"rgb(12, 75, 243)","background":"rgb(255, 255, 255)","overlay":"linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none","ratio":3.9431415645436276}
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.9431415645436276
+
+      69 |       });
+      70 |       expect(rows).toHaveLength(12);
+    > 71 |       for (const row of rows) expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+         |                                                                      ^
+      72 |     });
+      73 |   }
+      74 | }
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/uif-runtime-token-migration/tests/browser/token-contrast.spec.mjs:71:70
+
+    Error Context: test-results/token-contrast-Button-cont-9139b-enabled-variants-and-states-chromium/error-context.md
+
+  2 failed
+    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states 
+    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states 
+  4 passed (2.3s)

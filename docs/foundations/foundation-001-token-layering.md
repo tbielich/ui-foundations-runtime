@@ -8,7 +8,7 @@ type: foundation-decision
 
 The owner-authorized 2026-09-30 migration projects Core → Appearance
 {Brand, Scheme, Scale} → Semantics → Patterns. Canonical decision rationale
-lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/agent/uif-token-projection-migration/decisions/token-model-and-figma-projection.md) (review). This is a bounded Runtime adoption,
+lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md) (accepted via Vault PR #49). This is a bounded Runtime adoption,
 not acceptance of a new governance pack.
 
 The former foundation conflated Brand appearance with Semantics and described
@@ -25,5 +25,8 @@ or Core; Brand and Scale alias Core. Existing literal pattern slots and
 code-only projections are enumerated exceptions. See `verification.json` for
 the independent Figma readback, resolved-value preservation and contrast results.
 
-The new structural contract does not certify existing palettes or rendered
-accessibility. Foreground and composited overlay failures remain visible.
+The separately authorized contrast repair is recorded in
+`figma/migrations/contrast-repair-2026-09-30/REPORT.md`. Its current token pair,
+Foreground, overlay and enabled Button state checks pass. The historical
+migration verification remains preserved; bounded contrast checks do not
+certify full component accessibility.

@@ -251,7 +251,7 @@
               "$ref": "Color/Neutral/1000"
             },
             "Brand B": {
-              "$ref": "Color/Brand B/Purple/800"
+              "$ref": "Color/Brand B/Purple/900"
             },
             "Brand C": {
               "$ref": "Color/Brand C/Blue/900"
@@ -807,7 +807,7 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
                 "$ref": "Color/Neutral/000"
@@ -844,7 +844,7 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
                 "$ref": "Color/Neutral/000"
@@ -881,10 +881,10 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               }
             },
             "com.figma.variableName": "Brand/Color/Text/On/Success",
@@ -918,10 +918,10 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               }
             },
             "com.figma.variableName": "Brand/Color/Text/On/Success/Dark",
@@ -955,10 +955,10 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               }
             },
             "com.figma.variableName": "Brand/Color/Text/On/Active",
@@ -992,10 +992,10 @@
                 "$ref": "Color/Neutral/000"
               },
               "Brand B": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               },
               "Brand C": {
-                "$ref": "Color/Neutral/000"
+                "$ref": "Color/Neutral/1000"
               }
             },
             "com.figma.variableName": "Brand/Color/Text/On/Active/Dark",

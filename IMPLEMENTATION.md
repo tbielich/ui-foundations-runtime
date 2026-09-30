@@ -50,8 +50,7 @@ entry file and `tests/plugin-code.test.mjs` covers its color utilities.
 ## Token Architecture
 
 Current bounded projection: Core → Appearance {Brand, Scheme, Scale} →
-Semantics → Patterns. See DESIGN.md for the canonical Vault ADR and its review
-status. `figma/token-projection.json` maps physical Figma collections and variable
+Semantics → Patterns. See DESIGN.md for the canonical accepted Vault ADR. `figma/token-projection.json` maps physical Figma collections and variable
 IDs onto compatible export paths; existing package subpaths remain unchanged.
 
 - Brand: `Semantics (Brands).tokens.json` (compatibility filename)

@@ -23,8 +23,8 @@ guesswork.
 ## Token Architecture
 
 The owner-authorized migration follows Core → Appearance {Brand, Scheme, Scale}
-→ Semantics → Patterns. Durable rationale lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/agent/uif-token-projection-migration/decisions/token-model-and-figma-projection.md)
-(review; not a governance-pack promotion). Runtime's explicit projection is
+→ Semantics → Patterns. Durable rationale lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md)
+(accepted via Vault PR #49; not a governance-pack promotion). Runtime's explicit projection is
 `figma/token-projection.json`; collection labels and compatibility export paths
 are different concerns. Brand and Scheme remain orthogonal; Scale endpoints
 compile to global fluid values, not `data-mode="min"` or `data-mode="max"`.
