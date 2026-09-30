@@ -1381,6 +1381,8 @@
               "com.figma.variableId": "VariableID:3214:2",
               "com.figma.variableName": "Brand/Color/Border/Brand/Dark",
               "com.figma.scopes": [
+                "SHAPE_FILL",
+                "TEXT_FILL",
                 "STROKE_COLOR"
               ],
               "com.figma.hiddenFromPublishing": false,
@@ -1399,10 +1401,10 @@
                   "$ref": "Color/Neutral/000"
                 },
                 "Brand B": {
-                  "$ref": "Color/Brand B/Purple/600"
+                  "$ref": "Color/Brand B/Purple/300"
                 },
                 "Brand C": {
-                  "$ref": "Color/Brand C/Blue/600"
+                  "$ref": "Color/Brand C/Blue/300"
                 }
               }
             }

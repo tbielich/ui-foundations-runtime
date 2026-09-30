@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-30",
+  "mode": "REPAIR",
+  "authorization": "User: Label text color is the fill or Outline color.",
+  "scope": "Match Outline label and border by Brand/Scheme; Ghost uses the same Foreground. Existing lighter brand primitives preserve readable labels across overlays. Four alias slots and one explicitly declared scope expansion; no new IDs or CSS names.",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "changes": [
+    {
+      "id": "VariableID:3214:2",
+      "name": "Brand/Color/Border/Brand/Dark",
+      "mode": "10:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:180"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:179"
+      }
+    },
+    {
+      "id": "VariableID:3214:2",
+      "name": "Brand/Color/Border/Brand/Dark",
+      "mode": "2435:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2438:7"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2438:4"
+      }
+    },
+    {
+      "id": "VariableID:2007:340",
+      "name": "Color/Text/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:5"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3214:2"
+      }
+    },
+    {
+      "id": "VariableID:2007:345",
+      "name": "Color/Border/Brand",
+      "mode": "2007:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:200"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      }
+    }
+  ],
+  "metadataChanges": [
+    {
+      "id": "VariableID:3214:2",
+      "key": "scopes",
+      "before": [
+        "STROKE_COLOR"
+      ],
+      "after": [
+        "SHAPE_FILL",
+        "TEXT_FILL",
+        "STROKE_COLOR"
+      ]
+    }
+  ]
+}

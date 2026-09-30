@@ -83,15 +83,20 @@ for (const brand of ["a", "b", "c"]) {
         expect(solid.background).toBe(mode === "dark" ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)");
         expect(solid.color).toBe(mode === "dark" ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)");
       }
+      for (const ghost of rows.filter(row => row.variant === "ghost")) {
+        const outline = rows.find(row => row.variant === "outline" && row.state === ghost.state);
+        expect(ghost.color).toBe(outline.color);
+      }
       test.info().annotations.push({ type: "contrast-evidence", description: JSON.stringify({ brand, mode, rows }) });
       for (const row of rows) {
         expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
         if (row.variant === "outline") {
           expect(parseFloat(row.borderWidth), JSON.stringify(row)).toBeGreaterThan(0);
           expect(row.borderStyle).toBe("solid");
+          expect(row.color, JSON.stringify(row)).toBe(row.border);
           expect(row.borderRatio, JSON.stringify(row)).toBeGreaterThanOrEqual(3);
           if (mode === "dark") {
-            const expectedBorder = { a: "rgb(255, 255, 255)", b: "rgb(151, 71, 255)", c: "rgb(12, 75, 243)" };
+            const expectedBorder = { a: "rgb(255, 255, 255)", b: "rgb(196, 143, 255)", c: "rgb(148, 176, 250)" };
             expect(row.border).toBe(expectedBorder[brand]);
           }
         }

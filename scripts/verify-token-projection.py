@@ -21,6 +21,7 @@ def resolve(v,variables,collections,context,seen=()):
 axes=[c for c in before['collections'] if c['name'] in ['Semantics (Brands)','Appearance (Modes)','Typography (Fluid)','Appearance (Brand)','Appearance (Scheme)','Appearance (Scale)']]
 contexts=[dict(zip([c['id'] for c in axes],values)) for values in itertools.product(*[[m['modeId'] for m in c['modes']] for c in axes])]
 authorized={(x['id'],x['mode']):x for x in repair.get('changes',[])}
+authorized_metadata={(x['id'],x['key']):x for x in repair.get('metadataChanges',[])}
 if repair:
  additions={v['id']:v for v in repair.get('additions',[])}
  require(not (set(additions)&set(old)), 'Repair addition already exists')
@@ -30,12 +31,16 @@ if repair:
  for id,v in old.items():
   if id not in vs:continue
   for key,value in v.items():
-   if key!='valuesByMode':require(vs[id].get(key)==value,'Repair changed metadata '+id+' '+key)
+   if key!='valuesByMode':
+    change=authorized_metadata.get((id,key))
+    if change:require(value==change['before'],'Repair metadata baseline differs '+id+' '+key)
+    require(vs[id].get(key)==(change['after'] if change else value),'Repair changed metadata '+id+' '+key)
   require(set(v['valuesByMode'])==set(vs[id]['valuesByMode']),'Repair changed mode set '+id)
   for mode,value in v['valuesByMode'].items():
    change=authorized.get((id,mode))
    if change:require(value==change['before'],'Repair baseline differs '+id+' '+mode)
    require(vs[id]['valuesByMode'][mode]==(change['after'] if change else value),'Unauthorized repair mutation '+id+' '+mode)
+ for id,key in authorized_metadata:require(id in old and key in old[id] and key=='scopes','Unknown authorized metadata '+id+' '+key)
  for id,mode in authorized:require(id in old and mode in old[id]['valuesByMode'],'Unknown authorized slot '+id+' '+mode)
 def reaches_authorized(v,variables,collections,context,seen=()):
  if v['id'] in seen:raise ValueError('cycle '+v['id'])
