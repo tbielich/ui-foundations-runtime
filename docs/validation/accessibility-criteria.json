@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "review": "Issue #309 owner-authorized inventory; no initial N/A or removals permitted without scope review",
+  "scope": {"browser": "chromium", "headless": true, "brand": "a", "mode": "light"},
+  "criteria": [
+    {"id":"button.name","component":"button","states":["enabled"],"method":"aria","expected":"button named Get started"},
+    {"id":"button.disabled","component":"button","states":["disabled"],"method":"aria","expected":"button named Disabled exposes disabled"},
+    {"id":"button.keyboard","component":"button","states":["enabled"],"method":"keyboard","expected":"Tab focuses control; Enter and Space each produce native click"},
+    {"id":"button.inert","component":"button","states":["disabled"],"method":"keyboard/pointer","expected":"Tab skips disabled control; real pointer and keyboard cannot activate it"},
+    {"id":"button.axe","component":"button","states":["enabled","disabled"],"method":"axe-default","expected":"all state scans have zero violations and zero incomplete results"},
+    {"id":"checkbox.name","component":"checkbox","states":["unchecked"],"method":"aria","expected":"checkbox named Toggle me"},
+    {"id":"checkbox.checked","component":"checkbox","states":["unchecked","checked"],"method":"aria/pointer","expected":"real label clicks change native checked value and accessible checked state"},
+    {"id":"checkbox.mixed-disabled","component":"checkbox","states":["mixed","disabled"],"method":"aria","expected":"Default exposes mixed; Disabled exposes disabled"},
+    {"id":"checkbox.keyboard","component":"checkbox","states":["unchecked","checked"],"method":"keyboard","expected":"Tab focuses checkbox; Space changes native checked value"},
+    {"id":"checkbox.inert","component":"checkbox","states":["disabled"],"method":"keyboard/pointer","expected":"Tab skips disabled checkbox; label click and Space do not toggle"},
+    {"id":"checkbox.axe","component":"checkbox","states":["unchecked","checked","mixed","disabled"],"method":"axe-default","expected":"all state scans have zero violations and zero incomplete results"}
+  ]
+}

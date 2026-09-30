@@ -14,11 +14,11 @@ module.exports = defineConfig({
   forbidOnly: !!process.env.CI,
   retries: 0,
   workers: 1,
-  reporter: [["list"]],
+  reporter: [["list"], ["json", { outputFile: "artifacts/accessibility/playwright.json" }]],
   use: {
     baseURL: BASE_URL,
     headless: true,
-    trace: "off",
+    trace: "retain-on-failure",
   },
   projects: [
     {
