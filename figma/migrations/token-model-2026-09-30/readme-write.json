@@ -1,0 +1,636 @@
+{
+  "mutatedNodeIds": [
+    "2255:650",
+    "2255:653",
+    "2255:676",
+    "2255:678",
+    "2255:684",
+    "2255:688",
+    "2255:690",
+    "2255:702",
+    "2255:708",
+    "2255:726",
+    "2255:728",
+    "2255:730",
+    "2255:732",
+    "2255:741",
+    "2255:747",
+    "2255:762",
+    "2255:764",
+    "2255:770",
+    "2255:772",
+    "2255:818",
+    "2255:824",
+    "2255:827",
+    "2255:830",
+    "2255:836",
+    "2255:842",
+    "2255:851",
+    "2255:856",
+    "2255:864",
+    "2255:868",
+    "2255:871",
+    "2255:877",
+    "2255:891",
+    "2255:912",
+    "2255:923",
+    "2255:926",
+    "2255:938",
+    "2255:940",
+    "2255:942",
+    "2255:945",
+    "2255:967",
+    "2255:969",
+    "2255:982",
+    "2255:986",
+    "2255:991",
+    "2255:995",
+    "2255:1000",
+    "2255:1004",
+    "2255:1009",
+    "2255:1013",
+    "2255:1022",
+    "2255:1026",
+    "2255:1031",
+    "2255:1035",
+    "2255:1040",
+    "2255:1044",
+    "2255:1049",
+    "2255:1053",
+    "2255:1062",
+    "2255:1066",
+    "2255:1071",
+    "2255:1075",
+    "2255:1080",
+    "2255:1084",
+    "2255:1089",
+    "2255:1093",
+    "2255:1100",
+    "2255:1105",
+    "2255:1109",
+    "2255:1113",
+    "2255:1117",
+    "2255:1120",
+    "2255:1125",
+    "2255:1129",
+    "2255:1133",
+    "2255:1137",
+    "2255:1149",
+    "2255:1153",
+    "2255:1157",
+    "2255:1160",
+    "2255:1165",
+    "2255:1188",
+    "2255:1256",
+    "2251:535"
+  ],
+  "fontRepairs": [
+    "2255:676",
+    "2255:684",
+    "2255:688",
+    "2255:708",
+    "2255:726",
+    "2255:728",
+    "2255:730",
+    "2255:732",
+    "2255:747",
+    "2255:818",
+    "2255:824",
+    "2255:827",
+    "2255:830",
+    "2255:851",
+    "2255:923",
+    "2255:926",
+    "2255:938",
+    "2255:940",
+    "2255:942",
+    "2255:967",
+    "2255:969",
+    "2255:982",
+    "2255:986",
+    "2255:991",
+    "2255:995",
+    "2255:1000",
+    "2255:1004",
+    "2255:1009",
+    "2255:1013",
+    "2255:1022",
+    "2255:1026",
+    "2255:1031",
+    "2255:1035",
+    "2255:1040",
+    "2255:1044",
+    "2255:1049",
+    "2255:1053",
+    "2255:1062",
+    "2255:1066",
+    "2255:1071",
+    "2255:1075",
+    "2255:1080",
+    "2255:1084",
+    "2255:1089",
+    "2255:1093",
+    "2255:1105",
+    "2255:1109",
+    "2255:1113",
+    "2255:1117",
+    "2255:1125",
+    "2255:1129",
+    "2255:1133",
+    "2255:1137",
+    "2255:1149",
+    "2255:1153",
+    "2255:1157",
+    "2255:1165",
+    "2255:1188"
+  ],
+  "textEdits": 81,
+  "readback": [
+    {
+      "id": "2255:650",
+      "text": "Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns. Scale uses Min/Max endpoints; Brand and Scheme remain independent. IDs and WEB syntax are preserved. Vault decision: adr.token-model-and-figma-projection (review, 2026-09-30). UIF is private and separate from UILib.",
+      "width": 891,
+      "height": 78
+    },
+    {
+      "id": "2255:653",
+      "text": "Selected Collections",
+      "width": 188,
+      "height": 30
+    },
+    {
+      "id": "2255:676",
+      "text": "Appearance (Brand)",
+      "width": 179,
+      "height": 24
+    },
+    {
+      "id": "2255:678",
+      "text": "Brand identity and shape",
+      "width": 182,
+      "height": 24
+    },
+    {
+      "id": "2255:684",
+      "text": "Brand B / C",
+      "width": 109,
+      "height": 24
+    },
+    {
+      "id": "2255:688",
+      "text": "Appearance (Scheme)",
+      "width": 188,
+      "height": 24
+    },
+    {
+      "id": "2255:690",
+      "text": "Light/dark appearance mappings",
+      "width": 241,
+      "height": 24
+    },
+    {
+      "id": "2255:702",
+      "text": "Reusable surface/content roles",
+      "width": 227,
+      "height": 24
+    },
+    {
+      "id": "2255:708",
+      "text": "Patterns (UI)",
+      "width": 129,
+      "height": 24
+    },
+    {
+      "id": "2255:726",
+      "text": "Button/Solid/Container/Background/Default",
+      "width": 355,
+      "height": 20
+    },
+    {
+      "id": "2255:728",
+      "text": "Button/Border/Radius",
+      "width": 174,
+      "height": 20
+    },
+    {
+      "id": "2255:730",
+      "text": "Color/Content/Default",
+      "width": 182,
+      "height": 20
+    },
+    {
+      "id": "2255:732",
+      "text": "Typography/Label/Font/Size",
+      "width": 226,
+      "height": 20
+    },
+    {
+      "id": "2255:741",
+      "text": " value set. IDs map current Figma names to compatible Runtime export paths. Scale: Appearance (Scale), Min/Max → fluid clamp(). Interaction (States) is a prototype helper.",
+      "width": 850,
+      "height": 48
+    },
+    {
+      "id": "2255:747",
+      "text": "var(--uif-button-border-radius)",
+      "width": 307,
+      "height": 24
+    },
+    {
+      "id": "2255:762",
+      "text": "Appearance",
+      "width": 90,
+      "height": 24
+    },
+    {
+      "id": "2255:764",
+      "text": "Brand · Scheme · Scale",
+      "width": 149,
+      "height": 20
+    },
+    {
+      "id": "2255:770",
+      "text": "Semantics (Roles)",
+      "width": 134,
+      "height": 24
+    },
+    {
+      "id": "2255:772",
+      "text": "Reusable purpose and state pairs",
+      "width": 217,
+      "height": 20
+    },
+    {
+      "id": "2255:818",
+      "text": "Size/Spacing/100",
+      "width": 139,
+      "height": 20
+    },
+    {
+      "id": "2255:824",
+      "text": "Core/Color (illustrative)",
+      "width": 217,
+      "height": 20
+    },
+    {
+      "id": "2255:827",
+      "text": "Private palette sample",
+      "width": 191,
+      "height": 20
+    },
+    {
+      "id": "2255:830",
+      "text": "Font/Size/md",
+      "width": 104,
+      "height": 20
+    },
+    {
+      "id": "2255:836",
+      "text": "Appearance (Brand)",
+      "width": 167,
+      "height": 27
+    },
+    {
+      "id": "2255:842",
+      "text": "Brand identity and shape",
+      "width": 182,
+      "height": 24
+    },
+    {
+      "id": "2255:851",
+      "text": "Brand B / C",
+      "width": 109,
+      "height": 24
+    },
+    {
+      "id": "2255:856",
+      "text": "Private palette, typography, spacing and shape choices",
+      "width": 343,
+      "height": 48
+    },
+    {
+      "id": "2255:864",
+      "text": " → Neutral palette",
+      "width": 118,
+      "height": 20
+    },
+    {
+      "id": "2255:868",
+      "text": " → Purple / green palette",
+      "width": 161,
+      "height": 20
+    },
+    {
+      "id": "2255:871",
+      "text": "Appearance (Scheme)",
+      "width": 185,
+      "height": 27
+    },
+    {
+      "id": "2255:877",
+      "text": "Light/dark appearance mappings",
+      "width": 241,
+      "height": 24
+    },
+    {
+      "id": "2255:891",
+      "text": "Brand-aware light/dark mappings; roles consume Scheme",
+      "width": 344,
+      "height": 48
+    },
+    {
+      "id": "2255:912",
+      "text": "Reusable surface/content roles",
+      "width": 227,
+      "height": 24
+    },
+    {
+      "id": "2255:923",
+      "text": "Color/*/Content/*",
+      "width": 169,
+      "height": 24
+    },
+    {
+      "id": "2255:926",
+      "text": "Color/*/Surface/*",
+      "width": 169,
+      "height": 24
+    },
+    {
+      "id": "2255:938",
+      "text": "Color/Content/Default",
+      "width": 182,
+      "height": 20
+    },
+    {
+      "id": "2255:940",
+      "text": "Color/Action/Surface/Default",
+      "width": 243,
+      "height": 20
+    },
+    {
+      "id": "2255:942",
+      "text": "Typography/Label/Font/Size",
+      "width": 226,
+      "height": 20
+    },
+    {
+      "id": "2255:945",
+      "text": "Patterns (UI)",
+      "width": 105,
+      "height": 27
+    },
+    {
+      "id": "2255:967",
+      "text": "Button/Solid/Container/Background/Default",
+      "width": 355,
+      "height": 20
+    },
+    {
+      "id": "2255:969",
+      "text": "Button/Border/Radius",
+      "width": 174,
+      "height": 20
+    },
+    {
+      "id": "2255:982",
+      "text": "Button/Solid/Container/Background/Default",
+      "width": 355,
+      "height": 20
+    },
+    {
+      "id": "2255:986",
+      "text": "Color/Action/Surface/Default",
+      "width": 208,
+      "height": 16
+    },
+    {
+      "id": "2255:991",
+      "text": "Button/Solid/Container/Background/Hover",
+      "width": 338,
+      "height": 20
+    },
+    {
+      "id": "2255:995",
+      "text": "Color/Action/Surface/Hover",
+      "width": 193,
+      "height": 16
+    },
+    {
+      "id": "2255:1000",
+      "text": "Button/Solid/Text/Color/Default",
+      "width": 269,
+      "height": 20
+    },
+    {
+      "id": "2255:1004",
+      "text": "Color/Action/Content/Default",
+      "width": 208,
+      "height": 16
+    },
+    {
+      "id": "2255:1009",
+      "text": "Button/Border/Radius",
+      "width": 174,
+      "height": 20
+    },
+    {
+      "id": "2255:1013",
+      "text": "var(--uif-button-border-radius)",
+      "width": 230,
+      "height": 16
+    },
+    {
+      "id": "2255:1022",
+      "text": "Button/Outline/Container/Background/Default",
+      "width": 373,
+      "height": 20
+    },
+    {
+      "id": "2255:1026",
+      "text": "Color/Surface/Default",
+      "width": 156,
+      "height": 16
+    },
+    {
+      "id": "2255:1031",
+      "text": "Button/Outline/Border/Color/Default",
+      "width": 303,
+      "height": 20
+    },
+    {
+      "id": "2255:1035",
+      "text": "Color/Border/Brand/Default",
+      "width": 193,
+      "height": 16
+    },
+    {
+      "id": "2255:1040",
+      "text": "Button/Outline/Text/Color/Default",
+      "width": 286,
+      "height": 20
+    },
+    {
+      "id": "2255:1044",
+      "text": "Color/Action/Foreground/Default",
+      "width": 230,
+      "height": 16
+    },
+    {
+      "id": "2255:1049",
+      "text": "Button/Border/Radius",
+      "width": 174,
+      "height": 20
+    },
+    {
+      "id": "2255:1053",
+      "text": "var(--uif-button-border-radius)",
+      "width": 230,
+      "height": 16
+    },
+    {
+      "id": "2255:1062",
+      "text": "Button/Ghost/Container/Background/Default",
+      "width": 355,
+      "height": 20
+    },
+    {
+      "id": "2255:1066",
+      "text": "Color/Surface/Default",
+      "width": 156,
+      "height": 16
+    },
+    {
+      "id": "2255:1071",
+      "text": "Button/Ghost/Container/Background/Hover",
+      "width": 338,
+      "height": 20
+    },
+    {
+      "id": "2255:1075",
+      "text": "Color/Surface/Hover",
+      "width": 141,
+      "height": 16
+    },
+    {
+      "id": "2255:1080",
+      "text": "Button/Ghost/Text/Color/Default",
+      "width": 269,
+      "height": 20
+    },
+    {
+      "id": "2255:1084",
+      "text": "Color/Action/Foreground/Default",
+      "width": 230,
+      "height": 16
+    },
+    {
+      "id": "2255:1089",
+      "text": "Button/Border/Radius",
+      "width": 174,
+      "height": 20
+    },
+    {
+      "id": "2255:1093",
+      "text": "var(--uif-button-border-radius)",
+      "width": 230,
+      "height": 16
+    },
+    {
+      "id": "2255:1100",
+      "text": "Content and Foreground",
+      "width": 202,
+      "height": 27
+    },
+    {
+      "id": "2255:1105",
+      "text": "Color/Content/Default",
+      "width": 182,
+      "height": 20
+    },
+    {
+      "id": "2255:1109",
+      "text": "Color/Foreground/Subtle",
+      "width": 200,
+      "height": 20
+    },
+    {
+      "id": "2255:1113",
+      "text": "Color/Action/Foreground/Default",
+      "width": 269,
+      "height": 20
+    },
+    {
+      "id": "2255:1117",
+      "text": "Color/Content/Inverse",
+      "width": 182,
+      "height": 20
+    },
+    {
+      "id": "2255:1120",
+      "text": "Surface Colors",
+      "width": 123,
+      "height": 27
+    },
+    {
+      "id": "2255:1125",
+      "text": "Color/Surface/Default",
+      "width": 182,
+      "height": 20
+    },
+    {
+      "id": "2255:1129",
+      "text": "Color/Subtle/Surface/Default",
+      "width": 243,
+      "height": 20
+    },
+    {
+      "id": "2255:1133",
+      "text": "Color/Action/Surface/Default",
+      "width": 243,
+      "height": 20
+    },
+    {
+      "id": "2255:1137",
+      "text": "Color/Danger/Surface/Default",
+      "width": 243,
+      "height": 20
+    },
+    {
+      "id": "2255:1149",
+      "text": "Color/Border/Subtle/Default",
+      "width": 234,
+      "height": 20
+    },
+    {
+      "id": "2255:1153",
+      "text": "Color/Border/Brand/Default",
+      "width": 226,
+      "height": 20
+    },
+    {
+      "id": "2255:1157",
+      "text": "Color/Border/Danger/Default",
+      "width": 234,
+      "height": 20
+    },
+    {
+      "id": "2255:1160",
+      "text": "Illustrative typography samples",
+      "width": 286,
+      "height": 30
+    },
+    {
+      "id": "2255:1165",
+      "text": "Typography/Label/Font/Size",
+      "width": 258,
+      "height": 24
+    },
+    {
+      "id": "2255:1188",
+      "text": "Typography/Body/Font/Size",
+      "width": 248,
+      "height": 24
+    }
+  ]
+}

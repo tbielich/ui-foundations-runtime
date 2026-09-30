@@ -22,12 +22,12 @@ guesswork.
 
 ## Token Architecture
 
-The system follows a layered model:
-
-1. Core primitives
-2. Appearance mode decisions
-3. Semantics (Brands)
-4. Pattern and component tokens
+The owner-authorized migration follows Core → Appearance {Brand, Scheme, Scale}
+→ Semantics → Patterns. Durable rationale lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/agent/uif-token-projection-migration/decisions/token-model-and-figma-projection.md)
+(review; not a governance-pack promotion). Runtime's explicit projection is
+`figma/token-projection.json`; collection labels and compatibility export paths
+are different concerns. Brand and Scheme remain orthogonal; Scale endpoints
+compile to global fluid values, not `data-mode="min"` or `data-mode="max"`.
 
 Agents must never invent token names.
 Use existing CSS custom properties from `codeSyntax.WEB` or exported token files.

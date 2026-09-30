@@ -10,7 +10,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:2006:198",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "ALL_FILLS",
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-functional-success)"
@@ -32,7 +33,10 @@
               "Brand C": {
                 "$ref": "Color/Brand C/Green/800"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Functional/Success",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Danger": {
@@ -43,7 +47,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:2006:206",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "ALL_FILLS",
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-functional-danger)"
@@ -65,7 +70,10 @@
               "Brand C": {
                 "$ref": "Color/Brand C/Red/800"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Functional/Danger",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Base": {
@@ -76,7 +84,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:2006:211",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "ALL_FILLS",
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-functional-base)"
@@ -98,7 +107,10 @@
               "Brand C": {
                 "$ref": "Color/Brand C/Blue/600"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Functional/Base",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Base Dark": {
@@ -109,7 +121,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:2007:379",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "ALL_FILLS",
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-functional-base-dark)"
@@ -131,7 +144,10 @@
               "Brand C": {
                 "$ref": "Color/Brand B/Blue/900"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Functional/Base/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       },
@@ -143,7 +159,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:200",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-primary)"
@@ -165,7 +182,10 @@
             "Brand C": {
               "$ref": "Color/Brand C/Blue/600"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Primary",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Accent": {
@@ -176,7 +196,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:203",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-accent)"
@@ -198,7 +219,10 @@
             "Brand C": {
               "$ref": "Color/Brand C/Coolblue/400"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Accent",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Primary Dark": {
@@ -209,7 +233,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2007:377",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-primary-dark)"
@@ -231,7 +256,10 @@
             "Brand C": {
               "$ref": "Color/Brand C/Blue/900"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Primary/Dark",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Accent Dark": {
@@ -242,7 +270,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2007:378",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-accent-dark)"
@@ -264,7 +293,10 @@
             "Brand C": {
               "$ref": "Color/Brand C/Coolblue/900"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Accent/Dark",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Subtle": {
@@ -275,7 +307,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2012:292",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-subtle)"
@@ -297,7 +330,10 @@
             "Brand C": {
               "$ref": "Color/Neutral/500"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Subtle",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Subtle Dark": {
@@ -308,7 +344,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2028:241",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-subtle-dark)"
@@ -330,7 +367,10 @@
             "Brand C": {
               "$ref": "Color/Neutral/800"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Subtle/Dark",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Subtle Light": {
@@ -341,7 +381,8 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2028:242",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "ALL_FILLS",
+            "STROKE_COLOR"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-color-subtle-light)"
@@ -363,7 +404,10 @@
             "Brand C": {
               "$ref": "Color/Neutral/200"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Color/Subtle/Light",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Text": {
@@ -375,7 +419,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:2",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-default)"
@@ -397,7 +442,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/800"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Default",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Default Dark": {
@@ -408,7 +456,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:3",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-default-dark)"
@@ -430,7 +479,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/200"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Default/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Strong": {
@@ -441,7 +493,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:4",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-strong)"
@@ -463,7 +516,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/1000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Strong",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Strong Dark": {
@@ -474,7 +530,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:5",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-strong-dark)"
@@ -496,7 +553,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Strong/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled": {
@@ -507,7 +567,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:6",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-disabled)"
@@ -529,7 +590,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/600"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Disabled",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled Dark": {
@@ -540,7 +604,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:7",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-disabled-dark)"
@@ -562,7 +627,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/400"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/Disabled/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Disabled": {
@@ -573,7 +641,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:8",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-disabled)"
@@ -595,7 +664,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/800"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Disabled",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Disabled Dark": {
@@ -606,7 +678,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:9",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-disabled-dark)"
@@ -628,7 +701,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/200"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Disabled/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Brand": {
@@ -639,7 +715,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:2",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-brand)"
@@ -661,7 +738,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Brand",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Brand Dark": {
@@ -672,7 +752,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:3",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-brand-dark)"
@@ -694,7 +775,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Brand/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Danger": {
@@ -705,7 +789,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:4",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-danger)"
@@ -727,7 +812,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Danger",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Danger Dark": {
@@ -738,7 +826,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:5",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-danger-dark)"
@@ -760,7 +849,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Danger/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Success": {
@@ -771,7 +863,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:6",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-success)"
@@ -793,7 +886,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Success",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Success Dark": {
@@ -804,7 +900,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:7",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-success-dark)"
@@ -826,7 +923,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Success/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Active": {
@@ -837,7 +937,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:8",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-active)"
@@ -859,7 +960,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Active",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "On Active Dark": {
@@ -870,7 +974,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3018:9",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "SHAPE_FILL",
+              "TEXT_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-text-on-active-dark)"
@@ -892,7 +997,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Text/On/Active/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       },
@@ -905,7 +1013,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:10",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "FRAME_FILL",
+              "SHAPE_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-fill-surface)"
@@ -927,7 +1036,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Fill/Surface",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Surface Dark": {
@@ -938,7 +1050,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:11",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "FRAME_FILL",
+              "SHAPE_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-fill-surface-dark)"
@@ -960,7 +1073,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/1000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Fill/Surface/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled": {
@@ -971,7 +1087,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:12",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "FRAME_FILL",
+              "SHAPE_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-fill-disabled)"
@@ -993,7 +1110,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/300"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Fill/Disabled",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled Dark": {
@@ -1004,7 +1124,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:13",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "FRAME_FILL",
+              "SHAPE_FILL"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-fill-disabled-dark)"
@@ -1026,7 +1147,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/700"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Fill/Disabled/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       },
@@ -1039,7 +1163,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:14",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-default)"
@@ -1061,7 +1185,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/800"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Default",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Default Dark": {
@@ -1072,7 +1199,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:15",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-default-dark)"
@@ -1094,7 +1221,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/200"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Default/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Strong": {
@@ -1105,7 +1235,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:16",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-strong)"
@@ -1127,7 +1257,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/1000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Strong",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Strong Dark": {
@@ -1138,7 +1271,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:17",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-strong-dark)"
@@ -1160,7 +1293,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Strong/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled": {
@@ -1171,7 +1307,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:18",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-disabled)"
@@ -1193,7 +1329,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/500"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Disabled",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Disabled Dark": {
@@ -1204,7 +1343,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3011:19",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_COLOR"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-color-border-disabled-dark)"
@@ -1226,7 +1365,10 @@
               "Brand C": {
                 "$ref": "Color/Neutral/400"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Color/Border/Disabled/Dark",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       }
@@ -1240,7 +1382,7 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:213",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "FONT_FAMILY"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-font-base)"
@@ -1262,7 +1404,10 @@
             "Brand C": {
               "$ref": "Font/Family/Sans"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Font/Base",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Lead": {
@@ -1273,7 +1418,7 @@
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:214",
           "com.figma.scopes": [
-            "ALL_SCOPES"
+            "FONT_FAMILY"
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-font-lead)"
@@ -1295,7 +1440,10 @@
             "Brand C": {
               "$ref": "Font/Family/Serif"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Font/Lead",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       }
     },
@@ -1330,7 +1478,10 @@
             "Brand C": {
               "$ref": "Size/Radius/full"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Control",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Card": {
@@ -1363,7 +1514,10 @@
             "Brand C": {
               "$ref": "Size/Radius/300"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Panel",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Modal": {
@@ -1396,7 +1550,10 @@
             "Brand C": {
               "$ref": "Size/Radius/400"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Dialog",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Input": {
@@ -1429,7 +1586,10 @@
             "Brand C": {
               "$ref": "Size/Radius/200"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Field",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Container": {
@@ -1462,7 +1622,10 @@
             "Brand C": {
               "$ref": "Size/Radius/300"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Container",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       },
       "Tooltip": {
@@ -1495,7 +1658,10 @@
             "Brand C": {
               "$ref": "Size/Radius/200"
             }
-          }
+          },
+          "com.figma.variableName": "Brand/Shape/Corner/Floating",
+          "com.figma.variableCollectionName": "Appearance (Brand)",
+          "com.figma.hiddenFromPublishing": false
         }
       }
     },
@@ -1509,7 +1675,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:2",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT",
+              "GAP"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-spacing-tight)"
@@ -1531,7 +1698,10 @@
               "Brand C": {
                 "$ref": "Size/Spacing/100"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Spacing/Tight",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Component": {
@@ -1542,7 +1712,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:3",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT",
+              "GAP"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-spacing-component)"
@@ -1564,7 +1735,10 @@
               "Brand C": {
                 "$ref": "Size/Spacing/200"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Spacing/Component",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Comfortable": {
@@ -1575,7 +1749,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:4",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT",
+              "GAP"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-spacing-comfortable)"
@@ -1597,7 +1772,10 @@
               "Brand C": {
                 "$ref": "Size/Spacing/300"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Spacing/Comfortable",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Spacious": {
@@ -1608,7 +1786,8 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:5",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT",
+              "GAP"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-spacing-spacious)"
@@ -1630,7 +1809,10 @@
               "Brand C": {
                 "$ref": "Size/Spacing/400"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Spacing/Spacious",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       },
@@ -1643,7 +1825,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:6",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-border-none)"
@@ -1665,7 +1847,10 @@
               "Brand C": {
                 "$ref": "Size/Border/000"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Border/None",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Default": {
@@ -1676,7 +1861,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:7",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-border-default)"
@@ -1698,7 +1883,10 @@
               "Brand C": {
                 "$ref": "Size/Border/100"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Border/Default",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         },
         "Thick": {
@@ -1709,7 +1897,7 @@
           "$extensions": {
             "com.figma.variableId": "VariableID:3022:8",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "STROKE_FLOAT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--brand-size-border-thick)"
@@ -1731,7 +1919,10 @@
               "Brand C": {
                 "$ref": "Size/Border/200"
               }
-            }
+            },
+            "com.figma.variableName": "Brand/Size/Border/Thick",
+            "com.figma.variableCollectionName": "Appearance (Brand)",
+            "com.figma.hiddenFromPublishing": false
           }
         }
       }

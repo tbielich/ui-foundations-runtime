@@ -19,7 +19,12 @@ test("ButtonGroup Figma export contains canonical tokens without legacy aliases"
 
   assert.match(tokenExport, /var\(--uif-button-group-gap\)/);
   assert.match(tokenExport, /var\(--uif-button-group-border-radius\)/);
-  assert.match(tokenExport, /"targetVariableName": "Button\/Border\/Radius"/);
+  const tokens = JSON.parse(tokenExport);
+  const group = tokens.Button.Group["Border Radius"];
+  const button = tokens.Button.Border.Radius;
+  assert.equal(group.$value.$ref, "Semantics/Shape/Corner/Control");
+  assert.equal(group.$extensions["com.figma.aliasData"].targetVariableId,
+    button.$extensions["com.figma.aliasData"].targetVariableId);
   assert.doesNotMatch(tokenExport, /var\(--button-group-/);
 });
 

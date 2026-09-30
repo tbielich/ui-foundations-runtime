@@ -6,6 +6,11 @@ type: agent-guide
 
 # Assistant rules (UI Foundations)
 
+For the bounded 2026-09-30 token migration, Foundation-001 and DESIGN.md
+record the owner-authorized refined projection and its precedence over the
+historical collection terminology below. The consumed governance pack remains
+unchanged. New pattern aliases consume Semantics (Roles).
+
 1. Always follow foundation rules in `/docs/foundations` as the source of truth.
 2. Keep the 4-layer architecture: Core → Appearance → Semantics (Brands) → Patterns/Components.
 3. Patterns may only reference Semantics/Core tokens; no raw values in patterns.
