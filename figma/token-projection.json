@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceFileKey": "3G6kkLVF0AKQO2BeCpixiN",
-  "adr": "https://github.com/tbielich/ui-foundations-vault/blob/agent/uif-token-projection-migration/decisions/token-model-and-figma-projection.md",
-  "ownerOverride": "2026-09-30 bounded migration; ADR review, consumed governance pack unchanged",
+  "adr": "https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md",
+  "ownerOverride": "2026-09-30 bounded migration; ADR accepted via ui-foundations-vault PR #49; consumed governance pack unchanged",
   "collectionFiles": {
     "Core (Primitives)": "Core (Primitives).tokens.json",
     "Appearance (Brand)": "Semantics (Brands).tokens.json",
