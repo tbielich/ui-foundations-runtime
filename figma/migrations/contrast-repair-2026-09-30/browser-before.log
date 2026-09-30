@@ -10,7 +10,7 @@ Running 6 tests using 1 worker
   ✓  6 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / dark, all enabled variants and states (65ms)
 
 
-  1) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states 
+  1) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states
 
     Error: {"variant":"outline","state":"Hover","color":"rgb(151, 71, 255)","background":"rgb(255, 255, 255)","overlay":"linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none","ratio":2.8054292849936244}
 
@@ -30,7 +30,7 @@ Running 6 tests using 1 worker
 
     Error Context: test-results/token-contrast-Button-cont-0a622-enabled-variants-and-states-chromium/error-context.md
 
-  2) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states 
+  2) [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states
 
     Error: {"variant":"outline","state":"Hover","color":"rgb(12, 75, 243)","background":"rgb(255, 255, 255)","overlay":"linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), none","ratio":3.9431415645436276}
 
@@ -51,6 +51,6 @@ Running 6 tests using 1 worker
     Error Context: test-results/token-contrast-Button-cont-9139b-enabled-variants-and-states-chromium/error-context.md
 
   2 failed
-    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states 
-    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states 
+    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states
+    [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states
   4 passed (2.3s)
