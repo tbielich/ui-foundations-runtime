@@ -3816,6 +3816,11 @@
       "figmaName": "Color/Content/Focus",
       "exportPath": "Semantics/Color/Content/Focus",
       "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3204:2": {
+      "figmaName": "Brand/Color/Action/Surface/Dark",
+      "exportPath": "Brand/Color/Action/Surface/Dark",
+      "file": "Semantics (Brands).tokens.json"
     }
   },
   "codeOnlyExceptions": [

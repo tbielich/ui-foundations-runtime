@@ -68,6 +68,11 @@ for (const brand of ["a", "b", "c"]) {
         return rows;
       });
       expect(rows).toHaveLength(12);
+      if (brand === "a") {
+        const solid = rows.find(row => row.variant === "solid" && row.state === "Default");
+        expect(solid.background).toBe(mode === "dark" ? "rgb(255, 255, 255)" : "rgb(0, 0, 0)");
+        expect(solid.color).toBe(mode === "dark" ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)");
+      }
       test.info().annotations.push({ type: "contrast-evidence", description: JSON.stringify({ brand, mode, rows }) });
       for (const row of rows) expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
     });

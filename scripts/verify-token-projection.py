@@ -22,7 +22,10 @@ axes=[c for c in before['collections'] if c['name'] in ['Semantics (Brands)','Ap
 contexts=[dict(zip([c['id'] for c in axes],values)) for values in itertools.product(*[[m['modeId'] for m in c['modes']] for c in axes])]
 authorized={(x['id'],x['mode']):x for x in repair.get('changes',[])}
 if repair:
- require(set(old)==set(vs),'Repair changed the variable ID set')
+ additions={v['id']:v for v in repair.get('additions',[])}
+ require(not (set(additions)&set(old)), 'Repair addition already exists')
+ require(set(old)|set(additions)==set(vs),'Repair changed the variable ID set beyond declared additions')
+ for id,v in additions.items():require(vs.get(id)==v,'Repair addition differs '+id)
  require(before['collections']==after['collections'],'Repair changed collection contracts')
  for id,v in old.items():
   if id not in vs:continue
