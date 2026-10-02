@@ -114,9 +114,17 @@ JSON key structure. Common pitfalls:
 - **Validation**: `npm run tokens:generate` reports duplicates. Zero duplicates
   is required for CI to pass.
 
-## On-Color Token Pattern
+## Legacy On-Color Compatibility Tokens
 
-For text on colored surfaces, use `--color-text-on-*` tokens (not `--color-text-inverse`):
+The `--color-text-on-*` properties below remain compatibility syntax. For new
+Pattern aliases, use the explicit state-matched semantic roles in
+`Semantics (Roles)`, for example
+`Semantics/Color/Action/Surface/Hover` paired with
+`Semantics/Color/Action/Content/Hover`. Use
+`Semantics/Color/Action/Foreground/*` for standalone action text, icons,
+strokes, or outlines.
+
+Compatibility properties:
 
 | Token | Use on |
 |-------|--------|
@@ -127,6 +135,4 @@ For text on colored surfaces, use `--color-text-on-*` tokens (not `--color-text-
 | `--color-text-on-active` | `--color-fill-active` |
 | `--color-text-on-disabled` | `--color-fill-disabled` |
 
-These resolve per brand and mode. Prefer them over generic `--color-text-inverse`
-in component tokens. Example: `--button-solid-text-color-default` references
-`--color-text-on-brand`, not `--color-text-inverse`.
+These properties still resolve per brand and mode and remain valid where existing Runtime compatibility requires them. Do not use them as the naming model for new semantic roles.
