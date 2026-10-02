@@ -143,7 +143,7 @@ docs, playgrounds, and consumer apps.
 
 ### Designers
 
-- Work in Figma variables for design values and bindings; use the documented token responsibilities to choose the right collection
+- Use Figma as the design-authoring projection; keep variable changes consistent with the documented UIF contracts and token responsibilities
 - Figma variables map to Runtime through stable IDs, WEB syntax, and the token projection
 - Brand and mode switching is built into the variable structure
 
