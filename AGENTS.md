@@ -41,7 +41,7 @@ Workflow: Plan → Execute → Verify → Report
 
 When in doubt, prefer the option that:
 
-- preserves Core → Semantic → Component separation
+- preserves the canonical Core → Appearance → Semantics → Patterns flow
 - uses explicit semantic naming over visual naming
 - keeps Figma naming and code naming closely aligned
 - reduces ambiguity for humans and agents
@@ -74,7 +74,9 @@ Never:
 
 ## Design System Rules
 
-- Respect token layers: Core → Semantic → Component
+- Respect token layers: Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+- Treat Brand, Scheme, and Scale as independent Appearance axes, not semantic roles
+- Patterns consume Semantics by default; bypasses require an explicit, documented compatibility reason
 - Never mix layers
 - Never hardcode values
 - Always use CSS variables: `var(--...)`
