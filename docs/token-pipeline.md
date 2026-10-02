@@ -9,9 +9,11 @@ If you need the shorter developer overview first, start with:
 - `docs/architecture.md`
 - `docs/foundations/README.md`
 
-Figma is the single source of truth. Tokens flow through a generation pipeline
-that transforms Figma Variable exports into DTCG-compliant dist files consumed
-by CSS, TypeScript, and JSON tooling.
+Figma is the source of truth for design-variable values and bindings. The
+accepted token architecture is governed in UIF-VLT and projected into Runtime
+through `figma/token-projection.json`. The generation pipeline transforms
+Figma Variable exports into DTCG-compliant dist files consumed by CSS,
+TypeScript, and JSON tooling.
 
 ```
 figma/exports/*.tokens.json
