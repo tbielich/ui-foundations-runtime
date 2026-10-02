@@ -78,10 +78,11 @@ the active token values without changing component markup.
 
 ## Rules
 
-- Components reference only Semantic or Core tokens — never raw color values.
-- Never mix token layers in a single declaration.
-- Never hardcode hex, rgb, or hsl values in component CSS.
-- Always use `var(--...)` for every visual property.
+- Patterns consume Semantics by default; direct Appearance/Core dependencies are documented compatibility exceptions.
+- Brand, Scheme, and Scale belong to Appearance, not to semantic token names.
+- Never hardcode color values in pattern CSS.
+- Use `var(--...)` for token-driven visual properties.
+- Generated compatibility filenames do not define architectural ownership.
 
 ## Reference
 
