@@ -1,6 +1,6 @@
 # UI Foundations — Figma Library
 
-This Figma file is the single source of truth for the UI Foundations design system.
+This Figma file is the source of truth for UIF design variables and their bindings. Durable architecture and governance remain canonical in UIF-VLT; Runtime records the compatible projection into code.
 
 ## Structure
 
@@ -123,10 +123,10 @@ Design in Figma → Export via Token Foundry → figma/exports/*.json → npm ru
 
 ## Links
 
-- Documentation: https://ui-foundations.netlify.app/
+- Documentation: https://ui-foundations.com/
 - npm package: https://www.npmjs.com/package/ui-foundations
 - Starter template: https://github.com/tbielich/ui-foundations-starter
-- Code repo: https://github.com/tbielich/ui-foundations
+- Runtime repo: https://github.com/tbielich/ui-foundations-runtime
 
 ## Token projection migration (2026-09-30)
 
