@@ -39,9 +39,9 @@ responsibilities.
 
 ## Token Naming
 
-- Component: `--component-variant-part-property-state` (e.g. `--button-solid-container-background-hover`)
-- Semantic: role-based (e.g. `--color-text-default`, `--color-fill-brand`)
-- States: `default`, `hover`, `active`, `focus`, `disabled` — always last segment
+- Pattern: `<Family>/<Variant?>/<Part?>/<Property>/<State?>`; public Runtime syntax uses the canonical `--uif-*` namespace.
+- Semantic color: `Color/<Purpose>/<Role>/<State>`, for example `Color/Action/Surface/Hover`.
+- States: `default`, `hover`, `active`, `focus`, `disabled` — always last. `active` is the established Runtime name for the pressed interaction.
 
 ## Token Pipeline
 
