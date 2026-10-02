@@ -1,0 +1,47 @@
+@layer components {
+  :is(.uif-progress-circle, .progress-circle) {
+    --_uif-progress-circle-size: var(--uif-progress-circle-size-md);
+    display: inline-block;
+    inline-size: var(--_uif-progress-circle-size);
+    block-size: var(--_uif-progress-circle-size);
+    vertical-align: middle;
+  }
+
+  :is(.uif-progress-circle, .progress-circle).sm {
+    --_uif-progress-circle-size: var(--uif-progress-circle-size-sm);
+  }
+
+  :is(.uif-progress-circle, .progress-circle).lg {
+    --_uif-progress-circle-size: var(--uif-progress-circle-size-lg);
+  }
+
+  :is(.uif-progress-circle, .progress-circle) svg {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    transform: rotate(-90deg);
+  }
+
+  :is(.uif-progress-circle-track, .progress-circle-track),
+  :is(.uif-progress-circle-indicator, .progress-circle-indicator) {
+    fill: none;
+    stroke-width: var(--uif-progress-circle-stroke-width);
+  }
+
+  :is(.uif-progress-circle-track, .progress-circle-track) {
+    stroke: var(--uif-progress-circle-track-color);
+  }
+
+  :is(.uif-progress-circle-indicator, .progress-circle-indicator) {
+    stroke: var(--uif-progress-circle-indicator-color);
+    stroke-linecap: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: calc(100 - var(--uif-progress-circle-value, 0));
+  }
+
+  :is(.uif-progress-circle, .progress-circle).is-indeterminate
+    :is(.uif-progress-circle-indicator, .progress-circle-indicator) {
+    stroke-dasharray: 25 75;
+    stroke-dashoffset: 0;
+  }
+}
