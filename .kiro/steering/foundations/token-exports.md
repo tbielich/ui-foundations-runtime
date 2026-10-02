@@ -13,73 +13,74 @@ When working with files in `figma/exports/`, these rules apply:
 - `$value.$ref` creates an alias to another token
 
 ## Alias Validation (Rule 10)
-- Every `$ref` must point to a token that exists in Core, Appearance, or Semantics (Brands)
-- Check `dist/tokens/css/core-primitives.tokens.css` for available Core tokens
-- Check `dist/tokens/css/appearance-modes.tokens.mode-*.css` for available Appearance tokens
-- Check `dist/tokens/css/semantics-brands.tokens.brand-*.css` for available brand-semantic tokens
-- Never invent token names that don't exist
-- If a needed token doesn't exist, flag it for Figma creation — don't fake it
+
+- Resolve aliases against the current Figma projection, not historical collection labels.
+- Pattern tokens should reference `Semantics (Roles)` by default.
+- Check `dist/tokens/css/semantics-roles.tokens.css` for reusable roles.
+- Use `figma/token-projection.json` when a generated compatibility filename differs from the current Figma collection name.
+- Never invent token names or variable IDs.
+- If a needed semantic role does not exist, flag it for Figma creation instead of bypassing Semantics.
 
 ## Layer Rules
 
-Pattern tokens (`Patterns (UI).tokens.json`) may reference:
-- **Core (Primitives)** — raw values (font sizes, radii, spacing primitives)
-- **Appearance (Modes)** — mode-switched colors (text, fill, border, overlay)
-- **Semantics (Brands)** — brand-scoped semantic roles (corners, spacing semantics, border weights, fonts)
+Canonical flow:
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+For new work, Pattern tokens consume **Semantics (Roles)**. Direct Pattern
+aliases to Appearance or Core are retained only where the migration explicitly
+records a compatibility exception.
 
 Pattern tokens must **NEVER**:
-- Reference other Pattern tokens (no cross-component coupling)
-- Reference the Typography (Liquid) collection directly (use Core font-size tokens which get overridden by fluid output)
-- Contain hardcoded raw values (every number/color must be an alias)
+
+- Reference another Pattern token. Shared meaning belongs in Semantics.
+- Introduce a direct Appearance/Core dependency merely to avoid defining a semantic role.
+- Contain hardcoded color or design values where a token contract exists.
+- Guess a target variable ID.
 
 ### No Cross-Pattern References (STRICT)
 
-A pattern token must never alias another pattern's token. Each component owns
-its tokens independently and references only downstream layers.
+If two patterns need the same intent, both reference the same semantic role.
 
-| ✅ Correct | ❌ Wrong |
+| Correct | Wrong |
 |---|---|
-| `Calendar/Cell/Border Radius` → `Brand/Corner/Button` | `Calendar/Cell/Border Radius` → `Button/Border Radius` |
-| `Calendar/Container/Border Size` → `Brand/Size/Border/Default` | `Calendar/Container/Border Size` → `Button/Border/Size Default` |
-| `Select/Border Radius` → `Brand/Corner/Input` | `Select/Border Radius` → `Input/Border Radius` |
+| `Button/Border/Radius` → `Semantics/Shape/Corner/Control` | Button radius → another Pattern's radius |
+| Calendar control radius → `Semantics/Shape/Corner/Control` | Calendar radius → Button radius |
+| Input radius → `Semantics/Shape/Corner/Field` | Input radius → raw Brand corner token |
+| Default border width → `Semantics/Size/Border/Default` | Pattern border width → raw Core value |
 
-If two components need the same value, they both reference the same
-Semantics (Brands), Appearance, or Core source independently.
+### Shape References
 
-### Corner Radius References
+Brand owns the visual choice; Semantics exposes the reusable purpose.
 
-Reference Brand/Corner tokens directly:
-
-| `$ref` | Use for |
+| Semantic role | Typical use |
 |---|---|
-| `Brand/Corner/Button` | Buttons, calendar cells, pill-shaped controls |
-| `Brand/Corner/Input` | Inputs, selects, checkboxes |
-| `Brand/Corner/Card` | Cards, forms, elevated surfaces |
-| `Brand/Corner/Modal` | Modals, dialogs |
-| `Size/Radius/full` | Badges, avatars (always pill) |
-| `Size/Radius/300` | Textareas, tooltips (content containers) |
-| `Size/Radius/400` | Accordions (large containers) |
-### Size References (Border Width, Spacing)
+| `Semantics/Shape/Corner/Control` | Buttons and control-like surfaces |
+| `Semantics/Shape/Corner/Field` | Inputs and field-like controls |
+| `Semantics/Shape/Corner/Panel` | Cards and panels |
+| `Semantics/Shape/Corner/Dialog` | Dialog/modal surfaces |
+| `Semantics/Shape/Corner/Container` | General containers |
+| `Semantics/Shape/Corner/Floating` | Floating surfaces such as tooltips |
 
-Patterns reference **brand-semantic size tokens** for brand-controlled sizing:
+Do not alias a Pattern directly to `Brand/Shape/*` for new work. The semantic
+shape role is the stable contract.
 
-| `$ref` | CSS output | Use for |
-|---|---|---|
-| `Brand/Size/Border/None` | `--brand-size-border-none` | Disabled borders (invisible) |
-| `Brand/Size/Border/Default` | `--brand-size-border-default` | Standard border width |
-| `Brand/Size/Border/Thick` | `--brand-size-border-thick` | Active/hover/focus emphasis |
-| `Brand/Size/Spacing/Tight` | `--brand-size-spacing-tight` | Small gaps (badge, link) |
-| `Brand/Size/Spacing/Component` | `--brand-size-spacing-component` | Internal padding/gaps |
-| `Brand/Size/Spacing/Comfortable` | `--brand-size-spacing-comfortable` | Medium padding |
-| `Brand/Size/Spacing/Spacious` | `--brand-size-spacing-spacious` | Large padding/gaps |
+### Size And Spacing References
 
-For target sizes (min-height/width), use Core directly:
+Use the reusable semantic size roles where they match the intended purpose:
 
-| `$ref` | Use for |
-|---|---|
-| `Size/Target/Default` | Standard touch target (40px) |
-| `Size/Target/Compact` | Small variant (32px) |
-| `Size/Target/Large` | Large variant (48px) |
+- `Semantics/Size/Border/None`
+- `Semantics/Size/Border/Default`
+- `Semantics/Size/Border/Thick`
+- `Semantics/Size/Spacing/Tight`
+- `Semantics/Size/Spacing/Component`
+- `Semantics/Size/Spacing/Comfortable`
+- `Semantics/Size/Spacing/Spacious`
+
+Existing migration exceptions remain valid until separately migrated. Do not
+copy an exception into a new Pattern.
 
 ## After Changes
 - Run `npm run tokens:generate` and verify zero "missing alias targets"
