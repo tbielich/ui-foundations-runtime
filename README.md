@@ -16,7 +16,7 @@
 Keep Figma and code in sync by default — with tokens, not guesswork.
 
 - **Token-first architecture** — every value comes from a token, no hardcoded exceptions
-- **Figma as single source of truth** — variables export directly into production code
+- **Figma-aligned implementation** — variables are the design-value source; durable architecture and governance remain in UIF-VLT
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
 
@@ -38,7 +38,7 @@ work with the system reliably.
 ## Key Features
 
 - **Token-first architecture** — Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns, with each layer carrying one clear responsibility
-- **Figma ↔ code alignment** — `codeSyntax.WEB` maps Figma names directly to CSS
+- **Figma ↔ code alignment** — stable variable IDs, `codeSyntax.WEB`, and the projection adapter keep Figma and Runtime traceable without forcing breaking renames
 - **Multi-brand and dark mode** — `data-brand` and `data-mode` switch independently
 - **Agent-ready documentation** — deterministic context for AI-assisted workflows
 - **DTCG-compliant output** — 2025.10 format with proper alias syntax and hex colors
@@ -143,8 +143,8 @@ docs, playgrounds, and consumer apps.
 
 ### Designers
 
-- Work in Figma variables — they are the source of truth
-- Token names in Figma map directly to CSS variable names
+- Work in Figma variables for design values and bindings; use the documented token responsibilities to choose the right collection
+- Figma variables map to Runtime through stable IDs, WEB syntax, and the token projection
 - Brand and mode switching is built into the variable structure
 
 ### Developers
