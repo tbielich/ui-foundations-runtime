@@ -75,15 +75,25 @@ The public API entry point for those surfaces is `docs/public-api.md`.
 
 ## Token and UI layering
 
-Runtime implementation follows four practical layers:
+Runtime implementation follows four responsibilities:
 
-1. **Core** — primitives and shared references
-2. **Appearance** — mode-dependent decisions
-3. **Semantics** — brand-scoped semantic roles
-4. **Patterns / Components** — UI-facing usage tokens and implementation
+1. **Core** — reusable primitives and shared references.
+2. **Appearance** — independent context axes: **Brand**, **Scheme**, and **Scale**.
+3. **Semantics** — stable UI roles that describe intent without naming a brand or scheme.
+4. **Patterns** — Button, Input, Checkbox, and other UI-specific usage tokens.
 
-This page only names the layers. For the canonical detailed layer rules, start
-with `docs/foundations/foundation-001-token-layering.md`.
+The important boundary is between context and meaning: Brand, Scheme, and Scale
+can change how a value resolves, while Semantics keeps the role understood by a
+designer, developer, or agent stable.
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+Generated export filenames may retain older collection terminology for
+compatibility. They do not redefine these responsibilities. For the canonical
+detailed layer rules, start with
+`docs/foundations/foundation-001-token-layering.md`.
 
 ## How developers should navigate
 

@@ -6,14 +6,18 @@ type: agent-guide
 
 # Assistant rules (UI Foundations)
 
-For the bounded 2026-09-30 token migration, Foundation-001 and DESIGN.md
-record the owner-authorized refined projection and its precedence over the
-historical collection terminology below. The consumed governance pack remains
-unchanged. New pattern aliases consume Semantics (Roles).
+Foundation-001 and DESIGN.md define the accepted Runtime projection:
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+Treat that as the working model even when compatibility filenames still contain
+older collection terminology. The consumed governance pack remains unchanged.
 
 1. Always follow foundation rules in `/docs/foundations` as the source of truth.
-2. Keep the 4-layer architecture: Core → Appearance → Semantics (Brands) → Patterns/Components.
-3. Patterns may only reference Semantics/Core tokens; no raw values in patterns.
+2. Keep the canonical flow: Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns.
+3. Patterns consume Semantics by default; do not reach into Appearance or Core unless an existing, documented compatibility exception requires it. Never use raw values in patterns.
 4. Typography tokens never include color; text color lives in `Color.Text.*`.
 5. Responsive thresholds:
    - Viewport breakpoints in `Core.Breakpoint.*`
@@ -39,11 +43,11 @@ unchanged. New pattern aliases consume Semantics (Roles).
    Missing any of these (especially the playground renderer) will cause broken pages.
 9. Every new pattern must have its own pattern-layer tokens. Never reuse tokens from another pattern (e.g. do not use `--uif-input-checkbox-*` for a radio).
    - Check `dist/tokens/css/patterns-ui.tokens.css` for existing tokens.
-   - If the pattern has no tokens in Figma yet, propose new public token slots following the Vault naming pattern `--uif-<pattern>-<part>-<property>-<state>` and add them to the `Patterns (UI)` collection, referencing only Semantics (Brands), Appearance, or Core tokens.
+   - If the pattern has no tokens in Figma yet, propose new public token slots following the Vault naming pattern `--uif-<pattern>-<part>-<property>-<state>` and add them to the `Patterns (UI)` collection, referencing Semantics (Roles) by default. Do not create a new direct dependency on Appearance or Core to avoid defining the semantic role.
    - All repository-owned pattern emitters use canonical `--uif-*` tokens only. Library-owned unprefixed component token aliases are not provided.
    - This keeps patterns independently adaptable across brand/mode context and avoids hidden coupling.
 10. Token alias references must point to tokens that actually exist in the system.
-    - Before adding a `$ref`, verify the target exists in `dist/tokens/css/` (Core, Appearance, Semantics (Brands)).
+    - Before adding a `$ref`, verify the target exists in the current Figma projection and generated `dist/tokens/css/` outputs. For Pattern aliases, prefer `Semantics (Roles)`.
     - Run `npm run tokens:generate` and check for "missing alias targets" warnings.
     - Never invent Semantic/Core token names (e.g. `Color/Fill/Muted`, `Size/Spacing/50`) — use only what the system provides.
     - If a needed Semantic token does not exist, flag it for creation in Figma first.

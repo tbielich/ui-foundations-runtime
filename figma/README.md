@@ -1,36 +1,88 @@
 # UI Foundations — Figma Library
 
-This Figma file is the single source of truth for the UI Foundations design system.
+This Figma file is the design-authoring projection of the UIF token model. UIF-VLT defines the durable architecture and contracts; UIF-RUN provides the consumable runtime projection. Changes made in Figma must remain consistent with those contracts.
 
 ## Structure
+
+The Figma file mirrors the same responsibilities used by Runtime. Collection
+names describe where a decision belongs; they are not just folders.
 
 | Page | Content |
 |---|---|
 | README | This overview |
-| Tokens | Variable collections (Primitives, Appearance, Semantics (Brands), Typography, Patterns) |
+| Tokens | Core, Appearance, Semantics, and Pattern variables |
 | Components | Button, Input, Checkbox, Switch, Icon, Label, Link |
 | Examples | Composed layouts and usage patterns |
 | Assets | Icons and other exportable assets |
 
 ## Variable Collections
 
-| Collection | Purpose | Modes |
+```text
+Core
+  ↓
+Appearance
+  ├─ Brand
+  ├─ Scheme
+  └─ Scale
+  ↓
+Semantics
+  ↓
+Patterns
+```
+
+| Collection | What it answers | Modes |
 |---|---|---|
-| Core (Primitives) | Raw color, spacing, typography, radius values | — |
-| Appearance (Modes) | Mode-dependent rendering decisions such as light/dark color mappings | Light Mode, Dark Mode |
-| Semantics (Brands) | Brand-scoped semantic token roles | Brand A, Brand B, Brand C |
-| Typography (Fluid) | Fluid typography min/max values | Min, Max |
-| Patterns (UI) | Pattern-specific tokens (button, input, etc.) | — |
+| Core (Primitives) | What raw values are available? | — |
+| Appearance (Brand) | Which brand-specific values apply? | Brand A, Brand B, Brand C |
+| Appearance (Scheme) | How does the current light/dark scheme resolve? | Light, Dark |
+| Appearance (Scale) | How does the fluid scale resolve? | Min, Max |
+| Semantics (Roles) | What does the value mean in the UI? | Value |
+| Patterns (UI) | Where does a semantic role apply in a UI pattern? | Value |
+| Interaction (States) | Local interaction/demo helpers; not a canonical token layer | — |
+
+Brand, Scheme, and Scale are independent Appearance axes. Semantics stays
+brand- and scheme-neutral so the same role can be used everywhere.
+
+A Button hover color should therefore read as a chain of intent:
+
+```text
+Core color
+  → Appearance (Brand + Scheme)
+  → Color / Action / Surface / Hover
+  → Button / … / Background / Hover
+```
 
 ## Token Naming
 
-Tokens follow the pattern: `Component/Variant/Part/Property/State`
+Names should tell a reader what a token means without requiring them to know its
+resolved color or brand.
+
+Semantic color roles follow:
+
+```text
+Color/<Purpose>/<Role>/<State>
+```
+
+The default canvas pair may use the shorter `Color/<Role>/<State>` form.
+Pattern tokens keep interaction state as the final segment:
+
+```text
+<Family>/<Variant?>/<Part?>/<Property>/<State?>
+```
 
 Examples:
-- `Button/Solid/Container/Background Default`
-- `Button/Border Radius`
-- `Color/Text/Default`
-- `Typography/Label/Font Size`
+
+- `Color/Action/Surface/Hover`
+- `Color/Action/Content/Hover`
+- `Color/Action/Foreground/Active`
+- `Button/Solid/Container/Background/Hover`
+
+UIF keeps `Active` as the established Runtime name for the pressed
+interaction. Do not introduce `Pressed` as a competing state name.
+
+`Surface` and `Content` form an accessibility pair for a specific state.
+`Foreground` is for standalone action content such as text, icons, strokes, or
+outlines when there is no paired filled action surface.
 
 ## Code Syntax (WEB)
 
@@ -71,10 +123,10 @@ Design in Figma → Export via Token Foundry → figma/exports/*.json → npm ru
 
 ## Links
 
-- Documentation: https://ui-foundations.netlify.app/
+- Documentation: https://ui-foundations.com/
 - npm package: https://www.npmjs.com/package/ui-foundations
 - Starter template: https://github.com/tbielich/ui-foundations-starter
-- Code repo: https://github.com/tbielich/ui-foundations
+- Runtime repo: https://github.com/tbielich/ui-foundations-runtime
 
 ## Token projection migration (2026-09-30)
 

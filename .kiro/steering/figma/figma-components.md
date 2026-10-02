@@ -10,9 +10,11 @@ When creating or updating Figma components via the Plugin API, these rules apply
 
 When building a Figma component, ALWAYS follow this order:
 
-1. **Identify tokens first** — find existing Core/Semantic variables for every
-   property (fill, stroke, radius, spacing, text color, font size, border width).
-2. **Create missing tokens** if needed (in the correct collection).
+1. **Identify Pattern tokens first** — bind component properties to their
+   `Patterns (UI)` variables wherever the Pattern contract provides a slot.
+2. **Create missing Pattern tokens** only when the Pattern contract needs a new
+   slot. New Pattern aliases consume `Semantics (Roles)`; if the semantic role
+   is missing, define that role before bypassing the layer.
 3. **Build the component** with all properties bound to variables from step 1.
 4. **Never create a component with hardcoded values** — not even temporarily.
 
@@ -56,11 +58,12 @@ This mirrors the CSS approach: `var(--token)` for everything, never raw values.
 - Never use hardcoded colors without variable binding.
 
 ### All Properties Use Tokens
-- **Border radius**: bind to Core `Size/Radius/*` variables via `setBoundVariable("topLeftRadius", var)` etc.
-- **Spacing/padding**: bind to Core `Size/Spacing/*` variables where possible.
-- **Border width**: bind to Core `Size/Border/*` variables.
-- **Font size/weight**: bind to Core `Font Size/*` and `Font Weight/*` variables.
-- Rule: if a property has a corresponding token in Core or Semantics, bind it. Never hardcode numeric values.
+- Bind component geometry and paints to the component's `Patterns (UI)` slots.
+- Pattern slots resolve through `Semantics (Roles)`, for example
+  `Semantics/Shape/Corner/Control` or `Semantics/Size/Border/Default`.
+- Do not bind a component directly to Brand/Scheme Appearance values for new work.
+- Existing migration exceptions may remain until separately migrated.
+- Never hardcode a design value when the Pattern contract provides a token slot.
 
 ## Naming Conventions
 

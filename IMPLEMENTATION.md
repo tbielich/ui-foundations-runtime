@@ -11,7 +11,7 @@ This file should add implementation detail, not redefine those rules.
 ## Project Overview
 
 This is a token-first design system (`ui-foundations`).\
-Figma is the single source of truth.
+Figma is a design-authoring projection of the UIF token model. UIF-VLT owns durable architecture and contracts; UIF-RUN owns the consumable runtime projection.
 
 Token flow: Figma Variables → JSON exports → generated CSS/TS/JSON → consumed by components
 
@@ -76,8 +76,9 @@ as historical migration evidence, not as a second live scale.
   Library-owned unprefixed component token aliases are intentionally not
   provided. Deprecated bare classes remain CSS-only compatibility selectors
   through v1.x and are not emitted by owned templates or generators.
-- Brand semantic: role-based and brand-scoped (e.g. `Brand.Color.*`, `Brand.Corner.*`)
-- States: `default`, `hover`, `active`, `focus`, `disabled`
+- Appearance / Brand owns brand-specific visual identity; brand names do not belong in reusable semantic role names.
+- Semantic colors use purpose/role/state paths such as `Color/Action/Surface/Hover`.
+- Pattern state is the final segment. Existing Runtime states are `default`, `hover`, `active`, `focus`, and `disabled`; `active` remains the established name for the pressed interaction.
 - CSS variables: kebab-case with `--`
 
 ---

@@ -61,15 +61,14 @@ Examples:
 
 ### Rules (when component tokens apply)
 
-1. Token naming: `--component-variant-part-property-state`
-   - Example: `--divider-container-border-color-default`
-2. Tokens reference only Semantic or Core layer (Foundation-001)
-   - **NEVER reference `Brand/Corner/*` or `Brand/Color/*` directly** — these
-     are brand-semantic tokens. Use the semantic role indirection:
-     - Corner radius → use `Corner/*` tokens (e.g. `Corner/Input Radius`)
-     - Colors → use `Color/Text/*`, `Color/Fill/*`, `Color/Border/*`
-     - Typography → use `Typography/*`
-   - If no suitable Semantic token exists, stop and flag it for creation
+1. Token naming follows `<Family>/<Variant?>/<Part?>/<Property>/<State?>`
+   in Figma and the canonical `--uif-*` namespace in public Runtime CSS.
+2. New Pattern tokens consume `Semantics (Roles)` (Foundation-001).
+   - **Never reference `Brand/*` or another Appearance token directly** for new Pattern work.
+   - Shape → use purpose roles such as `Semantics/Shape/Corner/Control` or `Semantics/Shape/Corner/Field`.
+   - Interactive colors → use state-matched roles such as `Semantics/Color/Action/Surface/Hover` and `Semantics/Color/Action/Content/Hover`.
+   - Typography → use reusable `Semantics/Typography/*` roles where they match the intent.
+   - If no suitable Semantic role exists, stop and flag it for creation rather than bypassing the layer.
 3. Each component gets its own tokens — never reference another component's
    tokens (Rule 9)
 4. States as last segment: `default`, `hover`, `active`, `focus`, `disabled`

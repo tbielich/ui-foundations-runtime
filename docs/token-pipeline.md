@@ -9,9 +9,7 @@ If you need the shorter developer overview first, start with:
 - `docs/architecture.md`
 - `docs/foundations/README.md`
 
-Figma is the single source of truth. Tokens flow through a generation pipeline
-that transforms Figma Variable exports into DTCG-compliant dist files consumed
-by CSS, TypeScript, and JSON tooling.
+Figma is a design-authoring projection of the UIF token model, not its source of truth. Durable architecture and contracts live in UIF-VLT; UIF-RUN provides the consumable runtime projection. `figma/token-projection.json` maps the Figma projection into compatible Runtime exports, and the generation pipeline transforms those exports into DTCG-compliant files consumed by CSS, TypeScript, and JSON tooling.
 
 ```
 figma/exports/*.tokens.json
@@ -40,13 +38,29 @@ These files are never edited manually. They are replaced on each Figma export.
 
 ## Source Files
 
-| File | Layer | Content |
+The architecture and the filenames serve different purposes.
+
+The **architecture** is:
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+The Runtime keeps some older export filenames so existing consumers and build
+steps do not break. `figma/token-projection.json` is the adapter between the
+current Figma collections and those compatibility files.
+
+| Current Figma responsibility | Runtime export file | Meaning |
 |---|---|---|
-| `Core (Primitives).tokens.json` | Core | Raw values: spacing, radii, borders, typography, colors |
-| `Appearance (Modes).tokens.json` | Appearance | Mode-dependent decisions such as light/dark color assignments |
-| `Semantics (Brands).tokens.json` | Brand semantics | Brand-scoped semantic roles (references Core and Appearance) |
-| `Patterns (UI).tokens.json` | Patterns | Pattern-specific tokens (references Semantics (Brands), Appearance, or Core) |
-| `Typography (Fluid).tokens.json` | Typography | Fluid typography mode values |
+| Core (Primitives) | `Core (Primitives).tokens.json` | Raw reusable values |
+| Appearance (Brand) | `Semantics (Brands).tokens.json` | Brand axis; filename retained for compatibility |
+| Appearance (Scheme) | `Appearance (Modes).tokens.json` | Light/dark scheme axis; filename retained for compatibility |
+| Appearance (Scale) | `Typography (Fluid).tokens.json` | Fluid scale endpoints; filename retained for compatibility |
+| Semantics (Roles) | `Semantics (Roles).tokens.json` | Stable, brand-neutral UI roles |
+| Patterns (UI) | `Patterns (UI).tokens.json` | Pattern-specific usage tokens consuming semantic roles |
+
+When reading or changing the system, use the **current Figma responsibility** to
+reason about ownership. Treat the export filename as a compatibility detail.
 
 ## Pipeline Transforms
 
@@ -78,40 +92,52 @@ Files in `dist/tokens/json/` follow the DTCG Design Tokens Format Module:
 
 ## Dist Files
 
-| File | Scope |
+Generated files preserve stable package and build paths where changing them
+would create unnecessary consumer churn.
+
+| File | Architectural responsibility |
 |---|---|
-| `core-primitives.tokens.json` | All primitives |
-| `appearance-modes.tokens.mode-light.json` | Light mode colors |
-| `appearance-modes.tokens.mode-dark.json` | Dark mode colors |
-| `patterns-ui.tokens.json` | Pattern tokens |
-| `semantics-brands.tokens.brand-a.json` | Brand A semantic roles |
-| `semantics-brands.tokens.brand-b.json` | Brand B semantic roles |
-| `semantics-brands.tokens.brand-c.json` | Brand C semantic roles |
-| `typography-fluid.tokens.mode-min.json` | Minimum fluid typography values |
-| `typography-fluid.tokens.mode-max.json` | Maximum fluid typography values |
+| `core-primitives.tokens.json` | Core primitives |
+| `appearance-modes.tokens.mode-light.json` | Appearance / Scheme: Light |
+| `appearance-modes.tokens.mode-dark.json` | Appearance / Scheme: Dark |
+| `semantics-brands.tokens.brand-a.json` | Appearance / Brand: A (compatibility filename) |
+| `semantics-brands.tokens.brand-b.json` | Appearance / Brand: B (compatibility filename) |
+| `semantics-brands.tokens.brand-c.json` | Appearance / Brand: C (compatibility filename) |
+| `typography-fluid.tokens.mode-min.json` | Appearance / Scale: Min (compatibility filename) |
+| `typography-fluid.tokens.mode-max.json` | Appearance / Scale: Max (compatibility filename) |
+| `semantics-roles.tokens.json` | Semantics / Roles |
+| `patterns-ui.tokens.json` | Patterns |
 
-## Naming Migration And Compatibility
+## Why Some Names Look Older
 
-`Semantics (Brands)` replaces the former `Themes (Brands)` collection concept.
-This is a naming migration for the collection and generated internal filenames,
-not a token-name migration.
+The 2026-09-30 migration deliberately changed **responsibilities and alias
+direction** without forcing a breaking rename of every generated artifact.
 
-Compatibility decisions:
+For example:
 
-- **Internal rename**: `Themes (Brands).tokens.json` moved to
-  `Semantics (Brands).tokens.json`.
-- **Generated rename**: `themes-brands.tokens.*` moved to
-  `semantics-brands.tokens.*`.
-- **Backwards-compatible package API**: existing package exports such as
-  `ui-foundations/tokens/brand-a.css` and `ui-foundations/tokens/brand-a.json`
-  remain available and now point to the `semantics-brands` files.
-- **New explicit aliases**: `ui-foundations/tokens/brand-semantics-a.css` and
-  matching JSON exports are available for code that wants the new terminology.
-- **Sync compatibility**: `scripts/sync-figma-tokens.mjs` still accepts an old
-  dump key named `Themes (Brands)` and writes it to the new
-  `Semantics (Brands).tokens.json` file.
-- **Deferred**: CSS custom property names such as `--brand-*` remain stable to
-  avoid unnecessary downstream breakage.
+```text
+Figma: Appearance (Brand)
+        ↓ projection
+Runtime compatibility file: Semantics (Brands).tokens.json
+```
+
+That does **not** mean Brand is part of the Semantics layer. The canonical
+meaning comes from the accepted token model; the old filename remains an
+adapter for existing Runtime consumers.
+
+Compatibility guarantees:
+
+- Existing package exports such as `ui-foundations/tokens/brand-a.css` and
+  `ui-foundations/tokens/brand-a.json` remain available.
+- Existing generated filenames can remain stable while Figma uses the clearer
+  Brand, Scheme, Scale, and Roles responsibilities.
+- `scripts/sync-figma-tokens.mjs` and `figma/token-projection.json` handle
+  the mapping rather than asking consumers to understand migration history.
+- Public CSS custom properties are not renamed solely to make internal
+  filenames look newer.
+
+This separation lets the architecture become clearer without turning a design
+system cleanup into an avoidable breaking change.
 
 ## Validation
 
