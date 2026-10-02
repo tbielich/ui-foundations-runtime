@@ -4,7 +4,7 @@ inclusion: always
 
 # UI Foundations — Design System Context
 
-This is a token-first, Figma-aligned design system. Figma owns design-variable values and bindings; UIF-VLT owns durable architecture and governance.
+This is a token-first, Figma-aligned design system. Figma is a design-authoring projection of the UIF token model; UIF-VLT owns durable architecture and contracts, and UIF-RUN owns the consumable runtime projection.
 
 ## Language
 
