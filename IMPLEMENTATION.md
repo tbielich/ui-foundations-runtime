@@ -11,7 +11,7 @@ This file should add implementation detail, not redefine those rules.
 ## Project Overview
 
 This is a token-first design system (`ui-foundations`).\
-Figma is the source of truth for design-variable values and bindings; UIF-VLT owns durable architecture and governance.
+Figma is a design-authoring projection of the UIF token model. UIF-VLT owns durable architecture and contracts; UIF-RUN owns the consumable runtime projection.
 
 Token flow: Figma Variables → JSON exports → generated CSS/TS/JSON → consumed by components
 
