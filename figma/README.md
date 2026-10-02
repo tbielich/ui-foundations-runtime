@@ -1,6 +1,6 @@
 # UI Foundations — Figma Library
 
-This Figma file is the source of truth for UIF design variables and their bindings. Durable architecture and governance remain canonical in UIF-VLT; Runtime records the compatible projection into code.
+This Figma file is the design-authoring projection of the UIF token model. UIF-VLT defines the durable architecture and contracts; UIF-RUN provides the consumable runtime projection. Changes made in Figma must remain consistent with those contracts.
 
 ## Structure
 
