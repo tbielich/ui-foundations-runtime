@@ -1,6 +1,6 @@
 {
   "name": "ui-foundations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Token-first UI foundations with CSS, tokens, macros, and Web Components.",
   "license": "PolyForm-Noncommercial-1.0.0",
   "repository": {
