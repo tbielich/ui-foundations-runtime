@@ -7,8 +7,10 @@ order: 4
 permalink: /foundations/design-tokens/
 ---
 
-Design tokens are the single source of truth for visual style. They flow from
-Figma exports through a build pipeline into CSS custom properties.
+Design tokens provide a shared contract for visual decisions across UIF. UIF-VLT
+defines the durable architecture and contracts; Figma is the design-authoring
+projection, and UIF-RUN turns the model into consumable CSS and other runtime
+artifacts.
 
 ## Token layers
 
