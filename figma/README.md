@@ -60,21 +60,25 @@ resolved color or brand.
 Semantic color roles follow:
 
 ```text
-Color/<Role>/<Property>[/<Variant>][/<State>]
+Color/<Purpose>/<Role>/<State>
 ```
 
-Pattern tokens keep the interaction state as the final segment:
+The default canvas pair may use the shorter `Color/<Role>/<State>` form.
+Pattern tokens keep interaction state as the final segment:
 
 ```text
-Component/Variant/Part/Property/State
+<Family>/<Variant?>/<Part?>/<Property>/<State?>
 ```
 
 Examples:
 
 - `Color/Action/Surface/Hover`
 - `Color/Action/Content/Hover`
-- `Color/Action/Foreground/Pressed`
+- `Color/Action/Foreground/Active`
 - `Button/Solid/Container/Background/Hover`
+
+UIF keeps `Active` as the established Runtime name for the pressed
+interaction. Do not introduce `Pressed` as a competing state name.
 
 `Surface` and `Content` form an accessibility pair for a specific state.
 `Foreground` is for standalone action content such as text, icons, strokes, or
