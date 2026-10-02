@@ -84,8 +84,10 @@ passthrough copy configured in `.eleventy.js`.
 
 | File | Scope | Priority |
 |------|-------|----------|
-| `core-primitives.tokens.css` | Primitives | 0 (first) |
-| `appearance-modes.tokens.mode-light.css` | Light mode colors | 1 |
-| `appearance-modes.tokens.mode-dark.css` | Dark mode colors | 2 |
-| `semantics-brands.tokens.brand-*.css` | Brand semantic roles | 3 |
-| `patterns-ui.tokens.css` | Pattern-specific tokens | 4 |
+| `core-primitives.tokens.css` | Core | 0 |
+| `typography-fluid.tokens.mode-*.css` | Appearance / Scale (compatibility filename) | 1 |
+| `appearance-modes.tokens.mode-light.css` | Appearance / Scheme: Light | 2 |
+| `appearance-modes.tokens.mode-dark.css` | Appearance / Scheme: Dark | 3 |
+| `semantics-brands.tokens.brand-*.css` | Appearance / Brand (compatibility filename) | 4 |
+| `semantics-roles.tokens.css` | Semantics / Roles | 4 |
+| `patterns-ui.tokens.css` | Patterns | 5 |
