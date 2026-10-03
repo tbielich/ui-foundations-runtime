@@ -23,6 +23,7 @@ in the repository.
 | `MIGRATION.md` | Historical migration context |
 | `prompts/` | Prompt templates and placeholders |
 | `modes/` | Task-specific agent modes |
+| `stitch/README.md` | Bounded Stitch experiments, native DESIGN.md projections, and verification |
 
 ## Who should read this
 

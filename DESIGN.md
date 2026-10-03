@@ -74,6 +74,16 @@ Interactive states must be explicit.
 
 ## Agent Rules
 
+For bounded external design experiments, derive a scoped projection from this
+contract and the current token sources. Declare the fixed Brand/Scheme context,
+allowed changes, frozen properties, source revision, and independent checks.
+Provider-generated palettes, aliases, or completion claims do not establish
+canonical UIF tokens or acceptance. Missing inputs must remain explicit.
+
+The [Stitch experiment workflow](docs/agentic/stitch/README.md) contains a native
+format projection and a bounded task template. It is derived operational
+guidance, not a governance change or an implemented Intelligence adapter.
+
 Before creating UI:
 
 1. Read this file.
