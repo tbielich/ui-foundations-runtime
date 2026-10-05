@@ -29,3 +29,6 @@ test-results
 playwright-report
 blob-report
 .playwright
+
+# Generated bounded accessibility evidence
+artifacts/accessibility/

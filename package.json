@@ -80,7 +80,7 @@
     "lint": "npm run lint:js",
     "test:unit": "node --test tests/*.test.mjs",
     "test:browser": "npm run docs:site && playwright test",
-    "test:browser:only": "playwright test",
+    "test:browser:only": "playwright test tests/browser/datepicker-regression.spec.mjs",
     "test": "npm run test:unit",
     "smoke:check": "node scripts/smoke-check.mjs",
     "assets:check": "node scripts/check-asset-refs.mjs",
@@ -112,10 +112,13 @@
     "docs:dev": "node scripts/build.mjs dev",
     "docs:dev:verbose": "npm run build:raw && eleventy --serve",
     "docs:lint": "node scripts/check-docs-drift.mjs",
-    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run rules:validate && npm run docs:build && npm run test:browser:only"
+    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run rules:validate && npm run docs:build && npm run test:browser:only && npm run test:a11y:only",
+    "test:a11y": "node scripts/accessibility-evidence.mjs --build",
+    "test:a11y:only": "node scripts/accessibility-evidence.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
+    "@axe-core/playwright": "4.13.0",
     "@figma/code-connect": "^1.2.0",
     "@playwright/test": "^1.63.0",
     "fast-check": "^4.8.0",

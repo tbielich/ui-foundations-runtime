@@ -365,37 +365,41 @@ For the full theming architecture — brands, modes, and how tokens cascade — 
 
 <h2 id="design-checklist">Design checklist</h2>
 
+<p>Authored design/documentation checklist below is not automated verification credit. Unticked accessibility targets require evidence beyond the bounded pilot.</p>
+{% set accessibilityComponent = "button" %}
+{% include "components/accessibility-evidence.njk" %}
+
 <div class="docs-checklist">
-  <div class="docs-checklist-item" data-done="true">
-    <div class="docs-checklist-icon">✓</div>
+  <div class="docs-checklist-item" data-done="false">
+    <div class="docs-checklist-icon">—</div>
     <div class="docs-checklist-text">
       <strong>All interactive states</strong>
       <span>Hover, active, focus, keyboard focus, and disabled states are implemented.</span>
     </div>
   </div>
-  <div class="docs-checklist-item" data-done="true">
-    <div class="docs-checklist-icon">✓</div>
+  <div class="docs-checklist-item" data-done="false">
+    <div class="docs-checklist-icon">—</div>
     <div class="docs-checklist-text">
       <strong>All brand/mode contexts</strong>
       <span>Works across light and dark modes for all brands.</span>
     </div>
   </div>
-  <div class="docs-checklist-item" data-done="true">
-    <div class="docs-checklist-icon">✓</div>
+  <div class="docs-checklist-item" data-done="false">
+    <div class="docs-checklist-icon">—</div>
     <div class="docs-checklist-text">
       <strong>Accessible use of color</strong>
       <span>Color is not the only visual means of conveying information (WCAG 1.4.1).</span>
     </div>
   </div>
-  <div class="docs-checklist-item" data-done="true">
-    <div class="docs-checklist-icon">✓</div>
+  <div class="docs-checklist-item" data-done="false">
+    <div class="docs-checklist-icon">—</div>
     <div class="docs-checklist-text">
       <strong>Accessible contrast for text</strong>
       <span>Text contrast ratio of at least 4.5:1 for small text, 3:1 for large text (WCAG 1.4.3).</span>
     </div>
   </div>
-  <div class="docs-checklist-item" data-done="true">
-    <div class="docs-checklist-icon">✓</div>
+  <div class="docs-checklist-item" data-done="false">
+    <div class="docs-checklist-icon">—</div>
     <div class="docs-checklist-text">
       <strong>Accessible contrast for UI</strong>
       <span>UI component contrast ratio of at least 3:1 (WCAG 1.4.11).</span>
