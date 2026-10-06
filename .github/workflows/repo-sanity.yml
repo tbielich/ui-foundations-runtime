@@ -1,0 +1,37 @@
+name: Repository sanity
+
+# Thin ui-foundations-runtime consumer of the shared UIF repository-sanity
+# workflow. It contains NO logic: it only invokes the reusable implementation
+# hosted in ui-foundations-intelligence with an explicit authorized repository
+# list. Both triggers are read-only — manual (workflow_dispatch) and a weekly
+# schedule. Escalation is false by default, so no run from this consumer writes.
+#
+# Cross-repo access prerequisite: ui-foundations-intelligence is PRIVATE and
+# this repository is PUBLIC. For this consumer to resolve the reusable workflow,
+# the owner's Actions access setting ("Accessible from repositories owned by
+# <owner>") must be enabled for ui-foundations-intelligence. This is a required
+# prerequisite to verify at dispatch, not a silent assumption.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekly, Monday 06:00 UTC. Read-only (escalate stays false).
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  sanity:
+    name: GitHub repository sanity (read-only)
+    uses: tbielich/ui-foundations-intelligence/.github/workflows/repo-sanity-reusable.yml@main
+    with:
+      # Authorized scope = the two repository-sanity v1 consumers. This explicit
+      # list is the run authority, not the registry.
+      repos: |
+        tbielich/ui-foundations-intelligence
+        tbielich/ui-foundations-runtime
+      owner: tbielich
+      eligibility_label: "agent:ready"
+      escalate: false
+    secrets: inherit
