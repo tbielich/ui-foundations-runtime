@@ -32,3 +32,7 @@ On mobile, Menu and Breadcrumb share a sticky navigation bar with a native
 “On this page” disclosure. The vertical jump links open below it and collapse
 after selecting an anchor. The list scrolls independently on short screens.
 Desktop keeps its sidebar TOC.
+
+The mobile sticky bar keeps the icon-only Menu trigger, breadcrumb and “Summary”
+disclosure on one row. Long breadcrumbs scroll horizontally within their available
+space; Summary opens the vertical jump list directly beneath the bar.

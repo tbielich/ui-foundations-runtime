@@ -2985,7 +2985,7 @@ details.color-family > .color-table-wrap {
 @media (max-width: 760px) {
   .docs-page-navigation {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     gap: 8px;
     position: sticky;
@@ -3009,7 +3009,7 @@ details.color-family > .color-table-wrap {
 
   .docs-toc-mobile:not([hidden]) {
     display: block;
-    flex-basis: 100%;
+    flex: none;
     min-width: 0;
   }
 
@@ -3017,6 +3017,8 @@ details.color-family > .color-table-wrap {
     cursor: pointer;
     padding: 8px 0;
     font-weight: 600;
+    font-size: 0.77rem;
+    white-space: nowrap;
     color: var(--docs-text-1);
   }
 
@@ -3026,6 +3028,14 @@ details.color-family > .color-table-wrap {
   }
 
   .docs-toc-mobile-slot {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 16px;
+    background: var(--docs-surface-0);
+    border-bottom: 1px solid var(--docs-border);
+    box-shadow: var(--docs-shadow-md);
     max-height: 50dvh;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -3042,5 +3052,41 @@ details.color-family > .color-table-wrap {
 
   .docs-content h2[id] {
     scroll-margin-top: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  .docs-page-navigation .docs-breadcrumb ol {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    align-items: center;
+  }
+
+  .docs-page-navigation .docs-breadcrumb li + li::before {
+    content: "|";
+  }
+
+  .docs-page-navigation .docs-navigation-toolbar {
+    padding-right: 8px;
+    border-right: 1px solid var(--docs-border-strong);
+  }
+
+  .docs-toc-mobile > summary {
+    list-style: none;
+  }
+
+  .docs-toc-mobile > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .docs-toc-mobile > summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  .docs-toc-mobile[open] > summary::before {
+    transform: rotate(90deg);
   }
 }

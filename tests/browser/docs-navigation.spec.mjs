@@ -73,9 +73,12 @@ test("page jump navigation stacks below mobile breadcrumbs and beside desktop co
   await expect(toc).toBeVisible();
   const mobileToc = await toc.boundingBox();
   const breadcrumbBounds = await page.locator(".docs-breadcrumb").boundingBox();
-  const headingBounds = await content.locator("h1").boundingBox();
+  const menuBounds = await page.locator(".docs-navigation-trigger").boundingBox();
+  const summaryBounds = await disclosure.locator("summary").boundingBox();
+  expect(summaryBounds.y + summaryBounds.height / 2).toBeCloseTo(menuBounds.y + menuBounds.height / 2, 1);
+  expect(breadcrumbBounds.y + breadcrumbBounds.height / 2).toBeCloseTo(menuBounds.y + menuBounds.height / 2, 1);
   expect(mobileToc.y).toBeGreaterThanOrEqual(breadcrumbBounds.y + breadcrumbBounds.height);
-  expect(mobileToc.y + mobileToc.height).toBeLessThanOrEqual(headingBounds.y);
+
   const bounds = await toc.locator("li").evaluateAll(items => items.map(item => {
     const rect = item.getBoundingClientRect();
     return { x: rect.x, y: rect.y, bottom: rect.bottom };
