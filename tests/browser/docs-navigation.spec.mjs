@@ -11,9 +11,14 @@ test("mobile drawer contains focus and closes through each supported action", as
   await expect(page.locator(".docs-sidebar")).not.toBeVisible();
   await expect(trigger).toHaveAttribute("aria-controls", "docs-navigation-drawer");
   for (const action of ["close", "escape", "backdrop"]) {
+    const triggerBounds = await trigger.boundingBox();
     await trigger.click();
     await expect(trigger).toHaveAttribute("aria-expanded", "true");
     await expect(close).toBeFocused();
+    const closeBounds = await close.boundingBox();
+    for (const dimension of ["x", "y", "width", "height"]) {
+      expect(closeBounds[dimension]).toBeCloseTo(triggerBounds[dimension], 1);
+    }
     await expect(drawer).toBeVisible();
     expect(await drawer.evaluate(el => el.getBoundingClientRect().left)).toBe(0);
     expect(await page.locator("body").evaluate(el => el.style.overflow)).toBe("hidden");

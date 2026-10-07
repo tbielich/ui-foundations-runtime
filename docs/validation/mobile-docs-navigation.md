@@ -7,7 +7,7 @@ node is moved into the native dialog; search, active links and expanded groups a
 reused. No navigation markup or runtime pattern API is duplicated.
 
 The Menu button exposes `aria-controls` and `aria-expanded`. Opening focuses the
-Close button; native modal dialog behavior contains focus and makes the background
+Close button at the same viewport position and size as the Menu trigger; native modal dialog behavior contains focus and makes the background
 inert. Close, Escape and a backdrop tap restore focus to Menu and restore the body's
 previous inline overflow setting. Resizing to desktop closes the drawer and returns
 the sidebar to its original position. Without JavaScript or native dialog support,

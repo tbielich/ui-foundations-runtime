@@ -2922,8 +2922,10 @@ details.color-family > .color-table-wrap {
   .docs-navigation-close {
     display: block;
     flex: none;
-    align-self: end;
-    margin: 8px;
+    align-self: start;
+    margin: var(--docs-navigation-trigger-y) 0 8px var(--docs-navigation-trigger-x);
+    width: var(--docs-navigation-trigger-width);
+    height: var(--docs-navigation-trigger-height);
   }
 
   .docs-navigation-drawer .docs-sidebar {

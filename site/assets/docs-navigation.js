@@ -31,9 +31,18 @@
     finishClose();
   }
 
+  function alignCloseButton() {
+    const rect = trigger.getBoundingClientRect();
+    drawer.style.setProperty("--docs-navigation-trigger-x", rect.left + "px");
+    drawer.style.setProperty("--docs-navigation-trigger-y", rect.top + "px");
+    drawer.style.setProperty("--docs-navigation-trigger-width", rect.width + "px");
+    drawer.style.setProperty("--docs-navigation-trigger-height", rect.height + "px");
+  }
+
   function syncLayout() {
     if (isMobile()) {
       drawer.append(sidebar);
+      if (drawer.open) alignCloseButton();
     } else {
       const hadFocus = drawer.open || drawer.contains(document.activeElement);
       close();
@@ -45,6 +54,7 @@
   trigger.addEventListener("click", function () {
     if (!isMobile()) return;
     if (drawer.open) return close();
+    alignCloseButton();
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     drawer.showModal();
