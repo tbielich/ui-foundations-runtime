@@ -182,6 +182,8 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-content {
+  grid-column: 1;
+  grid-row: 1;
   max-width: 1120px;
   padding: 34px 32px 48px;
 }
@@ -866,18 +868,6 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 @media (max-width: 980px) {
-  .docs-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .docs-sidebar {
-    position: static;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--docs-border);
-    padding: 14px 14px 18px;
-  }
-
   .docs-content {
     padding: 24px 16px 36px;
   }
@@ -1191,6 +1181,8 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 /* ─── Right-side sticky TOC (auto-generated) ─── */
 .docs-toc-sidebar {
+  grid-column: 2;
+  grid-row: 1;
   position: sticky;
   top: 80px;
   align-self: start;
@@ -2856,4 +2848,245 @@ details.color-family > .color-table-wrap {
   color: var(--docs-text-0);
   box-shadow: var(--docs-shadow-sm);
   font-weight: 700;
+}
+
+/* Docs-only navigation: use Core Breakpoint/200 (Tablet Small, 760px) and docs
+   palette. Native dialog supplies the modal layer, backdrop and focus containment. */
+.docs-navigation-toolbar,
+.docs-navigation-close {
+  display: none;
+}
+
+.docs-navigation-drawer {
+  padding: 0;
+  border: 0;
+  color: var(--docs-text-0);
+  background: var(--docs-surface-1);
+}
+
+.docs-navigation-trigger,
+.docs-navigation-close {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--docs-border-strong);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--docs-text-0);
+  background: var(--docs-surface-1);
+  cursor: pointer;
+}
+
+.docs-navigation-trigger:focus-visible,
+.docs-navigation-close:focus-visible {
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .docs-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--docs-border);
+    padding: 14px 14px 18px;
+  }
+
+
+  .docs-navigation-ready .docs-navigation-toolbar {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .docs-navigation-ready .docs-shell > .docs-sidebar {
+    display: none;
+  }
+
+  .docs-navigation-drawer[open] {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 0;
+    margin: 0;
+    width: min(var(--docs-sidebar-width), 90vw);
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    box-shadow: var(--docs-shadow-md);
+  }
+
+  .docs-navigation-drawer::backdrop {
+    background: var(--docs-text-0);
+    opacity: 0.45;
+  }
+
+  .docs-navigation-close {
+    display: block;
+    flex: none;
+    align-self: start;
+    margin: var(--docs-navigation-trigger-y) 0 8px var(--docs-navigation-trigger-x);
+    width: var(--docs-navigation-trigger-width);
+    height: var(--docs-navigation-trigger-height);
+  }
+
+  .docs-navigation-drawer .docs-sidebar {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 0;
+  }
+}
+
+/* Reuse the same jump navigation below breadcrumbs on mobile. */
+.docs-toc-mobile-slot {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .docs-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .docs-toc-mobile-slot:not(:empty) {
+    display: block;
+  }
+
+  .docs-toc-mobile-slot > .docs-toc-sidebar {
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 0;
+    padding: 0 0 16px;
+    border-inline-start: 0;
+    border-bottom: 1px solid var(--docs-border);
+  }
+
+  .docs-toc-sidebar-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Mobile navigation stays available while reading; desktop retains its layout. */
+.docs-page-navigation {
+  display: contents;
+}
+
+.docs-toc-mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .docs-page-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: var(--zindex-sticky);
+    margin: -24px -16px 20px;
+    padding: 8px 16px;
+    background: var(--docs-surface-0);
+    border-bottom: 1px solid var(--docs-border);
+  }
+
+  .docs-page-navigation .docs-navigation-toolbar,
+  .docs-page-navigation .docs-breadcrumb {
+    margin: 0;
+  }
+
+  .docs-page-navigation .docs-breadcrumb {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .docs-toc-mobile:not([hidden]) {
+    display: block;
+    flex: none;
+    min-width: 0;
+  }
+
+  .docs-toc-mobile > summary {
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: 600;
+    font-size: 0.77rem;
+    white-space: nowrap;
+    color: var(--docs-text-1);
+  }
+
+  .docs-toc-mobile > summary:focus-visible {
+    outline: 2px solid var(--docs-accent);
+    outline-offset: 2px;
+  }
+
+  .docs-toc-mobile-slot {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 16px;
+    background: var(--docs-surface-0);
+    border-bottom: 1px solid var(--docs-border);
+    box-shadow: var(--docs-shadow-md);
+    max-height: 50dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .docs-toc-mobile-slot > .docs-toc-sidebar {
+    border-bottom: 0;
+    padding-bottom: 8px;
+  }
+
+  .docs-toc-mobile-slot .docs-toc-sidebar-title {
+    display: none;
+  }
+
+  .docs-content h2[id] {
+    scroll-margin-top: 160px;
+  }
+}
+
+@media (max-width: 760px) {
+  .docs-page-navigation .docs-breadcrumb ol {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-x: auto;
+    align-items: center;
+  }
+
+  .docs-page-navigation .docs-breadcrumb li + li::before {
+    content: "|";
+  }
+
+  .docs-page-navigation .docs-navigation-toolbar {
+    padding-right: 8px;
+    border-right: 1px solid var(--docs-border-strong);
+  }
+
+  .docs-toc-mobile > summary {
+    list-style: none;
+  }
+
+  .docs-toc-mobile > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .docs-toc-mobile > summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 6px;
+  }
+
+  .docs-toc-mobile[open] > summary::before {
+    transform: rotate(90deg);
+  }
 }
