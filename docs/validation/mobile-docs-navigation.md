@@ -22,6 +22,6 @@ Verification: `tests/browser/docs-navigation.spec.mjs` exercises focus, dismissa
 scroll-lock cleanup, the 980/981px boundary, node reuse, and the no-JavaScript fallback
 in headless Chromium. Safari/iOS and assistive-technology verification remain manual.
 
-The generated “On this page” navigation precedes the article in DOM order and is
-placed above it in the single-column mobile layout. Desktop keeps the sticky right
+The generated “On this page” navigation moves into a slot immediately below
+the breadcrumb and before the page title on mobile, with all links vertically stacked. Desktop keeps the sticky right
 column. The same heading links and scroll spy are reused; no second TOC is created.

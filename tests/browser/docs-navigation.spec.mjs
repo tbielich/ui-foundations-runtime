@@ -62,15 +62,25 @@ test("without JavaScript mobile navigation remains available", async ({ browser 
 });
 
 
-test("page jump navigation is above mobile content and beside desktop content", async ({ page }) => {
+test("page jump navigation stacks below mobile breadcrumbs and beside desktop content", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/foundations/architecture/");
   const toc = page.getByRole("navigation", { name: "On this page", exact: true });
   const content = page.locator(".docs-content");
   await expect(toc).toBeVisible();
   const mobileToc = await toc.boundingBox();
-  const mobileContent = await content.boundingBox();
-  expect(mobileToc.y + mobileToc.height).toBeLessThanOrEqual(mobileContent.y);
+  const breadcrumbBounds = await page.locator(".docs-breadcrumb").boundingBox();
+  const headingBounds = await content.locator("h1").boundingBox();
+  expect(mobileToc.y).toBeGreaterThanOrEqual(breadcrumbBounds.y + breadcrumbBounds.height);
+  expect(mobileToc.y + mobileToc.height).toBeLessThanOrEqual(headingBounds.y);
+  const bounds = await toc.locator("li").evaluateAll(items => items.map(item => {
+    const rect = item.getBoundingClientRect();
+    return { x: rect.x, y: rect.y, bottom: rect.bottom };
+  }));
+  for (let i = 1; i < bounds.length; i++) {
+    expect(bounds[i].x).toBe(bounds[0].x);
+    expect(bounds[i].y).toBeGreaterThanOrEqual(bounds[i - 1].bottom);
+  }
   expect(mobileToc.width).toBeLessThanOrEqual(390);
   const link = toc.locator("a").first();
   const href = await link.getAttribute("href");

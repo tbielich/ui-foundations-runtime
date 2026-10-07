@@ -2942,30 +2942,32 @@ details.color-family > .color-table-wrap {
   }
 }
 
-/* Keep the same generated jump links above the page on small viewports. */
+/* Reuse the same jump navigation below breadcrumbs on mobile. */
+.docs-toc-mobile-slot {
+  display: none;
+}
+
 @media (max-width: 980px) {
   .docs-main {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .docs-main > .docs-toc-sidebar {
-    grid-column: 1;
-    grid-row: 1;
+  .docs-toc-mobile-slot:not(:empty) {
+    display: block;
+  }
+
+  .docs-toc-mobile-slot > .docs-toc-sidebar {
     position: static;
     width: auto;
     max-height: none;
     overflow: visible;
     margin: 0;
-    padding: 24px 16px 16px;
+    padding: 0 0 16px;
     border-inline-start: 0;
     border-bottom: 1px solid var(--docs-border);
   }
 
   .docs-toc-sidebar-list {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
-  .docs-main:has(> .docs-toc-sidebar) > .docs-content {
-    grid-row: 2;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -257,6 +257,7 @@
             </ol>
           </nav>
           {% endif %}
+          <div class="docs-toc-mobile-slot"></div>
           {% set isComponentsOverview = page.url == "/patterns/" or page.url == "/patterns" %}
           {% set isComponentDoc = page.url and page.url.indexOf("/patterns/") == 0 and not isPlayground and not isComponentsOverview %}
           {% if title and not compactTitleInBreadcrumb %}
@@ -278,7 +279,7 @@
     <script src="/assets/docs-keytips.js"></script>
 
     <script>
-      // Page TOC: above content on mobile, right-hand column on desktop.
+      // Page TOC: below breadcrumbs on mobile, right-hand column on desktop.
       (function () {
         var headings = document.querySelectorAll(".docs-content h2[id]");
         if (headings.length < 2) return;
@@ -308,7 +309,16 @@
         aside.appendChild(ul);
 
         var main = document.querySelector(".docs-main");
-        if (main) main.prepend(aside);
+        var mobileSlot = document.querySelector(".docs-toc-mobile-slot");
+        var toolbar = document.querySelector(".docs-navigation-toolbar");
+        function placeToc() {
+          if (!main) return;
+          var mobile = toolbar && getComputedStyle(toolbar).display !== "none";
+          var parent = mobile && mobileSlot ? mobileSlot : main;
+          if (aside.parentElement !== parent) parent.appendChild(aside);
+        }
+        window.addEventListener("resize", placeToc);
+        placeToc();
 
         // Scroll spy
         var links = ul.querySelectorAll("a");
