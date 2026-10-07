@@ -35,11 +35,11 @@ test("mobile drawer contains focus and closes through each supported action", as
 });
 
 test("resize restores the same sidebar and desktop layout", async ({ page }) => {
-  await page.setViewportSize({ width: 980, height: 800 });
+  await page.setViewportSize({ width: 760, height: 800 });
   await page.goto(path);
   await page.evaluate(() => { window.originalSidebar = document.querySelector(".docs-sidebar"); });
   await page.getByRole("button", { name: "Open navigation" }).click();
-  await page.setViewportSize({ width: 981, height: 800 });
+  await page.setViewportSize({ width: 761, height: 800 });
   await expect(page.locator(".docs-shell > .docs-sidebar")).toBeVisible();
   await expect(page.locator(".docs-navigation-trigger")).not.toBeVisible();
   await expect(page.locator("#docs-navigation-drawer")).not.toBeVisible();

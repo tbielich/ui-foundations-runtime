@@ -868,18 +868,6 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 @media (max-width: 980px) {
-  .docs-shell {
-    grid-template-columns: 1fr;
-  }
-
-  .docs-sidebar {
-    position: static;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--docs-border);
-    padding: 14px 14px 18px;
-  }
-
   .docs-content {
     padding: 24px 16px 36px;
   }
@@ -2862,7 +2850,7 @@ details.color-family > .color-table-wrap {
   font-weight: 700;
 }
 
-/* Docs-only navigation: reuse the shell's existing 980px breakpoint and docs
+/* Docs-only navigation: use Core Breakpoint/200 (Tablet Small, 760px) and docs
    palette. Native dialog supplies the modal layer, backdrop and focus containment. */
 .docs-navigation-toolbar,
 .docs-navigation-close {
@@ -2895,7 +2883,20 @@ details.color-family > .color-table-wrap {
   outline-offset: 2px;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 760px) {
+  .docs-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-sidebar {
+    position: static;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--docs-border);
+    padding: 14px 14px 18px;
+  }
+
+
   .docs-navigation-ready .docs-navigation-toolbar {
     display: block;
     margin-bottom: 14px;
@@ -2947,7 +2948,7 @@ details.color-family > .color-table-wrap {
   display: none;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 760px) {
   .docs-main {
     grid-template-columns: minmax(0, 1fr);
   }
