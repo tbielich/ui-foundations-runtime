@@ -2857,3 +2857,81 @@ details.color-family > .color-table-wrap {
   box-shadow: var(--docs-shadow-sm);
   font-weight: 700;
 }
+
+/* Docs-only navigation: reuse the shell's existing 980px breakpoint and docs
+   palette. Native dialog supplies the modal layer, backdrop and focus containment. */
+.docs-navigation-toolbar,
+.docs-navigation-close {
+  display: none;
+}
+
+.docs-navigation-drawer {
+  padding: 0;
+  border: 0;
+  color: var(--docs-text-0);
+  background: var(--docs-surface-1);
+}
+
+.docs-navigation-trigger,
+.docs-navigation-close {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--docs-border-strong);
+  border-radius: 8px;
+  font: inherit;
+  color: var(--docs-text-0);
+  background: var(--docs-surface-1);
+  cursor: pointer;
+}
+
+.docs-navigation-trigger:focus-visible,
+.docs-navigation-close:focus-visible {
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 980px) {
+  .docs-navigation-ready .docs-navigation-toolbar {
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  .docs-navigation-ready .docs-shell > .docs-sidebar {
+    display: none;
+  }
+
+  .docs-navigation-drawer[open] {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 auto 0 0;
+    margin: 0;
+    width: min(var(--docs-sidebar-width), 90vw);
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    box-shadow: var(--docs-shadow-md);
+  }
+
+  .docs-navigation-drawer::backdrop {
+    background: var(--docs-text-0);
+    opacity: 0.45;
+  }
+
+  .docs-navigation-close {
+    display: block;
+    flex: none;
+    align-self: end;
+    margin: 8px;
+  }
+
+  .docs-navigation-drawer .docs-sidebar {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 0;
+  }
+}

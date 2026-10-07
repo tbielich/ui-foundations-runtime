@@ -74,6 +74,9 @@
     <link rel="stylesheet" href="/assets/docs-keytips.css" />
   </head>
   <body>
+    <dialog class="docs-navigation-drawer" id="docs-navigation-drawer" aria-label="Documentation navigation">
+      <button class="docs-navigation-close" type="button" aria-label="Close navigation" autofocus>✕</button>
+    </dialog>
     <div class="docs-shell">
       <aside class="docs-sidebar">
         <a class="docs-logo" href="/">UI Foundations</a>
@@ -207,6 +210,12 @@
 
       <main class="docs-main">
         <article class="docs-content">
+        <div class="docs-navigation-toolbar">
+          <button class="docs-navigation-trigger" type="button" aria-expanded="false" aria-controls="docs-navigation-drawer" aria-label="Open navigation">
+            <span aria-hidden="true">☰</span> Menu
+          </button>
+        </div>
+
           {% set compactTitleInBreadcrumb = isPlayground and breadcrumb and breadcrumb.length %}
 
           {# Auto-generate breadcrumb from URL when no manual breadcrumb is set #}
@@ -264,6 +273,7 @@
     </footer>
 
     <script id="docs-search-index" type="application/json">{{ collections.searchIndex | dump | safe }}</script>
+    <script src="/assets/docs-navigation.js"></script>
     <script src="/assets/docs-search.js"></script>
     <script src="/assets/docs-keytips.js"></script>
 

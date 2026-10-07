@@ -1,0 +1,23 @@
+# Mobile documentation and Playground navigation
+
+The shared docs shell uses its existing `max-width: 980px` threshold to replace
+its left sidebar with a Menu button and a left modal drawer. Above that threshold,
+the existing desktop sidebar and navigation remain unchanged. The original sidebar
+node is moved into the native dialog; search, active links and expanded groups are
+reused. No navigation markup or runtime pattern API is duplicated.
+
+The Menu button exposes `aria-controls` and `aria-expanded`. Opening focuses the
+Close button; native modal dialog behavior contains focus and makes the background
+inert. Close, Escape and a backdrop tap restore focus to Menu and restore the body's
+previous inline overflow setting. Resizing to desktop closes the drawer and returns
+the sidebar to its original position. Without JavaScript or native dialog support,
+the original mobile navigation remains visible as a fallback.
+
+This is docs-only composition under Foundation-009, using the existing docs palette
+and sizing conventions (assistant rule 13), not a new UIF pattern or token family.
+CSS remains the sole owner of the breakpoint; JavaScript reads the toolbar's computed
+display. Native dialog top-layer placement avoids a new z-index exception.
+
+Verification: `tests/browser/docs-navigation.spec.mjs` exercises focus, dismissal,
+scroll-lock cleanup, the 980/981px boundary, node reuse, and the no-JavaScript fallback
+in headless Chromium. Safari/iOS and assistive-technology verification remain manual.
