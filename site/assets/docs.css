@@ -2972,3 +2972,75 @@ details.color-family > .color-table-wrap {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Mobile navigation stays available while reading; desktop retains its layout. */
+.docs-page-navigation {
+  display: contents;
+}
+
+.docs-toc-mobile {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .docs-page-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    position: sticky;
+    top: 0;
+    z-index: var(--zindex-sticky);
+    margin: -24px -16px 20px;
+    padding: 8px 16px;
+    background: var(--docs-surface-0);
+    border-bottom: 1px solid var(--docs-border);
+  }
+
+  .docs-page-navigation .docs-navigation-toolbar,
+  .docs-page-navigation .docs-breadcrumb {
+    margin: 0;
+  }
+
+  .docs-page-navigation .docs-breadcrumb {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .docs-toc-mobile:not([hidden]) {
+    display: block;
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .docs-toc-mobile > summary {
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: 600;
+    color: var(--docs-text-1);
+  }
+
+  .docs-toc-mobile > summary:focus-visible {
+    outline: 2px solid var(--docs-accent);
+    outline-offset: 2px;
+  }
+
+  .docs-toc-mobile-slot {
+    max-height: 50dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .docs-toc-mobile-slot > .docs-toc-sidebar {
+    border-bottom: 0;
+    padding-bottom: 8px;
+  }
+
+  .docs-toc-mobile-slot .docs-toc-sidebar-title {
+    display: none;
+  }
+
+  .docs-content h2[id] {
+    scroll-margin-top: 160px;
+  }
+}

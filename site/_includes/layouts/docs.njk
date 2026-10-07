@@ -210,6 +210,7 @@
 
       <main class="docs-main">
         <article class="docs-content">
+        <div class="docs-page-navigation">
         <div class="docs-navigation-toolbar">
           <button class="docs-navigation-trigger" type="button" aria-expanded="false" aria-controls="docs-navigation-drawer" aria-label="Open navigation">
             <span aria-hidden="true">☰</span> Menu
@@ -257,7 +258,11 @@
             </ol>
           </nav>
           {% endif %}
-          <div class="docs-toc-mobile-slot"></div>
+          <details class="docs-toc-mobile" hidden>
+            <summary>On this page</summary>
+            <div class="docs-toc-mobile-slot"></div>
+          </details>
+        </div>
           {% set isComponentsOverview = page.url == "/patterns/" or page.url == "/patterns" %}
           {% set isComponentDoc = page.url and page.url.indexOf("/patterns/") == 0 and not isPlayground and not isComponentsOverview %}
           {% if title and not compactTitleInBreadcrumb %}
@@ -311,6 +316,13 @@
         var main = document.querySelector(".docs-main");
         var mobileSlot = document.querySelector(".docs-toc-mobile-slot");
         var toolbar = document.querySelector(".docs-navigation-toolbar");
+        var disclosure = document.querySelector(".docs-toc-mobile");
+        disclosure.hidden = false;
+        ul.addEventListener("click", function (event) {
+          if (event.target.closest("a") && aside.parentElement === mobileSlot) {
+            disclosure.open = false;
+          }
+        });
         function placeToc() {
           if (!main) return;
           var mobile = toolbar && getComputedStyle(toolbar).display !== "none";

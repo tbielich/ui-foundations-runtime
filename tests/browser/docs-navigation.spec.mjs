@@ -67,6 +67,9 @@ test("page jump navigation stacks below mobile breadcrumbs and beside desktop co
   await page.goto("/foundations/architecture/");
   const toc = page.getByRole("navigation", { name: "On this page", exact: true });
   const content = page.locator(".docs-content");
+  const disclosure = page.locator(".docs-toc-mobile");
+  await expect(toc).not.toBeVisible();
+  await disclosure.locator("summary").click();
   await expect(toc).toBeVisible();
   const mobileToc = await toc.boundingBox();
   const breadcrumbBounds = await page.locator(".docs-breadcrumb").boundingBox();
@@ -86,6 +89,10 @@ test("page jump navigation stacks below mobile breadcrumbs and beside desktop co
   const href = await link.getAttribute("href");
   await link.click();
   expect(new URL(page.url()).hash).toBe(href);
+  await expect(toc).not.toBeVisible();
+  expect(await page.locator(".docs-page-navigation").evaluate(el => getComputedStyle(el).position)).toBe("sticky");
+  const navBounds = await page.locator(".docs-page-navigation").boundingBox();
+  expect(navBounds.y).toBeCloseTo(0, 1);
   await page.setViewportSize({ width: 1440, height: 900 });
   await expect.poll(() => toc.evaluate(el => getComputedStyle(el).position)).toBe("sticky");
   const desktopToc = await toc.boundingBox();

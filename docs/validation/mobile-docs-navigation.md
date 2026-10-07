@@ -27,3 +27,8 @@ in headless Chromium. Safari/iOS and assistive-technology verification remain ma
 The generated “On this page” navigation moves into a slot immediately below
 the breadcrumb and before the page title on mobile, with all links vertically stacked. Desktop keeps the sticky right
 column. The same heading links and scroll spy are reused; no second TOC is created.
+
+On mobile, Menu and Breadcrumb share a sticky navigation bar with a native
+“On this page” disclosure. The vertical jump links open below it and collapse
+after selecting an anchor. The list scrolls independently on short screens.
+Desktop keeps its sidebar TOC.
