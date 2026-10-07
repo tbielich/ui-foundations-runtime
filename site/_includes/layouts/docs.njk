@@ -278,12 +278,12 @@
     <script src="/assets/docs-keytips.js"></script>
 
     <script>
-      // Right-side TOC: extract h2[id] headings and build nav + scroll spy
+      // Page TOC: above content on mobile, right-hand column on desktop.
       (function () {
         var headings = document.querySelectorAll(".docs-content h2[id]");
         if (headings.length < 2) return;
 
-        var aside = document.createElement("aside");
+        var aside = document.createElement("nav");
         aside.className = "docs-toc-sidebar";
         aside.setAttribute("aria-label", "On this page");
 
@@ -308,7 +308,7 @@
         aside.appendChild(ul);
 
         var main = document.querySelector(".docs-main");
-        if (main) main.appendChild(aside);
+        if (main) main.prepend(aside);
 
         // Scroll spy
         var links = ul.querySelectorAll("a");

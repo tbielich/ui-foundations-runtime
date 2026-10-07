@@ -60,3 +60,26 @@ test("without JavaScript mobile navigation remains available", async ({ browser 
   await expect(page.locator(".docs-navigation-trigger")).not.toBeVisible();
   await context.close();
 });
+
+
+test("page jump navigation is above mobile content and beside desktop content", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/foundations/architecture/");
+  const toc = page.getByRole("navigation", { name: "On this page", exact: true });
+  const content = page.locator(".docs-content");
+  await expect(toc).toBeVisible();
+  const mobileToc = await toc.boundingBox();
+  const mobileContent = await content.boundingBox();
+  expect(mobileToc.y + mobileToc.height).toBeLessThanOrEqual(mobileContent.y);
+  expect(mobileToc.width).toBeLessThanOrEqual(390);
+  const link = toc.locator("a").first();
+  const href = await link.getAttribute("href");
+  await link.click();
+  expect(new URL(page.url()).hash).toBe(href);
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await expect.poll(() => toc.evaluate(el => getComputedStyle(el).position)).toBe("sticky");
+  const desktopToc = await toc.boundingBox();
+  const desktopContent = await content.boundingBox();
+  expect(desktopToc.x).toBeGreaterThanOrEqual(desktopContent.x + desktopContent.width);
+  expect(await toc.evaluate(el => getComputedStyle(el).position)).toBe("sticky");
+});

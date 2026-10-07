@@ -182,6 +182,8 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-content {
+  grid-column: 1;
+  grid-row: 1;
   max-width: 1120px;
   padding: 34px 32px 48px;
 }
@@ -1191,6 +1193,8 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 /* ─── Right-side sticky TOC (auto-generated) ─── */
 .docs-toc-sidebar {
+  grid-column: 2;
+  grid-row: 1;
   position: sticky;
   top: 80px;
   align-self: start;
@@ -2935,5 +2939,33 @@ details.color-family > .color-table-wrap {
     overflow-y: auto;
     overscroll-behavior: contain;
     border: 0;
+  }
+}
+
+/* Keep the same generated jump links above the page on small viewports. */
+@media (max-width: 980px) {
+  .docs-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .docs-main > .docs-toc-sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    position: static;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    margin: 0;
+    padding: 24px 16px 16px;
+    border-inline-start: 0;
+    border-bottom: 1px solid var(--docs-border);
+  }
+
+  .docs-toc-sidebar-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .docs-main:has(> .docs-toc-sidebar) > .docs-content {
+    grid-row: 2;
   }
 }
