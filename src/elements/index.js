@@ -19,6 +19,7 @@ export { UIBadge } from "./ui-badge.js";
 export { UIDivider } from "./ui-divider.js";
 export { UITextarea } from "./ui-textarea.js";
 export { UIAvatar } from "./ui-avatar.js";
+export { UIProgressCircle } from "./ui-progress-circle.js";
 export { UIAccordion, UIAccordionItem } from "./ui-accordion.js";
 export { UITabList, UITab, UITabPanel } from "./ui-tabs.js";
 export { UITooltip } from "./ui-tooltip.js";

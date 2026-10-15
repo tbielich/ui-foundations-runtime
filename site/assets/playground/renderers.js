@@ -1294,6 +1294,32 @@
     return { element, code };
   };
 
+  // ─── ProgressCircle ───────────────────────────
+
+  const renderVanillaProgressCircle = ({ props }) => {
+    const rawValue = props.value;
+    const determinate = rawValue !== undefined && rawValue !== null && String(rawValue) !== "";
+    const parsed = Number(rawValue);
+    const value = determinate && Number.isFinite(parsed)
+      ? Math.min(100, Math.max(0, parsed))
+      : null;
+    const size = ["sm", "md", "lg"].includes(String(props.size)) ? String(props.size) : "md";
+    const label = String(props.label || (value === null ? "Loading" : "Progress"));
+
+    const element = document.createElement("uif-progress-circle");
+    element.setAttribute("label", label);
+    element.setAttribute("size", size);
+    if (value !== null) element.setAttribute("value", String(value));
+
+    const attrs = [
+      `label="${quoteAttr(label)}"`,
+      size !== "md" ? `size="${size}"` : "",
+      value !== null ? `value="${value}"` : "",
+    ].filter(Boolean);
+
+    return { element, code: `<uif-progress-circle ${attrs.join(" ")}></uif-progress-circle>` };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1306,6 +1332,7 @@
       input: renderVanillaInput,
       label: renderVanillaLabel,
       link: renderVanillaLink,
+      progressCircle: renderVanillaProgressCircle,
       radio: renderVanillaRadio,
       switch: renderVanillaSwitch,
       textarea: renderVanillaTextarea,

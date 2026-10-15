@@ -343,3 +343,17 @@
 {% macro dialog(title='', description='', dismissible=true, open=false, confirmLabel='Confirm', cancelLabel='Cancel') -%}
 <uif-dialog title="{{ title }}"{% if description %} description="{{ description }}"{% endif %} dismissible="{{ 'true' if dismissible else 'false' }}"{% if open %} open{% endif %} confirm-label="{{ confirmLabel }}" cancel-label="{{ cancelLabel }}">{{ caller() }}</uif-dialog>
 {%- endmacro %}
+
+
+{% macro progressCircle(value='', label='Loading', size='md') -%}
+{%- set resolvedSize = size if size == 'sm' or size == 'lg' else 'md' -%}
+{%- set classes = 'uif-progress-circle' -%}
+{%- if resolvedSize != 'md' -%}{%- set classes = classes + ' ' + resolvedSize -%}{%- endif -%}
+{%- if value == '' or value == none -%}{%- set classes = classes + ' is-indeterminate' -%}{%- endif -%}
+<span class="{{ classes }}" role="progressbar" aria-label="{{ label }}"{% if value != '' and value != none %} aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ value }}" style="--uif-progress-circle-value: {{ value }}"{% endif %}>
+  <svg viewBox="0 0 36 36" aria-hidden="true">
+    <circle class="uif-progress-circle-track" cx="18" cy="18" r="15.9155"></circle>
+    <circle class="uif-progress-circle-indicator" cx="18" cy="18" r="15.9155" pathLength="100"></circle>
+  </svg>
+</span>
+{%- endmacro %}
