@@ -11,6 +11,23 @@ playgroundLabel: Open Checkbox Playground
 
 {% import "macros/ui.njk" as uif %}
 
+## Native state initialization
+
+The Checkbox macro marks mixed examples with `data-indeterminate`. HTML has no
+native indeterminate attribute: static HTML alone cannot expose a genuine mixed
+checkbox state. Load `/assets/checkbox-state.js` as a module after the markup (the
+docs layout does this automatically). Consumers must copy/serve this module with
+the macro; it is a site asset, not a new package or Custom Element API.
+
+For dynamically inserted macro markup, import `initializeCheckboxes` from that
+module and call it with the containing element after insertion. Initialization is
+idempotent. Native `checked` and `indeterminate` properties drive accessible state;
+the initializer synchronizes the existing visual state classes on native change.
+Real pointer/Space activation clears mixed state using browser behavior; disabled
+inputs stay inert. For programmatic updates, set the native properties and dispatch
+a `change` event to synchronize classes. Without JavaScript, use ordinary checked
+or unchecked markup, not a mixed-state claim.
+
 <div class="docs-hero">
   <div class="docs-hero-preview">
     <div class="docs-hero-preview-controls">

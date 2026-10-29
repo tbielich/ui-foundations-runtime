@@ -22,7 +22,16 @@ function inlineImports(filePath, seen = new Set()) {
   seen.add(resolved);
 
   const baseDir = path.dirname(filePath);
-  const css = fs.readFileSync(filePath, "utf8");
+  // Imported styles keep their own relative asset paths in the modular
+  // package. Embed local SVG masks in the flat bundle so moving main.css
+  // (including under a hosting prefix) never changes their resolved URL.
+  const css = fs.readFileSync(filePath, "utf8").replace(
+    /url\((["'])(\.[^"']+\.svg)\1\)/g,
+    (_match, _quote, assetUrl) => {
+      const assetPath = path.resolve(baseDir, assetUrl);
+      return `url("data:image/svg+xml,${encodeURIComponent(fs.readFileSync(assetPath, "utf8"))}")`;
+    },
+  );
 
   return css.replace(
     /@import\s+url\(["']([^"']+)["']\)\s*layer\([^)]+\);\s*/g,

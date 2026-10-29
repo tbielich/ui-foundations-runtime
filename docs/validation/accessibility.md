@@ -24,6 +24,33 @@ git diff --check
 
 The canonical ADR supplies the rubric: each inventory item counts once; no raw assertion/rule points. Reports with missing, malformed, stale, mismatched or incomplete passing evidence are rejected, and the docs say Not assessed/BLOCKED rather than reusing a previous PASS. Local dirty content is labelled and cannot substantiate a clean published revision. Results expire after 24 hours. Reviewed N/A requires rationale and reviewer; the initial pilot inventory cannot be removed or reduced without scope review.
 
+## Repair #311 evidence contract usage
+
+Use a free dedicated port and disable server reuse in isolated worktrees, for
+example `CI=1 SITE_PORT=8311 npm run test:a11y` and the same environment for
+`npm run ci:check`. Otherwise the local Playwright default can reuse another
+checkout's server. Keep all default axe rules enabled.
+
+Validation requires nonempty executor identity, pending independent/human gates,
+semantic tool versions, repository/base/head identity and SHA content/config hashes.
+The original #309 base is retained; #311 stacks on PR #310 head
+`330c939b1de8d2de442d7ae456f2b69da8c0c331`. Criteria must match the frozen method,
+expected contract and states. This inventory permits **no N/A**, even with an
+ad-hoc reviewer string; scope review must change the authorized inventory first.
+
+Each passing criterion carries structured evidence captured at its actual target:
+state, ARIA snapshot, target HTML, page, native properties, and interaction outcomes.
+Records correlate with the criterion title, single non-retried Chromium execution
+and raw Playwright summary; missing/skipped/contradictory records cannot earn PASS.
+Raw axe scans include every required state, engine version and default configuration.
+Semantic snapshots are browser-exposed evidence, not screenreader speech. Validation
+checks consistency; JSON is not a cryptographic attestation of honest execution.
+Independent read-only reproduction remains required.
+
+Invalid reports are still persisted with `validationError`; consumers fail closed
+rather than displaying a stale PASS. Preserve logs, traces and raw results from
+failed attempts before rerunning (the runner replaces criterion records).
+
 ## Gates and limitations
 
 Automated PASS does not certify WCAG conformance, screenreader behavior, untested states/variants, other components, brands, modes or browsers. Screenreader remains **not tested**; manual screenreader and keyboard testing before stable status is unchanged. Design/documentation checklist completion is separate from evidence, and lifecycle badges are not changed here.
