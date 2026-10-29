@@ -42,8 +42,10 @@ jobs:
       # Write evidence outside the checkout so `npm run ci:check` (Playwright,
       # which clears test-results/) cannot wipe it mid-run and the measured
       # source stays clean.
-      EVIDENCE_OUT: ${{ runner.temp }}/release-readiness
     steps:
+      - name: Allocate evidence path outside checkout
+        run: printf 'EVIDENCE_OUT=%s/release-readiness-%s-%s\n' "$RUNNER_TEMP" "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" >> "$GITHUB_ENV"
+
       - name: Checkout explicit ref
         uses: actions/checkout@v4
         with:
