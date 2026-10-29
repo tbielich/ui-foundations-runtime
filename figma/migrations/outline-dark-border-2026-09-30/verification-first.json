@@ -1,0 +1,1088 @@
+{
+  "structuralGate": "FAIL",
+  "errors": [
+    "Mode mismatch VariableID:2007:345 Dark Mode"
+  ],
+  "counts": {
+    "beforeVariables": 766,
+    "afterVariables": 766,
+    "projectedVariables": 762,
+    "roles": 99,
+    "valuePreservationChecks": 9192,
+    "unchangedContextValues": 9006,
+    "authorizedChangedContextValues": 186
+  },
+  "edges": [
+    {
+      "from": "Patterns (UI)",
+      "to": "Semantics (Roles)",
+      "count": 296
+    },
+    {
+      "from": "Appearance (Brand)",
+      "to": "Core (Primitives)",
+      "count": 159
+    },
+    {
+      "from": "Appearance (Scheme)",
+      "to": "Appearance (Brand)",
+      "count": 54
+    },
+    {
+      "from": "Appearance (Scheme)",
+      "to": "Core (Primitives)",
+      "count": 16
+    },
+    {
+      "from": "Appearance (Scale)",
+      "to": "Core (Primitives)",
+      "count": 46
+    },
+    {
+      "from": "Semantics (Roles)",
+      "to": "Appearance (Scheme)",
+      "count": 55
+    },
+    {
+      "from": "Semantics (Roles)",
+      "to": "Appearance (Brand)",
+      "count": 15
+    },
+    {
+      "from": "Semantics (Roles)",
+      "to": "Appearance (Scale)",
+      "count": 29
+    }
+  ],
+  "scopeExceptions": [
+    {
+      "id": "VariableID:22:26",
+      "name": "Layout/Columns"
+    },
+    {
+      "id": "VariableID:22:27",
+      "name": "Layout/Gutter"
+    },
+    {
+      "id": "VariableID:22:30",
+      "name": "Layout/Float/Breakpoint"
+    },
+    {
+      "id": "VariableID:22:31",
+      "name": "Layout/Base/Grid"
+    },
+    {
+      "id": "VariableID:2040:381",
+      "name": "Shadow/Focus"
+    },
+    {
+      "id": "VariableID:2777:39",
+      "name": "Link/Text/Decoration/Default"
+    },
+    {
+      "id": "VariableID:2777:40",
+      "name": "Link/Text/Decoration/Hover"
+    }
+  ],
+  "legacyLiteralPatternSlots": [
+    "Badge/Font/Size/SM",
+    "Badge/Font/Size/MD",
+    "Badge/Line/Height/SM",
+    "Badge/Line/Height/MD",
+    "Badge/Padding/Inline/SM",
+    "Badge/Padding/Block/SM",
+    "Link/Text/Decoration/Default",
+    "Link/Text/Decoration/Hover",
+    "Link/Font/Size",
+    "Link/Line/Height",
+    "Calendar/Weekday/Height"
+  ],
+  "accessibility": {
+    "pairGate": "PASS",
+    "surfaceContent": [
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.7385,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 5.7418,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 17.4043,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.1404,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 5.3172,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 5.7418,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 17.4043,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 21.0,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.7385,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 4.5053,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 14.5522,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 5.252,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 7.2367,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 4.5053,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 4.5053,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 4.5053,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.1404,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 14.7195,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 5.3172,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 14.5522,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 5.252,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 7.2367,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 14.7195,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 14.7195,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 14.7195,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.7385,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 6.3324,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 11.5377,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 6.3586,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 6.4006,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 6.3324,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 6.3324,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 6.3324,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 12.6347,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Default",
+        "content": "Color/Content/Default",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Disabled/Surface/Disabled",
+        "content": "Color/Disabled/Content/Disabled",
+        "ratio": 2.1404,
+        "threshold": null,
+        "result": "EXEMPT"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Default",
+        "content": "Color/Action/Content/Default",
+        "ratio": 16.3893,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Subtle/Surface/Default",
+        "content": "Color/Subtle/Content/Default",
+        "ratio": 5.3172,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Selection/Surface/Active",
+        "content": "Color/Selection/Content/Active",
+        "ratio": 11.5377,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Danger/Surface/Default",
+        "content": "Color/Danger/Content/Default",
+        "ratio": 6.3586,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Success/Surface/Default",
+        "content": "Color/Success/Content/Default",
+        "ratio": 6.4006,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Hover",
+        "content": "Color/Action/Content/Hover",
+        "ratio": 16.3893,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Active",
+        "content": "Color/Action/Content/Active",
+        "ratio": 16.3893,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Action/Surface/Focus",
+        "content": "Color/Action/Content/Focus",
+        "ratio": 16.3893,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Active",
+        "content": "Color/Content/Active",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Hover",
+        "content": "Color/Content/Hover",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "surface": "Color/Surface/Focus",
+        "content": "Color/Content/Focus",
+        "ratio": 13.0765,
+        "threshold": 4.5,
+        "result": "PASS"
+      }
+    ],
+    "foreground": [
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 14.7195,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 14.7195,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 14.7195,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 14.7195,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 16.3893,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 16.3893,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 16.3893,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 16.3893,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Default",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Focus",
+        "surroundingSurface": "Color/Surface/Default",
+        "ratio": 21.0,
+        "result": "PASS"
+      }
+    ],
+    "actionOverlay": [
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand A",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "ratio": 21.0,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "ratio": 6.4351,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "ratio": 9.3728,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "ratio": 11.2273,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand B",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "ratio": 8.1559,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Hover",
+        "ratio": 8.6018,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Light Mode",
+        "state": "Active",
+        "ratio": 11.6766,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Hover",
+        "ratio": 12.5987,
+        "result": "PASS"
+      },
+      {
+        "brand": "Brand C",
+        "scheme": "Dark Mode",
+        "state": "Active",
+        "ratio": 9.0469,
+        "result": "PASS"
+      }
+    ],
+    "limitation": "Declared Surface/Content, Foreground and composited action-state checks only; no full rendered component certification."
+  }
+}

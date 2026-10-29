@@ -11,7 +11,7 @@ This file should add implementation detail, not redefine those rules.
 ## Project Overview
 
 This is a token-first design system (`ui-foundations`).\
-Figma is the single source of truth.
+Figma is a design-authoring projection of the UIF token model. UIF-VLT owns durable architecture and contracts; UIF-RUN owns the consumable runtime projection.
 
 Token flow: Figma Variables → JSON exports → generated CSS/TS/JSON → consumed by components
 
@@ -49,25 +49,22 @@ entry file and `tests/plugin-code.test.mjs` covers its color utilities.
 
 ## Token Architecture
 
-Four layers:
+Current bounded projection: Core → Appearance {Brand, Scheme, Scale} →
+Semantics → Patterns. See DESIGN.md for the canonical accepted Vault ADR. `figma/token-projection.json` maps physical Figma collections and variable
+IDs onto compatible export paths; existing package subpaths remain unchanged.
 
-- Core (Primitives)
-- Appearance (Modes)
-- Semantics (Brands)
-- Patterns (UI) / Components
+- Brand: `Semantics (Brands).tokens.json` (compatibility filename)
+- Scheme: `Appearance (Modes).tokens.json` (compatibility filename)
+- Scale: `Typography (Fluid).tokens.json`; Min/Max compile globally to clamp()
+- Roles: `Semantics (Roles).tokens.json`; export paths have a Semantics prefix
+  to avoid collisions with legacy scheme paths
+- Patterns: `Patterns (UI).tokens.json`; aliases consume Roles
 
-Locations:
-
-- Core: `dist/tokens/css/core-primitives.tokens.css`
-- Appearance: `dist/tokens/css/appearance-modes.tokens.mode-*.css`
-- Brand semantics: `dist/tokens/css/semantics-brands.tokens.brand-*.css`
-- Patterns: `dist/tokens/css/patterns-ui.tokens.css`
-
-Notes:
-
-- Pattern and component tokens reference semantic roles or Core tokens
-- Typography tokens never include color
-- Generated files in `dist/` are not edited directly
+Do not edit generated dist files. Use the ID-aware `tokens:sync` adapter;
+new dump mode aliases include target IDs. Partial sync preserves explicitly
+recorded code-only siblings. Alpha must survive color serialization.
+The previous code-only Liquid endpoints conflicted with Figma and are retained
+as historical migration evidence, not as a second live scale.
 
 ---
 
@@ -79,8 +76,9 @@ Notes:
   Library-owned unprefixed component token aliases are intentionally not
   provided. Deprecated bare classes remain CSS-only compatibility selectors
   through v1.x and are not emitted by owned templates or generators.
-- Brand semantic: role-based and brand-scoped (e.g. `Brand.Color.*`, `Brand.Corner.*`)
-- States: `default`, `hover`, `active`, `focus`, `disabled`
+- Appearance / Brand owns brand-specific visual identity; brand names do not belong in reusable semantic role names.
+- Semantic colors use purpose/role/state paths such as `Color/Action/Surface/Hover`.
+- Pattern state is the final segment. Existing Runtime states are `default`, `hover`, `active`, `focus`, and `disabled`; `active` remains the established name for the pressed interaction.
 - CSS variables: kebab-case with `--`
 
 ---

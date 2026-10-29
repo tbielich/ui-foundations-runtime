@@ -8,6 +8,8 @@
       "min": "Min",
       "max": "Max"
     },
-    "collections": ["Typography (Liquid)"]
+    "collections": [
+      "Typography (Fluid)"
+    ]
   }
 }

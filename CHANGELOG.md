@@ -2,6 +2,45 @@
 
 All notable UI Foundations release changes are documented here.
 
+## 1.1.0 — 2026-10-02
+
+### Added
+
+- Added the Dialog pattern and Web Component, including its Figma schema and
+  playground/documentation surface.
+- Added a stable `Semantics (Roles)` projection so Patterns can consume
+  brand- and scheme-neutral UI roles.
+- Added automated token-projection verification and browser contrast coverage
+  for interactive Button states.
+- Added GitHub Pages pull-request previews and a cloud-ready task template for
+  bounded agent execution.
+
+### Changed
+
+- Refined the token architecture to
+  **Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns**.
+- Separated Brand, Scheme, and Scale as independent Appearance concerns while
+  retaining existing Runtime export filenames and package paths for
+  compatibility.
+- Aligned Button action Surface, Content, Foreground, and Outline behavior
+  across brands, schemes, and interaction states, including dark-mode contrast
+  repairs.
+- Aligned Runtime, Figma, Playground, and agent guidance with the accepted UIF
+  token model. Figma is documented as the design-authoring projection rather
+  than the canonical source of truth.
+- Improved Tooltip and Tabs behavior and added regression coverage for
+  Datepicker interactions.
+- Strengthened the npm release workflow with a staged publication gate and
+  explicit maintainer approval before public release.
+
+### Compatibility
+
+- Existing public package paths, CSS compatibility exports, and established
+  Runtime state naming remain available.
+- Historical export filenames such as `Semantics (Brands).tokens.json`,
+  `Appearance (Modes).tokens.json`, and `Typography (Fluid).tokens.json`
+  remain compatibility adapters; they do not define architectural ownership.
+
 ## 1.0.0 — 2026-09-18
 
 ### Breaking changes

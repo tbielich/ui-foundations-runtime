@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-30",
+  "mode": "REPAIR",
+  "authorization": "User: Brand A button dark mode should invert; fix contrast errors.",
+  "scope": "Separate dark filled action surface from light action Foreground; invert Brand A to white with black content. Preserve Brand B/C, Core primitives, existing IDs and public names.",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "changes": [
+    {
+      "id": "VariableID:2007:337",
+      "name": "Color/Fill/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2007:377"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3204:2"
+      }
+    },
+    {
+      "id": "VariableID:3018:3",
+      "name": "Brand/Color/Text/On/Brand/Dark",
+      "mode": "1:0",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:175"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:167"
+      }
+    }
+  ],
+  "additions": [
+    {
+      "id": "VariableID:3204:2",
+      "name": "Brand/Color/Action/Surface/Dark",
+      "resolvedType": "COLOR",
+      "variableCollectionId": "VariableCollectionId:1:177",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2006:175"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2006:183"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2438:10"
+        }
+      },
+      "scopes": [
+        "FRAME_FILL",
+        "SHAPE_FILL"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {
+        "WEB": "var(--uif-appearance-brand-color-action-surface-dark)"
+      },
+      "description": "Brand-owned dark filled action surface. Brand A inverts to white; colored brands retain their accessible dark action surfaces. Independent of action Foreground."
+    }
+  ]
+}

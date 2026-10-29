@@ -1,0 +1,1121 @@
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 ci:check
+> npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run rules:validate && npm run docs:build && npm run test:browser:only
+
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 lint
+> npm run lint:js
+
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 lint:js
+> node scripts/lint-js.mjs
+
+✅ JS syntax lint passed (72 files)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 test:unit
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: Accordion CSS exposes canonical UIF naming with v1 class aliases
+ok 1 - Accordion CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 7.72725
+  ...
+# Subtest: Accordion Figma export contains canonical tokens without legacy aliases
+ok 2 - Accordion Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 3.406917
+  ...
+# Subtest: Accordion-owned emitters produce canonical classes
+ok 3 - Accordion-owned emitters produce canonical classes
+  ---
+  duration_ms: 4.19775
+  ...
+# Subtest: Accordion migration guide and registrations use the canonical namespace
+ok 4 - Accordion migration guide and registrations use the canonical namespace
+  ---
+  duration_ms: 1.993584
+  ...
+# Subtest: Avatar CSS exposes canonical UIF naming with v1 class aliases
+ok 5 - Avatar CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 5.0855
+  ...
+# Subtest: Avatar Figma export contains canonical tokens without legacy aliases
+ok 6 - Avatar Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.661792
+  ...
+# Subtest: Avatar-owned emitters produce canonical classes
+ok 7 - Avatar-owned emitters produce canonical classes
+  ---
+  duration_ms: 3.867208
+  ...
+# Subtest: Avatar migration guide and registration use the canonical public namespace
+ok 8 - Avatar migration guide and registration use the canonical public namespace
+  ---
+  duration_ms: 1.454458
+  ...
+# Subtest: Badge CSS exposes canonical UIF naming with a v1 class alias
+ok 9 - Badge CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 6.636167
+  ...
+# Subtest: Badge Figma export contains canonical tokens without legacy aliases
+ok 10 - Badge Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.947541
+  ...
+# Subtest: Badge-owned emitters use canonical classes
+ok 11 - Badge-owned emitters use canonical classes
+  ---
+  duration_ms: 2.673542
+  ...
+# Subtest: Badge migration guide and registration use the canonical namespace
+ok 12 - Badge migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 1.598042
+  ...
+# Subtest: Build Output
+    # Subtest: runs successfully
+    ok 1 - runs successfully
+      ---
+      duration_ms: 608.464834
+      ...
+    # Subtest: prints header with version
+    ok 2 - prints header with version
+      ---
+      duration_ms: 0.057
+      ...
+    # Subtest: prints ICONS section with count
+    ok 3 - prints ICONS section with count
+      ---
+      duration_ms: 0.083708
+      ...
+    # Subtest: prints TOKENS section
+    ok 4 - prints TOKENS section
+      ---
+      duration_ms: 0.040583
+      ...
+    # Subtest: prints INTEGRITY section
+    ok 5 - prints INTEGRITY section
+      ---
+      duration_ms: 0.042625
+      ...
+    # Subtest: prints DIST section
+    ok 6 - prints DIST section
+      ---
+      duration_ms: 0.048458
+      ...
+    # Subtest: does not print ONLINE in build mode
+    ok 7 - does not print ONLINE in build mode
+      ---
+      duration_ms: 0.033417
+      ...
+    # Subtest: does not contain cursor sequences
+    ok 8 - does not contain cursor sequences
+      ---
+      duration_ms: 0.153084
+      ...
+    # Subtest: does not contain emojis
+    ok 9 - does not contain emojis
+      ---
+      duration_ms: 0.158625
+      ...
+    # Subtest: uses tree connectors
+    ok 10 - uses tree connectors
+      ---
+      duration_ms: 0.213166
+      ...
+    # Subtest: uses section separators
+    ok 11 - uses section separators
+      ---
+      duration_ms: 0.069209
+      ...
+    # Subtest: exits with code 0
+    ok 12 - exits with code 0
+      ---
+      duration_ms: 0.028042
+      ...
+    1..12
+ok 13 - Build Output
+  ---
+  duration_ms: 610.189541
+  type: 'suite'
+  ...
+# Subtest: ButtonGroup CSS exposes canonical UIF naming with a v1 class alias
+ok 14 - ButtonGroup CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 3.912458
+  ...
+# Subtest: ButtonGroup Figma export contains canonical tokens without legacy aliases
+ok 15 - ButtonGroup Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 3.485042
+  ...
+# Subtest: ButtonGroup-owned emitters produce the canonical root class
+ok 16 - ButtonGroup-owned emitters produce the canonical root class
+  ---
+  duration_ms: 2.576959
+  ...
+# Subtest: Button CSS exposes canonical UIF naming with a v1 class alias
+ok 17 - Button CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 4.888458
+  ...
+# Subtest: Button token export uses UIF names without legacy token aliases
+ok 18 - Button token export uses UIF names without legacy token aliases
+  ---
+  duration_ms: 1.451792
+  ...
+# Subtest: Button-owned emitters use the canonical root and explicit solid variant
+ok 19 - Button-owned emitters use the canonical root and explicit solid variant
+  ---
+  duration_ms: 2.698375
+  ...
+# Subtest: Input no longer depends on the removed legacy Button token
+ok 20 - Input no longer depends on the removed legacy Button token
+  ---
+  duration_ms: 1.126
+  ...
+# Subtest: Calendar CSS exposes canonical UIF naming with v1 class aliases
+ok 21 - Calendar CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 4.835083
+  ...
+# Subtest: Calendar Figma export contains all canonical tokens without legacy aliases
+ok 22 - Calendar Figma export contains all canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.164542
+  ...
+# Subtest: Calendar-owned emitters produce canonical classes and shared dependencies
+ok 23 - Calendar-owned emitters produce canonical classes and shared dependencies
+  ---
+  duration_ms: 1.521833
+  ...
+# Subtest: Calendar behavior accepts legacy markup but renders canonical cells
+ok 24 - Calendar behavior accepts legacy markup but renders canonical cells
+  ---
+  duration_ms: 2.045458
+  ...
+# Subtest: Calendar no longer relies on pending-export token exceptions
+ok 25 - Calendar no longer relies on pending-export token exceptions
+  ---
+  duration_ms: 1.604709
+  ...
+# Subtest: Checkbox CSS exposes canonical UIF naming with v1 class aliases
+ok 26 - Checkbox CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 6.458458
+  ...
+# Subtest: Checkbox Figma export contains canonical tokens without legacy aliases
+ok 27 - Checkbox Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.49575
+  ...
+# Subtest: Checkbox-owned emitters and behavior use canonical classes
+ok 28 - Checkbox-owned emitters and behavior use canonical classes
+  ---
+  duration_ms: 4.123
+  ...
+# Subtest: Checkbox migration guide and registration use the canonical namespace
+ok 29 - Checkbox migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 3.473916
+  ...
+# Subtest: Dialog uses canonical native naming and behavior
+ok 30 - Dialog uses canonical native naming and behavior
+  ---
+  duration_ms: 5.637542
+  ...
+# Subtest: Dialog integration surfaces use canonical Dialog API
+ok 31 - Dialog integration surfaces use canonical Dialog API
+  ---
+  duration_ms: 4.889875
+  ...
+# Subtest: Divider CSS exposes canonical UIF naming with a v1 class alias
+ok 32 - Divider CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 5.644125
+  ...
+# Subtest: Divider-owned emitters produce the canonical class
+ok 33 - Divider-owned emitters produce the canonical class
+  ---
+  duration_ms: 3.52525
+  ...
+# Subtest: Divider runtime input stays code-only rather than becoming a Figma token
+ok 34 - Divider runtime input stays code-only rather than becoming a Figma token
+  ---
+  duration_ms: 3.769875
+  ...
+# Subtest: Divider migration guide explains its boundary and canonical registration
+ok 35 - Divider migration guide explains its boundary and canonical registration
+  ---
+  duration_ms: 0.98
+  ...
+# ✅ Documentation drift check passed (74 documentation files scanned)
+# Subtest: documentation baseline has no detectable drift
+ok 36 - documentation baseline has no detectable drift
+  ---
+  duration_ms: 25.128958
+  ...
+# Subtest: isAltTap: short press within threshold returns true
+ok 37 - isAltTap: short press within threshold returns true
+  ---
+  duration_ms: 0.617042
+  ...
+# Subtest: isAltTap: press exceeding threshold returns false
+ok 38 - isAltTap: press exceeding threshold returns false
+  ---
+  duration_ms: 0.118083
+  ...
+# Subtest: isAltTap: second short tap also returns true (enables toggle)
+ok 39 - isAltTap: second short tap also returns true (enables toggle)
+  ---
+  duration_ms: 0.094083
+  ...
+# Subtest: shouldDismissOnKey: Escape dismisses
+ok 40 - shouldDismissOnKey: Escape dismisses
+  ---
+  duration_ms: 0.164791
+  ...
+# Subtest: getTipFromKey: valid numbers 1–9 return corresponding string
+ok 41 - getTipFromKey: valid numbers 1–9 return corresponding string
+  ---
+  duration_ms: 0.6805
+  ...
+# Subtest: getTipFromKey: 0 returns null
+ok 42 - getTipFromKey: 0 returns null
+  ---
+  duration_ms: 0.073709
+  ...
+# Subtest: getTipFromKey: numbers > 9 return null
+ok 43 - getTipFromKey: numbers > 9 return null
+  ---
+  duration_ms: 0.051125
+  ...
+# Subtest: getTipFromKey: letters return null
+ok 44 - getTipFromKey: letters return null
+  ---
+  duration_ms: 0.042208
+  ...
+# Subtest: getTipFromKey: non-numeric keys return null
+ok 45 - getTipFromKey: non-numeric keys return null
+  ---
+  duration_ms: 0.2535
+  ...
+# Subtest: shouldDismissOnKey: does not report pointer events as key dismissal
+ok 46 - shouldDismissOnKey: does not report pointer events as key dismissal
+  ---
+  duration_ms: 0.2345
+  ...
+# Subtest: getTipFromKey: returns value regardless of element state (filtering is separate)
+ok 47 - getTipFromKey: returns value regardless of element state (filtering is separate)
+  ---
+  duration_ms: 0.353541
+  ...
+# Subtest: validateTips: detects duplicates
+ok 48 - validateTips: detects duplicates
+  ---
+  duration_ms: 0.343416
+  ...
+# Subtest: validateTips: detects empty values
+ok 49 - validateTips: detects empty values
+  ---
+  duration_ms: 0.045667
+  ...
+# Subtest: validateTips: all valid tips produce no warnings
+ok 50 - validateTips: all valid tips produce no warnings
+  ---
+  duration_ms: 0.265417
+  ...
+# Subtest: shouldDismissOnKey: Tab key dismisses mode (does not interfere with focus)
+ok 51 - shouldDismissOnKey: Tab key dismisses mode (does not interfere with focus)
+  ---
+  duration_ms: 0.151375
+  ...
+# Subtest: isAltTap: combo (another key pressed during Alt) returns false
+ok 52 - isAltTap: combo (another key pressed during Alt) returns false
+  ---
+  duration_ms: 0.084167
+  ...
+# Subtest: isAltTap: zero or negative elapsed returns false
+ok 53 - isAltTap: zero or negative elapsed returns false
+  ---
+  duration_ms: 0.086583
+  ...
+# Subtest: shouldDismissOnKey: modifier keys do not dismiss
+ok 54 - shouldDismissOnKey: modifier keys do not dismiss
+  ---
+  duration_ms: 0.076792
+  ...
+# Subtest: shouldDismissOnKey: letter keys dismiss
+ok 55 - shouldDismissOnKey: letter keys dismiss
+  ---
+  duration_ms: 0.060541
+  ...
+# Subtest: filterIndex: empty query returns empty array
+ok 56 - filterIndex: empty query returns empty array
+  ---
+  duration_ms: 0.842459
+  ...
+# Subtest: filterIndex: whitespace-only query returns empty array
+ok 57 - filterIndex: whitespace-only query returns empty array
+  ---
+  duration_ms: 0.087125
+  ...
+# Subtest: filterIndex: no-match query returns empty array
+ok 58 - filterIndex: no-match query returns empty array
+  ---
+  duration_ms: 0.069917
+  ...
+# Subtest: filterIndex: matches on title (case-insensitive)
+ok 59 - filterIndex: matches on title (case-insensitive)
+  ---
+  duration_ms: 0.068292
+  ...
+# Subtest: filterIndex: matches on description (case-insensitive)
+ok 60 - filterIndex: matches on description (case-insensitive)
+  ---
+  duration_ms: 0.131334
+  ...
+# Subtest: filterIndex: returns multiple matches
+ok 61 - filterIndex: returns multiple matches
+  ---
+  duration_ms: 0.050084
+  ...
+# Subtest: filterIndex: preserves entry structure
+ok 62 - filterIndex: preserves entry structure
+  ---
+  duration_ms: 0.129541
+  ...
+# Subtest: navigateIndex: ArrowDown increments (clamped at end)
+ok 63 - navigateIndex: ArrowDown increments (clamped at end)
+  ---
+  duration_ms: 0.05325
+  ...
+# Subtest: navigateIndex: ArrowUp decrements (clamped at 0)
+ok 64 - navigateIndex: ArrowUp decrements (clamped at 0)
+  ---
+  duration_ms: 0.26725
+  ...
+# Subtest: navigateIndex: empty list returns -1
+ok 65 - navigateIndex: empty list returns -1
+  ---
+  duration_ms: 0.236333
+  ...
+# Subtest: search index collection: includes foundation pages with title
+ok 66 - search index collection: includes foundation pages with title
+  ---
+  duration_ms: 0.145833
+  ...
+# Subtest: search index collection: excludes playground pages
+ok 67 - search index collection: excludes playground pages
+  ---
+  duration_ms: 0.062625
+  ...
+# Subtest: PBT Property 3: filterIndex returns only case-insensitive substring matches
+ok 68 - PBT Property 3: filterIndex returns only case-insensitive substring matches
+  ---
+  duration_ms: 37.567625
+  ...
+# Subtest: PBT Property 5: navigateIndex stays within [0, N-1] for any key sequence
+ok 69 - PBT Property 5: navigateIndex stays within [0, N-1] for any key sequence
+  ---
+  duration_ms: 0.844
+  ...
+# Subtest: resolveAliasRef resolves target via variable id
+ok 70 - resolveAliasRef resolves target via variable id
+  ---
+  duration_ms: 1.60025
+  ...
+# Subtest: resolveAliasRef reports missing targets
+ok 71 - resolveAliasRef reports missing targets
+  ---
+  duration_ms: 0.894708
+  ...
+# Subtest: resolveAliasRef detects alias cycles
+ok 72 - resolveAliasRef detects alias cycles
+  ---
+  duration_ms: 0.212416
+  ...
+# Subtest: resolveAliasRef resolves targets via normalized path matching
+ok 73 - resolveAliasRef resolves targets via normalized path matching
+  ---
+  duration_ms: 0.306291
+  ...
+# Subtest: buildTokenKey creates kebab-case keys
+ok 74 - buildTokenKey creates kebab-case keys
+  ---
+  duration_ms: 1.286334
+  ...
+# Subtest: classifyTokenGroup maps tokens by path/prefix
+ok 75 - classifyTokenGroup maps tokens by path/prefix
+  ---
+  duration_ms: 0.678875
+  ...
+# Subtest: formatTokenValue preserves layout columns and z-index numbers
+ok 76 - formatTokenValue preserves layout columns and z-index numbers
+  ---
+  duration_ms: 0.261208
+  ...
+# Subtest: scope helpers normalize and resolve selectors
+ok 77 - scope helpers normalize and resolve selectors
+  ---
+  duration_ms: 0.439625
+  ...
+# Subtest: toNumericFontWeight maps named and numeric weights
+ok 78 - toNumericFontWeight maps named and numeric weights
+  ---
+  duration_ms: 0.213083
+  ...
+# Subtest: resolveTokenOutputValue converts unresolved font weight refs to numeric values
+ok 79 - resolveTokenOutputValue converts unresolved font weight refs to numeric values
+  ---
+  duration_ms: 0.109291
+  ...
+# Subtest: resolveTokenOutputValue falls back to CSS var for unresolved non-font aliases
+ok 80 - resolveTokenOutputValue falls back to CSS var for unresolved non-font aliases
+  ---
+  duration_ms: 0.124042
+  ...
+# Subtest: formatTokenValue handles DTCG dimension objects
+ok 81 - formatTokenValue handles DTCG dimension objects
+  ---
+  duration_ms: 0.099292
+  ...
+# Subtest: parseWebSyntax accepts var(...) and raw --token forms
+ok 82 - parseWebSyntax accepts var(...) and raw --token forms
+  ---
+  duration_ms: 2.891125
+  ...
+# Subtest: parseWebSyntax rejects invalid values
+ok 83 - parseWebSyntax rejects invalid values
+  ---
+  duration_ms: 0.433625
+  ...
+# Subtest: formatLength converts numbers/px to rem and preserves non-length values
+ok 84 - formatLength converts numbers/px to rem and preserves non-length values
+  ---
+  duration_ms: 0.550667
+  ...
+# Subtest: projection resolves same-named cross-collection aliases by stable ID
+ok 85 - projection resolves same-named cross-collection aliases by stable ID
+  ---
+  duration_ms: 1.277625
+  ...
+# Subtest: alpha survives color export in literals and mode overrides
+ok 86 - alpha survives color export in literals and mode overrides
+  ---
+  duration_ms: 0.2255
+  ...
+# Subtest: partial sync preserves code-only sibling projections and replaces incoming leaves
+ok 87 - partial sync preserves code-only sibling projections and replaces incoming leaves
+  ---
+  duration_ms: 0.112917
+  ...
+# Subtest: Form CSS exposes canonical UIF naming with v1 class aliases
+ok 88 - Form CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 7.262
+  ...
+# Subtest: Form Figma export contains canonical tokens without legacy aliases
+ok 89 - Form Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.328666
+  ...
+# Subtest: Form-owned emitters and integrations use canonical classes
+ok 90 - Form-owned emitters and integrations use canonical classes
+  ---
+  duration_ms: 1.437583
+  ...
+# Subtest: Form migration guide and registrations use the canonical public namespace
+ok 91 - Form migration guide and registrations use the canonical public namespace
+  ---
+  duration_ms: 0.589375
+  ...
+# Subtest: Icon CSS exposes canonical UIF naming with only the v1 class alias
+ok 92 - Icon CSS exposes canonical UIF naming with only the v1 class alias
+  ---
+  duration_ms: 3.981333
+  ...
+# Subtest: Icon-owned emitters produce only the canonical public API
+ok 93 - Icon-owned emitters produce only the canonical public API
+  ---
+  duration_ms: 2.730792
+  ...
+# Subtest: the MCP pattern generator resolves canonical selectors before legacy aliases
+ok 94 - the MCP pattern generator resolves canonical selectors before legacy aliases
+  ---
+  duration_ms: 0.609292
+  ...
+# Subtest: shared pattern selectors accept canonical and legacy Icon classes
+ok 95 - shared pattern selectors accept canonical and legacy Icon classes
+  ---
+  duration_ms: 0.88075
+  ...
+# Subtest: the namespaced runtime input remains code-only rather than a Figma token
+ok 96 - the namespaced runtime input remains code-only rather than a Figma token
+  ---
+  duration_ms: 1.108917
+  ...
+# Subtest: Input CSS exposes canonical UIF naming with v1 class aliases
+ok 97 - Input CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 6.925041
+  ...
+# Subtest: Input Figma export contains all canonical tokens without legacy aliases
+ok 98 - Input Figma export contains all canonical tokens without legacy aliases
+  ---
+  duration_ms: 2.222
+  ...
+# Subtest: Input-owned emitters produce canonical Input, Icon, and Label classes
+ok 99 - Input-owned emitters produce canonical Input, Icon, and Label classes
+  ---
+  duration_ms: 3.218167
+  ...
+# Subtest: Input behavior and Date Input accept canonical and legacy Input markup
+ok 100 - Input behavior and Date Input accept canonical and legacy Input markup
+  ---
+  duration_ms: 0.95225
+  ...
+# Subtest: Input migration guide explains the v1 boundary and canonical registration
+ok 101 - Input migration guide explains the v1 boundary and canonical registration
+  ---
+  duration_ms: 0.988584
+  ...
+# Subtest: Label CSS exposes canonical UIF naming with v1 class aliases
+ok 102 - Label CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 4.727792
+  ...
+# Subtest: Label-owned emitters produce canonical classes and runtime inputs
+ok 103 - Label-owned emitters produce canonical classes and runtime inputs
+  ---
+  duration_ms: 3.953292
+  ...
+# Subtest: shared Button and Form selectors retain Label-family compatibility
+ok 104 - shared Button and Form selectors retain Label-family compatibility
+  ---
+  duration_ms: 0.882166
+  ...
+# Subtest: Typography Label tokens keep their separately governed namespace
+ok 105 - Typography Label tokens keep their separately governed namespace
+  ---
+  duration_ms: 1.107
+  ...
+# Subtest: Label migration guide uses the canonical Custom Element tag
+ok 106 - Label migration guide uses the canonical Custom Element tag
+  ---
+  duration_ms: 1.9145
+  ...
+# Subtest: Link CSS exposes canonical UIF naming with the v1 class alias
+ok 107 - Link CSS exposes canonical UIF naming with the v1 class alias
+  ---
+  duration_ms: 5.613625
+  ...
+# Subtest: Link Figma export contains all canonical tokens without legacy aliases
+ok 108 - Link Figma export contains all canonical tokens without legacy aliases
+  ---
+  duration_ms: 2.289
+  ...
+# Subtest: Link-owned emitters produce the canonical class and shared Icon class
+ok 109 - Link-owned emitters produce the canonical class and shared Icon class
+  ---
+  duration_ms: 2.478917
+  ...
+# Subtest: Link retains Icon and legacy class compatibility without token aliases
+ok 110 - Link retains Icon and legacy class compatibility without token aliases
+  ---
+  duration_ms: 1.48575
+  ...
+# Subtest: Link migration guide explains the v1 boundary and canonical registration
+ok 111 - Link migration guide explains the v1 boundary and canonical registration
+  ---
+  duration_ms: 1.199541
+  ...
+# Subtest: the consumed naming contract reports no repository-owned legacy usage
+ok 112 - the consumed naming contract reports no repository-owned legacy usage
+  ---
+  duration_ms: 129.267958
+  ...
+# Subtest: owned templates, previews, schemas, elements, and MCP fixtures do not emit legacy classes
+ok 113 - owned templates, previews, schemas, elements, and MCP fixtures do not emit legacy classes
+  ---
+  duration_ms: 7.697292
+  ...
+# Subtest: completion guidance defines canonical owned output and v1 CSS-only compatibility
+ok 114 - completion guidance defines canonical owned output and v1 CSS-only compatibility
+  ---
+  duration_ms: 0.228458
+  ...
+# Subtest: migration history lives in the repository guide, not public pattern pages
+ok 115 - migration history lives in the repository guide, not public pattern pages
+  ---
+  duration_ms: 1.820542
+  ...
+# Subtest: expandShortHex expands 3- and 4-digit hex colors
+ok 116 - expandShortHex expands 3- and 4-digit hex colors
+  ---
+  duration_ms: 0.688542
+  ...
+# Subtest: toHex normalizes short and long hex colors consistently
+ok 117 - toHex normalizes short and long hex colors consistently
+  ---
+  duration_ms: 0.176667
+  ...
+# Subtest: valuesMatch treats equivalent short and long hex colors as equal
+ok 118 - valuesMatch treats equivalent short and long hex colors as equal
+  ---
+  duration_ms: 0.082375
+  ...
+# Subtest: element registrations and TypeScript tag names use the canonical namespace
+ok 119 - element registrations and TypeScript tag names use the canonical namespace
+  ---
+  duration_ms: 4.998375
+  ...
+# Subtest: owned public examples and emitters produce only canonical namespace usage
+ok 120 - owned public examples and emitters produce only canonical namespace usage
+  ---
+  duration_ms: 13.503
+  ...
+# Subtest: module filenames and package entry points remain stable
+ok 121 - module filenames and package entry points remain stable
+  ---
+  duration_ms: 0.329417
+  ...
+# Subtest: consumer migration guide documents every breaking tag rename
+ok 122 - consumer migration guide documents every breaking tag rename
+  ---
+  duration_ms: 0.253208
+  ...
+# Subtest: Radio CSS exposes canonical UIF naming with v1 class aliases
+ok 123 - Radio CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 4.079042
+  ...
+# Subtest: Radio Figma export contains canonical tokens without legacy aliases
+ok 124 - Radio Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.321458
+  ...
+# Subtest: Radio-owned emitters and behavior use canonical classes
+ok 125 - Radio-owned emitters and behavior use canonical classes
+  ---
+  duration_ms: 1.610625
+  ...
+# Subtest: Radio migration guide and registration use the canonical namespace
+ok 126 - Radio migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 1.581208
+  ...
+# Subtest: deprecated React package exports and source wrappers are removed
+ok 127 - deprecated React package exports and source wrappers are removed
+  ---
+  duration_ms: 2.40525
+  ...
+# Subtest: build and smoke checks do not produce or require a React bundle
+ok 128 - build and smoke checks do not produce or require a React bundle
+  ---
+  duration_ms: 0.692042
+  ...
+# Subtest: consumer migration guide covers every removed public entry point
+ok 129 - consumer migration guide covers every removed public entry point
+  ---
+  duration_ms: 1.424708
+  ...
+# Subtest: Select CSS exposes canonical UIF naming with a v1 class alias
+ok 130 - Select CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 4.49225
+  ...
+# Subtest: Select Figma export contains canonical tokens without legacy aliases
+ok 131 - Select Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 2.208416
+  ...
+# Subtest: Select-owned emitters and Calendar composition use canonical classes
+ok 132 - Select-owned emitters and Calendar composition use canonical classes
+  ---
+  duration_ms: 3.186167
+  ...
+# Subtest: Select migration guide and registration use the canonical namespace
+ok 133 - Select migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 2.334458
+  ...
+# Subtest: PBT Property 1: Sitemap excludes playground, noindex, and excludeFromCollections pages
+ok 134 - PBT Property 1: Sitemap excludes playground, noindex, and excludeFromCollections pages
+  ---
+  duration_ms: 15.255875
+  ...
+# Subtest: PBT Property 2: Absolute URL is baseUrl + pageUrl with no double slashes in path
+ok 135 - PBT Property 2: Absolute URL is baseUrl + pageUrl with no double slashes in path
+  ---
+  duration_ms: 2.127084
+  ...
+# Subtest: PBT Property 3: Lastmod is present iff page has lastModified or date
+ok 136 - PBT Property 3: Lastmod is present iff page has lastModified or date
+  ---
+  duration_ms: 3.067416
+  ...
+# Subtest: PBT Property 4: Title tag follows format rules
+ok 137 - PBT Property 4: Title tag follows format rules
+  ---
+  duration_ms: 1.273125
+  ...
+# Subtest: PBT Property 5: Meta description renders iff description is non-empty
+ok 138 - PBT Property 5: Meta description renders iff description is non-empty
+  ---
+  duration_ms: 0.860458
+  ...
+# Subtest: PBT Property 6: Robots noindex renders iff noindex or isPlayground is true
+ok 139 - PBT Property 6: Robots noindex renders iff noindex or isPlayground is true
+  ---
+  duration_ms: 2.140083
+  ...
+# Subtest: PBT Property 7: JSON-LD renders only for qualifying /patterns/* pages
+ok 140 - PBT Property 7: JSON-LD renders only for qualifying /patterns/* pages
+  ---
+  duration_ms: 2.464375
+  ...
+# Subtest: PBT Property 8: LLMs.txt includes every page with a title from a collection
+ok 141 - PBT Property 8: LLMs.txt includes every page with a title from a collection
+  ---
+  duration_ms: 3.27375
+  ...
+# Subtest: Switch CSS exposes canonical UIF naming with v1 class aliases
+ok 142 - Switch CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 4.060625
+  ...
+# Subtest: Switch Figma export contains canonical tokens without legacy aliases
+ok 143 - Switch Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.325
+  ...
+# Subtest: Switch-owned emitters and behavior use canonical classes
+ok 144 - Switch-owned emitters and behavior use canonical classes
+  ---
+  duration_ms: 3.440417
+  ...
+# Subtest: Switch migration guide and registration use the canonical namespace
+ok 145 - Switch migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 2.605666
+  ...
+# Subtest: Tabs CSS exposes canonical UIF naming with v1 class aliases
+ok 146 - Tabs CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 3.746875
+  ...
+# Subtest: Tabs Figma export contains canonical tokens without legacy aliases
+ok 147 - Tabs Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.521541
+  ...
+# Subtest: Tabs-owned emitters produce canonical classes
+ok 148 - Tabs-owned emitters produce canonical classes
+  ---
+  duration_ms: 1.613166
+  ...
+# Subtest: Tabs migration guide and registrations use the canonical public namespace
+ok 149 - Tabs migration guide and registrations use the canonical public namespace
+  ---
+  duration_ms: 1.468209
+  ...
+# Subtest: Tabs Web Component implements documented keyboard activation and panel sync
+ok 150 - Tabs Web Component implements documented keyboard activation and panel sync
+  ---
+  duration_ms: 1.3875
+  ...
+# Subtest: Tabs use native tab-list overflow without panel scroll-snap switching
+ok 151 - Tabs use native tab-list overflow without panel scroll-snap switching
+  ---
+  duration_ms: 0.894541
+  ...
+# Subtest: Textarea CSS exposes canonical UIF naming with a v1 class alias
+ok 152 - Textarea CSS exposes canonical UIF naming with a v1 class alias
+  ---
+  duration_ms: 4.418208
+  ...
+# Subtest: Textarea Figma export contains canonical tokens without legacy aliases
+ok 153 - Textarea Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.111541
+  ...
+# Subtest: Textarea-owned emitters use the canonical class
+ok 154 - Textarea-owned emitters use the canonical class
+  ---
+  duration_ms: 1.51925
+  ...
+# Subtest: Textarea migration guide and registration use the canonical namespace
+ok 155 - Textarea migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 0.991334
+  ...
+# Subtest: Tooltip CSS exposes canonical UIF naming with v1 class aliases
+ok 156 - Tooltip CSS exposes canonical UIF naming with v1 class aliases
+  ---
+  duration_ms: 3.783542
+  ...
+# Subtest: Tooltip Figma export contains canonical tokens without legacy aliases
+ok 157 - Tooltip Figma export contains canonical tokens without legacy aliases
+  ---
+  duration_ms: 1.252333
+  ...
+# Subtest: Tooltip-owned emitters produce canonical classes
+ok 158 - Tooltip-owned emitters produce canonical classes
+  ---
+  duration_ms: 1.745208
+  ...
+# Subtest: Tooltip migration guide and registration use the canonical namespace
+ok 159 - Tooltip migration guide and registration use the canonical namespace
+  ---
+  duration_ms: 0.626166
+  ...
+# Subtest: Tooltip Web Component maintains a stable accessible description relationship
+ok 160 - Tooltip Web Component maintains a stable accessible description relationship
+  ---
+  duration_ms: 0.334042
+  ...
+# Subtest: Tooltip exposes bounded delay and pointer behavior across Runtime surfaces
+ok 161 - Tooltip exposes bounded delay and pointer behavior across Runtime surfaces
+  ---
+  duration_ms: 1.422958
+  ...
+# Subtest: generated contract loads from consumed Vault artifact
+ok 162 - generated contract loads from consumed Vault artifact
+  ---
+  duration_ms: 0.604083
+  ...
+# Subtest: class prefix validation uses generated contract examples
+ok 163 - class prefix validation uses generated contract examples
+  ---
+  duration_ms: 0.162958
+  ...
+# Subtest: CSS custom property prefix validation uses generated contract examples
+ok 164 - CSS custom property prefix validation uses generated contract examples
+  ---
+  duration_ms: 0.114334
+  ...
+# Subtest: proof and assumption prefixes classify as canonical
+ok 165 - proof and assumption prefixes classify as canonical
+  ---
+  duration_ms: 0.05125
+  ...
+# Subtest: pattern ID prefix classification uses generated contract examples
+ok 166 - pattern ID prefix classification uses generated contract examples
+  ---
+  duration_ms: 0.134333
+  ...
+# Subtest: public macro and Custom Element namespaces use the consumed contract
+ok 167 - public macro and Custom Element namespaces use the consumed contract
+  ---
+  duration_ms: 0.12625
+  ...
+# Subtest: deprecated bare class warnings use generated compatibility policy
+ok 168 - deprecated bare class warnings use generated compatibility policy
+  ---
+  duration_ms: 0.127792
+  ...
+# Subtest: deprecated legacy token warnings use generated compatibility policy
+ok 169 - deprecated legacy token warnings use generated compatibility policy
+  ---
+  duration_ms: 0.064583
+  ...
+# Subtest: runtime naming contract validation passes against generated data
+ok 170 - runtime naming contract validation passes against generated data
+  ---
+  duration_ms: 117.540917
+  ...
+# Subtest: stale generated contract detection fails when generated file differs
+ok 171 - stale generated contract detection fails when generated file differs
+  ---
+  duration_ms: 53.756625
+  ...
+1..171
+# tests 182
+# suites 1
+# pass 182
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 754.206375
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 docs:lint
+> node scripts/check-docs-drift.mjs
+
+✅ Documentation drift check passed (74 documentation files scanned)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 naming:check
+> node scripts/check-vault-naming-contract.mjs
+
+Vault naming contract check passed (0 legacy usage warnings).
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 build:all
+> node scripts/build.mjs
+
+╭──────────────────────────────────────╮
+│ ╻╻· │ FOUNDATIONS                    │
+│ ┗┛╹ │ BUILD 1.0.0                    │
+╰──────────────────────────────────────╯
+█ ICONS                             [OK]
+├ Entries                           0601
+└ Output                   icon-names.ts
+────────────────────────────────────────
+█ TOKENS
+├ CSS                              READY
+├ JSON                             READY
+├ TypeScript                       READY
+└ YAML                             READY
+────────────────────────────────────────
+█ INTEGRITY                         [OK]
+├ Missing WEB                       0000
+├ Unparseable WEB                   0000
+└ Duplicate vars                    0000
+────────────────────────────────────────
+█ DIST                              [OK]
+├ Token CSS                         0009
+├ Macros                           READY
+└ Bundles                          READY
+────────────────────────────────────────
+BUILD OK · READY · 423ms
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 smoke:check
+> node scripts/smoke-check.mjs
+
+✅ Smoke checks passed
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 tokens:validate
+> node scripts/validate-tokens.mjs
+
+✅ Token validation passed (9 files)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 tokens:usage
+> node scripts/validate-token-usage.mjs
+
+✅ Token usage validated (652 references, 778 defined tokens)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 dtcg:validate
+> node scripts/validate-dtcg.mjs
+
+✅ DTCG validation passed (9 files, 919 tokens)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 assets:check
+> node scripts/check-asset-refs.mjs
+
+✅ All 34 asset references valid.
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 rules:validate
+> node scripts/validate-rule-pipeline.mjs
+
+Rule pipeline validation passed (9 patterns, 6 principles, 6 heuristics)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 docs:build
+> eleventy
+
+[11ty] Writing ./_site/llms.txt from ./site/llms.njk
+[11ty] Writing ./_site/robots.txt from ./site/robots.njk
+[11ty] Writing ./_site/site.webmanifest from ./site/site.webmanifest.njk
+[11ty] Writing ./_site/sitemap.xml from ./site/sitemap.njk
+[11ty] Writing ./_site/getting-started/index.html from ./site/getting-started.md (njk)
+[11ty] Writing ./_site/impressum/index.html from ./site/impressum.md (njk)
+[11ty] Writing ./_site/index.html from ./site/index.md (njk)
+[11ty] Writing ./_site/components/date-picker-playground/index.html from ./site/components/date-picker-playground.md (njk)
+[11ty] Writing ./_site/components/date-picker/index.html from ./site/components/date-picker.md (njk)
+[11ty] Writing ./_site/components/dialog-playground/index.html from ./site/components/dialog-playground.md (njk)
+[11ty] Writing ./_site/components/dialog/index.html from ./site/components/dialog.md (njk)
+[11ty] Writing ./_site/examples/index.html from ./site/examples/index.md (njk)
+[11ty] Writing ./_site/examples/login-form/index.html from ./site/examples/login-form.md (njk)
+[11ty] Writing ./_site/examples/pricing/index.html from ./site/examples/pricing.md (njk)
+[11ty] Writing ./_site/examples/vanilla-starter/index.html from ./site/examples/vanilla-starter.md (njk)
+[11ty] Writing ./_site/foundations/accessibility/index.html from ./site/foundations/accessibility.md (njk)
+[11ty] Writing ./_site/foundations/design-tokens/all/index.html from ./site/foundations/all-tokens.md (njk)
+[11ty] Writing ./_site/foundations/architecture/index.html from ./site/foundations/architecture.md (njk)
+[11ty] Writing ./_site/foundations/class-naming/index.html from ./site/foundations/class-naming.md (njk)
+[11ty] Writing ./_site/foundations/content/index.html from ./site/foundations/content.md (njk)
+[11ty] Writing ./_site/foundations/governance/intelligence/index.html from ./site/foundations/design-intelligence.md (njk)
+[11ty] Writing ./_site/foundations/design-tokens/index.html from ./site/foundations/design-tokens.md (njk)
+[11ty] Writing ./_site/foundations/governance/index.html from ./site/foundations/governance.md (njk)
+[11ty] Writing ./_site/foundations/governance/heuristics/index.html from ./site/foundations/heuristics.md (njk)
+[11ty] Writing ./_site/foundations/index.html from ./site/foundations/index.md (njk)
+[11ty] Writing ./_site/foundations/internationalization/index.html from ./site/foundations/internationalization.md (njk)
+[11ty] Writing ./_site/foundations/navigation-keytips/index.html from ./site/foundations/navigation-keytips.md (njk)
+[11ty] Writing ./_site/foundations/governance/principles/index.html from ./site/foundations/principles.md (njk)
+[11ty] Writing ./_site/primitives/color/index.html from ./site/primitives/color-tokens.md (njk)
+[11ty] Writing ./_site/primitives/index.html from ./site/primitives/index.md (njk)
+[11ty] Writing ./_site/primitives/typography/index.html from ./site/primitives/typography-tokens.md (njk)
+[11ty] Writing ./_site/patterns/accordion-playground/index.html from ./site/patterns/accordion-playground.md (njk)
+[11ty] Writing ./_site/patterns/accordion/index.html from ./site/patterns/accordion.md (njk)
+[11ty] Writing ./_site/patterns/avatar-playground/index.html from ./site/patterns/avatar-playground.md (njk)
+[11ty] Writing ./_site/patterns/avatar/index.html from ./site/patterns/avatar.md (njk)
+[11ty] Writing ./_site/patterns/badge-playground/index.html from ./site/patterns/badge-playground.md (njk)
+[11ty] Writing ./_site/patterns/badge/index.html from ./site/patterns/badge.md (njk)
+[11ty] Writing ./_site/patterns/button-group-playground/index.html from ./site/patterns/button-group-playground.md (njk)
+[11ty] Writing ./_site/patterns/button-playground/index.html from ./site/patterns/button-playground.md (njk)
+[11ty] Writing ./_site/patterns/button/index.html from ./site/patterns/button.md (njk)
+[11ty] Writing ./_site/patterns/calendar-playground/index.html from ./site/patterns/calendar-playground.md (njk)
+[11ty] Writing ./_site/patterns/calendar/index.html from ./site/patterns/calendar.md (njk)
+[11ty] Writing ./_site/patterns/checkbox-playground/index.html from ./site/patterns/checkbox-playground.md (njk)
+[11ty] Writing ./_site/patterns/checkbox/index.html from ./site/patterns/checkbox.md (njk)
+[11ty] Writing ./_site/patterns/divider-playground/index.html from ./site/patterns/divider-playground.md (njk)
+[11ty] Writing ./_site/patterns/divider/index.html from ./site/patterns/divider.md (njk)
+[11ty] Writing ./_site/patterns/form-playground/index.html from ./site/patterns/form-playground.md (njk)
+[11ty] Writing ./_site/patterns/form/index.html from ./site/patterns/form.md (njk)
+[11ty] Writing ./_site/patterns/icon-playground/index.html from ./site/patterns/icon-playground.md (njk)
+[11ty] Writing ./_site/patterns/icon/index.html from ./site/patterns/icon.md (njk)
+[11ty] Writing ./_site/patterns/index.html from ./site/patterns/index.md (njk)
+[11ty] Writing ./_site/patterns/input-playground/index.html from ./site/patterns/input-playground.md (njk)
+[11ty] Writing ./_site/patterns/input/index.html from ./site/patterns/input.md (njk)
+[11ty] Writing ./_site/patterns/label-playground/index.html from ./site/patterns/label-playground.md (njk)
+[11ty] Writing ./_site/patterns/label/index.html from ./site/patterns/label.md (njk)
+[11ty] Writing ./_site/patterns/link-playground/index.html from ./site/patterns/link-playground.md (njk)
+[11ty] Writing ./_site/patterns/link/index.html from ./site/patterns/link.md (njk)
+[11ty] Writing ./_site/patterns/radio-playground/index.html from ./site/patterns/radio-playground.md (njk)
+[11ty] Writing ./_site/patterns/radio/index.html from ./site/patterns/radio.md (njk)
+[11ty] Writing ./_site/patterns/select-playground/index.html from ./site/patterns/select-playground.md (njk)
+[11ty] Writing ./_site/patterns/select/index.html from ./site/patterns/select.md (njk)
+[11ty] Writing ./_site/patterns/switch-playground/index.html from ./site/patterns/switch-playground.md (njk)
+[11ty] Writing ./_site/patterns/switch/index.html from ./site/patterns/switch.md (njk)
+[11ty] Writing ./_site/patterns/table-playground/index.html from ./site/patterns/table-playground.md (njk)
+[11ty] Writing ./_site/patterns/table/index.html from ./site/patterns/table.md (njk)
+[11ty] Writing ./_site/patterns/tabs-playground/index.html from ./site/patterns/tabs-playground.md (njk)
+[11ty] Writing ./_site/patterns/tabs/index.html from ./site/patterns/tabs.md (njk)
+[11ty] Writing ./_site/patterns/textarea-playground/index.html from ./site/patterns/textarea-playground.md (njk)
+[11ty] Writing ./_site/patterns/textarea/index.html from ./site/patterns/textarea.md (njk)
+[11ty] Writing ./_site/patterns/tooltip-playground/index.html from ./site/patterns/tooltip-playground.md (njk)
+[11ty] Writing ./_site/patterns/tooltip/index.html from ./site/patterns/tooltip.md (njk)
+[11ty] Copied 629 Wrote 71 files in 0.33 seconds (v3.1.6)
+npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
+
+> ui-foundations@1.0.0 test:browser:only
+> playwright test
+
+
+Running 7 tests using 1 worker
+
+  ✓  1 [chromium] › tests/browser/datepicker-regression.spec.mjs:20:1 › clicking a calendar day drives day/month/year state and selected DOM state (618ms)
+  ✓  2 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / light, all enabled variants and states (71ms)
+  ✓  3 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / dark, all enabled variants and states (57ms)
+  ✓  4 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states (57ms)
+  ✓  5 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / dark, all enabled variants and states (56ms)
+  ✓  6 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states (62ms)
+  ✓  7 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / dark, all enabled variants and states (54ms)
+
+  7 passed (1.4s)

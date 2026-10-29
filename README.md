@@ -16,7 +16,7 @@
 Keep Figma and code in sync by default — with tokens, not guesswork.
 
 - **Token-first architecture** — every value comes from a token, no hardcoded exceptions
-- **Figma as single source of truth** — variables export directly into production code
+- **Figma-aligned implementation** — variables are the design-value source; durable architecture and governance remain in UIF-VLT
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
 
@@ -37,8 +37,8 @@ work with the system reliably.
 
 ## Key Features
 
-- **Token-first architecture** — Core → Appearance → Semantics (Brands) → Patterns/Components, strictly separated
-- **Figma ↔ code alignment** — `codeSyntax.WEB` maps Figma names directly to CSS
+- **Token-first architecture** — Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns, with each layer carrying one clear responsibility
+- **Figma ↔ code alignment** — stable variable IDs, `codeSyntax.WEB`, and the projection adapter keep Figma and Runtime traceable without forcing breaking renames
 - **Multi-brand and dark mode** — `data-brand` and `data-mode` switch independently
 - **Agent-ready documentation** — deterministic context for AI-assisted workflows
 - **DTCG-compliant output** — 2025.10 format with proper alias syntax and hex colors
@@ -84,16 +84,43 @@ work with the system reliably.
 
 ### Layering
 
-Token layers from foundation to surface:
+The token model separates **what a value is**, **which context changes it**, and
+**how UI uses it**:
 
-``` 
-   ╱─ PATTERN/COMPONENT   Scoped usage tokens
-  ╱── SEMANTICS (BRANDS)  Brand-scoped semantic roles
- ╱─── APPEARANCE          Mode-dependent decisions
-╱──── CORE                Primitive/reference values
+```text
+Core
+  ↓
+Appearance
+  ├─ Brand
+  ├─ Scheme
+  └─ Scale
+  ↓
+Semantics
+  ↓
+Patterns
 ```
 
-Patterns consume semantic roles or Core tokens. Never raw values.
+- **Core** holds reusable primitives such as palette values, spacing, type, and radii.
+- **Appearance** applies independent context axes: Brand, Scheme (light/dark), and Scale.
+- **Semantics** gives those values stable UI meaning such as surface, content, foreground, and border roles.
+- **Patterns** apply semantic roles to Button, Input, Checkbox, and other UI patterns.
+
+A pattern should normally depend on Semantics rather than reaching directly into
+Appearance or Core. This keeps the same pattern meaningful across brands and
+schemes.
+
+For example, a Button hover state follows intent rather than a fixed color:
+
+```text
+Core color
+  → Appearance (Brand + Scheme)
+  → Color / Action / Surface / Hover
+  → Button / … / Background / Hover
+```
+
+Some generated filenames still use older collection names for compatibility.
+Those filenames are implementation adapters, not the architectural model. See
+[Token Pipeline](docs/token-pipeline.md) for that distinction.
 
 ### Component Integration
 
@@ -116,8 +143,8 @@ docs, playgrounds, and consumer apps.
 
 ### Designers
 
-- Work in Figma variables — they are the source of truth
-- Token names in Figma map directly to CSS variable names
+- Use Figma as the design-authoring projection; keep variable changes consistent with the documented UIF contracts and token responsibilities
+- Figma variables map to Runtime through stable IDs, WEB syntax, and the token projection
 - Brand and mode switching is built into the variable structure
 
 ### Developers

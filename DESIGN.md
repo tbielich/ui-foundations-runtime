@@ -22,12 +22,12 @@ guesswork.
 
 ## Token Architecture
 
-The system follows a layered model:
-
-1. Core primitives
-2. Appearance mode decisions
-3. Semantics (Brands)
-4. Pattern and component tokens
+The owner-authorized migration follows Core → Appearance {Brand, Scheme, Scale}
+→ Semantics → Patterns. Durable rationale lives in the [Vault ADR](https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md)
+(accepted via Vault PR #49; not a governance-pack promotion). Runtime's explicit projection is
+`figma/token-projection.json`; collection labels and compatibility export paths
+are different concerns. Brand and Scheme remain orthogonal; Scale endpoints
+compile to global fluid values, not `data-mode="min"` or `data-mode="max"`.
 
 Agents must never invent token names.
 Use existing CSS custom properties from `codeSyntax.WEB` or exported token files.
@@ -73,6 +73,16 @@ Colour choices must preserve contrast.
 Interactive states must be explicit.
 
 ## Agent Rules
+
+For bounded external design experiments, derive a scoped projection from this
+contract and the current token sources. Declare the fixed Brand/Scheme context,
+allowed changes, frozen properties, source revision, and independent checks.
+Provider-generated palettes, aliases, or completion claims do not establish
+canonical UIF tokens or acceptance. Missing inputs must remain explicit.
+
+The [Stitch experiment workflow](docs/agentic/stitch/README.md) contains a native
+format projection and a bounded task template. It is derived operational
+guidance, not a governance change or an implemented Intelligence adapter.
 
 Before creating UI:
 

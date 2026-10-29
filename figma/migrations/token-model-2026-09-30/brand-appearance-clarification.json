@@ -1,0 +1,47 @@
+{
+  "scope": "Owner-approved clarification: Brand owns full Appearance identity; independent axes may resolve dependent values.",
+  "date": "2026-09-30",
+  "figma": [
+    {
+      "mutatedNodeIds": [
+        "3186:7",
+        "3186:10",
+        "3186:18",
+        "3186:21",
+        "3186:33",
+        "2255:1256"
+      ],
+      "readback": [
+        {
+          "id": "3186:7",
+          "text": "Core (Primitives) — Literal colors, spacing, typography and radius primitives. One default mode.\n\nAppearance (Brand) — Full visual identity: palette, typography, shape and, where specified, spacing, sizing and other visual properties. Brand A / Brand B / Brand C.\n\nAppearance (Scheme) — Brand-aware light and dark realizations. Light Mode / Dark Mode.\n\nAppearance (Scale) — Scalar projections and fluid endpoints, potentially brand-specific. Current branch: shared Min / Max endpoints.\n\nSemantics (Roles) — Reusable purpose and state contracts. One default mode.\n\nPatterns (UI) — Component family, variant, part, property and state slots. One Component mode.\n\nInteraction (States) — Four prototype helpers. Explicitly excluded from the foundation contract and Runtime projection.",
+          "height": 336
+        },
+        {
+          "id": "3186:10",
+          "text": "Arrows in the architecture show increasing abstraction. Variable aliases point back toward their dependencies.\n\nPatterns consume Semantics. Semantics consume Appearance. Brand, Scheme and Scale are independently selected context axes; their resolved values can depend on one another. Scheme and Scale may consume Brand or Core. The semantic layer adds stable purpose without selecting the context.",
+          "height": 120
+        },
+        {
+          "id": "3186:18",
+          "text": "Brand owns the full visual identity: colors, typography, shape and, where specified, spacing, sizing and other visual properties. Scheme selects its light/dark realization; Scale selects its size or responsive realization.\n\nIndependent controls do not imply brand-neutral values. Surfaces can depend on Brand × Scheme; typography and layout can depend on Brand × Scale, or all three axes where required. Shared values remain shared when that is intentional.\n\nCore’s qualified Brand A/B/C source palettes identify private provenance. Semantics and Patterns keep stable purpose and slot names across brands. UIF remains separate from UILib.",
+          "height": 192
+        },
+        {
+          "id": "3186:21",
+          "text": "Min and Max are interpolation endpoints. Scale can be brand-specific: Brand may select typography and layout endpoints while Scale determines their responsive realization.\n\nCurrent projection limitation: this branch has shared literal Min/Max endpoints and Core bridges. Brand-specific endpoint selection is not implemented yet. A separate bounded contract and parity check are required to add it.\n\nRuntime projects the current Figma endpoints into a global fluid clamp. The corrected lg curve is 20–36px; the former code-only 18–20px Liquid curve is preserved in migration evidence.",
+          "height": 192
+        },
+        {
+          "id": "3186:33",
+          "text": "Shape is one part of the full Brand-owned Appearance. Brand owns corner choices; Semantics exposes reusable purpose. Patterns share those roles rather than aliasing another component’s radius. Existing brand values and public CSS names remain compatible.",
+          "height": 48
+        }
+      ],
+      "height": 4703,
+      "overlaps": []
+    }
+  ],
+  "visualReview": "PASS",
+  "tokenValueChanges": false
+}

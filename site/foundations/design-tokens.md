@@ -7,50 +7,63 @@ order: 4
 permalink: /foundations/design-tokens/
 ---
 
-Design tokens are the single source of truth for visual style. They flow from
-Figma exports through a build pipeline into CSS custom properties.
+Design tokens provide a shared contract for visual decisions across UIF. UIF-VLT
+defines the durable architecture and contracts; Figma is the design-authoring
+projection, and UIF-RUN turns the model into consumable CSS and other runtime
+artifacts.
 
 ## Token layers
 
-The system uses four layers. Each layer references only the layer below it.
+The system separates four responsibilities so a token name can explain what it
+means without also encoding a specific brand or theme.
+
+```text
+Core
+  ↓
+Appearance
+  ├─ Brand
+  ├─ Scheme
+  └─ Scale
+  ↓
+Semantics
+  ↓
+Patterns
+```
 
 <table class="docs-options-table">
-  <thead>
-    <tr>
-      <th>Layer</th>
-      <th>Purpose</th>
-      <th>Example</th>
-    </tr>
-  </thead>
+  <thead><tr><th>Responsibility</th><th>What it controls</th><th>Example</th></tr></thead>
   <tbody>
-    <tr>
-      <td>Core (Primitives)</td>
-      <td>Primitive/reference values — spacing, radii, borders, typography</td>
-      <td><code>--size-spacing-200</code></td>
-    </tr>
-    <tr>
-      <td>Appearance (Modes)</td>
-      <td>Mode-dependent decisions such as light and dark color mappings</td>
-      <td><code>--color-fill-surface</code></td>
-    </tr>
-    <tr>
-      <td>Semantics (Brands)</td>
-      <td>Brand-scoped semantic roles for color, corner, font, and size decisions</td>
-      <td><code>--brand-corner-button</code></td>
-    </tr>
-    <tr>
-      <td>Patterns / Components</td>
-      <td>Implementation tokens consuming semantic roles or Core tokens</td>
-      <td><code>--uif-button-solid-background-default</code></td>
-    </tr>
+    <tr><td>Core</td><td>Reusable primitives such as palette steps, spacing, radii, and type values</td><td><code>--size-spacing-200</code></td></tr>
+    <tr><td>Appearance / Brand</td><td>Brand-specific visual identity</td><td>Brand A, Brand B, Brand C</td></tr>
+    <tr><td>Appearance / Scheme</td><td>Light/dark realization</td><td>Light, Dark</td></tr>
+    <tr><td>Appearance / Scale</td><td>Fluid or scalar endpoints</td><td>Min, Max</td></tr>
+    <tr><td>Semantics</td><td>Stable UI purpose, independent of brand and scheme</td><td><code>Color/Action/Surface/Hover</code></td></tr>
+    <tr><td>Patterns</td><td>Where a semantic role is used in a UI pattern</td><td><code>Button/…/Background/Hover</code></td></tr>
   </tbody>
 </table>
 
+A useful mental model is: **Core provides values, Appearance resolves context,
+Semantics names intent, and Patterns apply that intent.**
+
+### Surface, Content, and Foreground
+
+- **Surface** is a filled region.
+- **Content** is text or an icon placed on that Surface.
+- **Foreground** is standalone action/status text, icon, stroke, or outline on a surrounding surface.
+
+Surface and Content are paired per interaction state so accessibility can be
+verified for the actual state rather than inferred from a default color.
+
 ## Naming convention
 
-- Public pattern tokens: `--uif-component-variant-part-property-state`
-- Semantic tokens: role-based (e.g. `--color-text-default`, `--color-fill-brand`)
-- States are always the last segment: `default`, `hover`, `active`, `focus`, `disabled`
+New semantic color roles use `Color/<Purpose>/<Role>/<State>` (or
+`Color/<Role>/<State>` for the default canvas pair).
+
+Pattern names follow `<Family>/<Variant?>/<Part?>/<Property>/<State?>`.
+
+Interaction state is always the final segment. UIF keeps `Active` as the
+existing Runtime name for the pressed interaction; do not introduce
+`Pressed` as a second vocabulary.
 
 ## Pipeline
 
@@ -67,10 +80,11 @@ the active token values without changing component markup.
 
 ## Rules
 
-- Components reference only Semantic or Core tokens — never raw color values.
-- Never mix token layers in a single declaration.
-- Never hardcode hex, rgb, or hsl values in component CSS.
-- Always use `var(--...)` for every visual property.
+- Patterns consume Semantics by default; direct Appearance/Core dependencies are documented compatibility exceptions.
+- Brand, Scheme, and Scale belong to Appearance, not to semantic token names.
+- Never hardcode color values in pattern CSS.
+- Use `var(--...)` for token-driven visual properties.
+- Generated compatibility filenames do not define architectural ownership.
 
 ## Reference
 

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"mutatedVariableIds\":[\"VariableID:2007:340\",\"VariableID:2007:377\"],\"changedSlots\":2,\"readback\":[{\"id\":\"VariableID:2007:340\",\"valuesByMode\":{\"2007:0\":{\"type\":\"VARIABLE_ALIAS\",\"id\":\"VariableID:2007:377\"},\"2007:1\":{\"type\":\"VARIABLE_ALIAS\",\"id\":\"VariableID:3011:5\"}}},{\"id\":\"VariableID:2007:377\",\"valuesByMode\":{\"1:0\":{\"type\":\"VARIABLE_ALIAS\",\"id\":\"VariableID:2006:167\"},\"10:0\":{\"type\":\"VARIABLE_ALIAS\",\"id\":\"VariableID:2006:183\"},\"2435:0\":{\"type\":\"VARIABLE_ALIAS\",\"id\":\"VariableID:2438:10\"}}}]}"
+    }
+  ],
+  "isError": false
+}

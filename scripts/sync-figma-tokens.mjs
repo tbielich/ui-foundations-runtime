@@ -18,23 +18,28 @@ import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync, unlinkSync } from "node:fs";
 import { resolve, join } from "node:path";
 
+import { projectPath, projectModeValue, encodeFigmaColor, mergeTokenTree } from "./figma-projection.mjs";
+
 const REPO_ROOT = resolve(import.meta.dirname, "..");
 const EXPORTS_DIR = join(REPO_ROOT, "figma", "exports");
 
 // Collection name → export filename mapping (1:1 with current Figma collections)
-const COLLECTION_FILES = {
+const projectionPath = join(REPO_ROOT, "figma", "token-projection.json");
+const projection = existsSync(projectionPath) ? JSON.parse(readFileSync(projectionPath, "utf8")) : null;
+const COLLECTION_FILES = projection?.collectionFiles || {
   "Patterns (UI)": "Patterns (UI).tokens.json",
   "Core (Primitives)": "Core (Primitives).tokens.json",
   "Appearance (Modes)": "Appearance (Modes).tokens.json",
   "Semantics (Brands)": "Semantics (Brands).tokens.json",
   "Typography (Fluid)": "Typography (Fluid).tokens.json",
 };
-
-// Backwards-compatible input aliases for dumps produced before the collection rename.
-// The export filename remains the new Semantics (Brands) contract.
-const COLLECTION_ALIASES = {
-  "Themes (Brands)": "Semantics (Brands)",
-};
+// Old dumps remain readable; physical collection labels now describe appearance axes.
+const COLLECTION_ALIASES = projection ? {
+  "Themes (Brands)": "Appearance (Brand)",
+  "Semantics (Brands)": "Appearance (Brand)",
+  "Appearance (Modes)": "Appearance (Scheme)",
+  "Typography (Fluid)": "Appearance (Scale)",
+} : { "Themes (Brands)": "Semantics (Brands)" };
 
 function normalizeCollectionName(collectionName) {
   return COLLECTION_ALIASES[collectionName] || collectionName;
@@ -48,7 +53,7 @@ function buildDTCGFromVariables(variables) {
   const result = {};
 
   for (const v of variables) {
-    const segments = v.name.split("/");
+    const segments = projectPath(v.name, v.id, projection).split("/");
     const entry = buildTokenEntry(v);
 
     // Navigate/create nested structure
@@ -79,10 +84,11 @@ function buildTokenEntry(v) {
   let aliasData = null;
 
   if (v.alias) {
-    tokenValue = { $ref: v.alias.targetName };
+    const targetPath = projectPath(v.alias.targetName, v.alias.targetId, projection);
+    tokenValue = { $ref: targetPath };
     aliasData = {
       targetVariableId: v.alias.targetId,
-      targetVariableName: v.alias.targetName,
+      targetVariableName: targetPath,
       targetVariableSetId: v.alias.targetCollectionId,
       targetVariableSetName: normalizeCollectionName(v.alias.targetCollectionName),
     };
@@ -98,11 +104,7 @@ function buildTokenEntry(v) {
   } else if (typeof v.value === "string") {
     tokenValue = v.value;
   } else if (v.value && typeof v.value === "object" && "r" in v.value) {
-    // Raw color object → hex
-    const r = Math.round(v.value.r * 255);
-    const g = Math.round(v.value.g * 255);
-    const b = Math.round(v.value.b * 255);
-    tokenValue = "#" + [r, g, b].map((c) => c.toString(16).padStart(2, "0")).join("");
+    tokenValue = encodeFigmaColor(v.value);
   } else {
     tokenValue = v.value;
   }
@@ -110,6 +112,7 @@ function buildTokenEntry(v) {
   // Build $extensions
   const extensions = {
     "com.figma.variableId": v.id,
+    "com.figma.variableName": v.name,
     "com.figma.scopes": v.scopes || ["ALL_SCOPES"],
     "com.figma.hiddenFromPublishing": v.hiddenFromPublishing === true,
     "com.figma.codeSyntax": { WEB: v.webSyntax || "" },
@@ -122,7 +125,9 @@ function buildTokenEntry(v) {
 
   // Handle mode values if present
   if (v.modeValues) {
-    extensions["com.figma.modeValues"] = v.modeValues;
+    extensions["com.figma.modeValues"] = Object.fromEntries(
+      Object.entries(v.modeValues).map(([name, value]) => [name, projectModeValue(value, projection)]),
+    );
   }
 
   return { $type: type, $value: tokenValue, $extensions: extensions };
@@ -161,7 +166,8 @@ function main() {
 
     const dtcg = buildDTCGFromVariables(variables);
     const outPath = join(EXPORTS_DIR, fileName);
-    writeFileSync(outPath, JSON.stringify(dtcg, null, 2) + "\n");
+    const existing = existsSync(outPath) ? JSON.parse(readFileSync(outPath, "utf8")) : {};
+    writeFileSync(outPath, JSON.stringify(mergeTokenTree(existing, dtcg), null, 2) + "\n");
     console.log(`✅ ${fileName} (${variables.length} variables)`);
     filesWritten++;
   }

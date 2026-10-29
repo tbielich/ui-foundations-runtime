@@ -54,7 +54,7 @@ function scopePriority(scope) {
   if (scope.bucket === "other" && scope.id === "core") return 0;
   if (scope.bucket === "other" && scope.id === "core-primitives") return 0;
   if (scope.bucket === "other" && scope.id === "primitives") return 0;
-  if (scope.bucket === "other" && scope.id.includes("typography-liquid")) return 1;
+  if (scope.bucket === "other" && (scope.id.includes("typography-liquid") || scope.id.includes("typography-fluid"))) return 1;
   if (scope.bucket === "mode" && scope.id === "light") return 2;
   if (scope.bucket === "mode" && scope.id === "dark") return 3;
   if (scope.bucket === "mode") return 3;

@@ -2,7 +2,7 @@
 
 ## Project
 
-Token-first, Figma-aligned design system. Figma is the single source of truth.
+Token-first, Figma-aligned design system. Figma is a design-authoring projection of the UIF token model; durable architecture and contracts live in UIF-VLT.
 
 ## Token Architecture (4 layers)
 
