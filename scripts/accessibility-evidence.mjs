@@ -16,6 +16,12 @@ const git = (...args) => execFileSync("git", args, { cwd: ROOT, encoding: "utf8"
 // Truthfully report whether the accepted baseline object is present in this checkout.
 // A shallow CI clone (fetch-depth: 1) does not contain it; we must fail closed, not crash.
 const objectPresent = (ref) => spawnSync("git", ["cat-file", "-e", `${ref}^{commit}`], { cwd: ROOT }).status === 0;
+// HEAD may be attached to a branch (local/worktree) or detached (real GitHub PR CI).
+// Model this truthfully: branch is null when detached; we never invent a branch name.
+const attachedBranch = () => { const r = spawnSync("git", ["symbolic-ref", "--quiet", "--short", "HEAD"], { cwd: ROOT, encoding: "utf8" }); return r.status === 0 ? r.stdout.trim() : null; };
+// Optional CI ref provenance, clearly labelled as environment-sourced and never
+// substituted for the real HEAD SHA or a fabricated branch.
+const envRef = (name) => { const v = process.env[name]; return typeof v === "string" && v.trim() ? v.trim() : null; };
 
 export function identity() {
   const tracked = git("ls-files", "-z").split("\0").filter(Boolean);
@@ -26,7 +32,8 @@ export function identity() {
   // baseAvailable:false and changedPaths:null so provenance is explicit, never fabricated.
   const baseAvailable = objectPresent(BASE);
   const changedPaths = baseAvailable ? git("diff", "--name-only", BASE).split("\n").filter(Boolean) : null;
-  return { repository: "tbielich/ui-foundations-runtime", base: BASE, baseAvailable, head: git("rev-parse", "HEAD"), branch: git("branch", "--show-current"), dirty: !!git("status", "--porcelain"), contentHash: hash(content), inventoryHash, configHash: hash(fs.readFileSync(path.join(ROOT, "playwright.config.js"))), changedPaths };
+  const branch = attachedBranch();
+  return { repository: "tbielich/ui-foundations-runtime", base: BASE, baseAvailable, head: git("rev-parse", "HEAD"), attached: branch !== null, branch, ciRef: envRef("GITHUB_REF"), ciHeadRef: envRef("GITHUB_HEAD_REF"), dirty: !!git("status", "--porcelain"), contentHash: hash(content), inventoryHash, configHash: hash(fs.readFileSync(path.join(ROOT, "playwright.config.js"))), changedPaths };
 }
 
 export function score(results) {
@@ -74,7 +81,13 @@ export function validate(report, expected, now = Date.now()) {
   const text = (v) => typeof v === "string" && !!v.trim() && !/placeholder|unavailable/i.test(v);
   const version = (v) => typeof v === "string" && /^v?\d+\.\d+\.\d+(?:[.-][\w.-]+)?$/.test(v);
   if (!text(report.runId) || !text(report.executor?.provider) || report.executor.independentVerification !== "pending" || report.executor.merge !== "human gate pending" || !text(report.tools?.os) || !text(report.tools?.boundary) || report.tools.rules !== "axe defaults; no disabled rules, tags or exclusions" || ["node", "playwright", "axeIntegration", "axe"].some((k) => !version(report.tools[k])) || !report.source || !Array.isArray(report.results) || !Array.isArray(report.execution)) throw new Error("Missing provenance");
-  if (report.source.repository !== "tbielich/ui-foundations-runtime" || report.source.base !== BASE || !/^[a-f0-9]{40}$/.test(report.source.head) || !text(report.source.branch) || typeof report.source.dirty !== "boolean" || ["contentHash", "configHash", "inventoryHash"].some((k) => !/^[a-f0-9]{64}$/.test(report.source[k]))) throw new Error("Invalid source identity");
+  if (report.source.repository !== "tbielich/ui-foundations-runtime" || report.source.base !== BASE || !/^[a-f0-9]{40}$/.test(report.source.head) || typeof report.source.dirty !== "boolean" || ["contentHash", "configHash", "inventoryHash"].some((k) => !/^[a-f0-9]{64}$/.test(report.source[k]))) throw new Error("Invalid source identity");
+  // Model real checkout provenance: HEAD is either attached to a branch or detached
+  // (real GitHub PR CI). A detached checkout has branch null; we never fabricate a branch
+  // name nor substitute the head SHA. Optional CI refs are env-sourced strings when present.
+  const s = report.source;
+  if (typeof s.attached !== "boolean" || (s.attached ? !text(s.branch) : s.branch !== null)) throw new Error("Contradictory branch provenance");
+  if ([s.ciRef, s.ciHeadRef].some((v) => v !== null && !text(v))) throw new Error("Invalid CI ref provenance");
   // Fail closed when the accepted baseline is not reachable: provenance against the historic
   // base cannot be proven, so the report must not earn PASS from missing or invalid history.
   if (report.source.baseAvailable !== true || !Array.isArray(report.source.changedPaths)) throw new Error("Baseline history unavailable: provenance cannot be established");
@@ -87,7 +100,7 @@ export function validate(report, expected, now = Date.now()) {
   if (negative.length !== 1 || negative[0].status !== "expected" || negative[0].attempts[0].status !== "passed") throw new Error("Missing negative control execution");
   const time = Date.parse(report.date);
   if (!Number.isFinite(time) || time > now + 60_000 || now - time > 86_400_000) throw new Error("Stale run date");
-  for (const k of ["repository", "base", "baseAvailable", "head", "branch", "dirty", "contentHash", "configHash", "inventoryHash"]) if (report.source[k] !== expected[k]) throw new Error(`Stale/mismatched ${k}`);
+  for (const k of ["repository", "base", "baseAvailable", "head", "attached", "branch", "ciRef", "ciHeadRef", "dirty", "contentHash", "configHash", "inventoryHash"]) if (report.source[k] !== expected[k]) throw new Error(`Stale/mismatched ${k}`);
   if (JSON.stringify(report.source.changedPaths) !== JSON.stringify(expected.changedPaths)) throw new Error("Stale/mismatched changedPaths");
   if (report.results.length !== inventory.criteria.length) throw new Error("Missing/extra criteria");
   for (const c of inventory.criteria) {
@@ -152,7 +165,8 @@ async function run() {
   const version = (name) => JSON.parse(fs.readFileSync(path.join(ROOT, "node_modules", name, "package.json"))).version;
   let session = {};
   try { session = JSON.parse(fs.readFileSync(path.join(OUTPUT, "session.json"))); } catch { /* CI identity comes from the runner, not a fabricated local session. */ }
-  const report = { schemaVersion: 1, issue: 309, adr: ADR, inventoryHash, scope: inventory.scope, runId: process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}` : `local-${Date.now()}`, date: new Date().toISOString(), source, executor: { session: process.env.CI ? null : session.sessionId || null, provider: process.env.CI ? "github-actions" : session.provider || "local-command", model: process.env.CI ? null : session.model || null, pr: process.env.GITHUB_REF || null, artifactRun: process.env.GITHUB_RUN_ID || null, independentVerification: "pending", merge: "human gate pending" }, tools: { node: process.version, os: `${os.platform()} ${os.release()} ${os.arch()}`, playwright: version("@playwright/test"), axeIntegration: version("@axe-core/playwright"), axe: version("axe-core"), rules: "axe defaults; no disabled rules, tags or exclusions", boundary: "Only selected macro button or checkbox label; docs shell not included" }, browserExitCode: exit, results };
+  const githubActions = process.env.GITHUB_ACTIONS === "true";
+  const report = { schemaVersion: 1, issue: 309, adr: ADR, inventoryHash, scope: inventory.scope, runId: process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}-${process.env.GITHUB_RUN_ATTEMPT}` : `local-${Date.now()}`, date: new Date().toISOString(), source, executor: { session: githubActions ? null : session.sessionId || null, provider: githubActions ? "github-actions" : session.provider || "local-command", model: githubActions ? null : session.model || null, pr: process.env.GITHUB_REF || null, artifactRun: process.env.GITHUB_RUN_ID || null, independentVerification: "pending", merge: "human gate pending" }, tools: { node: process.version, os: `${os.platform()} ${os.release()} ${os.arch()}`, playwright: version("@playwright/test"), axeIntegration: version("@axe-core/playwright"), axe: version("axe-core"), rules: "axe defaults; no disabled rules, tags or exclusions", boundary: "Only selected macro button or checkbox label; docs shell not included" }, browserExitCode: exit, results };
   try { report.testCounts = JSON.parse(fs.readFileSync(path.join(OUTPUT, "playwright.json"))).stats; } catch { report.testCounts = null; }
   try { report.execution = executionRows(JSON.parse(fs.readFileSync(path.join(OUTPUT, "playwright.json")))); } catch { report.execution = []; }
   try { report.components = validate(report, source); } catch (error) { report.validationError = error.message; exit ||= 1; }

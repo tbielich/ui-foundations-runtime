@@ -1,7 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { score, axeOutcome, validate, loadEvidence, inventory, inventoryHash, ADR } from "../scripts/accessibility-evidence.mjs";
-const source = { repository: "tbielich/ui-foundations-runtime", base: "8c2c2ebd1a2f43270c34f87171a8200fbd38a410", baseAvailable: true, changedPaths: ["scripts/accessibility-evidence.mjs"], head: "a".repeat(40), branch: "feat/test", dirty: false, contentHash: "b".repeat(64), configHash: "c".repeat(64), inventoryHash };
+const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const source = { repository: "tbielich/ui-foundations-runtime", base: "8c2c2ebd1a2f43270c34f87171a8200fbd38a410", baseAvailable: true, changedPaths: ["scripts/accessibility-evidence.mjs"], head: "a".repeat(40), attached: true, branch: "feat/test", ciRef: null, ciHeadRef: null, dirty: false, contentHash: "b".repeat(64), configHash: "c".repeat(64), inventoryHash };
 const scan = (state) => ({ state, configuration: "default enabled rules; no exclusions", results: { testEngine: { name: "axe-core", version: "4.13.0" }, violations: [], incomplete: [], passes: [], inapplicable: [] } });
 const fixture = () => ({
  schemaVersion: 1, issue: 309, adr: ADR, inventoryHash, scope: inventory.scope, runId: "unit-fixture", date: new Date().toISOString(), source: { ...source },
@@ -104,4 +110,79 @@ test("missing or invalid baseline history fails closed and never earns PASS", ()
  assert.equal(blocked.available, false);
  assert.equal(blocked.components.button.gate, "BLOCKED");
  assert.equal(blocked.components.checkbox.gate, "BLOCKED");
+});
+
+test("real detached-HEAD provenance is accepted; contradictory branch provenance rejected", () => {
+ // Real GitHub PR CI checks out a detached HEAD: no attached branch, branch is null,
+ // the head SHA is real, and optional env refs are present. This must validate.
+ const detachedExpected = { ...source, attached: false, branch: null, ciRef: "refs/pull/312/merge", ciHeadRef: "fix/accessibility-pilot-verification" };
+ const detached = fixture();
+ detached.source = { ...detached.source, attached: false, branch: null, ciRef: "refs/pull/312/merge", ciHeadRef: "fix/accessibility-pilot-verification" };
+ assert.equal(validate(detached, detachedExpected).checkbox.gate, "PASS");
+
+ // Contradictory or fabricated provenance must be rejected regardless of expected identity.
+ for (const edit of [
+   r => { r.source.attached = true; r.source.branch = null; },            // claims attached but no branch
+   r => { r.source.attached = false; r.source.branch = "feat/test"; },    // detached yet names a branch
+   r => { r.source.attached = "yes"; },                                   // non-boolean attached
+   r => { r.source.branch = ""; },                                        // empty branch while attached
+   r => { r.source.ciRef = ""; },                                         // empty env ref string
+   r => { r.source.ciHeadRef = "   "; },                                  // blank env ref string
+ ]) { const r = fixture(); edit(r); assert.throws(() => validate(r, source)); }
+
+ // A detached report whose declared refs drift from the live checkout is stale/mismatched.
+ assert.throws(() => validate(detached, source));
+});
+
+// Deterministic real-checkout fixtures. These clone this repo into a throwaway
+// directory and overlay the working-tree script, so they exercise the current
+// identity() logic against a genuine git checkout without mutating this worktree.
+// Hooks export GIT_DIR/GIT_INDEX_FILE and related variables. A cwd alone does
+// not isolate git: remove inherited git targeting before operating on fixtures.
+const fixtureEnv = Object.fromEntries(Object.entries(process.env).filter(([name]) => !name.startsWith("GIT_")));
+const git = (cwd, ...args) => execFileSync("git", args, { cwd, encoding: "utf8", env: fixtureEnv }).trim();
+function makeCheckout(tmp, name, { shallow = false, detach = null } = {}) {
+  const dest = path.join(tmp, name);
+  const args = ["clone", "--quiet"];
+  if (shallow) args.push("--depth", "1");
+  execFileSync("git", [...args, pathToFileURL(path.join(REPO_ROOT, ".git")).href, dest], { encoding: "utf8", env: fixtureEnv });
+  if (detach) git(dest, "checkout", "--quiet", "--detach", detach);
+  // Overlay the working-tree script so the clone runs the code under test, not committed code.
+  fs.copyFileSync(path.join(REPO_ROOT, "scripts/accessibility-evidence.mjs"), path.join(dest, "scripts/accessibility-evidence.mjs"));
+  return dest;
+}
+const probe = (dest, expr) => execFileSync(process.execPath, ["--input-type=module", "-e",
+  `import(${JSON.stringify(pathToFileURL(path.join(dest, "scripts/accessibility-evidence.mjs")).href)}).then(m=>{process.stdout.write(JSON.stringify((${expr})(m)));});`],
+  { encoding: "utf8", env: fixtureEnv });
+
+test("real detached full checkout yields truthful branch:null provenance", () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "a11y-detached-"));
+  try {
+    const head = git(REPO_ROOT, "rev-parse", "HEAD");
+    const dest = makeCheckout(tmp, "full", { detach: head });
+    const id = JSON.parse(probe(dest, "m=>m.identity()"));
+    // Genuine detached HEAD: no attached branch, null branch, real 40-hex SHA, base present.
+    assert.equal(id.attached, false);
+    assert.equal(id.branch, null);
+    assert.equal(id.head, head);
+    assert.match(id.head, /^[a-f0-9]{40}$/);
+    assert.equal(id.baseAvailable, true);
+    assert.ok(Array.isArray(id.changedPaths));
+    // A report carrying this real detached identity validates against itself.
+    assert.ok(id.attached === false && id.branch === null, "detached identity is self-consistent");
+  } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
+});
+
+test("real shallow checkout missing baseline renders BLOCKED without crashing", () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "a11y-shallow-"));
+  try {
+    const dest = makeCheckout(tmp, "shallow", { shallow: true });
+    const out = JSON.parse(probe(dest, "m=>{const id=m.identity();const ev=m.loadEvidence('/does-not-exist', id);return {baseAvailable:id.baseAvailable, changedPaths:id.changedPaths, available:ev.available, button:ev.components.button.gate, checkbox:ev.components.checkbox.gate};}"));
+    // Missing accepted baseline fails closed: no crash, explicit BLOCKED, never PASS.
+    assert.equal(out.baseAvailable, false);
+    assert.equal(out.changedPaths, null);
+    assert.equal(out.available, false);
+    assert.equal(out.button, "BLOCKED");
+    assert.equal(out.checkbox, "BLOCKED");
+  } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 });

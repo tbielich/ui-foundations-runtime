@@ -80,7 +80,7 @@
     "lint": "npm run lint:js",
     "test:unit": "node --test tests/*.test.mjs",
     "test:browser": "npm run docs:site && playwright test",
-    "test:browser:only": "playwright test tests/browser/datepicker-regression.spec.mjs",
+    "test:browser:only": "playwright test tests/browser/*.spec.mjs",
     "test": "npm run test:unit",
     "smoke:check": "node scripts/smoke-check.mjs",
     "assets:check": "node scripts/check-asset-refs.mjs",
