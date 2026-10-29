@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { score, axeOutcome, validate, loadEvidence, inventory, inventoryHash, ADR } from "../scripts/accessibility-evidence.mjs";
-const source = { repository: "tbielich/ui-foundations-runtime", base: "8c2c2ebd1a2f43270c34f87171a8200fbd38a410", head: "a".repeat(40), branch: "feat/test", dirty: false, contentHash: "b".repeat(64), configHash: "c".repeat(64), inventoryHash };
+const source = { repository: "tbielich/ui-foundations-runtime", base: "8c2c2ebd1a2f43270c34f87171a8200fbd38a410", baseAvailable: true, changedPaths: ["scripts/accessibility-evidence.mjs"], head: "a".repeat(40), branch: "feat/test", dirty: false, contentHash: "b".repeat(64), configHash: "c".repeat(64), inventoryHash };
 const scan = (state) => ({ state, configuration: "default enabled rules; no exclusions", results: { testEngine: { name: "axe-core", version: "4.13.0" }, violations: [], incomplete: [], passes: [], inapplicable: [] } });
 const fixture = () => ({
  schemaVersion: 1, issue: 309, adr: ADR, inventoryHash, scope: inventory.scope, runId: "unit-fixture", date: new Date().toISOString(), source: { ...source },
@@ -77,4 +77,31 @@ test("independent malformed report and provenance mutations fail closed", () => 
    r => r.browserExitCode = 1, r => r.results[0].error = "assertion failed",
    r => r.results[2].evidence[0].actions = {},
  ]) { const r = fixture(); edit(r); assert.throws(() => validate(r, source)); }
+});
+
+test("missing or invalid baseline history fails closed and never earns PASS", () => {
+ // A shallow CI checkout lacks the accepted baseline object; identity() reports
+ // baseAvailable:false and changedPaths:null. Such a report must be rejected
+ // (BLOCKED), not crash and not earn PASS from unprovable provenance.
+ for (const edit of [
+   r => { r.source.baseAvailable = false; r.source.changedPaths = null; },
+   r => { r.source.baseAvailable = false; },
+   r => { r.source.changedPaths = null; },
+   r => { delete r.source.baseAvailable; },
+   r => { delete r.source.changedPaths; },
+   r => { r.source.changedPaths = "scripts/accessibility-evidence.mjs"; },
+ ]) { const r = fixture(); edit(r); assert.throws(() => validate(r, source)); }
+
+ // A report whose declared baseAvailable/changedPaths disagree with the live
+ // checkout identity (expected) is stale/mismatched and must be rejected.
+ const shallowExpected = { ...source, baseAvailable: false, changedPaths: null };
+ assert.throws(() => validate(fixture(), shallowExpected));
+ const drifted = fixture(); drifted.source.changedPaths = ["unexpected/path.js"];
+ assert.throws(() => validate(drifted, source));
+
+ // loadEvidence surfaces the fail-closed state as BLOCKED rather than throwing.
+ const blocked = loadEvidence("/does-not-exist", shallowExpected);
+ assert.equal(blocked.available, false);
+ assert.equal(blocked.components.button.gate, "BLOCKED");
+ assert.equal(blocked.components.checkbox.gate, "BLOCKED");
 });

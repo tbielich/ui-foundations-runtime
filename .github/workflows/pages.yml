@@ -33,6 +33,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          # Full history so the accepted accessibility baseline
+          # 8c2c2ebd1a2f43270c34f87171a8200fbd38a410 is present for same-revision
+          # evidence provenance; a shallow clone omits it and fails closed.
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 22

@@ -11,14 +11,22 @@ export const ADR = "c960b3cbb21ed8c3527e0f21b6cd046c8ca3c802";
 export const inventory = JSON.parse(fs.readFileSync(path.join(ROOT, "docs/validation/accessibility-criteria.json")));
 const hash = (s) => createHash("sha256").update(s).digest("hex");
 export const inventoryHash = hash(JSON.stringify(inventory));
+export const BASE = "8c2c2ebd1a2f43270c34f87171a8200fbd38a410";
 const git = (...args) => execFileSync("git", args, { cwd: ROOT, encoding: "utf8" }).trim();
+// Truthfully report whether the accepted baseline object is present in this checkout.
+// A shallow CI clone (fetch-depth: 1) does not contain it; we must fail closed, not crash.
+const objectPresent = (ref) => spawnSync("git", ["cat-file", "-e", `${ref}^{commit}`], { cwd: ROOT }).status === 0;
 
 export function identity() {
   const tracked = git("ls-files", "-z").split("\0").filter(Boolean);
   const untracked = git("ls-files", "--others", "--exclude-standard", "-z").split("\0").filter(Boolean);
   const files = [...new Set([...tracked, ...untracked])].sort();
   const content = files.map((f) => `${f}\0${fs.existsSync(path.join(ROOT, f)) ? hash(fs.readFileSync(path.join(ROOT, f))) : "deleted"}`).join("\n");
-  return { repository: "tbielich/ui-foundations-runtime", base: "8c2c2ebd1a2f43270c34f87171a8200fbd38a410", head: git("rev-parse", "HEAD"), branch: git("branch", "--show-current"), dirty: !!git("status", "--porcelain"), contentHash: hash(content), inventoryHash, configHash: hash(fs.readFileSync(path.join(ROOT, "playwright.config.js"))), changedPaths: git("diff", "--name-only", "8c2c2ebd1a2f43270c34f87171a8200fbd38a410").split("\n").filter(Boolean) };
+  // Only diff against the baseline when it is genuinely reachable. Missing history yields
+  // baseAvailable:false and changedPaths:null so provenance is explicit, never fabricated.
+  const baseAvailable = objectPresent(BASE);
+  const changedPaths = baseAvailable ? git("diff", "--name-only", BASE).split("\n").filter(Boolean) : null;
+  return { repository: "tbielich/ui-foundations-runtime", base: BASE, baseAvailable, head: git("rev-parse", "HEAD"), branch: git("branch", "--show-current"), dirty: !!git("status", "--porcelain"), contentHash: hash(content), inventoryHash, configHash: hash(fs.readFileSync(path.join(ROOT, "playwright.config.js"))), changedPaths };
 }
 
 export function score(results) {
@@ -66,7 +74,10 @@ export function validate(report, expected, now = Date.now()) {
   const text = (v) => typeof v === "string" && !!v.trim() && !/placeholder|unavailable/i.test(v);
   const version = (v) => typeof v === "string" && /^v?\d+\.\d+\.\d+(?:[.-][\w.-]+)?$/.test(v);
   if (!text(report.runId) || !text(report.executor?.provider) || report.executor.independentVerification !== "pending" || report.executor.merge !== "human gate pending" || !text(report.tools?.os) || !text(report.tools?.boundary) || report.tools.rules !== "axe defaults; no disabled rules, tags or exclusions" || ["node", "playwright", "axeIntegration", "axe"].some((k) => !version(report.tools[k])) || !report.source || !Array.isArray(report.results) || !Array.isArray(report.execution)) throw new Error("Missing provenance");
-  if (report.source.repository !== "tbielich/ui-foundations-runtime" || report.source.base !== "8c2c2ebd1a2f43270c34f87171a8200fbd38a410" || !/^[a-f0-9]{40}$/.test(report.source.head) || !text(report.source.branch) || typeof report.source.dirty !== "boolean" || ["contentHash", "configHash", "inventoryHash"].some((k) => !/^[a-f0-9]{64}$/.test(report.source[k]))) throw new Error("Invalid source identity");
+  if (report.source.repository !== "tbielich/ui-foundations-runtime" || report.source.base !== BASE || !/^[a-f0-9]{40}$/.test(report.source.head) || !text(report.source.branch) || typeof report.source.dirty !== "boolean" || ["contentHash", "configHash", "inventoryHash"].some((k) => !/^[a-f0-9]{64}$/.test(report.source[k]))) throw new Error("Invalid source identity");
+  // Fail closed when the accepted baseline is not reachable: provenance against the historic
+  // base cannot be proven, so the report must not earn PASS from missing or invalid history.
+  if (report.source.baseAvailable !== true || !Array.isArray(report.source.changedPaths)) throw new Error("Baseline history unavailable: provenance cannot be established");
   if (!Number.isInteger(report.browserExitCode) || report.browserExitCode < 0 || !report.testCounts || ["expected", "unexpected", "flaky", "skipped"].some((k) => !Number.isInteger(report.testCounts[k]) || report.testCounts[k] < 0)) throw new Error("Missing execution outcomes");
   if (report.execution.length !== inventory.criteria.length + 1 || report.execution.some((e) => e.project !== "chromium" || !["expected", "unexpected", "skipped"].includes(e.status) || !Array.isArray(e.attempts) || e.attempts.length !== 1 || e.attempts[0].retry !== 0 || !["passed", "failed", "timedOut", "interrupted", "skipped"].includes(e.attempts[0].status))) throw new Error("Invalid execution records");
   const counts = { expected: 0, unexpected: 0, skipped: 0, flaky: 0 };
@@ -76,7 +87,8 @@ export function validate(report, expected, now = Date.now()) {
   if (negative.length !== 1 || negative[0].status !== "expected" || negative[0].attempts[0].status !== "passed") throw new Error("Missing negative control execution");
   const time = Date.parse(report.date);
   if (!Number.isFinite(time) || time > now + 60_000 || now - time > 86_400_000) throw new Error("Stale run date");
-  for (const k of ["repository", "base", "head", "branch", "dirty", "contentHash", "configHash", "inventoryHash"]) if (report.source[k] !== expected[k]) throw new Error(`Stale/mismatched ${k}`);
+  for (const k of ["repository", "base", "baseAvailable", "head", "branch", "dirty", "contentHash", "configHash", "inventoryHash"]) if (report.source[k] !== expected[k]) throw new Error(`Stale/mismatched ${k}`);
+  if (JSON.stringify(report.source.changedPaths) !== JSON.stringify(expected.changedPaths)) throw new Error("Stale/mismatched changedPaths");
   if (report.results.length !== inventory.criteria.length) throw new Error("Missing/extra criteria");
   for (const c of inventory.criteria) {
     const rows = report.results.filter((r) => r.id === c.id && r.component === c.component);
