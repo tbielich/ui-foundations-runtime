@@ -5,7 +5,7 @@
   <p><strong>{{ evidence.P }}/{{ evidence.A }} — {{ evidence.percentage }}%</strong> · Gate: <strong>{{ evidence.gate }}</strong></p>
   <p>Results: {{ evidence.counts.pass }} pass; {{ evidence.counts.fail }} fail; {{ evidence.counts["not-tested"] }} not tested; {{ evidence.counts.blocked }} blocked; {{ evidence.counts["not-applicable"] }} reviewed N/A.</p>
   <p>Revision: <code>{{ evidence.revision }}</code>{% if evidence.dirty %} (dirty local evidence, not a published clean revision){% endif %}. Run: {{ evidence.runId }} · {{ evidence.date }}</p>
-  <p><a href="{{ '/evidence/accessibility/result.json' | sitePath }}">Machine-readable evidence and raw findings</a></p>
+  <p><a href="/evidence/accessibility/result.json">Machine-readable evidence and raw findings</a></p>
   {% else %}
   <p><strong>Not assessed</strong> · 0/{{ evidence.A }} current passing criteria · Gate: <strong>BLOCKED</strong></p>
   <p>Evidence unavailable: {{ accessibilityEvidence.reason | escape }}. No previous PASS is reused.</p>
