@@ -1,0 +1,119 @@
+name: Release Readiness (non-publishing dry-run)
+
+# Manually dispatched, read-only release-readiness dry-run. It checks out an
+# explicit ref, resolves and records the immutable source SHA, runs the existing
+# verification surface (root release:check decomposed into ci:check + pack:check,
+# plus the MCP server build and test suite), produces a real local tarball with a
+# SHA-256 computed from its bytes, and uploads revision-bound evidence including
+# logs and truthful failure statuses.
+#
+# This workflow NEVER publishes, stages, versions, tags, or deploys. It holds no
+# publish credentials. It does not replace `publish.yml`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Explicit git ref (branch, tag, or SHA) to verify'
+        required: true
+        default: 'main'
+
+# Read-only. No id-token, no packages:write, no contents:write.
+permissions:
+  contents: read
+
+concurrency:
+  # The dispatch input is used as an env var, never interpolated into a shell
+  # command below.
+  group: release-readiness-${{ github.event.inputs.ref }}
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  evidence:
+    name: Collect release-readiness evidence
+    runs-on: ubuntu-latest
+    env:
+      # Bind the untrusted dispatch input to an env var so no step interpolates
+      # it directly into a run string.
+      INPUT_REF: ${{ github.event.inputs.ref }}
+      # Write evidence outside the checkout so `npm run ci:check` (Playwright,
+      # which clears test-results/) cannot wipe it mid-run and the measured
+      # source stays clean.
+      EVIDENCE_OUT: ${{ runner.temp }}/release-readiness
+    steps:
+      - name: Checkout explicit ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.ref }}
+          # Full history so the resolved SHA and metadata are unambiguous.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Record resolved source SHA
+        id: resolve
+        run: |
+          RESOLVED_SHA="$(git rev-parse HEAD)"
+          echo "sha=${RESOLVED_SHA}" >> "$GITHUB_OUTPUT"
+          printf 'Resolved requested ref to immutable SHA %s\n' "${RESOLVED_SHA}"
+          {
+            printf '### Release readiness dry-run\n'
+            printf -- '- Requested ref: `%s`\n' "${INPUT_REF}"
+            printf -- '- Resolved SHA: `%s`\n' "${RESOLVED_SHA}"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.2'
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install MCP server dependencies
+        working-directory: packages/mcp-server
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Collect release-readiness evidence
+        id: collect
+        # Do not fail the step here: the evidence collector records truthful
+        # per-command exit codes and sets an overall status itself. We still
+        # want the upload and gate steps to run.
+        continue-on-error: true
+        env:
+          RELEASE_EVIDENCE_REF: ${{ github.event.inputs.ref }}
+        run: node scripts/release-evidence.mjs --out "$EVIDENCE_OUT"
+
+      - name: Append evidence summary to job summary
+        if: always()
+        run: |
+          if [ -f "${EVIDENCE_OUT}/report.md" ]; then
+            cat "${EVIDENCE_OUT}/report.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'No evidence report produced.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload release-readiness evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-readiness-evidence-${{ steps.resolve.outputs.sha }}
+          path: ${{ env.EVIDENCE_OUT }}/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Gate on honest evidence status
+        if: always()
+        run: |
+          STATUS="$(node -e "const fs=require('fs');const p=process.env.EVIDENCE_OUT+'/summary.json';process.stdout.write(fs.existsSync(p)?JSON.parse(fs.readFileSync(p,'utf8')).overallStatus:'MISSING')")"
+          printf 'Overall evidence status: %s\n' "${STATUS}"
+          if [ "${STATUS}" != "PASS" ]; then
+            printf 'Release-readiness dry-run reported %s. Truthful failure status; evidence uploaded for review.\n' "${STATUS}"
+            exit 1
+          fi
