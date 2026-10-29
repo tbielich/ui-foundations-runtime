@@ -57,3 +57,16 @@ items are:
 Automated checks catch structural issues. Manual testing with screen readers
 (VoiceOver, NVDA) and keyboard-only navigation is required before a component
 reaches stable status.
+
+## Automated pilot coverage
+
+Only the **Button and Checkbox Design Checklists** are connected to automated
+evidence under [Runtime #309](https://github.com/tbielich/ui-foundations-runtime/issues/309)
+and the [accepted accessibility ADR](https://github.com/tbielich/ui-foundations-vault/blob/c960b3cbb21ed8c3527e0f21b6cd046c8ca3c802/decisions/component-accessibility-verification.md).
+They measure the versioned semantic, keyboard/focus and default axe criteria on
+existing macro examples in headless Chromium, brand A/light only. Missing or stale
+evidence says Not assessed/BLOCKED. Authored design/documentation ticks elsewhere
+are not measured verification. No library-wide score, other brand/mode/browser
+coverage or real screenreader behavior is claimed. **Screenreader: not tested**.
+The manual screenreader/keyboard gate before stable status above remains required;
+this pilot does not change lifecycle badges or certify full WCAG conformance.

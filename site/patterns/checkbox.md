@@ -11,6 +11,23 @@ playgroundLabel: Open Checkbox Playground
 
 {% import "macros/ui.njk" as uif %}
 
+## Native state initialization
+
+The Checkbox macro marks mixed examples with `data-indeterminate`. HTML has no
+native indeterminate attribute: static HTML alone cannot expose a genuine mixed
+checkbox state. Load `/assets/checkbox-state.js` as a module after the markup (the
+docs layout does this automatically). Consumers must copy/serve this module with
+the macro; it is a site asset, not a new package or Custom Element API.
+
+For dynamically inserted macro markup, import `initializeCheckboxes` from that
+module and call it with the containing element after insertion. Initialization is
+idempotent. Native `checked` and `indeterminate` properties drive accessible state;
+the initializer synchronizes the existing visual state classes on native change.
+Real pointer/Space activation clears mixed state using browser behavior; disabled
+inputs stay inert. For programmatic updates, set the native properties and dispatch
+a `change` event to synchronize classes. Without JavaScript, use ordinary checked
+or unchecked markup, not a mixed-state claim.
+
 <div class="docs-hero">
   <div class="docs-hero-preview">
     <div class="docs-hero-preview-controls">
@@ -254,12 +271,16 @@ For the full theming architecture see [Foundations: Design Tokens](/foundations/
 
 <h2 id="design-checklist">Design checklist</h2>
 
+<p>Authored design/documentation checklist below is not automated verification credit. Unticked accessibility targets require evidence beyond the bounded pilot.</p>
+{% set accessibilityComponent = "checkbox" %}
+{% include "components/accessibility-evidence.njk" %}
+
 <div class="docs-checklist">
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>All interactive states</strong><span>Default, hover, active, focus, checked, indeterminate, and disabled.</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>All brand/mode contexts</strong><span>Works across light and dark modes for all brands.</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Accessible use of color</strong><span>Checked state uses a checkmark, not color alone (WCAG 1.4.1).</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Accessible contrast for text</strong><span>Label contrast of at least 4.5:1 (WCAG 1.4.3).</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Accessible contrast for UI</strong><span>Checkbox border contrast of at least 3:1 (WCAG 1.4.11).</span></div></div>
+  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">—</div><div class="docs-checklist-text"><strong>All interactive states</strong><span>Default, hover, active, focus, checked, indeterminate, and disabled.</span></div></div>
+  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">—</div><div class="docs-checklist-text"><strong>All brand/mode contexts</strong><span>Works across light and dark modes for all brands.</span></div></div>
+  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">—</div><div class="docs-checklist-text"><strong>Accessible use of color</strong><span>Checked state uses a checkmark, not color alone (WCAG 1.4.1).</span></div></div>
+  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">—</div><div class="docs-checklist-text"><strong>Accessible contrast for text</strong><span>Label contrast of at least 4.5:1 (WCAG 1.4.3).</span></div></div>
+  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">—</div><div class="docs-checklist-text"><strong>Accessible contrast for UI</strong><span>Checkbox border contrast of at least 3:1 (WCAG 1.4.11).</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Content standards</strong><span>Label writing guidelines documented.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Defined options</strong><span>Checked, indeterminate, disabled, and state options documented.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Defined behaviors</strong><span>Toggle, indeterminate, focus, and disabled behaviors documented.</span></div></div>

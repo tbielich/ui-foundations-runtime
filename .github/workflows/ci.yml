@@ -17,6 +17,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Full history so the accepted accessibility baseline
+          # 8c2c2ebd1a2f43270c34f87171a8200fbd38a410 is present for evidence
+          # provenance. A shallow clone omits it and fails identity() closed.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -32,3 +37,15 @@ jobs:
 
       - name: Run CI checks
         run: npm run ci:check
+
+      - name: Preserve accessibility evidence and failure traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: accessibility-${{ github.sha }}-node-${{ matrix.node-version }}
+          path: |
+            artifacts/accessibility/
+            test-results/
+            _site/patterns/button/index.html
+            _site/patterns/checkbox/index.html
+            _site/evidence/accessibility/
