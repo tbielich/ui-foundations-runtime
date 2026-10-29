@@ -14,7 +14,10 @@
         "com.figma.modeValues": {
           "Min": 20,
           "Max": 36
-        }
+        },
+        "com.figma.variableName": "Font/Size/lg",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xl": {
@@ -31,7 +34,10 @@
         "com.figma.modeValues": {
           "Min": 24,
           "Max": 40
-        }
+        },
+        "com.figma.variableName": "Font/Size/xl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xxl": {
@@ -48,7 +54,10 @@
         "com.figma.modeValues": {
           "Min": 32,
           "Max": 48
-        }
+        },
+        "com.figma.variableName": "Font/Size/xxl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xxxl": {
@@ -65,7 +74,10 @@
         "com.figma.modeValues": {
           "Min": 40,
           "Max": 56
-        }
+        },
+        "com.figma.variableName": "Font/Size/xxxl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     }
   },
@@ -84,7 +96,10 @@
         "com.figma.modeValues": {
           "Min": 28,
           "Max": 44
-        }
+        },
+        "com.figma.variableName": "Line/Height/lg",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xl": {
@@ -101,7 +116,10 @@
         "com.figma.modeValues": {
           "Min": 32,
           "Max": 48
-        }
+        },
+        "com.figma.variableName": "Line/Height/xl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xxl": {
@@ -118,7 +136,10 @@
         "com.figma.modeValues": {
           "Min": 44,
           "Max": 60
-        }
+        },
+        "com.figma.variableName": "Line/Height/xxl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
       }
     },
     "xxxl": {
@@ -135,6 +156,798 @@
         "com.figma.modeValues": {
           "Min": 56,
           "Max": 72
+        },
+        "com.figma.variableName": "Line/Height/xxxl",
+        "com.figma.variableCollectionName": "Appearance (Scale)",
+        "com.figma.hiddenFromPublishing": false
+      }
+    }
+  },
+  "Projection": {
+    "Line": {
+      "Height": {
+        "md": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/md"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:4",
+            "com.figma.variableName": "Projection/Line/Height/md",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:58",
+              "targetVariableName": "Line Height/md",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/md"
+              },
+              "Max": {
+                "$ref": "Line Height/md"
+              }
+            }
+          }
+        },
+        "xs": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/xs"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:19",
+            "com.figma.variableName": "Projection/Line/Height/xs",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-xs)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:56",
+              "targetVariableName": "Line Height/xs",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/xs"
+              },
+              "Max": {
+                "$ref": "Line Height/xs"
+              }
+            }
+          }
+        },
+        "sm": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/sm"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:20",
+            "com.figma.variableName": "Projection/Line/Height/sm",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:57",
+              "targetVariableName": "Line Height/sm",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/sm"
+              },
+              "Max": {
+                "$ref": "Line Height/sm"
+              }
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/lg"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:21",
+            "com.figma.variableName": "Projection/Line/Height/lg",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:60",
+              "targetVariableName": "Line Height/lg",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/lg"
+              },
+              "Max": {
+                "$ref": "Line Height/lg"
+              }
+            }
+          }
+        },
+        "xl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/xl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:22",
+            "com.figma.variableName": "Projection/Line/Height/xl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-xl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:61",
+              "targetVariableName": "Line Height/xl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/xl"
+              },
+              "Max": {
+                "$ref": "Line Height/xl"
+              }
+            }
+          }
+        },
+        "xxl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/xxl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:23",
+            "com.figma.variableName": "Projection/Line/Height/xxl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-xxl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:62",
+              "targetVariableName": "Line Height/xxl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/xxl"
+              },
+              "Max": {
+                "$ref": "Line Height/xxl"
+              }
+            }
+          }
+        },
+        "xxxl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Line Height/xxxl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:24",
+            "com.figma.variableName": "Projection/Line/Height/xxxl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "LINE_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-line-height-xxxl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:15:63",
+              "targetVariableName": "Line Height/xxxl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Line Height/xxxl"
+              },
+              "Max": {
+                "$ref": "Line Height/xxxl"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Font": {
+      "Weight": {
+        "600": {
+          "$type": "string",
+          "$value": {
+            "$ref": "Font/Weight/600"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:5",
+            "com.figma.variableName": "Projection/Font/Weight/600",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_STYLE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-weight-600)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:218",
+              "targetVariableName": "Font/Weight/600",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Weight/600"
+              },
+              "Max": {
+                "$ref": "Font/Weight/600"
+              }
+            }
+          }
+        },
+        "400": {
+          "$type": "string",
+          "$value": {
+            "$ref": "Font/Weight/400"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:7",
+            "com.figma.variableName": "Projection/Font/Weight/400",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_STYLE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-weight-400)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:216",
+              "targetVariableName": "Font/Weight/400",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Weight/400"
+              },
+              "Max": {
+                "$ref": "Font/Weight/400"
+              }
+            }
+          }
+        },
+        "700": {
+          "$type": "string",
+          "$value": {
+            "$ref": "Font/Weight/700"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:12",
+            "com.figma.variableName": "Projection/Font/Weight/700",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_STYLE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-weight-700)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:219",
+              "targetVariableName": "Font/Weight/700",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Weight/700"
+              },
+              "Max": {
+                "$ref": "Font/Weight/700"
+              }
+            }
+          }
+        }
+      },
+      "Size": {
+        "md": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/md"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:6",
+            "com.figma.variableName": "Projection/Font/Size/md",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:204",
+              "targetVariableName": "Font/Size/md",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/md"
+              },
+              "Max": {
+                "$ref": "Font/Size/md"
+              }
+            }
+          }
+        },
+        "xs": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/xs"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:13",
+            "com.figma.variableName": "Projection/Font/Size/xs",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-xs)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:205",
+              "targetVariableName": "Font/Size/xs",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/xs"
+              },
+              "Max": {
+                "$ref": "Font/Size/xs"
+              }
+            }
+          }
+        },
+        "sm": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/sm"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:14",
+            "com.figma.variableName": "Projection/Font/Size/sm",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:206",
+              "targetVariableName": "Font/Size/sm",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/sm"
+              },
+              "Max": {
+                "$ref": "Font/Size/sm"
+              }
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/lg"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:15",
+            "com.figma.variableName": "Projection/Font/Size/lg",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:208",
+              "targetVariableName": "Font/Size/lg",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/lg"
+              },
+              "Max": {
+                "$ref": "Font/Size/lg"
+              }
+            }
+          }
+        },
+        "xl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/xl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:16",
+            "com.figma.variableName": "Projection/Font/Size/xl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-xl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:209",
+              "targetVariableName": "Font/Size/xl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/xl"
+              },
+              "Max": {
+                "$ref": "Font/Size/xl"
+              }
+            }
+          }
+        },
+        "xxl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/xxl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:17",
+            "com.figma.variableName": "Projection/Font/Size/xxl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-xxl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:210",
+              "targetVariableName": "Font/Size/xxl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/xxl"
+              },
+              "Max": {
+                "$ref": "Font/Size/xxl"
+              }
+            }
+          }
+        },
+        "xxxl": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Font/Size/xxxl"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:18",
+            "com.figma.variableName": "Projection/Font/Size/xxxl",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_SIZE"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-size-xxxl)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:211",
+              "targetVariableName": "Font/Size/xxxl",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Size/xxxl"
+              },
+              "Max": {
+                "$ref": "Font/Size/xxxl"
+              }
+            }
+          }
+        }
+      },
+      "Family": {
+        "Mono": {
+          "$type": "string",
+          "$value": {
+            "$ref": "Font/Family/Mono"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:11",
+            "com.figma.variableName": "Projection/Font/Family/Mono",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "FONT_FAMILY"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-font-family-mono)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:3:7",
+              "targetVariableName": "Font/Family/Mono",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Font/Family/Mono"
+              },
+              "Max": {
+                "$ref": "Font/Family/Mono"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Size": {
+      "Target": {
+        "Default": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Size/Target/Default"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:8",
+            "com.figma.variableName": "Projection/Size/Target/Default",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-size-target-default)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:3020:2",
+              "targetVariableName": "Size/Target/Default",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Size/Target/Default"
+              },
+              "Max": {
+                "$ref": "Size/Target/Default"
+              }
+            }
+          }
+        }
+      },
+      "Radius": {
+        "full": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Size/Radius/full"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:9",
+            "com.figma.variableName": "Projection/Size/Radius/full",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-size-radius-full)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:251",
+              "targetVariableName": "Size/Radius/full",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Size/Radius/full"
+              },
+              "Max": {
+                "$ref": "Size/Radius/full"
+              }
+            }
+          }
+        },
+        "900": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Size/Radius/900"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:26",
+            "com.figma.variableName": "Projection/Size/Radius/900",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-size-radius-900)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:250",
+              "targetVariableName": "Size/Radius/900",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Size/Radius/900"
+              },
+              "Max": {
+                "$ref": "Size/Radius/900"
+              }
+            }
+          }
+        }
+      },
+      "Spacing": {
+        "200": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Size/Spacing/200"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:25",
+            "com.figma.variableName": "Projection/Size/Spacing/200",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT",
+              "GAP",
+              "EFFECT_FLOAT",
+              "PARAGRAPH_SPACING",
+              "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-size-spacing-200)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1:230",
+              "targetVariableName": "Size/Spacing/200",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Size/Spacing/200"
+              },
+              "Max": {
+                "$ref": "Size/Spacing/200"
+              }
+            }
+          }
+        },
+        "050": {
+          "$type": "number",
+          "$value": {
+            "$ref": "Size/Spacing/050"
+          },
+          "$extensions": {
+            "com.figma.variableId": "VariableID:3173:27",
+            "com.figma.variableName": "Projection/Size/Spacing/050",
+            "com.figma.variableCollectionName": "Appearance (Scale)",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT",
+              "GAP",
+              "EFFECT_FLOAT",
+              "PARAGRAPH_SPACING",
+              "PARAGRAPH_INDENT"
+            ],
+            "com.figma.hiddenFromPublishing": false,
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-appearance-projection-size-spacing-050)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:2983:462",
+              "targetVariableName": "Size/Spacing/050",
+              "targetVariableSetId": "VariableCollectionId:1:200",
+              "targetVariableSetName": "Core (Primitives)"
+            },
+            "com.figma.isOverride": true,
+            "com.figma.modeValues": {
+              "Min": {
+                "$ref": "Size/Spacing/050"
+              },
+              "Max": {
+                "$ref": "Size/Spacing/050"
+              }
+            }
+          }
         }
       }
     }

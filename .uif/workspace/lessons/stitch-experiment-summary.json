@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-01",
+  "scope": "Exploratory local palette documentation; original source predates Runtime 86e1d2a",
+  "methods": ["generated HTML inspection", "desktop browser computed styles at 1280px", "independent contrast calculation"],
+  "observations": {
+    "largeRequest": "unexpected generation error; size causation unproven",
+    "splitRequests": "four smaller requests succeeded",
+    "paletteValuesFound": {"opaque": 129, "alpha": 20},
+    "contrastRowsCopiedCorrectly": 9,
+    "contrastScreenDefect": {"labelColor": "#8C8C8C", "fontSizePx": 11, "contrastOnWhite": 3.36268},
+    "targetedRepair": {"colorsPreserved": 27, "minimumObservedTextPx": 14, "textColor": "#1A1A1A", "externalDependenciesRemoved": true},
+    "proseCssAssetImport": {"lossless": false, "inventedColors": ["#f9f9f9", "#54651c", "#7f4c81"]},
+    "assetBoundScreens": {
+      "contexts": ["Brand A / Light", "Brand B / Dark"],
+      "swatchesCheckedPerScreen": 6,
+      "minimumObservedTextPx": 14,
+      "headingFontSizePx": 32,
+      "headingLineHeightPx": 44,
+      "cardRadiusPx": {"brandA": 4, "brandB": 2},
+      "horizontalOverflowObserved": false
+    }
+  },
+  "notVerified": ["mobile", "full Brand x Scheme matrix", "axe", "keyboard", "screenreader", "actual Gemini version", "rendered Inter font file"],
+  "nativeYamlFollowUp": "Local format/source validation only; not imported into Stitch",
+  "acceptance": "No production or accessibility acceptance established"
+}

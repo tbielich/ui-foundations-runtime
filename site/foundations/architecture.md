@@ -68,41 +68,97 @@ permalink: /foundations/architecture/
 
 <h2 id="token-layers-heading">Token Architecture</h2>
 
-<p>Tokens follow a four-layer cascade. Each layer can only reference the one below it — never sideways or upward.</p>
+<p>
+  The token model separates <strong>raw values</strong>, <strong>context</strong>,
+  <strong>meaning</strong>, and <strong>UI usage</strong>. This makes it easier
+  to understand why a token exists and what is allowed to change it.
+</p>
+
+<pre><code>Core
+  ↓
+Appearance
+  ├─ Brand
+  ├─ Scheme
+  └─ Scale
+  ↓
+Semantics
+  ↓
+Patterns</code></pre>
 
 <div class="docs-table-wrap">
   <table class="docs-table">
     <thead>
       <tr>
-        <th>Layer</th>
-        <th>Purpose</th>
+        <th>Responsibility</th>
+        <th>Question it answers</th>
         <th>Example</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><strong>Core</strong></td>
-        <td>Raw values — the palette, spacing scale, font stacks</td>
-        <td><code>--color-neutral-800</code>, <code>--size-spacing-300</code></td>
+        <td>What reusable values exist?</td>
+        <td>Palette steps, spacing, radii, type values</td>
       </tr>
       <tr>
-        <td><strong>Appearance</strong></td>
-        <td>Mode-dependent decisions such as light and dark rendering context</td>
-        <td><code>:root</code>, <code>:root[data-mode="dark"]</code></td>
+        <td><strong>Appearance / Brand</strong></td>
+        <td>Which brand-specific value applies?</td>
+        <td>Brand A, Brand B, Brand C</td>
       </tr>
       <tr>
-        <td><strong>Semantics (Brands)</strong></td>
-        <td>Brand-scoped semantic roles for color, corner, font, and size decisions</td>
-        <td><code>:root[data-brand="a"]</code>, <code>--brand-corner-button</code></td>
+        <td><strong>Appearance / Scheme</strong></td>
+        <td>How should the value resolve in light or dark UI?</td>
+        <td>Light, Dark</td>
       </tr>
       <tr>
-        <td><strong>Patterns / Components</strong></td>
-        <td>Pattern-specific usage tokens scoped to a UI element or interactive component</td>
-        <td><code>--uif-button-solid-background-hover</code></td>
+        <td><strong>Appearance / Scale</strong></td>
+        <td>How should a scalable value resolve?</td>
+        <td>Min, Max fluid endpoints</td>
+      </tr>
+      <tr>
+        <td><strong>Semantics</strong></td>
+        <td>What does the value mean in the interface?</td>
+        <td><code>Color / Action / Surface / Hover</code></td>
+      </tr>
+      <tr>
+        <td><strong>Patterns</strong></td>
+        <td>Where does that meaning apply?</td>
+        <td><code>Button / … / Background / Hover</code></td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<p>
+  Brand, Scheme, and Scale are independent Appearance axes. Semantics stays
+  stable across those contexts. Patterns normally consume Semantics rather than
+  reaching directly into Appearance or Core.
+</p>
+
+<h3>Example: a Button hover state</h3>
+
+<p>
+  A Button does not need to know the brand's actual hover color. It asks for a
+  semantic role, and the layers below resolve the correct value:
+</p>
+
+<pre><code>Core color
+  → Appearance (Brand + Scheme)
+  → Color / Action / Surface / Hover
+  → Button / … / Background / Hover</code></pre>
+
+<p>
+  The same principle applies to accessible color pairs. A state-specific
+  <code>Surface</code> role is paired with its <code>Content</code> role;
+  <code>Foreground</code> is reserved for standalone action text, icons,
+  strokes, or outlines.
+</p>
+
+<p class="section-description">
+  <strong>Compatibility note:</strong> some generated Runtime filenames still
+  contain older collection names. They are intentionally retained to avoid
+  breaking consumers and do not redefine the architecture.
+</p>
 
 <h2 id="governance-heading">Governance &amp; Quality</h2>
 
@@ -143,9 +199,15 @@ permalink: /foundations/architecture/
 
 <p>Pattern rules must cite principle and heuristic IDs. Component rules must preserve the cited pattern intent. This traceability ensures every visual decision can be traced back to a documented rationale.</p>
 
-<h2 id="context-heading">Brand And Mode Context</h2>
+<h2 id="context-heading">Brand, Scheme And Scale</h2>
 
-<p>Brand and appearance mode are orthogonal concerns applied via data attributes:</p>
+<p>
+  Brand, Scheme, and Scale are separate Appearance concerns. Runtime exposes
+  Brand and Scheme as consumer-controlled data attributes; Scale is compiled
+  from its fluid endpoints.
+</p>
+
+<p>Brand and Scheme are applied via:</p>
 
 <ul>
   <li><code>data-brand="a|b|c"</code> — switches color palette, typography, and corner radii</li>

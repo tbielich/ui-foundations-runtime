@@ -71,7 +71,7 @@ for (const col of collections) {
         var mv = variable.valuesByMode[mode.modeId];
         if (mv && mv.type === "VARIABLE_ALIAS") {
           var mvTarget = await figma.variables.getVariableByIdAsync(mv.id);
-          modeValues[mode.name] = mvTarget ? { "$ref": mvTarget.name } : null;
+          modeValues[mode.name] = mvTarget ? { "$ref": mvTarget.name, "$targetId": mvTarget.id } : null;
         } else {
           modeValues[mode.name] = mv;
         }

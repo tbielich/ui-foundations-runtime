@@ -12,19 +12,13 @@ inclusion: manual
 | npm package | https://www.npmjs.com/package/ui-foundations | Version tag stages package; maintainer approval publishes |
 
 No application staging environment exists. npm staged publishing is the release
-approval gate for package versions. Preview deploys on Netlify PRs are available
-via Netlify's default deploy preview feature.
+approval gate for package versions. GitHub Pages is the visual-verification gate for pull requests. Draft pull requests do not deploy a preview; marking a draft ready for review triggers the Pages workflow. Netlify deploy previews and branch deploys are disabled.
 
-## Docs Deployment (Netlify)
+## Docs Preview (GitHub Pages) and Production Deployment
 
-Automatic on every push. Configuration in `.netlify/netlify.toml`:
+`.github/workflows/pages.yml` builds and deploys the PR preview after a pull request is marked ready for review. Use that GitHub Pages deployment for visual verification before merge.
 
-- Build command: `npm run docs:site`
-- Publish directory: `_site/`
-- Node version: 20
-- Security headers: CSP, X-Frame-Options DENY, nosniff
-
-No manual steps needed for docs deployment.
+Netlify is retained for production docs from `main` only. `netlify.toml` explicitly disables deploy previews and branch deploys. Do not use a Netlify deploy-preview URL as PR evidence.
 
 ## npm Package Release
 

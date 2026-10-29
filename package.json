@@ -1,6 +1,6 @@
 {
   "name": "ui-foundations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Token-first UI foundations with CSS, tokens, macros, and Web Components.",
   "license": "PolyForm-Noncommercial-1.0.0",
   "repository": {
@@ -102,6 +102,7 @@
     "build": "npm run build:all",
     "pack:check": "npm pack --dry-run",
     "release:check": "npm run ci:check && npm run pack:check",
+    "release:evidence": "node scripts/release-evidence.mjs",
     "release:patch": "npm run release:check && npm version patch",
     "release:minor": "npm run release:check && npm version minor",
     "release:major": "npm run release:check && npm version major",

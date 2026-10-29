@@ -1,6 +1,9 @@
 {
   "$collection": "Typography (Liquid)",
-  "$modes": ["Min", "Max"],
+  "$modes": [
+    "Min",
+    "Max"
+  ],
   "Font Size": {
     "lg": {
       "$type": "number",

@@ -20,6 +20,21 @@ Use foundations docs to understand:
 
 For the repository-wide system view, start with `docs/architecture.md`.
 
+## Token model at a glance
+
+The current model separates context from meaning:
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+Brand, Scheme, and Scale decide **how** a value resolves. Semantics describes
+**what the value means** in the interface. Patterns then apply that meaning to a
+specific UI building block.
+
+Older generated filenames can remain visible for compatibility; they do not
+change this architectural model.
+
 ## Recommended reading path
 
 1. `foundation-001-token-layering.md` — token layer model
@@ -34,7 +49,7 @@ The detailed foundation ADRs are the source of truth:
 
 | File | Topic |
 |---|---|
-| `foundation-001-token-layering.md` | Core -> Appearance -> Semantics (Brands) -> Patterns/Components token layering |
+| `foundation-001-token-layering.md` | Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns token layering |
 | `foundation-002-naming-and-grouping.md` | Token naming, grouping, and variant-first structure |
 | `foundation-003-color-semantics-and-status.md` | Semantic color roles, status vs interaction state |
 | `foundation-004-typography-scale-and-line-height.md` | Typography scale, line height, and role composition |

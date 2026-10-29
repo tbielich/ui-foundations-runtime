@@ -1,0 +1,107 @@
+{
+  "count": 766,
+  "errors": [],
+  "collections": [
+    {
+      "id": "VariableCollectionId:1:177",
+      "name": "Appearance (Brand)",
+      "modes": [
+        {
+          "name": "Brand A",
+          "modeId": "1:0"
+        },
+        {
+          "name": "Brand B",
+          "modeId": "10:0"
+        },
+        {
+          "name": "Brand C",
+          "modeId": "2435:0"
+        }
+      ],
+      "defaultModeId": "1:0"
+    },
+    {
+      "id": "VariableCollectionId:1:200",
+      "name": "Core (Primitives)",
+      "modes": [
+        {
+          "name": "Primitives",
+          "modeId": "1:1"
+        }
+      ],
+      "defaultModeId": "1:1"
+    },
+    {
+      "id": "VariableCollectionId:1:264",
+      "name": "Patterns (UI)",
+      "modes": [
+        {
+          "name": "Component",
+          "modeId": "1:3"
+        }
+      ],
+      "defaultModeId": "1:3"
+    },
+    {
+      "id": "VariableCollectionId:2007:325",
+      "name": "Appearance (Scheme)",
+      "modes": [
+        {
+          "name": "Light Mode",
+          "modeId": "2007:0"
+        },
+        {
+          "name": "Dark Mode",
+          "modeId": "2007:1"
+        }
+      ],
+      "defaultModeId": "2007:0"
+    },
+    {
+      "id": "VariableCollectionId:2159:186",
+      "name": "Interaction (States)",
+      "modes": [
+        {
+          "name": "Default",
+          "modeId": "2159:0"
+        },
+        {
+          "name": "Selected",
+          "modeId": "2159:1"
+        },
+        {
+          "name": "Disabled",
+          "modeId": "2159:2"
+        }
+      ],
+      "defaultModeId": "2159:0"
+    },
+    {
+      "id": "VariableCollectionId:2986:5525",
+      "name": "Appearance (Scale)",
+      "modes": [
+        {
+          "name": "Min",
+          "modeId": "2986:0"
+        },
+        {
+          "name": "Max",
+          "modeId": "2986:1"
+        }
+      ],
+      "defaultModeId": "2986:0"
+    },
+    {
+      "id": "VariableCollectionId:3173:2",
+      "name": "Semantics (Roles)",
+      "modes": [
+        {
+          "name": "Mode 1",
+          "modeId": "3173:0"
+        }
+      ],
+      "defaultModeId": "3173:0"
+    }
+  ]
+}

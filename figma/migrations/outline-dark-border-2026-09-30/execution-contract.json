@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-30",
+  "mode": "REPAIR",
+  "authorization": "User: Outline still not visible; fix its visibility.",
+  "scope": "Dark Scheme brand border resolves to existing Brand Strong Dark border for all Outline states. One alias slot changes; no new variables, palette values, IDs or CSS names.",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "changes": [
+    {
+      "id": "VariableID:2007:345",
+      "name": "Color/Border/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:200"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:17"
+      }
+    }
+  ]
+}
