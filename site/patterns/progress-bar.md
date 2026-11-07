@@ -9,6 +9,7 @@ playgroundUrl: /patterns/progress-bar-playground/
 playgroundLabel: Open Progress Bar Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import scaleSwitch %}
 
 <div class="docs-hero">
   <div class="docs-hero-preview">
@@ -22,6 +23,7 @@ playgroundLabel: Open Progress Bar Playground
         <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
         <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
       </span>
+      {{ scaleSwitch() }}
     </div>
     <div class="docs-hero-preview-stage"><div style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(value=60, label="Uploading", showValue=true) }}</div></div></div>
   </div>
@@ -79,7 +81,7 @@ A variant changes appearance; it does not mark a task complete, pause it or repo
 
 ### Container scaling
 
-Set <code>data-scale="small|medium|large"</code> on a containing element. Font size, line height, spacing and radii inherit that context. A local <code>size="sm"</code> remains smaller within the chosen context; it does not cancel the container scale. Track/indicator dimensions and border widths keep their existing local-size behavior.
+Use the Scale switch beside Light/Dark in the preview above, or set <code>data-scale="small|medium|large"</code> on a containing element. Font size, line height, spacing and radii inherit that context. A local <code>size="sm"</code> remains smaller within the chosen context; it does not cancel the container scale. Track/indicator dimensions and border widths keep their existing local-size behavior.
 
 <div class="docs-states-grid" style="--docs-states-cols: 3">
 <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="small" style="inline-size: 100%;">{{ uif.progressBar(label="Uploading", value=60) }}</div></div><span class="docs-states-grid-item-label">Container small</span></div>

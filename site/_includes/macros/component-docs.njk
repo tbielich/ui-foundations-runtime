@@ -1,4 +1,13 @@
-{% macro preview() %}
+{% macro scaleSwitch() -%}
+<span class="docs-hero-switch" role="group" aria-label="Preview scale" data-hero-group="scale">
+  <span class="docs-hero-switch-label" aria-hidden="true">Scale</span>
+  <button type="button" data-hero-scale="small" aria-label="Small scale" aria-pressed="false">S</button>
+  <button type="button" data-hero-scale="medium" aria-label="Medium scale" aria-pressed="true">M</button>
+  <button type="button" data-hero-scale="large" aria-label="Large scale" aria-pressed="false">L</button>
+</span>
+{%- endmacro %}
+
+{% macro preview(scale=false) %}
 <div class="docs-hero-preview docs-component-preview">
   <div class="docs-hero-preview-controls">
     <span class="docs-hero-switch" role="group" aria-label="Preview brand">
@@ -10,6 +19,7 @@
       <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
       <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
     </span>
+    {% if scale %}{{ scaleSwitch() }}{% endif %}
   </div>
   <div class="docs-hero-preview-stage">{{ caller() | safe }}</div>
 </div>

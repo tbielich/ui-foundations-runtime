@@ -17,6 +17,7 @@ playground:
   id: progress-bar-playground
   queryPrefix: progress-bar
   runtime: vanilla
+  containerScale: true
   renderer: progress-bar
   tokenCssPath: src/ui/patterns/progress-bar.css
   controls:

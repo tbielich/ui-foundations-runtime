@@ -17,6 +17,7 @@ playground:
   id: meter-playground
   queryPrefix: meter
   runtime: vanilla
+  containerScale: true
   renderer: meter
   tokenCssPath: src/ui/patterns/meter.css
   controls:

@@ -17,6 +17,7 @@ playground:
   id: status-light-playground
   queryPrefix: status-light
   runtime: vanilla
+  containerScale: true
   renderer: status-light
   tokenCssPath: src/ui/patterns/status-light.css
   controls:

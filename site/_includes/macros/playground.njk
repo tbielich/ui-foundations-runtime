@@ -1,4 +1,5 @@
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import scaleSwitch %}
 
 {% macro playground(config) -%}
 {%- set playgroundId = config.id or "ui-playground" -%}
@@ -28,6 +29,7 @@
         <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
         <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
       </span>
+      {% if config.containerScale %}{{ scaleSwitch() }}{% endif %}
     </div>
     <div id="{{ playgroundId }}-root" class="docs-hero-preview-stage playground-stage"></div>
   </div>
@@ -39,7 +41,11 @@
       {% set source = control.source or "prop" %}
       {% set valueType = control.valueType or ("boolean" if control.kind == "boolean" else "string") %}
       {% set queryParam = control.query or false %}
-      {% if control.kind == "boolean" %}
+      {% if config.containerScale and control.name == "scale" %}
+      <select hidden id="{{ controlId }}" name="{{ control.name }}" data-playground-control data-prop="scale" data-source="prop" data-value-type="string" data-query-param="{{ '1' if queryParam else '0' }}">
+        {% for option in control.options %}<option value="{{ option }}"{% if option == control.default %} selected{% endif %}>{{ option }}</option>{% endfor %}
+      </select>
+      {% elif control.kind == "boolean" %}
       <label
         class="playground-field playground-check"
         for="{{ controlId }}"

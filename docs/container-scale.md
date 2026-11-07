@@ -51,7 +51,7 @@ The same context applies to the static Nunjucks macros and their emitted CSS pat
 </div>
 ```
 
-The three playgrounds expose Container scale separately from Size, and generated HTML, Nunjucks and Custom Element examples include the container. A scale context is not a `scale` attribute on a component.
+The three component previews and playgrounds expose Scale (S/M/L) next to the Light/Dark switch. Local Size remains in the playground properties panel. Generated HTML, Nunjucks and Custom Element examples include the container. The scale selection survives a copied URL and resets to medium with Reset. A scale context is not a `scale` attribute on a component.
 
 ## Acceptance boundary
 

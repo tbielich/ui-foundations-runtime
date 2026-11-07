@@ -339,7 +339,7 @@
     </script>
 
     <script>
-      // Hero preview: inline brand/mode switching via token snapshot
+      // Hero preview: isolated brand/scheme snapshots and inherited container scale
       (function () {
         var previews = document.querySelectorAll(".docs-hero-preview");
         if (!previews.length) return;
@@ -360,6 +360,7 @@
                   var matches = text.match(/--[\w-]+/g);
                   if (matches) {
                     matches.forEach(function (prop) {
+                      if (prop === "--_uif-context-scale" || prop === "--_uif-local-scale") return;
                       var val = styles.getPropertyValue(prop).trim();
                       if (val) tokens[prop] = val;
                     });
@@ -398,6 +399,30 @@
 
           var brandBtns = preview.querySelectorAll("[data-hero-brand]");
           var modeBtns = preview.querySelectorAll("[data-hero-mode]");
+          var scaleBtns = preview.querySelectorAll("[data-hero-scale]");
+          var playground = preview.closest("[data-playground]");
+          var scaleControl = playground && playground.querySelector('[data-playground-control][name="scale"]');
+          function syncScale(value) {
+            var scale = ["small", "medium", "large"].includes(value) ? value : "medium";
+            stage.dataset.scale = scale;
+            scaleBtns.forEach(function (button) {
+              button.setAttribute("aria-pressed", String(button.dataset.heroScale === scale));
+            });
+          }
+          if (scaleBtns.length) {
+            syncScale(scaleControl ? scaleControl.value : stage.dataset.scale);
+            scaleBtns.forEach(function (button) {
+              button.addEventListener("click", function () {
+                if (scaleControl) {
+                  scaleControl.value = button.dataset.heroScale;
+                  scaleControl.dispatchEvent(new Event("change", { bubbles: true }));
+                } else syncScale(button.dataset.heroScale);
+              });
+            });
+            if (playground) playground.addEventListener("playground:statechange", function (event) {
+              syncScale(event.detail.props.scale);
+            });
+          }
           brandBtns.forEach(function (b) {
             b.setAttribute("aria-pressed", b.dataset.heroBrand === currentBrand ? "true" : "false");
           });

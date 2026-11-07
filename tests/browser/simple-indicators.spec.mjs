@@ -80,9 +80,9 @@ test("all three playgrounds wire controls into the actual exported elements", as
       else await expect(root.getByRole("progressbar")).toHaveAttribute("aria-valuenow", "0");
     }
     await expect(root.locator(`.uif-${slug}`)).toHaveCount(1);
-    await controls.locator('[name="scale"]').selectOption("small");
+    await page.getByRole("button", { name: "Small scale", exact: true }).click();
     const smallFont = await root.locator(`.uif-${slug}`).evaluate(el => parseFloat(getComputedStyle(el).fontSize));
-    await controls.locator('[name="scale"]').selectOption("large");
+    await page.getByRole("button", { name: "Large scale", exact: true }).click();
     const largeFont = await root.locator(`.uif-${slug}`).evaluate(el => parseFloat(getComputedStyle(el).fontSize));
     expect(largeFont).toBeGreaterThan(smallFont);
     await expect(root.locator('[data-scale="large"]')).toHaveCount(1);
