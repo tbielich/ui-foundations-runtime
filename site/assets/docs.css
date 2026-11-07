@@ -3164,10 +3164,6 @@ details.color-family > .color-table-wrap {
 .docs-component-preview .docs-component-grid { inline-size: 100%; min-inline-size: 0; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
 .docs-component-preview .docs-component-card-preview { min-block-size: 170px; }
 .docs-component-preview .docs-hero-preview-controls { flex-wrap: wrap; }
-@media (max-width: 1100px) {
-  .docs-main { grid-template-columns: minmax(0, 1fr); }
-  .docs-toc-sidebar { display: none; }
-}
 @media (max-width: 600px) {
   .docs-component-preview .docs-hero-preview-stage { padding: 24px 16px; }
   .docs-component-preview .docs-hero-preview-stage > * { flex-shrink: 1; min-inline-size: 0; max-inline-size: 100%; }

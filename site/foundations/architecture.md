@@ -14,7 +14,7 @@ permalink: /foundations/architecture/
 {% endcall %}
 
 
-## Tokens
+<h2 id="tokens">Tokens</h2>
 
 Tokens carry visual decisions such as color, spacing, typography, and borders.
 The model follows **Core → Appearance → Semantics → Patterns**. Brand, Scheme,
@@ -23,13 +23,13 @@ and Scale are independent Appearance concerns.
 Use the [token reference](/foundations/design-tokens/) to find the right role
 before overriding a visual property.
 
-## Patterns
+<h2 id="patterns">Patterns</h2>
 
 [Patterns](/patterns/) provide HTML structures and CSS classes for controls
 such as Button, Input, and Checkbox. Use their documented markup with the
 package styles. Individual pages explain where JavaScript is needed for behavior.
 
-## Components
+<h2 id="components">Components</h2>
 
 [Date Picker](/components/date-picker/) and [Dialog](/components/dialog/) document
 interactions that combine markup, state, and JavaScript. Check each page for
@@ -39,13 +39,13 @@ Optional light-DOM Web Components provide JavaScript wrappers for supported
 patterns. They use the same CSS and tokens as plain HTML. Import only the
 wrappers your application needs; see [Getting Started](/getting-started/).
 
-## Examples
+<h2 id="examples">Examples</h2>
 
 [Examples](/examples/) show how to compose the building blocks into forms and
 page layouts. Adapt their content, validation, and application behavior to your
 own flow.
 
-## Application responsibilities
+<h2 id="application-responsibilities">Application responsibilities</h2>
 
 Your application supplies content, accessible labels, business validation,
 data, and actions. A styled control alone does not provide those behaviors.
