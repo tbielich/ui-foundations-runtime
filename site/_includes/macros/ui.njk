@@ -57,7 +57,7 @@
 {%- if className -%}{%- set checkboxClasses = checkboxClasses + " " + className -%}{%- endif -%}
 {%- if wrapperClassName -%}{%- set fieldClasses = fieldClasses + " " + wrapperClassName -%}{%- endif -%}
 <label class="{{ fieldClasses }}">
-  <input class="{{ checkboxClasses }}" type="checkbox"{% if id %} id="{{ id }}"{% endif %}{% if name %} name="{{ name }}"{% endif %}{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if indeterminate or state == "indeterminate" %} aria-checked="mixed"{% endif %}{% if disabled or state == "disabled" %} disabled{% endif %} />
+  <input class="{{ checkboxClasses }}" type="checkbox"{% if id %} id="{{ id }}"{% endif %}{% if name %} name="{{ name }}"{% endif %}{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if indeterminate or state == "indeterminate" %} data-indeterminate{% endif %}{% if disabled or state == "disabled" %} disabled{% endif %} />
   <span class="uif-checkbox-field-text">{{ label }}</span>
 </label>
 {%- endmacro %}
