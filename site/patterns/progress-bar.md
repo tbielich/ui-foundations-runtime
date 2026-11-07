@@ -77,6 +77,18 @@ A variant changes appearance; it does not mark a task complete, pause it or repo
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(label="Uploading", value=60, size="lg") }}</div></div><span class="docs-states-grid-item-label">Large</span></div>
 </div>
 
+### Container scaling
+
+Set <code>data-scale="small|medium|large"</code> on a containing element. Font size, line height, spacing and radii inherit that context. A local <code>size="sm"</code> remains smaller within the chosen context; it does not cancel the container scale. Track/indicator dimensions and border widths keep their existing local-size behavior.
+
+<div class="docs-states-grid" style="--docs-states-cols: 3">
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="small" style="inline-size: 100%;">{{ uif.progressBar(label="Uploading", value=60) }}</div></div><span class="docs-states-grid-item-label">Container small</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="medium" style="inline-size: 100%;">{{ uif.progressBar(label="Uploading", value=60) }}</div></div><span class="docs-states-grid-item-label">Container medium</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="large" style="inline-size: 100%;">{{ uif.progressBar(label="Uploading", value=60) }}</div></div><span class="docs-states-grid-item-label">Container large</span></div>
+</div>
+
+The default context is medium. Nested containers can replace the inherited context explicitly, without multiplying the parent context again. Brand and light/dark mode remain independent. The current adopters are Status Light, Meter and Progress Bar; existing components have not been migrated implicitly.
+
 ### Table of options
 
 <div class="docs-table-wrap">
@@ -88,7 +100,7 @@ A variant changes appearance; it does not mark a task complete, pause it or repo
     <tr><td><code>show-value</code></td><td><code>showValue</code></td><td>Boolean. Default: false. Shows the rounded percentage only for determinate progress.</td></tr>
     <tr><td><code>indeterminate</code></td><td><code>indeterminate</code></td><td>Boolean. Default: false. Forces unknown progress even when value is present.</td></tr>
     <tr><td><code>variant</code></td><td><code>variant</code></td><td><code>default</code> (default), <code>positive</code> or <code>negative</code>.</td></tr>
-    <tr><td><code>size</code></td><td><code>size</code></td><td><code>sm</code>, <code>md</code> (default) or <code>lg</code>.</td></tr>
+    <tr><td><code>size</code></td><td><code>size</code></td><td><code>sm</code>, <code>md</code> (default) or <code>lg</code>, relative to container scale.</td></tr>
   </tbody>
 </table>
 </div>
@@ -180,6 +192,16 @@ For static HTML without Custom Element JavaScript:
 
 The macro emits the progressbar, optional header and styled track/fill. Pass finite numbers or an empty value to the macro. Both interfaces use the same CSS pattern; changes to static markup must keep its fill value and accessible current value aligned.
 
+
+The scale belongs to the container, not to the component's size attribute:
+
+```html
+{% raw %}
+<div data-scale="large">
+  <uif-progress-bar size="sm" label="Uploading" value="60"></uif-progress-bar>
+</div>
+{% endraw %}
+```
 
 <h2 id="theming">Theming</h2>
 

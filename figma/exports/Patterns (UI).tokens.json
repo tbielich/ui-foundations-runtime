@@ -8326,7 +8326,9 @@
     },
     "Font Size MD": {
       "$type": "number",
-      "$value": 14,
+      "$value": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "FONT_SIZE"
@@ -8338,7 +8340,9 @@
     },
     "Font Size SM": {
       "$type": "number",
-      "$value": 12,
+      "$value": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "FONT_SIZE"
@@ -8350,7 +8354,9 @@
     },
     "Line Height MD": {
       "$type": "number",
-      "$value": 20,
+      "$value": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "LINE_HEIGHT"
@@ -8362,7 +8368,9 @@
     },
     "Line Height SM": {
       "$type": "number",
-      "$value": 16,
+      "$value": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "LINE_HEIGHT"
@@ -8596,7 +8604,9 @@
     },
     "Font Size SM": {
       "$type": "number",
-      "$value": 12,
+      "$value": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "ALL_SCOPES"
@@ -8608,7 +8618,9 @@
     },
     "Font Size MD": {
       "$type": "number",
-      "$value": 14,
+      "$value": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "ALL_SCOPES"
@@ -8620,7 +8632,9 @@
     },
     "Line Height SM": {
       "$type": "number",
-      "$value": 16,
+      "$value": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "ALL_SCOPES"
@@ -8632,7 +8646,9 @@
     },
     "Line Height MD": {
       "$type": "number",
-      "$value": 20,
+      "$value": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      },
       "$extensions": {
         "com.figma.scopes": [
           "ALL_SCOPES"

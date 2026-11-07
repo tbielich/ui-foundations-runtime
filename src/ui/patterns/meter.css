@@ -1,26 +1,29 @@
 @layer components {
   .uif-meter {
+    --_uif-local-scale: 1;
     display: grid;
-    gap: var(--uif-meter-gap);
+    gap: calc(var(--uif-meter-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
     font-family: var(--uif-meter-font-family);
     font-weight: var(--uif-meter-font-weight);
-    font-size: var(--uif-meter-font-size-md);
-    line-height: var(--uif-meter-line-height-md);
+    font-size: calc(var(--uif-meter-font-size-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--uif-meter-line-height-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
   }
 
   .uif-meter .uif-meter-header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    gap: var(--uif-meter-gap);
+    gap: calc(var(--uif-meter-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
   }
 
   .uif-meter .uif-meter-label {
     color: var(--uif-meter-label-color-default);
+    font: inherit;
   }
 
   .uif-meter .uif-meter-value {
     color: var(--uif-meter-value-color-default);
+    font: inherit;
   }
 
   /* Native <meter> provides semantics for assistive technology;
@@ -43,7 +46,7 @@
     position: relative;
     overflow: hidden;
     background: var(--uif-meter-track-background-default);
-    border-radius: var(--uif-meter-border-radius);
+    border-radius: calc(var(--uif-meter-border-radius) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
     block-size: var(--uif-meter-track-height-md);
   }
 
@@ -56,8 +59,7 @@
   }
 
   .uif-meter.sm {
-    font-size: var(--uif-meter-font-size-sm);
-    line-height: var(--uif-meter-line-height-sm);
+    --_uif-local-scale: var(--_uif-scale-small);
   }
 
   .uif-meter.sm .uif-meter-track {

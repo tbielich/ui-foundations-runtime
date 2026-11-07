@@ -52,6 +52,13 @@ test("indicator playground generators preserve all controls and render usable es
   assert.match(generators.wc["progress-bar"](state), /show-value/);
   assert.doesNotMatch(generators.wc["progress-bar"](state), / indeterminate/);
   assert.match(render(generators.njk["status-light"](state)), /&lt;Online&gt;/);
+  state.props.scale = "large";
+  state.props.size = "sm";
+  for (const name of ["meter", "status-light", "progress-bar"]) {
+    assert.match(render(generators.njk[name](state)), /<div data-scale="large">/);
+    assert.match(generators.wc[name](state), /<div data-scale="large">/);
+    assert.doesNotMatch(generators.wc[name](state), /<uif-[^>]+ scale=/);
+  }
 });
 
 test("restored tokens use existing semantics and declare source reconciliation explicitly", () => {

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { buildScaleContext } from "./scale-context.mjs";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DIST_DIR = path.join(REPO_ROOT, "dist");
@@ -173,11 +174,13 @@ function buildCoreBundle(tokenFiles) {
       '@import url("./base/typography.css") layer(base);',
       ...tokenImports,
       '@import url("./context/mode.css") layer(context);',
+      '@import url("./context/scale.css") layer(context);',
       "",
     ].join("\n"),
   );
 
   writeModeCssBaseline();
+  buildScaleContext(REPO_ROOT, DIST_DIR);
 }
 
 function buildUiBundle() {

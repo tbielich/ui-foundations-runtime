@@ -39,3 +39,7 @@ This is a package compatibility boundary, not a public authored-tag namespace.
 Import `ui-foundations/elements/ui-status-light`, `ui-foundations/elements/ui-meter` or `ui-foundations/elements/ui-progress-bar` individually, or use the aggregate `ui-foundations/elements` entry. Their tags are `<uif-status-light>`, `<uif-meter>` and `<uif-progress-bar>`.
 
 The corresponding macros in `ui-foundations/macros/ui.njk` are `uif.statusLight`, `uif.meter` and `uif.progressBar`. The macros emit static semantic HTML without requiring Custom Elements. Usage and numeric input contracts are documented in the respective pattern pages.
+
+## Container scale
+
+`data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

@@ -20,6 +20,15 @@ playground:
   renderer: progress-bar
   tokenCssPath: src/ui/patterns/progress-bar.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: number
       name: value
       label: Value (0–100)

@@ -1,0 +1,15 @@
+{
+  "mode": "IMPLEMENT",
+  "selection": "owner_direct_assignment",
+  "ownerRequest": "Container scaling for font size, line height, spacing and radii; local sizes remain relative. User confirmed implementation with: ja, bitte an passen",
+  "baseCommit": "7ecac988333944eba1ab219c24fadbe3439afb2e",
+  "repository": "tbielich/ui-foundations-runtime",
+  "components": ["status-light", "meter", "progress-bar"],
+  "contextApi": "data-scale=small|medium|large",
+  "scaledProperties": ["font-size", "line-height", "spacing", "length-based radii"],
+  "contextResolution": "nearest recognized container replaces inherited context; local component size multiplies it",
+  "factorSource": "Core Font/Size xs, sm, md; each divided by sm during build",
+  "allowedChanges": ["reusable CSS context and deterministic build projection", "three component adopters", "existing typography aliases", "playgrounds and code generators", "usage documentation", "bounded verification"],
+  "excluded": ["other component migrations", "track/indicator dimension scaling", "border width scaling", "shared color redesign", "Vault governance changes", "UILib", "main merge", "release"],
+  "externalGate": "Figma parity and active Code Connect remain unverified; no live Figma mutation is authorized or performed"
+}

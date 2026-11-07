@@ -65,6 +65,18 @@ Variants select an appearance; they do not infer meaning from the label. Choose 
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;">{{ uif.statusLight("Online", variant="positive", size="sm") }}</div><span class="docs-states-grid-item-label">Small</span></div>
 </div>
 
+### Container scaling
+
+Set <code>data-scale="small|medium|large"</code> on a containing element. Font size, line height, spacing and radii inherit that context. A local <code>size="sm"</code> remains smaller within the chosen context; it does not cancel the container scale. Track/indicator dimensions and border widths keep their existing local-size behavior.
+
+<div class="docs-states-grid" style="--docs-states-cols: 3">
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="small" style="inline-size: 100%;">{{ uif.statusLight("Online", variant="positive") }}</div></div><span class="docs-states-grid-item-label">Container small</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="medium" style="inline-size: 100%;">{{ uif.statusLight("Online", variant="positive") }}</div></div><span class="docs-states-grid-item-label">Container medium</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="large" style="inline-size: 100%;">{{ uif.statusLight("Online", variant="positive") }}</div></div><span class="docs-states-grid-item-label">Container large</span></div>
+</div>
+
+The default context is medium. Nested containers can replace the inherited context explicitly, without multiplying the parent context again. Brand and light/dark mode remain independent. The current adopters are Status Light, Meter and Progress Bar; existing components have not been migrated implicitly.
+
 ### Table of options
 
 <div class="docs-table-wrap">
@@ -74,7 +86,7 @@ Variants select an appearance; they do not infer meaning from the label. Choose 
     <tr><td><code>text content</code></td><td><code>text</code></td><td>The initial text. Required macro argument; empty when omitted from the Custom Element.</td></tr>
     <tr><td><code>label</code></td><td><code>text</code></td><td>Optional Custom Element text override. Removing the attribute restores the initial text. The macro receives its text directly.</td></tr>
     <tr><td><code>variant</code></td><td><code>variant</code></td><td><code>neutral</code> (default), <code>positive</code>, <code>negative</code>, <code>notice</code>, <code>info</code>. Unsupported values fall back to neutral.</td></tr>
-    <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>. Unsupported values use medium.</td></tr>
+    <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>. Unsupported values use medium. Sizes are relative to the inherited container scale.</td></tr>
   </tbody>
 </table>
 </div>
@@ -153,6 +165,16 @@ For static HTML without Custom Element JavaScript, use the macro:
 
 The macro emits <code>.uif-status-light</code>, <code>.uif-status-light-indicator</code> and <code>.uif-status-light-text</code> spans. Text is escaped; arbitrary HTML children are not part of the text API.
 
+
+The scale belongs to the container, not to the component's size attribute:
+
+```html
+{% raw %}
+<div data-scale="large">
+  <uif-status-light size="sm" label="Online"></uif-status-light>
+</div>
+{% endraw %}
+```
 
 <h2 id="theming">Theming</h2>
 

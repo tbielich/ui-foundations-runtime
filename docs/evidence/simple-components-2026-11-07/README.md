@@ -59,3 +59,7 @@ Overall design acceptance: **BLOCKED** by live Figma access and inactive Code Co
 The first Runtime commit contained only abbreviated usage pages. The follow-up completes the established page format for all three components: hero controls/playground link, numbered anatomy, rendered options and sizes, API defaults, behaviors, usage guidance, content, keyboard behavior, accessibility, implementation examples, theming, tokens and an accurate design checklist. It also fixes a mobile options-table overflow using the existing table wrapper and gives the measurement previews full width.
 
 After the documentation changes, `CI=1 npm run ci:check` passed again (197 unit tests, 16 Chromium tests). A separate rendered-page check verified all 11 sections, API rows, code examples, token tables, links and working hero switches at desktop/mobile sizes; no horizontal page overflow remains. Desktop/mobile screenshots were visually inspected. See `documentation-review.json`. Runtime behavior and the open Figma/Code Connect gate are unchanged.
+
+## Container scale follow-up
+
+The later owner-authorized container context, relative local typography and current verification counts are recorded in [Container scale evidence](../container-scale-2026-11-07/README.md). The initial 197/16 counts and original size behavior above describe the earlier gate.

@@ -1299,7 +1299,11 @@
     if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
     if (props.size !== undefined) element.setAttribute("size", String(props.size));
     element.textContent = children === undefined ? "Status" : String(children);
-    return { element, code: element.outerHTML };
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
   };
   const renderVanillaMeter = ({ props, children }) => {
     const element = document.createElement("uif-meter");
@@ -1310,7 +1314,11 @@
     if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
     if (props.size !== undefined) element.setAttribute("size", String(props.size));
     if (props.valueText !== undefined) element.setAttribute("value-text", String(props.valueText));
-    return { element, code: element.outerHTML };
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
   };
   const renderVanillaProgressBar = ({ props, children }) => {
     const element = document.createElement("uif-progress-bar");
@@ -1320,7 +1328,11 @@
     if (props.label !== undefined) element.setAttribute("label", String(props.label));
     if (asBoolean(props.showValue)) element.setAttribute("show-value", "");
     if (asBoolean(props.indeterminate)) element.setAttribute("indeterminate", "");
-    return { element, code: element.outerHTML };
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
   };
 
   global.UIPlaygroundRenderers = {

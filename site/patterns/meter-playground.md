@@ -20,6 +20,15 @@ playground:
   renderer: meter
   tokenCssPath: src/ui/patterns/meter.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

@@ -73,6 +73,18 @@ Variants change presentation only. The component does not calculate thresholds o
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.meter(label="Measured level", min=10, max=30, value=20, valueText="20 units") }}</div></div><span class="docs-states-grid-item-label">Nonzero minimum</span></div>
 </div>
 
+### Container scaling
+
+Set <code>data-scale="small|medium|large"</code> on a containing element. Font size, line height, spacing and radii inherit that context. A local <code>size="sm"</code> remains smaller within the chosen context; it does not cancel the container scale. Track/indicator dimensions and border widths keep their existing local-size behavior.
+
+<div class="docs-states-grid" style="--docs-states-cols: 3">
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="small" style="inline-size: 100%;">{{ uif.meter(label="Storage used", value=60) }}</div></div><span class="docs-states-grid-item-label">Container small</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="medium" style="inline-size: 100%;">{{ uif.meter(label="Storage used", value=60) }}</div></div><span class="docs-states-grid-item-label">Container medium</span></div>
+<div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div data-scale="large" style="inline-size: 100%;">{{ uif.meter(label="Storage used", value=60) }}</div></div><span class="docs-states-grid-item-label">Container large</span></div>
+</div>
+
+The default context is medium. Nested containers can replace the inherited context explicitly, without multiplying the parent context again. Brand and light/dark mode remain independent. The current adopters are Status Light, Meter and Progress Bar; existing components have not been migrated implicitly.
+
 ### Table of options
 
 <div class="docs-table-wrap">
@@ -85,7 +97,7 @@ Variants change presentation only. The component does not calculate thresholds o
     <tr><td><code>max</code></td><td><code>max</code></td><td>Upper bound. Default: <code>100</code>.</td></tr>
     <tr><td><code>value-text</code></td><td><code>valueText</code></td><td>Optional measurement text, such as <code>72 of 200 GB</code>. Defaults to the rounded normalized percentage.</td></tr>
     <tr><td><code>variant</code></td><td><code>variant</code></td><td><code>default</code>, <code>positive</code>, <code>notice</code> or <code>negative</code>. Default: <code>default</code>.</td></tr>
-    <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>.</td></tr>
+    <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>, relative to container scale.</td></tr>
   </tbody>
 </table>
 </div>
@@ -169,6 +181,16 @@ For server-rendered, static HTML without Custom Element JavaScript:
 
 The macro emits the label, native <code>&lt;meter&gt;</code> and hidden-from-AT visual proxy. Include <code>ui-foundations/core.css</code> and <code>ui-foundations/ui.css</code> for the token-driven presentation. Pass explicit values in consumer code; the macro defaults are a documentation example.
 
+
+The scale belongs to the container, not to the component's size attribute:
+
+```html
+{% raw %}
+<div data-scale="large">
+  <uif-meter size="sm" label="Storage used" value="60"></uif-meter>
+</div>
+{% endraw %}
+```
 
 <h2 id="theming">Theming</h2>
 

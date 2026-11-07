@@ -141,28 +141,36 @@
       "token": "var(--uif-status-light-font-size-md)",
       "historicalVariableId": "VariableID:5900:13",
       "sourceValue": 14,
-      "runtimeValue": 14
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      }
     },
     {
       "path": "Status Light/Font Size SM",
       "token": "var(--uif-status-light-font-size-sm)",
       "historicalVariableId": "VariableID:5900:14",
       "sourceValue": 12,
-      "runtimeValue": 12
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      }
     },
     {
       "path": "Status Light/Line Height MD",
       "token": "var(--uif-status-light-line-height-md)",
       "historicalVariableId": "VariableID:5900:15",
       "sourceValue": 20,
-      "runtimeValue": 20
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      }
     },
     {
       "path": "Status Light/Line Height SM",
       "token": "var(--uif-status-light-line-height-sm)",
       "historicalVariableId": "VariableID:5900:16",
       "sourceValue": 16,
-      "runtimeValue": 16
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      }
     },
     {
       "path": "Status Light/Gap MD",
@@ -318,28 +326,36 @@
       "token": "var(--uif-meter-font-size-sm)",
       "historicalVariableId": "VariableID:4101:12",
       "sourceValue": 12,
-      "runtimeValue": 12
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      }
     },
     {
       "path": "Meter/Font Size MD",
       "token": "var(--uif-meter-font-size-md)",
       "historicalVariableId": "VariableID:4101:13",
       "sourceValue": 14,
-      "runtimeValue": 14
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      }
     },
     {
       "path": "Meter/Line Height SM",
       "token": "var(--uif-meter-line-height-sm)",
       "historicalVariableId": "VariableID:4101:14",
       "sourceValue": 16,
-      "runtimeValue": 16
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      }
     },
     {
       "path": "Meter/Line Height MD",
       "token": "var(--uif-meter-line-height-md)",
       "historicalVariableId": "VariableID:4101:15",
       "sourceValue": 20,
-      "runtimeValue": 20
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      }
     },
     {
       "path": "Meter/Gap",

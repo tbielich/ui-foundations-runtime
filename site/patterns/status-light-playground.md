@@ -20,6 +20,15 @@ playground:
   renderer: status-light
   tokenCssPath: src/ui/patterns/status-light.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: text
       label: Text

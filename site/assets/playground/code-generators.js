@@ -317,13 +317,17 @@
         if (value === true || value === "true") parts.push(attributes[field] || field);
       } else parts.push((attributes[field] || field) + '="' + quoteAttr(String(value)) + '"');
     });
+    var scale = ["small", "medium", "large"].includes(p.scale) ? p.scale : null;
+    function withScale(code) {
+      return scale ? '<div data-scale="' + scale + '">\n  ' + code + '\n</div>' : code;
+    }
     if (format === "njk") {
       if (kind === "status-light") parts.unshift("text=" + JSON.stringify(String(state.children === undefined ? "Status" : state.children)));
       var macro = { "status-light": "statusLight", "meter": "meter", "progress-bar": "progressBar" }[kind];
-      return "{{ uif." + macro + "(" + parts.join(", ") + ") }}";
+      return withScale("{{ uif." + macro + "(" + parts.join(", ") + ") }}");
     }
     var text = kind === "status-light" ? quoteAttr(String(state.children === undefined ? "Status" : state.children)) : "";
-    return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + ">" + text + "</uif-" + kind + ">";
+    return withScale("<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + ">" + text + "</uif-" + kind + ">");
   }
 
   global.UIPlaygroundCodeGenerators = {
