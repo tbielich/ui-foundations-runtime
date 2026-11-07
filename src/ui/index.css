@@ -12,6 +12,7 @@
 @import url("./patterns/input.css") layer(components);
 @import url("./patterns/label.css") layer(components);
 @import url("./patterns/link.css") layer(components);
+@import url("./patterns/progress-circle.css") layer(components);
 @import url("./patterns/radio.css") layer(components);
 @import url("./patterns/select.css") layer(components);
 @import url("./patterns/switch.css") layer(components);
