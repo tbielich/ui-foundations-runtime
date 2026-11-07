@@ -1,0 +1,122 @@
+{
+  "scope": "consumer documentation only",
+  "result": "PASS",
+  "localCI": {
+    "command": "CI=1 npm run ci:check",
+    "result": "PASS",
+    "unitTests": 198,
+    "browserTests": 20
+  },
+  "pages": [
+    {
+      "page": "status-light",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-status-light-font-family",
+        "--uif-status-light-font-weight",
+        "--uif-status-light-indicator-size-md",
+        "--uif-status-light-indicator-size-sm",
+        "--uif-status-light-info-indicator-background",
+        "--uif-status-light-info-text-color",
+        "--uif-status-light-negative-indicator-background",
+        "--uif-status-light-negative-text-color",
+        "--uif-status-light-neutral-indicator-background",
+        "--uif-status-light-neutral-text-color",
+        "--uif-status-light-notice-indicator-background",
+        "--uif-status-light-notice-text-color",
+        "--uif-status-light-positive-indicator-background",
+        "--uif-status-light-positive-text-color"
+      ]
+    },
+    {
+      "page": "status-light-playground",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-status-light-font-family",
+        "--uif-status-light-font-weight",
+        "--uif-status-light-indicator-size-md",
+        "--uif-status-light-indicator-size-sm",
+        "--uif-status-light-info-indicator-background",
+        "--uif-status-light-info-text-color",
+        "--uif-status-light-negative-indicator-background",
+        "--uif-status-light-negative-text-color",
+        "--uif-status-light-neutral-indicator-background",
+        "--uif-status-light-neutral-text-color",
+        "--uif-status-light-notice-indicator-background",
+        "--uif-status-light-notice-text-color",
+        "--uif-status-light-positive-indicator-background",
+        "--uif-status-light-positive-text-color"
+      ]
+    },
+    {
+      "page": "meter",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-meter-border-radius",
+        "--uif-meter-fill-background-default",
+        "--uif-meter-fill-background-negative",
+        "--uif-meter-fill-background-notice",
+        "--uif-meter-fill-background-positive",
+        "--uif-meter-font-family",
+        "--uif-meter-font-weight",
+        "--uif-meter-gap",
+        "--uif-meter-label-color-default",
+        "--uif-meter-track-background-default",
+        "--uif-meter-track-height-md",
+        "--uif-meter-track-height-sm",
+        "--uif-meter-value-color-default"
+      ]
+    },
+    {
+      "page": "meter-playground",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-meter-border-radius",
+        "--uif-meter-fill-background-default",
+        "--uif-meter-fill-background-negative",
+        "--uif-meter-fill-background-notice",
+        "--uif-meter-fill-background-positive",
+        "--uif-meter-font-family",
+        "--uif-meter-font-weight",
+        "--uif-meter-gap",
+        "--uif-meter-label-color-default",
+        "--uif-meter-track-background-default",
+        "--uif-meter-track-height-md",
+        "--uif-meter-track-height-sm",
+        "--uif-meter-value-color-default"
+      ]
+    },
+    {
+      "page": "progress-bar",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-progress-bar-border-radius",
+        "--uif-progress-bar-fill-default",
+        "--uif-progress-bar-fill-negative",
+        "--uif-progress-bar-fill-positive",
+        "--uif-progress-bar-gap",
+        "--uif-progress-bar-height-lg",
+        "--uif-progress-bar-height-md",
+        "--uif-progress-bar-height-sm",
+        "--uif-progress-bar-label-color",
+        "--uif-progress-bar-track-background"
+      ]
+    },
+    {
+      "page": "progress-bar-playground",
+      "result": "PASS",
+      "visibleTokens": [
+        "--uif-progress-bar-border-radius",
+        "--uif-progress-bar-fill-default",
+        "--uif-progress-bar-fill-negative",
+        "--uif-progress-bar-fill-positive",
+        "--uif-progress-bar-gap",
+        "--uif-progress-bar-height-lg",
+        "--uif-progress-bar-height-md",
+        "--uif-progress-bar-height-sm",
+        "--uif-progress-bar-label-color",
+        "--uif-progress-bar-track-background"
+      ]
+    }
+  ]
+}

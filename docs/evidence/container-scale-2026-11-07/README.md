@@ -29,3 +29,7 @@ Local validation used Node 22.23.2 and the existing installed dependencies. Fres
 ## Integration with updated main
 
 Main advanced to `cc85087` (#330) during implementation and independently added a source-element docs passthrough. The PR merge check demonstrated a duplicate destination when combined with this branch's earlier dist-element passthrough. Main was integrated into the feature branch and only the duplicate dist registration was removed. See `integration-repair.json` for the failing GitHub evidence and bounded repair. The resulting combined state passed the full 198-unit/20-browser gate, package dry-run and documentation checks.
+
+## Consumer documentation simplification
+
+The three component/reference playground token tables now list component-owned overrides rather than every CSS dependency. Private scale helpers, shared Semantic dependencies and size-specific typography/spacing aliases are excluded. Active track-height and indicator-size variants remain visible. This is a documentation projection only: existing internal baseline aliases are not represented as deleted Runtime tokens. Container scale and local size are the documented sizing controls.
