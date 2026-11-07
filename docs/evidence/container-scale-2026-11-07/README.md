@@ -25,3 +25,7 @@ The original initial-component acceptance evidence remains historical. This reco
 Local validation used Node 22.23.2 and the existing installed dependencies. Fresh-install Node 20/22 evidence is supplied by GitHub CI. Generated `dist/` files were produced only by the normal build, not edited directly.
 
 ![Three container contexts with local small sizes](preview.png)
+
+## Integration with updated main
+
+Main advanced to `cc85087` (#330) during implementation and independently added a source-element docs passthrough. The PR merge check demonstrated a duplicate destination when combined with this branch's earlier dist-element passthrough. Main was integrated into the feature branch and only the duplicate dist registration was removed. See `integration-repair.json` for the failing GitHub evidence and bounded repair. The resulting combined state passed the full 198-unit/20-browser gate, package dry-run and documentation checks.

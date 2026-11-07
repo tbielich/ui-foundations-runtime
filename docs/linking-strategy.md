@@ -1,72 +1,28 @@
-# Linking Strategy
+# Documentation links
 
-## Purpose
+## Public documentation
 
-This document defines how `ui-foundations` links to durable design knowledge
-without hardcoding vault locations in documentation pages.
+Present UI Foundations as a system that readers can install and use from this
+repository and its documentation site. Explain token use, patterns,
+accessibility requirements, and contribution checks where readers need them.
+Link to another page in this documentation when it provides the next step.
 
-## Why the vault exists
+Public pages must not require access to the private Vault, Intelligence, or
+Studio repositories. Do not send readers to those repositories for an
+explanation of how to use UI Foundations.
 
-The UI Foundations Vault owns durable design foundation knowledge: design
-principles, usability heuristics, accessibility principles, typography, color
-theory, information architecture, visual hierarchy, gestalt principles, and
-design intelligence.
+## Internal references
 
-The `ui-foundations` runtime repository owns implementation knowledge:
-token architecture, generated outputs, pattern and component implementation,
-documentation-site behavior, validation, and CI.
+The Vault remains the maintained source for reusable governance and durable
+cross-repository knowledge. Keep source references, consumed pack metadata,
+and decision history in contributor and governance records. This public
+presentation does not change ownership or pack consumption.
 
-## Why links are centralized
-
-Vault links are project configuration. Documentation pages should not embed a
-repository URL, local filesystem path, branch name, or future documentation
-domain. Centralizing those values keeps the public docs stable when the vault
-publication target changes.
-
-The single source of truth is:
-
-- `config/site.js`
-- `vault.repository`
-- `vault.documentation`
-- `vault.branch`
-
-Eleventy pages generate vault documentation links through the
-`vaultDocumentationUrl` filter. Non-rendered Markdown docs should refer to the
-configuration keys instead of embedding full vault locations.
-
-## Repository vs documentation URL
-
-`vault.repository` identifies the source repository for the vault. Use it when a
-reader or tool needs the source repository itself.
-
-`vault.documentation` identifies the published documentation location for
-canonical foundation knowledge. Public documentation pages should use this value
-for knowledge links.
-
-The two values are intentionally separate. They currently point to the same
-place, but they do not have to remain the same.
-
-## Future migration
-
-When vault documentation moves from repository-hosted pages to a dedicated
-documentation domain, only `vault.documentation` in `config/site.js` should
-change. Documentation pages should not require edits.
-
-The repository URL can remain stable for source control while the documentation
-URL moves to a dedicated publishing target.
-
-## Source of truth policy
-
-- Durable foundation knowledge is canonical in the configured vault.
-- Implementation documentation is canonical in `ui-foundations`.
-- Public docs must link to vault knowledge through the central configuration.
-- Runtime code, tokens, components, and generated output must not depend on
-  vault links.
-- Do not introduce environment variables for vault location. The vault location
-  is project configuration, not deployment configuration.
-
+Document how a rule applies to this implementation rather than copying the
+full source document. When a public topic lacks useful local guidance, add
+bounded usage guidance or leave it out of public navigation until it is ready.
 
 ## Related docs
 
+- `docs/uif-governance.md`
 - `docs/canonical-reference-matrix.md`
-- `docs/terminology.md`

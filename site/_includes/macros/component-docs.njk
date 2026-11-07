@@ -1,0 +1,23 @@
+{% macro preview() %}
+<div class="docs-hero-preview docs-component-preview">
+  <div class="docs-hero-preview-controls">
+    <span class="docs-hero-switch" role="group" aria-label="Preview brand">
+      <button type="button" data-hero-brand="a" aria-pressed="true">Brand A</button>
+      <button type="button" data-hero-brand="b" aria-pressed="false">Brand B</button>
+      <button type="button" data-hero-brand="c" aria-pressed="false">Brand C</button>
+    </span>
+    <span class="docs-hero-switch" role="group" aria-label="Preview scheme">
+      <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
+      <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
+    </span>
+  </div>
+  <div class="docs-hero-preview-stage">{{ caller() | safe }}</div>
+</div>
+{% endmacro %}
+
+{% macro links(url, label, figmaUrl) %}
+<div class="docs-hero-meta">
+  <a class="docs-page-link docs-page-link--playground" href="{{ url }}">{{ label or "Open Playground" }}</a>
+  {% if figmaUrl %}<a class="docs-page-link" href="{{ figmaUrl }}" target="_blank" rel="noopener noreferrer">Open in Figma</a>{% endif %}
+</div>
+{% endmacro %}

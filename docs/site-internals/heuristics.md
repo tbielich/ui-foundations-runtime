@@ -1,26 +1,17 @@
 ---
-layout: layouts/docs.njk
 title: Usability Heuristics
 description: Interaction quality rules that ensure patterns are usable, accessible, and predictable.
-navTitle: Usability Heuristics
-order: 20
-permalink: /foundations/governance/heuristics/
-excludeFromNav: true
 ---
 
 <p class="page-intro">
-  Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
+  Check whether people can understand a control, use it with a keyboard, and recognise its current state. The heuristics below connect those questions to pattern rules and validation.
 </p>
 
-<p>
-  Vault reference: <a href="{{ 'foundations/usability-heuristics.md' | vaultDocumentationUrl }}">configured vault usability heuristics</a>
-</p>
-
-<h2 id="heuristics-heading">Local heuristic IDs</h2>
+<h2 id="heuristics-heading">Heuristic references</h2>
 
 <p>
-  These IDs are implementation hooks for pattern-rule citations and validation.
-  The durable heuristic definitions live in the vault.
+  Use these IDs in pattern rules and validation to record which interaction
+  requirement a check covers.
 </p>
 
 <div class="docs-table-wrap">

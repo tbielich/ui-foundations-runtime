@@ -5,7 +5,7 @@
   "baseCommit": "7ecac988333944eba1ab219c24fadbe3439afb2e",
   "runtimeGate": "PASS",
   "overallDesignAcceptance": "BLOCKED: live Figma parity and active Code Connect remain open",
-  "verifiedSourceDigestExcludingEvidence": "6f64ab5a5205d033d49f5f87c4df6ddc6f0e3876e790749d0633ecbdcee0c252",
+  "verifiedSourceDigestExcludingEvidence": "f25490bfbd2559d4ec7059e3f2f483e6b4e29612eb2bb9371b9ef5565bbe6a09",
   "checks": [
     {
       "command": "CI=1 npm run ci:check",
@@ -60,5 +60,7 @@
     "playground controls and generated wrappers"
   ],
   "documentationReview": "documentation-review.json",
-  "merged": false
+  "merged": false,
+  "integratedMain": "cc850876b1a14b842e6eede74e7e44c3549b1eee",
+  "integrationRepair": "integration-repair.json"
 }

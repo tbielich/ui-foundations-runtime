@@ -15,7 +15,7 @@ permalink: /
   <div class="docs-principle-grid">
     <div class="docs-principle-card">
       <h3>Rational</h3>
-      <p>Every decision is informed by real usage, Figma source data, and documented reasoning.</p>
+      <p>Use token roles and documented pattern behavior to guide interface decisions.</p>
     </div>
     <div class="docs-principle-card">
       <h3>Inclusive</h3>
@@ -41,7 +41,7 @@ permalink: /
     </a>
     <a class="docs-resource-card" href="/foundations/accessibility/">
       <strong>Accessibility</strong>
-      <span>Standards and practices for inclusive, compliant experiences.</span>
+      <span>Keyboard, labeling, and testing guidance for your interface.</span>
     </a>
     <a class="docs-resource-card" href="/foundations/content/">
       <strong>Content Standards</strong>
@@ -53,13 +53,13 @@ permalink: /
 <div class="docs-home-section">
   <h2>Explore</h2>
   <div class="docs-grid">
-    <a class="docs-card" href="/tokens/">
+    <a class="docs-card" href="/foundations/design-tokens/">
       <h2>Tokens</h2>
       <p>Colors, typography, spacing, and other visual foundations.</p>
     </a>
     <a class="docs-card" href="/patterns/">
-      <h2>Components</h2>
-      <p>Interactive components with API docs, playgrounds, and usage guidelines.</p>
+      <h2>Patterns</h2>
+      <p>HTML and CSS building blocks with usage guidance and playgrounds.</p>
     </a>
     <a class="docs-card" href="/examples/">
       <h2>Examples</h2>
@@ -73,11 +73,11 @@ permalink: /
   <div class="docs-resource-grid">
     <a class="docs-resource-card" href="https://www.npmjs.com/package/ui-foundations" target="_blank" rel="noopener noreferrer">
       <strong>npm Package</strong>
-      <span>CSS patterns and light-DOM Web Components ready for production use.</span>
+      <span>CSS patterns, tokens, and optional light-DOM Web Components.</span>
     </a>
     <a class="docs-resource-card" href="https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations" target="_blank" rel="noopener noreferrer">
       <strong>Figma Library</strong>
-      <span>Source of truth for design tokens and component specs.</span>
+      <span>Design library with variables and component specifications.</span>
     </a>
     <a class="docs-resource-card" href="https://github.com/tbielich/ui-foundations-starter" target="_blank" rel="noopener noreferrer">
       <strong>Starter Template</strong>

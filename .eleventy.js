@@ -48,10 +48,10 @@ module.exports = function (eleventyConfig) {
         `url($1${siteConfig.basePath}/`,
       );
   });
+  eleventyConfig.addPassthroughCopy({ "src/elements": "vendor/ui-foundations/elements" });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
   });
-  eleventyConfig.addPassthroughCopy({ "dist/elements": "vendor/ui-foundations/elements" });
   eleventyConfig.addPassthroughCopy({
     "src/ui/components": "vendor/ui-foundations/components",
   });

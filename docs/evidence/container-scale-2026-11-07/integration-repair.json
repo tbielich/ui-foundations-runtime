@@ -1,0 +1,17 @@
+{
+  "mode": "REPAIR",
+  "demonstratedDefect": {
+    "verificationUrl": "https://github.com/tbielich/ui-foundations-runtime/actions/runs/42414053057",
+    "message": "Eleventy TemplatePassthroughManagerCopyError: dist/elements/base.js and src/elements/base.js target the same output file",
+    "cause": "Main #330 adds source element passthrough; the feature branch already added generated element passthrough"
+  },
+  "integratedMain": "cc850876b1a14b842e6eede74e7e44c3549b1eee",
+  "repair": "Retain main source passthrough and remove duplicate dist/elements registration from .eleventy.js",
+  "verification": {
+    "command": "CI=1 npm run ci:check",
+    "result": "PASS",
+    "unitTests": 198,
+    "browserTests": 20
+  },
+  "mainMergedFrom": "origin/main into feature branch only; no feature merge to main"
+}

@@ -50,7 +50,7 @@
     {% endif %}
 
     {# Task 2.4: JSON-LD structured data for component pages #}
-    {% if page.url.indexOf("/patterns/") == 0 and not isPlayground and page.url != "/patterns/" %}
+    {% if (page.url.indexOf("/patterns/") == 0 or page.url.indexOf("/components/") == 0) and not isPlayground and page.url != "/patterns/" and page.url != "/components/" %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -118,23 +118,7 @@
                     </ul>
                   </details>
                 </li>
-                <li>
-                  <details class="docs-nav-subgroup"{% if page.url.indexOf("/foundations/governance") == 0 %} open{% endif %}>
-                    <summary><a href="/foundations/governance/"{% if page.url == "/foundations/governance/" %} aria-current="page"{% endif %}>Governance</a></summary>
-                    <ul>
-                      {% for entry in collections.governanceDocs %}
-                      <li>
-                        <a
-                          href="{{ entry.url }}"
-                          {% if entry.url == page.url %}aria-current="page"{% endif %}
-                        >
-                          {{ entry.data.navTitle or entry.data.title }}
-                        </a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </details>
-                </li>
+
               </ul>
             </details>
           </nav>
@@ -275,6 +259,9 @@
     </div>
 
     <footer class="docs-footer">
+      <span>UI Foundations {{ release.version }}</span> ·
+      <a href="/release-notes/">Changes</a> ·
+      <a href="/license/">License</a> ·
       <a href="/impressum/">Imprint</a>
     </footer>
 

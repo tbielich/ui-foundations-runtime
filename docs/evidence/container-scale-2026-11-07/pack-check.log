@@ -8,7 +8,7 @@ npm notice Tarball Contents
 npm notice 3.6kB CHANGELOG.md
 npm notice 4.5kB LICENSE
 npm notice 5.6kB MIGRATION.md
-npm notice 17.9kB README.md
+npm notice 17.8kB README.md
 npm notice 166B dist/assets/fonts/README.md
 npm notice 769B dist/assets/icons/accessibility-circled.svg
 npm notice 426B dist/assets/icons/accommodation.svg
@@ -731,8 +731,8 @@ npm notice version: 1.1.0
 npm notice filename: ui-foundations-1.1.0.tgz
 npm notice package size: 240.8 kB
 npm notice unpacked size: 1.5 MB
-npm notice shasum: a9de2d2b1791ead546fe67039c670bd733c2ce26
-npm notice integrity: sha512-CyI4O9aV64DZd[...]yl5NVDxIvgOTg==
+npm notice shasum: 0d56b2609aa1f72723a70cc21c17cf7440ffe135
+npm notice integrity: sha512-5tdCY/3fEmj5c[...]1kind1Qmvd0eQ==
 npm notice total files: 720
 npm notice
 ui-foundations-1.1.0.tgz
