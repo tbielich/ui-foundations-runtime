@@ -23,7 +23,7 @@ policy architecture.
 | Runtime accessibility principles | `docs/principles/accessibility.md` | `docs/accessibility-audit-interactive-components.md`, `docs/validation/README.md` |
 | Validation pipeline | `docs/validation/ci.md` | `package.json` scripts, `.github/workflows/ci.yml` |
 | Governance consumption lifecycle | `.uif/registry/source.yml` + consumed pack metadata | `docs/uif-governance.md`, `docs/governance-baseline.md` |
-| Canonical link ownership strategy | `config/site.js` (`vault.*` config) | `docs/linking-strategy.md` |
+| Canonical link ownership strategy | `docs/linking-strategy.md` | `docs/linking-strategy.md` |
 
 ## Terminology links
 

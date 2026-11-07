@@ -1,7 +1,7 @@
 ---
 layout: layouts/docs.njk
 title: Date Picker
-description: A date picker component combining segmented input field with a calendar dropdown. Supports keyboard navigation, single date and range selection, min/max constraints, and full accessibility.
+description: A date picker component combining segmented input field with a calendar dropdown. Supports keyboard navigation, single date and range selection, min/max constraints, and documented keyboard interactions.
 navTitle: Date Picker
 order: 10
 permalink: /components/date-picker/
@@ -10,21 +10,11 @@ playgroundLabel: Open Date Picker Playground
 ---
 
 {% import "macros/ui.njk" as uif %}
+{% import "macros/component-docs.njk" as docs %}
 
 <div class="docs-hero">
-  <div class="docs-hero-preview">
-    <div class="docs-hero-preview-controls">
-      <span class="docs-hero-switch" data-hero-group="brand">
-        <button type="button" data-hero-brand="a" aria-pressed="true">Brand A</button>
-        <button type="button" data-hero-brand="b" aria-pressed="false">Brand B</button>
-        <button type="button" data-hero-brand="c" aria-pressed="false">Brand C</button>
-      </span>
-      <span class="docs-hero-switch" data-hero-group="mode">
-        <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
-        <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
-      </span>
-    </div>
-    <div class="docs-hero-preview-stage">
+{% call docs.preview() %}
+
       <div class="uif-form-field date-picker-field">
         <label class="uif-field-label" id="date-input-demo-label" for="date-input-demo-day">
           <span class="uif-label-content">
@@ -47,19 +37,21 @@ playgroundLabel: Open Date Picker Playground
           {{ uif.calendar("July 2026", todayDate="1", id="date-input-demo-calendar") }}
         </div>
       </div>
-    </div>
-  </div>
+{% endcall %}
+{{ docs.links(playgroundUrl, playgroundLabel, figmaConnections.urlsByName[page.fileSlug]) }}
 </div>
 
-## Overview
+<h2 id="overview">Overview</h2>
 
 The Date Picker component combines two patterns into an interactive widget:
 - **Input** — displays the selected date and accepts typed input
 - **Calendar** — a dropdown grid for visual date selection
 
-Together they form a component that can be opened, navigated, and dismissed — with full keyboard and screen reader support.
+Together they form a component that can be opened, navigated, and dismissed.
+Check the keyboard guidance below and test the completed flow with assistive
+technology in your supported browsers.
 
-## Composition
+<h2 id="composition">Composition</h2>
 
 ```
 .uif-form-field.date-picker-field
@@ -79,45 +71,34 @@ Together they form a component that can be opened, navigated, and dismissed — 
         └── table.uif-calendar-table [role="grid"]
 ```
 
-## Patterns Used
+<h2 id="patterns-used">Patterns Used</h2>
 
-| Pattern | Role |
-|---------|------|
-| [Input](/patterns/input/) | Text field showing the formatted date |
-| Input control button | Calendar toggle trigger, matching clear and increment controls |
-| [Button ghost](/patterns/button/) | Calendar month navigation |
-| [Icon](/patterns/icon/) | Calendar and chevron icons |
-| [Calendar](/patterns/calendar/) | Date grid with selection and keyboard nav |
+<div class="docs-table-wrap">
+<table class="docs-options-table">
+<thead><tr><th>Pattern</th><th>Role</th></tr></thead>
+<tbody><tr><td><a href="/patterns/input/">Input</a></td><td>Text field showing the formatted date</td></tr><tr><td>Input control button</td><td>Calendar toggle trigger, matching clear and increment controls</td></tr><tr><td><a href="/patterns/button/">Button ghost</a></td><td>Calendar month navigation</td></tr><tr><td><a href="/patterns/icon/">Icon</a></td><td>Calendar and chevron icons</td></tr><tr><td><a href="/patterns/calendar/">Calendar</a></td><td>Date grid with selection and keyboard nav</td></tr></tbody>
+</table>
+</div>
 
-## Interaction
+<h2 id="interaction">Interaction</h2>
 
-| Action | Result |
-|--------|--------|
-| Type 2 digits in Day | Auto-advances focus to Month |
-| Type 2 digits in Month | Auto-advances focus to Year |
-| Press `/` or `.` in any segment | Advances to next segment |
-| Backspace on empty segment | Moves focus to previous segment |
-| Arrow Left at start of segment | Moves to previous segment |
-| Arrow Right at end of segment | Moves to next segment |
-| Click label | Focuses Day and opens the calendar |
-| Click field surface | Focuses the nearest segment and opens the calendar |
-| Click calendar icon | Open/close the calendar dropdown |
-| Click a day cell | Fill segments, close calendar |
-| Alt + Arrow Down in a segment | Opens the calendar and moves focus to the grid |
-| Escape (while calendar open) | Close calendar without selecting |
-| Tab | Moves between segments, then to calendar trigger |
+<div class="docs-table-wrap">
+<table class="docs-options-table">
+<thead><tr><th>Action</th><th>Result</th></tr></thead>
+<tbody><tr><td>Type 2 digits in Day</td><td>Auto-advances focus to Month</td></tr><tr><td>Type 2 digits in Month</td><td>Auto-advances focus to Year</td></tr><tr><td>Press <code>/</code> or <code>.</code> in any segment</td><td>Advances to next segment</td></tr><tr><td>Backspace on empty segment</td><td>Moves focus to previous segment</td></tr><tr><td>Arrow Left at start of segment</td><td>Moves to previous segment</td></tr><tr><td>Arrow Right at end of segment</td><td>Moves to next segment</td></tr><tr><td>Click label</td><td>Focuses Day and opens the calendar</td></tr><tr><td>Click field surface</td><td>Focuses the nearest segment and opens the calendar</td></tr><tr><td>Click calendar icon</td><td>Open/close the calendar dropdown</td></tr><tr><td>Click a day cell</td><td>Fill segments, close calendar</td></tr><tr><td>Alt + Arrow Down in a segment</td><td>Opens the calendar and moves focus to the grid</td></tr><tr><td>Escape (while calendar open)</td><td>Close calendar without selecting</td></tr><tr><td>Tab</td><td>Moves between segments, then to calendar trigger</td></tr></tbody>
+</table>
+</div>
 
-## States
+<h2 id="states">States</h2>
 
-| State | Description |
-|-------|-------------|
-| Closed | Only the input field is visible |
-| Open | Calendar is visible below the input |
-| Date selected | Input shows formatted date, calendar highlights the day |
-| Invalid | Input shows error state (out of range, invalid format) |
-| Disabled | Both input and calendar trigger are disabled |
+<div class="docs-table-wrap">
+<table class="docs-options-table">
+<thead><tr><th>State</th><th>Description</th></tr></thead>
+<tbody><tr><td>Closed</td><td>Only the input field is visible</td></tr><tr><td>Open</td><td>Calendar is visible below the input</td></tr><tr><td>Date selected</td><td>Input shows formatted date, calendar highlights the day</td></tr><tr><td>Invalid</td><td>Input shows error state (out of range, invalid format)</td></tr><tr><td>Disabled</td><td>Both input and calendar trigger are disabled</td></tr></tbody>
+</table>
+</div>
 
-## Accessibility
+<h2 id="accessibility">Accessibility</h2>
 
 - The visible label is associated with the Day segment and names the grouped field
 - Calendar trigger button has `aria-label="Open calendar"`
@@ -128,7 +109,7 @@ Together they form a component that can be opened, navigated, and dismissed — 
 - Escape closes without selecting
 - Works entirely via keyboard (no mouse required)
 
-## Tokens
+<h2 id="tokens">Tokens</h2>
 
 Reuses tokens from the composed patterns:
 - Input tokens (`--uif-input-*`)
@@ -137,23 +118,7 @@ Reuses tokens from the composed patterns:
 
 No additional component-specific tokens needed — the composition inherits from its parts.
 
-## Why Custom?
-
-The native `<input type="date">` has real accessibility and UX limitations:
-
-| Issue | Native | This Component |
-|-------|--------|----------------|
-| Touch targets | Under 44px (browser controls) | 44×44px minimum per cell |
-| Keyboard navigation | Inconsistent across browsers | Full arrow/Home/End/PageUp/PageDown |
-| Styling | Shadow DOM, not brand/mode adaptable | Token-based, Brand/Mode aware |
-| Range selection | Not supported | Prepared (`.is-range-start`, `.is-range-middle`, `.is-range-end`) |
-| Cross-browser consistency | Safari ≠ Chrome ≠ Firefox | Identical behavior everywhere |
-| Screen reader experience | Varies, often poor | Explicit aria-label per cell, aria-live for month changes |
-| Segment navigation | Browser-dependent | Tab between DD/MM/YYYY, ArrowUp/Down to increment |
-
-This component is a progressive enhancement: it provides a superior experience while maintaining the same semantics and data format as the native date input.
-
-## JavaScript
+<h2 id="javascript">JavaScript</h2>
 
 The Date Picker requires `src/ui/components/date-input.js` for:
 - Opening/closing the calendar popover

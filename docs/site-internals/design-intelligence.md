@@ -1,22 +1,13 @@
 ---
-layout: layouts/docs.njk
 title: Design Intelligence
 description: The reasoning layer that evaluates design quality beyond rule compliance.
-navTitle: Design Intelligence
-order: 21
-permalink: /foundations/governance/intelligence/
-excludeFromNav: true
 ---
 
 <p class="page-intro">
-  Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
+  Review how a change fits the system as well as whether it passes individual checks. Consider its purpose, accessibility, and reuse across patterns.
 </p>
 
-<p>
-  Vault reference: <a href="{{ 'foundations/design-intelligence.md' | vaultDocumentationUrl }}">configured vault design intelligence</a>
-</p>
-
-<h2 id="system-lens-heading">Local implementation usage</h2>
+<h2 id="system-lens-heading">Reviewing a change</h2>
 
 <p>
   In this repository, design intelligence is applied as an implementation review
@@ -35,6 +26,6 @@ excludeFromNav: true
 </ul>
 
 <p>
-  Long-form critique models, reasoning dimensions, and durable evaluation
-  frameworks live in the vault.
+  Record the reason for a change in its pattern documentation or review,
+  including any limits on where it should be used.
 </p>

@@ -1,0 +1,17 @@
+{% macro feature(label, title, text) %}
+<section class="foundation-feature" aria-label="{{ label }}">
+  <div class="foundation-feature-copy">
+    <p class="foundation-eyebrow">{{ label }}</p>
+    <h2>{{ title }}</h2>
+    <p>{{ text }}</p>
+  </div>
+  <div class="foundation-feature-example">{{ caller() | safe }}</div>
+</section>
+{% endmacro %}
+
+{% macro next(url, title, text) %}
+<a class="foundation-next" href="{{ url }}">
+  <span><strong>{{ title }}</strong><span>{{ text }}</span></span>
+  <span aria-hidden="true">↗</span>
+</a>
+{% endmacro %}

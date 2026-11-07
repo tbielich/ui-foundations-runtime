@@ -1,35 +1,38 @@
 ---
 layout: layouts/docs.njk
 title: Internationalization
-description: RTL support, locale considerations, and bi-directional layout guidance.
+description: Direction, labels, and locale considerations when composing an interface.
 navTitle: Internationalization
 order: 6
 permalink: /foundations/internationalization/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
 
-UI Foundations uses logical properties and directional-aware patterns so
-interfaces work correctly in both LTR and RTL languages.
 
-## Logical properties
+{% call foundation.feature("Direction & language", "Let content set the direction.", "Keep text, alignment, and spacing responsive to the language of the interface.") %}
+<div class="foundation-directions"><div dir="ltr"><small>English · left to right</small><p lang="en">Your next journey</p></div><div dir="rtl"><small>العربية · من اليمين إلى اليسار</small><p lang="ar">رحلتك القادمة</p></div></div><p class="foundation-caption">Text direction example. Review complete patterns separately in each supported direction.</p>
+{% endcall %}
 
-All component CSS uses logical properties (`margin-inline-start`,
-`padding-block-end`, `border-inline-end`, etc.) instead of physical directions.
-This ensures layouts mirror automatically in RTL contexts.
 
-## RTL behavior
+## Text and labels
 
-- Icons that imply direction (arrows, chevrons) are mirrored in RTL.
-- Icons that are symmetrical or represent objects (search, settings) are not
-  mirrored.
-- Text alignment follows the document direction — no hardcoded `text-align: left`.
+Supply translated labels, help text, and messages in your application. Allow
+space for longer text and check wrapping at narrow widths. Localise accessible
+names as well as visible text.
 
-## Component considerations
+## Right-to-left layouts
 
-- Button icons swap sides in RTL (icon moves from start to end).
-- Navigation and breadcrumb order reverses visually.
-- Form field layouts, including label placement, follow the inline direction.
+Set `dir="rtl"` on the document for a right-to-left interface. Prefer logical
+CSS properties such as `margin-inline-start` for application layouts.
 
-## Testing
+Review each pattern you use. RTL support is not verified across the whole
+library; some styles still use physical alignment, including table text.
+Check icon direction, control order, alignment, and keyboard behavior in context.
 
-Set `dir="rtl"` on the root element to verify layout mirroring. Every component
-should be visually reviewed in both directions before reaching stable status.
+## Dates and numbers
+
+Your application supplies locale-specific formats and content. Check the Date
+Picker's documented format and behavior before using it for another locale;
+a document language or direction attribute does not provide date localisation.
+
+{{ foundation.next("/components/date-picker/", "Check date entry", "Review the format and interactions before adapting to a locale.") }}

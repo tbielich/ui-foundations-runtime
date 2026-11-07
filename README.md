@@ -16,7 +16,7 @@
 Keep Figma and code in sync by default — with tokens, not guesswork.
 
 - **Token-first architecture** — every value comes from a token, no hardcoded exceptions
-- **Figma-aligned implementation** — variables are the design-value source; durable architecture and governance remain in UIF-VLT
+- **Figma-aligned implementation** — Figma variables map to code through documented token layers and stable IDs
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
 
@@ -464,7 +464,6 @@ npm run release:publish
 ### Delivered
 
 - **GitHub Pages pre-release gate** — pull requests can be reviewed visually before merge; Netlify publishes the canonical production site after merge.
-- **Navigation Key Tips** — Alt-triggered keyboard shortcuts are available in the documentation.
 - **UIF public namespace** — the approved `uif-*` Custom Element namespace is the canonical v1 API.
 
 ---

@@ -1,17 +1,23 @@
 ---
 layout: layouts/docs.njk
 title: Accessibility
-description: How UI Foundations ensures inclusive, standards-compliant experiences for all users.
+description: Accessibility requirements and checks for interfaces built with UI Foundations.
 navTitle: Accessibility
 order: 3
 permalink: /foundations/accessibility/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
 
-Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
 
-Vault reference: <a href="{{ 'foundations/accessibility-principles.md' | vaultDocumentationUrl }}">configured vault accessibility principles</a>
+Accessibility is a requirement for patterns, components, examples, and documentation.
+Use the guidance below when building and reviewing an interface.
 
-## Local implementation expectations
+{% call foundation.feature("In context", "Make the next step clear.", "A visible label identifies the field. An associated message explains the problem and how to recover.") %}
+<div class="foundation-sample"><label for="foundation-email">Email address</label><input id="foundation-email" type="email" value="alex@" aria-invalid="true" aria-describedby="foundation-email-error" autocomplete="off"><p class="foundation-caption" id="foundation-email-error"><strong>Incomplete email.</strong> Enter a full address, such as alex@example.com.</p></div><p class="foundation-caption">Example error state. Try focusing the field with your keyboard.</p>
+{% endcall %}
+
+
+## Implementation expectations
 
 Accessibility is a baseline requirement for shipped patterns, components,
 examples, and documentation in this repository. Local implementation guidance
@@ -25,9 +31,9 @@ identify them. Buttons are `<button>`, links are `<a>`, form controls use
 
 ### Keyboard access
 
-All interactive components are reachable and operable with a keyboard. Focus
-order follows the visual reading order. Focus traps are used only in modals and
-are documented.
+Check that each interactive control is reachable and operable with a keyboard,
+with visible focus and a logical focus order. Follow the keyboard guidance on
+the component page, especially for composite widgets and dialogs.
 
 ### State communication
 
@@ -37,14 +43,14 @@ alone.
 
 ### Color and contrast
 
-Text meets a 4.5:1 contrast ratio (3:1 for large text). UI component boundaries
-and states meet 3:1. Semantic color tokens enforce these ratios across brands
-and modes.
+Check text, controls, and focus indicators against the backgrounds used in
+your application. Test the actual state and brand/scheme combination, including
+any token overrides. Using a semantic token alone does not establish contrast
+for every possible composition.
 
 ## Design checklist for accessibility
 
-Every component page includes a design checklist. The accessibility-related
-items are:
+When reviewing an interface, check:
 
 - Accessible use of color (WCAG 1.4.1)
 - Accessible contrast for text (WCAG 1.4.3)
@@ -57,3 +63,5 @@ items are:
 Automated checks catch structural issues. Manual testing with screen readers
 (VoiceOver, NVDA) and keyboard-only navigation is required before a component
 reaches stable status.
+
+{{ foundation.next("/patterns/form/", "Build an accessible form", "Apply labels, help text, and validation in context.") }}
