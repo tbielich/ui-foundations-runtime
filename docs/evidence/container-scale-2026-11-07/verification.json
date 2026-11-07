@@ -1,0 +1,72 @@
+{
+  "mode": "IMPLEMENT",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/simple-components-reintegration-20261107",
+  "baseCommit": "7ecac988333944eba1ab219c24fadbe3439afb2e",
+  "runtimeGate": "PASS",
+  "overallDesignAcceptance": "BLOCKED: live Figma parity and active Code Connect remain open",
+  "verifiedSourceDigestExcludingEvidence": "9c6575bd5ea8ed93735520187dc8b64e166500b87a5f248dc75e0174d688070a",
+  "checks": [
+    {
+      "command": "CI=1 npm run ci:check",
+      "result": "PASS",
+      "unitTests": 198,
+      "browserTests": 20
+    },
+    {
+      "command": "npm run pack:check",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "contextApi": "data-scale=small|medium|large",
+  "adopters": [
+    "status-light",
+    "meter",
+    "progress-bar"
+  ],
+  "sourceAnchors": {
+    "file": "figma/exports/Core (Primitives).tokens.json",
+    "paths": [
+      "Font/Size/xs",
+      "Font/Size/sm",
+      "Font/Size/md"
+    ],
+    "values": [
+      12,
+      14,
+      16
+    ],
+    "denominator": "Font/Size/sm"
+  },
+  "newPublicTokens": 0,
+  "newSemanticRoles": 0,
+  "existingTypographySlotsRealiased": 8,
+  "browserCoverage": [
+    "context inheritance",
+    "relative local sizes",
+    "nearest context replaces parent",
+    "explicit medium reset",
+    "unknown context inheritance",
+    "sibling isolation",
+    "no rerender",
+    "font-size/line-height/gap/radius proportionality",
+    "unchanged geometry/borders",
+    "root font size preference",
+    "static macros",
+    "playground controls and generated wrappers"
+  ],
+  "documentationReview": "documentation-review.json",
+  "merged": false,
+  "integratedMain": "cc850876b1a14b842e6eede74e7e44c3549b1eee",
+  "integrationRepair": "integration-repair.json",
+  "documentationTokenProjection": {
+    "result": "PASS",
+    "pages": 6,
+    "evidence": "documentation-token-review.json",
+    "policy": "component-owned overrides; size-specific typography/spacing aliases, private helpers and shared dependencies omitted; active geometry variants retained"
+  }
+}

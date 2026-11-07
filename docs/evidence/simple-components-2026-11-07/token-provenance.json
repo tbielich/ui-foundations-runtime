@@ -1,0 +1,481 @@
+{
+  "sourceCommit": "357eb5fbb6deb434e74e8fbaae3bdc8715739c65",
+  "sourceBranch": "feat/new-components-draft",
+  "figmaLiveRead": "BLOCKED: MCP permission denied for sourceFileKey 3G6kkLVF0AKQO2BeCpixiN",
+  "policy": "Restored Runtime-owned slots; no claim of current Figma variable identity. Preserved as code-only siblings until source reconciliation. No new semantic roles.",
+  "tokens": [
+    {
+      "path": "Status Light/Neutral/Text Color",
+      "token": "var(--uif-status-light-neutral-text-color)",
+      "historicalVariableId": "VariableID:5900:1",
+      "sourceValue": {
+        "$ref": "Color/Text/Default"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Neutral/Indicator/Background",
+      "token": "var(--uif-status-light-neutral-indicator-background)",
+      "historicalVariableId": "VariableID:5900:2",
+      "sourceValue": {
+        "$ref": "Color/Fill/Surface"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Positive/Text Color",
+      "token": "var(--uif-status-light-positive-text-color)",
+      "historicalVariableId": "VariableID:5900:3",
+      "sourceValue": {
+        "$ref": "Color/Text/Success"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Positive/Indicator/Background",
+      "token": "var(--uif-status-light-positive-indicator-background)",
+      "historicalVariableId": "VariableID:5900:4",
+      "sourceValue": {
+        "$ref": "Color/Fill/Success"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Success/Foreground/Default"
+      }
+    },
+    {
+      "path": "Status Light/Negative/Text Color",
+      "token": "var(--uif-status-light-negative-text-color)",
+      "historicalVariableId": "VariableID:5900:5",
+      "sourceValue": {
+        "$ref": "Color/Text/Danger"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Negative/Indicator/Background",
+      "token": "var(--uif-status-light-negative-indicator-background)",
+      "historicalVariableId": "VariableID:5900:6",
+      "sourceValue": {
+        "$ref": "Color/Fill/Danger"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Danger/Foreground/Default"
+      }
+    },
+    {
+      "path": "Status Light/Notice/Text Color",
+      "token": "var(--uif-status-light-notice-text-color)",
+      "historicalVariableId": "VariableID:5900:7",
+      "sourceValue": {
+        "$ref": "Color/Text/Brand"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Notice/Indicator/Background",
+      "token": "var(--uif-status-light-notice-indicator-background)",
+      "historicalVariableId": "VariableID:5900:8",
+      "sourceValue": {
+        "$ref": "Color/Fill/Brand"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Action/Foreground/Default"
+      }
+    },
+    {
+      "path": "Status Light/Info/Text Color",
+      "token": "var(--uif-status-light-info-text-color)",
+      "historicalVariableId": "VariableID:5900:9",
+      "sourceValue": {
+        "$ref": "Color/Text/Subtle"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Status Light/Info/Indicator/Background",
+      "token": "var(--uif-status-light-info-indicator-background)",
+      "historicalVariableId": "VariableID:5900:10",
+      "sourceValue": {
+        "$ref": "Color/Fill/Subtle"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Foreground/Subtle"
+      }
+    },
+    {
+      "path": "Status Light/Font Family",
+      "token": "var(--uif-status-light-font-family)",
+      "historicalVariableId": "VariableID:5900:11",
+      "sourceValue": {
+        "$ref": "Brand/Font/Lead"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Font/Lead"
+      }
+    },
+    {
+      "path": "Status Light/Font Weight",
+      "token": "var(--uif-status-light-font-weight)",
+      "historicalVariableId": "VariableID:5900:12",
+      "sourceValue": {
+        "$ref": "Typography/Label/Font Weight"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Typography/Label/Font/Weight"
+      }
+    },
+    {
+      "path": "Status Light/Font Size MD",
+      "token": "var(--uif-status-light-font-size-md)",
+      "historicalVariableId": "VariableID:5900:13",
+      "sourceValue": 14,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      }
+    },
+    {
+      "path": "Status Light/Font Size SM",
+      "token": "var(--uif-status-light-font-size-sm)",
+      "historicalVariableId": "VariableID:5900:14",
+      "sourceValue": 12,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      }
+    },
+    {
+      "path": "Status Light/Line Height MD",
+      "token": "var(--uif-status-light-line-height-md)",
+      "historicalVariableId": "VariableID:5900:15",
+      "sourceValue": 20,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      }
+    },
+    {
+      "path": "Status Light/Line Height SM",
+      "token": "var(--uif-status-light-line-height-sm)",
+      "historicalVariableId": "VariableID:5900:16",
+      "sourceValue": 16,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      }
+    },
+    {
+      "path": "Status Light/Gap MD",
+      "token": "var(--uif-status-light-gap-md)",
+      "historicalVariableId": "VariableID:5900:17",
+      "sourceValue": {
+        "$ref": "Brand/Size/Spacing/Tight"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Size/Spacing/Tight"
+      }
+    },
+    {
+      "path": "Status Light/Gap SM",
+      "token": "var(--uif-status-light-gap-sm)",
+      "historicalVariableId": "VariableID:5900:18",
+      "sourceValue": {
+        "$ref": "Brand/Size/Spacing/Tight"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Size/Spacing/Tight"
+      }
+    },
+    {
+      "path": "Status Light/Indicator Size MD",
+      "token": "var(--uif-status-light-indicator-size-md)",
+      "historicalVariableId": "VariableID:5900:19",
+      "sourceValue": 10,
+      "runtimeValue": 10
+    },
+    {
+      "path": "Status Light/Indicator Size SM",
+      "token": "var(--uif-status-light-indicator-size-sm)",
+      "historicalVariableId": "VariableID:5900:20",
+      "sourceValue": 8,
+      "runtimeValue": 8
+    },
+    {
+      "path": "Meter/Label/Color/Default",
+      "token": "var(--uif-meter-label-color-default)",
+      "historicalVariableId": "VariableID:4101:1",
+      "sourceValue": {
+        "$ref": "Color/Text/Subtle"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Meter/Value/Color/Default",
+      "token": "var(--uif-meter-value-color-default)",
+      "historicalVariableId": "VariableID:4101:2",
+      "sourceValue": {
+        "$ref": "Color/Text/Default"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Meter/Track/Background/Default",
+      "token": "var(--uif-meter-track-background-default)",
+      "historicalVariableId": "VariableID:4101:3",
+      "sourceValue": {
+        "$ref": "Color/Fill/Subtle"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Surface/Default"
+      }
+    },
+    {
+      "path": "Meter/Track/Height/MD",
+      "token": "var(--uif-meter-track-height-md)",
+      "historicalVariableId": "VariableID:4101:4",
+      "sourceValue": 8,
+      "runtimeValue": 8
+    },
+    {
+      "path": "Meter/Track/Height/SM",
+      "token": "var(--uif-meter-track-height-sm)",
+      "historicalVariableId": "VariableID:4101:5",
+      "sourceValue": 6,
+      "runtimeValue": 6
+    },
+    {
+      "path": "Meter/Fill/Background/Default",
+      "token": "var(--uif-meter-fill-background-default)",
+      "historicalVariableId": "VariableID:4101:6",
+      "sourceValue": {
+        "$ref": "Color/Fill/Brand"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Action/Surface/Default"
+      }
+    },
+    {
+      "path": "Meter/Fill/Background/Positive",
+      "token": "var(--uif-meter-fill-background-positive)",
+      "historicalVariableId": "VariableID:4101:7",
+      "sourceValue": {
+        "$ref": "Color/Fill/Success"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Success/Foreground/Default"
+      }
+    },
+    {
+      "path": "Meter/Fill/Background/Notice",
+      "token": "var(--uif-meter-fill-background-notice)",
+      "historicalVariableId": "VariableID:4101:8",
+      "sourceValue": {
+        "$ref": "Color/Fill/Active"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Selection/Surface/Active"
+      }
+    },
+    {
+      "path": "Meter/Fill/Background/Negative",
+      "token": "var(--uif-meter-fill-background-negative)",
+      "historicalVariableId": "VariableID:4101:9",
+      "sourceValue": {
+        "$ref": "Color/Fill/Danger"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Danger/Foreground/Default"
+      }
+    },
+    {
+      "path": "Meter/Font Family",
+      "token": "var(--uif-meter-font-family)",
+      "historicalVariableId": "VariableID:4101:10",
+      "sourceValue": {
+        "$ref": "Brand/Font/Lead"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Font/Lead"
+      }
+    },
+    {
+      "path": "Meter/Font Weight",
+      "token": "var(--uif-meter-font-weight)",
+      "historicalVariableId": "VariableID:4101:11",
+      "sourceValue": {
+        "$ref": "Typography/Label/Font Weight"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Typography/Label/Font/Weight"
+      }
+    },
+    {
+      "path": "Meter/Font Size SM",
+      "token": "var(--uif-meter-font-size-sm)",
+      "historicalVariableId": "VariableID:4101:12",
+      "sourceValue": 12,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/xs"
+      }
+    },
+    {
+      "path": "Meter/Font Size MD",
+      "token": "var(--uif-meter-font-size-md)",
+      "historicalVariableId": "VariableID:4101:13",
+      "sourceValue": 14,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      }
+    },
+    {
+      "path": "Meter/Line Height SM",
+      "token": "var(--uif-meter-line-height-sm)",
+      "historicalVariableId": "VariableID:4101:14",
+      "sourceValue": 16,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/xs"
+      }
+    },
+    {
+      "path": "Meter/Line Height MD",
+      "token": "var(--uif-meter-line-height-md)",
+      "historicalVariableId": "VariableID:4101:15",
+      "sourceValue": 20,
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      }
+    },
+    {
+      "path": "Meter/Gap",
+      "token": "var(--uif-meter-gap)",
+      "historicalVariableId": "VariableID:4101:16",
+      "sourceValue": {
+        "$ref": "Brand/Size/Spacing/Tight"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Size/Spacing/Tight"
+      }
+    },
+    {
+      "path": "Meter/Border Radius",
+      "token": "var(--uif-meter-border-radius)",
+      "historicalVariableId": "VariableID:4101:17",
+      "sourceValue": {
+        "$ref": "Size/Radius/full"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Size/Radius/full"
+      }
+    },
+    {
+      "path": "Progress Bar/Track/Background",
+      "token": "var(--uif-progress-bar-track-background)",
+      "historicalVariableId": "VariableID:9001:1",
+      "sourceValue": {
+        "$ref": "Color/Fill/Subtle"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Surface/Default"
+      }
+    },
+    {
+      "path": "Progress Bar/Fill/Default",
+      "token": "var(--uif-progress-bar-fill-default)",
+      "historicalVariableId": "VariableID:9001:2",
+      "sourceValue": {
+        "$ref": "Color/Fill/Brand"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Action/Surface/Default"
+      }
+    },
+    {
+      "path": "Progress Bar/Fill/Positive",
+      "token": "var(--uif-progress-bar-fill-positive)",
+      "historicalVariableId": "VariableID:9001:3",
+      "sourceValue": {
+        "$ref": "Color/Fill/Success"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Success/Foreground/Default"
+      }
+    },
+    {
+      "path": "Progress Bar/Fill/Negative",
+      "token": "var(--uif-progress-bar-fill-negative)",
+      "historicalVariableId": "VariableID:9001:4",
+      "sourceValue": {
+        "$ref": "Color/Fill/Danger"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Danger/Foreground/Default"
+      }
+    },
+    {
+      "path": "Progress Bar/Label/Color",
+      "token": "var(--uif-progress-bar-label-color)",
+      "historicalVariableId": "VariableID:9001:5",
+      "sourceValue": {
+        "$ref": "Color/Text/Default"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Color/Content/Default"
+      }
+    },
+    {
+      "path": "Progress Bar/Border Radius",
+      "token": "var(--uif-progress-bar-border-radius)",
+      "historicalVariableId": "VariableID:9001:6",
+      "sourceValue": {
+        "$ref": "Size/Radius/full"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Size/Radius/full"
+      }
+    },
+    {
+      "path": "Progress Bar/Height SM",
+      "token": "var(--uif-progress-bar-height-sm)",
+      "historicalVariableId": "VariableID:9001:7",
+      "sourceValue": 4,
+      "runtimeValue": 4
+    },
+    {
+      "path": "Progress Bar/Height MD",
+      "token": "var(--uif-progress-bar-height-md)",
+      "historicalVariableId": "VariableID:9001:8",
+      "sourceValue": 8,
+      "runtimeValue": 8
+    },
+    {
+      "path": "Progress Bar/Height LG",
+      "token": "var(--uif-progress-bar-height-lg)",
+      "historicalVariableId": "VariableID:9001:9",
+      "sourceValue": 12,
+      "runtimeValue": 12
+    },
+    {
+      "path": "Progress Bar/Gap",
+      "token": "var(--uif-progress-bar-gap)",
+      "historicalVariableId": "VariableID:9001:10",
+      "sourceValue": {
+        "$ref": "Size/Spacing/200"
+      },
+      "runtimeValue": {
+        "$ref": "Semantics/Scale/Size/Spacing/200"
+      }
+    }
+  ]
+}

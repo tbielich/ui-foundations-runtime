@@ -3908,6 +3908,241 @@
       "id": null,
       "path": "Table/Border Radius",
       "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Neutral/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Neutral/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Positive/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Positive/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Negative/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Negative/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Notice/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Notice/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Info/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Info/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Line Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Line Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Gap MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Gap SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Indicator Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Indicator Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Label/Color/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Value/Color/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Height/MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Height/SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Positive",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Notice",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Negative",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Line Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Line Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Track/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Positive",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Negative",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Label/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height LG",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Gap",
+      "file": "Patterns (UI).tokens.json"
     }
   ],
   "excludedCollections": [

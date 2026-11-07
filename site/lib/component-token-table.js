@@ -63,7 +63,18 @@ function renderComponentTokenTable(cssPath) {
   }
 
   const cssSource = fs.readFileSync(absolutePath, "utf8");
-  const rows = extractTokenRows(cssSource);
+  const component = path.basename(cssPath, ".css");
+  const usesContainerScale = ["status-light", "meter", "progress-bar"].includes(component)
+    && path.dirname(absolutePath) === path.resolve(process.cwd(), "src/ui/patterns");
+  let rows = extractTokenRows(cssSource);
+  if (usesContainerScale) {
+    // This is the consumer-facing override table, not a dump of every CSS dependency.
+    // Keep active geometry variants; typography/spacing size aliases and private
+    // scale helpers are implementation details of the inherited scale context.
+    const prefix = `--uif-${component}-`;
+    rows = rows.filter(({ token }) => token.startsWith(prefix)
+      && !/^--uif-(?:status-light|meter|progress-bar)-(?:font-size|line-height|gap)-(?:sm|md|lg)$/.test(token));
+  }
 
   if (rows.length === 0) {
     return `<p>No CSS variable usage found in <code>${escapeHtml(cssPath)}</code>.</p>`;
@@ -73,7 +84,10 @@ function renderComponentTokenTable(cssPath) {
     .map(({ token }) => `<tr><td><code>${escapeHtml(token)}</code></td></tr>`)
     .join("");
 
-  return `<div class="docs-table-wrap">
+  const scaleNote = usesContainerScale
+    ? '<p>Use container scale and local size for typography and spacing. The table lists component overrides.</p>'
+    : "";
+  return `${scaleNote}<div class="docs-table-wrap">
   <table class="docs-table">
     <thead>
       <tr>

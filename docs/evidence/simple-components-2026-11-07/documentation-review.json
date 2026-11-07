@@ -1,0 +1,108 @@
+{
+  "result": "PASS",
+  "desktopViewport": [
+    1280,
+    900
+  ],
+  "mobileViewport": [
+    390,
+    844
+  ],
+  "pages": [
+    {
+      "slug": "status-light",
+      "sections": [
+        "anatomy",
+        "options",
+        "behaviors",
+        "usage-guidelines",
+        "content-standards",
+        "keyboard-interactions",
+        "accessibility",
+        "implementation",
+        "theming",
+        "tokens",
+        "design-checklist"
+      ],
+      "options": 4,
+      "previews": 7,
+      "anatomyMarkers": 2,
+      "playground": "/patterns/status-light-playground/",
+      "missingTokens": false,
+      "rawMarkers": false,
+      "codeBlocks": 4,
+      "unverifiedFigma": true,
+      "switches": {
+        "brand": "c",
+        "mode": "dark",
+        "snapshotApplied": true
+      },
+      "mobileOverflow": false
+    },
+    {
+      "slug": "meter",
+      "sections": [
+        "anatomy",
+        "options",
+        "behaviors",
+        "usage-guidelines",
+        "content-standards",
+        "keyboard-interactions",
+        "accessibility",
+        "implementation",
+        "theming",
+        "tokens",
+        "design-checklist"
+      ],
+      "options": 7,
+      "previews": 8,
+      "anatomyMarkers": 4,
+      "playground": "/patterns/meter-playground/",
+      "missingTokens": false,
+      "rawMarkers": false,
+      "codeBlocks": 4,
+      "unverifiedFigma": true,
+      "switches": {
+        "brand": "c",
+        "mode": "dark",
+        "snapshotApplied": true
+      },
+      "mobileOverflow": false
+    },
+    {
+      "slug": "progress-bar",
+      "sections": [
+        "anatomy",
+        "options",
+        "behaviors",
+        "usage-guidelines",
+        "content-standards",
+        "keyboard-interactions",
+        "accessibility",
+        "implementation",
+        "theming",
+        "tokens",
+        "design-checklist"
+      ],
+      "options": 6,
+      "previews": 10,
+      "anatomyMarkers": 4,
+      "playground": "/patterns/progress-bar-playground/",
+      "missingTokens": false,
+      "rawMarkers": false,
+      "codeBlocks": 4,
+      "unverifiedFigma": true,
+      "switches": {
+        "brand": "c",
+        "mode": "dark",
+        "snapshotApplied": true
+      },
+      "mobileOverflow": false
+    }
+  ],
+  "visualInspection": [
+    "docs-meter-desktop.png",
+    "docs-status-light-mobile.png"
+  ],
+  "scope": "Three component documentation pages only; no Runtime behavior changes."
+}

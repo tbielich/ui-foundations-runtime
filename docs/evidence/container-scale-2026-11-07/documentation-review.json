@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "status-light",
+    "sections": [
+      "anatomy",
+      "options",
+      "behaviors",
+      "usage-guidelines",
+      "content-standards",
+      "keyboard-interactions",
+      "accessibility",
+      "implementation",
+      "theming",
+      "tokens",
+      "design-checklist"
+    ],
+    "options": 4,
+    "previews": 10,
+    "anatomyMarkers": 2,
+    "playground": "/patterns/status-light-playground/",
+    "missingTokens": false,
+    "rawMarkers": false,
+    "codeBlocks": 5,
+    "unverifiedFigma": true,
+    "switches": {
+      "brand": "c",
+      "mode": "dark",
+      "snapshotApplied": true
+    },
+    "mobileOverflow": false
+  },
+  {
+    "slug": "meter",
+    "sections": [
+      "anatomy",
+      "options",
+      "behaviors",
+      "usage-guidelines",
+      "content-standards",
+      "keyboard-interactions",
+      "accessibility",
+      "implementation",
+      "theming",
+      "tokens",
+      "design-checklist"
+    ],
+    "options": 7,
+    "previews": 11,
+    "anatomyMarkers": 4,
+    "playground": "/patterns/meter-playground/",
+    "missingTokens": false,
+    "rawMarkers": false,
+    "codeBlocks": 5,
+    "unverifiedFigma": true,
+    "switches": {
+      "brand": "c",
+      "mode": "dark",
+      "snapshotApplied": true
+    },
+    "mobileOverflow": false
+  },
+  {
+    "slug": "progress-bar",
+    "sections": [
+      "anatomy",
+      "options",
+      "behaviors",
+      "usage-guidelines",
+      "content-standards",
+      "keyboard-interactions",
+      "accessibility",
+      "implementation",
+      "theming",
+      "tokens",
+      "design-checklist"
+    ],
+    "options": 6,
+    "previews": 13,
+    "anatomyMarkers": 4,
+    "playground": "/patterns/progress-bar-playground/",
+    "missingTokens": false,
+    "rawMarkers": false,
+    "codeBlocks": 5,
+    "unverifiedFigma": true,
+    "switches": {
+      "brand": "c",
+      "mode": "dark",
+      "snapshotApplied": true
+    },
+    "mobileOverflow": false
+  }
+]

@@ -879,7 +879,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   }
 
   .playground-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
       "preview"
@@ -1013,6 +1013,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 .docs-hero-preview-controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   padding: 8px 14px;
@@ -3167,4 +3168,17 @@ details.color-family > .color-table-wrap {
 @media (max-width: 600px) {
   .docs-component-preview .docs-hero-preview-stage { padding: 24px 16px; }
   .docs-component-preview .docs-hero-preview-stage > * { flex-shrink: 1; min-inline-size: 0; max-inline-size: 100%; }
+}
+
+/* Docs-only labels and switches stay outside the scaled preview container. */
+.docs-hero-switch-label {
+  font: inherit;
+  color: inherit;
+  padding-inline: 6px;
+  white-space: nowrap;
+}
+.docs-hero-switch button { white-space: nowrap; }
+.docs-hero-switch [data-hero-scale]:focus-visible {
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 2px;
 }
