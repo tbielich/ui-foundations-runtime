@@ -343,3 +343,47 @@
 {% macro dialog(title='', description='', dismissible=true, open=false, confirmLabel='Confirm', cancelLabel='Cancel') -%}
 <uif-dialog title="{{ title }}"{% if description %} description="{{ description }}"{% endif %} dismissible="{{ 'true' if dismissible else 'false' }}"{% if open %} open{% endif %} confirm-label="{{ confirmLabel }}" cancel-label="{{ cancelLabel }}">{{ caller() }}</uif-dialog>
 {%- endmacro %}
+
+{% macro statusLight(text, variant='neutral', size='md') -%}
+{%- set classes = "uif-status-light" -%}
+{%- if variant in ["positive", "negative", "notice", "info"] -%}{%- set classes = classes + " " + variant -%}{%- endif -%}
+{%- if size == "sm" -%}{%- set classes = classes + " sm" -%}{%- endif -%}
+<span class="{{ classes }}">
+  <span class="uif-status-light-indicator" aria-hidden="true"></span>
+  <span class="uif-status-light-text">{{ text | escape }}</span>
+</span>
+{%- endmacro %}
+
+{% macro meter(label='Storage used', value=72, min=0, max=100, variant='default', size='md', valueText='') -%}
+{%- set min = min | float(0) -%}
+{%- set max = max | float(100) -%}
+{%- if max <= min -%}{%- set max = min + 1 -%}{%- endif -%}
+{%- set value = value | float(0) -%}
+{%- set value = min if value < min else (max if value > max else value) -%}
+{%- set normalized = ((value - min) / (max - min)) * 100 -%}
+{%- set label = (label | trim) or 'Meter' -%}
+{%- set displayValue = (valueText | trim) or ((normalized | round) ~ '%') -%}
+{%- set classes = 'uif-meter' -%}
+{%- if variant in ['positive', 'notice', 'negative'] -%}{%- set classes = classes + ' ' + variant -%}{%- endif -%}
+{%- if size == 'sm' -%}{%- set classes = classes + ' sm' -%}{%- endif -%}
+<div class="{{ classes }}">
+  <div class="uif-meter-header"><span class="uif-meter-label">{{ label | escape }}</span><span class="uif-meter-value">{{ displayValue | escape }}</span></div>
+  <meter class="uif-meter-native" min="{{ min }}" max="{{ max }}" value="{{ value }}" aria-label="{{ label | escape }}" aria-valuetext="{{ displayValue | escape }}">{{ displayValue | escape }}</meter>
+  <div class="uif-meter-track" aria-hidden="true"><span class="uif-meter-fill" style="inline-size: {{ normalized }}%;"></span></div>
+</div>
+{%- endmacro %}
+
+{% macro progressBar(value='', variant='default', size='md', label='', showValue=false, indeterminate=false) -%}
+{%- set number = value | float -%}
+{%- set unknown = indeterminate or value === '' or value === none or number != number -%}
+{%- set value = 0 if number < 0 else (100 if number > 100 else number) -%}
+{%- set label = label | trim -%}
+{%- set classes = 'uif-progress-bar' -%}
+{%- if variant in ['positive', 'negative'] -%}{%- set classes = classes + ' ' + variant -%}{%- endif -%}
+{%- if size in ['sm', 'lg'] -%}{%- set classes = classes + ' ' + size -%}{%- endif -%}
+{%- if unknown -%}{%- set classes = classes + ' is-indeterminate' -%}{%- endif -%}
+<div class="{{ classes }}" role="progressbar" aria-label="{{ (label or ('Loading' if unknown else 'Progress')) | escape }}" aria-valuemin="0" aria-valuemax="100"{% if not unknown %} aria-valuenow="{{ value }}"{% endif %}>
+  {%- if label or (showValue and not unknown) %}<div class="uif-progress-bar-header">{% if label %}<span class="uif-progress-bar-label">{{ label | escape }}</span>{% endif %}{% if showValue and not unknown %}<span class="uif-progress-bar-value">{{ value | round }}%</span>{% endif %}</div>{% endif %}
+  <div class="uif-progress-bar-track"><div class="uif-progress-bar-fill"{% if not unknown %} style="--_progress: {{ value }}"{% endif %}></div></div>
+</div>
+{%- endmacro %}

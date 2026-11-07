@@ -42,10 +42,18 @@ export declare class UIFormField extends UIElement {}
 export declare class UIFormHelper extends UIElement {}
 export declare class UIFormActions extends UIElement {}
 
+export declare class UIStatusLight extends UIElement {}
+export declare class UIMeter extends UIElement {}
+export declare class UIProgressBar extends UIElement {}
+
 // --- Custom Element Tag Name Map ---
 
 declare global {
   interface HTMLElementTagNameMap {
+    "uif-status-light": UIStatusLight;
+    "uif-meter": UIMeter;
+    "uif-progress-bar": UIProgressBar;
+
     "uif-icon": UIIcon;
     "uif-button": UIButton;
     "uif-button-group": UIButtonGroup;

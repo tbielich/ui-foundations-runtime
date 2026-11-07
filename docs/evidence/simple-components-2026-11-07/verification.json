@@ -1,0 +1,76 @@
+{
+  "mode": "IMPLEMENT",
+  "date": "2026-11-07",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/simple-components-reintegration-20261107",
+  "baseSha": "506807d037183154b420bd9f3f90a3e95a1b6d38",
+  "draftSourceSha": "357eb5fbb6deb434e74e8fbaae3bdc8715739c65",
+  "sourceDigestExcludingEvidence": "3b20209196903d1f6d0152c1a621fab07017119ae6204f3ea5b5c09dd69e1f34",
+  "sourceFileCount": 1258,
+  "runtimeGate": "PASS",
+  "overallDesignAcceptance": "BLOCKED",
+  "externalBlockers": [
+    "Live source Figma access denied by connected MCP",
+    "Active Code Connect mappings awaiting source node/property verification"
+  ],
+  "node": "22.23.2",
+  "dependencies": "existing local installation; fresh npm ci is GitHub CI responsibility",
+  "checks": [
+    {
+      "command": "CI=1 npm run ci:check",
+      "result": "PASS",
+      "unitTests": 197,
+      "browserTests": 16,
+      "log": "ci-check.log"
+    },
+    {
+      "command": "npm run docs:lint",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run docs:build",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run pack:check",
+      "result": "PASS",
+      "files": 719,
+      "log": "pack-check.log"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "boundedBrowserChecks": {
+    "components": [
+      "status-light",
+      "meter",
+      "progress-bar"
+    ],
+    "brandSchemeContexts": 6,
+    "contrastRows": 66,
+    "textMinimum": 4.5,
+    "visibleBoundaryMinimum": 3,
+    "coverage": [
+      "attribute updates/reconnect",
+      "native and visual measurement consistency",
+      "zero/clamping/invalid values",
+      "indeterminate semantics",
+      "reduced motion",
+      "playground controls"
+    ],
+    "limitations": [
+      "not full accessibility certification",
+      "no live Figma comparison"
+    ]
+  },
+  "tokenRestoration": {
+    "count": 47,
+    "newSemanticRoles": 0,
+    "newCoreOrAppearanceTokens": 0,
+    "sourceIdentitiesVerified": false,
+    "syncPolicy": "explicit code-only siblings"
+  },
+  "commitState": "prepared for feature-branch commit and draft PR; no main merge or publication"
+}

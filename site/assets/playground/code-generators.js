@@ -296,8 +296,42 @@
     );
   }
 
+  function indicatorArgs(state, kind, format) {
+    var p = state.props;
+    var fields = kind === "meter" ? ["label", "value", "min", "max", "variant", "size", "valueText"]
+      : kind === "progress-bar" ? ["value", "variant", "size", "label", "showValue", "indeterminate"]
+      : ["variant", "size"];
+    var booleanFields = ["showValue", "indeterminate"];
+    var numericFields = ["value", "min", "max"];
+    var attributes = { valueText: "value-text", showValue: "show-value" };
+    var parts = [];
+    fields.forEach(function (field) {
+      var value = p[field];
+      if (value === undefined) return;
+      if (format === "njk") {
+        if (booleanFields.includes(field)) value = value === true || value === "true";
+        else if (numericFields.includes(field) && value !== "" && Number.isFinite(Number(value))) value = Number(value);
+        else value = String(value);
+        parts.push(field + "=" + JSON.stringify(value));
+      } else if (booleanFields.includes(field)) {
+        if (value === true || value === "true") parts.push(attributes[field] || field);
+      } else parts.push((attributes[field] || field) + '="' + quoteAttr(String(value)) + '"');
+    });
+    if (format === "njk") {
+      if (kind === "status-light") parts.unshift("text=" + JSON.stringify(String(state.children === undefined ? "Status" : state.children)));
+      var macro = { "status-light": "statusLight", "meter": "meter", "progress-bar": "progressBar" }[kind];
+      return "{{ uif." + macro + "(" + parts.join(", ") + ") }}";
+    }
+    var text = kind === "status-light" ? quoteAttr(String(state.children === undefined ? "Status" : state.children)) : "";
+    return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + ">" + text + "</uif-" + kind + ">";
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
+      "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
+      "meter": function (state) { return indicatorArgs(state, "meter", "njk"); },
+      "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "njk"); },
+
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
       "switch": njkSwitch, icon: njkIcon, radio: njkRadio, badge: njkBadge,
@@ -362,6 +396,10 @@
       },
     },
     wc: {
+      "status-light": function (state) { return indicatorArgs(state, "status-light", "wc"); },
+      "meter": function (state) { return indicatorArgs(state, "meter", "wc"); },
+      "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "wc"); },
+
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,
       "switch": wcSwitch, icon: wcIcon, radio: wcRadio, badge: wcBadge,

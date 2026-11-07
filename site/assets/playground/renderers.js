@@ -1294,6 +1294,35 @@
     return { element, code };
   };
 
+  const renderVanillaStatusLight = ({ props, children }) => {
+    const element = document.createElement("uif-status-light");
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    element.textContent = children === undefined ? "Status" : String(children);
+    return { element, code: element.outerHTML };
+  };
+  const renderVanillaMeter = ({ props, children }) => {
+    const element = document.createElement("uif-meter");
+    if (props.label !== undefined) element.setAttribute("label", String(props.label));
+    if (props.value !== undefined) element.setAttribute("value", String(props.value));
+    if (props.min !== undefined) element.setAttribute("min", String(props.min));
+    if (props.max !== undefined) element.setAttribute("max", String(props.max));
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (props.valueText !== undefined) element.setAttribute("value-text", String(props.valueText));
+    return { element, code: element.outerHTML };
+  };
+  const renderVanillaProgressBar = ({ props, children }) => {
+    const element = document.createElement("uif-progress-bar");
+    if (props.value !== undefined) element.setAttribute("value", String(props.value));
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (props.label !== undefined) element.setAttribute("label", String(props.label));
+    if (asBoolean(props.showValue)) element.setAttribute("show-value", "");
+    if (asBoolean(props.indeterminate)) element.setAttribute("indeterminate", "");
+    return { element, code: element.outerHTML };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1318,6 +1347,10 @@
       calendar: renderVanillaCalendar,
       datePicker: renderVanillaDatePicker,
       table: renderVanillaTable,
+      "status-light": renderVanillaStatusLight,
+      "meter": renderVanillaMeter,
+      "progress-bar": renderVanillaProgressBar,
+
     },
   };
 })(window);

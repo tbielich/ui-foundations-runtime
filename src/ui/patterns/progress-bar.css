@@ -1,0 +1,92 @@
+@layer components {
+  /* ── Wrapper (label row + track) ── */
+
+  .uif-progress-bar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--uif-progress-bar-gap);
+    width: 100%;
+  }
+
+  /* ── Label row ── */
+
+  .uif-progress-bar > .uif-progress-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--uif-progress-bar-label-color);
+    font-size: var(--uif-semantic-scale-font-size-sm);
+    line-height: var(--uif-semantic-scale-line-height-sm);
+  }
+
+  /* ── Track ── */
+
+  .uif-progress-bar > .uif-progress-bar-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    background: var(--uif-progress-bar-track-background);
+    border-radius: var(--uif-progress-bar-border-radius);
+    block-size: var(--uif-progress-bar-height-md);
+  }
+
+  /* ── Fill ── */
+
+  .uif-progress-bar > .uif-progress-bar-track > .uif-progress-bar-fill {
+    border-radius: inherit;
+    background: var(--uif-progress-bar-fill-default);
+    width: calc(var(--_progress, 0) * 1%);
+    block-size: 100%;
+  }
+
+  /* ── Sizes ── */
+
+  .uif-progress-bar.sm > .uif-progress-bar-track {
+    block-size: var(--uif-progress-bar-height-sm);
+  }
+
+  .uif-progress-bar.lg > .uif-progress-bar-track {
+    block-size: var(--uif-progress-bar-height-lg);
+  }
+
+  /* ── Variants ── */
+
+  .uif-progress-bar.positive > .uif-progress-bar-track > .uif-progress-bar-fill {
+    background: var(--uif-progress-bar-fill-positive);
+  }
+
+  .uif-progress-bar.negative > .uif-progress-bar-track > .uif-progress-bar-fill {
+    background: var(--uif-progress-bar-fill-negative);
+  }
+
+  /* ── Indeterminate ── */
+
+  .uif-progress-bar.is-indeterminate > .uif-progress-bar-track > .uif-progress-bar-fill {
+    width: 40%;
+    animation: uif-progress-bar-indeterminate 1.4s ease-in-out infinite;
+  }
+
+  @keyframes uif-progress-bar-indeterminate {
+    0% { transform: translateX(-100%); }
+    60% { transform: translateX(250%); }
+    100% { transform: translateX(250%); }
+  }
+
+  /* ── Reduced motion ── */
+
+  @media (prefers-reduced-motion: reduce) {
+    .uif-progress-bar.is-indeterminate > .uif-progress-bar-track > .uif-progress-bar-fill {
+      animation: none;
+      width: 100%;
+    }
+  }
+  /* A semantic content outline keeps the colored marker discernible across schemes. */
+  .uif-progress-bar-fill {
+    outline: var(--uif-semantic-size-border-default) solid var(--uif-semantic-color-content-default);
+    outline-offset: calc(-1 * var(--uif-semantic-size-border-default));
+  }
+  .uif-progress-bar-track {
+    outline: var(--uif-semantic-size-border-default) solid var(--uif-semantic-color-border-default);
+    outline-offset: calc(-1 * var(--uif-semantic-size-border-default));
+  }
+}
