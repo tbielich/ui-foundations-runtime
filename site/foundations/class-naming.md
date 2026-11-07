@@ -6,14 +6,20 @@ navTitle: Class Naming
 order: 13
 permalink: /foundations/class-naming/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
+
+
+{% call foundation.feature("Anatomy", "A name you can read.", "The root identifies the pattern. A separate class describes its state.") %}
+<div class="foundation-selector" aria-label="Selector: uif calendar cell, is selected"><span>.uif-calendar-cell</span><span>.is-selected</span></div>
+<dl class="foundation-key"><div><dt>Pattern</dt><dd>calendar</dd></div><div><dt>Part</dt><dd>cell</dd></div><div><dt>State</dt><dd>selected</dd></div></dl>
+<p class="foundation-caption">Keep structure and state separate so each can be reused.</p>
+{% endcall %}
+
 
 ## Convention
 
-ui-foundations consumes the Vault Naming Contract for public classes. The
-canonical source is `.uif/packs/governance/contracts/naming-contract.json`;
-runtime generates its local contract module from that artifact.
-
-The examples below illustrate the consumed contract. They are not source rules.
+UI Foundations uses the `uif-` prefix for public pattern classes. Parts,
+variants, and states follow the conventions below.
 
 ## Structure
 
@@ -32,7 +38,7 @@ The examples below illustrate the consumed contract. They are not source rules.
 3. **Variants are additional classes**: `.uif-button.ghost`, `.uif-badge.brand`, `.uif-divider.subtle`
 4. **States use `.is-` prefix**: `.is-hover`, `.is-selected`, `.is-disabled`, `.is-today`
 5. **No double-underscores** (`__`): use hyphen-compound instead
-6. **No non-Vault namespace prefixes**: never `.ui-calendar`
+6. **No alternative namespace prefixes**: never `.ui-calendar`
 7. **No BEM modifiers** (`--`): use multi-class instead (`.uif-button.ghost` not `.uif-button--ghost`)
 
 ## Examples
@@ -49,7 +55,7 @@ The examples below illustrate the consumed contract. They are not source rules.
 /* Example: invalid */
 .uif-calendar__header { }        /* no double-underscore */
 .uif-calendar-cell--selected { } /* no BEM modifier */
-.ui-calendar { }             /* no non-Vault namespace */
+.ui-calendar { }             /* no alternative namespace */
 .uif-button--ghost { }       /* use multi-class */
 ```
 
@@ -61,10 +67,4 @@ The examples below illustrate the consumed contract. They are not source rules.
 - **Scannable**: in DevTools you see the full state without decoding
 - **Aligned with tokens**: tokens use the same public prefix (`--uif-calendar-cell-background-hover`)
 
-## Migration
-
-All repository-owned emitters use canonical `.uif-*` classes. Bare classes such
-as `.button`, `.select`, and `.checkbox` remain deprecated CSS-only
-compatibility selectors through v1.x; templates, examples, generators, and
-Custom Elements do not emit them. Their removal is Wave 4 work for v2.0 or
-later.
+{{ foundation.next("/patterns/button/", "See it on Button", "Explore parts, variants, and states in a real pattern.") }}

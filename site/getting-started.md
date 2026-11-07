@@ -32,7 +32,9 @@ Import the full bundle for all tokens and components:
 @import "ui-foundations/ui.css";
 ```
 
-Or import individual token layers for more control:
+For individual token imports, use the exported package paths. Include the
+styles and context variants your application needs; this subset alone does not
+include the full pattern CSS or every brand and scheme:
 
 ```css
 @import "ui-foundations/tokens/primitives.css";
@@ -66,7 +68,8 @@ generation, and framework-agnostic Custom Elements.
 
 ```html
 <button class="uif-button solid" type="button">Label</button>
-<input class="uif-input" type="text" placeholder="Email" />
+<label for="email">Email</label>
+<input class="uif-input" id="email" name="email" type="email" autocomplete="email" />
 <a href="/page" class="uif-link">Go to page</a>
 ```
 
@@ -120,24 +123,19 @@ events, and form controls remain visible to consuming frameworks.
 
 ## Token Architecture
 
-Tokens are layered in four levels:
+The token model follows **Core → Appearance → Semantics → Patterns**:
 
-1. **Primitives** — raw values such as colours, sizes, and font weights
-2. **Brand** — brand-specific aliases (`brand-a`, `brand-b`, `brand-c`)
-3. **Semantic** — role-based mappings (`color-text-default`, `color-fill-brand`)
-4. **Component** — component-specific tokens (`button-border-radius`, `input-height`)
+- Core holds reusable values such as palette steps and spacing.
+- Appearance applies Brand, Scheme (light/dark), and Scale.
+- Semantics names UI roles such as action surface and text content.
+- Patterns apply those roles to individual controls.
 
-See [Token Overview](/foundations/design-tokens/) for the full token reference.
+See [Design Tokens](/foundations/design-tokens/) for the model and reference,
+and [Theming](/foundations/theming/) for switching and customisation.
 
-## Validation
+## Next steps
 
-```bash
-npm run lint          # JS syntax check
-npm run test:unit     # Unit tests
-npm run ci:check      # Full validation pipeline
-```
-
-## Figma Integration
-
-Design tokens are synced from Figma using the MCP integration. Token exports
-live in `figma/exports/` and are processed by `npm run tokens:generate`.
+- Choose a [pattern](/patterns/) and follow its markup and API examples.
+- Use [examples](/examples/) to compose controls into a flow.
+- Read the [accessibility guidance](/foundations/accessibility/) before shipping.
+- Review the [license](/license/) before adopting the package.

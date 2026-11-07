@@ -1,31 +1,22 @@
 ---
-layout: layouts/docs.njk
 title: Governance & Quality
 description: The three-layer quality system that guides every pattern and component decision.
-navTitle: Governance
-order: 3
-permalink: /foundations/governance/
-excludeFromNav: true
 ---
 
 <p class="page-intro">
-  Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
-</p>
-
-<p>
-  Vault reference: <a href="{{ 'foundations/' | vaultDocumentationUrl }}">configured vault foundations</a>
+  UI Foundations connects design intent to implementation rules and validation. Use these checks when adding or changing a pattern or component.
 </p>
 
 <div class="docs-grid">
-  <a class="docs-card" href="/foundations/governance/principles/">
+  <a class="docs-card" href="principles.md">
     <h2>Design Principles</h2>
-    <p>Local usage notes for applying vault principles to patterns and components.</p>
+    <p>Apply design principles to patterns and components.</p>
   </a>
-  <a class="docs-card" href="/foundations/governance/heuristics/">
+  <a class="docs-card" href="heuristics.md">
     <h2>Usability Heuristics</h2>
-    <p>Local heuristic IDs for rule-pipeline traceability and validation.</p>
+    <p>Heuristic references for rule-pipeline traceability and validation.</p>
   </a>
-  <a class="docs-card" href="/foundations/governance/intelligence/">
+  <a class="docs-card" href="design-intelligence.md">
     <h2>Design Intelligence</h2>
     <p>Local implementation review lens for system fit, reuse, and quality.</p>
   </a>
@@ -34,14 +25,13 @@ excludeFromNav: true
 <h2 id="how-heading">How They Work Together</h2>
 
 <p>
-  Durable knowledge lives in the vault. This repository keeps the implementation
-  contract that connects that knowledge to pattern rules, component rules,
-  validation, and CI.
+  Design principles guide pattern and component rules. Validation checks those
+  rules, and CI runs the checks for each change.
 </p>
 
 <div class="pipeline-flow">
   <div class="pipeline-step">
-    <span class="pipeline-step-label">Vault foundations</span>
+    <span class="pipeline-step-label">Design principles</span>
   </div>
   <div class="pipeline-arrow"><span>informs</span></div>
   <div class="pipeline-step">

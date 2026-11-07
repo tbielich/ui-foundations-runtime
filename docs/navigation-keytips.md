@@ -1,8 +1,6 @@
 ---
 title: Navigation Key Tips
 description: Experimental keyboard shortcut overlay for the main documentation navigation.
-layout: layouts/docs.njk
-order: 90
 ---
 
 ## Overview
