@@ -131,6 +131,8 @@ permalink: /patterns/
   <a class="docs-component-card" href="/patterns/status-light/"><div class="docs-component-card-preview">{{ uif.statusLight("Online", variant="positive") }}</div><div class="docs-component-card-body"><h2>Status Light</h2><p>A labeled status indicator.</p></div></a>
   <a class="docs-component-card" href="/patterns/meter/"><div class="docs-component-card-preview">{{ uif.meter(label="Storage used", value=72) }}</div><div class="docs-component-card-body"><h2>Meter</h2><p>A measurement within a known range.</p></div></a>
   <a class="docs-component-card" href="/patterns/progress-bar/"><div class="docs-component-card-preview">{{ uif.progressBar(value=60, label="Uploading", showValue=true) }}</div><div class="docs-component-card-body"><h2>Progress Bar</h2><p>Determinate progress and indeterminate loading.</p></div></a>
+  <a class="docs-component-card" href="/patterns/inline-alert/"><div class="docs-component-card-preview">{{ uif.inlineAlert(title="Information", description="A contextual message.", variant="info") }}</div><div class="docs-component-card-body"><h2>Inline Alert</h2><p>Contextual status, confirmation, warning or error in the content flow.</p></div></a>
+  <a class="docs-component-card" href="/patterns/illustrated-message/"><div class="docs-component-card-preview">{{ uif.illustratedMessage(preset="empty") }}</div><div class="docs-component-card-body"><h2>Illustrated Message</h2><p>Empty, error and no-results states with an optional action.</p></div></a>
     </div>
   </div>
 </div>

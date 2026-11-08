@@ -1334,6 +1334,36 @@
     container.append(element);
     return { element: container, code: container.outerHTML };
   };
+  const renderVanillaInlineAlert = ({ props }) => {
+    const element = document.createElement("uif-inline-alert");
+    if (props.variant !== undefined && props.variant !== "default") element.setAttribute("variant", String(props.variant));
+    if (props.title !== undefined) element.setAttribute("title", String(props.title));
+    if (props.description !== undefined) element.setAttribute("description", String(props.description));
+    if (props.icon !== undefined && String(props.icon).length > 0) element.setAttribute("icon", String(props.icon));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (asBoolean(props.dismissible)) element.setAttribute("dismissible", "");
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+  const renderVanillaIllustratedMessage = ({ props }) => {
+    const element = document.createElement("uif-illustrated-message");
+    if (props.preset !== undefined) element.setAttribute("preset", String(props.preset));
+    if (props.heading !== undefined && String(props.heading).length > 0) element.setAttribute("heading", String(props.heading));
+    if (props.description !== undefined && String(props.description).length > 0) element.setAttribute("description", String(props.description));
+    if (props.illustrationIcon !== undefined && String(props.illustrationIcon).length > 0) element.setAttribute("illustration-icon", String(props.illustrationIcon));
+    if (props.actionLabel !== undefined && String(props.actionLabel).length > 0) element.setAttribute("action-label", String(props.actionLabel));
+    if (props.actionHref !== undefined && String(props.actionHref).length > 0) element.setAttribute("action-href", String(props.actionHref));
+    if (props.actionVariant !== undefined) element.setAttribute("action-variant", String(props.actionVariant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
 
   global.UIPlaygroundRenderers = {
     renderers: {
@@ -1362,6 +1392,8 @@
       "status-light": renderVanillaStatusLight,
       "meter": renderVanillaMeter,
       "progress-bar": renderVanillaProgressBar,
+      "inline-alert": renderVanillaInlineAlert,
+      "illustrated-message": renderVanillaIllustratedMessage,
 
     },
   };

@@ -8828,5 +8828,499 @@
         }
       }
     }
+  },
+  "Inline Alert": {
+    "Default": {
+      "Container": {
+        "Background": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Surface/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-default-container-background)"
+            }
+          }
+        }
+      },
+      "Border": {
+        "Color": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Border/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-default-border-color)"
+            }
+          }
+        }
+      },
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Content/Default"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-inline-alert-default-text-color)"
+          }
+        }
+      }
+    },
+    "Info": {
+      "Container": {
+        "Background": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Subtle/Surface/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-info-container-background)"
+            }
+          }
+        }
+      },
+      "Border": {
+        "Color": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Border/Subtle/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-info-border-color)"
+            }
+          }
+        }
+      },
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Subtle/Content/Default"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-inline-alert-info-text-color)"
+          }
+        }
+      }
+    },
+    "Positive": {
+      "Container": {
+        "Background": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Success/Surface/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-positive-container-background)"
+            }
+          }
+        }
+      },
+      "Border": {
+        "Color": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Success/Foreground/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-positive-border-color)"
+            }
+          }
+        }
+      },
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Success/Content/Default"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-inline-alert-positive-text-color)"
+          }
+        }
+      }
+    },
+    "Negative": {
+      "Container": {
+        "Background": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Danger/Surface/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-negative-container-background)"
+            }
+          }
+        }
+      },
+      "Border": {
+        "Color": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Border/Danger/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-negative-border-color)"
+            }
+          }
+        }
+      },
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Danger/Content/Default"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-inline-alert-negative-text-color)"
+          }
+        }
+      }
+    },
+    "Notice": {
+      "Container": {
+        "Background": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Selection/Surface/Active"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-notice-container-background)"
+            }
+          }
+        }
+      },
+      "Border": {
+        "Color": {
+          "$type": "color",
+          "$value": {
+            "$ref": "Semantics/Color/Action/Foreground/Default"
+          },
+          "$extensions": {
+            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--uif-inline-alert-notice-border-color)"
+            }
+          }
+        }
+      },
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Selection/Content/Active"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-inline-alert-notice-text-color)"
+          }
+        }
+      }
+    },
+    "Border Size": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Border/Default"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-border-size)"
+        }
+      }
+    },
+    "Border Radius": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Shape/Corner/Panel"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-border-radius)"
+        }
+      }
+    },
+    "Padding Inline": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Component"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-padding-inline)"
+        }
+      }
+    },
+    "Padding Block": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Component"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-padding-block)"
+        }
+      }
+    },
+    "Gap": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Component"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-gap)"
+        }
+      }
+    },
+    "Content Gap": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Tight"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-content-gap)"
+        }
+      }
+    },
+    "Font Family": {
+      "$type": "string",
+      "$value": {
+        "$ref": "Semantics/Font/Base"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["FONT_FAMILY"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-font-family)"
+        }
+      }
+    },
+    "Title Font Weight": {
+      "$type": "string",
+      "$value": {
+        "$ref": "Semantics/Typography/Label/Font/Weight"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["FONT_STYLE"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-title-font-weight)"
+        }
+      }
+    },
+    "Font Size": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Scale/Font/Size/sm"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["FONT_SIZE"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-font-size)"
+        }
+      }
+    },
+    "Line Height": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Scale/Line/Height/sm"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["LINE_HEIGHT"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-inline-alert-line-height)"
+        }
+      }
+    }
+  },
+  "Illustrated Message": {
+    "Gap": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Comfortable"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-illustrated-message-gap)"
+        }
+      }
+    },
+    "Content Gap": {
+      "$type": "number",
+      "$value": {
+        "$ref": "Semantics/Size/Spacing/Tight"
+      },
+      "$extensions": {
+        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--uif-illustrated-message-content-gap)"
+        }
+      }
+    },
+    "Illustration": {
+      "Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Foreground/Subtle"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-illustration-color)"
+          }
+        }
+      },
+      "Size": {
+        "$type": "number",
+        "$value": 48,
+        "$extensions": {
+          "com.figma.scopes": ["WIDTH_HEIGHT", "FONT_SIZE"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-illustration-size)"
+          }
+        }
+      }
+    },
+    "Heading": {
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Content/Default"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-heading-text-color)"
+          }
+        }
+      },
+      "Font Family": {
+        "$type": "string",
+        "$value": {
+          "$ref": "Semantics/Font/Lead"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["FONT_FAMILY"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-heading-font-family)"
+          }
+        }
+      },
+      "Font Weight": {
+        "$type": "string",
+        "$value": {
+          "$ref": "Semantics/Typography/Label/Font/Weight"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["FONT_STYLE"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-heading-font-weight)"
+          }
+        }
+      },
+      "Font Size": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Semantics/Scale/Font/Size/lg"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["FONT_SIZE"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-heading-font-size)"
+          }
+        }
+      },
+      "Line Height": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Semantics/Scale/Line/Height/lg"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["LINE_HEIGHT"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-heading-line-height)"
+          }
+        }
+      }
+    },
+    "Description": {
+      "Text Color": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Foreground/Subtle"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-description-text-color)"
+          }
+        }
+      },
+      "Font Family": {
+        "$type": "string",
+        "$value": {
+          "$ref": "Semantics/Font/Base"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["FONT_FAMILY"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-description-font-family)"
+          }
+        }
+      },
+      "Font Size": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Semantics/Scale/Font/Size/md"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["FONT_SIZE"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-description-font-size)"
+          }
+        }
+      },
+      "Line Height": {
+        "$type": "number",
+        "$value": {
+          "$ref": "Semantics/Scale/Line/Height/md"
+        },
+        "$extensions": {
+          "com.figma.scopes": ["LINE_HEIGHT"],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-illustrated-message-description-line-height)"
+          }
+        }
+      }
+    }
   }
 }

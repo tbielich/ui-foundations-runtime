@@ -22,3 +22,5 @@
 @import url("./patterns/status-light.css") layer(components);
 @import url("./patterns/meter.css") layer(components);
 @import url("./patterns/progress-bar.css") layer(components);
+@import url("./patterns/inline-alert.css") layer(components);
+@import url("./patterns/illustrated-message.css") layer(components);

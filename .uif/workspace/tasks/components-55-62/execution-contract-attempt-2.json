@@ -1,0 +1,52 @@
+{
+  "task_id": "UIF-RUN-55-62-20261108-attempt-2",
+  "prompt": "IMPLEMENT owner-assigned Runtime issues #55 InlineAlert and #62 IllustratedMessage, sequentially in this isolated feature worktree. This is a confirmed-safe retry after the previous worker exited without implementation edits. Prefer explicit file reads and path-scoped searches; avoid workspace-wide native grep with a null includePattern, which may be unsupported by the adapter. Read DESIGN.md, AGENTS.md and its context loading order including .kiro steering/specs before edits. Follow existing architecture. Read-only draft reference snapshots are in .uif/workspace/tasks/components-55-62/references; these are imperfect candidate code, review and adapt rather than copying blindly. Main baseline is dae8e5e (merged indicators).\n#55 scope: info/positive/negative/notice, icon/title/description, optional action, dismissible. #62 scope: illustration slot, heading/description, optional action, empty/error/no-results presets. Deliver CSS pattern, WC, macro, schemas/public exports/types, full docs/playground, inactive Code Connect examples, existing component token restoration/semantic aliases, meaningful bounded tests. Only the two assigned components, no unrelated refactors. Existing StatusLight/Meter/ProgressBar are implementation/doc examples. Full docs: hero theme+scale switches/playground link, numbered anatomy, rendered variants and sizes, complete API/defaults, behavior, usage do/dont, content, keyboard/accessibility, macro and WC examples, theming, focused token table, honest design checklist. Implement data-scale container inheritance (nearest context replaces outer), local size factor, scaling typography/line height/spacing/length radii through established private helpers. Reduce unused size typography token complexity; do not invent public tokens. Preserve fixed geometry/border widths. Use existing preview scale opt-in mechanisms and URL/reset behavior. Figma live parity is OWNER-DEFERRED; do not fabricate IDs or activate unverified Code Connect. Compare available exports, reuse existing semantic roles; any restored draft tokens without verified Figma identity must use existing codeOnlyExceptions projection and provenance evidence. Record Figma gaps explicitly for existing #55/#62 backlog; don't close issues.\nYou have scoped read/write tools ONLY, no shell, external services, credentials, git commits, push, PR, or merge. Orchestrator runs lint, unit and CI checks after you return. Do not claim tests run. Read package scripts and ensure changes align. Persist component-specific decisions/provenance and remaining blockers in docs/evidence/components-55-62/. If an essential edit falls outside allowed_paths, report precise path and reason rather than broadening scope. Return changed files and limitations. Never edit reference snapshots or generated dist.\n",
+  "parent_task_id": null,
+  "task_kind": "component-implementation",
+  "workspace": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/kiro-next-components",
+  "capability_ids": [
+    "coding",
+    "docs",
+    "tests"
+  ],
+  "constraints": {
+    "allowed_paths": [
+      "src/ui/patterns/inline-alert.css",
+      "src/ui/patterns/illustrated-message.css",
+      "src/ui/index.css",
+      "src/elements/ui-inline-alert.js",
+      "src/elements/ui-illustrated-message.js",
+      "src/elements/index.js",
+      "src/elements/index.d.ts",
+      "schemas/web-inline-alert.ts",
+      "schemas/web-inline-alert.figma.ts",
+      "schemas/web-illustrated-message.ts",
+      "schemas/web-illustrated-message.figma.ts",
+      "site/patterns/inline-alert.md",
+      "site/patterns/inline-alert-playground.md",
+      "site/patterns/illustrated-message.md",
+      "site/patterns/illustrated-message-playground.md",
+      "site/components/illustrated-message.md",
+      "site/components/illustrated-message-playground.md",
+      "site/_includes/macros/ui.njk",
+      "site/lib/component-token-table.js",
+      "figma/exports/Patterns (UI).tokens.json",
+      "figma/token-projection.json",
+      "tests/inline-alert.test.mjs",
+      "tests/illustrated-message.test.mjs",
+      "tests/inline-alert-naming-migration.test.mjs",
+      "tests/illustrated-message-naming-migration.test.mjs",
+      "docs/evidence/components-55-62/"
+    ],
+    "allowed_actions": [
+      "read",
+      "edit"
+    ]
+  },
+  "source_refs": [
+    "https://github.com/tbielich/ui-foundations-runtime/issues/55",
+    "https://github.com/tbielich/ui-foundations-runtime/issues/62"
+  ],
+  "trace_id": "trace-kiro-components-55-62-20261108-attempt-2",
+  "metadata": {}
+}

@@ -387,3 +387,43 @@
   <div class="uif-progress-bar-track"><div class="uif-progress-bar-fill"{% if not unknown %} style="--_progress: {{ value }}"{% endif %}></div></div>
 </div>
 {%- endmacro %}
+
+{% macro inlineAlert(title='', description='', variant='', icon='', size='md', dismissible=false) -%}
+{%- set variantIcons = { 'info': 'info-circled', 'positive': 'checkmark-circled', 'negative': 'cross-circled', 'notice': 'exclamation-mark-circled' } -%}
+{%- set classes = 'uif-inline-alert' -%}
+{%- if variant in ['info', 'positive', 'negative', 'notice'] -%}{%- set classes = classes + ' ' + variant -%}{%- endif -%}
+{%- if size == 'sm' -%}{%- set classes = classes + ' sm' -%}{%- endif -%}
+{%- set iconName = (icon | trim) or variantIcons[variant] -%}
+<div class="{{ classes }}" role="alert">
+  {%- if iconName %}<span class="uif-inline-alert-icon"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ iconName }}.svg')" aria-hidden="true"></span></span>{% endif %}
+  <div class="uif-inline-alert-content">
+    {%- if title %}<strong class="uif-inline-alert-title">{{ title | escape }}</strong>{% endif %}
+    {%- if description %}<p class="uif-inline-alert-description">{{ description | escape }}</p>{% endif %}
+  </div>
+  {%- if dismissible %}<button type="button" class="uif-inline-alert-dismiss" aria-label="Dismiss"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross.svg')" aria-hidden="true"></span></button>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
+{%- set presets = {
+  'empty': { 'heading': 'Nothing here yet', 'description': 'Add content or create a new item to get started.', 'icon': 'message-info' },
+  'error': { 'heading': 'Something went wrong', 'description': 'Try again or go back to the previous step.', 'icon': 'message-alert' },
+  'no-results': { 'heading': 'No results found', 'description': 'Try adjusting your filters or search terms.', 'icon': 'search' }
+} -%}
+{%- set preset = preset if preset in ['empty', 'error', 'no-results'] else 'empty' -%}
+{%- set defaults = presets[preset] -%}
+{%- set heading = (heading | trim) or defaults.heading -%}
+{%- set description = (description | trim) or defaults.description -%}
+{%- set iconName = (illustrationIcon | trim) or defaults.icon -%}
+{%- set actionVariant = actionVariant if actionVariant in ['solid', 'outline', 'ghost'] else 'solid' -%}
+{%- set classes = 'uif-illustrated-message' -%}
+{%- if size == 'sm' -%}{%- set classes = classes + ' sm' -%}{%- endif -%}
+<div class="{{ classes }}" data-preset="{{ preset }}">
+  <div class="uif-illustrated-message-illustration" aria-hidden="true"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ iconName }}.svg');" aria-hidden="true"></span></div>
+  <div class="uif-illustrated-message-content">
+    {%- if heading %}<h2 class="uif-illustrated-message-heading">{{ heading | escape }}</h2>{% endif %}
+    {%- if description %}<p class="uif-illustrated-message-description">{{ description | escape }}</p>{% endif %}
+  </div>
+  {%- if actionLabel %}<div class="uif-illustrated-message-actions">{% if actionHref %}<a class="uif-button {{ actionVariant }}" href="{{ actionHref | escape }}">{{ actionLabel | escape }}</a>{% else %}<button class="uif-button {{ actionVariant }}" type="button">{{ actionLabel | escape }}</button>{% endif %}</div>{% endif %}
+</div>
+{%- endmacro %}
