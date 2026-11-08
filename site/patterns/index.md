@@ -13,7 +13,7 @@ permalink: /patterns/
 
 {% import "macros/ui.njk" as uif %}
 
-<div class="docs-hero-preview">
+<div class="docs-hero-preview docs-component-preview">
   <div class="docs-hero-preview-controls">
     <span class="docs-hero-switch" data-hero-group="brand">
       <button type="button" data-hero-brand="a" aria-pressed="true">Brand A</button>

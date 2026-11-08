@@ -2059,6 +2059,12 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   min-height: 72px;
 }
 
+/* Full-width patterns keep their normal layout inside overview samples. */
+.docs-component-card-preview > :is(.uif-meter, .uif-progress-bar, .uif-inline-alert, .uif-illustrated-message) {
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
 .docs-component-card-body {
   padding: 14px 16px;
 }
