@@ -1,0 +1,60 @@
+@layer components {
+  :is(.uif-illustrated-message, .illustrated-message) {
+    --_uif-local-scale: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: calc(var(--uif-illustrated-message-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  :is(.uif-illustrated-message-illustration, .illustrated-message-illustration) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--uif-illustrated-message-illustration-color);
+    font-size: calc(var(--uif-illustrated-message-illustration-size) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: 1;
+  }
+
+  :is(.uif-illustrated-message-illustration, .illustrated-message-illustration) > :is(.uif-icon, .icon) {
+    font-size: inherit;
+    color: inherit;
+  }
+
+  :is(.uif-illustrated-message-content, .illustrated-message-content) {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--uif-illustrated-message-content-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  :is(.uif-illustrated-message-heading, .illustrated-message-heading) {
+    margin: 0;
+    color: var(--uif-illustrated-message-heading-text-color);
+    font-family: var(--uif-illustrated-message-heading-font-family);
+    font-weight: var(--uif-illustrated-message-heading-font-weight);
+    font-size: calc(var(--uif-illustrated-message-heading-font-size) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--uif-illustrated-message-heading-line-height) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  :is(.uif-illustrated-message-description, .illustrated-message-description) {
+    margin: 0;
+    color: var(--uif-illustrated-message-description-text-color);
+    font-family: var(--uif-illustrated-message-description-font-family);
+    font-size: calc(var(--uif-illustrated-message-description-font-size) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--uif-illustrated-message-description-line-height) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  :is(.uif-illustrated-message-actions, .illustrated-message-actions) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--uif-illustrated-message-content-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  /* ── Local size ── */
+
+  :is(.uif-illustrated-message, .illustrated-message).sm {
+    --_uif-local-scale: var(--_uif-scale-small);
+  }
+}

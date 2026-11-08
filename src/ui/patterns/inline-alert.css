@@ -1,0 +1,121 @@
+@layer components {
+  .uif-inline-alert {
+    --_uif-local-scale: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--uif-inline-alert-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    padding-inline: calc(var(--uif-inline-alert-padding-inline) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    padding-block: calc(var(--uif-inline-alert-padding-block) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    /* Border width is fixed geometry and is never scaled. */
+    border: var(--uif-inline-alert-border-size) solid var(--uif-inline-alert-default-border-color);
+    border-radius: calc(var(--uif-inline-alert-border-radius) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    background: var(--uif-inline-alert-default-container-background);
+    color: var(--uif-inline-alert-default-text-color);
+    font-family: var(--uif-inline-alert-font-family, inherit);
+    font-size: calc(var(--uif-inline-alert-font-size) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--uif-inline-alert-line-height) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  /* ── Variants ── */
+
+  .uif-inline-alert.info {
+    background: var(--uif-inline-alert-info-container-background);
+    border-color: var(--uif-inline-alert-info-border-color);
+    color: var(--uif-inline-alert-info-text-color);
+  }
+
+  .uif-inline-alert.positive {
+    background: var(--uif-inline-alert-positive-container-background);
+    border-color: var(--uif-inline-alert-positive-border-color);
+    color: var(--uif-inline-alert-positive-text-color);
+  }
+
+  .uif-inline-alert.negative {
+    background: var(--uif-inline-alert-negative-container-background);
+    border-color: var(--uif-inline-alert-negative-border-color);
+    color: var(--uif-inline-alert-negative-text-color);
+  }
+
+  .uif-inline-alert.notice {
+    background: var(--uif-inline-alert-notice-container-background);
+    border-color: var(--uif-inline-alert-notice-border-color);
+    color: var(--uif-inline-alert-notice-text-color);
+  }
+
+  /* ── Icon slot ── */
+
+  .uif-inline-alert-icon {
+    flex: 0 0 auto;
+    display: inline-flex;
+    color: inherit;
+  }
+
+  .uif-inline-alert-icon > :is(.uif-icon, .icon),
+  .uif-inline-alert-dismiss > :is(.uif-icon, .icon) {
+    color: inherit;
+    line-height: calc(var(--uif-inline-alert-line-height) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    inline-size: 1lh;
+    block-size: 1lh;
+  }
+
+  /* ── Content ── */
+
+  .uif-inline-alert-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--uif-inline-alert-content-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    min-inline-size: 0;
+  }
+
+  .uif-inline-alert-title {
+    font-weight: var(--uif-inline-alert-title-font-weight);
+    color: inherit;
+  }
+
+  .uif-inline-alert-description {
+    margin: 0;
+    color: inherit;
+  }
+
+  /* ── Optional action ── */
+
+  .uif-inline-alert-action {
+    display: inline-flex;
+    margin-block-start: calc(var(--uif-inline-alert-content-gap) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  /* ── Dismiss button ── */
+
+  .uif-inline-alert-dismiss {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    line-height: 1;
+  }
+
+  .uif-inline-alert-dismiss:focus-visible,
+  .uif-inline-alert-dismiss.is-focus-visible {
+    outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
+    outline-offset: var(--uif-semantic-size-border-default);
+    border-radius: calc(var(--uif-inline-alert-border-radius) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+
+  /* ── Local size ── */
+
+  .uif-inline-alert.sm {
+    --_uif-local-scale: var(--_uif-scale-small);
+  }
+
+  /* ── Hidden state (after dismiss) ── */
+
+  .uif-inline-alert.is-hidden {
+    display: none;
+  }
+}

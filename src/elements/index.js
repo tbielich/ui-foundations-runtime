@@ -30,3 +30,5 @@ export { UIForm, UIFormGroup, UIFormField, UIFormHelper, UIFormActions } from ".
 export { UIStatusLight } from "./ui-status-light.js";
 export { UIMeter } from "./ui-meter.js";
 export { UIProgressBar } from "./ui-progress-bar.js";
+export { UIInlineAlert } from "./ui-inline-alert.js";
+export { UIIllustratedMessage } from "./ui-illustrated-message.js";

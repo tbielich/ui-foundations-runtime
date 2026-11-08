@@ -4143,6 +4143,196 @@
       "id": null,
       "path": "Progress Bar/Gap",
       "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Border Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Content Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Title Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Content Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Illustration/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Illustration/Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Line Height",
+      "file": "Patterns (UI).tokens.json"
     }
   ],
   "excludedCollections": [

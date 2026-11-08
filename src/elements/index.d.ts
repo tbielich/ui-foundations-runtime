@@ -45,6 +45,8 @@ export declare class UIFormActions extends UIElement {}
 export declare class UIStatusLight extends UIElement {}
 export declare class UIMeter extends UIElement {}
 export declare class UIProgressBar extends UIElement {}
+export declare class UIInlineAlert extends UIElement {}
+export declare class UIIllustratedMessage extends UIElement {}
 
 // --- Custom Element Tag Name Map ---
 
@@ -53,6 +55,8 @@ declare global {
     "uif-status-light": UIStatusLight;
     "uif-meter": UIMeter;
     "uif-progress-bar": UIProgressBar;
+    "uif-inline-alert": UIInlineAlert;
+    "uif-illustrated-message": UIIllustratedMessage;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

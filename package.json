@@ -74,7 +74,9 @@
     "./elements/ui-form": "./dist/elements/ui-form.js",
     "./elements/ui-status-light": "./dist/elements/ui-status-light.js",
     "./elements/ui-meter": "./dist/elements/ui-meter.js",
-    "./elements/ui-progress-bar": "./dist/elements/ui-progress-bar.js"
+    "./elements/ui-progress-bar": "./dist/elements/ui-progress-bar.js",
+    "./elements/ui-inline-alert": "./dist/elements/ui-inline-alert.js",
+    "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js"
   },
   "scripts": {
     "icons:generate-list": "node scripts/generate-icon-list.mjs",
