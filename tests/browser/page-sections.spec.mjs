@@ -12,7 +12,8 @@ test("every page type has a full-width hero on an unpainted page canvas", async 
       expect(bounds.x).toBeCloseTo(main.x, 1);
       expect(bounds.width).toBeCloseTo(main.width, 1);
       expect(await page.locator('body').evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
-      expect(await hero.evaluate(el => getComputedStyle(el).backgroundColor)).not.toBe('rgba(0, 0, 0, 0)');
+      expect(await hero.evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(255, 255, 255)');
+      expect(await page.locator('.docs-page-section').evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(241, 243, 237)');
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
     }
   }
