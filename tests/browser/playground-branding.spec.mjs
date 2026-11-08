@@ -17,42 +17,57 @@ test("Meter and Illustrated Message keep selected brand colors after control upd
 });
 
 test("selected Tabs follow Solid Button branding in light and Outline Button branding in dark", async ({ page }) => {
-  await page.goto('/patterns/tabs-playground/');
-  const stage = page.locator('.playground-stage');
-  for (const mode of ['light', 'dark']) {
-    await page.locator(`[data-hero-mode="${mode}"]`).click();
-    for (const brand of ['a', 'b', 'c']) {
-      await page.locator(`[data-hero-brand="${brand}"]`).click();
-      const expected = await stage.evaluate((el, mode) => {
-        const reference = document.createElement('button');
-        reference.className = mode === 'dark' ? 'uif-button outline' : 'uif-button solid';
-        reference.textContent = 'Reference';
-        el.append(reference);
-        const styles = getComputedStyle(reference);
-        const color = mode === 'dark' ? styles.color : styles.backgroundColor;
-        reference.remove();
-        return color;
-      }, mode);
-      const selected = stage.getByRole('tab', { selected: true });
-      await expect(selected).toHaveCSS('color', expected);
-      await expect(selected).toHaveCSS('border-bottom-color', expected);
-      const contrast = await selected.evaluate(el => {
-        const background = getComputedStyle(el.closest('.playground-stage')).backgroundColor;
-        const foreground = getComputedStyle(el).color;
-        const luminance = color => {
-          const channels = color.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => {
-            const s = v / 255;
-            return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
-          });
-          return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
-        };
-        const a = luminance(background), b = luminance(foreground);
-        return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
-      });
-      expect(contrast).toBeGreaterThanOrEqual(4.5);
-      await stage.getByRole('tab').nth(1).click();
-      await expect(stage.getByRole('tab', { selected: true })).toHaveCSS('color', expected);
-      await expect(stage.getByRole('tab', { selected: true })).toHaveCSS('border-bottom-color', expected);
+  for (const path of ['/patterns/tabs/', '/patterns/tabs-playground/']) {
+    await page.goto(path);
+    const stage = page.locator('.docs-hero-preview-stage').first();
+    for (const mode of ['light', 'dark']) {
+      await page.locator(`[data-hero-mode="${mode}"]`).click();
+      for (const brand of ['a', 'b', 'c']) {
+        await page.locator(`[data-hero-brand="${brand}"]`).click();
+        const expected = await stage.evaluate((el, mode) => {
+          const reference = document.createElement('button');
+          reference.className = mode === 'dark' ? 'uif-button outline' : 'uif-button solid';
+          reference.textContent = 'Reference';
+          el.append(reference);
+          const styles = getComputedStyle(reference);
+          const color = mode === 'dark' ? styles.color : styles.backgroundColor;
+          reference.remove();
+          return color;
+        }, mode);
+        const selected = stage.getByRole('tab', { selected: true });
+        await expect(selected).toHaveCSS('color', expected);
+        await expect(selected).toHaveCSS('border-bottom-color', expected);
+        const standalone = await stage.evaluate(el => {
+          const tab = document.createElement('button');
+          tab.className = 'uif-tab';
+          tab.setAttribute('aria-selected', 'true');
+          tab.textContent = 'Standalone selected tab';
+          el.append(tab);
+          const styles = getComputedStyle(tab);
+          const result = { color: styles.color, border: styles.borderBottomColor };
+          tab.remove();
+          return result;
+        });
+        expect(standalone).toEqual({ color: expected, border: expected });
+        const contrast = await selected.evaluate(el => {
+          const background = getComputedStyle(el.closest('.docs-hero-preview-stage')).backgroundColor;
+          const foreground = getComputedStyle(el).color;
+          const luminance = color => {
+            const channels = color.match(/[\d.]+/g).slice(0, 3).map(Number).map(v => {
+              const s = v / 255;
+              return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+            });
+            return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+          };
+          const a = luminance(background), b = luminance(foreground);
+          return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+        });
+        expect(contrast).toBeGreaterThanOrEqual(4.5);
+        if (path.includes('playground')) await stage.getByRole('tab').nth(1).click();
+        await stage.getByRole('tab', { selected: true }).hover();
+        await expect(stage.getByRole('tab', { selected: true })).toHaveCSS('color', expected);
+        await expect(stage.getByRole('tab', { selected: true })).toHaveCSS('border-bottom-color', expected);
+      }
     }
   }
 });

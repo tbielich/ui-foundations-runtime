@@ -1,7 +1,7 @@
 @layer components {
   /* Solid surfaces identify the brand in light mode. In dark mode, Tabs use
      the same readable foreground/contour roles as the Outline Button. */
-  [data-mode="dark"] :is(.uif-tabs, .tabs) {
+  [data-mode="dark"] :is(.uif-tabs, .tabs, .uif-tab-list, .tab-list, .uif-tab, .tab) {
     --uif-tabs-text-color-active: var(--uif-semantic-color-action-foreground-active);
     --uif-tabs-border-color-active: var(--uif-semantic-color-border-brand-active);
   }
