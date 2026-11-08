@@ -25,11 +25,13 @@ function sanitizeIconName(name) {
  *   description — body text
  *   icon        — override icon name; defaults to a variant-appropriate icon
  *   size        — "md" (default) or "sm"; relative to the inherited container scale
+ *   action-label — optional action text; renders a button by default
+ *   action-href  — allowed link URL (http(s), mailto, tel, / or #); otherwise #
  *   dismissible — boolean; adds a dismiss button that hides the alert
  */
 class UIInlineAlert extends UIElement {
   static get observedAttributes() {
-    return ["variant", "title", "description", "icon", "size", "dismissible"];
+    return ["variant", "title", "description", "icon", "size", "dismissible", "action-label", "action-href"];
   }
 
   render() {
@@ -40,6 +42,13 @@ class UIInlineAlert extends UIElement {
     const iconOverride = sanitizeIconName(this.getAttr("icon"));
     const size = this.getAttr("size", "md");
     const dismissible = this.getBool("dismissible");
+
+    const actionLabel = this.getAttr("action-label");
+    const requestedHref = this.getAttr("action-href");
+    const actionHref = /^(?:https?:|mailto:|tel:|\/|#)/.test(requestedHref) ? requestedHref : "#";
+    const actionHtml = actionLabel
+      ? `<div class="uif-inline-alert-action">${requestedHref ? '<a class="uif-button outline"></a>' : '<button type="button" class="uif-button outline"></button>'}</div>`
+      : "";
 
     const icon = iconOverride || DEFAULT_ICONS[variant] || "";
 
@@ -58,7 +67,7 @@ class UIInlineAlert extends UIElement {
       ? `<button type="button" class="uif-inline-alert-dismiss" aria-label="Dismiss"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross.svg')" aria-hidden="true"></span></button>`
       : "";
 
-    this.innerHTML = `<div class="${classes.join(" ")}" role="alert">${iconHtml}<div class="uif-inline-alert-content">${titleHtml}${descHtml}</div>${dismissHtml}</div>`;
+    this.innerHTML = `<div class="${classes.join(" ")}" role="alert">${iconHtml}<div class="uif-inline-alert-content">${titleHtml}${descHtml}${actionHtml}</div>${dismissHtml}</div>`;
 
     // Assign user text via textContent so markup in attributes is not interpreted.
     if (title) {
@@ -66,6 +75,12 @@ class UIInlineAlert extends UIElement {
     }
     if (description) {
       this.querySelector(".uif-inline-alert-description").textContent = description;
+    }
+
+    if (actionLabel) {
+      const action = this.querySelector(".uif-inline-alert-action > *");
+      action.textContent = actionLabel;
+      if (requestedHref) action.setAttribute("href", actionHref);
     }
 
     if (dismissible) {

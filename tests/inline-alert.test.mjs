@@ -48,3 +48,21 @@ test("inline alert macro applies the sm local size class", () => {
   const small = render('{{ uif.inlineAlert(title="Small", variant="info", size="sm") }}');
   assert.match(small, /class="uif-inline-alert info sm"/);
 });
+
+ test("inline-alert action URLs reject executable schemes and escape labels", () => {
+  for (const href of ["javascript:alert(1)", "java\tscript:alert(1)", "data:text/html,test", "vbscript:msgbox(1)", " javascript:alert(1)"]) {
+    const html = env.renderString('{% import "macros/ui.njk" as uif %}{{ uif.inlineAlert(actionLabel=label, actionHref=href) }}', { label: '<b>Retry</b>', href });
+    assert.match(html, /href="#"/);
+    assert.match(html, /&lt;b&gt;Retry&lt;\/b&gt;/);
+  }
+  for (const href of ["https://example.com", "http://example.com", "mailto:test@example.com", "tel:123", "/retry?x=1&y=2", "#retry"]) {
+    const html = env.renderString('{% import "macros/ui.njk" as uif %}{{ uif.inlineAlert(actionLabel="Retry", actionHref=href) }}', { href });
+    assert.ok(html.includes('href="' + href.replaceAll('&', '&amp;') + '"'));
+  }
+ });
+
+test("inline alert optional action supports button, link and omission", () => {
+  assert.match(render('{{ uif.inlineAlert(actionLabel="Retry") }}'), /<button type="button" class="uif-button outline">Retry<\/button>/);
+  assert.match(render('{{ uif.inlineAlert(actionLabel="Retry", actionHref="/retry") }}'), /<a class="uif-button outline" href="\/retry">Retry<\/a>/);
+  assert.doesNotMatch(render('{{ uif.inlineAlert(title="Hello") }}'), /uif-inline-alert-action/);
+});

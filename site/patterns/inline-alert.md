@@ -209,3 +209,15 @@ Use the brand and mode switches in the preview above. Visual values come from th
 </div>
 
 Automated checks cover markup, token resolution and naming. They do not certify complete accessibility or live design parity.
+
+### Optional action
+
+Use `action-label` / `actionLabel` to add one recovery action inside the content region. It renders as a button, or as a link when `action-href` / `actionHref` is provided. Allowed URL prefixes are `http:`, `https:`, `mailto:`, `tel:`, `/` and `#`; unsupported URLs fall back to `#`. Action text is escaped.
+
+```html
+<uif-inline-alert variant="negative" title="Could not save" action-label="Try again"></uif-inline-alert>
+```
+
+```njk
+{% raw %}{{ uif.inlineAlert(title="Session expired", actionLabel="Sign in", actionHref="/login") }}{% endraw %}
+```

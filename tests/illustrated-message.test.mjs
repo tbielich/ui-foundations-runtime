@@ -51,3 +51,15 @@ test("illustrated message macro honors overrides and the sm local size", () => {
   const small = render('{{ uif.illustratedMessage(preset="empty", size="sm") }}');
   assert.match(small, /class="uif-illustrated-message sm"/);
 });
+
+ test("illustrated-message action URLs reject executable schemes and escape labels", () => {
+  for (const href of ["javascript:alert(1)", "java\tscript:alert(1)", "data:text/html,test", "vbscript:msgbox(1)", " javascript:alert(1)"]) {
+    const html = env.renderString('{% import "macros/ui.njk" as uif %}{{ uif.illustratedMessage(actionLabel=label, actionHref=href) }}', { label: '<b>Retry</b>', href });
+    assert.match(html, /href="#"/);
+    assert.match(html, /&lt;b&gt;Retry&lt;\/b&gt;/);
+  }
+  for (const href of ["https://example.com", "http://example.com", "mailto:test@example.com", "tel:123", "/retry?x=1&y=2", "#retry"]) {
+    const html = env.renderString('{% import "macros/ui.njk" as uif %}{{ uif.illustratedMessage(actionLabel="Retry", actionHref=href) }}', { href });
+    assert.ok(html.includes('href="' + href.replaceAll('&', '&amp;') + '"'));
+  }
+ });

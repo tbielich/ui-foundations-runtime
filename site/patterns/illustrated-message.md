@@ -97,7 +97,7 @@ The default context is medium. A nested container replaces the inherited context
     <tr><td><code>description</code></td><td><code>description</code></td><td>Description text. Defaults to the preset description.</td></tr>
     <tr><td><code>illustration-icon</code></td><td><code>illustrationIcon</code></td><td>Icon name. Defaults to the preset icon.</td></tr>
     <tr><td><code>action-label</code></td><td><code>actionLabel</code></td><td>Renders a single action when present. Empty by default.</td></tr>
-    <tr><td><code>action-href</code></td><td><code>actionHref</code></td><td>Renders the action as a link; otherwise a button.</td></tr>
+    <tr><td><code>action-href</code></td><td><code>actionHref</code></td><td>Renders the action as a link; otherwise a button. Allowed URL prefixes: <code>http:</code>, <code>https:</code>, <code>mailto:</code>, <code>tel:</code>, <code>/</code> and <code>#</code>. Unsupported URLs fall back to <code>#</code>.</td></tr>
     <tr><td><code>action-variant</code></td><td><code>actionVariant</code></td><td><code>solid</code> (default), <code>outline</code>, <code>ghost</code>.</td></tr>
     <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>. Relative to the inherited container scale.</td></tr>
   </tbody>
@@ -153,7 +153,7 @@ The message itself is not interactive. When an action is present it is a standar
 
 <h2 id="accessibility">Accessibility</h2>
 
-- The illustration is decorative by default and carries <code>aria-hidden="true"</code>. When a custom illustration communicates unique meaning, give it an accessible name.
+- The illustration is decorative by default and carries <code>aria-hidden="true"</code>. Custom illustration markup remains exposed to assistive technology: provide an accessible name when it communicates unique meaning, or set `aria-hidden="true"` on the custom illustration when decorative.
 - The heading uses an <code>h2</code>; confirm it fits the surrounding document outline, or adjust the level in a custom slot.
 - Keep the action focusable and clearly labelled.
 - Do not rely on the illustration alone to convey the state; the heading and description carry the meaning.

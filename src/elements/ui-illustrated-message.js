@@ -129,7 +129,7 @@ class UIIllustratedMessage extends UIElement {
     const classes = ["uif-illustrated-message"];
     if (size === "sm") classes.push("sm");
 
-    this.innerHTML = `<div class="${classes.join(" ")}" data-preset="${preset}"><div class="uif-illustrated-message-illustration" aria-hidden="true">${illustration}</div><div class="uif-illustrated-message-content">${headingMarkup}${descriptionMarkup}</div>${actionMarkup}</div>`;
+    this.innerHTML = `<div class="${classes.join(" ")}" data-preset="${preset}"><div class="uif-illustrated-message-illustration">${illustration}</div><div class="uif-illustrated-message-content">${headingMarkup}${descriptionMarkup}</div>${actionMarkup}</div>`;
   }
 }
 
