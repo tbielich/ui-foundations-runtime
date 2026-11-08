@@ -3487,3 +3487,9 @@ details.color-family > .color-table-wrap {
 @media (max-width: 760px) {
   .docs-main > .docs-page-navigation { padding: 8px 16px; }
 }
+
+/* Demonstrate the reduced-motion result even without an OS preference. */
+.docs-reduced-motion-preview .uif-progress-bar.is-indeterminate > .uif-progress-bar-track > .uif-progress-bar-fill {
+  animation: none;
+  width: 100%;
+}
