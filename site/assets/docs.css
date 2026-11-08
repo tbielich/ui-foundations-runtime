@@ -35,7 +35,7 @@
   --docs-text-1: #606c62;
   --docs-accent: #486844;
   /* Documentation annotations contrast with the sage workspace, not Brand UI. */
-  --docs-annotation-accent: #687d5f;
+  --docs-annotation-accent: #9747ff;
   --docs-shadow-sm: 0 1px 3px rgba(21, 39, 25, 0.04);
   --docs-shadow-md: 0 12px 32px rgba(21, 39, 25, 0.05);
 }
