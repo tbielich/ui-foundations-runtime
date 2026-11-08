@@ -58,7 +58,7 @@ playground:
       name: actionLabel
       label: Action label
       query: true
-      default: ""
+      default: Create item
     - kind: text
       name: actionHref
       label: Action href

@@ -147,3 +147,5 @@ Panel switching is state-driven through the selected tab and the controlled pane
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Keyboard interactions</strong><span>Full ARIA tablist pattern.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Design tokens</strong><span>Component-scoped tokens (<code>--uif-tabs-*</code>).</span></div></div>
 </div>
+
+The selected tab uses the Solid Button's default Brand color in light mode. In dark mode, text and indicator use the Outline Button's readable Brand foreground and contour roles. The Runtime dark-mode projection is defined in the Tabs stylesheet; live Figma bindings have not been updated.

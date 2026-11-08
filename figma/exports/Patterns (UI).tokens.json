@@ -6255,7 +6255,7 @@
       "Color Active": {
         "$type": "color",
         "$value": {
-          "$ref": "Semantics/Color/Border/Brand/Active"
+          "$ref": "Semantics/Color/Action/Surface/Default"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2789:40",
@@ -6266,8 +6266,8 @@
             "WEB": "var(--uif-tabs-border-color-active)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:75",
-            "targetVariableName": "Semantics/Color/Border/Brand/Active",
+            "targetVariableId": "VariableID:3173:34",
+            "targetVariableName": "Semantics/Color/Action/Surface/Default",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },
@@ -6333,7 +6333,7 @@
       "Color Active": {
         "$type": "color",
         "$value": {
-          "$ref": "Semantics/Color/Action/Foreground/Active"
+          "$ref": "Semantics/Color/Action/Surface/Default"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2789:43",
@@ -6345,8 +6345,8 @@
             "WEB": "var(--uif-tabs-text-color-active)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:83",
-            "targetVariableName": "Semantics/Color/Action/Foreground/Active",
+            "targetVariableId": "VariableID:3173:34",
+            "targetVariableName": "Semantics/Color/Action/Surface/Default",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },

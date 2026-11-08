@@ -66,7 +66,7 @@ test("page jump navigation stacks below mobile breadcrumbs and beside desktop co
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/foundations/architecture/");
   const toc = page.getByRole("navigation", { name: "On this page", exact: true });
-  const content = page.locator(".docs-content");
+  const content = page.locator(".docs-page-section > .docs-content");
   const disclosure = page.locator(".docs-toc-mobile");
   await expect(toc).not.toBeVisible();
   await disclosure.locator("summary").click();

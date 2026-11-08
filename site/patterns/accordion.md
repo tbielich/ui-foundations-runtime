@@ -107,3 +107,5 @@ playgroundLabel: Open Accordion Playground
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Keyboard interactions</strong><span>Native details/summary behavior.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Design tokens</strong><span>Component-scoped tokens (<code>--uif-accordion-*</code>).</span></div></div>
 </div>
+
+The accordion fills the available inline space and keeps that width when items open or close. Hover uses a subtle tint mixed from the current Semantic Brand foreground and surface; no Brand-specific colors are hardcoded.
