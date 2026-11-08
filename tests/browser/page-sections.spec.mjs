@@ -34,3 +34,23 @@ test("pattern preview and introduction stay above the Anatomy section divider", 
     expect(await hero.evaluate(el => getComputedStyle(el).borderBottomStyle)).toBe('solid');
   }
 });
+
+test("Tooltip preview belongs to the hero while Options starts the content section", async ({ page }) => {
+  await page.goto("/patterns/tooltip/");
+  const hero = page.locator('.docs-page-hero');
+  await expect(hero.locator('.docs-hero-preview')).toHaveCount(1);
+  await expect(hero.getByRole('button', { name: 'Hover me' })).toBeVisible();
+  await expect(hero.locator('#options')).toHaveCount(0);
+  await expect(page.locator('.docs-page-section #options')).toBeVisible();
+});
+
+test("Calendar keeps only its preview in the hero and starts its content at Usage", async ({ page }) => {
+  await page.goto("/patterns/calendar/");
+  const hero = page.locator('.docs-page-hero');
+  const content = page.locator('.docs-page-section');
+  await expect(hero.locator('.docs-hero-preview')).toHaveCount(1);
+  await expect(hero.locator('#usage, #states, #accessibility, #anatomy')).toHaveCount(0);
+  for (const id of ['usage', 'states', 'accessibility', 'anatomy']) {
+    await expect(content.locator('#' + id)).toHaveCount(1);
+  }
+});
