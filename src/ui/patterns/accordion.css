@@ -3,6 +3,9 @@
   :is(.uif-accordion, .accordion) {
     display: flex;
     flex-direction: column;
+    inline-size: 100%;
+    min-inline-size: 0;
+    max-inline-size: 100%;
     border: var(--uif-accordion-border-size-default) solid var(--uif-accordion-border-color-default);
     border-radius: var(--uif-accordion-border-radius);
     overflow: hidden;
@@ -54,7 +57,7 @@
 
   :is(.uif-accordion-item, .accordion-item) > summary:hover,
   :is(.uif-accordion-item, .accordion-item) > summary.is-hover {
-    background: var(--color-fill-hover);
+    background: color-mix(in srgb, var(--uif-semantic-color-action-foreground-default) 8%, var(--uif-semantic-color-surface-default));
   }
 
   :is(.uif-accordion-item, .accordion-item) > summary:focus-visible,

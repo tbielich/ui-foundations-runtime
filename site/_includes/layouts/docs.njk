@@ -387,6 +387,7 @@
         }
 
         function applySnapshot(stage, brand, mode) {
+          stage.dataset.mode = mode;
           var origBrand = root.dataset.brand;
           var origMode = root.dataset.mode;
           root.dataset.brand = brand;
