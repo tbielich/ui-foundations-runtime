@@ -193,6 +193,7 @@
       </aside>
 
       <main class="docs-main">
+        <section class="docs-page-section{% if page.url == "/" %} docs-page-section--home{% endif %}">
         <article class="docs-content">
         <div class="docs-page-navigation">
         <div class="docs-navigation-toolbar">
@@ -249,12 +250,13 @@
         </div>
           {% set isComponentsOverview = page.url == "/patterns/" or page.url == "/patterns" %}
           {% set isComponentDoc = page.url and page.url.indexOf("/patterns/") == 0 and not isPlayground and not isComponentsOverview %}
-          {% if title and not compactTitleInBreadcrumb %}
+          {% if title and not compactTitleInBreadcrumb and page.url != "/" %}
           <h1>{{ title }}</h1>
           {% endif %}
-          {% if description and not isPlayground %}<p class="page-intro">{{ description }}</p>{% endif %}
+          {% if description and not isPlayground and page.url != "/" %}<p class="page-intro">{{ description }}</p>{% endif %}
           {{ content | safe }}
         </article>
+        </section>
       </main>
     </div>
 
@@ -300,7 +302,7 @@
 
         aside.appendChild(ul);
 
-        var main = document.querySelector(".docs-main");
+        var main = document.querySelector(".docs-page-section");
         var mobileSlot = document.querySelector(".docs-toc-mobile-slot");
         var toolbar = document.querySelector(".docs-navigation-toolbar");
         var disclosure = document.querySelector(".docs-toc-mobile");

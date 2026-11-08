@@ -198,6 +198,10 @@ details[open] > .docs-nav-group-toggle::before {
 
 .docs-main {
   min-width: 0;
+}
+
+.docs-page-section {
+  min-width: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
 }
@@ -1848,17 +1852,41 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 /* ─── Richer homepage ─── */
-/* Section / container model: every home section is a full-width block that
-   bleeds out of the padded `.docs-content` column; the inner container holds
-   the content and restores the horizontal padding. `--docs-content-pad-inline`
-   must match the inline padding of `.docs-content` (see that rule). */
-:where(.docs-home-hero, .docs-home-section) {
+/* Sections own the content grid; their surfaces span the whole main area. */
+.docs-page-section--home {
   display: block;
-  margin-inline: calc(var(--docs-content-pad-inline) * -1);
+}
+
+.docs-page-section--home > .docs-content {
+  max-width: none;
+  padding: 0;
+}
+
+.docs-page-section--home .docs-page-navigation {
+  margin: 0;
+  padding-inline: var(--docs-content-pad-inline);
+}
+
+:where(.docs-home-hero, .docs-home-section) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1120px) minmax(0, 1fr);
+  padding-inline: 32px;
+  margin-inline: 0;
 }
 
 :where(.docs-home-hero-inner, .docs-home-section-inner) {
-  padding-inline: var(--docs-content-pad-inline);
+  grid-column: 2;
+  min-width: 0;
+}
+
+.docs-content > .docs-home-hero {
+  margin-top: 0;
+}
+
+@media (max-width: 980px) {
+  :where(.docs-home-hero, .docs-home-section) {
+    padding-inline: 16px;
+  }
 }
 
 /* Hero is the only section carrying a background band; surface-1 is a touch
@@ -3013,7 +3041,7 @@ details.color-family > .color-table-wrap {
 }
 
 @media (max-width: 760px) {
-  .docs-main {
+  .docs-page-section {
     grid-template-columns: minmax(0, 1fr);
   }
 
