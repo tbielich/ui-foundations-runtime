@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "scope": "Documentation workspace headline font only; does not replace UIF Runtime font tokens or component typography",
+  "cssFamily": "UIF Studio Roboto Slab",
+  "role": "headlines",
+  "catalogueRepository": "https://github.com/google/fonts",
+  "catalogueRevision": "86aced91de05cd4f96a06838124cca45be337b2b",
+  "conversion": {
+    "python": "3.14.5",
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1",
+    "method": "TTFont(BytesIO(source), recalcTimestamp=False); font.flavor=\"woff2\"; font.save(output)",
+    "subset": "None; complete source glyph set retained",
+    "modificationNotice": "Format conversion TTF to WOFF2 only; no outline, naming, metrics, axis or glyph subset edits intended."
+  },
+  "font": {
+    "family": "Roboto Slab",
+    "style": "normal",
+    "cssWeightRange": "100 900",
+    "file": "roboto-slab-variable.woff2",
+    "bytes": 118296,
+    "sha256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed",
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf",
+      "bytes": 251880,
+      "sha256": "786ae192477447d33c6672c3055fba7cbfe45184c9a79e77a14f15716ca05b16"
+    },
+    "metadataUrl": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/apache/robotoslab/METADATA.pb",
+    "names": {
+      "1": ["Roboto Slab"],
+      "2": ["Regular"],
+      "4": ["Roboto Slab Regular"],
+      "5": ["Version 2.002"],
+      "6": ["RobotoSlab-Regular"]
+    },
+    "axes": [
+      {
+        "tag": "wght",
+        "min": 100.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    ],
+    "license": {
+      "url": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/apache/robotoslab/LICENSE.txt",
+      "file": "roboto-slab-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "type": "Apache-2.0"
+    },
+    "glyphCheck": {
+      "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+      "missing": [],
+      "requiredPresent": true,
+      "unicodeCodepoints": 901,
+      "cmapPreserved": true
+    },
+    "binaryReadable": true
+  }
+}
