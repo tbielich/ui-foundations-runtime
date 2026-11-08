@@ -45,7 +45,7 @@ body {
   min-height: 100vh;
   font-family: var(--docs-font-sans);
   color: var(--docs-text-0);
-  background: var(--docs-surface-0);
+  background: none;
 }
 
 .docs-shell {
@@ -3443,4 +3443,46 @@ details.color-family > .color-table-wrap {
   border-color: var(--docs-accent);
   background: var(--docs-accent);
   color: #fff;
+}
+
+/* Page surfaces belong to sections, leaving the document canvas unpainted. */
+.docs-page-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  background: var(--docs-surface-1);
+  border-block-end: 1px solid var(--docs-border);
+}
+
+.docs-page-hero > .docs-content {
+  padding-block: 24px 32px;
+}
+
+.docs-page-hero .docs-hero {
+  border-block-end: 0;
+  padding-block-end: 0;
+  margin-block-end: 0;
+}
+
+.docs-main > .docs-page-navigation {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 24px 32px 0;
+  background: var(--docs-surface-1);
+}
+
+.docs-main > .docs-page-navigation .docs-breadcrumb {
+  margin: 0;
+}
+
+@media (min-width: 761px) {
+  .docs-main--home > .docs-page-navigation { display: none; }
+}
+
+@media (max-width: 980px) {
+  .docs-main > .docs-page-navigation { padding-inline: 16px; }
+}
+
+@media (max-width: 760px) {
+  .docs-main > .docs-page-navigation { padding: 8px 16px; }
 }

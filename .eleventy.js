@@ -1,4 +1,5 @@
 const { renderComponentTokenTable } = require("./site/lib/component-token-table.js");
+const { pageSections } = require("./site/lib/page-sections.js");
 const siteConfig = require("./config/site.js");
 
 function trimTrailingSlash(value) {
@@ -31,6 +32,7 @@ function vaultDocumentationUrl(path = "") {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter("pageSections", pageSections);
   eleventyConfig.addShortcode("componentTokenTable", renderComponentTokenTable);
   eleventyConfig.addFilter("vaultDocumentationUrl", vaultDocumentationUrl);
   eleventyConfig.addFilter("sitePath", (value) => siteConfig.path(value));

@@ -192,9 +192,7 @@
         </nav>
       </aside>
 
-      <main class="docs-main">
-        <section class="docs-page-section{% if page.url == "/" %} docs-page-section--home{% endif %}">
-        <article class="docs-content">
+      <main class="docs-main{% if page.url == "/" %} docs-main--home{% endif %}">
         <div class="docs-page-navigation">
         <div class="docs-navigation-toolbar">
           <button class="docs-navigation-trigger" type="button" aria-expanded="false" aria-controls="docs-navigation-drawer" aria-label="Open navigation">
@@ -250,13 +248,27 @@
         </div>
           {% set isComponentsOverview = page.url == "/patterns/" or page.url == "/patterns" %}
           {% set isComponentDoc = page.url and page.url.indexOf("/patterns/") == 0 and not isPlayground and not isComponentsOverview %}
-          {% if title and not compactTitleInBreadcrumb and page.url != "/" %}
+          {% if page.url == "/" %}
+          <section class="docs-page-section docs-page-section--home">
+            <article class="docs-content">{{ content | safe }}</article>
+          </section>
+          {% else %}
+          {% set sections = content | pageSections(isComponentDoc) %}
+          <section class="docs-page-hero">
+          <div class="docs-content">
+          {% if title and not compactTitleInBreadcrumb %}
           <h1>{{ title }}</h1>
           {% endif %}
           {% if description and not isPlayground and page.url != "/" %}<p class="page-intro">{{ description }}</p>{% endif %}
-          {{ content | safe }}
-        </article>
-        </section>
+          {{ sections.hero | safe }}
+          </div>
+          </section>
+          <section class="docs-page-section">
+          <article class="docs-content">
+          {{ sections.body | safe }}
+          </article>
+          </section>
+          {% endif %}
       </main>
     </div>
 
