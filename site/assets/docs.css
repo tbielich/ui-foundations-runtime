@@ -1,19 +1,43 @@
+/* Documentation workspace appearance only. These fonts are never assigned to
+   Runtime primitives or component tokens.
+   License: fonts/inter-LICENSE.txt (OFL-1.1),
+            fonts/roboto-slab-LICENSE.txt (Apache-2.0). */
+@font-face {
+  font-family: "UIF Studio Inter";
+  src: url("./fonts/inter-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UIF Studio Roboto Slab";
+  src: url("./fonts/roboto-slab-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 :root {
   --docs-sidebar-width: 312px;
-  --docs-font-sans: "Manrope", "Avenir Next", "Noto Sans", sans-serif;
+  --docs-font-sans: "UIF Studio Inter", Inter, system-ui, sans-serif;
+  /* Headline face for docs chrome only (Inter stays the text/UI face). */
+  --docs-font-display: "UIF Studio Roboto Slab", "Roboto Slab", Georgia, serif;
   --docs-code-font:
     var(--font-family-mono, "SFMono-Regular"), Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
-  --docs-surface-0: #f5f7fb;
-  --docs-surface-1: #ffffff;
-  --docs-surface-2: #eef2f8;
-  --docs-border: #d9e1ec;
-  --docs-border-strong: #c8d3e1;
-  --docs-text-0: #0d1522;
-  --docs-text-1: #4a5a70;
-  --docs-accent: #2563eb;
-  --docs-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.08);
-  --docs-shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+  --docs-surface-0: #f1f3ed;
+  --docs-surface-1: #fafbf7;
+  --docs-surface-2: #e9ede5;
+  --docs-border: #d8ded8;
+  --docs-border-strong: #b5c1b3;
+  --docs-text-0: #192526;
+  --docs-text-1: #606c62;
+  --docs-accent: #486844;
+  /* Documentation annotations contrast with the sage workspace, not Brand UI. */
+  --docs-annotation-accent: #687d5f;
+  --docs-shadow-sm: 0 1px 3px rgba(21, 39, 25, 0.04);
+  --docs-shadow-md: 0 12px 32px rgba(21, 39, 25, 0.05);
 }
 
 body {
@@ -21,10 +45,7 @@ body {
   min-height: 100vh;
   font-family: var(--docs-font-sans);
   color: var(--docs-text-0);
-  background:
-    radial-gradient(circle at 12% 0%, #edf5ff 0%, transparent 36%),
-    radial-gradient(circle at 88% 100%, #f4f8f2 0%, transparent 30%),
-    var(--docs-surface-0);
+  background: var(--docs-surface-0);
 }
 
 .docs-shell {
@@ -40,7 +61,7 @@ body {
   height: 100vh;
   overflow: auto;
   border-right: 1px solid var(--docs-border);
-  background: linear-gradient(180deg, #f8fbff 0%, #f4f7fc 100%);
+  background: var(--docs-surface-0);
   padding: 20px 16px 28px;
 }
 
@@ -161,7 +182,7 @@ details[open] > .docs-nav-group-toggle::before {
 .docs-nav-group a:hover,
 .docs-nav-top a:hover {
   border-color: var(--docs-border);
-  background: #fff;
+  background: var(--docs-surface-1);
   color: var(--docs-text-0);
 }
 
@@ -182,10 +203,11 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-content {
+  --docs-content-pad-inline: 32px;
   grid-column: 1;
   grid-row: 1;
   max-width: 1120px;
-  padding: 34px 32px 48px;
+  padding: 34px var(--docs-content-pad-inline) 48px;
 }
 
 .docs-content > * + * {
@@ -267,7 +289,7 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-page-link:hover {
-  border-color: #b8c7db;
+  border-color: var(--docs-border-strong);
   box-shadow: var(--docs-shadow-sm);
 }
 
@@ -426,7 +448,7 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-table tbody tr:hover td {
-  background: #f8fbff;
+  background: var(--docs-surface-2);
 }
 
 .docs-table tbody tr:last-child td {
@@ -461,7 +483,7 @@ details[open] > .docs-nav-group-toggle::before {
 .docs-calendar-anatomy-target {
   position: absolute;
   z-index: 1;
-  border: 1px dashed var(--docs-accent);
+  border: 1px dashed var(--docs-annotation-accent);
   border-radius: 6px;
   pointer-events: none;
 }
@@ -660,19 +682,20 @@ details[open] > .docs-nav-group-toggle::before {
   margin: 0;
 }
 
-.playground-code-panel .code-tabs-bar.button-group {
-  border-color: #303a48;
-  background: #1a2230;
+/* Format controls are workspace chrome; the code editor below stays dark. */
+.playground-code-panel .code-tabs-bar:is(.uif-button-group, .button-group) {
+  border-color: var(--docs-border);
+  background: var(--docs-surface-2);
 }
 
-.playground-code-panel .code-tabs-bar.button-group > .button {
-  color: #8899aa;
+.playground-code-panel .code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button) {
+  color: var(--docs-text-1);
 }
 
-.playground-code-panel .code-tabs-bar.button-group > .button:hover {
-  border-color: #303a48;
-  background: #222d3d;
-  color: #cdd6f4;
+.playground-code-panel .code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):hover {
+  border-color: var(--docs-border-strong);
+  background: var(--docs-surface-1);
+  color: var(--docs-text-0);
 }
 
 .playground-tokens {
@@ -899,7 +922,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 /* Code-tab bar: docs-only chrome, not bound to brand theming */
-.code-tabs-bar.button-group {
+.code-tabs-bar:is(.uif-button-group, .button-group) {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -910,15 +933,15 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   box-shadow: var(--docs-shadow-sm);
 }
 
-.code-tabs-bar.button-group[data-attached="true"] {
+.code-tabs-bar:is(.uif-button-group, .button-group)[data-attached="true"] {
   gap: 6px;
 }
 
-.code-tabs-bar.button-group[data-attached="true"] > .button {
+.code-tabs-bar:is(.uif-button-group, .button-group)[data-attached="true"] > :is(.uif-button, .button) {
   border-radius: 999px;
 }
 
-.code-tabs-bar.button-group > .button {
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button) {
   min-block-size: 0;
   padding: 6px 12px;
   border-radius: 999px;
@@ -932,32 +955,34 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   transition: all 120ms ease;
 }
 
-.code-tabs-bar.button-group > .button.outline,
-.code-tabs-bar.button-group > .button.ghost {
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button).outline,
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button).ghost {
   border-color: transparent;
   background: transparent;
   color: var(--docs-text-1);
 }
 
-.code-tabs-bar.button-group > .button:hover,
-.code-tabs-bar.button-group > .button.outline:hover,
-.code-tabs-bar.button-group > .button.ghost:hover {
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):hover,
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button).outline:hover,
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button).ghost:hover {
   border-color: var(--docs-border);
-  background: #f3f7fc;
+  background: var(--docs-surface-2);
   color: var(--docs-text-0);
 }
 
-.code-tabs-bar.button-group > .button.is-active,
-.code-tabs-bar.button-group > .button[aria-pressed="true"],
-.code-tabs-bar.button-group > .button:active {
-  border-color: #1d4ed8;
-  background: linear-gradient(180deg, #3472ff 0%, #1d4ed8 100%);
-  color: #fff;
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button).is-active,
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button)[aria-pressed="true"],
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):active {
+  border-color: var(--docs-border-strong);
+  background: var(--docs-surface-1);
+  color: var(--docs-text-0);
 }
 
-.code-tabs-bar.button-group > .button:focus-visible {
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 3px;
+  box-shadow: none;
 }
 
 .code-tabs-panel {
@@ -1232,7 +1257,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 .docs-toc-sidebar-list a.is-active {
   color: var(--docs-accent);
-  background: rgba(37, 99, 235, 0.06);
+  background: var(--docs-surface-2);
 }
 
 /* ─── Do / Don't guideline blocks ─── */
@@ -1503,6 +1528,17 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   scroll-margin-top: 80px;
 }
 
+/* Prose links in documentation body: sage accent, not the UA default blue.
+   Scoped to docs content; Runtime component link styling is unaffected. */
+.docs-content a:not(.docs-anchor):not(.docs-page-link):not(.uif-button) {
+  color: var(--docs-accent);
+  text-underline-offset: 2px;
+}
+
+.docs-content a:not(.docs-anchor):not(.docs-page-link):not(.uif-button):hover {
+  color: var(--docs-text-0);
+}
+
 .docs-content h2[id] a.docs-anchor {
   color: var(--docs-text-1);
   text-decoration: none;
@@ -1545,7 +1581,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 .docs-anatomy-outline {
   position: absolute;
   inset: -4px;
-  border: 1px dashed var(--docs-accent);
+  border: 1px dashed var(--docs-annotation-accent);
   border-radius: 4px;
   pointer-events: none;
 }
@@ -1560,7 +1596,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 .docs-anatomy-callout-line {
-  background: var(--docs-accent);
+  background: var(--docs-annotation-accent);
   flex-shrink: 0;
 }
 
@@ -1615,7 +1651,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--docs-accent);
+  background: var(--docs-annotation-accent);
   color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
@@ -1649,7 +1685,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--docs-accent);
+  background: var(--docs-annotation-accent);
   color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
@@ -1804,7 +1840,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 .docs-token-layer[data-active] {
-  background: rgba(37, 99, 235, 0.06);
+  background: var(--docs-surface-2);
 }
 
 .docs-token-layer[data-active] .docs-token-layer-name {
@@ -1812,8 +1848,27 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 /* ─── Richer homepage ─── */
+/* Section / container model: every home section is a full-width block that
+   bleeds out of the padded `.docs-content` column; the inner container holds
+   the content and restores the horizontal padding. `--docs-content-pad-inline`
+   must match the inline padding of `.docs-content` (see that rule). */
+:where(.docs-home-hero, .docs-home-section) {
+  display: block;
+  margin-inline: calc(var(--docs-content-pad-inline) * -1);
+}
+
+:where(.docs-home-hero-inner, .docs-home-section-inner) {
+  padding-inline: var(--docs-content-pad-inline);
+}
+
+/* Hero is the only section carrying a background band; surface-1 is a touch
+   lighter than the surface-0 body, so the band reads against the page. */
 .docs-home-hero {
-  padding: 48px 0 36px;
+  background: var(--docs-surface-1);
+}
+
+.docs-home-hero-inner {
+  padding-block: 48px 36px;
   text-align: center;
 }
 
@@ -1833,7 +1888,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 .docs-home-section {
-  margin: 36px 0;
+  margin-block: 36px;
 }
 
 .docs-home-section h2 {
@@ -2106,7 +2161,9 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 .docs-search-input:focus {
   border-color: var(--docs-accent);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 2px;
+  box-shadow: none;
 }
 
 .docs-search-results {
@@ -2401,7 +2458,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 .docs-toc-sidebar-sublist a.is-active {
   color: var(--docs-accent);
-  background: rgba(37, 99, 235, 0.06);
+  background: var(--docs-surface-2);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -2768,7 +2825,7 @@ details.color-family > .color-table-wrap {
 }
 
 .arch-hero-table .docs-table th {
-  background: rgba(37, 99, 235, 0.06);
+  background: var(--docs-surface-2);
 }
 
 .arch-hero-table .docs-table td:first-child {
@@ -2805,13 +2862,13 @@ details.color-family > .color-table-wrap {
 
 .docs-nav-subgroup > summary > a:hover {
   border-color: var(--docs-border);
-  background: #fff;
+  background: var(--docs-surface-1);
   color: var(--docs-text-0);
 }
 
 .docs-nav-subgroup > summary > a[aria-current="page"] {
   border-color: var(--docs-border-strong);
-  background: #fff;
+  background: var(--docs-surface-1);
   color: var(--docs-text-0);
   box-shadow: var(--docs-shadow-sm);
   font-weight: 700;
@@ -2839,7 +2896,7 @@ details.color-family > .color-table-wrap {
 
 .docs-nav-subgroup > ul a:hover {
   border-color: var(--docs-border);
-  background: #fff;
+  background: var(--docs-surface-1);
   color: var(--docs-text-0);
 }
 
@@ -3100,7 +3157,9 @@ details.color-family > .color-table-wrap {
   overflow: hidden;
   border: 1px solid var(--docs-border);
   border-radius: 16px;
-  background: var(--docs-surface-1);
+  /* Let the page sage show through the copy side; the light surface fill is
+     confined to the preview/example (hero) side below. */
+  background: transparent;
 }
 .foundation-feature-copy,
 .foundation-feature-example { padding: clamp(22px, 3vw, 36px); min-inline-size: 0; }
@@ -3181,4 +3240,173 @@ details.color-family > .color-table-wrap {
 .docs-hero-switch [data-hero-scale]:focus-visible {
   outline: 2px solid var(--docs-accent);
   outline-offset: 2px;
+}
+
+/* Explorations workspace: scoped docs typography and chrome, never a Brand.
+   Preserve the previous sample font stack and inherited ink independently from
+   the workspace. These legacy docs values are fallbacks: preview applySnapshot()
+   may inline root docs variables. Inherited ink therefore must not read a
+   snapshotted --docs-text-0 value. No Runtime primitive or pattern is changed. */
+:where(.docs-hero-preview-stage, .playground-stage, .docs-stack,
+       .docs-guideline-preview, .docs-anatomy-subject) {
+  --docs-font-sans: "Manrope", "Avenir Next", "Noto Sans", sans-serif;
+  /* Keep the slab headline face out of component preview samples. */
+  --docs-font-display: "Manrope", "Avenir Next", "Noto Sans", sans-serif;
+  --docs-surface-0: #f5f7fb;
+  --docs-surface-1: #ffffff;
+  --docs-surface-2: #eef2f8;
+  --docs-border: #d9e1ec;
+  --docs-border-strong: #c8d3e1;
+  --docs-text-0: #0d1522;
+  --docs-text-1: #4a5a70;
+  --docs-accent: #2563eb;
+  --docs-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.08);
+  --docs-shadow-md: 0 12px 32px rgba(15, 23, 42, 0.08);
+  font-family: var(--docs-font-sans);
+  /* Compatibility: pre-theme body ink, immune to inline preview snapshots. */
+  color: #0d1522;
+}
+
+/* Explicit structural text selectors avoid reaching into preview samples. */
+.docs-content > :is(h1, h2, h3, h4, p),
+.docs-home-hero :is(h1, p),
+.docs-home-section-inner > :is(h2, p),
+.docs-card :is(h2, p),
+.docs-component-card-body :is(h2, p),
+.foundation-feature-copy :is(h2, p),
+.docs-nav :is(a, h2, summary),
+.docs-breadcrumb :is(a, span),
+.docs-hero-meta,
+.docs-hero-meta > :is(span, a),
+.docs-toc-sidebar :is(p, a),
+.docs-toc-mobile > summary,
+.docs-footer,
+.docs-footer :is(p, a) {
+  font-family: var(--docs-font-sans);
+}
+
+.docs-content > h1,
+.docs-home-hero h1 {
+  color: var(--docs-text-0);
+  font-family: var(--docs-font-display);
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+/* Genuine content headlines only. `.docs-home-section h2` is intentionally
+   excluded: it renders as an uppercase micro-label (see rule above) and stays
+   on the Inter text face. */
+.docs-content > h2,
+.foundation-feature-copy h2 {
+  color: var(--docs-text-0);
+  font-family: var(--docs-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.docs-logo {
+  padding: 9px 4px;
+  border-color: transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+}
+
+.docs-nav-group-toggle,
+.docs-toc-sidebar-title,
+.docs-toc-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.docs-nav :is(a, summary > a),
+.docs-toc-sidebar-list a {
+  font-weight: 500;
+}
+
+.docs-nav a[aria-current="page"] {
+  border-color: var(--docs-border);
+  background: var(--docs-surface-1);
+  color: var(--docs-text-0);
+  box-shadow: inset 3px 0 0 var(--docs-accent);
+  font-weight: 600;
+}
+
+.docs-card {
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.docs-card:hover {
+  transform: none;
+  border-color: var(--docs-border-strong);
+  box-shadow: var(--docs-shadow-sm);
+}
+
+.docs-page-link,
+.code-tabs-bar:is(.uif-button-group, .button-group) {
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.code-tabs-bar:is(.uif-button-group, .button-group) {
+  background: var(--docs-surface-2);
+  gap: 3px;
+  padding: 3px;
+}
+
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button),
+.code-tabs-bar:is(.uif-button-group, .button-group)[data-attached="true"] > :is(.uif-button, .button) {
+  border-radius: 5px;
+  font-family: var(--docs-font-sans);
+  font-weight: 500;
+}
+
+.docs-hero-preview-controls,
+.docs-hero-preview-controls :is(button, select, .docs-hero-switch-label),
+.playground-controls-panel :is(label, span, input, select, button) {
+  font-family: var(--docs-font-sans);
+}
+
+.docs-hero-preview-controls {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.docs-hero-switch button {
+  font-weight: 500;
+}
+
+.docs-hero-switch button[aria-pressed="true"] {
+  background: var(--docs-accent);
+  color: #fff;
+}
+
+.docs-page-link:hover,
+.docs-breadcrumb a:hover,
+.docs-link-list a:hover,
+.docs-footer a:hover {
+  color: var(--docs-accent);
+}
+
+:where(.docs-sidebar, .docs-page-navigation, .docs-page-actions,
+       .docs-toc-sidebar, .docs-toc-mobile, .docs-footer,
+       .docs-hero-preview-controls, .playground-controls-panel)
+  :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--docs-accent);
+  outline-offset: 3px;
+}
+
+/* Selected code tabs remain explicit when hovered or keyboard-focused. */
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):is(.is-active, [aria-pressed="true"]),
+.code-tabs-bar:is(.uif-button-group, .button-group) > :is(.uif-button, .button):is(.is-active, [aria-pressed="true"]):hover {
+  border-color: var(--docs-accent);
+  background: var(--docs-accent);
+  color: #fff;
 }
