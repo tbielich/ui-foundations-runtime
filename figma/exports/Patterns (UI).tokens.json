@@ -9276,7 +9276,7 @@
       "Text Color": {
         "$type": "color",
         "$value": {
-          "$ref": "Semantics/Color/Foreground/Subtle"
+          "$ref": "Semantics/Color/Content/Default"
         },
         "$extensions": {
           "com.figma.scopes": ["ALL_SCOPES"],

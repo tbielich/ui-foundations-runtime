@@ -44,6 +44,11 @@ test("Illustrated Message Figma export contains canonical tokens aliased to Sema
   const tokens = JSON.parse(tokenExport);
   const group = tokens["Illustrated Message"];
   assert.ok(group, "Illustrated Message token group exists");
+  assert.equal(
+    group.Description["Text Color"].$value.$ref,
+    "Semantics/Color/Content/Default",
+    "description uses the governed readable-content role",
+  );
   const walk = (node) => {
     if (node.$value !== undefined) {
       if (node.$value && node.$value.$ref) {
