@@ -1,4 +1,5 @@
 @layer components {
+  /* Deprecated compat inputs retain explicit consumer overrides; defaults use stable Pattern tokens. */
   /*
    * Unprefixed Label-family classes are deprecated v1.x compatibility selectors.
    * UIF-owned emitters use canonical `.uif-*` names; remove aliases no earlier than v2.0.
@@ -28,8 +29,8 @@
   :is(.uif-field-label, .field-label) {
     position: relative;
     display: inline-flex;
-    font-family: var(--uif-field-label-compat-font-family, inherit);
-    font-weight: var(--uif-field-label-compat-font-weight, inherit);
+    font-family: var(--uif-field-label-compat-font-family, var(--uif-field-label-font-family, inherit));
+    font-weight: var(--uif-field-label-compat-font-weight, var(--uif-field-label-font-weight, inherit));
     align-items: center;
     gap: var(--uif-field-label-gap, 0.25em);
     line-height: var(--uif-field-label-line-height, inherit);
@@ -40,8 +41,8 @@
   /* Text spans previously consumed Body/400 explicitly; do not replace that fallback with inherit. */
   :is(.uif-field-label, .field-label) :is(.uif-label-content, .label-content),
   :is(.uif-field-label, .field-label) :is(.uif-label-content-text, .label-content-text) {
-    font-family: var(--uif-field-label-compat-font-family, var(--typography-body-font-family));
-    font-weight: var(--uif-field-label-compat-font-weight, var(--typography-body-font-weight));
+    font-family: var(--uif-field-label-compat-font-family, var(--uif-field-label-font-family, var(--typography-body-font-family)));
+    font-weight: var(--uif-field-label-compat-font-weight, var(--uif-field-label-font-weight, var(--typography-body-font-weight)));
   }
 
   :is(.uif-field-label-required, .field-label-required) {

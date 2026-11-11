@@ -1,42 +1,51 @@
 {
   "schemaVersion": 1,
   "issue": "https://github.com/tbielich/ui-foundations-runtime/issues/339",
-  "rationale": "Owner-selected A/B/C family and weight adoption. Existing Basic/compatibility primitives remain untouched; the same ID-bound effective slots activate only at the three selected Brand boundaries and reset in neutral contexts. These are code-only rendering projections, not duplicated Figma variables.",
+  "rationale": "Owner-selected A/B/C family and weight adoption. Existing Basic/compatibility primitives remain untouched; the same ID-bound effective slots activate only at the three selected Brand boundaries and reset in neutral contexts. These are code-only rendering projections, not duplicated Figma variables. Public Pattern font tokens omit compat; former names remain deprecated override inputs.",
   "slots": [
     {
-      "cssVar": "--uif-button-compat-font-family",
+      "cssVar": "--uif-button-font-family",
       "sourceVariableId": "VariableID:3173:63",
-      "sourceCssVar": "--uif-semantic-font-lead"
+      "sourceCssVar": "--uif-semantic-font-lead",
+      "legacyCssVar": "--uif-button-compat-font-family"
     },
     {
-      "cssVar": "--uif-button-compat-font-weight",
+      "cssVar": "--uif-button-font-weight",
       "sourceVariableId": "VariableID:3260:6",
-      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight",
+      "legacyCssVar": "--uif-button-compat-font-weight"
     },
     {
-      "cssVar": "--uif-field-label-compat-font-family",
+      "cssVar": "--uif-field-label-font-family",
       "sourceVariableId": "VariableID:3173:63",
-      "sourceCssVar": "--uif-semantic-font-lead"
+      "sourceCssVar": "--uif-semantic-font-lead",
+      "legacyCssVar": "--uif-field-label-compat-font-family"
     },
     {
-      "cssVar": "--uif-field-label-compat-font-weight",
+      "cssVar": "--uif-field-label-font-weight",
       "sourceVariableId": "VariableID:3260:6",
-      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight",
+      "legacyCssVar": "--uif-field-label-compat-font-weight"
     },
     {
-      "cssVar": "--uif-badge-compat-text-font-family",
+      "cssVar": "--uif-badge-font-family",
       "sourceVariableId": "VariableID:3173:63",
-      "sourceCssVar": "--uif-semantic-font-lead"
+      "sourceCssVar": "--uif-semantic-font-lead",
+      "legacyCssVar": "--uif-badge-compat-text-font-family"
     },
     {
-      "cssVar": "--uif-badge-compat-text-font-weight",
+      "cssVar": "--uif-badge-font-weight",
       "sourceVariableId": "VariableID:3260:6",
-      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight",
+      "legacyCssVar": "--uif-badge-compat-text-font-weight"
     },
     {
-      "cssVar": "--uif-illustrated-message-compat-heading-font-weight",
+      "cssVar": "--uif-illustrated-message-heading-font-weight",
       "sourceVariableId": "VariableID:3274:7",
-      "sourceCssVar": "--uif-semantic-typography-heading-font-weight"
+      "sourceCssVar": "--uif-semantic-typography-heading-font-weight",
+      "legacyCssVar": "--uif-illustrated-message-compat-heading-font-weight",
+      "neutralSourceCssVar": "--uif-semantic-typography-label-font-weight",
+      "neutralSourceVariableId": "VariableID:3173:66"
     }
   ],
   "brands": [

@@ -14,7 +14,11 @@ test("optional typography binds every source to the exported semantic ID and WEB
   assert.equal(manifest.slots.length, 7);
   const css = renderBrandTypographyContext(manifest);
   assert.match(css, /:where\(:root, \[data-brand\]\)/);
-  for (const slot of manifest.slots) assert.ok(css.includes(`${slot.cssVar}: initial;`));
+  for (const slot of manifest.slots) {
+    assert.ok(!slot.cssVar.includes("-compat-"));
+    assert.ok(css.includes(`${slot.legacyCssVar}: initial;`));
+    assert.ok(css.includes(`${slot.cssVar}: var(${slot.sourceCssVar});`));
+  }
   assert.doesNotMatch(css, /\.uif-button|\.uif-field-label|\.uif-badge/);
   assert.doesNotMatch(css, /font-(family|weight):\s*(Inter|600)/);
 });

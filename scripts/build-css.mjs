@@ -34,15 +34,19 @@ function inlineImports(filePath, seen = new Set()) {
   }
 
   return css.replace(
-    /@import\s+url\(["']([^"']+)["']\)\s*layer\([^)]+\);\s*/g,
-    (match, importPath) => {
+    /@import\s+url\(["']([^"']+)["']\)\s*layer\(([^)]+)\);\s*/g,
+    (match, importPath, layer) => {
       if (importPath.startsWith("http")) return match;
       const resolved = path.resolve(baseDir, importPath);
       if (!fs.existsSync(resolved)) {
         console.warn(`⚠️  Missing CSS import: ${importPath} (resolved: ${resolved})`);
         return match;
       }
-      return inlineImports(resolved, seen);
+      const imported = inlineImports(resolved, seen);
+      // Token exports are unwrapped; retain their declared import layer when bundling.
+      return layer === "tokens" && !/@layer\s/.test(imported)
+        ? `@layer tokens {\n${imported}\n}\n`
+        : imported;
     },
   );
 }

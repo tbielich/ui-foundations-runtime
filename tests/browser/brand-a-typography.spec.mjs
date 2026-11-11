@@ -99,3 +99,28 @@ test("legacy and concrete Basic overrides preserve A routing and the Mono role",
     }
   }
 });
+
+test("stable Pattern font tokens support local overrides and deprecated inputs", async ({ page }) => {
+  await page.setContent(`<style>${css}</style>${content}`);
+  await page.evaluate(() => { document.documentElement.dataset.brand = "b"; });
+  const cases = [
+    [".composed", ".composed .uif-label-content-text", "--uif-button-font-family", "--uif-button-compat-font-family"],
+    [".uif-field-label", ".uif-field-label .uif-label-content-text", "--uif-field-label-font-family", "--uif-field-label-compat-font-family"],
+    [".uif-badge", ".uif-badge-text", "--uif-badge-font-family", "--uif-badge-compat-text-font-family"],
+  ];
+  for (const [host, text, current, legacy] of cases) {
+    const target=page.locator(host);
+    await target.evaluate((e,name)=>e.style.setProperty(name,'monospace'),current);
+    expect((await metrics(page,text)).family).toBe('monospace');
+    await target.evaluate((e,name)=>e.style.removeProperty(name),current);
+    await target.evaluate((e,name)=>e.style.setProperty(name,'serif'),legacy);
+    expect((await metrics(page,text)).family).toBe('serif');
+    await target.evaluate((e,name)=>e.style.removeProperty(name),legacy);
+    expect((await metrics(page,text)).family).toMatch(/Exo 2/);
+  }
+  const heading=page.locator('.uif-illustrated-message-heading');
+  await heading.evaluate(e=>e.style.setProperty('--uif-illustrated-message-heading-font-weight','500'));
+  expect((await metrics(page,'.uif-illustrated-message-heading')).weight).toBe('500');
+  await heading.evaluate(e=>e.style.removeProperty('--uif-illustrated-message-heading-font-weight'));
+  expect((await metrics(page,'.uif-illustrated-message-heading')).weight).toBe('800');
+});
