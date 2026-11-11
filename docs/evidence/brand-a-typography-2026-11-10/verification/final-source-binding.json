@@ -1,0 +1,9 @@
+{
+  "sourceManifestSha256": "5bd3c7c3c7c635db91329ceb370aadb4d51caa74a7ec594a9dc1a476014151da",
+  "fileCount": 29,
+  "perFileDifferences": [],
+  "gate": "PASS",
+  "compiledCSSNow": "54821bafbed7a092f62005c5e0f144e8ad23a2ccaca6f83af3a6ca7dfbc46fef",
+  "compiledCSSAtBrowserCapture": "37cc78b4b2d0de5cb4b7b11bc10ff0d592344c962c9ec4eb3773e67d5a02ec15",
+  "generatedOutputNote": "Producer finalCI rebuild changed generated timestamps; source manifest29files independently hash-matched afterCI. No source change after bounded browser reads reported or observed."
+}

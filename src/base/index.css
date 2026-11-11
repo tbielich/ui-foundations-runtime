@@ -1,0 +1,7 @@
+/* Native appearance with a Brand A geometry reset and a system Sans Serif font. */
+@import url("../core/base/reset.css") layer(reset);
+@import url("./geometry.css") layer(tokens);
+@import url("../ui/patterns/icon.css") layer(components);
+
+@import url("./functional.css") layer(components);
+@import url("./sizing.css") layer(components);

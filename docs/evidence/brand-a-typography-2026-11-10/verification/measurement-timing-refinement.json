@@ -1,0 +1,9 @@
+{
+  "initialFinding": "Two LinkB/light color/border intermediate-frame differences; all token/font/weight/prose/icon/docs checks passed.",
+  "scope": "Verifier waits250ms for existing CSStransitions after context/font readiness; no source edits.",
+  "preserved": [
+    "baseline-consumer-unsettled.json",
+    "final-consumer-unsettled.json",
+    "comparison-unsettled.json"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "family": "Exo 2",
+  "style": "normal",
+  "file": "exo-2-variable.woff2",
+  "bytes": 106100,
+  "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed",
+  "source": {
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/Exo2%5Bwght%5D.ttf",
+    "bytes": 303940,
+    "sha256": "205a448676a2586f9c57c25f3d5c58ca8db7e6cf5edf7506783a010c6fe2bfb5"
+  },
+  "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/METADATA.pb",
+  "names": {
+    "1": [
+      "Exo 2"
+    ],
+    "2": [
+      "Regular"
+    ],
+    "4": [
+      "Exo 2 Regular"
+    ],
+    "5": [
+      "Version 2.010"
+    ],
+    "6": [
+      "Exo2-Regular"
+    ]
+  },
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 100.0,
+      "default": 400.0,
+      "max": 900.0
+    }
+  ],
+  "license": {
+    "type": "OFL-1.1",
+    "file": "exo-2-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/OFL.txt",
+    "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+  },
+  "glyphCheck": {
+    "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+    "missing": [],
+    "unicodeCodepoints": 911,
+    "cmapPreserved": true
+  },
+  "conversion": {
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1",
+    "method": "TTFont(BytesIO(source), recalcTimestamp=False); flavor=woff2; save; no subset",
+    "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8"
+  }
+}

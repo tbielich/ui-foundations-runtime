@@ -18,6 +18,13 @@
     min-inline-size: var(--uif-badge-width-min);
   }
 
+
+  /* The text span retains Body/400 unless an explicit compatibility slot is active. */
+  :is(.uif-badge, .badge) > .uif-badge-text {
+    font-family: var(--uif-badge-compat-text-font-family, var(--typography-body-font-family));
+    font-weight: var(--uif-badge-compat-text-font-weight, var(--typography-body-font-weight));
+  }
+
   /* ── Sizes ── */
 
   :is(.uif-badge, .badge).sm {

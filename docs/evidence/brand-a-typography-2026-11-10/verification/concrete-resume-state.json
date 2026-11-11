@@ -1,0 +1,11 @@
+{
+  "ownerDecision": "Concrete family catalogue approved explicitly; previous unresolved naming gate is historical, not current authority.",
+  "preservedPriorEvidence": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-brand-a-typography/docs/evidence/brand-a-typography-2026-11-10/verification/pre-concrete-verification",
+  "plannedChecks": [
+    "Stable IDs and exact4family source catalogue",
+    "Legacy CSS computed values and JSON/TS direct accessor values",
+    "One bounded final12consumer/66docs/publicentry rerun after naming-ready build",
+    "Parent Figma readback review without concurrent mutation"
+  ],
+  "verifierSourceChanges": []
+}

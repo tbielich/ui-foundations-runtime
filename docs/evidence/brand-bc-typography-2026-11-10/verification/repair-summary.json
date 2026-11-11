@@ -1,0 +1,37 @@
+{
+  "mode": "VERIFY",
+  "gate": "PASS_BOUNDED_REPAIR",
+  "frozenMainCSS": "4fb0e22531e12859aefbdfe25c043b1c85a65b5ac08c8bf93dbc9bbac46e72e3",
+  "history": "independent-summary.json preserves original C textspacing FAIL. This scoped repair supersedes that finding only.",
+  "results": {
+    "reflowCases": 36,
+    "finalReflowCases": 18,
+    "finalDocumentWidthEveryCase": 320,
+    "shortButtonContexts": 12,
+    "shortButtonComputedMetricDifferences": 0,
+    "orbitronTTFPublicEntryCases": 8,
+    "actualOrbitronSelected": true,
+    "actualBlockedOrbitronFallbackInter": true,
+    "capitalSharpSFallbackInter": true,
+    "googleRequests": 0
+  },
+  "intentionalAException": "Long overflowing labels now wrap at max-inline-size100%, fixing preexisting A spacing/root200 overflow. Short raw/composed buttons unchanged.",
+  "scope": "Frozen publicmain/core fixtures. Prior family/token findings retained; no whole matrix rerun.",
+  "limitations": [
+    "root200 is root font scaling, not real browserzoom; truezoom remains untested.",
+    "No full accessibility certification or universal arbitrary content/reflow guarantee.",
+    "CDP internal variablefont names do not independently encode weight; computedfontweight recorded."
+  ],
+  "commands": [
+    "node verification/repair-server.cjs",
+    "node verification/repair-reflow.cjs",
+    "node verification/repair-orbitron.cjs"
+  ],
+  "evidence": [
+    "repair-freeze.json",
+    "repair-reflow.json",
+    "repair-orbitron.json",
+    "normal.json",
+    "independent-summary.json"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "ownedSessions": [
+    {
+      "port": 8146,
+      "session": 24363,
+      "state": "stopped",
+      "exitCode": 130
+    },
+    {
+      "port": 8147,
+      "session": 13923,
+      "state": "stopped",
+      "exitCode": 130
+    },
+    {
+      "port": 8148,
+      "session": 29145,
+      "state": "stopped",
+      "exitCode": 130
+    }
+  ],
+  "scope": "Only verifier-owned servers stopped following user naming freeze."
+}

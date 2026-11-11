@@ -15,7 +15,7 @@
 
 Keep Figma and code in sync by default — with tokens, not guesswork.
 
-- **Token-first architecture** — every value comes from a token, no hardcoded exceptions
+- **Token-first Brand styles** — values follow the token model; the optional native Base entry shares Brand A sizing with system Sans Serif and native control visuals
 - **Figma-aligned implementation** — Figma variables map to code through documented token layers and stable IDs
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
@@ -36,6 +36,8 @@ work with the system reliably.
 ---
 
 ## Key Features
+
+- **Native Base entry** — `ui-foundations/base.css` retains browser-default controls and document styles while supporting existing UIF behaviors; see [Base usage](docs/base.md)
 
 - **Token-first architecture** — Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns, with each layer carrying one clear responsibility
 - **Figma ↔ code alignment** — stable variable IDs, `codeSyntax.WEB`, and the projection adapter keep Figma and Runtime traceable without forcing breaking renames
@@ -175,6 +177,18 @@ npm install ui-foundations
 @import "ui-foundations/core.css";
 @import "ui-foundations/ui.css";
 ```
+
+### Load fonts in your application
+
+The npm package supplies font-family roles and fallback stacks without font
+binaries or automatic font loading. Load the licensed fonts for your selected
+brand in an application-owned stylesheet. The existing A/B/C roles and fallback
+stacks remain unchanged; unavailable faces use the declared fallbacks.
+
+Apps that relied on automatic loading must now provide that stylesheet. The
+documentation and playgrounds opt into their own local demo fonts separately.
+See [Font loading ownership](docs/public-api.md#font-loading-ownership) for an
+example and the migration boundary.
 
 ### Use Patterns (plain HTML)
 

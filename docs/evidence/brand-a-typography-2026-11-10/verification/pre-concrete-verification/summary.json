@@ -1,0 +1,89 @@
+{
+  "state": "FROZEN pending primitive-family naming decision",
+  "technicalVerificationGate": "PASS",
+  "adoptionAcceptanceGate": "BLOCKED",
+  "adoptionBlocker": "User requested architecture clarification of mixed primitive-family naming (Sans/Serif/Mono versus Roboto Slab). Technical checks do not settle canonical naming or authorize further writes.",
+  "baseSHA": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "currentCompiledCSSSha256": "6b9bacda593794ea74c56dba7ab02b75b5db3746582f3ae9c636dd31c220e2bc",
+  "sourceCSSFrozen": true,
+  "scope": "Only read-only independent baseline/final consumer measurement and public Runtime font-delivery probe. Verifier changed no implementation, exports, tokens, Figma, tests, commits, or publication.",
+  "consumer": {
+    "totalCases": 12,
+    "hosts": [
+      "plain",
+      "monospace500 with18px/1.7line-height"
+    ],
+    "brands": [
+      "a",
+      "b",
+      "c"
+    ],
+    "schemes": [
+      "light",
+      "dark"
+    ],
+    "preservedBCActualMetricDifferences": 0,
+    "existingTokenNamesPerContext": 864,
+    "preservedBCResolvedTokenDifferences": 0,
+    "AExactPolicyFailures": 0,
+    "preservedProseSelectTextareaProgressFailures": 0,
+    "inputClearIconGeometryFailures": 0,
+    "controlledFontEnvironment": true,
+    "scopeNote": "Same pinned WOFF2 faces appended after Runtime CSS and external font import removed. This isolates consumer behavior; public delivery is separately measured.",
+    "BCCollectedPlatformFontDifferences": 0,
+    "BCPlatformFontComparison": "Compared already-collected CDP actual rendered font arrays (including internal family/PostScript names, glyph counts and customFont flags); no new measurement after freeze."
+  },
+  "docsSnapshots": {
+    "totalCases": 66,
+    "pages": 11,
+    "preservedBCContextCases": 44,
+    "BCActualMetricDifferences": 0,
+    "rootRemains": "Brand A / Light while actual preview snapshot changes Brand/Scheme",
+    "scopeNote": "Actual existing documentation snapshot implementation and fixed600px preview width; controlled identical public-family font bits, docs shell aliases unchanged."
+  },
+  "publicFontDelivery": {
+    "totalCases": 12,
+    "entries": [
+      "main.css",
+      "core/index.css + ui/index.css"
+    ],
+    "noDocsCSSOrFontInjection": true,
+    "summary": {
+      "AHeadingAndIllustratedActualRobotoSlab": true,
+      "ABodyAndButtonActualInter": true,
+      "noFontFailures": true,
+      "missingLocalResources": []
+    },
+    "robotoSHA256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed",
+    "AExpected": "Generic+IllustratedHeading actual customRobotoSlab700, BodyactualInter400, ButtonactualInter600",
+    "localRobotoHTTP": 200
+  },
+  "timingRefinement": {
+    "reason": "Initial two LinkB/light color/border values were observed during an existing color transition. Both frozen baseline and final consumer capture now wait250ms after context and font readiness. Settled comparison passes without implementation repair.",
+    "preserved": [
+      "baseline-consumer-unsettled.json",
+      "final-consumer-unsettled.json",
+      "comparison-unsettled.json",
+      "measurement-timing-refinement.json"
+    ]
+  },
+  "Figma": "Parent owns writes/readback and current live temporary primitive; verifier did not mutate or independently certify Figma.",
+  "fullCI": "NOT RUN by verifier; user naming steering freezes further builds/tests/repairs until decision. Focused worker checks are separate producer evidence, not adoption acceptance.",
+  "screenshot": "brand-a-public-runtime.png",
+  "evidence": [
+    "baseline-source-manifest.json",
+    "baseline-docs-manifest.json",
+    "baseline-consumer.json",
+    "final-consumer.json",
+    "baseline-token-coverage.json",
+    "baseline-docs.json",
+    "final-docs.json",
+    "comparison.json",
+    "public-fonts.json"
+  ],
+  "limitations": [
+    "No formal full accessibility certification or performance budget assessment.",
+    "This technical PASS does not approve the mixed naming model or adopt/merge the partial implementation.",
+    "No silent rollback of the parent-owned live Figma primitive was attempted."
+  ]
+}

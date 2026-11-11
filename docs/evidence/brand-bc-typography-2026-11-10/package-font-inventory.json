@@ -1,0 +1,65 @@
+{
+  "command": "npm pack --dry-run --json",
+  "published": false,
+  "families": [
+    {
+      "family": "Bricolage Grotesque",
+      "file": "bricolage-grotesque-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0",
+      "bytes": 66392
+    },
+    {
+      "family": "Exo 2",
+      "file": "exo-2-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed",
+      "bytes": 106100
+    },
+    {
+      "family": "Inter",
+      "file": "inter-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a",
+      "bytes": 350460
+    },
+    {
+      "family": "Manrope",
+      "file": "manrope-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f",
+      "bytes": 53892
+    },
+    {
+      "family": "Orbitron",
+      "file": "orbitron-variable.ttf",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "bytes": 38576
+    },
+    {
+      "family": "Roboto Slab",
+      "file": "roboto-slab-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed",
+      "bytes": 118296
+    },
+    {
+      "family": "Rokkitt",
+      "file": "rokkitt-variable.woff2",
+      "fontPresent": true,
+      "licensePresent": true,
+      "sha256": "a10e6659f05518a4b2d53c5e8ba174d7aaaca458cab76bacd932491f8a104355",
+      "bytes": 52468
+    }
+  ],
+  "pass": true,
+  "obsoleteOrbitronWoffShipped": false,
+  "sfMonoBinaryPresent": false
+}

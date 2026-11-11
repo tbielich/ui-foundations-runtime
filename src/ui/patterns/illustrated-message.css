@@ -32,7 +32,7 @@
     margin: 0;
     color: var(--uif-illustrated-message-heading-text-color);
     font-family: var(--uif-illustrated-message-heading-font-family);
-    font-weight: var(--uif-illustrated-message-heading-font-weight);
+    font-weight: var(--uif-illustrated-message-compat-heading-font-weight, var(--uif-illustrated-message-heading-font-weight));
     font-size: calc(var(--uif-illustrated-message-heading-font-size) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
     line-height: calc(var(--uif-illustrated-message-heading-line-height) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
   }

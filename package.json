@@ -22,7 +22,8 @@
     "docs/migrations/public-api-namespace-v1.md",
     "docs/agentic/assistant-behavior-rules.md",
     "docs/agentic/team-ai-playbook.md",
-    "docs/agentic/skills/**"
+    "docs/agentic/skills/**",
+    "docs/base.md"
   ],
   "exports": {
     "./core.css": "./dist/core/index.css",
@@ -76,7 +77,12 @@
     "./elements/ui-meter": "./dist/elements/ui-meter.js",
     "./elements/ui-progress-bar": "./dist/elements/ui-progress-bar.js",
     "./elements/ui-inline-alert": "./dist/elements/ui-inline-alert.js",
-    "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js"
+    "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js",
+    "./base.css": "./dist/base.css",
+    "./behaviors/calendar": "./dist/ui/components/calendar.js",
+    "./behaviors/date-input": "./dist/ui/components/date-input.js",
+    "./behaviors/input-field": "./dist/ui/components/input-field.js",
+    "./behaviors/table": "./dist/ui/components/table.js"
   },
   "scripts": {
     "icons:generate-list": "node scripts/generate-icon-list.mjs",
@@ -118,7 +124,8 @@
     "docs:dev": "node scripts/build.mjs dev",
     "docs:dev:verbose": "npm run build:raw && eleventy --serve",
     "docs:lint": "node scripts/check-docs-drift.mjs",
-    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run rules:validate && npm run docs:build && npm run test:browser:only"
+    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run fonts:pack-check && npm run rules:validate && npm run docs:build && npm run test:browser:only",
+    "fonts:pack-check": "node scripts/check-font-packaging.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

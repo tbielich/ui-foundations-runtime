@@ -25,7 +25,7 @@
     gap: var(--uif-accordion-gap);
     padding-inline: var(--uif-accordion-padding-inline);
     padding-block: var(--uif-accordion-padding-block);
-    font-family: var(--font-family-sans);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-600);
     line-height: var(--line-height-md);
@@ -69,7 +69,7 @@
   :is(.uif-accordion-item-content, .accordion-item-content) {
     padding-inline: var(--uif-accordion-padding-inline);
     padding-block: var(--uif-accordion-padding-block);
-    font-family: var(--font-family-sans);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
     font-size: var(--font-size-md);
     line-height: var(--line-height-md);
     color: var(--uif-accordion-text-color-default);

@@ -1,0 +1,11 @@
+{
+  "initialAssumption": "Canonical concrete variable name must equal physical JSON exportPath; source refs to historical paths treated as stale.",
+  "correction": "Explicit bounded compatibility contract separates canonical stable-ID FigmaName/WEB and CSS/TS catalogue from historical literal JSON exportPaths. Verified each retained path/reference is declared and bound to the correct same variableID. Render/root-override/legacy-value assertions unchanged.",
+  "authorityReferences": [
+    "figma/font-family-compatibility.json",
+    "figma/token-projection.json#fontFamilyCompatibility",
+    "docs/evidence/brand-a-typography-2026-11-10/implementation.md"
+  ],
+  "preservedOriginalResult": "concrete-catalogue-physical-path-assumption.json",
+  "noClaim": "No new JSON Inter/Rokkitt/SF Mono accessors are provided or claimed."
+}

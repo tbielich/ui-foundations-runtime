@@ -53,7 +53,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/elements": "vendor/ui-foundations/elements" });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
+    "dist/base.css": "vendor/ui-foundations/base.css",
   });
+
   eleventyConfig.addPassthroughCopy({
     "src/ui/components": "vendor/ui-foundations/components",
   });

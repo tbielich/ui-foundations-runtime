@@ -7,7 +7,7 @@
     overflow: hidden;
     background: var(--uif-avatar-container-background-default);
     color: var(--uif-avatar-text-color-default);
-    font-family: var(--font-family-sans);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
     font-weight: var(--font-weight-600);
     inline-size: 2.5rem;
     block-size: 2.5rem;

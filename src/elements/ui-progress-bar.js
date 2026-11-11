@@ -43,6 +43,15 @@ class UIProgressBar extends UIElement {
       }
       root.append(header);
     }
+    // Native visual for the optional Base entry. The root retains the existing
+    // accessible progress role; the branded entry hides this visual fallback.
+    const native = document.createElement("progress");
+    native.className = "uif-progress-bar-native";
+    native.max = 100;
+    if (!indeterminate) native.value = value;
+    native.setAttribute("aria-hidden", "true");
+    root.append(native);
+
     const track = document.createElement("div");
     track.className = "uif-progress-bar-track";
     const fill = document.createElement("div");

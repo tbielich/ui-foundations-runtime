@@ -1,0 +1,326 @@
+{
+  "texts": [
+    {
+      "id": "2035:462",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "segments": [
+        {
+          "characters": "Input",
+          "start": 0,
+          "end": 5,
+          "fontName": {
+            "family": "Inter",
+            "style": "Semi Bold",
+            "variationSettings": {
+              "wght": 600,
+              "slnt": 0
+            }
+          },
+          "boundVariables": {
+            "fontSize": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:41"
+            },
+            "fontStyle": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:2028:303"
+            },
+            "fontFamily": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:39"
+            },
+            "lineHeight": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:42"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2724:381",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      },
+      "segments": [
+        {
+          "characters": "Placeholder",
+          "start": 0,
+          "end": 11,
+          "fontName": {
+            "family": "Inter",
+            "style": "Semi Bold",
+            "variationSettings": {
+              "wght": 600,
+              "slnt": 0
+            }
+          },
+          "boundVariables": {
+            "fontSize": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:41"
+            },
+            "fontStyle": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:2028:303"
+            },
+            "fontFamily": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:39"
+            },
+            "lineHeight": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:15:42"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "id": "VariableID:3:8",
+      "name": "Typography/Heading/Font Family",
+      "valuesByMode": {
+        "1:2": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:3"
+        }
+      }
+    },
+    {
+      "id": "VariableID:3260:3",
+      "name": "Brand/Font/Heading",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:2"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        }
+      }
+    },
+    {
+      "id": "VariableID:3260:5",
+      "name": "Brand/Typography/UI/Font/Weight",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:218"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:216"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:216"
+        }
+      }
+    },
+    {
+      "id": "VariableID:2028:303",
+      "name": "Input/Font/Weight",
+      "valuesByMode": {
+        "1:3": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:6"
+        }
+      }
+    }
+  ],
+  "headingStyles": [
+    {
+      "id": "S:2cf03e68f43c31b8046a39d137b1cc5b72d3a34a,",
+      "name": "Heading/Heading 1",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:68:80"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:63"
+        }
+      }
+    },
+    {
+      "id": "S:1edc3a8b6e0f79905a156d5a539784b6e42b0889,",
+      "name": "Heading/Heading 2",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:68:79"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:62"
+        }
+      }
+    },
+    {
+      "id": "S:22a69ff3a1f9e1aedf2a2f1c6acf6e25d4fd35fc,",
+      "name": "Heading/Heading 3",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:68:78"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:61"
+        }
+      }
+    },
+    {
+      "id": "S:5f9015738a1a4229b0d61052faa4dd9627865c12,",
+      "name": "Heading/Heading 4",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:68:77"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:60"
+        }
+      }
+    },
+    {
+      "id": "S:0c74fb4b6baa0e5ec125a8bc533cd544882af558,",
+      "name": "Heading/Heading 5",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:16"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:58"
+        }
+      }
+    },
+    {
+      "id": "S:d34e7b90917a12b97fc657c68b1e433f1ac6ed2b,",
+      "name": "Heading/Heading 6",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      },
+      "boundVariables": {
+        "fontSize": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:68:75"
+        },
+        "fontStyle": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:17"
+        },
+        "fontFamily": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:8"
+        },
+        "lineHeight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:15:57"
+        }
+      }
+    }
+  ]
+}

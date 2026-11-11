@@ -33,7 +33,7 @@
     justify-content: center;
     padding-inline: var(--uif-tabs-padding-inline);
     padding-block: var(--uif-tabs-padding-block);
-    font-family: var(--font-family-sans);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-500);
     line-height: var(--line-height-md);

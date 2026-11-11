@@ -1,0 +1,36 @@
+{
+  "fileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+  "sessionId": "a5bcc826-ff76-4df7-8e4a-cf79b5af9180",
+  "mode": "IMPLEMENT",
+  "scope": "Approved Brand B/C font adoption; no library publication",
+  "newIds": {
+    "Exo 2": "VariableID:3274:2",
+    "Orbitron": "VariableID:3274:3",
+    "Manrope": "VariableID:3274:4",
+    "Bricolage Grotesque": "VariableID:3274:5",
+    "brandHeadingWeight": "VariableID:3274:6",
+    "semanticHeadingWeight": "VariableID:3274:7"
+  },
+  "changedIds": [
+    "VariableID:2006:213",
+    "VariableID:2006:214",
+    "VariableID:3260:3",
+    "VariableID:3260:5",
+    "VariableID:3014:5",
+    "VariableID:3:17"
+  ],
+  "nativeBindingCompatibility": "Existing legacy heading weight ID3:17 aliases Brand heading weight so existing styles follow A700/B800/C700 without replacing style IDs.",
+  "validation": {
+    "independentVariableReadback": "figma-readback.json",
+    "nativeResolution": "figma-native-resolution.json",
+    "cases": 24,
+    "temporaryProbeNodesRemoved": true
+  },
+  "outOfScopeDrift": {
+    "id": "VariableID:3:7",
+    "liveWEB": "var(--font-family-mono)",
+    "localWEB": "var(--font-family-sf-mono)",
+    "action": "Not changed or included in partial sync; Basic taxonomy explicitly deferred."
+  },
+  "fallbackProjection": "Figma font-family values remain single primary family. Runtime may project explicit basic-family stacks without changing Figma fontName semantics."
+}

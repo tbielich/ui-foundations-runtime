@@ -69,6 +69,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="/vendor/ui-foundations/main.css" />
+    <link rel="stylesheet" href="/assets/brand-fonts.css" />
     <link rel="stylesheet" href="/assets/vendor/prism/prism.css" />
     <link rel="stylesheet" href="/assets/docs.css" />
     <link rel="stylesheet" href="/assets/docs-keytips.css" />
@@ -101,6 +102,7 @@
                   </a>
                 </li>
                 {% endfor %}
+                <li><a href="/base/"{% if page.url == "/base/" %} aria-current="page"{% endif %}>Base — Native UI</a></li>
                 <li>
                   <details class="docs-nav-subgroup"{% if page.url.indexOf("/primitives/") == 0 or page.url == "/foundations/design-tokens/" %} open{% endif %}>
                     <summary><a href="/foundations/design-tokens/"{% if page.url == "/foundations/design-tokens/" %} aria-current="page"{% endif %}>Design Tokens</a></summary>
@@ -359,6 +361,8 @@
         if (!previews.length) return;
 
         var root = document.documentElement;
+        var typographySlots = {{ brandTypography.slots | dump | safe }};
+        var snapshotProperties = new WeakMap();
 
         function getTokens() {
           var styles = getComputedStyle(root);
@@ -387,6 +391,7 @@
         }
 
         function applySnapshot(stage, brand, mode) {
+          stage.dataset.brand = brand;
           stage.dataset.mode = mode;
           var origBrand = root.dataset.brand;
           var origMode = root.dataset.mode;
@@ -396,11 +401,12 @@
           var tokens = getTokens();
           root.dataset.brand = origBrand;
           root.dataset.mode = origMode;
-          var cssText = "";
-          Object.keys(tokens).forEach(function (prop) {
-            cssText += prop + ":" + tokens[prop] + ";";
-          });
-          stage.style.cssText = cssText;
+          // Optional slots are absent in neutral B/C snapshots. Clear the exact
+          // declared slots and prior snapshot values, preserving authored styles.
+          typographySlots.forEach(function (prop) { stage.style.removeProperty(prop); });
+          (snapshotProperties.get(stage) || []).forEach(function (prop) { stage.style.removeProperty(prop); });
+          Object.keys(tokens).forEach(function (prop) { stage.style.setProperty(prop, tokens[prop]); });
+          snapshotProperties.set(stage, Object.keys(tokens));
         }
 
         previews.forEach(function (preview) {

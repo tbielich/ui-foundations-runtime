@@ -1,0 +1,48 @@
+{
+  "status": "VERIFY baseline prepared; await fallback/source readiness",
+  "baseline": "/tmp/uif-bc-typography-baseline-20261110",
+  "familyPolicy": {
+    "a": {
+      "body": "Inter",
+      "heading": "Roboto Slab",
+      "headingWeight": 700
+    },
+    "b": {
+      "body": "Exo 2",
+      "heading": "Orbitron",
+      "headingWeight": 800
+    },
+    "c": {
+      "body": "Manrope",
+      "heading": "Bricolage Grotesque",
+      "headingWeight": 700
+    }
+  },
+  "bodyWeight": 400,
+  "functionalSetUIWeight600": [
+    "Button",
+    "FieldLabel",
+    "Input",
+    "Badge",
+    "Link"
+  ],
+  "ownedFamilyOnlyExpansion": [
+    "root base",
+    "Accordion summary",
+    "Accordion content",
+    "Tabs",
+    "Avatar",
+    "Tooltip"
+  ],
+  "preserveOtherWeights": [
+    "Select400",
+    "Textarea inherited weight",
+    "helper prose400",
+    "required marker700"
+  ],
+  "fallbackContract": "Brand primary family \u2192 existing Basic Sans/Serif \u2192 generic; CodeMono\u2192monospace. Test real blocked HTTP Brand faces and actual platform-font fallback.",
+  "invariance": "A actual font and all non-family properties unchanged except explicitly added fallback stack. B/C font families/heading weights/UI600 intentional. All non-typographic token values and border/radius/padding/gap/track geometry unchanged; font-driven widths/wrapping evaluated against baseline.",
+  "reflow": "Normal320px, separate root200%/spacing stress; flag genuinely new320px overflow, preserve/report existing nowrap stress separately.",
+  "knownFigmaScopeExclusion": "Parent observed liveSFMono WEB mono vs local sf-mono drift; outofscope, no broadsync or repair.",
+  "sourceMutationsByVerifier": []
+}

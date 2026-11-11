@@ -1,4 +1,6 @@
 @layer components {
+  /* Base uses the native visual; the existing themed track remains unchanged. */
+  .uif-progress-bar-native { display: none; }
   /* ── Wrapper (label row + track) ── */
 
   .uif-progress-bar {

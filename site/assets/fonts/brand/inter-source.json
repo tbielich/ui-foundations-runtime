@@ -1,0 +1,38 @@
+{
+  "family": "Inter",
+  "file": "inter-variable.woff2",
+  "bytes": 350460,
+  "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a",
+  "source": {
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+    "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+  },
+  "license": {
+    "type": "OFL-1.1",
+    "file": "inter-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/inter/OFL.txt",
+    "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+  },
+  "axes": [
+    {
+      "tag": "opsz",
+      "min": 14.0,
+      "default": 14.0,
+      "max": 32.0
+    },
+    {
+      "tag": "wght",
+      "min": 100.0,
+      "default": 400.0,
+      "max": 900.0
+    }
+  ],
+  "conversion": {
+    "method": "TTF to WOFF2 compression only; no axis, outline, naming or subset edits",
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1"
+  },
+  "glyphCheck": {
+    "missing": []
+  }
+}

@@ -1925,26 +1925,25 @@
     "Font Weight": {
       "$type": "string",
       "$value": {
-        "$ref": "Semantics/Typography/Body/Font/Weight"
+        "$ref": "Semantics/Typography/UI/Font/Weight"
       },
       "$extensions": {
         "com.figma.variableId": "VariableID:2028:303",
+        "com.figma.variableName": "Input/Font/Weight",
         "com.figma.scopes": [
           "FONT_STYLE"
         ],
+        "com.figma.hiddenFromPublishing": false,
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-input-font-weight)"
         },
         "com.figma.aliasData": {
-          "targetVariableId": "VariableID:3173:87",
-          "targetVariableName": "Semantics/Typography/Body/Font/Weight",
+          "targetVariableId": "VariableID:3260:6",
+          "targetVariableName": "Semantics/Typography/UI/Font/Weight",
           "targetVariableSetId": "VariableCollectionId:3173:2",
           "targetVariableSetName": "Semantics (Roles)"
         },
-        "com.figma.isOverride": true,
-        "com.figma.variableName": "Input/Font/Weight",
-        "com.figma.variableCollectionName": "Patterns (UI)",
-        "com.figma.hiddenFromPublishing": false
+        "com.figma.isOverride": true
       }
     },
     "Font Size": {
@@ -5522,26 +5521,25 @@
     "Font Weight": {
       "$type": "string",
       "$value": {
-        "$ref": "Semantics/Typography/Body/Font/Weight"
+        "$ref": "Semantics/Typography/UI/Font/Weight"
       },
       "$extensions": {
         "com.figma.variableId": "VariableID:2777:37",
+        "com.figma.variableName": "Link/Font/Weight",
         "com.figma.scopes": [
           "FONT_STYLE"
         ],
+        "com.figma.hiddenFromPublishing": false,
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-link-font-weight)"
         },
         "com.figma.aliasData": {
-          "targetVariableId": "VariableID:3173:87",
-          "targetVariableName": "Semantics/Typography/Body/Font/Weight",
+          "targetVariableId": "VariableID:3260:6",
+          "targetVariableName": "Semantics/Typography/UI/Font/Weight",
           "targetVariableSetId": "VariableCollectionId:3173:2",
           "targetVariableSetName": "Semantics (Roles)"
         },
-        "com.figma.isOverride": true,
-        "com.figma.variableName": "Link/Font/Weight",
-        "com.figma.variableCollectionName": "Patterns (UI)",
-        "com.figma.hiddenFromPublishing": false
+        "com.figma.isOverride": true
       }
     },
     "Gap": {
@@ -6689,26 +6687,25 @@
       "Font Family": {
         "$type": "string",
         "$value": {
-          "$ref": "Semantics/Font/Lead"
+          "$ref": "Semantics/Font/Heading"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:3014:2",
+          "com.figma.variableName": "Typography/Heading/Font/Family",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--typography-heading-font-family)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:63",
-            "targetVariableName": "Semantics/Font/Lead",
+            "targetVariableId": "VariableID:3260:4",
+            "targetVariableName": "Semantics/Font/Heading",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },
-          "com.figma.isOverride": true,
-          "com.figma.variableName": "Typography/Heading/Font/Family",
-          "com.figma.variableCollectionName": "Patterns (UI)",
-          "com.figma.hiddenFromPublishing": false
+          "com.figma.isOverride": true
         }
       },
       "Font Size": {
@@ -6891,26 +6888,25 @@
       "Font Weight": {
         "$type": "string",
         "$value": {
-          "$ref": "Semantics/Scale/Font/Weight/700"
+          "$ref": "Semantics/Typography/Heading/Font/Weight"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:3014:5",
+          "com.figma.variableName": "Typography/Heading/Font/Weight",
           "com.figma.scopes": [
             "FONT_STYLE"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--typography-heading-font-weight)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:103",
-            "targetVariableName": "Semantics/Scale/Font/Weight/700",
+            "targetVariableId": "VariableID:3274:7",
+            "targetVariableName": "Semantics/Typography/Heading/Font/Weight",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },
-          "com.figma.isOverride": true,
-          "com.figma.variableName": "Typography/Heading/Font/Weight",
-          "com.figma.variableCollectionName": "Patterns (UI)",
-          "com.figma.hiddenFromPublishing": false
+          "com.figma.isOverride": true
         }
       },
       "Line Height": {
@@ -8838,7 +8834,9 @@
             "$ref": "Semantics/Color/Surface/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-default-container-background)"
             }
@@ -8852,7 +8850,9 @@
             "$ref": "Semantics/Color/Border/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-default-border-color)"
             }
@@ -8865,7 +8865,9 @@
           "$ref": "Semantics/Color/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-inline-alert-default-text-color)"
           }
@@ -8880,7 +8882,9 @@
             "$ref": "Semantics/Color/Subtle/Surface/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-info-container-background)"
             }
@@ -8894,7 +8898,9 @@
             "$ref": "Semantics/Color/Border/Subtle/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-info-border-color)"
             }
@@ -8907,7 +8913,9 @@
           "$ref": "Semantics/Color/Subtle/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-inline-alert-info-text-color)"
           }
@@ -8922,7 +8930,9 @@
             "$ref": "Semantics/Color/Success/Surface/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-positive-container-background)"
             }
@@ -8936,7 +8946,9 @@
             "$ref": "Semantics/Color/Success/Foreground/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-positive-border-color)"
             }
@@ -8949,7 +8961,9 @@
           "$ref": "Semantics/Color/Success/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-inline-alert-positive-text-color)"
           }
@@ -8964,7 +8978,9 @@
             "$ref": "Semantics/Color/Danger/Surface/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-negative-container-background)"
             }
@@ -8978,7 +8994,9 @@
             "$ref": "Semantics/Color/Border/Danger/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-negative-border-color)"
             }
@@ -8991,7 +9009,9 @@
           "$ref": "Semantics/Color/Danger/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-inline-alert-negative-text-color)"
           }
@@ -9006,7 +9026,9 @@
             "$ref": "Semantics/Color/Selection/Surface/Active"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-notice-container-background)"
             }
@@ -9020,7 +9042,9 @@
             "$ref": "Semantics/Color/Action/Foreground/Default"
           },
           "$extensions": {
-            "com.figma.scopes": ["ALL_SCOPES"],
+            "com.figma.scopes": [
+              "ALL_SCOPES"
+            ],
             "com.figma.codeSyntax": {
               "WEB": "var(--uif-inline-alert-notice-border-color)"
             }
@@ -9033,7 +9057,9 @@
           "$ref": "Semantics/Color/Selection/Content/Active"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-inline-alert-notice-text-color)"
           }
@@ -9046,7 +9072,9 @@
         "$ref": "Semantics/Size/Border/Default"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-border-size)"
         }
@@ -9058,7 +9086,9 @@
         "$ref": "Semantics/Shape/Corner/Panel"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-border-radius)"
         }
@@ -9070,7 +9100,9 @@
         "$ref": "Semantics/Size/Spacing/Component"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-padding-inline)"
         }
@@ -9082,7 +9114,9 @@
         "$ref": "Semantics/Size/Spacing/Component"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-padding-block)"
         }
@@ -9094,7 +9128,9 @@
         "$ref": "Semantics/Size/Spacing/Component"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-gap)"
         }
@@ -9106,7 +9142,9 @@
         "$ref": "Semantics/Size/Spacing/Tight"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-content-gap)"
         }
@@ -9118,7 +9156,9 @@
         "$ref": "Semantics/Font/Base"
       },
       "$extensions": {
-        "com.figma.scopes": ["FONT_FAMILY"],
+        "com.figma.scopes": [
+          "FONT_FAMILY"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-font-family)"
         }
@@ -9130,7 +9170,9 @@
         "$ref": "Semantics/Typography/Label/Font/Weight"
       },
       "$extensions": {
-        "com.figma.scopes": ["FONT_STYLE"],
+        "com.figma.scopes": [
+          "FONT_STYLE"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-title-font-weight)"
         }
@@ -9142,7 +9184,9 @@
         "$ref": "Semantics/Scale/Font/Size/sm"
       },
       "$extensions": {
-        "com.figma.scopes": ["FONT_SIZE"],
+        "com.figma.scopes": [
+          "FONT_SIZE"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-font-size)"
         }
@@ -9154,7 +9198,9 @@
         "$ref": "Semantics/Scale/Line/Height/sm"
       },
       "$extensions": {
-        "com.figma.scopes": ["LINE_HEIGHT"],
+        "com.figma.scopes": [
+          "LINE_HEIGHT"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-inline-alert-line-height)"
         }
@@ -9168,7 +9214,9 @@
         "$ref": "Semantics/Size/Spacing/Comfortable"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-illustrated-message-gap)"
         }
@@ -9180,7 +9228,9 @@
         "$ref": "Semantics/Size/Spacing/Tight"
       },
       "$extensions": {
-        "com.figma.scopes": ["ALL_SCOPES"],
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
         "com.figma.codeSyntax": {
           "WEB": "var(--uif-illustrated-message-content-gap)"
         }
@@ -9193,7 +9243,9 @@
           "$ref": "Semantics/Color/Foreground/Subtle"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-illustration-color)"
           }
@@ -9203,7 +9255,10 @@
         "$type": "number",
         "$value": 48,
         "$extensions": {
-          "com.figma.scopes": ["WIDTH_HEIGHT", "FONT_SIZE"],
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT",
+            "FONT_SIZE"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-illustration-size)"
           }
@@ -9217,7 +9272,9 @@
           "$ref": "Semantics/Color/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-heading-text-color)"
           }
@@ -9226,10 +9283,12 @@
       "Font Family": {
         "$type": "string",
         "$value": {
-          "$ref": "Semantics/Font/Lead"
+          "$ref": "Semantics/Font/Heading"
         },
         "$extensions": {
-          "com.figma.scopes": ["FONT_FAMILY"],
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-heading-font-family)"
           }
@@ -9241,7 +9300,9 @@
           "$ref": "Semantics/Typography/Label/Font/Weight"
         },
         "$extensions": {
-          "com.figma.scopes": ["FONT_STYLE"],
+          "com.figma.scopes": [
+            "FONT_STYLE"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-heading-font-weight)"
           }
@@ -9253,7 +9314,9 @@
           "$ref": "Semantics/Scale/Font/Size/lg"
         },
         "$extensions": {
-          "com.figma.scopes": ["FONT_SIZE"],
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-heading-font-size)"
           }
@@ -9265,7 +9328,9 @@
           "$ref": "Semantics/Scale/Line/Height/lg"
         },
         "$extensions": {
-          "com.figma.scopes": ["LINE_HEIGHT"],
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-heading-line-height)"
           }
@@ -9279,7 +9344,9 @@
           "$ref": "Semantics/Color/Content/Default"
         },
         "$extensions": {
-          "com.figma.scopes": ["ALL_SCOPES"],
+          "com.figma.scopes": [
+            "ALL_SCOPES"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-description-text-color)"
           }
@@ -9291,7 +9358,9 @@
           "$ref": "Semantics/Font/Base"
         },
         "$extensions": {
-          "com.figma.scopes": ["FONT_FAMILY"],
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-description-font-family)"
           }
@@ -9303,7 +9372,9 @@
           "$ref": "Semantics/Scale/Font/Size/md"
         },
         "$extensions": {
-          "com.figma.scopes": ["FONT_SIZE"],
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-description-font-size)"
           }
@@ -9315,7 +9386,9 @@
           "$ref": "Semantics/Scale/Line/Height/md"
         },
         "$extensions": {
-          "com.figma.scopes": ["LINE_HEIGHT"],
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-illustrated-message-description-line-height)"
           }

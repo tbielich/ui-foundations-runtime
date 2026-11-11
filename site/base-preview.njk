@@ -1,0 +1,46 @@
+---
+permalink: /base/preview/
+eleventyExcludeFromCollections: true
+---
+{% import "macros/ui.njk" as uif %}
+<!doctype html>
+<html lang="de" style="color-scheme: light dark">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UIF Base – Native Vorschau</title>
+  <link rel="stylesheet" href="/vendor/ui-foundations/base.css">
+  <style>fieldset { min-inline-size: 0; }</style>
+</head>
+<body>
+  <h1>UIF Base</h1>
+  <p>Native Controls mit Brand-A-Größen und Sans-Serif-Systemschrift. Keine Webfonts.</p>
+  <fieldset><legend>Native Controls</legend>
+    <p><button id="plain-button">Browser-Button</button> <uif-button id="base-button">UIF-Button</uif-button> <uif-button disabled>Deaktiviert</uif-button></p>
+    <p><label>Browser-Eingabe <input id="plain-input" placeholder="Text"></label> <uif-input id="base-input" aria-label="UIF-Eingabe" placeholder="Text"></uif-input></p>
+    <p><uif-checkbox label="Benachrichtigungen" checked></uif-checkbox> <uif-radio label="Option A" name="demo" checked></uif-radio> <uif-switch label="Aktiv"></uif-switch></p>
+    <p><uif-select aria-label="Auswahl"><option>Erste Option</option><option>Zweite Option</option></uif-select> <uif-textarea placeholder="Notizen" aria-label="Notizen"></uif-textarea></p>
+  </fieldset>
+  <fieldset><legend>Erweiterte Interaktion</legend>
+    <uif-tab-list aria-label="Ansichten"><uif-tab label="Übersicht" selected controls="base-panel-a"></uif-tab><uif-tab label="Details" controls="base-panel-b"></uif-tab></uif-tab-list>
+    <uif-tab-panel id="base-panel-a"><p>Die Übersicht ist sichtbar.</p></uif-tab-panel><uif-tab-panel id="base-panel-b" hidden><p>Die Details sind sichtbar.</p></uif-tab-panel>
+    <uif-accordion-item title="Weitere Informationen"><p>Der native Aufklappmechanismus bleibt erhalten.</p></uif-accordion-item>
+    <p><uif-tooltip text="Zusätzlicher Hinweis" placement="bottom"><button id="tooltip-trigger">Hinweis anzeigen</button></uif-tooltip></p>
+    <p><button id="open-dialog">Dialog öffnen</button></p>
+    <uif-dialog id="base-dialog" title="Änderungen prüfen" confirm-label="Bestätigen" cancel-label="Abbrechen"><p>Nativer Dialog mit Fokusführung.</p></uif-dialog>
+    <p>{{ uif.progressBar(42, label='Fortschritt', showValue=true) }}</p>
+    <uif-progress-bar id="base-progress" value="42" label="Fortschritt"></uif-progress-bar>
+    <uif-meter value="65" label="Auslastung"></uif-meter>
+    <uif-inline-alert title="Hinweis" description="Dieser Hinweis kann geschlossen werden." dismissible></uif-inline-alert>
+  </fieldset>
+  <fieldset><legend>Kalender und Tabelle</legend>
+    <div class="uif-input-field date" id="base-date">
+      <span class="date-segments"><input class="date-segment day" aria-label="Tag" maxlength="2" inputmode="numeric" value="15"><span>/</span><input class="date-segment month" aria-label="Monat" maxlength="2" inputmode="numeric" value="03"><span>/</span><input class="date-segment year" aria-label="Jahr" maxlength="4" inputmode="numeric" value="2026"></span>
+      <span class="uif-input-field-control"><button type="button" aria-label="Open calendar">Kalender öffnen</button></span>
+      {{ uif.calendar(month='2026-03', selectedDate='2026-03-15', id='native-date-calendar') }}
+    </div>
+    <div id="base-calendar">{{ uif.calendar(month='2026-03', selectedDate='2026-03-15', id='native-calendar') }}</div>
+    <table class="uif-table uif-table--sortable" id="base-table"><thead><tr><th aria-sort="none" tabindex="0">Name</th><th aria-sort="none" tabindex="0">Anzahl</th></tr></thead><tbody><tr><td>Beta</td><td>2</td></tr><tr><td>Alpha</td><td>1</td></tr></tbody></table>
+  </fieldset>
+  <script type="module" src="/assets/base-preview.js"></script>
+</body>
+</html>
