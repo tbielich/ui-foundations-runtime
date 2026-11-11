@@ -1,0 +1,230 @@
+{
+  "repository": "tbielich/ui-foundations-runtime",
+  "baseCommit": "129c8a1df58f63cf9300f8644f4de6b727f5d355",
+  "branch": "feat/339-brand-a-typography",
+  "sourceFiles": [
+    {
+      "path": ".eleventy.js",
+      "sha256": "d66c5ecd1d2995efac4a0afcb810787ad389e3a991f8011fc5fe10ac464cbc87"
+    },
+    {
+      "path": "README.md",
+      "sha256": "ba8a717a27128b4601b3e9a31029e8991c0d9ffdfdf3b3cd4035c354eed65f28"
+    },
+    {
+      "path": "docs/base.md",
+      "sha256": "66d04dc7fe1bd02c2bb98f301ac2e593d2e4f4a4d6ddc0339eb803d0a3f1c8b9"
+    },
+    {
+      "path": "docs/public-api.md",
+      "sha256": "48649d7b15e7468e4d864ff11db106d5f8c2c52584e5daa56e617cf310dca84b"
+    },
+    {
+      "path": "package.json",
+      "sha256": "d2b835551fc4c5d3bdeeff3e831e7ffbb767b00b276d3b2880a366398892b9a7"
+    },
+    {
+      "path": "scripts/base-geometry.mjs",
+      "sha256": "76432d9799b6087002c74d116eac55fe1b780e431baf1178dbe342759610f94d"
+    },
+    {
+      "path": "scripts/build-css.mjs",
+      "sha256": "969ddefdc71ca269af1b5b32a6d02be1690d6553fd2ea7f8004cc83764115afc"
+    },
+    {
+      "path": "scripts/check-font-packaging.mjs",
+      "sha256": "904fd1ec3535e760e68cf7ebfc76bfd7ce51d68c5062208dff2a91761983be7e"
+    },
+    {
+      "path": "site/_data/baseGuide.js",
+      "sha256": "3db78b2fb83e2f987da96b31b409f53d39d6aa1ce049a4847603511e3f2d2ad4"
+    },
+    {
+      "path": "site/_includes/layouts/docs.njk",
+      "sha256": "31046bf92a4a61cf23022701313078b00742cfe829ef2235747451fee9424f36"
+    },
+    {
+      "path": "site/_includes/macros/ui.njk",
+      "sha256": "1f968b20d5b6b2593d97ecceb4412f96bd6e34920507df37ac3ae48ef9f147d0"
+    },
+    {
+      "path": "site/assets/base-preview.js",
+      "sha256": "40965025514190d8507dc4edb2e4a6a2679c79eca426da28160fb70bddf3ba3f"
+    },
+    {
+      "path": "site/assets/brand-fonts.css",
+      "sha256": "fcdf65ae8e379599cf7206cbe1f0c529cf2d5ce5beb9aba76a2347e76e0045ed"
+    },
+    {
+      "path": "site/assets/fonts/brand/README.md",
+      "sha256": "1e3ccc24324c91a730162f5f8e005399504c9395f663fef7fbc04f146b545720"
+    },
+    {
+      "path": "site/assets/fonts/brand/basic-CONVERSION-NOTICE.txt",
+      "sha256": "011eb9843f5d1c5864574e33b9f6a3bd25be92edc62a5915ee5ecfc1a1c6f371"
+    },
+    {
+      "path": "site/assets/fonts/brand/bc-CONVERSION-NOTICE.txt",
+      "sha256": "4af598047f189aa8e273ed4d68556e23f2e08c3f26576ab6d89ca4d87f719058"
+    },
+    {
+      "path": "site/assets/fonts/brand/bricolage-grotesque-LICENSE.txt",
+      "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba"
+    },
+    {
+      "path": "site/assets/fonts/brand/bricolage-grotesque-source.json",
+      "sha256": "99061af4bdbd75d87225126294dd7856092204fa6f394a609653a50a80ae4203"
+    },
+    {
+      "path": "site/assets/fonts/brand/bricolage-grotesque-variable.woff2",
+      "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0"
+    },
+    {
+      "path": "site/assets/fonts/brand/exo-2-LICENSE.txt",
+      "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+    },
+    {
+      "path": "site/assets/fonts/brand/exo-2-source.json",
+      "sha256": "544a637fa63ab198e37a87cfe5de88e8340ee491a91dcc547d0178cfa838db2e"
+    },
+    {
+      "path": "site/assets/fonts/brand/exo-2-variable.woff2",
+      "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed"
+    },
+    {
+      "path": "site/assets/fonts/brand/inter-LICENSE.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "site/assets/fonts/brand/inter-source.json",
+      "sha256": "4cf6dd734e2951d0098bfa751c177540931cba7c8dd7f6a557f348d09d980d81"
+    },
+    {
+      "path": "site/assets/fonts/brand/inter-variable.woff2",
+      "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a"
+    },
+    {
+      "path": "site/assets/fonts/brand/manrope-LICENSE.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "site/assets/fonts/brand/manrope-source.json",
+      "sha256": "ebf72c65f9faad61a7fb6cb307ea2cb24664002f6df1ede2674a884b4b05dc05"
+    },
+    {
+      "path": "site/assets/fonts/brand/manrope-variable.woff2",
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f"
+    },
+    {
+      "path": "site/assets/fonts/brand/orbitron-LICENSE.txt",
+      "sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+    },
+    {
+      "path": "site/assets/fonts/brand/orbitron-source.json",
+      "sha256": "bb2f7fd1dc248718a575dd2e5a1633533d0b7dec643166d6700e10db1365de3c"
+    },
+    {
+      "path": "site/assets/fonts/brand/orbitron-variable.ttf",
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+    },
+    {
+      "path": "site/assets/fonts/brand/roboto-slab-CONVERSION-NOTICE.txt",
+      "sha256": "ec84d168d109b7f7c991255e8d5e20991b67eeeaef1676054b25342c28c18998"
+    },
+    {
+      "path": "site/assets/fonts/brand/roboto-slab-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "site/assets/fonts/brand/roboto-slab-source.json",
+      "sha256": "311074f02b5bcceb26f2bb1cfb84e351e684533089fbc0dcd274913ba379335b"
+    },
+    {
+      "path": "site/assets/fonts/brand/roboto-slab-variable.woff2",
+      "sha256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed"
+    },
+    {
+      "path": "site/assets/fonts/brand/rokkitt-LICENSE.txt",
+      "sha256": "31501a9490dce395cdb40015237d3684186b79f81dd6a31442d669eb7da81066"
+    },
+    {
+      "path": "site/assets/fonts/brand/rokkitt-source.json",
+      "sha256": "5f7a67ca88f5b356791c6998f84477396f7c805991978dd87f4f6cb9a14bcb4b"
+    },
+    {
+      "path": "site/assets/fonts/brand/rokkitt-variable.woff2",
+      "sha256": "a10e6659f05518a4b2d53c5e8ba174d7aaaca458cab76bacd932491f8a104355"
+    },
+    {
+      "path": "site/base-preview.njk",
+      "sha256": "2fbc893b687517958c1958cc21458c7ce78fa2ed64d8dc0cb2c9d2bcaa211b1d"
+    },
+    {
+      "path": "site/base.md",
+      "sha256": "b7803e3d273979cdaa0be5708cdb0655777fa7e39fde930ce210820a6ac78d57"
+    },
+    {
+      "path": "src/base/functional.css",
+      "sha256": "700b73d8853142c0060aba8db53683c7e70d8c4dfc4e05e47458f1c7e5a1e02a"
+    },
+    {
+      "path": "src/base/index.css",
+      "sha256": "95f12e8b0d446121b220b658115f004cde2a571102b929c6bf59a23f5fb9d3a5"
+    },
+    {
+      "path": "src/base/sizing.css",
+      "sha256": "6348011d5b53f589f38c7f126f083650fdc8bcd43ec17f3865afcc7691d30bfd"
+    },
+    {
+      "path": "src/core/index.css",
+      "sha256": "b6c4ed0f241dcc8fcfb14b697776cf594f36e84c612a5244ba805d328a8a2d6e"
+    },
+    {
+      "path": "src/elements/ui-progress-bar.js",
+      "sha256": "60ceabb938b79f70353f8eccb2c8e501a2ef2122a4ae690fbabf92d2bfafbdbc"
+    },
+    {
+      "path": "src/ui/components/calendar.js",
+      "sha256": "4b15f76677e6459bba06edf551b8939d3b8709b5454349b66a883100831655bd"
+    },
+    {
+      "path": "src/ui/components/date-input.js",
+      "sha256": "e185951de987fba32ba3e84e558604fc88de845ffecdfdcb0bb1c17231d35a5c"
+    },
+    {
+      "path": "src/ui/patterns/progress-bar.css",
+      "sha256": "c169b6e0c3a21d4d3723ca2e79dd6365838769c979052030469bc18f126d4e38"
+    },
+    {
+      "path": "tests/base-geometry.test.mjs",
+      "sha256": "56b3550f3b8c7c9fd9fd24270e8801ecb0597135d46f051b392a567cc21efc4d"
+    },
+    {
+      "path": "tests/browser/base-geometry.spec.mjs",
+      "sha256": "7a12648f5e63036227ea8253d3b491edb662cbcf4e12bb7b0435db8ef57b6f20"
+    },
+    {
+      "path": "tests/browser/base-native.spec.mjs",
+      "sha256": "b1ac5fb25d169853a4278b88cdebeae7739e565299a4963600ada547a8edb100"
+    },
+    {
+      "path": "tests/browser/font-loading.spec.mjs",
+      "sha256": "5caedfe6292e6cb0be25f4666bf2053bebf8512350173b550c0fb58ca0fc52f7"
+    },
+    {
+      "path": "tests/font-packaging.test.mjs",
+      "sha256": "3592cd63c289c43c5e8e99c7f5eb11183feedc7919fadd07050329a6394d2b33"
+    }
+  ],
+  "sourceAggregate": "e57c6a650886396063f8bb114998dcbb132aabdaea29836b3b1500f6b25bf787",
+  "validation": {
+    "command": "npm run ci:check",
+    "node": "22.23.2",
+    "exitCode": 0,
+    "unit": 244,
+    "chromium": 59,
+    "packageFontBinaries": 0,
+    "packageFontLoaders": 0
+  },
+  "state": "Local implementation; neither committed nor pushed; no Figma/Vault changes"
+}

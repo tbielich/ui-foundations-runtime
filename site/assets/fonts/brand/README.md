@@ -1,11 +1,11 @@
-# Fonts Assets
+# Documentation-owned brand fonts
 
-Place self-hosted font files here (for example: `.woff2`, `.woff`, `.ttf`).
+These seven families support the UIF documentation and playground experience.
+`site/assets/brand-fonts.css` opts into them explicitly, using relative URLs in
+`fonts/brand/`. The Runtime npm package contains no font binaries, no font-face
+loader and no automatic request to a font service. Consumers own font loading.
 
-This folder is copied to `dist/assets/fonts` during `npm run build:css`.
-
-
-All seven Runtime webfont families are self-hosted under `runtime/`, including
+All seven documentation webfont families are self-hosted here, including
 their licenses and conversion/source records. Inter and Rokkitt no longer use
 the Google Fonts API. Exo 2, Orbitron, Manrope and Bricolage Grotesque supply
 Brand B/C; Roboto Slab supplies Brand A headings. Bricolage is instanced at

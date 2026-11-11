@@ -69,6 +69,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="/vendor/ui-foundations/main.css" />
+    <link rel="stylesheet" href="/assets/brand-fonts.css" />
     <link rel="stylesheet" href="/assets/vendor/prism/prism.css" />
     <link rel="stylesheet" href="/assets/docs.css" />
     <link rel="stylesheet" href="/assets/docs-keytips.css" />
@@ -101,6 +102,7 @@
                   </a>
                 </li>
                 {% endfor %}
+                <li><a href="/base/"{% if page.url == "/base/" %} aria-current="page"{% endif %}>Base — Native UI</a></li>
                 <li>
                   <details class="docs-nav-subgroup"{% if page.url.indexOf("/primitives/") == 0 or page.url == "/foundations/design-tokens/" %} open{% endif %}>
                     <summary><a href="/foundations/design-tokens/"{% if page.url == "/foundations/design-tokens/" %} aria-current="page"{% endif %}>Design Tokens</a></summary>

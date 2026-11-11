@@ -1,0 +1,200 @@
+[
+  {
+    "scheme": "light",
+    "raw": {
+      "button": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 6px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)"
+      },
+      "input": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 2px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)"
+      }
+    },
+    "enhanced": {
+      "button": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 6px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(239, 239, 239)",
+        "color": "rgb(0, 0, 0)"
+      },
+      "input": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 2px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "color": "rgb(0, 0, 0)"
+      }
+    },
+    "checks": {
+      "nativeMetrics": true,
+      "disabled": true,
+      "tabs": {
+        "a": false,
+        "b": true,
+        "focus": "Details"
+      },
+      "modal": true,
+      "dialogClosed": true,
+      "tooltip": true,
+      "dismiss": true,
+      "month": "4",
+      "selection": {
+        "selected": "true",
+        "focus": {
+          "tag": "BODY"
+        }
+      },
+      "arrowFocus": "BODY",
+      "idempotentNavigation": {
+        "before": "4",
+        "after": "5"
+      },
+      "dateOpen": true,
+      "dateSelected": "17",
+      "dateClosed": true,
+      "nativeIndicators": [
+        {
+          "tag": "PROGRESS",
+          "value": 42,
+          "visible": true
+        },
+        {
+          "tag": "PROGRESS",
+          "value": 42,
+          "visible": true
+        },
+        {
+          "tag": "METER",
+          "value": 65,
+          "visible": true
+        }
+      ],
+      "mobileWidth": 320
+    },
+    "fonts": [],
+    "errors": []
+  },
+  {
+    "scheme": "dark",
+    "raw": {
+      "button": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 6px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(107, 107, 107)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "input": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 2px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(59, 59, 59)",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    "enhanced": {
+      "button": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 6px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(107, 107, 107)",
+        "color": "rgb(255, 255, 255)"
+      },
+      "input": {
+        "appearance": "auto",
+        "fontFamily": "Arial",
+        "fontSize": "13.3333px",
+        "fontWeight": "400",
+        "padding": "1px 2px",
+        "borderWidth": "2px",
+        "borderRadius": "0px",
+        "backgroundColor": "rgb(59, 59, 59)",
+        "color": "rgb(255, 255, 255)"
+      }
+    },
+    "checks": {
+      "nativeMetrics": true,
+      "disabled": true,
+      "tabs": {
+        "a": false,
+        "b": true,
+        "focus": "Details"
+      },
+      "modal": true,
+      "dialogClosed": true,
+      "tooltip": true,
+      "dismiss": true,
+      "month": "4",
+      "selection": {
+        "selected": "true",
+        "focus": {
+          "tag": "BODY"
+        }
+      },
+      "arrowFocus": "BODY",
+      "idempotentNavigation": {
+        "before": "4",
+        "after": "5"
+      },
+      "dateOpen": true,
+      "dateSelected": "17",
+      "dateClosed": true,
+      "nativeIndicators": [
+        {
+          "tag": "PROGRESS",
+          "value": 42,
+          "visible": true
+        },
+        {
+          "tag": "PROGRESS",
+          "value": 42,
+          "visible": true
+        },
+        {
+          "tag": "METER",
+          "value": 65,
+          "visible": true
+        }
+      ],
+      "mobileWidth": 320
+    },
+    "fonts": [],
+    "errors": []
+  }
+]

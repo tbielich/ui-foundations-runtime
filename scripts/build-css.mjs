@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { buildScaleContext } from "./scale-context.mjs";
 import { buildBrandTypographyContext } from "./brand-typography-context.mjs";
+import { buildBaseGeometry } from "./base-geometry.mjs";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DIST_DIR = path.join(REPO_ROOT, "dist");
@@ -176,7 +177,6 @@ function buildCoreBundle(tokenFiles) {
     path.join(DIST_DIR, "core", "index.css"),
     [
       '@import url("./base/reset.css") layer(reset);',
-      '@import url("./base/fonts.css") layer(base);',
       '@import url("./base/base.css") layer(base);',
       '@import url("./base/typography.css") layer(base);',
       ...tokenImports,
@@ -229,6 +229,11 @@ function buildDocs() {
   buildElementsBundle();
   buildAssetsBundle();
   buildMacrosBundle();
+
+  // An opt-in native entry; never imports the branded reset or token bundles.
+  copyDir(path.join(REPO_ROOT, "src", "base"), path.join(DIST_DIR, "base"));
+  buildBaseGeometry(REPO_ROOT, DIST_DIR);
+  writeFile(path.join(DIST_DIR, "base.css"), inlineImports(path.join(DIST_DIR, "base", "index.css")));
 
   const coreCss = inlineImports(path.join(DIST_DIR, "core", "index.css"));
   const uiCss = inlineImports(path.join(DIST_DIR, "ui", "index.css"));

@@ -1,0 +1,53 @@
+{
+  "mode": "IMPLEMENT",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/339-brand-a-typography",
+  "baseSHA": "129c8a1df58f63cf9300f8644f4de6b727f5d355",
+  "authorization": "Owner requested a code-only Base version with native UI, minimal reset-like custom styles preserving enhanced experience, and consumer-owned font loading/files. Follow-up: retain Brand A sizes as reset and use Sans Serif.",
+  "deliverables": [
+    "Optional public base.css with shared reset, geometry-only Brand A token projection and system-ui, sans-serif",
+    "Functional CSS for existing component state/visibility/composition and native controls",
+    "Native progress visual fallback in existing emitters",
+    "No font binaries or automatic font loading in npm; documentation is an explicit font consumer",
+    "Public behavior module exports for existing progressive enhancements",
+    "Isolated native preview, documentation, actual-browser verification and package proof"
+  ],
+  "exception": "Owner-authorized code-only native adapter with Brand A numerical sizing. No new Figma IDs, palette, font families, radii or shadows; native system-color keywords remain functional exceptions.",
+  "preserve": [
+    "A/B/C font decisions and token values",
+    "Existing branded entry points",
+    "Native control appearance/focus/disabled/validation",
+    "Existing JavaScript behavior APIs"
+  ],
+  "forbidden": [
+    "Figma mutation",
+    "Vault/governance promotion",
+    "New framework",
+    "Automatic commit/push/PR/merge/release"
+  ],
+  "checks": [
+    "Brand A numerical geometry at 320/1200px and root16/20px; native appearance/colors/radius separately against raw HTML",
+    "Tabs keyboard and hidden panels; native details/dialog; tooltip focus/hover; datepicker and input enhancement; progress/meter",
+    "320px and both consumer schemes; no font network requests",
+    "ABC documentation actual fonts after explicit consumer loading",
+    "npm pack no fonts and no auto font-face",
+    "npm run ci:check"
+  ],
+  "state": "IMPLEMENT complete; bounded VERIFY PASS; local not committed/pushed",
+  "repairs": [
+    "Existing Calendar module expected removed title; support current native header selects",
+    "Local date serialization avoids UTC day drift",
+    "Calendar focus and roving tab stop survive selection/month rerender",
+    "DateInput marks explicit enhancement to prevent auto-initialization duplication"
+  ],
+  "validation": {
+    "command": "npm run ci:check",
+    "node": "22.23.2",
+    "exitCode": 0,
+    "unit": 244,
+    "chromium": 59,
+    "packageFontBinaries": 0,
+    "packageFontLoaders": 0
+  },
+  "finalSourceAggregate": "e57c6a650886396063f8bb114998dcbb132aabdaea29836b3b1500f6b25bf787"
+}

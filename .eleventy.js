@@ -53,11 +53,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/elements": "vendor/ui-foundations/elements" });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
+    "dist/base.css": "vendor/ui-foundations/base.css",
   });
-  // main.css keeps package-relative font URLs when mirrored into the docs vendor path.
-  eleventyConfig.addPassthroughCopy({
-    "src/assets/fonts/runtime": "vendor/ui-foundations/assets/fonts/runtime",
-  });
+
   eleventyConfig.addPassthroughCopy({
     "src/ui/components": "vendor/ui-foundations/components",
   });

@@ -1,0 +1,56 @@
+[
+  {
+    "scheme": "light",
+    "selected": "true",
+    "enter": {
+      "focus": "2026-05-18",
+      "tabStops": [
+        "2026-05-18"
+      ]
+    },
+    "right": {
+      "focus": "2026-05-19",
+      "tabStops": [
+        "2026-05-19"
+      ]
+    },
+    "pageDown": {
+      "focus": "2026-06-19",
+      "tabStops": [
+        "2026-06-19"
+      ]
+    },
+    "headerAfterPageDown": "5",
+    "next": "6",
+    "autoNext": "7",
+    "errors": [],
+    "pass": true
+  },
+  {
+    "scheme": "dark",
+    "selected": "true",
+    "enter": {
+      "focus": "2026-05-18",
+      "tabStops": [
+        "2026-05-18"
+      ]
+    },
+    "right": {
+      "focus": "2026-05-19",
+      "tabStops": [
+        "2026-05-19"
+      ]
+    },
+    "pageDown": {
+      "focus": "2026-06-19",
+      "tabStops": [
+        "2026-06-19"
+      ]
+    },
+    "headerAfterPageDown": "5",
+    "next": "6",
+    "autoNext": "7",
+    "errors": [],
+    "pass": true
+  }
+]

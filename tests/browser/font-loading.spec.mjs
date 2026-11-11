@@ -5,7 +5,7 @@ const normalize = value => value.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
 for (const mode of ["light", "dark"]) {
   for (const blocked of [false, true]) {
-    test(`local font delivery and ${blocked ? "Basic fallbacks" : "selected families"} (${mode})`, async ({ page, baseURL }) => {
+    test(`consumer-loaded docs fonts and ${blocked ? "Basic fallbacks" : "selected families"} (${mode})`, async ({ page, baseURL }) => {
       const external = [];
       const failed = [];
       page.on("request", request => {
@@ -14,7 +14,7 @@ for (const mode of ["light", "dark"]) {
       page.on("response", response => { if (response.status() >= 400) failed.push(response.url()); });
       if (blocked) await page.route(/\/(exo-2|orbitron|manrope|bricolage-grotesque|roboto-slab)-variable\.(?:woff2|ttf)$/, route => route.abort());
       for (const brand of ["a", "b", "c"]) {
-        await page.route("**/__font-probe", route => route.fulfill({ contentType: "text/html", body: `<!doctype html><html data-brand="${brand}" data-mode="${mode}"><meta charset="utf-8"><link rel="stylesheet" href="/vendor/ui-foundations/main.css"><h1 id="heading">Future 0123</h1><p id="body">Klarheit ÄÖÜ äöü ß</p><button class="uif-button" id="button">Weiter</button><h2 id="glyph">ẞ</h2></html>` }));
+        await page.route("**/__font-probe", route => route.fulfill({ contentType: "text/html", body: `<!doctype html><html data-brand="${brand}" data-mode="${mode}"><meta charset="utf-8"><link rel="stylesheet" href="/vendor/ui-foundations/main.css"><link rel="stylesheet" href="/assets/brand-fonts.css"><h1 id="heading">Future 0123</h1><p id="body">Klarheit ÄÖÜ äöü ß</p><button class="uif-button" id="button">Weiter</button><h2 id="glyph">ẞ</h2></html>` }));
         await page.goto(`${baseURL}/__font-probe`);
         await page.evaluate(() => document.fonts.ready);
         const cdp = await page.context().newCDPSession(page);
@@ -39,3 +39,12 @@ for (const mode of ["light", "dark"]) {
     });
   }
 }
+
+test("Runtime CSS alone makes no font requests", async ({ page, baseURL }) => {
+  const requests = [];
+  page.on("request", request => { if (request.resourceType() === "font") requests.push(request.url()); });
+  await page.route("**/__fontless-runtime", route => route.fulfill({ contentType: "text/html", body: `<!doctype html><html data-brand="b" data-mode="light"><meta charset="utf-8"><link rel="stylesheet" href="/vendor/ui-foundations/main.css"><h1>Heading</h1><p>Body</p><button class="uif-button">Continue</button></html>` }));
+  await page.goto(`${baseURL}/__fontless-runtime`);
+  await page.evaluate(() => document.fonts.ready);
+  expect(requests).toEqual([]);
+});

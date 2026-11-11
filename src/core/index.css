@@ -1,5 +1,4 @@
 @import url("./base/reset.css") layer(reset);
-@import url("./base/fonts.css") layer(base);
 @import url("./base/base.css") layer(base);
 @import url("./base/typography.css") layer(base);
 @import url("../../dist/tokens/css/core-primitives.tokens.css") layer(tokens);

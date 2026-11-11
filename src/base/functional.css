@@ -1,0 +1,103 @@
+@layer components {
+  :where(uif-accordion, uif-accordion-item, uif-tab-list, uif-tab-panel,
+    uif-form, uif-form-group, uif-form-field, uif-form-helper, uif-form-actions,
+    uif-dialog, uif-meter, uif-progress-bar, uif-inline-alert,
+    uif-illustrated-message) {
+    display: block;
+  }
+
+  :where(uif-tab-panel[hidden], .uif-tab-panel[hidden], .uif-inline-alert.is-hidden) {
+    display: none !important;
+  }
+
+  :where(.uif-label-content, .uif-input-field, .uif-input-field-control, .date-segments) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+  }
+
+  :where(.uif-input-field-control:empty) { display: none; }
+  :where(.uif-input-field):has(.uif-input:disabled, .uif-input:placeholder-shown)
+    .uif-input-field-control { visibility: hidden; }
+
+  :where(.uif-tab-list, .uif-button-group) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  :where(.uif-tab-list[aria-orientation="vertical"], .uif-button-group[data-orientation="vertical"]) {
+    flex-direction: column;
+  }
+  :where(.uif-tab[aria-selected="true"]) { text-decoration: underline; }
+  :where(.uif-accordion-item.is-disabled) > summary {
+    pointer-events: none;
+    color: GrayText;
+  }
+
+  /* Existing Tooltip interaction is CSS-driven. Native system colors keep
+     the overlaid content readable; this is not a custom Brand surface. */
+  :where(.uif-tooltip-trigger) { position: relative; display: inline-block; }
+  :where(.uif-tooltip) {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    inline-size: max-content;
+    max-inline-size: min(25em, 90vw);
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-tooltip-trigger:hover, .uif-tooltip-trigger:focus-within) > .uif-tooltip,
+  :where(.uif-tooltip.is-visible) { display: block; }
+  :where(.uif-tooltip[data-placement="top"]) { inset-block-end: 100%; inset-inline-start: 0; }
+  :where(.uif-tooltip[data-placement="bottom"]) { inset-block-start: 100%; inset-inline-start: 0; }
+  :where(.uif-tooltip[data-placement="left"]) { inset-inline-end: 100%; inset-block-start: 0; }
+  :where(.uif-tooltip[data-placement="right"]) { inset-inline-start: 100%; inset-block-start: 0; }
+
+  :where(.uif-input-field.date) { position: relative; }
+  :where(.date-segment.day, .date-segment.month) { inline-size: calc(2ch + 0.5em + 2px); }
+  :where(.date-segment.year) { inline-size: calc(4ch + 0.5em + 2px); }
+  :where(.uif-input-field.date) .uif-calendar {
+    display: none;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    z-index: 1;
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-input-field.date.is-open) .uif-calendar { display: block; }
+  :where(.uif-calendar-header, .uif-calendar-selectors, .uif-calendar-nav) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  :where(.uif-calendar-cell[aria-selected="true"], .uif-calendar-cell.is-in-range,
+    .uif-table tr[aria-selected="true"]) {
+    color: HighlightText;
+    background: Highlight;
+  }
+  :where(.uif-calendar-cell.is-today) { text-decoration: underline; }
+  :where(.uif-calendar-nav-button[aria-disabled="true"]) { pointer-events: none; }
+
+  :where(.uif-meter-track, .uif-progress-bar-track) { display: none; }
+  :where(.uif-meter-header, .uif-progress-bar-header) {
+    display: flex;
+    gap: 0.25em;
+  }
+  :where(.uif-status-light-indicator)::before { content: "●"; }
+
+  :where(.uif-table th[aria-sort="none"])::before { content: "↕ "; }
+  :where(.uif-table th[aria-sort="ascending"])::before { content: "↑ "; }
+  :where(.uif-table th[aria-sort="descending"])::before { content: "↓ "; }
+  :where(.uif-table th[data-resizable]) { position: relative; }
+  :where(.uif-table th[data-resizable])::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    inline-size: 0.5em;
+    border-inline-end: 1px solid ButtonBorder;
+    cursor: col-resize;
+  }
+}
