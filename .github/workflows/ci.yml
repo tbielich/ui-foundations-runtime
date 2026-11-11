@@ -14,6 +14,10 @@ jobs:
       matrix:
         node-version: [20, 22]
     runs-on: ubuntu-latest
+    # Match package-lock.json; browsers/system libraries are already installed.
+    container:
+      image: mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27
+      options: --init --ipc=host
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Verify Playwright image version
+        run: node -e "require('node:assert/strict').equal(require('@playwright/test/package.json').version, '1.63.0', 'Update the pinned CI image with Playwright')"
 
       - name: Run CI checks
         run: npm run ci:check

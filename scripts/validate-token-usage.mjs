@@ -72,7 +72,10 @@ function getUsedTokens() {
 function run() {
   const defined = getDefinedTokens();
   // Explicit, ID-validated code-only slots are generated in the context layer.
-  for (const slot of loadBrandTypographyProjection(REPO_ROOT).slots) defined.add(slot.cssVar);
+  for (const slot of loadBrandTypographyProjection(REPO_ROOT).slots) {
+    defined.add(slot.cssVar);
+    defined.add(slot.legacyCssVar);
+  }
   const usage = getUsedTokens();
   const errors = [];
   const warnings = [];

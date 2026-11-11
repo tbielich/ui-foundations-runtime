@@ -1,0 +1,49 @@
+{
+  "baseSHA": "3fa877f8dffb47be66322c8d102a0d533d45d982",
+  "sourceFiles": [
+    {
+      "path": "docs/public-api.md",
+      "sha256": "04a6120ef70c4850df3bf26ed77ca11ebcdb38e3cecf7d5841b2d6996d3259d5"
+    },
+    {
+      "path": "figma/brand-typography-compatibility.json",
+      "sha256": "c5d3c3b784d8006d7da314cc46f0458abc41390dd862a39c9b9e389f43d40bc7"
+    },
+    {
+      "path": "scripts/brand-typography-context.mjs",
+      "sha256": "495b7c5f5e0f796e0f1d995cf7827b72c6caa2452436a5fd1137532afaee7b6d"
+    },
+    {
+      "path": "scripts/build-css.mjs",
+      "sha256": "fd8fd3bec3a1a4084c74ba4dced83f8fd530dfa715f5d9fdd60297e31fd68282"
+    },
+    {
+      "path": "scripts/validate-token-usage.mjs",
+      "sha256": "61f9cab12d50b5067c2f56a814859d9441b222604f936f6797f720e5359fb8f7"
+    },
+    {
+      "path": "src/ui/patterns/badge.css",
+      "sha256": "dd9072338e46029a30b2947f9fc8fe76769c5bf57764ef1cd721683914782365"
+    },
+    {
+      "path": "src/ui/patterns/button.css",
+      "sha256": "f2c009ce40506b2b4a3ccd81876b8a35e4daa6b58272f869ebe4e838ad805b32"
+    },
+    {
+      "path": "src/ui/patterns/illustrated-message.css",
+      "sha256": "74016a2d8ea0de5924efb69d51a80ec5c7ae777e4301c732e39a346d72e22c9e"
+    },
+    {
+      "path": "src/ui/patterns/label.css",
+      "sha256": "8b00dd265be739963e8b74c8c08117c05bcbd22ba81dc5820cbbd08129023ab4"
+    },
+    {
+      "path": "tests/brand-typography-context.test.mjs",
+      "sha256": "8188553472b1627de467cac96114a598dcb208a0779840318c90b7b4bdcf91c6"
+    },
+    {
+      "path": "tests/browser/brand-a-typography.spec.mjs",
+      "sha256": "28dcbdfb40d6d057c77084b8a54504f3809cc80ad40513ca01ea67fcb3939bed"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 @layer components {
+  /* Deprecated compat inputs retain explicit consumer overrides; defaults use stable Pattern tokens. */
   :is(.uif-illustrated-message, .illustrated-message) {
     --_uif-local-scale: 1;
     display: flex;

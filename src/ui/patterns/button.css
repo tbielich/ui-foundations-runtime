@@ -1,4 +1,5 @@
 @layer components {
+  /* Deprecated compat inputs retain explicit consumer overrides; defaults use stable Pattern tokens. */
   /*
    * `.button` is a deprecated v1.x compatibility selector.
    * UIF-owned emitters use `.uif-button`; remove the alias no earlier than v2.0.
@@ -12,8 +13,8 @@
     /* Long labels must still fit after Brand font or reader-spacing changes. */
     max-inline-size: 100%;
     white-space: normal;
-    font-family: var(--uif-button-compat-font-family, inherit);
-    font-weight: var(--uif-button-compat-font-weight, inherit);
+    font-family: var(--uif-button-compat-font-family, var(--uif-button-font-family, inherit));
+    font-weight: var(--uif-button-compat-font-weight, var(--uif-button-font-weight, inherit));
     min-height: var(--uif-button-height-min);
     background: var(--uif-button-solid-container-background-default);
     border-color: var(--uif-button-solid-border-color-default);
@@ -43,8 +44,8 @@
   /* Optional activation keeps legacy inherited Button typography outside the selected context. */
   :is(.uif-button, .button) :is(.uif-label-content, .label-content),
   :is(.uif-button, .button) :is(.uif-label-content-text, .label-content-text) {
-    font-family: var(--uif-button-compat-font-family, var(--typography-body-font-family));
-    font-weight: var(--uif-button-compat-font-weight, var(--typography-body-font-weight));
+    font-family: var(--uif-button-compat-font-family, var(--uif-button-font-family, var(--typography-body-font-family)));
+    font-weight: var(--uif-button-compat-font-weight, var(--uif-button-font-weight, var(--typography-body-font-weight)));
   }
 
   :is(.uif-button, .button).icon-only {

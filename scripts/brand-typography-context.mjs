@@ -30,16 +30,23 @@ export function loadBrandTypographyProjection(root) {
   }
   const seen = new Set();
   for (const slot of manifest.slots) {
-    if (!/^--uif-[a-z0-9-]+-compat-[a-z0-9-]+$/.test(slot.cssVar || "") || seen.has(slot.cssVar)) {
+    if ((!/^--uif-[a-z0-9-]+-font-(family|weight)$/.test(slot.cssVar || "") || slot.cssVar.includes("-compat-") || !/^--uif-[a-z0-9-]+-compat-[a-z0-9-]+$/.test(slot.legacyCssVar || "")) || seen.has(slot.cssVar) || seen.has(slot.legacyCssVar)) {
       throw new Error(`Invalid or duplicate compatibility slot: ${slot.cssVar}`);
     }
     seen.add(slot.cssVar);
+    seen.add(slot.legacyCssVar);
     const mapped = projection.variables[slot.sourceVariableId];
     const leaf = entries.get(slot.sourceVariableId);
     if (!mapped || !leaf || mapped.file !== leaf.file || mapped.exportPath !== leaf.exportPath ||
         !/^--[a-z0-9-]+$/.test(slot.sourceCssVar || "") ||
         leaf.node.$extensions?.["com.figma.codeSyntax"]?.WEB !== `var(${slot.sourceCssVar})`) {
       throw new Error(`Unbound typography source ID/WEB syntax: ${slot.sourceVariableId}`);
+    }
+    if (slot.neutralSourceCssVar) {
+      const neutral = entries.get(slot.neutralSourceVariableId);
+      if (!neutral || neutral.file !== "Semantics (Roles).tokens.json" || neutral.node.$extensions?.["com.figma.codeSyntax"]?.WEB !== `var(${slot.neutralSourceCssVar})`) {
+        throw new Error(`Unbound neutral typography source: ${slot.neutralSourceVariableId}`);
+      }
     }
     // The adapter must not bypass a role to select a literal Core or Brand value.
     if (mapped.file !== "Semantics (Roles).tokens.json") {
@@ -51,7 +58,7 @@ export function loadBrandTypographyProjection(root) {
 
 export function renderBrandTypographyContext(manifest) {
   if (!manifest.slots.length) return "/* No Brand typography compatibility projection selected. */\n";
-  const resets = manifest.slots.map(slot => `    ${slot.cssVar}: initial;`).join("\n");
+  const resets = manifest.slots.map(slot => `    ${slot.cssVar}: ${slot.neutralSourceCssVar ? `var(${slot.neutralSourceCssVar})` : "initial"};\n    ${slot.legacyCssVar}: initial;`).join("\n");
   const values = manifest.slots.map(slot => `    ${slot.cssVar}: var(${slot.sourceCssVar});`).join("\n");
   const brands = manifest.brands || [manifest.brand];
   const selector = brands.map(brand => `[data-brand="${brand}"]`).join(", ");

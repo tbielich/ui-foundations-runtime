@@ -90,3 +90,23 @@ Repository validation checks the actual package with
 `node scripts/check-font-packaging.mjs`: no packed font binaries and no font-face
 loader in its CSS. Browser checks load the docs stylesheet explicitly and also
 verify that Runtime CSS alone makes no font requests.
+
+### Pattern typography token names
+
+Use stable Pattern names for typography overrides:
+
+| Current token | Deprecated override input |
+| --- | --- |
+| `--uif-button-font-family` | `--uif-button-compat-font-family` |
+| `--uif-button-font-weight` | `--uif-button-compat-font-weight` |
+| `--uif-field-label-font-family` | `--uif-field-label-compat-font-family` |
+| `--uif-field-label-font-weight` | `--uif-field-label-compat-font-weight` |
+| `--uif-badge-font-family` | `--uif-badge-compat-text-font-family` |
+| `--uif-badge-font-weight` | `--uif-badge-compat-text-font-weight` |
+| `--uif-illustrated-message-heading-font-weight` | `--uif-illustrated-message-compat-heading-font-weight` |
+
+Brand contexts set the current tokens from the existing semantic roles. The old
+names are supported only as deprecated override inputs, not generated defaults.
+If both old and current names are explicitly set, the old input retains priority
+for backward compatibility; remove it when migrating to the current name.
+All other Pattern typography tokens already use names without `compat`.
