@@ -230,7 +230,7 @@ function buildDocs() {
   buildAssetsBundle();
   buildMacrosBundle();
 
-  // An opt-in native entry; never imports the branded reset or token bundles.
+  // Opt-in native entry: shared reset and geometry-only Brand A projection.
   copyDir(path.join(REPO_ROOT, "src", "base"), path.join(DIST_DIR, "base"));
   buildBaseGeometry(REPO_ROOT, DIST_DIR);
   writeFile(path.join(DIST_DIR, "base.css"), inlineImports(path.join(DIST_DIR, "base", "index.css")));

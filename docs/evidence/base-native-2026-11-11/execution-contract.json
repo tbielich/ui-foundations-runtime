@@ -33,7 +33,7 @@
     "npm pack no fonts and no auto font-face",
     "npm run ci:check"
   ],
-  "state": "IMPLEMENT complete; bounded VERIFY PASS; local not committed/pushed",
+  "state": "Owner authorized commit, push, PR and merge on 2026-11-11; source reviewed; publication in progress",
   "repairs": [
     "Existing Calendar module expected removed title; support current native header selects",
     "Local date serialization avoids UTC day drift",
@@ -49,5 +49,6 @@
     "packageFontBinaries": 0,
     "packageFontLoaders": 0
   },
-  "finalSourceAggregate": "e57c6a650886396063f8bb114998dcbb132aabdaea29836b3b1500f6b25bf787"
+  "finalSourceAggregate": "8327cbd554ea0b5b518a3030804266432592eae2c2161debafe1b9911a8c8ad9",
+  "publicationAuthorization": "Explicit owner instruction: merge (2026-11-11); supersedes automatic-publication prohibition for reviewed commit/push/PR/merge only, not release or governance changes"
 }

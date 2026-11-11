@@ -29,7 +29,7 @@
     },
     {
       "path": "scripts/build-css.mjs",
-      "sha256": "969ddefdc71ca269af1b5b32a6d02be1690d6553fd2ea7f8004cc83764115afc"
+      "sha256": "4d2304592729f56a4805791ab4d328b14ccf81e132ea3bd0d23bc4ae3c2077d5"
     },
     {
       "path": "scripts/check-font-packaging.mjs",
@@ -216,7 +216,7 @@
       "sha256": "3592cd63c289c43c5e8e99c7f5eb11183feedc7919fadd07050329a6394d2b33"
     }
   ],
-  "sourceAggregate": "e57c6a650886396063f8bb114998dcbb132aabdaea29836b3b1500f6b25bf787",
+  "sourceAggregate": "8327cbd554ea0b5b518a3030804266432592eae2c2161debafe1b9911a8c8ad9",
   "validation": {
     "command": "npm run ci:check",
     "node": "22.23.2",
@@ -226,5 +226,5 @@
     "packageFontBinaries": 0,
     "packageFontLoaders": 0
   },
-  "state": "Local implementation; neither committed nor pushed; no Figma/Vault changes"
+  "state": "Owner authorized commit, push, PR and merge on 2026-11-11; source reviewed; publication in progress"
 }
