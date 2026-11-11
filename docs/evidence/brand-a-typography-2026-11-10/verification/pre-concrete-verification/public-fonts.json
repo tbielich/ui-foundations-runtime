@@ -1,0 +1,2301 @@
+{
+  "command": "node docs/evidence/brand-a-typography-2026-11-10/verification/public-fonts.cjs",
+  "delivery": "Unmodified public main.css OR core.css+ui.css; HTTP consumer origin; no docs.css, controlled faces, font routing or font injection.",
+  "rows": [
+    {
+      "entry": "main",
+      "brand": "a",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "600",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=a&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/fonts/runtime/roboto-slab-variable.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "main",
+      "brand": "a",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "600",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=a&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/fonts/runtime/roboto-slab-variable.woff2",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "main",
+      "brand": "b",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=b&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "main",
+      "brand": "b",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=b&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "main",
+      "brand": "c",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=c&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "main",
+      "brand": "c",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=main&brand=c&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/main.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "a",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "600",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=a&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/fonts/runtime/roboto-slab-variable.woff2",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "a",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "600",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "\"Roboto Slab\"",
+          "weight": "700",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Roboto Slab",
+            "postScriptName": "RobotoSlab-Regular_Bold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular_SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=a&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/fonts/runtime/roboto-slab-variable.woff2",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "b",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=b&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "b",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=b&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "c",
+      "mode": "light",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=c&mode=light",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    },
+    {
+      "entry": "core",
+      "brand": "c",
+      "mode": "dark",
+      "styles": {
+        "heading": {
+          "family": "Rokkitt",
+          "weight": "700",
+          "size": "40px",
+          "line": "56px"
+        },
+        "body": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "button": {
+          "family": "Inter",
+          "weight": "400",
+          "size": "16px",
+          "line": "24px"
+        },
+        "illustratedHeading": {
+          "family": "Rokkitt",
+          "weight": "600",
+          "size": "20px",
+          "line": "28px"
+        }
+      },
+      "fonts": {
+        "heading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold_Bold",
+            "isCustomFont": true,
+            "glyphCount": 15
+          }
+        ],
+        "body": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 21
+          }
+        ],
+        "button": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 8
+          }
+        ],
+        "illustratedHeading": [
+          {
+            "familyName": "Rokkitt SemiBold",
+            "postScriptName": "Rokkitt-SemiBold",
+            "isCustomFont": true,
+            "glyphCount": 10
+          }
+        ],
+        "badgeText": [
+          {
+            "familyName": "Inter",
+            "postScriptName": "Inter-Regular",
+            "isCustomFont": true,
+            "glyphCount": 9
+          }
+        ]
+      },
+      "responses": [
+        {
+          "url": "http://127.0.0.1:8148/__runtime-probe?entry=core&brand=c&mode=dark",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/index.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/reset.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/fonts.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rokkitt:wght@400;500;600;700&display=swap",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/base.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/base/typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/core-primitives.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/typography-fluid.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-light.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/appearance-modes.tokens.mode-dark.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-a.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-b.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-brands.tokens.brand-c.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/semantics-roles.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/accordion.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/tokens/css/patterns-ui.tokens.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/mode.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/scale.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/core/context/brand-typography.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/badge.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/button.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/calendar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/checkbox.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/avatar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/divider.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/dialog.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/form.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/icon.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/date-input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/label.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/link.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/radio.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/select.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/input.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tabs.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/table.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/textarea.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/tooltip.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/switch.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/meter.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/progress-bar.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/inline-alert.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/illustrated-message.css",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/ui/patterns/status-light.css",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2",
+          "status": 200
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/rokkitt/v39/qFdE35qfgYFjGy5hkEaCdvTIyh8.woff2",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/cross-circled.svg",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:8148/assets/icons/message-info.svg",
+          "status": 200
+        }
+      ],
+      "failed": []
+    }
+  ],
+  "robotoSHA256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed",
+  "summary": {
+    "AHeadingAndIllustratedActualRobotoSlab": true,
+    "ABodyAndButtonActualInter": true,
+    "noFontFailures": true,
+    "missingLocalResources": []
+  }
+}

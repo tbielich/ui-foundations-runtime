@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceFileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "sourceFileKey": "uqMsy8fV1fPbQdAzgwlmBA",
   "adr": "https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md",
   "ownerOverride": "2026-09-30 bounded migration; ADR accepted via ui-foundations-vault PR #49; consumed governance pack unchanged",
   "collectionFiles": {
@@ -278,17 +278,17 @@
       "file": "Patterns (UI).tokens.json"
     },
     "VariableID:3:5": {
-      "figmaName": "Font/Family/Sans",
+      "figmaName": "Font/Family/Inter",
       "exportPath": "Font/Family/Sans",
       "file": "Core (Primitives).tokens.json"
     },
     "VariableID:3:6": {
-      "figmaName": "Font/Family/Serif",
+      "figmaName": "Font/Family/Rokkitt",
       "exportPath": "Font/Family/Serif",
       "file": "Core (Primitives).tokens.json"
     },
     "VariableID:3:7": {
-      "figmaName": "Font/Family/Mono",
+      "figmaName": "Font/Family/SF Mono",
       "exportPath": "Font/Family/Mono",
       "file": "Core (Primitives).tokens.json"
     },
@@ -3826,6 +3826,61 @@
       "figmaName": "Brand/Color/Border/Brand/Dark",
       "exportPath": "Brand/Color/Border/Brand/Dark",
       "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:2": {
+      "figmaName": "Font/Family/Roboto Slab",
+      "exportPath": "Font/Family/Roboto Slab",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3260:3": {
+      "figmaName": "Brand/Font/Heading",
+      "exportPath": "Brand/Font/Heading",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:4": {
+      "figmaName": "Font/Heading",
+      "exportPath": "Semantics/Font/Heading",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3260:5": {
+      "figmaName": "Brand/Typography/UI/Font/Weight",
+      "exportPath": "Brand/Typography/UI/Font/Weight",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:6": {
+      "figmaName": "Typography/UI/Font/Weight",
+      "exportPath": "Semantics/Typography/UI/Font/Weight",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3274:2": {
+      "figmaName": "Font/Family/Exo 2",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Exo 2"
+    },
+    "VariableID:3274:3": {
+      "figmaName": "Font/Family/Orbitron",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Orbitron"
+    },
+    "VariableID:3274:4": {
+      "figmaName": "Font/Family/Manrope",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Manrope"
+    },
+    "VariableID:3274:5": {
+      "figmaName": "Font/Family/Bricolage Grotesque",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Bricolage Grotesque"
+    },
+    "VariableID:3274:6": {
+      "figmaName": "Brand/Typography/Heading/Font/Weight",
+      "file": "Semantics (Brands).tokens.json",
+      "exportPath": "Brand/Typography/Heading/Font/Weight"
+    },
+    "VariableID:3274:7": {
+      "figmaName": "Typography/Heading/Font/Weight",
+      "file": "Semantics (Roles).tokens.json",
+      "exportPath": "Semantics/Typography/Heading/Font/Weight"
     }
   },
   "codeOnlyExceptions": [
@@ -4379,5 +4434,14 @@
       "path": "Line Height/xxxl",
       "file": "Typography (Liquid).tokens.json"
     }
-  ]
+  ],
+  "codeOnlyBrandTypography": {
+    "schemaVersion": 1,
+    "manifest": "brand-typography-compatibility.json"
+  },
+  "fontFamilyCompatibility": {
+    "schemaVersion": 1,
+    "manifest": "font-family-compatibility.json",
+    "jsonProjection": "preserve-existing-literal-accessors"
+  }
 }

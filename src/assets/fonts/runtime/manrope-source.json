@@ -1,0 +1,56 @@
+{
+  "family": "Manrope",
+  "style": "normal",
+  "file": "manrope-variable.woff2",
+  "bytes": 53892,
+  "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f",
+  "source": {
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/Manrope%5Bwght%5D.ttf",
+    "bytes": 164700,
+    "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+  },
+  "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/METADATA.pb",
+  "names": {
+    "1": [
+      "Manrope ExtraLight"
+    ],
+    "2": [
+      "Regular"
+    ],
+    "4": [
+      "Manrope ExtraLight"
+    ],
+    "5": [
+      "Version 4.505"
+    ],
+    "6": [
+      "Manrope-ExtraLight"
+    ]
+  },
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 200.0,
+      "default": 200.0,
+      "max": 800.0
+    }
+  ],
+  "license": {
+    "type": "OFL-1.1",
+    "file": "manrope-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/OFL.txt",
+    "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+  },
+  "glyphCheck": {
+    "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+    "missing": [],
+    "unicodeCodepoints": 678,
+    "cmapPreserved": true
+  },
+  "conversion": {
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1",
+    "method": "TTFont(BytesIO(source), recalcTimestamp=False); flavor=woff2; save; no subset",
+    "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8"
+  }
+}

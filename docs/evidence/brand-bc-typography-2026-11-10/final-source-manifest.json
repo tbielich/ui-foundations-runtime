@@ -1,0 +1,267 @@
+{
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/339-brand-a-typography",
+  "baseSHA": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "sourceFiles": [
+    {
+      "path": ".eleventy.js",
+      "sha256": "33523101272c9fe6aac80e98a6f21753290660654a61b08def49eb5d8c29ef12"
+    },
+    {
+      "path": "figma/brand-typography-compatibility.json",
+      "sha256": "e21da1821c5872f027eb24bdd57d205c7051d437f8f5332d2c46c7c1f2d2bd2c"
+    },
+    {
+      "path": "figma/exports/Core (Primitives).tokens.json",
+      "sha256": "2e77a623fc1160e403ddd5a5f8b4a02bf58d7aa27f3ae7d98424924078f87c88"
+    },
+    {
+      "path": "figma/exports/Patterns (UI).tokens.json",
+      "sha256": "eaeb68491c06d186b73bd0124f22a45f301ecd27c1f1e66eded584fa4caffe80"
+    },
+    {
+      "path": "figma/exports/Semantics (Brands).tokens.json",
+      "sha256": "3043c5fd9074c66e182aa0df4b67a81757c5df2ce004d8e91706a629f9f3f811"
+    },
+    {
+      "path": "figma/exports/Semantics (Roles).tokens.json",
+      "sha256": "49749cde769c9caf48fc32cf6ea1992da27b94d1c5f5e8857e17cd4f48e8bc45"
+    },
+    {
+      "path": "figma/font-family-compatibility.json",
+      "sha256": "5cc197c927468c727d599b85cf4280501e1c14c8a9ebe6caabc75cf58c74aac3"
+    },
+    {
+      "path": "figma/token-projection.json",
+      "sha256": "855356d4bc4fac5f8f37d3c87d7160b5cae0ad163531c62f077f287c3bb6c805"
+    },
+    {
+      "path": "scripts/brand-font-stacks.js",
+      "sha256": "df116c8f04e3a9a89fb8969b0f21e3fbddd87f3a01e98b93a00bd273bf19d48d"
+    },
+    {
+      "path": "scripts/brand-typography-context.mjs",
+      "sha256": "df27481fe577c27d5351040d6cd68af8f0175986c8a3bebbf9bf0f5007757d68"
+    },
+    {
+      "path": "scripts/build-css.mjs",
+      "sha256": "891866049437c7c48ad9d49b4e0c9b09fe67bd95e283db995b26bc0cb70dc977"
+    },
+    {
+      "path": "scripts/extract-tokens.js",
+      "sha256": "d811e371196a71a43a758b095d44288b793fd6a005aaf9f5402d3524c161dc96"
+    },
+    {
+      "path": "scripts/font-family-compatibility.js",
+      "sha256": "1580aab17a49976b60aff13925b409ab67c27251c1efb871e33cde783cdb7afb"
+    },
+    {
+      "path": "scripts/validate-token-usage.mjs",
+      "sha256": "64a088ecf60399c96bec007513167aa0fd1bce26d008e251d2c623a3b309aacf"
+    },
+    {
+      "path": "site/_data/brandTypography.js",
+      "sha256": "a191f9ea3f7af7726646ef3941fc67ae5f6774c28c41ccd5f94f59d5b517e393"
+    },
+    {
+      "path": "site/_headers",
+      "sha256": "824ce1f406133e6623a76463f1941fe0afa9ea0fb45fb65553e407c068c72050"
+    },
+    {
+      "path": "site/_includes/layouts/docs.njk",
+      "sha256": "030d01d2e152b688f81849b4b5707d725b61a7b3d7ce1e4c60abed895fa8e542"
+    },
+    {
+      "path": "src/assets/fonts/README.md",
+      "sha256": "7b58f36f539c31f9a7011854d526c18650193068f5a1d387eaa6f107fc6e5e5d"
+    },
+    {
+      "path": "src/assets/fonts/runtime/basic-CONVERSION-NOTICE.txt",
+      "sha256": "011eb9843f5d1c5864574e33b9f6a3bd25be92edc62a5915ee5ecfc1a1c6f371"
+    },
+    {
+      "path": "src/assets/fonts/runtime/bc-CONVERSION-NOTICE.txt",
+      "sha256": "4af598047f189aa8e273ed4d68556e23f2e08c3f26576ab6d89ca4d87f719058"
+    },
+    {
+      "path": "src/assets/fonts/runtime/bricolage-grotesque-LICENSE.txt",
+      "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba"
+    },
+    {
+      "path": "src/assets/fonts/runtime/bricolage-grotesque-source.json",
+      "sha256": "99061af4bdbd75d87225126294dd7856092204fa6f394a609653a50a80ae4203"
+    },
+    {
+      "path": "src/assets/fonts/runtime/bricolage-grotesque-variable.woff2",
+      "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0"
+    },
+    {
+      "path": "src/assets/fonts/runtime/exo-2-LICENSE.txt",
+      "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+    },
+    {
+      "path": "src/assets/fonts/runtime/exo-2-source.json",
+      "sha256": "544a637fa63ab198e37a87cfe5de88e8340ee491a91dcc547d0178cfa838db2e"
+    },
+    {
+      "path": "src/assets/fonts/runtime/exo-2-variable.woff2",
+      "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed"
+    },
+    {
+      "path": "src/assets/fonts/runtime/inter-LICENSE.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57"
+    },
+    {
+      "path": "src/assets/fonts/runtime/inter-source.json",
+      "sha256": "4cf6dd734e2951d0098bfa751c177540931cba7c8dd7f6a557f348d09d980d81"
+    },
+    {
+      "path": "src/assets/fonts/runtime/inter-variable.woff2",
+      "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a"
+    },
+    {
+      "path": "src/assets/fonts/runtime/manrope-LICENSE.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "src/assets/fonts/runtime/manrope-source.json",
+      "sha256": "ebf72c65f9faad61a7fb6cb307ea2cb24664002f6df1ede2674a884b4b05dc05"
+    },
+    {
+      "path": "src/assets/fonts/runtime/manrope-variable.woff2",
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f"
+    },
+    {
+      "path": "src/assets/fonts/runtime/orbitron-LICENSE.txt",
+      "sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+    },
+    {
+      "path": "src/assets/fonts/runtime/orbitron-source.json",
+      "sha256": "bb2f7fd1dc248718a575dd2e5a1633533d0b7dec643166d6700e10db1365de3c"
+    },
+    {
+      "path": "src/assets/fonts/runtime/orbitron-variable.ttf",
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+    },
+    {
+      "path": "src/assets/fonts/runtime/roboto-slab-CONVERSION-NOTICE.txt",
+      "sha256": "ec84d168d109b7f7c991255e8d5e20991b67eeeaef1676054b25342c28c18998"
+    },
+    {
+      "path": "src/assets/fonts/runtime/roboto-slab-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "src/assets/fonts/runtime/roboto-slab-source.json",
+      "sha256": "311074f02b5bcceb26f2bb1cfb84e351e684533089fbc0dcd274913ba379335b"
+    },
+    {
+      "path": "src/assets/fonts/runtime/roboto-slab-variable.woff2",
+      "sha256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed"
+    },
+    {
+      "path": "src/assets/fonts/runtime/rokkitt-LICENSE.txt",
+      "sha256": "31501a9490dce395cdb40015237d3684186b79f81dd6a31442d669eb7da81066"
+    },
+    {
+      "path": "src/assets/fonts/runtime/rokkitt-source.json",
+      "sha256": "5f7a67ca88f5b356791c6998f84477396f7c805991978dd87f4f6cb9a14bcb4b"
+    },
+    {
+      "path": "src/assets/fonts/runtime/rokkitt-variable.woff2",
+      "sha256": "a10e6659f05518a4b2d53c5e8ba174d7aaaca458cab76bacd932491f8a104355"
+    },
+    {
+      "path": "src/core/base/base.css",
+      "sha256": "476213ae6425f686b6937e25b44a0dd063aea37db86c159d7d6753ca9cb8eb29"
+    },
+    {
+      "path": "src/core/base/fonts.css",
+      "sha256": "f8592078d10a79b2af64b5fa0626cb80e340b7ca1520a7f3d2246019f5db0a34"
+    },
+    {
+      "path": "src/core/index.css",
+      "sha256": "6720de7b0f8f028c4291bc3d98a53106fb5c00ae93e54795b9e58a215a394212"
+    },
+    {
+      "path": "src/ui/patterns/accordion.css",
+      "sha256": "63a2fcf0783b4c297953f303b03cb5af5fa81f224ceda0e645020dd5fb0a8191"
+    },
+    {
+      "path": "src/ui/patterns/avatar.css",
+      "sha256": "5246316a4f0589beda462aac8862a66e53cee2c1172c3e38bdba83f2affa4571"
+    },
+    {
+      "path": "src/ui/patterns/badge.css",
+      "sha256": "fdeced8bb629a3fb8c46c7ec45688cc543ce6878986017a164e1f0be053e7f34"
+    },
+    {
+      "path": "src/ui/patterns/button.css",
+      "sha256": "99d148f946aee1ac5a04e99ac6cdd2e7bc9822fa6f81c4e3cae4bc5109f9acd1"
+    },
+    {
+      "path": "src/ui/patterns/illustrated-message.css",
+      "sha256": "279b5da89633a8164d3bbbcae7c312bdf7d50ea4c7b7fc6fb265c4ebb94fd769"
+    },
+    {
+      "path": "src/ui/patterns/label.css",
+      "sha256": "bce9ef84b9655edd84ecf26e8f253d2562d5942a8db5cddd645e37481b772e55"
+    },
+    {
+      "path": "src/ui/patterns/tabs.css",
+      "sha256": "95f2fe636fc8a8cc362da49988221198626e099ac2b385b90744ca0592c568a1"
+    },
+    {
+      "path": "src/ui/patterns/tooltip.css",
+      "sha256": "31a1f1c5c2a7102964ca40cf81eb45b6c84a11b2c5af63e6c9e07874afd7e569"
+    },
+    {
+      "path": "tests/brand-font-stacks.test.mjs",
+      "sha256": "f12b26b0ea2d550cb207e29570e6015b9fe295698691571d062dbae5427e8ad5"
+    },
+    {
+      "path": "tests/brand-typography-context.test.mjs",
+      "sha256": "917ab32b7c1dd17ac35c18cb71b8738a525045e05c1f139fb932b408e9a14bdb"
+    },
+    {
+      "path": "tests/browser/brand-a-typography.spec.mjs",
+      "sha256": "86cddb8f9c858ae95e30e07b427f6cf4d3972cb6456ac607058a913637b4555b"
+    },
+    {
+      "path": "tests/browser/button-text-spacing.spec.mjs",
+      "sha256": "ac5bf5489f2817e273e6f67fb3e17f32f87a3ae9ff15c166efd5e0543f7d848e"
+    },
+    {
+      "path": "tests/browser/font-loading.spec.mjs",
+      "sha256": "a801e56783f6a05fc1901a02ea7fc9871103e0f1c1dddb8b1cbb1c195faf07ce"
+    },
+    {
+      "path": "tests/font-family-compatibility.test.mjs",
+      "sha256": "1261f7922fd52be9e61c37a7ef86f41d6874be3bc2cd0f55e8bc05a6e0a02632"
+    }
+  ],
+  "sourceAggregateSHA256": "fbe5712f5ff9867bb40e36a3e39179d9300e75c259ffdddf5e3d0c859a9a6e70",
+  "mainCSSSHA256": "756a253f5c1927349106aa98eeca746e26034cfdc6568b61f905f81cd81f3ffc",
+  "mainCSSNormalizedSHA256": "5870e8ce147da776302b1b50b1483a7c826cdc6716ac53609df1306e4a606d5f",
+  "matchesVerifierRepairFrozenCSSIgnoringGeneratedTimestamps": true,
+  "ci": {
+    "command": "npm run ci:check",
+    "node": "22.23.2",
+    "exitCode": 0,
+    "unitPassed": 241,
+    "chromiumPassed": 47,
+    "log": "ci-check.log"
+  },
+  "gitDiffCheck": {
+    "result": "PASS_WITH_UPSTREAM_LICENSE_EXCEPTION",
+    "scope": "all changes except src/assets/fonts/runtime/*-LICENSE.txt",
+    "reason": "Original upstream licence whitespace/CRLF preserved byte-for-byte; full staged check reports only those files."
+  },
+  "publication": {
+    "committed": false,
+    "pushed": false,
+    "prCreated": false,
+    "merged": false,
+    "published": false
+  }
+}

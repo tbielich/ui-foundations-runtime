@@ -1,0 +1,20 @@
+{
+  "mode": "VERIFY",
+  "reviewer": "fonts_a",
+  "assetIntegrityGate": "PASS",
+  "review": "Independent binary/hash/license/axes review of four B/C assets; final Bricolage output reopened after instancing.",
+  "bricolage": {
+    "bytes": 66392,
+    "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0",
+    "variableAxis": "wght 200-800",
+    "fixedAxes": {"opsz": 14, "wdth": 100},
+    "unicodeMappings": 527,
+    "requiredGlyphsMissing": []
+  },
+  "orbitron": {
+    "singleFaceGlyphCoverageGate": "FAIL",
+    "missingRequiredGlyph": "U+1E9E uppercase sharp S",
+    "runtimeRequirement": "Verify explicit Basic Sans glyph fallback; do not claim Orbitron covers this character."
+  },
+  "limitations": ["Upright assets only", "Binary review alone does not certify rendered parity, loading, or accessibility"]
+}

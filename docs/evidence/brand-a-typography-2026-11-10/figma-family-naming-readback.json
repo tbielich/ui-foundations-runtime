@@ -1,0 +1,48 @@
+{
+  "Core": [
+    {
+      "id": "VariableID:3:5",
+      "name": "Font/Family/Inter",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-inter)",
+      "value": "Inter"
+    },
+    {
+      "id": "VariableID:3:6",
+      "name": "Font/Family/Rokkitt",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-rokkitt)",
+      "value": "Rokkitt"
+    },
+    {
+      "id": "VariableID:3:7",
+      "name": "Font/Family/SF Mono",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-sf-mono)",
+      "value": "SF Mono"
+    },
+    {
+      "id": "VariableID:3260:2",
+      "name": "Font/Family/Roboto Slab",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-roboto-slab)",
+      "value": "Roboto Slab"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { buildScaleContext } from "./scale-context.mjs";
+import { buildBrandTypographyContext } from "./brand-typography-context.mjs";
 
 const REPO_ROOT = path.resolve(import.meta.dirname, "..");
 const DIST_DIR = path.join(REPO_ROOT, "dist");
@@ -23,7 +24,13 @@ function inlineImports(filePath, seen = new Set()) {
   seen.add(resolved);
 
   const baseDir = path.dirname(filePath);
-  const css = fs.readFileSync(filePath, "utf8");
+  let css = fs.readFileSync(filePath, "utf8");
+  if (path.basename(filePath) === "fonts.css") {
+    css = css.replace(/url\((["']?)(?!https?:|data:|\/)([^)"']+)\1\)/g, (match, quote, resource) => {
+      const bundledPath = path.relative(DIST_DIR, path.resolve(baseDir, resource)).split(path.sep).join("/");
+      return `url(${quote}${bundledPath}${quote})`;
+    });
+  }
 
   return css.replace(
     /@import\s+url\(["']([^"']+)["']\)\s*layer\([^)]+\);\s*/g,
@@ -175,12 +182,14 @@ function buildCoreBundle(tokenFiles) {
       ...tokenImports,
       '@import url("./context/mode.css") layer(context);',
       '@import url("./context/scale.css") layer(context);',
+      '@import url("./context/brand-typography.css") layer(context);',
       "",
     ].join("\n"),
   );
 
   writeModeCssBaseline();
   buildScaleContext(REPO_ROOT, DIST_DIR);
+  buildBrandTypographyContext(REPO_ROOT, DIST_DIR);
 }
 
 function buildUiBundle() {

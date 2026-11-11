@@ -1728,6 +1728,30 @@
           },
           "com.figma.isOverride": true
         }
+      },
+      "Heading": {
+        "$type": "string",
+        "$value": {
+          "$ref": "Brand/Font/Heading"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3260:4",
+          "com.figma.variableName": "Font/Heading",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-semantic-font-heading)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3260:3",
+            "targetVariableName": "Brand/Font/Heading",
+            "targetVariableSetId": "VariableCollectionId:1:177",
+            "targetVariableSetName": "Appearance (Brand)"
+          },
+          "com.figma.isOverride": true
+        }
       }
     },
     "Typography": {
@@ -1887,6 +1911,62 @@
                 "targetVariableName": "Projection/Line/Height/md",
                 "targetVariableSetId": "VariableCollectionId:2986:5525",
                 "targetVariableSetName": "Appearance (Scale)"
+              },
+              "com.figma.isOverride": true
+            }
+          }
+        }
+      },
+      "UI": {
+        "Font": {
+          "Weight": {
+            "$type": "string",
+            "$value": {
+              "$ref": "Brand/Typography/UI/Font/Weight"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3260:6",
+              "com.figma.variableName": "Typography/UI/Font/Weight",
+              "com.figma.scopes": [
+                "FONT_STYLE"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-semantic-typography-ui-font-weight)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3260:5",
+                "targetVariableName": "Brand/Typography/UI/Font/Weight",
+                "targetVariableSetId": "VariableCollectionId:1:177",
+                "targetVariableSetName": "Appearance (Brand)"
+              },
+              "com.figma.isOverride": true
+            }
+          }
+        }
+      },
+      "Heading": {
+        "Font": {
+          "Weight": {
+            "$type": "string",
+            "$value": {
+              "$ref": "Brand/Typography/Heading/Font/Weight"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3274:7",
+              "com.figma.variableName": "Typography/Heading/Font/Weight",
+              "com.figma.scopes": [
+                "FONT_STYLE"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-semantic-typography-heading-font-weight)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3274:6",
+                "targetVariableName": "Brand/Typography/Heading/Font/Weight",
+                "targetVariableSetId": "VariableCollectionId:1:177",
+                "targetVariableSetName": "Appearance (Brand)"
               },
               "com.figma.isOverride": true
             }
@@ -2078,31 +2158,6 @@
           }
         },
         "Radius": {
-          "full": {
-            "$type": "number",
-            "$value": {
-              "$ref": "Projection/Size/Radius/full"
-            },
-            "$extensions": {
-              "com.figma.variableId": "VariableID:3173:92",
-              "com.figma.variableName": "Scale/Size/Radius/full",
-              "com.figma.variableCollectionName": "Semantics (Roles)",
-              "com.figma.scopes": [
-                "CORNER_RADIUS"
-              ],
-              "com.figma.hiddenFromPublishing": false,
-              "com.figma.codeSyntax": {
-                "WEB": "var(--uif-semantic-scale-size-radius-full)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:3173:9",
-                "targetVariableName": "Projection/Size/Radius/full",
-                "targetVariableSetId": "VariableCollectionId:2986:5525",
-                "targetVariableSetName": "Appearance (Scale)"
-              },
-              "com.figma.isOverride": true
-            }
-          },
           "900": {
             "$type": "number",
             "$value": {
@@ -2122,6 +2177,31 @@
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:3173:26",
                 "targetVariableName": "Projection/Size/Radius/900",
+                "targetVariableSetId": "VariableCollectionId:2986:5525",
+                "targetVariableSetName": "Appearance (Scale)"
+              },
+              "com.figma.isOverride": true
+            }
+          },
+          "full": {
+            "$type": "number",
+            "$value": {
+              "$ref": "Projection/Size/Radius/full"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3173:92",
+              "com.figma.variableName": "Scale/Size/Radius/full",
+              "com.figma.variableCollectionName": "Semantics (Roles)",
+              "com.figma.scopes": [
+                "CORNER_RADIUS"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-semantic-scale-size-radius-full)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3173:9",
+                "targetVariableName": "Projection/Size/Radius/full",
                 "targetVariableSetId": "VariableCollectionId:2986:5525",
                 "targetVariableSetName": "Appearance (Scale)"
               },
@@ -2396,25 +2476,25 @@
           }
         },
         "Weight": {
-          "700": {
+          "400": {
             "$type": "string",
             "$value": {
-              "$ref": "Projection/Font/Weight/700"
+              "$ref": "Projection/Font/Weight/400"
             },
             "$extensions": {
-              "com.figma.variableId": "VariableID:3173:103",
-              "com.figma.variableName": "Scale/Font/Weight/700",
+              "com.figma.variableId": "VariableID:3173:106",
+              "com.figma.variableName": "Scale/Font/Weight/400",
               "com.figma.variableCollectionName": "Semantics (Roles)",
               "com.figma.scopes": [
                 "FONT_STYLE"
               ],
               "com.figma.hiddenFromPublishing": false,
               "com.figma.codeSyntax": {
-                "WEB": "var(--uif-semantic-scale-font-weight-700)"
+                "WEB": "var(--uif-semantic-scale-font-weight-400)"
               },
               "com.figma.aliasData": {
-                "targetVariableId": "VariableID:3173:12",
-                "targetVariableName": "Projection/Font/Weight/700",
+                "targetVariableId": "VariableID:3173:7",
+                "targetVariableName": "Projection/Font/Weight/400",
                 "targetVariableSetId": "VariableCollectionId:2986:5525",
                 "targetVariableSetName": "Appearance (Scale)"
               },
@@ -2446,25 +2526,25 @@
               "com.figma.isOverride": true
             }
           },
-          "400": {
+          "700": {
             "$type": "string",
             "$value": {
-              "$ref": "Projection/Font/Weight/400"
+              "$ref": "Projection/Font/Weight/700"
             },
             "$extensions": {
-              "com.figma.variableId": "VariableID:3173:106",
-              "com.figma.variableName": "Scale/Font/Weight/400",
+              "com.figma.variableId": "VariableID:3173:103",
+              "com.figma.variableName": "Scale/Font/Weight/700",
               "com.figma.variableCollectionName": "Semantics (Roles)",
               "com.figma.scopes": [
                 "FONT_STYLE"
               ],
               "com.figma.hiddenFromPublishing": false,
               "com.figma.codeSyntax": {
-                "WEB": "var(--uif-semantic-scale-font-weight-400)"
+                "WEB": "var(--uif-semantic-scale-font-weight-700)"
               },
               "com.figma.aliasData": {
-                "targetVariableId": "VariableID:3173:7",
-                "targetVariableName": "Projection/Font/Weight/400",
+                "targetVariableId": "VariableID:3173:12",
+                "targetVariableName": "Projection/Font/Weight/700",
                 "targetVariableSetId": "VariableCollectionId:2986:5525",
                 "targetVariableSetName": "Appearance (Scale)"
               },

@@ -5,7 +5,7 @@
     max-inline-size: 15rem;
     padding-inline: var(--uif-tooltip-padding-inline);
     padding-block: var(--uif-tooltip-padding-block);
-    font-family: var(--font-family-sans);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
     font-size: var(--font-size-sm);
     line-height: var(--line-height-sm);
     color: var(--uif-tooltip-text-color-default);

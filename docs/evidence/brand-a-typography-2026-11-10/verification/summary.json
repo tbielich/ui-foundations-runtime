@@ -1,0 +1,124 @@
+{
+  "state": "Independent bounded verification complete; source changes remain local and Figma writes/readback are parent-owned. No commit/PR/publication by verifier.",
+  "gate": "PASS",
+  "baseSHA": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "sourceManifestSha256": "5bd3c7c3c7c635db91329ceb370aadb4d51caa74a7ec594a9dc1a476014151da",
+  "sourceFilesIndependentlyHashMatched": 29,
+  "sourceBindingGate": "PASS",
+  "compiledCSSAtIndependentBrowserCapture": "37cc78b4b2d0de5cb4b7b11bc10ff0d592344c962c9ec4eb3773e67d5a02ec15",
+  "compiledCSSAfterFinalCI": "54821bafbed7a092f62005c5e0f144e8ad23a2ccaca6f83af3a6ca7dfbc46fef",
+  "generatedTimestampNote": "Producer finalCI rebuild changed generated timestamps; source manifest29files independently hash-matched afterCI. No source change after bounded browser reads reported or observed.",
+  "canonicalCatalogue": {
+    "gate": "PASS",
+    "stableIDs": [
+      "VariableID:3:5",
+      "VariableID:3:6",
+      "VariableID:3:7",
+      "VariableID:3260:2"
+    ],
+    "canonicalFigmaAndCssFamilies": [
+      "Inter",
+      "Rokkitt",
+      "SF Mono",
+      "Roboto Slab"
+    ],
+    "noDuplicateSourceID": true,
+    "canonicalTSAccessors": true,
+    "legacyCssAndJsonAndTSValuesPreserved": true,
+    "rootOverrideRoutes": {
+      "gate": "PASS",
+      "cases": 12,
+      "legacyAndCanonicalInputs": true
+    },
+    "defaultCssAccessorChecks": 84,
+    "defaultCssAccessorGate": "PASS",
+    "jsonBoundary": "Font.Family.Sans/Serif/Mono remain explicitly deprecated literal compatibility views. No new Inter/Rokkitt/SF Mono JSON accessors are provided or claimed. Canonical concrete names are verified by stable-ID Figma variableName/WEB syntax and CSS/TS names; physical exportPath is independently compatibility-mapped."
+  },
+  "consumer": {
+    "gate": "PASS",
+    "cases": 12,
+    "hosts": [
+      "plain",
+      "monospace500"
+    ],
+    "consumer_bc_differences": 0,
+    "token_bc_differences": 0,
+    "docs_bc_differences": 0,
+    "a_policy_failures": 0,
+    "preserved_prose_failures": 0,
+    "icon_geometry_failures": 0,
+    "unexpected_missing_cases": 0,
+    "existingResolvedTokenNamesPerContext": 864
+  },
+  "docs": {
+    "cases": 66,
+    "pages": 11,
+    "BCActualSnapshotContexts": 44,
+    "BCMetricDifferences": 0,
+    "scope": "Actual documentation snapshot behavior while root remainsA/light; controlled identical font bits for comparison."
+  },
+  "publicLoading": {
+    "cases": 12,
+    "entries": [
+      "main.css",
+      "core/index.css + ui/index.css"
+    ],
+    "withoutDocsCssOrInjectedFaces": true,
+    "AHeadingAndIllustratedActualRobotoSlab": true,
+    "ABodyAndButtonActualInter": true,
+    "noFontFailures": true,
+    "missingLocalResources": [],
+    "robotoSHA256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed"
+  },
+  "figmaReadbackReview": {
+    "gate": "PASS",
+    "scope": "Static independent consistency review of parent-persisted official Figma readback; verifier made no live Figma tool calls or mutations.",
+    "inputNodes": [
+      "2035:462",
+      "2724:381"
+    ],
+    "headingStyles": 6,
+    "legacyHeadingAlias": "VariableID:3:8\u2192VariableID:3260:3",
+    "inputRangeFontStyle": "VariableID:2028:303, Inter Semi Bold600 in providedA readback",
+    "limitation": [
+      "Excluded divider/password glyph nodes are not present in this final targeted readback; no independent claim over all other Figma nodes."
+    ]
+  },
+  "finalCI": {
+    "command": "npm run ci:check",
+    "unitTests": 239,
+    "unitPassed": 239,
+    "unitFailed": 0,
+    "chromiumTests": 41,
+    "chromiumDurationSeconds": 32.9,
+    "producerExitCode": 0,
+    "log": "final-ci.log",
+    "verification": "Final log inspected;29source-file hashes independently matched frozen producer source manifest. Verifier did not redundantly rerun fullCI."
+  },
+  "historyPreserved": [
+    "pre-concrete-verification/",
+    "pre-concrete-catalogue-manifest.json",
+    "concrete-catalogue-physical-path-assumption.json",
+    "catalogue-verifier-interpretation.json",
+    "measurement-timing-refinement.json"
+  ],
+  "limitations": [
+    "Bounded consumer/font/API/Figma-readback checks, not complete accessibility certification or performance evaluation.",
+    "Source/Figma state is not a commit, PR, merge or release.",
+    "JSON literal compatibility views deliberately retain historical names; do not describe them as a renamed concrete JSON catalogue."
+  ],
+  "evidence": [
+    "concrete-catalogue.json",
+    "css-catalogue-defaults.json",
+    "root-overrides.json",
+    "baseline-consumer.json",
+    "final-consumer.json",
+    "baseline-docs.json",
+    "final-docs.json",
+    "comparison.json",
+    "public-fonts.json",
+    "figma-readback-review.json",
+    "final-source-binding.json",
+    "final-ci.log"
+  ]
+}

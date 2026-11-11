@@ -1,0 +1,329 @@
+{
+  "createdAndRemovedNodeIds": [
+    "3275:3815",
+    "3275:3816",
+    "3275:3817",
+    "3275:3818",
+    "3275:3819",
+    "3275:3820",
+    "3275:3821",
+    "3275:3822",
+    "3275:3823",
+    "3275:3824",
+    "3275:3825",
+    "3275:3826",
+    "3275:3827",
+    "3275:3828",
+    "3275:3829",
+    "3275:3830",
+    "3275:3831",
+    "3275:3832",
+    "3275:3833",
+    "3275:3834",
+    "3275:3835",
+    "3275:3836",
+    "3275:3837",
+    "3275:3838",
+    "3275:3839"
+  ],
+  "contexts": [
+    {
+      "brand": "a",
+      "scheme": "light",
+      "role": "Heading",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "light",
+      "role": "Body",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "light",
+      "role": "UI",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "light",
+      "role": "Input",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "dark",
+      "role": "Heading",
+      "fontName": {
+        "family": "Roboto Slab",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "dark",
+      "role": "Body",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "dark",
+      "role": "UI",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "a",
+      "scheme": "dark",
+      "role": "Input",
+      "fontName": {
+        "family": "Inter",
+        "style": "Semi Bold",
+        "variationSettings": {
+          "wght": 600,
+          "slnt": 0
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "light",
+      "role": "Heading",
+      "fontName": {
+        "family": "Orbitron",
+        "style": "ExtraBold",
+        "variationSettings": {
+          "wght": 800
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "light",
+      "role": "Body",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "light",
+      "role": "UI",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "light",
+      "role": "Input",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "dark",
+      "role": "Heading",
+      "fontName": {
+        "family": "Orbitron",
+        "style": "ExtraBold",
+        "variationSettings": {
+          "wght": 800
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "dark",
+      "role": "Body",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "dark",
+      "role": "UI",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "b",
+      "scheme": "dark",
+      "role": "Input",
+      "fontName": {
+        "family": "Exo 2",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "light",
+      "role": "Heading",
+      "fontName": {
+        "family": "Bricolage Grotesque",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700,
+          "wdth": 100,
+          "opsz": 14
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "light",
+      "role": "Body",
+      "fontName": {
+        "family": "Manrope",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "light",
+      "role": "UI",
+      "fontName": {
+        "family": "Manrope",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "light",
+      "role": "Input",
+      "fontName": {
+        "family": "Manrope",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "dark",
+      "role": "Heading",
+      "fontName": {
+        "family": "Bricolage Grotesque",
+        "style": "Bold",
+        "variationSettings": {
+          "wght": 700,
+          "wdth": 100,
+          "opsz": 14
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "dark",
+      "role": "Body",
+      "fontName": {
+        "family": "Manrope",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "dark",
+      "role": "UI",
+      "fontName": {
+        "family": "Manrope",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    },
+    {
+      "brand": "c",
+      "scheme": "dark",
+      "role": "Input",
+      "fontName": {
+        "family": "Manrope",
+        "style": "SemiBold",
+        "variationSettings": {
+          "wght": 600
+        }
+      }
+    }
+  ]
+}

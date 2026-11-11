@@ -1,0 +1,191 @@
+{
+  "command": "python3 docs/evidence/brand-a-typography-2026-11-10/verification/check-concrete-catalogue.py",
+  "catalogue": [
+    {
+      "path": [
+        "Font",
+        "Family",
+        "Sans"
+      ],
+      "id": "VariableID:3:5",
+      "value": "Inter",
+      "beforePath": [
+        "Font",
+        "Family",
+        "Sans"
+      ]
+    },
+    {
+      "path": [
+        "Font",
+        "Family",
+        "Serif"
+      ],
+      "id": "VariableID:3:6",
+      "value": "Rokkitt",
+      "beforePath": [
+        "Font",
+        "Family",
+        "Serif"
+      ]
+    },
+    {
+      "path": [
+        "Font",
+        "Family",
+        "Mono"
+      ],
+      "id": "VariableID:3:7",
+      "value": "SF Mono",
+      "beforePath": [
+        "Font",
+        "Family",
+        "Mono"
+      ]
+    },
+    {
+      "path": [
+        "Font",
+        "Family",
+        "Roboto Slab"
+      ],
+      "id": "VariableID:3260:2",
+      "value": "Roboto Slab",
+      "beforePath": [
+        "Font",
+        "Family",
+        "Roboto Slab"
+      ]
+    }
+  ],
+  "legacyJSON": {
+    "Sans": {
+      "before": {
+        "$type": "fontFamily",
+        "$value": "Inter"
+      },
+      "after": {
+        "$type": "fontFamily",
+        "$value": "Inter"
+      }
+    },
+    "Serif": {
+      "before": {
+        "$type": "fontFamily",
+        "$value": "Rokkitt"
+      },
+      "after": {
+        "$type": "fontFamily",
+        "$value": "Rokkitt"
+      }
+    },
+    "Mono": {
+      "before": {
+        "$type": "fontFamily",
+        "$value": "SF Mono"
+      },
+      "after": {
+        "$type": "fontFamily",
+        "$value": "SF Mono"
+      }
+    }
+  },
+  "TSBefore": {
+    "--font-family-sans": "Inter",
+    "--font-family-serif": "Rokkitt",
+    "--font-family-mono": "SF Mono",
+    "--font-family-roboto-slab": "Roboto Slab"
+  },
+  "TSAfter": {
+    "--font-family-inter": "Inter",
+    "--font-family-rokkitt": "Rokkitt",
+    "--font-family-sf-mono": "SF Mono",
+    "--font-family-roboto-slab": "Roboto Slab",
+    "--font-family-sans": "Inter",
+    "--font-family-serif": "Rokkitt",
+    "--font-family-mono": "SF Mono"
+  },
+  "failures": [
+    {
+      "classificationInsteadOfConcreteFamily": [
+        "Font",
+        "Family",
+        "Sans"
+      ],
+      "expected": "Inter"
+    },
+    {
+      "classificationInsteadOfConcreteFamily": [
+        "Font",
+        "Family",
+        "Serif"
+      ],
+      "expected": "Rokkitt"
+    },
+    {
+      "classificationInsteadOfConcreteFamily": [
+        "Font",
+        "Family",
+        "Mono"
+      ],
+      "expected": "SF Mono"
+    },
+    {
+      "staleCanonicalSourceReferences": [
+        {
+          "locator": "Typography (Fluid).tokens.json/Projection/Font/Family/Mono/$value",
+          "reference": "Font/Family/Mono"
+        },
+        {
+          "locator": "Typography (Fluid).tokens.json/Projection/Font/Family/Mono/$extensions/com.figma.modeValues/Min",
+          "reference": "Font/Family/Mono"
+        },
+        {
+          "locator": "Typography (Fluid).tokens.json/Projection/Font/Family/Mono/$extensions/com.figma.modeValues/Max",
+          "reference": "Font/Family/Mono"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Base/$value",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Base/$extensions/com.figma.modeValues/Brand A",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Base/$extensions/com.figma.modeValues/Brand B",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Base/$extensions/com.figma.modeValues/Brand C",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Lead/$value",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Lead/$extensions/com.figma.modeValues/Brand A",
+          "reference": "Font/Family/Sans"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Lead/$extensions/com.figma.modeValues/Brand B",
+          "reference": "Font/Family/Serif"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Lead/$extensions/com.figma.modeValues/Brand C",
+          "reference": "Font/Family/Serif"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Heading/$extensions/com.figma.modeValues/Brand B",
+          "reference": "Font/Family/Serif"
+        },
+        {
+          "locator": "Semantics (Brands).tokens.json/Brand/Font/Heading/$extensions/com.figma.modeValues/Brand C",
+          "reference": "Font/Family/Serif"
+        }
+      ]
+    }
+  ],
+  "gate": "FAIL"
+}

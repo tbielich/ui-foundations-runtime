@@ -1,0 +1,32 @@
+{
+  "family": "Rokkitt",
+  "file": "rokkitt-variable.woff2",
+  "bytes": 52468,
+  "sha256": "a10e6659f05518a4b2d53c5e8ba174d7aaaca458cab76bacd932491f8a104355",
+  "source": {
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/rokkitt/Rokkitt%5Bwght%5D.ttf",
+    "sha256": "737b2881d2e98f85424b473ab049da3216289a1f84266becb972c87664de2b40"
+  },
+  "license": {
+    "type": "OFL-1.1",
+    "file": "rokkitt-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/rokkitt/OFL.txt",
+    "sha256": "31501a9490dce395cdb40015237d3684186b79f81dd6a31442d669eb7da81066"
+  },
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 100.0,
+      "default": 600.0,
+      "max": 900.0
+    }
+  ],
+  "conversion": {
+    "method": "TTF to WOFF2 compression only; no axis, outline, naming or subset edits",
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1"
+  },
+  "glyphCheck": {
+    "missing": []
+  }
+}

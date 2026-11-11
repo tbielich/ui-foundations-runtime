@@ -8,6 +8,8 @@
 const fs = require("fs");
 const path = require("path");
 const fg = require("fast-glob");
+const { loadFontFamilyCompatibility, compatibilityForTokenFile, applyLegacyFamilyReferences } = require("./font-family-compatibility.js");
+const { loadBrandFontStacks, applyBrandFontStacks } = require("./brand-font-stacks.js");
 const {
   readJsonLike,
   slugifyName,
@@ -559,6 +561,11 @@ async function extractTokens() {
       throw new Error(`No token exports found in ${EXPORTS_DIR}`);
     }
 
+    const projectionFile = path.join(REPO_ROOT, "figma/token-projection.json");
+    const projection = fs.existsSync(projectionFile) ? readJsonLike(projectionFile) : null;
+    const fontFamilyCompatibility = loadFontFamilyCompatibility(REPO_ROOT, projection);
+    const brandFontStacks = loadBrandFontStacks(REPO_ROOT, projection);
+
     const allTokens = [];
     const perFileTokens = [];
     const shouldMockMissing = !process.argv.includes("--strict");
@@ -662,6 +669,7 @@ async function extractTokens() {
       scopeSeen: new Map(),
     };
     assignCssVars(allTokens, report);
+    applyLegacyFamilyReferences(fontFamilyCompatibility, allTokens);
 
     // --mock-missing: inject temporary fallback tokens for unresolved aliases
     // Pre-check: try resolving all aliases to find missing targets early
@@ -723,6 +731,9 @@ async function extractTokens() {
       }
     }
 
+    // A mock recovery can reassign references; restore the enumerated compatibility view.
+    applyLegacyFamilyReferences(fontFamilyCompatibility, allTokens);
+
     const cssDir = path.join(OUTPUT_DIR, "css");
     const jsonDir = path.join(OUTPUT_DIR, "json");
     const tsDir = path.join(OUTPUT_DIR, "ts");
@@ -751,13 +762,18 @@ async function extractTokens() {
       const base = normalizePerFileBase(rawBase + scopeSuffix) || rawBase + scopeSuffix;
       const sourceData = readJsonLike(filePath);
       const perTokens = buildTokensFromList(tokenList, report, globalLookup);
+      applyBrandFontStacks(brandFontStacks, tokenList, perTokens, scope);
+      const compatibility = compatibilityForTokenFile(fontFamilyCompatibility, tokenList, perTokens);
+      // TypeScript retains its existing literal key values. CSS projects these
+      // same ID-derived values as aliases; JSON keeps the explicit legacy paths.
+      for (const entry of compatibility) perTokens.typography[entry.legacyCssVar] = entry.value;
       const transformReport = { unmappedFontWeights: [] };
       const w3cTokens = transformNodeToW3C(sourceData, [], transformReport);
       const dtcgAliases = convertAliasesToDTCG(w3cTokens);
       const dtcgColors = convertColorValuesToDTCG(dtcgAliases);
       const cleanTokens = withSchema(stripFigmaExtensions(dtcgColors));
       const jsonOut = JSON.stringify(cleanTokens, null, 2);
-      const cssOut = generateCSS(perTokens, scope, fluidTokenMap);
+      const cssOut = generateCSS(perTokens, scope, fluidTokenMap, compatibility);
       const tsOut = generateTypeScript(perTokens);
 
       fs.writeFileSync(path.join(jsonDir, `${base}.json`), jsonOut);
@@ -908,7 +924,8 @@ async function extractTokens() {
   }
 }
 
-function generateCSS(tokens, scope, fluidMap) {
+function generateCSS(tokens, scope, fluidMap, compatibility = []) {
+  const legacyFamilies = new Map(compatibility.map(entry => [entry.legacyCssVar, entry.canonicalCssVar]));
   const selector = selectorForScope(scope);
   let css = `/* Auto-generated design tokens from Figma */\n/* Generated on ${new Date().toISOString()} */\n\n${selector} {\n`;
 
@@ -925,8 +942,15 @@ function generateCSS(tokens, scope, fluidMap) {
 
   Object.entries(merged).forEach(([key, value]) => {
     let cssValue = value;
+    // Deprecated CSS family names are compatibility aliases, not primitive truth.
+    if (legacyFamilies.has(key)) {
+      cssValue = `var(${legacyFamilies.get(key)})`;
+    } else if (key.startsWith("--font-family-") && typeof value === "string" && /(?:^|\s)\d/.test(value) && !value.includes("var(")) {
+      // A numeric word is not a CSS custom-ident (for example Exo 2).
+      // Quote only the CSS representation; JSON/TS retain the family literal.
+      cssValue = JSON.stringify(value);
     // Fluid typography: substitute clamp() expression if this token is fluid
-    if (fluidMap && fluidMap.has(key)) {
+    } else if (fluidMap && fluidMap.has(key)) {
       cssValue = fluidMap.get(key);
     } else if (key.startsWith("--font-weight-")) {
       const mapped = toNumericFontWeight(value);

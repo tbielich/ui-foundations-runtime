@@ -8,3 +8,4 @@
 @import url("../../dist/tokens/css/patterns-ui.tokens.css") layer(tokens);
 @import url("./context/mode.css") layer(context);
 @import url("../../dist/core/context/scale.css") layer(context);
+@import url("../../dist/core/context/brand-typography.css") layer(context);

@@ -1,6 +1,6 @@
 @layer base {
   :root {
-    font-family: var(--font-family-sans, system-ui, sans-serif);
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans, system-ui, sans-serif));
     line-height: 1.5;
     color: var(--color-text-default, #000);
     background: var(--color-fill-surface, #fff);

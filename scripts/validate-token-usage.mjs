@@ -10,6 +10,7 @@
 import fs from "fs";
 import path from "path";
 import { createRequire } from "module";
+import { loadBrandTypographyProjection } from "./brand-typography-context.mjs";
 
 const require = createRequire(import.meta.url);
 const { classifyPatternTokenName } = require("./vault-naming-contract.js");
@@ -70,6 +71,8 @@ function getUsedTokens() {
 
 function run() {
   const defined = getDefinedTokens();
+  // Explicit, ID-validated code-only slots are generated in the context layer.
+  for (const slot of loadBrandTypographyProjection(REPO_ROOT).slots) defined.add(slot.cssVar);
   const usage = getUsedTokens();
   const errors = [];
   const warnings = [];

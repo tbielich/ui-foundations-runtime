@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/tbielich/ui-foundations-runtime/issues/339",
+  "rationale": "Owner-selected A/B/C family and weight adoption. Existing Basic/compatibility primitives remain untouched; the same ID-bound effective slots activate only at the three selected Brand boundaries and reset in neutral contexts. These are code-only rendering projections, not duplicated Figma variables.",
+  "slots": [
+    {
+      "cssVar": "--uif-button-compat-font-family",
+      "sourceVariableId": "VariableID:3173:63",
+      "sourceCssVar": "--uif-semantic-font-lead"
+    },
+    {
+      "cssVar": "--uif-button-compat-font-weight",
+      "sourceVariableId": "VariableID:3260:6",
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+    },
+    {
+      "cssVar": "--uif-field-label-compat-font-family",
+      "sourceVariableId": "VariableID:3173:63",
+      "sourceCssVar": "--uif-semantic-font-lead"
+    },
+    {
+      "cssVar": "--uif-field-label-compat-font-weight",
+      "sourceVariableId": "VariableID:3260:6",
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+    },
+    {
+      "cssVar": "--uif-badge-compat-text-font-family",
+      "sourceVariableId": "VariableID:3173:63",
+      "sourceCssVar": "--uif-semantic-font-lead"
+    },
+    {
+      "cssVar": "--uif-badge-compat-text-font-weight",
+      "sourceVariableId": "VariableID:3260:6",
+      "sourceCssVar": "--uif-semantic-typography-ui-font-weight"
+    },
+    {
+      "cssVar": "--uif-illustrated-message-compat-heading-font-weight",
+      "sourceVariableId": "VariableID:3274:7",
+      "sourceCssVar": "--uif-semantic-typography-heading-font-weight"
+    }
+  ],
+  "brands": [
+    "a",
+    "b",
+    "c"
+  ],
+  "fontStacks": [
+    {
+      "sourceVariableId": "VariableID:2006:213",
+      "cssVar": "--brand-font-base",
+      "modeFallbacks": {
+        "a": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        },
+        "b": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        },
+        "c": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        }
+      }
+    },
+    {
+      "sourceVariableId": "VariableID:2006:214",
+      "cssVar": "--brand-font-lead",
+      "modeFallbacks": {
+        "a": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        },
+        "b": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        },
+        "c": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        }
+      }
+    },
+    {
+      "sourceVariableId": "VariableID:3260:3",
+      "cssVar": "--brand-font-heading",
+      "modeFallbacks": {
+        "a": {
+          "sourceVariableId": "VariableID:3:6",
+          "cssVar": "--font-family-serif",
+          "generic": "serif"
+        },
+        "b": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        },
+        "c": {
+          "sourceVariableId": "VariableID:3:5",
+          "cssVar": "--font-family-sans",
+          "generic": "sans-serif"
+        }
+      }
+    },
+    {
+      "sourceVariableId": "VariableID:3173:101",
+      "cssVar": "--uif-semantic-scale-font-family-mono",
+      "generic": "monospace"
+    }
+  ],
+  "fontStackRationale": "Figma retains single primary families. Runtime output appends the ID-bound existing Basic Sans/Serif fallbacks and generic terminals, without renaming Basic tokens or hardcoding pattern families."
+}

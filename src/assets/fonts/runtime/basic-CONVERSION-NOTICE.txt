@@ -1,0 +1,1 @@
+Inter and Rokkitt were converted from pinned upstream TTF to WOFF2 compression only. No intentional outline, naming, axis, metrics or glyph-subset edits. Original copyright and OFL license texts accompany each font; see *-source.json for revision and hashes.

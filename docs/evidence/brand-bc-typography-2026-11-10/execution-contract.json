@@ -1,0 +1,159 @@
+{
+  "id": "brand-bc-typography-2026-11-10",
+  "mode": "IMPLEMENT",
+  "authorization": "Explicit user selection of B Exo 2 + Orbitron and C Manrope + Bricolage Grotesque; bounded continuation of local Brand A adoption",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/339-brand-a-typography",
+  "baseCommit": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "inputState": "Existing approved local A implementation, frozen independently before B/C source changes",
+  "brands": {
+    "a": {
+      "preserve": "Approved Inter body/UI + Roboto Slab headings and current token/loading compatibility"
+    },
+    "b": {
+      "body": "Exo 2",
+      "bodyWeight": 400,
+      "ui": "Exo 2",
+      "uiWeight": 600,
+      "heading": "Orbitron",
+      "headingWeight": 800
+    },
+    "c": {
+      "body": "Manrope",
+      "bodyWeight": 400,
+      "ui": "Manrope",
+      "uiWeight": 600,
+      "heading": "Bricolage Grotesque",
+      "headingWeight": 700
+    }
+  },
+  "functionalUiScope": [
+    "Button",
+    "Field Label",
+    "Input",
+    "Badge",
+    "Link"
+  ],
+  "explicitWeightChanges": [
+    "B generic Headings 700\u2192800",
+    "B/C functional UI including Button/FieldLabel inherited text and Badge text intentionally adopts 600; previous B/C inheritance/400 constraint is superseded only for the selected roles",
+    "Illustrated Message Heading B800/C700 via the selected heading role"
+  ],
+  "frozen": [
+    "Existing Basic/compatibility tokens and exports; no removal, renaming or restoration work",
+    "Brand A primary source families/weights/font asset and existing loading definitions; explicit newly authorized fallback stacks may extend representation",
+    "Colors, shapes, scales, line heights, margins and wrapping",
+    "Select, Textarea and unrelated prose typography weights and consumer inheritance",
+    "Icons and required markers"
+  ],
+  "allowed": [
+    "Pinned self-hosted font assets/licenses/source metadata for four new families",
+    "Brand/context projection activation and selected role routing",
+    "Bounded tests and implementation/verification evidence",
+    "Parent-supplied ID-aware Figma partial sync after handoff"
+  ],
+  "forbidden": [
+    "Worker Figma reads/writes",
+    "Token-projection map edits before parent handoff",
+    "Unrelated Mono WEB drift sync",
+    "New dependencies in Runtime package",
+    "Vault governance edits",
+    "Commits, pushes, PRs, merge or publication"
+  ],
+  "verification": [
+    "Actual platform fonts/weights in both schemes",
+    "A rendered/token parity against frozen approved A baseline",
+    "B/C correct body400 UI600 and heading800/700; glyph/fallback limits explicit",
+    "Public main/core bundle font loading and no failed local resources",
+    "Functional root/preview context transitions and unchanged non-typographic values",
+    "Final npm run ci:check after independent review; git diff --check"
+  ],
+  "fontCatalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+  "state": "Locally implemented and verified; live Figma reconciled; not committed, pushed, merged or published",
+  "runtimeFallbackProjection": {
+    "baseAndLead": {
+      "a": [
+        "primary Inter",
+        "Basic Sans",
+        "sans-serif"
+      ],
+      "b": [
+        "primary Exo 2",
+        "Basic Sans / Inter",
+        "sans-serif"
+      ],
+      "c": [
+        "primary Manrope",
+        "Basic Sans / Inter",
+        "sans-serif"
+      ]
+    },
+    "heading": {
+      "a": [
+        "primary Roboto Slab",
+        "Basic Serif / Rokkitt",
+        "serif"
+      ],
+      "b": [
+        "primary Orbitron",
+        "Basic Sans / Inter",
+        "sans-serif"
+      ],
+      "c": [
+        "primary Bricolage Grotesque",
+        "Basic Sans / Inter",
+        "sans-serif"
+      ]
+    },
+    "mono": [
+      "existing Basic Mono / SF Mono",
+      "monospace"
+    ],
+    "boundary": "Figma variables remain single primary-family values; explicit Runtime output projection only, no Basic taxonomy change or new fallback variables"
+  },
+  "opticalSizeProjection": {
+    "family": "Bricolage Grotesque",
+    "sourceAxes": {
+      "opszDefault": 96,
+      "wdthDefault": 100
+    },
+    "shippedPinnedAxes": {
+      "opsz": 14,
+      "wdth": 100
+    },
+    "retainedVariableAxis": "wght 200\u2013800",
+    "reason": "Match independently observed native Figma axes; browser auto optical sizing must not change the shipped outline selection"
+  },
+  "knownGlyphGap": "Orbitron lacks uppercase \u1e9e; required to route that glyph to Basic Sans fallback rather than claim single-face coverage.",
+  "intentionalFamilyRoutingChanges": [
+    "Root font family, Accordion summary/content, Avatar, Tabs and Tooltip now consume existing semantic Base with Basic Sans fallback; B/C adopt Exo 2/Manrope while their previous weights/layout stay unchanged.",
+    "Approved A primary Inter/Roboto and weights remain; explicit fallback chains are a newly authorized representation/behavior change when primary faces are unavailable.",
+    "Existing Basic CSS/JSON/TS tokens remain present and unmodified; old override preservation is evaluated for historical roles where those Basic tokens remain selected/fallback inputs, not as forced primary families for newly adopted B/C."
+  ],
+  "scopeExtensions20261111": {
+    "authorization": "User requested continuation and legal review of Google Fonts warning-letter risks",
+    "delivery": "Self-host existing Inter/Rokkitt as well as new B/C families; remove Google import and docs CSP allowlist",
+    "fallback": "Existing Basic aliases as explicit secondary families; no Basic taxonomy migration",
+    "legalReview": "font-legal-review.md",
+    "limits": "No deployment, final legal opinion, claim of a new warning-letter wave, or action on individual letters"
+  },
+  "repairScope": {
+    "evidence": "verification/independent-summary.json: Brand C new 320px WCAG-text-spacing Button overflow 324.34 vs baseline319.14",
+    "authorizedNecessity": "Bounded repair of a demonstrated new font-adoption regression, no scale or spacing change",
+    "change": "Shared Button max-inline-size100% and white-space normal; long labels may wrap, short labels unchanged",
+    "exceptionToFrozenWrapping": "Explicit narrow necessary repair; improves existing long-label overflow for other brands rather than adding brand-specific layout hacks",
+    "tests": "tests/browser/button-text-spacing.spec.mjs; ABC \u00d7 Light/Dark \u00d7 raw/composed labels",
+    "orbitronDelivery": "Original upstream TTF, byte-identical; converted WOFF2 removed"
+  },
+  "implementationGate": "PASS",
+  "validation": {
+    "unit": 241,
+    "chromium": 47,
+    "independent": "verification/independent-summary.json and verification/repair-summary.json",
+    "assets": "font-assets-independent-gate.json",
+    "package": "package-font-inventory.json",
+    "sourceManifest": "final-source-manifest.json",
+    "legalRiskReview": "font-legal-review.md",
+    "legalOpinionOrGlobalAccessibilityCertification": false
+  }
+}

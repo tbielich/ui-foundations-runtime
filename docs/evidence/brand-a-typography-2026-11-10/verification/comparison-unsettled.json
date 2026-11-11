@@ -1,0 +1,42 @@
+{
+  "consumer_bc_differences": [
+    {
+      "case": [
+        "plain",
+        "b",
+        "light"
+      ],
+      "role": "link",
+      "property": "color",
+      "before": "rgb(0, 0, 0)",
+      "after": "rgb(6, 2, 11)"
+    },
+    {
+      "case": [
+        "plain",
+        "b",
+        "light"
+      ],
+      "role": "link",
+      "property": "border",
+      "before": "rgb(0, 0, 0)",
+      "after": "rgb(6, 2, 11)"
+    }
+  ],
+  "token_bc_differences": [],
+  "docs_bc_differences": [],
+  "a_policy_failures": [],
+  "preserved_prose_failures": [],
+  "icon_geometry_failures": [],
+  "unexpected_missing_cases": [],
+  "summary": {
+    "consumer_bc_differences": 2,
+    "token_bc_differences": 0,
+    "docs_bc_differences": 0,
+    "a_policy_failures": 0,
+    "preserved_prose_failures": 0,
+    "icon_geometry_failures": 0,
+    "unexpected_missing_cases": 0
+  },
+  "gate": "FAIL"
+}
