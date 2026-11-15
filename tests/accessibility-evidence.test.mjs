@@ -140,7 +140,21 @@ test("real detached-HEAD provenance is accepted; contradictory branch provenance
 // Hooks export GIT_DIR/GIT_INDEX_FILE and related variables. A cwd alone does
 // not isolate git: remove inherited git targeting before operating on fixtures.
 const fixtureEnv = Object.fromEntries(Object.entries(process.env).filter(([name]) => !name.startsWith("GIT_")));
-const git = (cwd, ...args) => execFileSync("git", args, { cwd, encoding: "utf8", env: fixtureEnv }).trim();
+// Checkout's safe.directory can be injected through GIT_CONFIG_* in a CI
+// container. Fixture isolation intentionally removes that environment, so trust
+// only the explicit repository for this command; never change global config.
+const fixtureGitArgs = (cwd, ...args) => ["-c", `safe.directory=${cwd}`, ...args];
+const git = (cwd, ...args) => execFileSync("git", fixtureGitArgs(cwd, ...args), { cwd, encoding: "utf8", env: fixtureEnv }).trim();
+
+test("isolated Git fixture commands retain exact-checkout ownership trust", () => {
+  const env = { ...fixtureEnv, GIT_TEST_ASSUME_DIFFERENT_OWNER: "1" };
+  const head = execFileSync("git", fixtureGitArgs(REPO_ROOT, "rev-parse", "HEAD"), { cwd: REPO_ROOT, encoding: "utf8", env }).trim();
+  assert.match(head, /^[a-f0-9]{40}$/);
+  const other = fs.mkdtempSync(path.join(os.tmpdir(), "a11y-wrong-trust-"));
+  try {
+    assert.throws(() => execFileSync("git", fixtureGitArgs(other, "rev-parse", "HEAD"), { cwd: REPO_ROOT, env, stdio: "pipe" }), /dubious ownership/);
+  } finally { fs.rmSync(other, { recursive: true, force: true }); }
+});
 function makeCheckout(tmp, name, { shallow = false, detach = null } = {}) {
   const dest = path.join(tmp, name);
   const args = ["clone", "--quiet"];
