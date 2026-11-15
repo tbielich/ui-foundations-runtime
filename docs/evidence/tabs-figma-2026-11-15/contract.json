@@ -1,0 +1,50 @@
+{
+  "task": "runtime-36-tabs-figma-reconciliation",
+  "authorization": "Owner: figma kannst du auch gleich anpassen",
+  "scope": "Reconcile existing Tabs component set 2535:286 with its existing pattern/typography variables; preserve node identities and Selected/Label API. Represent container S/M/L without adding component size variants. Resolve color projection only after the pending owner decision.",
+  "fileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+  "page": "0:1",
+  "componentNodes": [
+    "2535:286",
+    "2535:284",
+    "2535:285",
+    "2537:14",
+    "2537:15"
+  ],
+  "before": {
+    "defaultSize": [
+      80,
+      33
+    ],
+    "selectedSize": [
+      80,
+      33
+    ],
+    "paddingInline": 12,
+    "paddingBlock": 8,
+    "fontSize": 14,
+    "lineHeight": "AUTO",
+    "defaultFont": "Inter Regular",
+    "selectedFont": "Inter Semi Bold",
+    "paddingBindings": "none",
+    "defaultTextPaint": "VariableID:2007:326",
+    "selectedTextPaint": "VariableID:2007:340",
+    "selectedBorderPaint": "VariableID:2007:345"
+  },
+  "constraints": [
+    "No library publication",
+    "No unrelated components",
+    "No arbitrary tokens or new size variants",
+    "Do not equate fluid Min/Max endpoints with container S/M/L",
+    "Pending color choice must not be inferred from elapsed time"
+  ],
+  "validation": [
+    "Readback bindings, source IDs and properties",
+    "Inspect component screenshot",
+    "Verify container examples and their explicit projection limits"
+  ],
+  "colorDecision": {
+    "owner": "Runtime-Verhalten erhalten und Figma-Rollen erg\u00e4nzen (empfohlen)",
+    "implementation": "Two navigation roles projected through existing Appearance Scheme and Semantics collections; preserve all six resolved contexts and remove redundant dark CSS override."
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "gate": "PASS",
+  "checks": [
+    {
+      "id": "VariableID:2789:39",
+      "name": "Tabs/Border/Color/Default",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:40",
+      "name": "Tabs/Border/Color/Active",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:41",
+      "name": "Tabs/Border/Color/Hover",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:42",
+      "name": "Tabs/Text/Color/Default",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:43",
+      "name": "Tabs/Text/Color/Active",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:44",
+      "name": "Tabs/Text/Color/Hover",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:45",
+      "name": "Tabs/Text/Color/Disabled",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:46",
+      "name": "Tabs/Padding/Inline",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    },
+    {
+      "id": "VariableID:2789:47",
+      "name": "Tabs/Padding/Block",
+      "nameMatch": true,
+      "webMatch": true,
+      "aliasMatch": true
+    }
+  ]
+}

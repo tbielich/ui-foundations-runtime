@@ -178,7 +178,7 @@ unsaved form values and event listeners remain intact. Changing a tab list's
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Design tokens</strong><span>Component-scoped tokens (<code>--uif-tabs-*</code>).</span></div></div>
 </div>
 
-The selected tab uses the Solid Button's default Brand color in light mode. In dark mode, text and indicator use the Outline Button's readable Brand foreground and contour roles. The Runtime dark-mode projection is defined in the Tabs stylesheet; live Figma bindings have not been updated.
+The selected tab uses the Solid Button's default Brand color in light mode. In dark mode, text and indicator retain the readable active Brand foreground and contour. Existing Tabs tokens now resolve through shared Navigation roles and Appearance Scheme in both Figma and Runtime; no Tabs-specific Dark CSS override is needed. The six Brand/Scheme color contexts were read back and verified. Native Figma container S/M/L projection and library publication remain separate acceptance gates.
 
 <script type="module" src="/vendor/ui-foundations/elements/ui-tabs.js"></script>
 
