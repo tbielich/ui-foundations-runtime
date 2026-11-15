@@ -118,6 +118,11 @@ Horizontal tab lists use native inline scrolling when labels exceed the availabl
 
 Panel switching is state-driven through the selected tab and the controlled panel's `hidden` state; panel scroll position is not an alternate activation model.
 
+The Custom Elements retain their existing tab buttons and panel content when
+attributes change. Switching panels hides content without recreating it, so
+unsaved form values and event listeners remain intact. Changing a tab list's
+`orientation` or `aria-label` updates its existing list and preserves selection.
+
 <h2 id="keyboard-interactions">Keyboard interactions</h2>
 
 <table class="docs-keyboard-table">
