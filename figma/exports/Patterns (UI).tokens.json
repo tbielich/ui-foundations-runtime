@@ -6253,26 +6253,25 @@
       "Color Active": {
         "$type": "color",
         "$value": {
-          "$ref": "Semantics/Color/Action/Surface/Default"
+          "$ref": "Semantics/Color/Border/Navigation/Active"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2789:40",
+          "com.figma.variableName": "Tabs/Border/Color/Active",
           "com.figma.scopes": [
             "STROKE_COLOR"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-tabs-border-color-active)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:34",
-            "targetVariableName": "Semantics/Color/Action/Surface/Default",
+            "targetVariableId": "VariableID:3303:5",
+            "targetVariableName": "Semantics/Color/Border/Navigation/Active",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },
-          "com.figma.isOverride": true,
-          "com.figma.variableName": "Tabs/Border/Color/Active",
-          "com.figma.variableCollectionName": "Patterns (UI)",
-          "com.figma.hiddenFromPublishing": false
+          "com.figma.isOverride": true
         }
       },
       "Color Hover": {
@@ -6331,27 +6330,26 @@
       "Color Active": {
         "$type": "color",
         "$value": {
-          "$ref": "Semantics/Color/Action/Surface/Default"
+          "$ref": "Semantics/Color/Navigation/Foreground/Active"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2789:43",
+          "com.figma.variableName": "Tabs/Text/Color/Active",
           "com.figma.scopes": [
             "SHAPE_FILL",
             "TEXT_FILL"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--uif-tabs-text-color-active)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3173:34",
-            "targetVariableName": "Semantics/Color/Action/Surface/Default",
+            "targetVariableId": "VariableID:3303:3",
+            "targetVariableName": "Semantics/Color/Navigation/Foreground/Active",
             "targetVariableSetId": "VariableCollectionId:3173:2",
             "targetVariableSetName": "Semantics (Roles)"
           },
-          "com.figma.isOverride": true,
-          "com.figma.variableName": "Tabs/Text/Color/Active",
-          "com.figma.variableCollectionName": "Patterns (UI)",
-          "com.figma.hiddenFromPublishing": false
+          "com.figma.isOverride": true
         }
       },
       "Color Hover": {

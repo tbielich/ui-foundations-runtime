@@ -3881,6 +3881,26 @@
       "figmaName": "Typography/Heading/Font/Weight",
       "file": "Semantics (Roles).tokens.json",
       "exportPath": "Semantics/Typography/Heading/Font/Weight"
+    },
+    "VariableID:3303:2": {
+      "figmaName": "Color/Navigation/Foreground/Active",
+      "exportPath": "Color/Navigation/Foreground/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3303:3": {
+      "figmaName": "Color/Navigation/Foreground/Active",
+      "exportPath": "Semantics/Color/Navigation/Foreground/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3303:4": {
+      "figmaName": "Color/Border/Navigation/Active",
+      "exportPath": "Color/Border/Navigation/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3303:5": {
+      "figmaName": "Color/Border/Navigation/Active",
+      "exportPath": "Semantics/Color/Border/Navigation/Active",
+      "file": "Semantics (Roles).tokens.json"
     }
   },
   "codeOnlyExceptions": [

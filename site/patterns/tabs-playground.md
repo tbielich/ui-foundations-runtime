@@ -18,8 +18,26 @@ playground:
   queryPrefix: tabs
   runtime: vanilla
   renderer: tabs
+  containerScale: true
   tokenCssPath: src/ui/patterns/tabs.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
+    - kind: select
+      name: orientation
+      label: Orientation
+      query: true
+      default: horizontal
+      options:
+        - horizontal
+        - vertical
     - kind: select
       name: tabs
       label: Tab Count
@@ -46,3 +64,5 @@ playground:
 {% from "macros/playground.njk" import playground as uiPlayground with context %}
 
 {{ uiPlayground(playground) }}
+
+<script type="module" src="/vendor/ui-foundations/elements/ui-tabs.js"></script>

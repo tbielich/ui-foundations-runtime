@@ -1,0 +1,8 @@
+No config file found in /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state, proceeding with default options
+Using "html" parser as package.json containing no other supported web frameworks was found in /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state. If this is incorrect, please check you are running Code Connect from your project root, or add a `parser` key to your config file. See https://github.com/figma/code-connect for more information.
+/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state/schemas/web-tab.figma.ts
+Wrote Code Connect JSON to /tmp/uif-tab-code-connect.json
+
+A new version of the Figma CLI is available. v1.4.7 is currently installed, and the latest version available is v2.1.0.
+
+To update, run npm install @figma/code-connect@latest for React or HTML, or npm install -g @figma/code-connect@latest for other targets (or if you have Code Connect installed globally).

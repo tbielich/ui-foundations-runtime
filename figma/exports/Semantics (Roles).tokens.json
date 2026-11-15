@@ -1129,6 +1129,32 @@
               "com.figma.isOverride": true
             }
           }
+        },
+        "Navigation": {
+          "Active": {
+            "$type": "color",
+            "$value": {
+              "$ref": "Color/Border/Navigation/Active"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3303:5",
+              "com.figma.variableName": "Color/Border/Navigation/Active",
+              "com.figma.scopes": [
+                "STROKE_COLOR"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-semantic-color-border-navigation-active)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3303:4",
+                "targetVariableName": "Color/Border/Navigation/Active",
+                "targetVariableSetId": "VariableCollectionId:2007:325",
+                "targetVariableSetName": "Appearance (Scheme)"
+              },
+              "com.figma.isOverride": true
+            }
+          }
         }
       },
       "Danger": {
@@ -1484,6 +1510,34 @@
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:3173:10",
                 "targetVariableName": "Projection/Color/Neutral/900",
+                "targetVariableSetId": "VariableCollectionId:2007:325",
+                "targetVariableSetName": "Appearance (Scheme)"
+              },
+              "com.figma.isOverride": true
+            }
+          }
+        }
+      },
+      "Navigation": {
+        "Foreground": {
+          "Active": {
+            "$type": "color",
+            "$value": {
+              "$ref": "Color/Navigation/Foreground/Active"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3303:3",
+              "com.figma.variableName": "Color/Navigation/Foreground/Active",
+              "com.figma.scopes": [
+                "TEXT_FILL"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-semantic-color-navigation-foreground-active)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3303:2",
+                "targetVariableName": "Color/Navigation/Foreground/Active",
                 "targetVariableSetId": "VariableCollectionId:2007:325",
                 "targetVariableSetName": "Appearance (Scheme)"
               },
