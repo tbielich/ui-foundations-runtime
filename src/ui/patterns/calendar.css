@@ -67,6 +67,31 @@
     background: var(--uif-calendar-cell-background-hover);
   }
 
+  /*
+   * base-select popup restore: the calendar header selects intentionally make
+   * the closed control transparent/borderless. In the customizable-select
+   * (`appearance: base-select`) path the open `::picker(select)` popup and its
+   * options inherit that transparency, which renders the option list invisible
+   * ("empty options" over the grid). Re-assert a solid popup surface and
+   * explicit option text color for the calendar header selects only.
+   */
+  @supports (appearance: base-select) {
+    :is(.uif-calendar-header, .calendar-header)
+      :is(.uif-select, .select):is(.uif-calendar-header-select, .calendar-header-select)::picker(select) {
+      background: var(--uif-select-container-background-default);
+      border: var(--uif-select-border-size-default) solid
+        var(--uif-select-border-color-default);
+      border-radius: var(--uif-select-border-radius);
+    }
+
+    :is(.uif-calendar-header, .calendar-header)
+      :is(.uif-select, .select):is(.uif-calendar-header-select, .calendar-header-select)
+      option {
+      color: var(--uif-select-text-color-default);
+      background: var(--uif-select-container-background-default);
+    }
+  }
+
   /* ─── Weekday Header ─────────────────────────────────────────── */
 
   :is(.uif-calendar-table, .calendar-table) {

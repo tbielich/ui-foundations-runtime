@@ -1,0 +1,3 @@
+Exo 2, Orbitron and Manrope upright variable fonts were converted from pinned official Google Fonts TTF sources to WOFF2 without subsetting or intentional outline/axis edits. Bricolage Grotesque was deliberately partially instanced at opsz=14 and wdth=100 to match observed native Figma settings; its weight axis remains variable. All conversions used fontTools 4.68.0 and Brotli 1.2.1. Each family has its own source/hash/axis record and SIL OFL license. Required-glyph coverage limits are recorded.
+
+Final legal-risk reduction: Orbitron is distributed as the byte-identical original pinned upstream TTF. The previously reviewed WOFF2 conversion is not shipped. Orbitron retains its Reserved Font Name and original font data without a conversion exception being needed.

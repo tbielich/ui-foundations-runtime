@@ -1,0 +1,1 @@
+Roboto Slab was converted from the pinned official Google Fonts catalogue TTF to WOFF2 with fontTools 4.68.0 and Brotli 1.2.1. Format conversion only; no intentional outline, naming, metrics, axis or glyph-subset edits. Pinned source, binary hashes, version and conversion are recorded in roboto-slab-source.json; license in roboto-slab-LICENSE.txt.

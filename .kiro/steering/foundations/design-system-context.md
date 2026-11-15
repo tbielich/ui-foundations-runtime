@@ -4,7 +4,7 @@ inclusion: always
 
 # UI Foundations — Design System Context
 
-This is a token-first, Figma-aligned design system. Figma is the single source of truth.
+This is a token-first, Figma-aligned design system. Figma is a design-authoring projection of the UIF token model; UIF-VLT owns durable architecture and contracts, and UIF-RUN owns the consumable runtime projection.
 
 ## Language
 
@@ -13,28 +13,35 @@ this project must be written in English. No exceptions.
 
 ## Token Architecture
 
-| Layer | Purpose | Location |
+Canonical flow:
+
+```text
+Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns
+```
+
+| Responsibility | Purpose | Runtime projection |
 |---|---|---|
-| Core (Primitives) | Raw values: spacing, radii, borders, typography | `dist/tokens/css/core-primitives.tokens.css` |
-| Appearance (Modes) | Mode-dependent decisions: light/dark color mappings, future density modes | `dist/tokens/css/appearance-modes.tokens.mode-*.css` |
-| Semantics (Brands) | Brand-scoped semantic roles: `--brand-corner-button`, `--brand-color-*` | `dist/tokens/css/semantics-brands.tokens.brand-*.css` |
-| Patterns (UI) | Pattern-specific: `--button-solid-border-color-default` | `dist/tokens/css/patterns-ui.tokens.css` |
+| Core | Raw reusable values | `core-primitives.tokens.css` |
+| Appearance / Brand | Brand-specific visual identity | `semantics-brands.tokens.brand-*.css` (compatibility filename) |
+| Appearance / Scheme | Light/dark realization | `appearance-modes.tokens.mode-*.css` (compatibility filename) |
+| Appearance / Scale | Fluid/scalar endpoints | `typography-fluid.tokens.mode-*.css` (compatibility filename) |
+| Semantics | Stable purpose and state roles | `semantics-roles.tokens.css` |
+| Patterns | UI-specific usage slots | `patterns-ui.tokens.css` |
 
-**Strict reference direction:**
-```
-Patterns   → Semantics (Brands), Appearance, or Core
-Semantics  → Core or Appearance
-Appearance → Core
-Core       → raw values only
-```
+**Reference direction:** Patterns consume Semantics. Semantics aliases Appearance.
+Appearance resolves through Brand, Scheme, and Scale and ultimately depends on
+Core. Existing direct Pattern dependencies are compatibility exceptions, not a
+template for new work.
 
-Rules: Pattern and component tokens consume semantic roles or Core tokens. Never hardcode values.
+Generated filenames can retain historical terminology. Use
+`figma/token-projection.json` to map those files to the current Figma
+responsibilities.
 
 ## Token Naming
 
-- Component: `--component-variant-part-property-state` (e.g. `--button-solid-container-background-hover`)
-- Semantic: role-based (e.g. `--color-text-default`, `--color-fill-brand`)
-- States: `default`, `hover`, `active`, `focus`, `disabled` — always last segment
+- Pattern: `<Family>/<Variant?>/<Part?>/<Property>/<State?>`; public Runtime syntax uses the canonical `--uif-*` namespace.
+- Semantic color: `Color/<Purpose>/<Role>/<State>`, for example `Color/Action/Surface/Hover`.
+- States: `default`, `hover`, `active`, `focus`, `disabled` — always last. `active` is the established Runtime name for the pressed interaction.
 
 ## Token Pipeline
 
@@ -56,7 +63,7 @@ Figma exports are the source. Generated files in `dist/` are never edited direct
 | Playground pages | `site/patterns/*-playground.md` |
 | Code Connect | `schemas/web-*.figma.ts` |
 | Token exports | `figma/exports/*.tokens.json` |
-| Brand semantics | `dist/tokens/css/semantics-brands.tokens.brand-*.css` |
+| Brand compatibility projection | `dist/tokens/css/semantics-brands.tokens.brand-*.css` |
 
 ## Current Patterns
 

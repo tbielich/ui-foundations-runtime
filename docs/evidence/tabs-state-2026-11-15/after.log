@@ -1,0 +1,12 @@
+[WebServer] (node:7235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:7236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (229ms)
+  ✓  2 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (303ms)
+  ✓  3 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (210ms)
+
+  3 passed (1.4s)

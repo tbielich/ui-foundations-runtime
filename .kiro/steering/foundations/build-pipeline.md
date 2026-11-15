@@ -36,7 +36,7 @@ npm run build:all
 
 This script:
 1. Reads all `*.tokens.css` files from `dist/tokens/css/`
-2. Sorts them by priority: core → appearance modes → brand semantics → patterns/components
+2. Sorts generated token files by CSS emission priority: Core → Scale → Scheme → Brand/Semantics → Patterns
 3. Copies `src/core/` to `dist/core/` and rewrites `index.css` with correct
    token imports
 4. Copies `src/ui/` to `dist/ui/`
@@ -84,8 +84,10 @@ passthrough copy configured in `.eleventy.js`.
 
 | File | Scope | Priority |
 |------|-------|----------|
-| `core-primitives.tokens.css` | Primitives | 0 (first) |
-| `appearance-modes.tokens.mode-light.css` | Light mode colors | 1 |
-| `appearance-modes.tokens.mode-dark.css` | Dark mode colors | 2 |
-| `semantics-brands.tokens.brand-*.css` | Brand semantic roles | 3 |
-| `patterns-ui.tokens.css` | Pattern-specific tokens | 4 |
+| `core-primitives.tokens.css` | Core | 0 |
+| `typography-fluid.tokens.mode-*.css` | Appearance / Scale (compatibility filename) | 1 |
+| `appearance-modes.tokens.mode-light.css` | Appearance / Scheme: Light | 2 |
+| `appearance-modes.tokens.mode-dark.css` | Appearance / Scheme: Dark | 3 |
+| `semantics-brands.tokens.brand-*.css` | Appearance / Brand (compatibility filename) | 4 |
+| `semantics-roles.tokens.css` | Semantics / Roles | 4 |
+| `patterns-ui.tokens.css` | Patterns | 5 |

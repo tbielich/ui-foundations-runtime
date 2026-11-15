@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-30",
+  "mode": "IMPLEMENT",
+  "scope": "Figma README documentation follow-up",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "pageId": "2004:103",
+  "wrapperId": "3185:2",
+  "source": "UIF-VLT decisions/token-model-and-figma-projection.md (review)",
+  "writeResults": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"createdNodeIds\":[\"3185:2\"],\"mutatedNodeIds\":[\"2255:1256\"],\"wrapperId\":\"3185:2\",\"width\":1120,\"fonts\":\"Existing README Inter + SF Mono; no components or images required; Code Connect N/A for document text; existing README has zero instances.\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"createdNodeIds\":[\"3186:2\",\"3186:3\",\"3186:4\",\"3186:5\",\"3186:6\",\"3186:7\",\"3186:8\",\"3186:9\",\"3186:10\",\"3186:11\",\"3186:12\",\"3186:13\",\"3186:14\",\"3186:15\",\"3186:16\",\"3186:17\",\"3186:18\",\"3186:19\",\"3186:20\",\"3186:21\",\"3186:22\",\"3186:23\",\"3186:24\",\"3186:25\",\"3186:26\",\"3186:27\",\"3186:28\",\"3186:29\",\"3186:30\",\"3186:31\",\"3186:32\",\"3186:33\",\"3186:34\",\"3186:35\",\"3186:36\",\"3186:37\",\"3186:38\",\"3186:39\",\"3186:40\",\"3186:41\",\"3186:42\",\"3186:43\",\"3186:44\",\"3186:45\",\"3186:46\",\"3186:47\",\"3186:48\",\"3186:49\",\"3186:50\",\"3186:51\",\"3186:52\"],\"mutatedNodeIds\":[\"3185:2\"],\"sections\":14,\"width\":1120,\"height\":1338}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"mutatedNodeIds\":[\"3186:3\",\"3186:4\",\"3186:6\",\"3186:7\",\"3186:9\",\"3186:10\",\"3186:11\",\"3186:13\",\"3186:14\",\"3186:15\",\"3186:17\",\"3186:18\",\"3186:20\",\"3186:21\",\"3186:22\",\"3186:24\",\"3186:25\",\"3186:26\",\"3186:28\",\"3186:29\",\"3186:30\",\"3186:32\",\"3186:33\",\"3186:34\",\"3186:36\",\"3186:37\",\"3186:39\",\"3186:40\",\"3186:41\",\"3186:43\",\"3186:44\",\"3186:45\",\"3186:47\",\"3186:48\",\"3186:50\",\"3186:51\",\"3186:52\",\"2255:646\",\"2255:651\",\"2255:713\",\"2255:733\",\"2255:748\",\"2255:789\",\"2255:970\",\"2255:1094\",\"2255:1158\",\"2255:1256\",\"2251:535\",\"2188:4\"],\"width\":1120,\"height\":4511,\"sections\":[{\"id\":\"3186:2\",\"h\":184},{\"id\":\"3186:5\",\"h\":364},{\"id\":\"3186:8\",\"h\":248},{\"id\":\"3186:12\",\"h\":335},{\"id\":\"3186:16\",\"h\":172},{\"id\":\"3186:19\",\"h\":293},{\"id\":\"3186:23\",\"h\":272},{\"id\":\"3186:27\",\"h\":251},{\"id\":\"3186:31\",\"h\":263},{\"id\":\"3186:35\",\"h\":292},{\"id\":\"3186:38\",\"h\":344},{\"id\":\"3186:42\",\"h\":251},{\"id\":\"3186:46\",\"h\":340},{\"id\":\"3186:49\",\"h\":302}],\"archive\":\"Previous documentation layers and legacy widget retained hidden on the same page.\"}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "readback": {
+    "id": "3185:2",
+    "width": 1120,
+    "height": 4511,
+    "descendants": 51,
+    "counts": {
+      "FRAME": 14,
+      "TEXT": 37
+    },
+    "imageNodes": [],
+    "badTextNodes": [],
+    "overlappingSections": [],
+    "sections": [
+      {
+        "id": "3186:2",
+        "title": "UI Foundations · Token architecture",
+        "text": "UI Foundations · Token architecture\nPrivate UIF proof of concept · Updated 30 September 2026\nCore → Appearance {Brand, Scheme, Scale} → Semantics → Patterns\n\nThis README describes the bounded migration in this branch. The Vault ADR is in review. The owner’s instruction authorizes this experiment; general adoption still follows the Vault lifecycle. UIF remains separate from UILib and the official TUI Design System."
+      },
+      {
+        "id": "3186:5",
+        "title": "01 / Collections and responsibilities",
+        "text": "01 / Collections and responsibilities\nCore (Primitives) — Literal colors, spacing, typography and radius primitives. One default mode.\n\nAppearance (Brand) — Identity, palette selection, typography and shape. Brand A / Brand B / Brand C.\n\nAppearance (Scheme) — Light and dark realizations. Light Mode / Dark Mode.\n\nAppearance (Scale) — Scalar projections and fluid endpoints. Min / Max.\n\nSemantics (Roles) — Reusable purpose and state contracts. One default mode.\n\nPatterns (UI) — Component family, variant, part, property and state slots. One Component mode.\n\nInteraction (States) — Four prototype helpers. Explicitly excluded from the foundation contract and Runtime projection."
+      },
+      {
+        "id": "3186:8",
+        "title": "02 / Dependency flow",
+        "text": "02 / Dependency flow\nArrows in the architecture show increasing abstraction. Variable aliases point back toward their dependencies.\n\nPatterns consume Semantics. Semantics consume Appearance. Brand and Scale can reference Core; Scheme can reference Brand or Core. Brand, Scheme and Scale are separate context axes. The semantic layer adds purpose without selecting a brand or scheme.\nPattern slot → Semantic role → Appearance mapping → Core primitive\n\nBrand × Scheme = 3 × 2 contexts\nScale Min / Max = interpolation endpoints"
+      },
+      {
+        "id": "3186:12",
+        "title": "03 / Deterministic naming",
+        "text": "03 / Deterministic naming\nUse slash-delimited Figma names and dot-delimited logical paths. Token names contain no free-form whitespace. Keep interaction state last. Optional variant and part segments depend on the family. Size variants are a separate property axis.\n\nActive is the existing contract name for pressed behavior. Default, Hover, Active and Focus remain separately addressable, even when values match.\nColor/<purpose>/<role>/<state>\n<family>/<variant?>/<part?>/<property>/<state?>\n\nColor/Action/Surface/Hover\nColor/Action/Content/Hover\nButton/Solid/Container/Background/Hover\nShape/Corner/Control"
+      },
+      {
+        "id": "3186:16",
+        "title": "04 / Brand and Scheme",
+        "text": "04 / Brand and Scheme\nBrand owns identity and shape choices. Scheme resolves light/dark appearance. These axes stay independent; switching Scheme must not silently select a different Brand.\n\nCore’s qualified Brand A/B/C source palettes identify private provenance. They do not define reusable UI purpose. Preserve their current values; UILib-specific brand values are outside UIF."
+      },
+      {
+        "id": "3186:19",
+        "title": "05 / Scale and fluid typography",
+        "text": "05 / Scale and fluid typography\nMin and Max are endpoints, not light/dark modes. Runtime projects the actual Figma endpoints into a global fluid clamp. Scalar Appearance bridges allow Semantics to consume Core values without bypassing the Appearance layer.\n\nThe former code-only Liquid curve is retired in migration evidence. The corrected lg curve is 20–36px; responsive rendering can therefore differ from the former 18–20px curve.\nFont size      Min → Max      Line height      Min → Max\nlg             20 → 36px      lg               28 → 44px\nxl             24 → 40px      xl               32 → 48px\nxxl            32 → 48px      xxl              44 → 60px\nxxxl           40 → 56px      xxxl             56 → 72px"
+      },
+      {
+        "id": "3186:23",
+        "title": "06 / Surface ↔ Content",
+        "text": "06 / Surface ↔ Content\nSurface is the filled region. Content is text or an icon on that Surface. Match purpose and state when declaring a contrast pair. Verify every Brand × Scheme context and composite transparent colors over a declared background.\n\nNormal text requires 4.5:1; large text and applicable non-text boundaries require 3:1. Disabled pairs are explicitly recorded exemptions. Structural pairing alone does not certify rendered accessibility or focus visibility.\nColor/Action/Surface/Default ↔ Color/Action/Content/Default\nColor/Action/Surface/Hover   ↔ Color/Action/Content/Hover\nColor/Action/Surface/Active  ↔ Color/Action/Content/Active\nColor/Action/Surface/Focus   ↔ Color/Action/Content/Focus"
+      },
+      {
+        "id": "3186:27",
+        "title": "07 / Foreground is a separate contract",
+        "text": "07 / Foreground is a separate contract\nForeground describes an independently rendered action or status mark on a surrounding surface. For example, outline and ghost button text uses Action Foreground; solid button text uses Action Content on its filled Action Surface.\n\nEvaluate Foreground against its declared surrounding surface. Do not substitute Content and Foreground just because a current color looks similar.\nSolid text   → Color/Action/Content/Default\nOutline text → Color/Action/Foreground/Default\nGhost text   → Color/Action/Foreground/Default"
+      },
+      {
+        "id": "3186:31",
+        "title": "08 / Brand-owned shape",
+        "text": "08 / Brand-owned shape\nBrand owns corner choices. Semantics exposes reusable purpose. Patterns share those roles rather than aliasing another component’s radius. Existing brand values and public CSS names remain compatible.\nLegacy brand choice → Brand shape purpose → Semantic role\nButton              → Control             → Shape/Corner/Control\nCard                → Panel               → Shape/Corner/Panel\nModal               → Dialog              → Shape/Corner/Dialog\nInput               → Field               → Shape/Corner/Field\nContainer           → Container           → Shape/Corner/Container\nTooltip             → Floating            → Shape/Corner/Floating"
+      },
+      {
+        "id": "3186:35",
+        "title": "09 / Scoped variables",
+        "text": "09 / Scoped variables\nSurface → Frame / Shape fills\nContent → Text / Shape fills\nForeground → Text / Shape fills and Stroke color\nBorders → Stroke color\nShape → Corner radius\nTypography → Font size, weight or line height as appropriate\nSpacing → Gap or dimensions according to actual use\n\nShared low-level palettes may use ALL_FILLS and STROKE_COLOR. Unclassified helpers retain recorded exceptions. Do not restrict a scope in a way that invalidates an existing binding."
+      },
+      {
+        "id": "3186:38",
+        "title": "10 / Live Button aliases",
+        "text": "10 / Live Button aliases\nThese examples were checked against the current variable graph. The border radius resolves to the reusable Control shape role.\nButton/Solid/Container/Background/Default\n  → Color/Action/Surface/Default\nButton/Solid/Container/Background/Hover\n  → Color/Action/Surface/Hover\nButton/Solid/Text/Color/Default\n  → Color/Action/Content/Default\nButton/Outline/Text/Color/Default\n  → Color/Action/Foreground/Default\nButton/Ghost/Text/Color/Default\n  → Color/Action/Foreground/Default\nButton/Border/Radius\n  → Shape/Corner/Control"
+      },
+      {
+        "id": "3186:42",
+        "title": "11 / Runtime projection and compatibility",
+        "text": "11 / Runtime projection and compatibility\nVariable IDs are the stable mapping keys. Explicit codeSyntax.WEB and existing CSS/export paths remain compatibility contracts. Figma display names can evolve through the recorded adapter without guessing aliases from a name.\n\nNew semantic properties use --uif-semantic-*; new Appearance bridge properties use --uif-appearance-*. Compatible export filenames can retain older collection labels. Semantics exports are qualified to avoid collisions with Scheme.\nCanonical adapter: figma/token-projection.json\nExisting WEB syntax example: var(--uif-button-border-radius)\nSynchronization: ID → current Figma name → compatible export path"
+      },
+      {
+        "id": "3186:46",
+        "title": "12 / Verification and open accessibility defects",
+        "text": "12 / Verification and open accessibility defects\nStructure and projection: PASS. All 641 original variables are preserved. The branch now has 765 variables: 99 semantic roles and 25 Appearance bridges added. All 296 Pattern alias connections consume Roles. Runtime projects 761 variables; four prototype helpers are excluded. Resolved values are unchanged across 7,692 context comparisons.\n\nRuntime lint, 182 unit tests and the bounded Chromium check passed.\n\nAccessibility: FAIL. Surface/Content checks: 58 pass, 6 exempt, 14 fail. Action Foreground: 12 pass, 12 fail. Composited action overlays: 9 pass, 3 fail.\n\nBase Action Surface/Content pairs pass in all six Brand × Scheme contexts. Existing defects remain in Brand B status/subtle/selection, dark Action Foreground and dark Hover/Active overlays. Architecture parity is not accessibility certification. Rendered components and screenreader behavior need their own evidence."
+      },
+      {
+        "id": "3186:49",
+        "title": "13 / Authority, evidence and review",
+        "text": "13 / Authority, evidence and review\nDurable decision: UIF-VLT / adr.token-model-and-figma-projection · Status: review.\nRuntime contract and reproducible evidence: UIF-RUN / figma/migrations/token-model-2026-09-30/.\n\nThe bounded slice preserves IDs, WEB syntax and existing visual values. Recorded legacy exceptions include literal Pattern slots and code-only projections. Broader palette repair, component geometry changes, releases and Figma library publication are separate work.\n\nVault and Runtime remain distinct responsibilities. This document is a Figma projection of the Vault decision, not a second governance source.\nVault ADR review: github.com/tbielich/ui-foundations-vault/pull/49\nRuntime projection review: github.com/tbielich/ui-foundations-runtime/pull/313"
+      }
+    ]
+  },
+  "visualReview": {
+    "result": "PASS",
+    "clippedText": false,
+    "overlappingSections": false,
+    "editableText": true,
+    "fonts": [
+      "Inter",
+      "SF Mono"
+    ],
+    "imageNodes": 0
+  },
+  "legacyDisposition": "Previous documentation frames and widget preserved, hidden on the same README page.",
+  "publication": "Branch canvas updated; ADR remains review; no library publishing."
+}

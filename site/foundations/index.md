@@ -6,22 +6,18 @@ navTitle: Overview
 order: 1
 permalink: /foundations/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
 
-Foundations describe the shared intent behind every component and pattern in the
-system. They keep decisions consistent across teams, brands, and platforms.
 
-<p class="page-intro">
-  Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
-</p>
+{% call foundation.feature("Foundations", "Start with the decisions.", "Understand how the system works, then use its tokens and guidance to shape your interface.") %}
+<ol class="foundation-stack"><li><span>01</span><div><strong>Structure</strong><small>How tokens and patterns fit together</small></div></li><li><span>02</span><div><strong>Appearance</strong><small>Choose a brand and scheme</small></div></li><li><span>03</span><div><strong>Use</strong><small>Labels, access, and language in context</small></div></li></ol>
+{% endcall %}
 
-<p>
-  Vault reference: <a href="{{ 'foundations/' | vaultDocumentationUrl }}">configured vault foundations</a>
-</p>
 
 <div class="docs-grid">
-  <a class="docs-card" href="/foundations/governance/principles/">
-    <h2>Principles</h2>
-    <p>How canonical vault principles are applied to this repository's patterns and components.</p>
+  <a class="docs-card" href="/foundations/theming/">
+    <h2>Theming</h2>
+    <p>Select a brand and scheme, and customise pattern tokens.</p>
   </a>
   <a class="docs-card" href="/foundations/accessibility/">
     <h2>Accessibility</h2>
@@ -40,3 +36,5 @@ system. They keep decisions consistent across teams, brands, and platforms.
     <p>RTL support, locale considerations, and bi-directional layout.</p>
   </a>
 </div>
+
+{{ foundation.next("/getting-started/", "Ready to build?", "Start with installation and a working example.") }}

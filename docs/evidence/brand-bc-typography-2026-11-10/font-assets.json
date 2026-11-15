@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 1,
+  "scope": "New B/C upright Runtime families only; existing A assets/loading and Basic compatibility tokens untouched",
+  "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+  "fonts": [
+    {
+      "family": "Exo 2",
+      "style": "normal",
+      "file": "exo-2-variable.woff2",
+      "bytes": 106100,
+      "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed",
+      "source": {
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/Exo2%5Bwght%5D.ttf",
+        "bytes": 303940,
+        "sha256": "205a448676a2586f9c57c25f3d5c58ca8db7e6cf5edf7506783a010c6fe2bfb5"
+      },
+      "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/METADATA.pb",
+      "names": {
+        "1": [
+          "Exo 2"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "4": [
+          "Exo 2 Regular"
+        ],
+        "5": [
+          "Version 2.010"
+        ],
+        "6": [
+          "Exo2-Regular"
+        ]
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "license": {
+        "type": "OFL-1.1",
+        "file": "exo-2-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/OFL.txt",
+        "sha256": "7f95a8eeecc6904ffc81cd10cc8ebc7fcee72a67922924bf45f02dff03b88127"
+      },
+      "glyphCheck": {
+        "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+        "missing": [],
+        "unicodeCodepoints": 911,
+        "cmapPreserved": true
+      },
+      "conversion": {
+        "fontTools": "4.68.0",
+        "brotli": "1.2.1",
+        "method": "TTFont(BytesIO(source), recalcTimestamp=False); flavor=woff2; save; no subset",
+        "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8"
+      }
+    },
+    {
+      "family": "Orbitron",
+      "style": "normal",
+      "file": "orbitron-variable.woff2",
+      "bytes": 16028,
+      "sha256": "206601dd7476a038ad4038f8c45f07c59bf2189b8733e328b79697a09e846bc0",
+      "source": {
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+        "bytes": 38576,
+        "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+      },
+      "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/METADATA.pb",
+      "names": {
+        "1": [
+          "Orbitron"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "4": [
+          "Orbitron Regular"
+        ],
+        "5": [
+          "Version 2.001"
+        ],
+        "6": [
+          "Orbitron-Regular"
+        ]
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "license": {
+        "type": "OFL-1.1",
+        "file": "orbitron-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/OFL.txt",
+        "sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+      },
+      "glyphCheck": {
+        "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+        "missing": [
+          "\u1e9e"
+        ],
+        "unicodeCodepoints": 207,
+        "cmapPreserved": true
+      },
+      "conversion": {
+        "fontTools": "4.68.0",
+        "brotli": "1.2.1",
+        "method": "TTFont(BytesIO(source), recalcTimestamp=False); flavor=woff2; save; no subset",
+        "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8"
+      }
+    },
+    {
+      "family": "Manrope",
+      "style": "normal",
+      "file": "manrope-variable.woff2",
+      "bytes": 53892,
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f",
+      "source": {
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/Manrope%5Bwght%5D.ttf",
+        "bytes": 164700,
+        "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6"
+      },
+      "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/METADATA.pb",
+      "names": {
+        "1": [
+          "Manrope ExtraLight"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "4": [
+          "Manrope ExtraLight"
+        ],
+        "5": [
+          "Version 4.505"
+        ],
+        "6": [
+          "Manrope-ExtraLight"
+        ]
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 200.0,
+          "max": 800.0
+        }
+      ],
+      "license": {
+        "type": "OFL-1.1",
+        "file": "manrope-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/OFL.txt",
+        "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+      },
+      "glyphCheck": {
+        "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+        "missing": [],
+        "unicodeCodepoints": 678,
+        "cmapPreserved": true
+      },
+      "conversion": {
+        "fontTools": "4.68.0",
+        "brotli": "1.2.1",
+        "method": "TTFont(BytesIO(source), recalcTimestamp=False); flavor=woff2; save; no subset",
+        "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8"
+      }
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "normal",
+      "file": "bricolage-grotesque-variable.woff2",
+      "bytes": 66392,
+      "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0",
+      "source": {
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+        "bytes": 408496,
+        "sha256": "413e7357809ddd12fd80a96a8a396de0e401638d4acd3cb3e37532f0472ac682"
+      },
+      "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/bricolagegrotesque/METADATA.pb",
+      "names": {
+        "1": [
+          "Bricolage Grotesque 96pt ExtraBold"
+        ],
+        "2": [
+          "Regular"
+        ],
+        "4": [
+          "Bricolage Grotesque 96pt ExtraBold"
+        ],
+        "5": [
+          "Version 1.001;gftools[0.9.33.dev8+g029e19f]"
+        ],
+        "6": [
+          "BricolageGrotesque-96ptExtraBold"
+        ]
+      },
+      "axes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 800.0,
+          "max": 800.0
+        }
+      ],
+      "license": {
+        "type": "OFL-1.1",
+        "file": "bricolage-grotesque-LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/bricolagegrotesque/OFL.txt",
+        "sha256": "4b5a7d8f37f5602621c8a8d7358a6a2e71317e6c231c661e15aef0275d3e07ba"
+      },
+      "glyphCheck": {
+        "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+        "missing": [],
+        "unicodeCodepoints": 527,
+        "cmapPreserved": true
+      },
+      "conversion": {
+        "fontTools": "4.68.0",
+        "brotli": "1.2.1",
+        "method": "TTFont source; instantiateVariableFont opsz=14, wdth=100, retain variable wght; WOFF2 save; no subset",
+        "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+        "fixedAxes": {
+          "opsz": 14,
+          "wdth": 100
+        },
+        "reason": "Match native Figma Bricolage Grotesque axes; this is deliberate partial axis instancing, not format conversion only."
+      },
+      "sourceAxes": [
+        {
+          "tag": "opsz",
+          "min": 12.0,
+          "default": 96.0,
+          "max": 96.0
+        },
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 800.0,
+          "max": 800.0
+        },
+        {
+          "tag": "wdth",
+          "min": 75.0,
+          "default": 100.0,
+          "max": 100.0
+        }
+      ]
+    }
+  ]
+}

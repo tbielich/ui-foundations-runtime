@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-30",
+  "mode": "REPAIR",
+  "authorization": "User requests recording and correcting loss of brand-specific dark Outline appearance.",
+  "scope": "One new scoped Brand dark border projection and one Scheme alias slot. A white, B existing purple600, C existing blue600; neutral borders unchanged.",
+  "fileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "additions": [
+    {
+      "id": "VariableID:3214:2",
+      "name": "Brand/Color/Border/Brand/Dark",
+      "resolvedType": "COLOR",
+      "variableCollectionId": "VariableCollectionId:1:177",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2006:175"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2006:180"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:2438:7"
+        }
+      },
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "hiddenFromPublishing": false,
+      "codeSyntax": {
+        "WEB": "var(--uif-appearance-brand-color-border-brand-dark)"
+      },
+      "description": "Brand-specific dark action border: A white, B purple, C blue. Contrast repairs must preserve brand identity independently of contrast thresholds."
+    }
+  ],
+  "changes": [
+    {
+      "id": "VariableID:2007:345",
+      "name": "Color/Border/Brand",
+      "mode": "2007:1",
+      "before": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3011:17"
+      },
+      "after": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:3214:2"
+      }
+    }
+  ]
+}

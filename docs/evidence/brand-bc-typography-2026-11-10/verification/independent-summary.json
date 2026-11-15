@@ -1,0 +1,55 @@
+{
+  "mode": "VERIFY",
+  "sourceAggregate": "f68e0ce279a5535b87e0d6f8925c3f64abb525c9455f11cb070917152d36ccb8",
+  "frozenMainCSS": "90994d07e3938dfbf2e3e542886f24ef6a5cbcf2251ba6ab3ba91ad3c3f028fb",
+  "checks": {
+    "normalPublicCases": 30,
+    "blockedFontCases": 24,
+    "reflowCases": 36,
+    "exactRequestedHeadingCases": 12,
+    "nonFontTokenDifferences": [],
+    "googleRequestCount": 0
+  },
+  "gates": {
+    "actualPrimaryFontsAndWeights": "PASS",
+    "actualBrandAndGenericFallback": "PASS",
+    "orbitronCapitalSharpSFallbackInter": "PASS",
+    "AComputedMetricsExceptFamilyLists": "PASS",
+    "nonFontTokenInvariance": "PASS",
+    "normal320IncludingRequestedHeading": "PASS",
+    "textSpacingRegression": "FAIL",
+    "root200OverallReflow": "FAIL_PREEXISTING",
+    "trueBrowserZoom": "BLOCKED_NOT_EXECUTED"
+  },
+  "findings": [
+    {
+      "severity": "reflow",
+      "scope": "C Light/Dark 320px WCAG spacing fixture",
+      "description": "New horizontal overflow on nowrap plain Button with German text Weiter zur Buchungs\u00fcbersicht; final document width324 vs baseline320. A spacing overflow326 preexists. B spacing passes."
+    },
+    {
+      "severity": "existing",
+      "scope": "root200",
+      "description": "All brands already overflow long nowrap Button at 200% root font-size. B/C widths grow487\u2192517/531 with new faces. Root scaling is not real browser zoom."
+    }
+  ],
+  "limitations": [
+    "Chromium/macOS synthetic public fixture, no docsCSS; baseline fontdelivery controlled same pinned Aexperiment bits to avoid externalGoogle. Final unmodified public HTTP faces.",
+    "CDP internal family names Manrope ExtraLight/Bricolage Grotesque96pt ExtraBold/Rokkitt SemiBold identify variablefont binaries; computed CSSweight captured independently.",
+    "No full accessibility certification, browserzoom proof, product performance budget or complete docs/Figma parity claim.",
+    "Parent owns CI/legal/Figma evidence. Verifier changed only evidence, no implementation or tests."
+  ],
+  "commands": [
+    "node verification/server.cjs",
+    "node verification/collect.cjs",
+    "node /tmp/uif-bc-heading-check.cjs"
+  ],
+  "evidence": [
+    "normal.json",
+    "fallback.json",
+    "reflow.json",
+    "heading-320.json",
+    "final-read-freeze.json",
+    "accepted-a-baseline-manifest.json"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "family": "Orbitron",
+  "style": "normal",
+  "file": "orbitron-variable.ttf",
+  "bytes": 38576,
+  "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+  "source": {
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+    "bytes": 38576,
+    "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd"
+  },
+  "metadataUrl": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/METADATA.pb",
+  "names": {
+    "1": [
+      "Orbitron"
+    ],
+    "2": [
+      "Regular"
+    ],
+    "4": [
+      "Orbitron Regular"
+    ],
+    "5": [
+      "Version 2.001"
+    ],
+    "6": [
+      "Orbitron-Regular"
+    ]
+  },
+  "axes": [
+    {
+      "tag": "wght",
+      "min": 400.0,
+      "default": 400.0,
+      "max": 900.0
+    }
+  ],
+  "license": {
+    "type": "OFL-1.1",
+    "file": "orbitron-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/OFL.txt",
+    "sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+  },
+  "glyphCheck": {
+    "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+    "missing": [
+      "\u1e9e"
+    ],
+    "unicodeCodepoints": 207,
+    "cmapPreserved": true
+  },
+  "conversion": {
+    "method": "None: exact original upstream TTF, byte-identical to pinned source",
+    "catalogueRevision": "5bb28733cec313b63fbd415b574b5ae35c8aa8b8",
+    "reason": "Avoid ambiguity about Reserved Font Name conditions after WOFF2 compression/head bookkeeping/empty DSIG removal."
+  }
+}

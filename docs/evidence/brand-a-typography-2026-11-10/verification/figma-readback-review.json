@@ -1,0 +1,88 @@
+{
+  "scope": "Static independent consistency review of parent-persisted official Figma readback; verifier made no live Figma tool calls or mutations.",
+  "families": [
+    {
+      "id": "VariableID:3:5",
+      "name": "Font/Family/Inter",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-inter)",
+      "value": "Inter"
+    },
+    {
+      "id": "VariableID:3:6",
+      "name": "Font/Family/Rokkitt",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-rokkitt)",
+      "value": "Rokkitt"
+    },
+    {
+      "id": "VariableID:3:7",
+      "name": "Font/Family/SF Mono",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-sf-mono)",
+      "value": "SF Mono"
+    },
+    {
+      "id": "VariableID:3260:2",
+      "name": "Font/Family/Roboto Slab",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-roboto-slab)",
+      "value": "Roboto Slab"
+    }
+  ],
+  "inputNodeIDs": [
+    "2035:462",
+    "2724:381"
+  ],
+  "headingStyleCount": 6,
+  "resolvedBrandRows": [
+    {
+      "brandMode": "1:0",
+      "VariableID:2006:214": "Inter",
+      "VariableID:3014:2": "Roboto Slab",
+      "VariableID:2028:303": "Semi Bold",
+      "VariableID:2777:37": "Semi Bold",
+      "VariableID:3260:4": "Roboto Slab",
+      "VariableID:3260:6": "Semi Bold"
+    },
+    {
+      "brandMode": "10:0",
+      "VariableID:2006:214": "Rokkitt",
+      "VariableID:3014:2": "Rokkitt",
+      "VariableID:2028:303": "Normal",
+      "VariableID:2777:37": "Normal",
+      "VariableID:3260:4": "Rokkitt",
+      "VariableID:3260:6": "Normal"
+    },
+    {
+      "brandMode": "2435:0",
+      "VariableID:2006:214": "Rokkitt",
+      "VariableID:3014:2": "Rokkitt",
+      "VariableID:2028:303": "Normal",
+      "VariableID:2777:37": "Normal",
+      "VariableID:3260:4": "Rokkitt",
+      "VariableID:3260:6": "Normal"
+    }
+  ],
+  "failures": [],
+  "gate": "PASS",
+  "limitations": [
+    "Excluded divider/password glyph nodes are not present in this final targeted readback; no independent claim over all other Figma nodes."
+  ]
+}

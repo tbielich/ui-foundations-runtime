@@ -1,0 +1,206 @@
+[
+  {
+    "brand": "a",
+    "mode": "light",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Roboto Slab",
+          "postScriptName": "RobotoSlab-Regular_Bold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz100000_wght",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz100000_wght2580000",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/roboto-slab-variable.woff2",
+      "http://127.0.0.1:8162/assets/fonts/brand/inter-variable.woff2"
+    ]
+  },
+  {
+    "brand": "a",
+    "mode": "dark",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Roboto Slab",
+          "postScriptName": "RobotoSlab-Regular_Bold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz100000_wght",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz100000_wght2580000",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/roboto-slab-variable.woff2",
+      "http://127.0.0.1:8162/assets/fonts/brand/inter-variable.woff2"
+    ]
+  },
+  {
+    "brand": "b",
+    "mode": "light",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/orbitron-variable.ttf",
+      "http://127.0.0.1:8162/assets/fonts/brand/exo-2-variable.woff2"
+    ]
+  },
+  {
+    "brand": "b",
+    "mode": "dark",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/orbitron-variable.ttf",
+      "http://127.0.0.1:8162/assets/fonts/brand/exo-2-variable.woff2"
+    ]
+  },
+  {
+    "brand": "c",
+    "mode": "light",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Bricolage Grotesque 96pt ExtraBold",
+          "postScriptName": "BricolageGrotesque-96ptExtraBold_Bold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Manrope ExtraLight",
+          "postScriptName": "Manrope-Regular",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Manrope ExtraLight",
+          "postScriptName": "Manrope-SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/bricolage-grotesque-variable.woff2",
+      "http://127.0.0.1:8162/assets/fonts/brand/manrope-variable.woff2"
+    ]
+  },
+  {
+    "brand": "c",
+    "mode": "dark",
+    "fonts": {
+      "#h": [
+        {
+          "familyName": "Bricolage Grotesque 96pt ExtraBold",
+          "postScriptName": "BricolageGrotesque-96ptExtraBold_Bold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "#p": [
+        {
+          "familyName": "Manrope ExtraLight",
+          "postScriptName": "Manrope-Regular",
+          "isCustomFont": true,
+          "glyphCount": 4
+        }
+      ],
+      "#b": [
+        {
+          "familyName": "Manrope ExtraLight",
+          "postScriptName": "Manrope-SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ]
+    },
+    "requests": [
+      "http://127.0.0.1:8162/assets/fonts/brand/bricolage-grotesque-variable.woff2",
+      "http://127.0.0.1:8162/assets/fonts/brand/manrope-variable.woff2"
+    ]
+  }
+]

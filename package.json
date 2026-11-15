@@ -1,6 +1,6 @@
 {
   "name": "ui-foundations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Token-first UI foundations with CSS, tokens, macros, and Web Components.",
   "license": "PolyForm-Noncommercial-1.0.0",
   "repository": {
@@ -22,7 +22,8 @@
     "docs/migrations/public-api-namespace-v1.md",
     "docs/agentic/assistant-behavior-rules.md",
     "docs/agentic/team-ai-playbook.md",
-    "docs/agentic/skills/**"
+    "docs/agentic/skills/**",
+    "docs/base.md"
   ],
   "exports": {
     "./core.css": "./dist/core/index.css",
@@ -72,6 +73,16 @@
     "./elements/ui-link": "./dist/elements/ui-link.js",
     "./elements/ui-label": "./dist/elements/ui-label.js",
     "./elements/ui-form": "./dist/elements/ui-form.js",
+    "./elements/ui-status-light": "./dist/elements/ui-status-light.js",
+    "./elements/ui-meter": "./dist/elements/ui-meter.js",
+    "./elements/ui-progress-bar": "./dist/elements/ui-progress-bar.js",
+    "./elements/ui-inline-alert": "./dist/elements/ui-inline-alert.js",
+    "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js",
+    "./base.css": "./dist/base.css",
+    "./behaviors/calendar": "./dist/ui/components/calendar.js",
+    "./behaviors/date-input": "./dist/ui/components/date-input.js",
+    "./behaviors/input-field": "./dist/ui/components/input-field.js",
+    "./behaviors/table": "./dist/ui/components/table.js",
     "./elements/ui-progress-circle": "./dist/elements/ui-progress-circle.js"
   },
   "scripts": {
@@ -80,6 +91,8 @@
     "lint:js": "node scripts/lint-js.mjs",
     "lint": "npm run lint:js",
     "test:unit": "node --test tests/*.test.mjs",
+    "test:browser": "npm run docs:site && playwright test",
+    "test:browser:only": "playwright test",
     "test": "npm run test:unit",
     "smoke:check": "node scripts/smoke-check.mjs",
     "assets:check": "node scripts/check-asset-refs.mjs",
@@ -101,6 +114,7 @@
     "build": "npm run build:all",
     "pack:check": "npm pack --dry-run",
     "release:check": "npm run ci:check && npm run pack:check",
+    "release:evidence": "node scripts/release-evidence.mjs",
     "release:patch": "npm run release:check && npm version patch",
     "release:minor": "npm run release:check && npm version minor",
     "release:major": "npm run release:check && npm version major",
@@ -111,11 +125,13 @@
     "docs:dev": "node scripts/build.mjs dev",
     "docs:dev:verbose": "npm run build:raw && eleventy --serve",
     "docs:lint": "node scripts/check-docs-drift.mjs",
-    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run rules:validate && npm run docs:build"
+    "ci:check": "npm run lint && npm run test:unit && npm run docs:lint && npm run naming:check && npm run build:all && npm run smoke:check && npm run tokens:validate && npm run tokens:usage && npm run dtcg:validate && npm run assets:check && npm run fonts:pack-check && npm run rules:validate && npm run docs:build && npm run test:browser:only",
+    "fonts:pack-check": "node scripts/check-font-packaging.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@figma/code-connect": "^1.2.0",
+    "@playwright/test": "^1.63.0",
     "fast-check": "^4.8.0",
     "fast-glob": "^3.3.3",
     "js-yaml": "^4.1.0",

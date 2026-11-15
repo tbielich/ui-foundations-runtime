@@ -23,3 +23,9 @@ figma/plugin/plugin-meta.json
 # Local Netlify folder
 .netlify
 cline-ui.sh
+
+# Playwright bounded browser-verification artifacts
+test-results
+playwright-report
+blob-report
+.playwright

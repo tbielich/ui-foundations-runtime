@@ -1,0 +1,1152 @@
+{
+  "top": [
+    {
+      "id": "2188:2",
+      "name": "Cover",
+      "type": "SECTION"
+    },
+    {
+      "id": "2251:535",
+      "name": "README",
+      "type": "WIDGET"
+    },
+    {
+      "id": "2255:1256",
+      "name": "Changed! Design Token Architecture Page",
+      "type": "SECTION"
+    }
+  ],
+  "texts": [
+    {
+      "id": "2188:3",
+      "text": "UI Foundations",
+      "parent": "2188:2"
+    },
+    {
+      "id": "2188:4",
+      "text": "This proposal introduces a scalable Figma library structure.",
+      "parent": "2188:2"
+    },
+    {
+      "id": "2255:648",
+      "text": "Design Token Architecture – Overview",
+      "parent": "2255:647"
+    },
+    {
+      "id": "2255:650",
+      "text": "This document explains the five-collection token architecture used across our UI system. The structure follows a layered approach from Core Primitives through Themes and Appearance to Semantics and Components, ensuring scalability, multi-brand support, and consistent implementation in Figma and code.",
+      "parent": "2255:649"
+    },
+    {
+      "id": "2255:653",
+      "text": "Variable Collections",
+      "parent": "2255:652"
+    },
+    {
+      "id": "2255:659",
+      "text": "Collection",
+      "parent": "2255:658"
+    },
+    {
+      "id": "2255:661",
+      "text": "Purpose",
+      "parent": "2255:660"
+    },
+    {
+      "id": "2255:663",
+      "text": "Modes",
+      "parent": "2255:662"
+    },
+    {
+      "id": "2255:668",
+      "text": "Core (Primitives)",
+      "parent": "2255:667"
+    },
+    {
+      "id": "2255:670",
+      "text": "Raw color, spacing, typography, radius values",
+      "parent": "2255:669"
+    },
+    {
+      "id": "2255:672",
+      "text": "—",
+      "parent": "2255:671"
+    },
+    {
+      "id": "2255:676",
+      "text": "Themes (Brands)",
+      "parent": "2255:675"
+    },
+    {
+      "id": "2255:678",
+      "text": "Brand-specific overrides",
+      "parent": "2255:677"
+    },
+    {
+      "id": "2255:681",
+      "text": "Brand A",
+      "parent": "2255:680"
+    },
+    {
+      "id": "2255:682",
+      "text": ", ",
+      "parent": "2255:679"
+    },
+    {
+      "id": "2255:684",
+      "text": "Brand B",
+      "parent": "2255:683"
+    },
+    {
+      "id": "2255:688",
+      "text": "Appearance (Modes)",
+      "parent": "2255:687"
+    },
+    {
+      "id": "2255:690",
+      "text": "Light/dark semantic mappings",
+      "parent": "2255:689"
+    },
+    {
+      "id": "2255:693",
+      "text": "Light Mode",
+      "parent": "2255:692"
+    },
+    {
+      "id": "2255:694",
+      "text": ", ",
+      "parent": "2255:691"
+    },
+    {
+      "id": "2255:696",
+      "text": "Dark Mode",
+      "parent": "2255:695"
+    },
+    {
+      "id": "2255:700",
+      "text": "Semantics (Roles)",
+      "parent": "2255:699"
+    },
+    {
+      "id": "2255:702",
+      "text": "Role-based tokens (text, fill, border)",
+      "parent": "2255:701"
+    },
+    {
+      "id": "2255:704",
+      "text": "—",
+      "parent": "2255:703"
+    },
+    {
+      "id": "2255:708",
+      "text": "Components (UI)",
+      "parent": "2255:707"
+    },
+    {
+      "id": "2255:710",
+      "text": "Component-specific tokens (button, input, etc.)",
+      "parent": "2255:709"
+    },
+    {
+      "id": "2255:712",
+      "text": "—",
+      "parent": "2255:711"
+    },
+    {
+      "id": "2255:715",
+      "text": "Token Naming Pattern",
+      "parent": "2255:714"
+    },
+    {
+      "id": "2255:718",
+      "text": "Tokens follow the pattern: ",
+      "parent": "2255:717"
+    },
+    {
+      "id": "2255:720",
+      "text": "Component/Variant/Part/Property/State",
+      "parent": "2255:719"
+    },
+    {
+      "id": "2255:723",
+      "text": "Examples",
+      "parent": "2255:722"
+    },
+    {
+      "id": "2255:726",
+      "text": "Button/Solid/Container/Background Default",
+      "parent": "2255:725"
+    },
+    {
+      "id": "2255:728",
+      "text": "Button/Border Radius",
+      "parent": "2255:727"
+    },
+    {
+      "id": "2255:730",
+      "text": "Color/Text/Default",
+      "parent": "2255:729"
+    },
+    {
+      "id": "2255:732",
+      "text": "Typography/Label/Font Size",
+      "parent": "2255:731"
+    },
+    {
+      "id": "2255:735",
+      "text": "Code Syntax (WEB)",
+      "parent": "2255:734"
+    },
+    {
+      "id": "2255:738",
+      "text": "Every variable should have a ",
+      "parent": "2255:737"
+    },
+    {
+      "id": "2255:740",
+      "text": "codeSyntax.WEB",
+      "parent": "2255:739"
+    },
+    {
+      "id": "2255:741",
+      "text": " value set. This is how the token pipeline maps Figma variables to CSS Custom Properties.",
+      "parent": "2255:737"
+    },
+    {
+      "id": "2255:744",
+      "text": "Example",
+      "parent": "2255:743"
+    },
+    {
+      "id": "2255:747",
+      "text": "var(--button-border-radius)",
+      "parent": "2255:746"
+    },
+    {
+      "id": "2255:750",
+      "text": "Collection Flow",
+      "parent": "2255:749"
+    },
+    {
+      "id": "2255:754",
+      "text": "Core (Primitives)",
+      "parent": "2255:753"
+    },
+    {
+      "id": "2255:756",
+      "text": "Raw values",
+      "parent": "2255:755"
+    },
+    {
+      "id": "2255:762",
+      "text": "Themes (Brands)",
+      "parent": "2255:761"
+    },
+    {
+      "id": "2255:764",
+      "text": "Brand-specific overrides",
+      "parent": "2255:763"
+    },
+    {
+      "id": "2255:770",
+      "text": "Appearance (Modes)",
+      "parent": "2255:769"
+    },
+    {
+      "id": "2255:772",
+      "text": "Light/Dark mappings",
+      "parent": "2255:771"
+    },
+    {
+      "id": "2255:786",
+      "text": "Patterns (UI)",
+      "parent": "2255:785"
+    },
+    {
+      "id": "2255:788",
+      "text": "Component-specific tokens",
+      "parent": "2255:787"
+    },
+    {
+      "id": "2255:791",
+      "text": "Collection Details",
+      "parent": "2255:790"
+    },
+    {
+      "id": "2255:795",
+      "text": "Core (Primitives)",
+      "parent": "2255:794"
+    },
+    {
+      "id": "2255:799",
+      "text": "Purpose",
+      "parent": "2255:798"
+    },
+    {
+      "id": "2255:801",
+      "text": "Raw color, spacing, typography, radius values",
+      "parent": "2255:800"
+    },
+    {
+      "id": "2255:804",
+      "text": "Modes",
+      "parent": "2255:803"
+    },
+    {
+      "id": "2255:806",
+      "text": "No modes",
+      "parent": "2255:805"
+    },
+    {
+      "id": "2255:809",
+      "text": "Contains",
+      "parent": "2255:808"
+    },
+    {
+      "id": "2255:811",
+      "text": "Base colors, spacing scale, font sizes, line heights, border widths, corner radius",
+      "parent": "2255:810"
+    },
+    {
+      "id": "2255:814",
+      "text": "Example Tokens",
+      "parent": "2255:813"
+    },
+    {
+      "id": "2255:818",
+      "text": "Spacing/100",
+      "parent": "2255:817"
+    },
+    {
+      "id": "2255:819",
+      "text": " → ",
+      "parent": "2255:816"
+    },
+    {
+      "id": "2255:821",
+      "text": "4px",
+      "parent": "2255:820"
+    },
+    {
+      "id": "2255:824",
+      "text": "Color/Blue/500",
+      "parent": "2255:823"
+    },
+    {
+      "id": "2255:825",
+      "text": " → ",
+      "parent": "2255:822"
+    },
+    {
+      "id": "2255:827",
+      "text": "#0066FF",
+      "parent": "2255:826"
+    },
+    {
+      "id": "2255:830",
+      "text": "Font Size/300",
+      "parent": "2255:829"
+    },
+    {
+      "id": "2255:831",
+      "text": " → ",
+      "parent": "2255:828"
+    },
+    {
+      "id": "2255:833",
+      "text": "16px",
+      "parent": "2255:832"
+    },
+    {
+      "id": "2255:836",
+      "text": "Themes (Brands)",
+      "parent": "2255:835"
+    },
+    {
+      "id": "2255:840",
+      "text": "Purpose",
+      "parent": "2255:839"
+    },
+    {
+      "id": "2255:842",
+      "text": "Brand-specific overrides",
+      "parent": "2255:841"
+    },
+    {
+      "id": "2255:845",
+      "text": "Modes",
+      "parent": "2255:844"
+    },
+    {
+      "id": "2255:848",
+      "text": "Brand A",
+      "parent": "2255:847"
+    },
+    {
+      "id": "2255:849",
+      "text": ", ",
+      "parent": "2255:846"
+    },
+    {
+      "id": "2255:851",
+      "text": "Brand B",
+      "parent": "2255:850"
+    },
+    {
+      "id": "2255:854",
+      "text": "Contains",
+      "parent": "2255:853"
+    },
+    {
+      "id": "2255:856",
+      "text": "Brand-specific color overrides, custom spacing adjustments",
+      "parent": "2255:855"
+    },
+    {
+      "id": "2255:859",
+      "text": "Example Usage",
+      "parent": "2255:858"
+    },
+    {
+      "id": "2255:863",
+      "text": "Brand A",
+      "parent": "2255:862"
+    },
+    {
+      "id": "2255:864",
+      "text": " → Primary Blue palette",
+      "parent": "2255:861"
+    },
+    {
+      "id": "2255:867",
+      "text": "Brand B",
+      "parent": "2255:866"
+    },
+    {
+      "id": "2255:868",
+      "text": " → Primary Green palette",
+      "parent": "2255:865"
+    },
+    {
+      "id": "2255:871",
+      "text": "Appearance (Modes)",
+      "parent": "2255:870"
+    },
+    {
+      "id": "2255:875",
+      "text": "Purpose",
+      "parent": "2255:874"
+    },
+    {
+      "id": "2255:877",
+      "text": "Light/dark semantic mappings",
+      "parent": "2255:876"
+    },
+    {
+      "id": "2255:880",
+      "text": "Modes",
+      "parent": "2255:879"
+    },
+    {
+      "id": "2255:883",
+      "text": "Light Mode",
+      "parent": "2255:882"
+    },
+    {
+      "id": "2255:884",
+      "text": ", ",
+      "parent": "2255:881"
+    },
+    {
+      "id": "2255:886",
+      "text": "Dark Mode",
+      "parent": "2255:885"
+    },
+    {
+      "id": "2255:889",
+      "text": "Contains",
+      "parent": "2255:888"
+    },
+    {
+      "id": "2255:891",
+      "text": "Theme-aware color mappings for light and dark environments",
+      "parent": "2255:890"
+    },
+    {
+      "id": "2255:894",
+      "text": "Example Usage",
+      "parent": "2255:893"
+    },
+    {
+      "id": "2255:898",
+      "text": "Light Mode",
+      "parent": "2255:897"
+    },
+    {
+      "id": "2255:899",
+      "text": " → Background: White",
+      "parent": "2255:896"
+    },
+    {
+      "id": "2255:902",
+      "text": "Dark Mode",
+      "parent": "2255:901"
+    },
+    {
+      "id": "2255:903",
+      "text": " → Background: Dark Gray",
+      "parent": "2255:900"
+    },
+    {
+      "id": "2255:906",
+      "text": "Semantics (Roles)",
+      "parent": "2255:905"
+    },
+    {
+      "id": "2255:910",
+      "text": "Purpose",
+      "parent": "2255:909"
+    },
+    {
+      "id": "2255:912",
+      "text": "Role-based tokens (text, fill, border)",
+      "parent": "2255:911"
+    },
+    {
+      "id": "2255:915",
+      "text": "Modes",
+      "parent": "2255:914"
+    },
+    {
+      "id": "2255:917",
+      "text": "No modes",
+      "parent": "2255:916"
+    },
+    {
+      "id": "2255:920",
+      "text": "Contains",
+      "parent": "2255:919"
+    },
+    {
+      "id": "2255:923",
+      "text": "Color/Text/*",
+      "parent": "2255:922"
+    },
+    {
+      "id": "2255:924",
+      "text": ", ",
+      "parent": "2255:921"
+    },
+    {
+      "id": "2255:926",
+      "text": "Color/Fill/*",
+      "parent": "2255:925"
+    },
+    {
+      "id": "2255:927",
+      "text": ", ",
+      "parent": "2255:921"
+    },
+    {
+      "id": "2255:929",
+      "text": "Color/Border/*",
+      "parent": "2255:928"
+    },
+    {
+      "id": "2255:930",
+      "text": ", ",
+      "parent": "2255:921"
+    },
+    {
+      "id": "2255:932",
+      "text": "Typography/*",
+      "parent": "2255:931"
+    },
+    {
+      "id": "2255:935",
+      "text": "Example Tokens",
+      "parent": "2255:934"
+    },
+    {
+      "id": "2255:938",
+      "text": "Color/Text/Default",
+      "parent": "2255:937"
+    },
+    {
+      "id": "2255:940",
+      "text": "Color/Fill/Brand",
+      "parent": "2255:939"
+    },
+    {
+      "id": "2255:942",
+      "text": "Typography/Label/Font Size",
+      "parent": "2255:941"
+    },
+    {
+      "id": "2255:945",
+      "text": "Components (UI)",
+      "parent": "2255:944"
+    },
+    {
+      "id": "2255:949",
+      "text": "Purpose",
+      "parent": "2255:948"
+    },
+    {
+      "id": "2255:951",
+      "text": "Component-specific tokens (button, input, etc.)",
+      "parent": "2255:950"
+    },
+    {
+      "id": "2255:954",
+      "text": "Modes",
+      "parent": "2255:953"
+    },
+    {
+      "id": "2255:956",
+      "text": "No modes",
+      "parent": "2255:955"
+    },
+    {
+      "id": "2255:959",
+      "text": "Contains",
+      "parent": "2255:958"
+    },
+    {
+      "id": "2255:961",
+      "text": "Variant parts, properties, states",
+      "parent": "2255:960"
+    },
+    {
+      "id": "2255:964",
+      "text": "Example Tokens",
+      "parent": "2255:963"
+    },
+    {
+      "id": "2255:967",
+      "text": "Button/Solid/Container/Background Default",
+      "parent": "2255:966"
+    },
+    {
+      "id": "2255:969",
+      "text": "Button/Border Radius",
+      "parent": "2255:968"
+    },
+    {
+      "id": "2255:972",
+      "text": "Component Token Example: Button",
+      "parent": "2255:971"
+    },
+    {
+      "id": "2255:976",
+      "text": "Solid Variant",
+      "parent": "2255:975"
+    },
+    {
+      "id": "2255:980",
+      "text": "Container Background",
+      "parent": "2255:979"
+    },
+    {
+      "id": "2255:982",
+      "text": "Button/Solid/Container/Background Default",
+      "parent": "2255:981"
+    },
+    {
+      "id": "2255:984",
+      "text": "→ ",
+      "parent": "2255:983"
+    },
+    {
+      "id": "2255:986",
+      "text": "Color/Fill/Brand",
+      "parent": "2255:985"
+    },
+    {
+      "id": "2255:989",
+      "text": "Container Background (Hover)",
+      "parent": "2255:988"
+    },
+    {
+      "id": "2255:991",
+      "text": "Button/Solid/Container/Background Hover",
+      "parent": "2255:990"
+    },
+    {
+      "id": "2255:993",
+      "text": "→ ",
+      "parent": "2255:992"
+    },
+    {
+      "id": "2255:995",
+      "text": "Color/Fill/Brand Hover",
+      "parent": "2255:994"
+    },
+    {
+      "id": "2255:998",
+      "text": "Label Text Color",
+      "parent": "2255:997"
+    },
+    {
+      "id": "2255:1000",
+      "text": "Button/Solid/Label/Text Color Default",
+      "parent": "2255:999"
+    },
+    {
+      "id": "2255:1002",
+      "text": "→ ",
+      "parent": "2255:1001"
+    },
+    {
+      "id": "2255:1004",
+      "text": "Color/Text/Inverse",
+      "parent": "2255:1003"
+    },
+    {
+      "id": "2255:1007",
+      "text": "Border Radius",
+      "parent": "2255:1006"
+    },
+    {
+      "id": "2255:1009",
+      "text": "Button/Border Radius",
+      "parent": "2255:1008"
+    },
+    {
+      "id": "2255:1011",
+      "text": "→ ",
+      "parent": "2255:1010"
+    },
+    {
+      "id": "2255:1013",
+      "text": "var(--button-border-radius)",
+      "parent": "2255:1012"
+    },
+    {
+      "id": "2255:1016",
+      "text": "Outline Variant",
+      "parent": "2255:1015"
+    },
+    {
+      "id": "2255:1020",
+      "text": "Container Background",
+      "parent": "2255:1019"
+    },
+    {
+      "id": "2255:1022",
+      "text": "Button/Outline/Container/Background Default",
+      "parent": "2255:1021"
+    },
+    {
+      "id": "2255:1024",
+      "text": "→ ",
+      "parent": "2255:1023"
+    },
+    {
+      "id": "2255:1026",
+      "text": "Color/Fill/Surface",
+      "parent": "2255:1025"
+    },
+    {
+      "id": "2255:1029",
+      "text": "Container Border",
+      "parent": "2255:1028"
+    },
+    {
+      "id": "2255:1031",
+      "text": "Button/Outline/Container/Border Default",
+      "parent": "2255:1030"
+    },
+    {
+      "id": "2255:1033",
+      "text": "→ ",
+      "parent": "2255:1032"
+    },
+    {
+      "id": "2255:1035",
+      "text": "Color/Border/Brand",
+      "parent": "2255:1034"
+    },
+    {
+      "id": "2255:1038",
+      "text": "Label Text Color",
+      "parent": "2255:1037"
+    },
+    {
+      "id": "2255:1040",
+      "text": "Button/Outline/Label/Text Color Default",
+      "parent": "2255:1039"
+    },
+    {
+      "id": "2255:1042",
+      "text": "→ ",
+      "parent": "2255:1041"
+    },
+    {
+      "id": "2255:1044",
+      "text": "Color/Text/Brand",
+      "parent": "2255:1043"
+    },
+    {
+      "id": "2255:1047",
+      "text": "Border Radius",
+      "parent": "2255:1046"
+    },
+    {
+      "id": "2255:1049",
+      "text": "Button/Border Radius",
+      "parent": "2255:1048"
+    },
+    {
+      "id": "2255:1051",
+      "text": "→ ",
+      "parent": "2255:1050"
+    },
+    {
+      "id": "2255:1053",
+      "text": "var(--button-border-radius)",
+      "parent": "2255:1052"
+    },
+    {
+      "id": "2255:1056",
+      "text": "Ghost Variant",
+      "parent": "2255:1055"
+    },
+    {
+      "id": "2255:1060",
+      "text": "Container Background",
+      "parent": "2255:1059"
+    },
+    {
+      "id": "2255:1062",
+      "text": "Button/Ghost/Container/Background Default",
+      "parent": "2255:1061"
+    },
+    {
+      "id": "2255:1064",
+      "text": "→ ",
+      "parent": "2255:1063"
+    },
+    {
+      "id": "2255:1066",
+      "text": "Transparent",
+      "parent": "2255:1065"
+    },
+    {
+      "id": "2255:1069",
+      "text": "Container Background (Hover)",
+      "parent": "2255:1068"
+    },
+    {
+      "id": "2255:1071",
+      "text": "Button/Ghost/Container/Background Hover",
+      "parent": "2255:1070"
+    },
+    {
+      "id": "2255:1073",
+      "text": "→ ",
+      "parent": "2255:1072"
+    },
+    {
+      "id": "2255:1075",
+      "text": "Color/Fill/Subtle",
+      "parent": "2255:1074"
+    },
+    {
+      "id": "2255:1078",
+      "text": "Label Text Color",
+      "parent": "2255:1077"
+    },
+    {
+      "id": "2255:1080",
+      "text": "Button/Ghost/Label/Text Color Default",
+      "parent": "2255:1079"
+    },
+    {
+      "id": "2255:1082",
+      "text": "→ ",
+      "parent": "2255:1081"
+    },
+    {
+      "id": "2255:1084",
+      "text": "Color/Text/Brand",
+      "parent": "2255:1083"
+    },
+    {
+      "id": "2255:1087",
+      "text": "Border Radius",
+      "parent": "2255:1086"
+    },
+    {
+      "id": "2255:1089",
+      "text": "Button/Border Radius",
+      "parent": "2255:1088"
+    },
+    {
+      "id": "2255:1091",
+      "text": "→ ",
+      "parent": "2255:1090"
+    },
+    {
+      "id": "2255:1093",
+      "text": "var(--button-border-radius)",
+      "parent": "2255:1092"
+    },
+    {
+      "id": "2255:1096",
+      "text": "Semantic Role Examples",
+      "parent": "2255:1095"
+    },
+    {
+      "id": "2255:1100",
+      "text": "Text Colors",
+      "parent": "2255:1099"
+    },
+    {
+      "id": "2255:1105",
+      "text": "Color/Text/Default",
+      "parent": "2255:1104"
+    },
+    {
+      "id": "2255:1109",
+      "text": "Color/Text/Subtle",
+      "parent": "2255:1108"
+    },
+    {
+      "id": "2255:1113",
+      "text": "Color/Text/Brand",
+      "parent": "2255:1112"
+    },
+    {
+      "id": "2255:1117",
+      "text": "Color/Text/Inverse",
+      "parent": "2255:1116"
+    },
+    {
+      "id": "2255:1120",
+      "text": "Fill Colors",
+      "parent": "2255:1119"
+    },
+    {
+      "id": "2255:1125",
+      "text": "Color/Fill/Surface",
+      "parent": "2255:1124"
+    },
+    {
+      "id": "2255:1129",
+      "text": "Color/Fill/Subtle",
+      "parent": "2255:1128"
+    },
+    {
+      "id": "2255:1133",
+      "text": "Color/Fill/Brand",
+      "parent": "2255:1132"
+    },
+    {
+      "id": "2255:1137",
+      "text": "Color/Fill/Danger",
+      "parent": "2255:1136"
+    },
+    {
+      "id": "2255:1140",
+      "text": "Border Colors",
+      "parent": "2255:1139"
+    },
+    {
+      "id": "2255:1145",
+      "text": "Color/Border/Default",
+      "parent": "2255:1144"
+    },
+    {
+      "id": "2255:1149",
+      "text": "Color/Border/Subtle",
+      "parent": "2255:1148"
+    },
+    {
+      "id": "2255:1153",
+      "text": "Color/Border/Brand",
+      "parent": "2255:1152"
+    },
+    {
+      "id": "2255:1157",
+      "text": "Color/Border/Danger",
+      "parent": "2255:1156"
+    },
+    {
+      "id": "2255:1160",
+      "text": "Typography Role Examples",
+      "parent": "2255:1159"
+    },
+    {
+      "id": "2255:1165",
+      "text": "Typography/Label/Font Size",
+      "parent": "2255:1164"
+    },
+    {
+      "id": "2255:1169",
+      "text": "Size",
+      "parent": "2255:1168"
+    },
+    {
+      "id": "2255:1171",
+      "text": "14",
+      "parent": "2255:1170"
+    },
+    {
+      "id": "2255:1174",
+      "text": "Height",
+      "parent": "2255:1173"
+    },
+    {
+      "id": "2255:1176",
+      "text": "20",
+      "parent": "2255:1175"
+    },
+    {
+      "id": "2255:1179",
+      "text": "Weight",
+      "parent": "2255:1178"
+    },
+    {
+      "id": "2255:1181",
+      "text": "500",
+      "parent": "2255:1180"
+    },
+    {
+      "id": "2255:1184",
+      "text": "Label text example",
+      "parent": "2255:1183"
+    },
+    {
+      "id": "2255:1188",
+      "text": "Typography/Body/Font Size",
+      "parent": "2255:1187"
+    },
+    {
+      "id": "2255:1192",
+      "text": "Size",
+      "parent": "2255:1191"
+    },
+    {
+      "id": "2255:1194",
+      "text": "16",
+      "parent": "2255:1193"
+    },
+    {
+      "id": "2255:1197",
+      "text": "Height",
+      "parent": "2255:1196"
+    },
+    {
+      "id": "2255:1199",
+      "text": "24",
+      "parent": "2255:1198"
+    },
+    {
+      "id": "2255:1202",
+      "text": "Weight",
+      "parent": "2255:1201"
+    },
+    {
+      "id": "2255:1204",
+      "text": "400",
+      "parent": "2255:1203"
+    },
+    {
+      "id": "2255:1207",
+      "text": "Body text example",
+      "parent": "2255:1206"
+    },
+    {
+      "id": "2255:1211",
+      "text": "Typography/Heading/Small",
+      "parent": "2255:1210"
+    },
+    {
+      "id": "2255:1215",
+      "text": "Size",
+      "parent": "2255:1214"
+    },
+    {
+      "id": "2255:1217",
+      "text": "20",
+      "parent": "2255:1216"
+    },
+    {
+      "id": "2255:1220",
+      "text": "Height",
+      "parent": "2255:1219"
+    },
+    {
+      "id": "2255:1222",
+      "text": "28",
+      "parent": "2255:1221"
+    },
+    {
+      "id": "2255:1225",
+      "text": "Weight",
+      "parent": "2255:1224"
+    },
+    {
+      "id": "2255:1227",
+      "text": "600",
+      "parent": "2255:1226"
+    },
+    {
+      "id": "2255:1230",
+      "text": "Heading Small",
+      "parent": "2255:1229"
+    },
+    {
+      "id": "2255:1234",
+      "text": "Typography/Heading/Medium",
+      "parent": "2255:1233"
+    },
+    {
+      "id": "2255:1238",
+      "text": "Size",
+      "parent": "2255:1237"
+    },
+    {
+      "id": "2255:1240",
+      "text": "24",
+      "parent": "2255:1239"
+    },
+    {
+      "id": "2255:1243",
+      "text": "Height",
+      "parent": "2255:1242"
+    },
+    {
+      "id": "2255:1245",
+      "text": "32",
+      "parent": "2255:1244"
+    },
+    {
+      "id": "2255:1248",
+      "text": "Weight",
+      "parent": "2255:1247"
+    },
+    {
+      "id": "2255:1250",
+      "text": "600",
+      "parent": "2255:1249"
+    },
+    {
+      "id": "2255:1253",
+      "text": "Heading Medium",
+      "parent": "2255:1252"
+    }
+  ],
+  "tableRow": [
+    {
+      "id": "2255:687",
+      "name": "Code",
+      "type": "FRAME"
+    }
+  ],
+  "tableParent": {
+    "id": "2255:686",
+    "type": "FRAME"
+  }
+}

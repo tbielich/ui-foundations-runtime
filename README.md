@@ -15,12 +15,12 @@
 
 Keep Figma and code in sync by default — with tokens, not guesswork.
 
-- **Token-first architecture** — every value comes from a token, no hardcoded exceptions
-- **Figma as single source of truth** — variables export directly into production code
+- **Token-first Brand styles** — values follow the token model; the optional native Base entry shares Brand A sizing with system Sans Serif and native control visuals
+- **Figma-aligned implementation** — Figma variables map to code through documented token layers and stable IDs
 - **Agent-ready workflows** — structured docs that give AI agents deterministic context
 - **Reproducible pipeline** — same input, same output, validated by CI on every change
 
-[Documentation](https://ui-foundations.netlify.app/) · [Starter Template](https://github.com/tbielich/ui-foundations-starter) · [npm](https://www.npmjs.com/package/ui-foundations) · [Figma Library](https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations)
+[Documentation](https://ui-foundations.com/) · [Starter Template](https://github.com/tbielich/ui-foundations-starter) · [npm](https://www.npmjs.com/package/ui-foundations) · [Figma Library](https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations)
 
 ---
 
@@ -37,8 +37,10 @@ work with the system reliably.
 
 ## Key Features
 
-- **Token-first architecture** — Core → Appearance → Semantics (Brands) → Patterns/Components, strictly separated
-- **Figma ↔ code alignment** — `codeSyntax.WEB` maps Figma names directly to CSS
+- **Native Base entry** — `ui-foundations/base.css` retains browser-default controls and document styles while supporting existing UIF behaviors; see [Base usage](docs/base.md)
+
+- **Token-first architecture** — Core → Appearance {Brand, Scheme, Scale} → Semantics → Patterns, with each layer carrying one clear responsibility
+- **Figma ↔ code alignment** — stable variable IDs, `codeSyntax.WEB`, and the projection adapter keep Figma and Runtime traceable without forcing breaking renames
 - **Multi-brand and dark mode** — `data-brand` and `data-mode` switch independently
 - **Agent-ready documentation** — deterministic context for AI-assisted workflows
 - **DTCG-compliant output** — 2025.10 format with proper alias syntax and hex colors
@@ -84,16 +86,43 @@ work with the system reliably.
 
 ### Layering
 
-Token layers from foundation to surface:
+The token model separates **what a value is**, **which context changes it**, and
+**how UI uses it**:
 
-``` 
-   ╱─ PATTERN/COMPONENT   Scoped usage tokens
-  ╱── SEMANTICS (BRANDS)  Brand-scoped semantic roles
- ╱─── APPEARANCE          Mode-dependent decisions
-╱──── CORE                Primitive/reference values
+```text
+Core
+  ↓
+Appearance
+  ├─ Brand
+  ├─ Scheme
+  └─ Scale
+  ↓
+Semantics
+  ↓
+Patterns
 ```
 
-Patterns consume semantic roles or Core tokens. Never raw values.
+- **Core** holds reusable primitives such as palette values, spacing, type, and radii.
+- **Appearance** applies independent context axes: Brand, Scheme (light/dark), and Scale.
+- **Semantics** gives those values stable UI meaning such as surface, content, foreground, and border roles.
+- **Patterns** apply semantic roles to Button, Input, Checkbox, and other UI patterns.
+
+A pattern should normally depend on Semantics rather than reaching directly into
+Appearance or Core. This keeps the same pattern meaningful across brands and
+schemes.
+
+For example, a Button hover state follows intent rather than a fixed color:
+
+```text
+Core color
+  → Appearance (Brand + Scheme)
+  → Color / Action / Surface / Hover
+  → Button / … / Background / Hover
+```
+
+Some generated filenames still use older collection names for compatibility.
+Those filenames are implementation adapters, not the architectural model. See
+[Token Pipeline](docs/token-pipeline.md) for that distinction.
 
 ### Component Integration
 
@@ -116,8 +145,8 @@ docs, playgrounds, and consumer apps.
 
 ### Designers
 
-- Work in Figma variables — they are the source of truth
-- Token names in Figma map directly to CSS variable names
+- Use Figma as the design-authoring projection; keep variable changes consistent with the documented UIF contracts and token responsibilities
+- Figma variables map to Runtime through stable IDs, WEB syntax, and the token projection
 - Brand and mode switching is built into the variable structure
 
 ### Developers
@@ -148,6 +177,18 @@ npm install ui-foundations
 @import "ui-foundations/core.css";
 @import "ui-foundations/ui.css";
 ```
+
+### Load fonts in your application
+
+The npm package supplies font-family roles and fallback stacks without font
+binaries or automatic font loading. Load the licensed fonts for your selected
+brand in an application-owned stylesheet. The existing A/B/C roles and fallback
+stacks remain unchanged; unavailable faces use the declared fallbacks.
+
+Apps that relied on automatic loading must now provide that stylesheet. The
+documentation and playgrounds opt into their own local demo fonts separately.
+See [Font loading ownership](docs/public-api.md#font-loading-ownership) for an
+example and the migration boundary.
 
 ### Use Patterns (plain HTML)
 
@@ -199,7 +240,7 @@ document.documentElement.dataset.brand = "a";     // "a" | "b" | "c"
 document.documentElement.dataset.mode  = "light";  // "light" | "dark"
 ```
 
-Explore the [docs site](https://ui-foundations.netlify.app/) or the
+Explore the [docs site](https://ui-foundations.com/) or the
 [vanilla starter](https://github.com/tbielich/ui-foundations-starter)
 to see it in action.
 
@@ -320,6 +361,20 @@ npm run docs:dev        # build + serve docs site
 BUILD OK · READY · 503ms
 ```
 
+### Documentation deployment
+
+The documentation uses a two-stage publication flow:
+
+1. A non-draft pull request deploys its current revision to the shared
+   [GitHub Pages pre-release](https://tbielich.github.io/ui-foundations-runtime/)
+   for visual verification.
+2. After approval and merge to `main`, Netlify publishes the canonical
+   production site at [ui-foundations.com](https://ui-foundations.com/).
+
+New commits replace the current Pages pre-release. Netlify Deploy Previews and
+branch deploys are intentionally disabled so production remains the only
+Netlify publication target.
+
 ### Figma Sync
 
 ```bash
@@ -416,9 +471,14 @@ npm run release:publish
 
 ## Roadmap
 
-- **Calendar Component** — first functional component with state, date logic, and keyboard navigation. Built on top of existing patterns.
-- **Navigation Key Tips** — experimental Alt-triggered keyboard shortcuts for fast docs navigation (available now).
-- **UIF public namespace** — migrate Custom Element tags from the legacy `ui-*` namespace to the approved `uif-*` namespace for v1.0.
+### Next
+
+- **Calendar Component** — first functional component with state, date logic, and keyboard navigation, built on existing patterns.
+
+### Delivered
+
+- **GitHub Pages pre-release gate** — pull requests can be reviewed visually before merge; Netlify publishes the canonical production site after merge.
+- **UIF public namespace** — the approved `uif-*` Custom Element namespace is the canonical v1 API.
 
 ---
 

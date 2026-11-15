@@ -1,0 +1,43 @@
+{
+  "mode": "VERIFY",
+  "gate": "FAIL",
+  "blockingFinding": {
+    "component": "Calendar",
+    "trigger": "Focus2026-05-18,pressEnter,thenArrowRight",
+    "actual": "aria-selectedtrue but document.activeElementBODY;ArrowRightcannotnavigate",
+    "schemes": [
+      "light",
+      "dark"
+    ],
+    "source": "src/ui/components/calendar.js94\u201396 _selectDate calls_renderwithoutfocusrestore",
+    "evidence": "browser.json"
+  },
+  "passes": [
+    "Nativebutton/input metrics equal rawbrowser controls LightDark",
+    "Nativechecked/disabled basiccontrols",
+    "Tabs hiddenpanels and keyboard",
+    "Native modalopen/Escape",
+    "Tooltip focusvisibility",
+    "Alertdismiss",
+    "DateInputopen/select/close",
+    "Manualconstructors+repeatedautoinit handles nextmonthonce",
+    "320pxdocwidth",
+    "Visible nativeprogress42/meter65",
+    "ZeroBasefontrequests",
+    "Zero fontbinaries/fontface underfrozendist",
+    "Docsfontstylesheet explicit sixcontext actualfonts"
+  ],
+  "limitations": [
+    "Nofullaccessibilitycertification",
+    "InitialcheckscriptoptionalnonexistentenhanceCalendarscallisnotidempotenceproof;idempotence.jsonactualDOMContentLoadedeventprobeauthoritative"
+  ],
+  "packageExport": {
+    "./base.css": "./dist/base.css"
+  },
+  "evidence": [
+    "freeze.json",
+    "browser.json",
+    "idempotence.json",
+    "docs-fonts.json"
+  ]
+}

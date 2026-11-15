@@ -1,0 +1,247 @@
+{
+  "Core (Primitives)": [
+    {
+      "id": "VariableID:3274:2",
+      "name": "Font/Family/Exo 2",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-exo-2)",
+      "value": "Exo 2",
+      "alias": null
+    },
+    {
+      "id": "VariableID:3274:3",
+      "name": "Font/Family/Orbitron",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-orbitron)",
+      "value": "Orbitron",
+      "alias": null
+    },
+    {
+      "id": "VariableID:3274:4",
+      "name": "Font/Family/Manrope",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-manrope)",
+      "value": "Manrope",
+      "alias": null
+    },
+    {
+      "id": "VariableID:3274:5",
+      "name": "Font/Family/Bricolage Grotesque",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--font-family-bricolage-grotesque)",
+      "value": "Bricolage Grotesque",
+      "alias": null
+    }
+  ],
+  "Appearance (Brand)": [
+    {
+      "id": "VariableID:3274:6",
+      "name": "Brand/Typography/Heading/Font/Weight",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--uif-appearance-typography-heading-font-weight)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:1:219",
+        "targetName": "Font/Weight/700",
+        "targetCollectionId": "VariableCollectionId:1:200",
+        "targetCollectionName": "Core (Primitives)"
+      },
+      "modeValues": {
+        "Brand A": {
+          "$ref": "Font/Weight/700",
+          "$targetId": "VariableID:1:219"
+        },
+        "Brand B": {
+          "$ref": "Font/Weight/800",
+          "$targetId": "VariableID:1:220"
+        },
+        "Brand C": {
+          "$ref": "Font/Weight/700",
+          "$targetId": "VariableID:1:219"
+        }
+      }
+    },
+    {
+      "id": "VariableID:2006:213",
+      "name": "Brand/Font/Base",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--brand-font-base)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:3:5",
+        "targetName": "Font/Family/Inter",
+        "targetCollectionId": "VariableCollectionId:1:200",
+        "targetCollectionName": "Core (Primitives)"
+      },
+      "modeValues": {
+        "Brand A": {
+          "$ref": "Font/Family/Inter",
+          "$targetId": "VariableID:3:5"
+        },
+        "Brand B": {
+          "$ref": "Font/Family/Exo 2",
+          "$targetId": "VariableID:3274:2"
+        },
+        "Brand C": {
+          "$ref": "Font/Family/Manrope",
+          "$targetId": "VariableID:3274:4"
+        }
+      }
+    },
+    {
+      "id": "VariableID:2006:214",
+      "name": "Brand/Font/Lead",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--brand-font-lead)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:3:5",
+        "targetName": "Font/Family/Inter",
+        "targetCollectionId": "VariableCollectionId:1:200",
+        "targetCollectionName": "Core (Primitives)"
+      },
+      "modeValues": {
+        "Brand A": {
+          "$ref": "Font/Family/Inter",
+          "$targetId": "VariableID:3:5"
+        },
+        "Brand B": {
+          "$ref": "Font/Family/Exo 2",
+          "$targetId": "VariableID:3274:2"
+        },
+        "Brand C": {
+          "$ref": "Font/Family/Manrope",
+          "$targetId": "VariableID:3274:4"
+        }
+      }
+    },
+    {
+      "id": "VariableID:3260:3",
+      "name": "Brand/Font/Heading",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--brand-font-heading)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:3260:2",
+        "targetName": "Font/Family/Roboto Slab",
+        "targetCollectionId": "VariableCollectionId:1:200",
+        "targetCollectionName": "Core (Primitives)"
+      },
+      "modeValues": {
+        "Brand A": {
+          "$ref": "Font/Family/Roboto Slab",
+          "$targetId": "VariableID:3260:2"
+        },
+        "Brand B": {
+          "$ref": "Font/Family/Orbitron",
+          "$targetId": "VariableID:3274:3"
+        },
+        "Brand C": {
+          "$ref": "Font/Family/Bricolage Grotesque",
+          "$targetId": "VariableID:3274:5"
+        }
+      }
+    },
+    {
+      "id": "VariableID:3260:5",
+      "name": "Brand/Typography/UI/Font/Weight",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--brand-typography-ui-font-weight)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:1:218",
+        "targetName": "Font/Weight/600",
+        "targetCollectionId": "VariableCollectionId:1:200",
+        "targetCollectionName": "Core (Primitives)"
+      },
+      "modeValues": {
+        "Brand A": {
+          "$ref": "Font/Weight/600",
+          "$targetId": "VariableID:1:218"
+        },
+        "Brand B": {
+          "$ref": "Font/Weight/600",
+          "$targetId": "VariableID:1:218"
+        },
+        "Brand C": {
+          "$ref": "Font/Weight/600",
+          "$targetId": "VariableID:1:218"
+        }
+      }
+    }
+  ],
+  "Semantics (Roles)": [
+    {
+      "id": "VariableID:3274:7",
+      "name": "Typography/Heading/Font/Weight",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--uif-semantic-typography-heading-font-weight)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:3274:6",
+        "targetName": "Brand/Typography/Heading/Font/Weight",
+        "targetCollectionId": "VariableCollectionId:1:177",
+        "targetCollectionName": "Appearance (Brand)"
+      }
+    }
+  ],
+  "Patterns (UI)": [
+    {
+      "id": "VariableID:3014:5",
+      "name": "Typography/Heading/Font/Weight",
+      "resolvedType": "STRING",
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "hiddenFromPublishing": false,
+      "webSyntax": "var(--typography-heading-font-weight)",
+      "value": null,
+      "alias": {
+        "targetId": "VariableID:3274:7",
+        "targetName": "Typography/Heading/Font/Weight",
+        "targetCollectionId": "VariableCollectionId:3173:2",
+        "targetCollectionName": "Semantics (Roles)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4692 @@
+{
+  "changed": [
+    {
+      "id": "VariableID:1:201",
+      "path": "Size/Border/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:202",
+      "path": "Size/Border/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:203",
+      "path": "Size/Border/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:204",
+      "path": "Font/Size/md",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:205",
+      "path": "Font/Size/xs",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:206",
+      "path": "Font/Size/sm",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:208",
+      "path": "Font/Size/lg",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:209",
+      "path": "Font/Size/xl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:210",
+      "path": "Font/Size/xxl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:211",
+      "path": "Font/Size/xxxl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:212",
+      "path": "Size/Border/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:213",
+      "path": "Font/Weight/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:214",
+      "path": "Font/Weight/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:215",
+      "path": "Font/Weight/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:216",
+      "path": "Font/Weight/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:217",
+      "path": "Font/Weight/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:218",
+      "path": "Font/Weight/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:219",
+      "path": "Font/Weight/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:220",
+      "path": "Font/Weight/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:221",
+      "path": "Font/Weight/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:228",
+      "path": "Size/Spacing/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:229",
+      "path": "Size/Spacing/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:230",
+      "path": "Size/Spacing/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:231",
+      "path": "Size/Spacing/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:232",
+      "path": "Size/Spacing/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:233",
+      "path": "Size/Spacing/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:234",
+      "path": "Size/Spacing/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:235",
+      "path": "Size/Spacing/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:236",
+      "path": "Size/Spacing/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:237",
+      "path": "Size/Spacing/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:238",
+      "path": "Size/Spacing/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:241",
+      "path": "Size/Radius/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:242",
+      "path": "Size/Radius/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:243",
+      "path": "Size/Radius/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:244",
+      "path": "Size/Radius/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:245",
+      "path": "Size/Radius/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:246",
+      "path": "Size/Radius/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:247",
+      "path": "Size/Radius/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:248",
+      "path": "Size/Radius/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:249",
+      "path": "Size/Radius/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:250",
+      "path": "Size/Radius/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:251",
+      "path": "Size/Radius/full",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:267",
+      "path": "Button/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:268",
+      "path": "Button/Solid/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:269",
+      "path": "Button/Solid/Text Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:270",
+      "path": "Button/Solid/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:271",
+      "path": "Button/Outline/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:272",
+      "path": "Button/Ghost/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:273",
+      "path": "Button/Outline/Text Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:276",
+      "path": "Button/Ghost/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:277",
+      "path": "Button/Outline/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:278",
+      "path": "Button/Ghost/Text Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:1:281",
+      "path": "Button/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:5",
+      "path": "Font/Family/Sans",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:6",
+      "path": "Font/Family/Serif",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:7",
+      "path": "Font/Family/Mono",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:11",
+      "path": "Button/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:12",
+      "path": "Button/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:14",
+      "path": "Button/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:15",
+      "path": "Button/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:20",
+      "path": "Button/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3:21",
+      "path": "Button/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:9:8",
+      "path": "Button/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:9:9",
+      "path": "Button/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:12:21",
+      "path": "Button/Solid/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:12:22",
+      "path": "Button/Solid/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:12:23",
+      "path": "Button/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:30",
+      "path": "Button/Solid/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:31",
+      "path": "Button/Outline/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:32",
+      "path": "Button/Ghost/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:56",
+      "path": "Line Height/xs",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:57",
+      "path": "Line Height/sm",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:58",
+      "path": "Line Height/md",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:60",
+      "path": "Line Height/lg",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:61",
+      "path": "Line Height/xl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:62",
+      "path": "Line Height/xxl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:15:63",
+      "path": "Line Height/xxxl",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:79",
+      "path": "Container/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:80",
+      "path": "Container/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:81",
+      "path": "Container/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:82",
+      "path": "Breakpoint/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:83",
+      "path": "Breakpoint/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:84",
+      "path": "Breakpoint/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:85",
+      "path": "Breakpoint/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:86",
+      "path": "Container/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:87",
+      "path": "Container/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:88",
+      "path": "Container/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:89",
+      "path": "Breakpoint/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:21:90",
+      "path": "Breakpoint/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:26",
+      "path": "Layout/Columns",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:27",
+      "path": "Layout/Gutter",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:28",
+      "path": "Layout/Max Width",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:29",
+      "path": "Layout/Column Max Width",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:30",
+      "path": "Layout/Float Breakpoint",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:31",
+      "path": "Layout/Base Grid",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:57",
+      "path": "ZIndex/Fixed",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:58",
+      "path": "ZIndex/Sticky",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:59",
+      "path": "ZIndex/Dropdown",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:60",
+      "path": "ZIndex/Dropdown Base",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:61",
+      "path": "ZIndex/Modal",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:62",
+      "path": "ZIndex/Base",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:63",
+      "path": "ZIndex/Tooltip",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:64",
+      "path": "ZIndex/Raised",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:65",
+      "path": "ZIndex/Popover",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:66",
+      "path": "ZIndex/Modal Overlay",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:22:67",
+      "path": "ZIndex/Hidden",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:74",
+      "path": "Button/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:75",
+      "path": "Button/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:76",
+      "path": "Button/Solid/Text Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:77",
+      "path": "Button/Solid/Text Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:78",
+      "path": "Button/Solid/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:79",
+      "path": "Button/Solid/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:80",
+      "path": "Button/Solid/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:81",
+      "path": "Button/Outline/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:82",
+      "path": "Button/Outline/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:83",
+      "path": "Button/Outline/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:84",
+      "path": "Button/Outline/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:85",
+      "path": "Button/Outline/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:86",
+      "path": "Button/Ghost/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:87",
+      "path": "Button/Ghost/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:88",
+      "path": "Button/Ghost/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:89",
+      "path": "Button/Ghost/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:53:90",
+      "path": "Button/Ghost/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:77:77",
+      "path": "Modal/Backdrop/Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:77:78",
+      "path": "Modal/Surface/Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:77:79",
+      "path": "Modal/Surface/Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:149",
+      "path": "Color/Neutral/Alpha/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:151",
+      "path": "Color/Neutral/Alpha/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:153",
+      "path": "Color/Neutral/Alpha/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:155",
+      "path": "Color/Neutral/Alpha/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:157",
+      "path": "Color/Neutral/Alpha/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:159",
+      "path": "Color/Neutral/Alpha/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:161",
+      "path": "Color/Neutral/Alpha/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:163",
+      "path": "Color/Neutral/Alpha/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:165",
+      "path": "Color/Neutral/Alpha/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:167",
+      "path": "Color/Neutral/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:169",
+      "path": "Color/Neutral/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:171",
+      "path": "Color/Neutral/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:173",
+      "path": "Color/Neutral/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:175",
+      "path": "Color/Neutral/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:178",
+      "path": "Color/Brand B/Purple/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:179",
+      "path": "Color/Brand B/Purple/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:180",
+      "path": "Color/Brand B/Purple/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:181",
+      "path": "Color/Brand B/Purple/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:182",
+      "path": "Color/Brand B/Purple/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:183",
+      "path": "Color/Brand B/Purple/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:184",
+      "path": "Color/Brand B/Blue/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:185",
+      "path": "Color/Brand B/Blue/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:186",
+      "path": "Color/Brand B/Blue/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:187",
+      "path": "Color/Brand B/Blue/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:188",
+      "path": "Color/Brand B/Blue/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:189",
+      "path": "Color/Brand B/Blue/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:190",
+      "path": "Color/Brand B/Blue/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:191",
+      "path": "Color/Brand B/Blue/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:193",
+      "path": "Color/Neutral/Alpha/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:195",
+      "path": "Color/Transparent",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:198",
+      "path": "Brand/Color/Functional/Success",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:200",
+      "path": "Brand/Color/Primary",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:203",
+      "path": "Brand/Color/Accent",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:206",
+      "path": "Brand/Color/Functional/Danger",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:207",
+      "path": "Color/Brand A/Green/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:208",
+      "path": "Color/Brand A/Red/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:209",
+      "path": "Color/Brand A/Red/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:210",
+      "path": "Color/Brand A/Green/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:211",
+      "path": "Brand/Color/Functional/Base",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:213",
+      "path": "Brand/Font/Base",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:214",
+      "path": "Brand/Font/Lead",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:215",
+      "path": "Brand/Corner/Button",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:216",
+      "path": "Brand/Corner/Card",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:217",
+      "path": "Brand/Corner/Modal",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:218",
+      "path": "Button/Outline/Text Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:219",
+      "path": "Button/Outline/Text Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:220",
+      "path": "Button/Ghost/Text Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2006:221",
+      "path": "Button/Ghost/Text Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:326",
+      "path": "Color/Text/Default",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:327",
+      "path": "Color/Text/Inverse",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:328",
+      "path": "Color/Text/Disabled",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:329",
+      "path": "Color/Fill/Surface",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:330",
+      "path": "Color/Fill/Disabled",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:331",
+      "path": "Color/Fill/Hover",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:337",
+      "path": "Color/Fill/Brand",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:338",
+      "path": "Color/Fill/Subtle",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:339",
+      "path": "Color/Fill/Active",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:340",
+      "path": "Color/Text/Brand",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:341",
+      "path": "Color/Text/Subtle",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:342",
+      "path": "Color/Border/Default",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:343",
+      "path": "Color/Border/Subtle",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:344",
+      "path": "Color/Border/Strong",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:345",
+      "path": "Color/Border/Brand",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:346",
+      "path": "Color/Border/Disabled",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:355",
+      "path": "Color/Text/Strong",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:356",
+      "path": "Color/Border/Danger",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:357",
+      "path": "Color/Fill/Danger",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:358",
+      "path": "Color/Text/Danger",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:371",
+      "path": "Color/Overlay/Backdrop",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:375",
+      "path": "Color/Text/Success",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:376",
+      "path": "Color/Fill/Success",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:377",
+      "path": "Brand/Color/Primary Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:378",
+      "path": "Brand/Color/Accent Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2007:379",
+      "path": "Brand/Color/Functional/Base Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2012:292",
+      "path": "Brand/Color/Subtle",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1880",
+      "path": "Button/Border/Size Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1881",
+      "path": "Color/Overlay/Hover",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1882",
+      "path": "Color/Overlay/Active",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1883",
+      "path": "Color/Overlay/Selected",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1884",
+      "path": "Button/Overlay Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2016:1885",
+      "path": "Button/Overlay Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2026:2178",
+      "path": "Button/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:241",
+      "path": "Brand/Color/Subtle Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:242",
+      "path": "Brand/Color/Subtle Light",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:289",
+      "path": "Input/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:293",
+      "path": "Input/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:294",
+      "path": "Input/Text/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:295",
+      "path": "Input/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:297",
+      "path": "Input/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:298",
+      "path": "Input/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:299",
+      "path": "Input/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:300",
+      "path": "Input/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:303",
+      "path": "Input/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:304",
+      "path": "Input/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:305",
+      "path": "Input/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:306",
+      "path": "Input/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:307",
+      "path": "Input/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:309",
+      "path": "Input/Border/Size Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:310",
+      "path": "Input/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:318",
+      "path": "Input/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:319",
+      "path": "Input/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:320",
+      "path": "Input/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:321",
+      "path": "Input/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:326",
+      "path": "Input/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:327",
+      "path": "Input/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:328",
+      "path": "Input/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:329",
+      "path": "Input/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:330",
+      "path": "Input/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:331",
+      "path": "Input/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:332",
+      "path": "Input/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:333",
+      "path": "Input/Overlay Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:334",
+      "path": "Input/Overlay Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2028:335",
+      "path": "Brand/Corner/Input",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:350",
+      "path": "Input/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:351",
+      "path": "Color/Neutral/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:352",
+      "path": "Color/Neutral/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:353",
+      "path": "Color/Neutral/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:354",
+      "path": "Color/Neutral/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:355",
+      "path": "Color/Neutral/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2039:356",
+      "path": "Color/Neutral/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2040:380",
+      "path": "Color/Focus",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2040:381",
+      "path": "Shadow/Focus",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2056:364",
+      "path": "Input/Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2056:368",
+      "path": "Button/Height Min",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:486",
+      "path": "Form/Group/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:487",
+      "path": "Form/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:488",
+      "path": "Form/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:531",
+      "path": "Form/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:588",
+      "path": "Form/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:589",
+      "path": "Form/Field/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:590",
+      "path": "Form/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:591",
+      "path": "Form/Container/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:593",
+      "path": "Form/Border/Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:595",
+      "path": "Form/Group/Title Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:603",
+      "path": "Form/Field/Helper Text Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:606",
+      "path": "Form/Field/Helper Text Color Invalid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:607",
+      "path": "Input/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2070:608",
+      "path": "Input/Border/Color Valid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2075:348",
+      "path": "Button/Group/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:553",
+      "path": "Checkbox/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:554",
+      "path": "Checkbox/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:555",
+      "path": "Checkbox/Text/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:556",
+      "path": "Checkbox/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:557",
+      "path": "Checkbox/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:558",
+      "path": "Checkbox/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:559",
+      "path": "Checkbox/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:560",
+      "path": "Checkbox/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:561",
+      "path": "Checkbox/Border/Color Valid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:562",
+      "path": "Checkbox/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:563",
+      "path": "Checkbox/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:564",
+      "path": "Checkbox/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2142:565",
+      "path": "Checkbox/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2228:321",
+      "path": "Input/Height Min",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2228:502",
+      "path": "Button/Width Min",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:69",
+      "path": "Color/Brand A/Red/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:70",
+      "path": "Color/Brand A/Red/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:71",
+      "path": "Color/Brand A/Red/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:72",
+      "path": "Color/Brand A/Red/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:73",
+      "path": "Color/Brand A/Red/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:74",
+      "path": "Color/Brand A/Red/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:75",
+      "path": "Color/Brand A/Red/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:395",
+      "path": "Color/Brand B/Blue/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:396",
+      "path": "Color/Brand B/Red/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:397",
+      "path": "Color/Brand B/Red/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:398",
+      "path": "Color/Brand B/Red/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:399",
+      "path": "Color/Brand B/Red/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:400",
+      "path": "Color/Brand B/Red/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:401",
+      "path": "Color/Brand B/Red/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:402",
+      "path": "Color/Brand B/Red/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:403",
+      "path": "Color/Brand B/Red/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:404",
+      "path": "Color/Brand B/Red/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:405",
+      "path": "Color/Brand B/Green/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:406",
+      "path": "Color/Brand B/Green/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:407",
+      "path": "Color/Brand B/Green/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:408",
+      "path": "Color/Brand B/Green/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:409",
+      "path": "Color/Brand B/Green/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:410",
+      "path": "Color/Brand B/Green/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:411",
+      "path": "Color/Brand B/Green/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:412",
+      "path": "Color/Brand B/Green/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:413",
+      "path": "Color/Brand B/Green/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:414",
+      "path": "Color/Brand A/Sand/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:415",
+      "path": "Color/Brand A/Sand/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:416",
+      "path": "Color/Brand A/Sand/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:417",
+      "path": "Color/Brand A/Sand/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:418",
+      "path": "Color/Brand A/Sand/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:419",
+      "path": "Color/Brand A/Sand/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:420",
+      "path": "Color/Brand A/Sand/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:421",
+      "path": "Color/Brand A/Sand/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:422",
+      "path": "Color/Brand A/Sand/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:423",
+      "path": "Color/Brand A/Green/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:424",
+      "path": "Color/Brand A/Green/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:425",
+      "path": "Color/Brand A/Green/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:426",
+      "path": "Color/Brand A/Green/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:427",
+      "path": "Color/Brand A/Green/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:428",
+      "path": "Color/Brand A/Green/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2258:595",
+      "path": "Color/Brand A/Green/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2281:719",
+      "path": "Checkbox/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2281:720",
+      "path": "Checkbox/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2281:721",
+      "path": "Checkbox/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2287:831",
+      "path": "Checkbox/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2287:832",
+      "path": "Checkbox/Border/Size Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2287:833",
+      "path": "Checkbox/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:2",
+      "path": "Radio/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:3",
+      "path": "Radio/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:4",
+      "path": "Radio/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:5",
+      "path": "Radio/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:6",
+      "path": "Radio/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:7",
+      "path": "Radio/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:8",
+      "path": "Radio/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:9",
+      "path": "Radio/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:10",
+      "path": "Radio/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:11",
+      "path": "Radio/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2327:12",
+      "path": "Radio/Border/Size Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1160",
+      "path": "Badge/Default/Text Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1163",
+      "path": "Badge/Default/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1164",
+      "path": "Badge/Brand/Text Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1170",
+      "path": "Badge/Brand/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1172",
+      "path": "Badge/Success/Text Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1175",
+      "path": "Badge/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1178",
+      "path": "Badge/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1181",
+      "path": "Badge/Border Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1183",
+      "path": "Badge/Success/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1186",
+      "path": "Badge/Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1189",
+      "path": "Badge/Default/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1193",
+      "path": "Badge/Brand/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1197",
+      "path": "Badge/Success/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1201",
+      "path": "Badge/Padding Inline MD",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1202",
+      "path": "Badge/Padding Inline Icon Only",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1203",
+      "path": "Badge/Padding Block MD",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1204",
+      "path": "Badge/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1211",
+      "path": "Badge/Height Min",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2385:1212",
+      "path": "Badge/Width Min",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:2",
+      "path": "Color/Brand C/Blue/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:3",
+      "path": "Color/Brand C/Blue/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:4",
+      "path": "Color/Brand C/Blue/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:5",
+      "path": "Color/Brand C/Blue/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:6",
+      "path": "Color/Brand C/Blue/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:7",
+      "path": "Color/Brand C/Blue/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:8",
+      "path": "Color/Brand C/Blue/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:9",
+      "path": "Color/Brand C/Blue/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:10",
+      "path": "Color/Brand C/Blue/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:11",
+      "path": "Color/Brand C/Coolblue/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:12",
+      "path": "Color/Brand C/Coolblue/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:13",
+      "path": "Color/Brand C/Coolblue/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:14",
+      "path": "Color/Brand C/Coolblue/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:15",
+      "path": "Color/Brand C/Coolblue/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:16",
+      "path": "Color/Brand C/Coolblue/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:17",
+      "path": "Color/Brand C/Coolblue/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:18",
+      "path": "Color/Brand C/Coolblue/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:19",
+      "path": "Color/Brand C/Coolblue/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:20",
+      "path": "Color/Brand C/Green/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:21",
+      "path": "Color/Brand C/Green/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:22",
+      "path": "Color/Brand C/Green/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:23",
+      "path": "Color/Brand C/Green/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:24",
+      "path": "Color/Brand C/Green/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:25",
+      "path": "Color/Brand C/Green/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:26",
+      "path": "Color/Brand C/Green/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:27",
+      "path": "Color/Brand C/Green/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:28",
+      "path": "Color/Brand C/Green/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2438:29",
+      "path": "Color/Brand C/Green/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:2",
+      "path": "Color/Brand C/Red/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:3",
+      "path": "Color/Brand C/Red/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:4",
+      "path": "Color/Brand C/Red/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:5",
+      "path": "Color/Brand C/Red/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:6",
+      "path": "Color/Brand C/Red/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:7",
+      "path": "Color/Brand C/Red/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:8",
+      "path": "Color/Brand C/Red/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:9",
+      "path": "Color/Brand C/Red/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:10",
+      "path": "Color/Brand C/Red/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:11",
+      "path": "Color/Brand C/Red/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:12",
+      "path": "Color/Brand C/Orange/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:13",
+      "path": "Color/Brand C/Orange/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:14",
+      "path": "Color/Brand C/Orange/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:15",
+      "path": "Color/Brand C/Orange/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:16",
+      "path": "Color/Brand C/Orange/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:17",
+      "path": "Color/Brand C/Orange/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:18",
+      "path": "Color/Brand C/Orange/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:19",
+      "path": "Color/Brand C/Orange/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:20",
+      "path": "Color/Brand C/Orange/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:21",
+      "path": "Color/Brand C/Orange/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:22",
+      "path": "Color/Brand C/Purple/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:23",
+      "path": "Color/Brand C/Purple/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:24",
+      "path": "Color/Brand C/Purple/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:25",
+      "path": "Color/Brand C/Purple/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:26",
+      "path": "Color/Brand C/Purple/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:27",
+      "path": "Color/Brand C/Purple/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:28",
+      "path": "Color/Brand C/Purple/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:29",
+      "path": "Color/Brand C/Purple/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:30",
+      "path": "Color/Brand C/Purple/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2439:31",
+      "path": "Color/Brand C/Purple/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2467:2",
+      "path": "Badge/Danger/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2467:3",
+      "path": "Badge/Danger/Text Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2458:614",
+      "path": "Badge/Danger/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:434",
+      "path": "Color/Neutral/Alpha Inverse/000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:435",
+      "path": "Color/Neutral/Alpha Inverse/100",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:436",
+      "path": "Color/Neutral/Alpha Inverse/200",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:437",
+      "path": "Color/Neutral/Alpha Inverse/300",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:438",
+      "path": "Color/Neutral/Alpha Inverse/400",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:439",
+      "path": "Color/Neutral/Alpha Inverse/500",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:440",
+      "path": "Color/Neutral/Alpha Inverse/600",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:441",
+      "path": "Color/Neutral/Alpha Inverse/700",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:442",
+      "path": "Color/Neutral/Alpha Inverse/800",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2494:443",
+      "path": "Color/Neutral/Alpha Inverse/900",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2578:4",
+      "path": "Radio/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2578:5",
+      "path": "Radio/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:2",
+      "path": "Badge/Font Size SM",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:3",
+      "path": "Badge/Font Size MD",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:4",
+      "path": "Badge/Line Height SM",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:5",
+      "path": "Badge/Line Height MD",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:6",
+      "path": "Badge/Padding Inline SM",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2579:7",
+      "path": "Badge/Padding Block SM",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:2",
+      "path": "Switch/Track/Background/Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:3",
+      "path": "Switch/Track/Background/Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:4",
+      "path": "Switch/Track/Background/Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:5",
+      "path": "Switch/Track/Background/Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:6",
+      "path": "Switch/Track/Border Color/Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:7",
+      "path": "Switch/Track/Border Color/Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:8",
+      "path": "Switch/Track/Border Color/Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:9",
+      "path": "Switch/Track/Border Color/Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:10",
+      "path": "Switch/Thumb/Background/Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:11",
+      "path": "Switch/Thumb/Background/Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:12",
+      "path": "Switch/Thumb/Background/Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:13",
+      "path": "Switch/Thumb/Background/Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:14",
+      "path": "Switch/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2596:15",
+      "path": "Switch/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2616:2",
+      "path": "Color/Text/On/Brand",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2616:3",
+      "path": "Color/Text/On/Danger",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2616:4",
+      "path": "Color/Text/On/Success",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2616:5",
+      "path": "Color/Text/On/Subtle",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2616:6",
+      "path": "Color/Text/On/Active",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2624:2",
+      "path": "Color/Text/On/Disabled",
+      "file": "Appearance (Modes).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:31",
+      "path": "Select/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:32",
+      "path": "Select/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:33",
+      "path": "Select/Text/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:34",
+      "path": "Select/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:35",
+      "path": "Select/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:36",
+      "path": "Select/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:37",
+      "path": "Select/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:38",
+      "path": "Select/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:39",
+      "path": "Select/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:40",
+      "path": "Select/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:41",
+      "path": "Select/Border/Color Invalid",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:42",
+      "path": "Select/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:43",
+      "path": "Select/Border/Size Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:44",
+      "path": "Select/Border/Size Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:45",
+      "path": "Select/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:46",
+      "path": "Select/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:47",
+      "path": "Select/Container/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:48",
+      "path": "Select/Container/Background Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:49",
+      "path": "Select/Container/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2773:50",
+      "path": "Select/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:31",
+      "path": "Select/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:32",
+      "path": "Select/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:33",
+      "path": "Select/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:34",
+      "path": "Select/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:35",
+      "path": "Select/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:36",
+      "path": "Select/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:37",
+      "path": "Select/Overlay Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:38",
+      "path": "Select/Overlay Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:39",
+      "path": "Select/Icon/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:40",
+      "path": "Select/Icon/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2774:41",
+      "path": "Select/Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:31",
+      "path": "Link/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:32",
+      "path": "Link/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:33",
+      "path": "Link/Text/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:34",
+      "path": "Link/Text/Color Visited",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:35",
+      "path": "Link/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:36",
+      "path": "Link/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:37",
+      "path": "Link/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:38",
+      "path": "Link/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:39",
+      "path": "Link/Text/Decoration Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:40",
+      "path": "Link/Text/Decoration Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:41",
+      "path": "Link/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2777:42",
+      "path": "Link/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:31",
+      "path": "Textarea/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:32",
+      "path": "Textarea/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:33",
+      "path": "Textarea/Text/Color Placeholder",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:34",
+      "path": "Textarea/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:35",
+      "path": "Textarea/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:36",
+      "path": "Textarea/Border/Color Focus",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:37",
+      "path": "Textarea/Border/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:38",
+      "path": "Textarea/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:39",
+      "path": "Textarea/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:40",
+      "path": "Textarea/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:41",
+      "path": "Textarea/Container/Background Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:42",
+      "path": "Textarea/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:43",
+      "path": "Textarea/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:44",
+      "path": "Textarea/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:45",
+      "path": "Textarea/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2788:46",
+      "path": "Textarea/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:31",
+      "path": "Accordion/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:32",
+      "path": "Accordion/Border/Size Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:33",
+      "path": "Accordion/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:34",
+      "path": "Accordion/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:35",
+      "path": "Accordion/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:36",
+      "path": "Accordion/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:37",
+      "path": "Accordion/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:38",
+      "path": "Accordion/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:39",
+      "path": "Tabs/Border/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:40",
+      "path": "Tabs/Border/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:41",
+      "path": "Tabs/Border/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:42",
+      "path": "Tabs/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:43",
+      "path": "Tabs/Text/Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:44",
+      "path": "Tabs/Text/Color Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:45",
+      "path": "Tabs/Text/Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:46",
+      "path": "Tabs/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:47",
+      "path": "Tabs/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:48",
+      "path": "Tooltip/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:49",
+      "path": "Tooltip/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:50",
+      "path": "Tooltip/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:51",
+      "path": "Tooltip/Padding Inline",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:52",
+      "path": "Tooltip/Padding Block",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:53",
+      "path": "Avatar/Container/Background Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:54",
+      "path": "Avatar/Text/Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2789:55",
+      "path": "Avatar/Border/Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2983:462",
+      "path": "Size/Spacing/050",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2985:3048",
+      "path": "Size/Radius/1000",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5526",
+      "path": "Font Size/lg",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5527",
+      "path": "Font Size/xl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5528",
+      "path": "Font Size/xxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5529",
+      "path": "Font Size/xxxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5530",
+      "path": "Line Height/lg",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5531",
+      "path": "Line Height/xl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5532",
+      "path": "Line Height/xxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:2986:5533",
+      "path": "Line Height/xxxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:2",
+      "path": "Brand/Color/Text/Default",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:3",
+      "path": "Brand/Color/Text/Default Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:4",
+      "path": "Brand/Color/Text/Strong",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:5",
+      "path": "Brand/Color/Text/Strong Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:6",
+      "path": "Brand/Color/Text/Disabled",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:7",
+      "path": "Brand/Color/Text/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:8",
+      "path": "Brand/Color/Text/On Disabled",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:9",
+      "path": "Brand/Color/Text/On Disabled Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:10",
+      "path": "Brand/Color/Fill/Surface",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:11",
+      "path": "Brand/Color/Fill/Surface Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:12",
+      "path": "Brand/Color/Fill/Disabled",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:13",
+      "path": "Brand/Color/Fill/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:14",
+      "path": "Brand/Color/Border/Default",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:15",
+      "path": "Brand/Color/Border/Default Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:16",
+      "path": "Brand/Color/Border/Strong",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:17",
+      "path": "Brand/Color/Border/Strong Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:18",
+      "path": "Brand/Color/Border/Disabled",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3011:19",
+      "path": "Brand/Color/Border/Disabled Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:2",
+      "path": "Typography/Heading/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:3",
+      "path": "Typography/Code",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:4",
+      "path": "Typography/Heading/Font Size/md",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:5",
+      "path": "Typography/Heading/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:6",
+      "path": "Typography/Heading/Line Height/md",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:7",
+      "path": "Typography/Label/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:8",
+      "path": "Typography/Label/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:9",
+      "path": "Typography/Label/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:10",
+      "path": "Typography/Label/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:11",
+      "path": "Typography/Body/Font Family",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:12",
+      "path": "Typography/Body/Font Weight",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:13",
+      "path": "Typography/Body/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:14",
+      "path": "Typography/Body/Line Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:15",
+      "path": "Typography/Heading/Font Size/xs",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:16",
+      "path": "Typography/Heading/Font Size/sm",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:17",
+      "path": "Typography/Heading/Font Size/lg",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:18",
+      "path": "Typography/Heading/Font Size/xl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:19",
+      "path": "Typography/Heading/Font Size/xxl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:20",
+      "path": "Typography/Heading/Font Size/xxxl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:21",
+      "path": "Typography/Heading/Line Height/xs",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:22",
+      "path": "Typography/Heading/Line Height/sm",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:23",
+      "path": "Typography/Heading/Line Height/lg",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:24",
+      "path": "Typography/Heading/Line Height/xl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:25",
+      "path": "Typography/Heading/Line Height/xxl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:26",
+      "path": "Typography/Heading/Line Height/xxxl",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3014:30",
+      "path": "Typography/Label/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:2",
+      "path": "Brand/Color/Text/On Brand",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:3",
+      "path": "Brand/Color/Text/On Brand Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:4",
+      "path": "Brand/Color/Text/On Danger",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:5",
+      "path": "Brand/Color/Text/On Danger Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:6",
+      "path": "Brand/Color/Text/On Success",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:7",
+      "path": "Brand/Color/Text/On Success Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:8",
+      "path": "Brand/Color/Text/On Active",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3018:9",
+      "path": "Brand/Color/Text/On Active Dark",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3020:2",
+      "path": "Size/Target/Default",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3020:3",
+      "path": "Size/Target/Compact",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3020:4",
+      "path": "Size/Target/Large",
+      "file": "Core (Primitives).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:2",
+      "path": "Brand/Size/Spacing/Tight",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:3",
+      "path": "Brand/Size/Spacing/Component",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:4",
+      "path": "Brand/Size/Spacing/Comfortable",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:5",
+      "path": "Brand/Size/Spacing/Spacious",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:6",
+      "path": "Brand/Size/Border/None",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:7",
+      "path": "Brand/Size/Border/Default",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3022:8",
+      "path": "Brand/Size/Border/Thick",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:2",
+      "path": "Calendar/Container/Padding",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:3",
+      "path": "Calendar/Container/Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:4",
+      "path": "Calendar/Container/Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:5",
+      "path": "Calendar/Container/Border Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:6",
+      "path": "Calendar/Container/Background",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:7",
+      "path": "Calendar/Container/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:8",
+      "path": "Calendar/Cell/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:9",
+      "path": "Calendar/Cell/Min Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:10",
+      "path": "Calendar/Cell/Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:11",
+      "path": "Calendar/Cell/Text Color Default",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:12",
+      "path": "Calendar/Cell/Text Color Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:13",
+      "path": "Calendar/Cell/Text Color Disabled",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:14",
+      "path": "Calendar/Cell/Background Active",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:15",
+      "path": "Calendar/Cell/Background Hover",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:16",
+      "path": "Calendar/Weekday/Text Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:17",
+      "path": "Calendar/Weekday/Font Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:18",
+      "path": "Calendar/Header/Gap",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3024:19",
+      "path": "Calendar/Weekday/Height",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3028:2",
+      "path": "Calendar/Cell/Range Border Color",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3028:3",
+      "path": "Calendar/Cell/Range Border Size",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3028:4",
+      "path": "Calendar/Cell/Range Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3032:2244",
+      "path": "Brand/Corner/Container",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3038:2847",
+      "path": "Brand/Corner/Tooltip",
+      "file": "Semantics (Brands).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3083:2",
+      "path": "Button/Group/Border Radius",
+      "file": "Patterns (UI).tokens.json",
+      "new": false
+    },
+    {
+      "id": "VariableID:3173:3",
+      "path": "Projection/Color/Transparent",
+      "file": "Appearance (Modes).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:4",
+      "path": "Projection/Line/Height/md",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:5",
+      "path": "Projection/Font/Weight/600",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:6",
+      "path": "Projection/Font/Size/md",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:7",
+      "path": "Projection/Font/Weight/400",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:8",
+      "path": "Projection/Size/Target/Default",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:9",
+      "path": "Projection/Size/Radius/full",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:10",
+      "path": "Projection/Color/Neutral/900",
+      "file": "Appearance (Modes).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:11",
+      "path": "Projection/Font/Family/Mono",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:12",
+      "path": "Projection/Font/Weight/700",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:13",
+      "path": "Projection/Font/Size/xs",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:14",
+      "path": "Projection/Font/Size/sm",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:15",
+      "path": "Projection/Font/Size/lg",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:16",
+      "path": "Projection/Font/Size/xl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:17",
+      "path": "Projection/Font/Size/xxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:18",
+      "path": "Projection/Font/Size/xxxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:19",
+      "path": "Projection/Line/Height/xs",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:20",
+      "path": "Projection/Line/Height/sm",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:21",
+      "path": "Projection/Line/Height/lg",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:22",
+      "path": "Projection/Line/Height/xl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:23",
+      "path": "Projection/Line/Height/xxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:24",
+      "path": "Projection/Line/Height/xxxl",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:25",
+      "path": "Projection/Size/Spacing/200",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:26",
+      "path": "Projection/Size/Radius/900",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:27",
+      "path": "Projection/Size/Spacing/050",
+      "file": "Typography (Fluid).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:28",
+      "path": "Semantics/Color/Content/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:29",
+      "path": "Semantics/Color/Content/Inverse",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:30",
+      "path": "Semantics/Color/Disabled/Content/Disabled",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:31",
+      "path": "Semantics/Color/Surface/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:32",
+      "path": "Semantics/Color/Disabled/Surface/Disabled",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:33",
+      "path": "Semantics/Color/Fill/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:34",
+      "path": "Semantics/Color/Action/Surface/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:35",
+      "path": "Semantics/Color/Subtle/Surface/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:36",
+      "path": "Semantics/Color/Selection/Surface/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:37",
+      "path": "Semantics/Color/Action/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:38",
+      "path": "Semantics/Color/Foreground/Subtle",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:39",
+      "path": "Semantics/Color/Border/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:40",
+      "path": "Semantics/Color/Border/Subtle/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:41",
+      "path": "Semantics/Color/Border/Strong/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:42",
+      "path": "Semantics/Color/Border/Brand/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:43",
+      "path": "Semantics/Color/Border/Disabled",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:44",
+      "path": "Semantics/Color/Foreground/Strong",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:45",
+      "path": "Semantics/Color/Border/Danger/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:46",
+      "path": "Semantics/Color/Danger/Surface/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:47",
+      "path": "Semantics/Color/Danger/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:48",
+      "path": "Semantics/Color/Overlay/Backdrop",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:49",
+      "path": "Semantics/Color/Success/Foreground/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:50",
+      "path": "Semantics/Color/Success/Surface/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:51",
+      "path": "Semantics/Color/Overlay/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:52",
+      "path": "Semantics/Color/Overlay/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:53",
+      "path": "Semantics/Color/Overlay/Selected",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:54",
+      "path": "Semantics/Color/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:55",
+      "path": "Semantics/Color/Action/Content/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:56",
+      "path": "Semantics/Color/Danger/Content/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:57",
+      "path": "Semantics/Color/Success/Content/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:58",
+      "path": "Semantics/Color/Subtle/Content/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:59",
+      "path": "Semantics/Color/Selection/Content/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:60",
+      "path": "Semantics/Color/Disabled/On/Content/Disabled",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:61",
+      "path": "Semantics/Size/Border/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:62",
+      "path": "Semantics/Color/Palette/Transparent",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:63",
+      "path": "Semantics/Font/Lead",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:64",
+      "path": "Semantics/Typography/Label/Line/Height",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:65",
+      "path": "Semantics/Shape/Corner/Control",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:66",
+      "path": "Semantics/Typography/Label/Font/Weight",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:67",
+      "path": "Semantics/Typography/Label/Font/Size",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:68",
+      "path": "Semantics/Size/Spacing/Spacious",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:69",
+      "path": "Semantics/Size/Spacing/Component",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:70",
+      "path": "Semantics/Color/Action/Surface/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:71",
+      "path": "Semantics/Color/Action/Surface/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:72",
+      "path": "Semantics/Color/Border/Brand/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:73",
+      "path": "Semantics/Color/Action/Content/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:74",
+      "path": "Semantics/Color/Action/Content/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:75",
+      "path": "Semantics/Color/Border/Brand/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:76",
+      "path": "Semantics/Color/Border/Brand/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:77",
+      "path": "Semantics/Color/Action/Surface/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:78",
+      "path": "Semantics/Color/Surface/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:79",
+      "path": "Semantics/Color/Surface/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:80",
+      "path": "Semantics/Color/Surface/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:81",
+      "path": "Semantics/Shape/Corner/Dialog",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:82",
+      "path": "Semantics/Color/Action/Foreground/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:83",
+      "path": "Semantics/Color/Action/Foreground/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:84",
+      "path": "Semantics/Size/Border/Thick",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:85",
+      "path": "Semantics/Color/Content/Active",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:86",
+      "path": "Semantics/Font/Base",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:87",
+      "path": "Semantics/Typography/Body/Font/Weight",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:88",
+      "path": "Semantics/Typography/Body/Line/Height",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:89",
+      "path": "Semantics/Shape/Corner/Field",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:90",
+      "path": "Semantics/Scale/Size/Target/Default",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:91",
+      "path": "Semantics/Size/Border/None",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:92",
+      "path": "Semantics/Scale/Size/Radius/full",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:93",
+      "path": "Semantics/Size/Spacing/Comfortable",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:94",
+      "path": "Semantics/Size/Spacing/Tight",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:95",
+      "path": "Semantics/Color/Border/Strong/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:96",
+      "path": "Semantics/Typography/Body/Font/Size",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:97",
+      "path": "Semantics/Shape/Corner/Container",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:98",
+      "path": "Semantics/Color/Border/Subtle/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:99",
+      "path": "Semantics/Color/Palette/Neutral/900",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:100",
+      "path": "Semantics/Shape/Corner/Floating",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:101",
+      "path": "Semantics/Scale/Font/Family/Mono",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:102",
+      "path": "Semantics/Scale/Font/Size/md",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:103",
+      "path": "Semantics/Scale/Font/Weight/700",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:104",
+      "path": "Semantics/Scale/Line/Height/md",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:105",
+      "path": "Semantics/Scale/Font/Weight/600",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:106",
+      "path": "Semantics/Scale/Font/Weight/400",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:107",
+      "path": "Semantics/Scale/Font/Size/xs",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:108",
+      "path": "Semantics/Scale/Font/Size/sm",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:109",
+      "path": "Semantics/Scale/Font/Size/lg",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:110",
+      "path": "Semantics/Scale/Font/Size/xl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:111",
+      "path": "Semantics/Scale/Font/Size/xxl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:112",
+      "path": "Semantics/Scale/Font/Size/xxxl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:113",
+      "path": "Semantics/Scale/Line/Height/xs",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:114",
+      "path": "Semantics/Scale/Line/Height/sm",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:115",
+      "path": "Semantics/Scale/Line/Height/lg",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:116",
+      "path": "Semantics/Scale/Line/Height/xl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:117",
+      "path": "Semantics/Scale/Line/Height/xxl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:118",
+      "path": "Semantics/Scale/Line/Height/xxxl",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:119",
+      "path": "Semantics/Scale/Size/Spacing/200",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:120",
+      "path": "Semantics/Scale/Size/Radius/900",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:121",
+      "path": "Semantics/Scale/Size/Spacing/050",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:122",
+      "path": "Semantics/Color/Action/Content/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3173:123",
+      "path": "Semantics/Color/Action/Foreground/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3174:2",
+      "path": "Semantics/Shape/Corner/Panel",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3174:3",
+      "path": "Semantics/Color/Content/Hover",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    },
+    {
+      "id": "VariableID:3174:4",
+      "path": "Semantics/Color/Content/Focus",
+      "file": "Semantics (Roles).tokens.json",
+      "new": true
+    }
+  ],
+  "preservedCodeOnly": [
+    {
+      "id": null,
+      "path": "Table/Header/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Header/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Header/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background Hover",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Background Selected",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Border Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Row/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Compact",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Block Spacious",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Inline Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Padding Inline Compact",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Table/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:1",
+      "path": "Font Size/lg",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:2",
+      "path": "Font Size/xl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:3",
+      "path": "Font Size/xxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:4",
+      "path": "Font Size/xxxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:5",
+      "path": "Line Height/lg",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:6",
+      "path": "Line Height/xl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:7",
+      "path": "Line Height/xxl",
+      "file": "Typography (Liquid).tokens.json"
+    },
+    {
+      "id": "VariableID:5000:8",
+      "path": "Line Height/xxxl",
+      "file": "Typography (Liquid).tokens.json"
+    }
+  ]
+}

@@ -28,6 +28,7 @@ export class Calendar {
    */
   constructor(root, options = {}) {
     this.root = root;
+    this.root.setAttribute("data-enhanced", "");
     this.locale = options.locale || "en-GB";
     this.min = options.min || null;
     this.max = options.max || null;
@@ -42,9 +43,12 @@ export class Calendar {
 
     // Cache DOM references
     this.titleEl = root.querySelector(CALENDAR_TITLE_SELECTOR);
+    this.monthSelect = root.querySelector('select[name="month"]');
+    this.yearSelect = root.querySelector('select[name="year"]');
     this.tableBody = root.querySelector(`${CALENDAR_TABLE_SELECTOR} tbody`);
     this.prevBtn = root.querySelector("[aria-label='Previous month']");
     this.nextBtn = root.querySelector("[aria-label='Next month']");
+    this.disabled = options.disabled === true || Boolean(this.prevBtn?.disabled && this.nextBtn?.disabled);
 
     this._bindEvents();
     this._render();
@@ -57,11 +61,20 @@ export class Calendar {
     this.nextBtn?.addEventListener("click", () => this._navigate(1));
     this.root.addEventListener("click", (e) => this._handleCellClick(e));
     this.root.addEventListener("keydown", (e) => this._handleKeyDown(e));
+    for (const select of [this.monthSelect, this.yearSelect]) {
+      select?.addEventListener("change", () => {
+        const year = Number(this.yearSelect?.value ?? this.currentMonth.getFullYear());
+        const month = Number(this.monthSelect?.value ?? this.currentMonth.getMonth());
+        this.currentMonth = new Date(year, month, 1);
+        this._render();
+      });
+    }
   }
 
   // ─── Navigation ─────────────────────────────────────────────────
 
   _navigate(delta) {
+    if (this.disabled) return;
     const year = this.currentMonth.getFullYear();
     const month = this.currentMonth.getMonth() + delta;
     this.currentMonth = new Date(year, month, 1);
@@ -143,6 +156,8 @@ export class Calendar {
     e.preventDefault();
 
     if (target >= 0 && target < cells.length && !cells[target].disabled) {
+      cells.forEach(cell => { cell.tabIndex = -1; });
+      cells[target].tabIndex = 0;
       cells[target].focus();
     }
   }
@@ -150,6 +165,10 @@ export class Calendar {
   // ─── Rendering ──────────────────────────────────────────────────
 
   _render() {
+    const active = this.root.ownerDocument.activeElement;
+    const focused = this.root.contains(active) && active.matches?.(CALENDAR_CELL_SELECTOR)
+      ? { iso: active.dataset.date, day: Number(active.textContent) }
+      : null;
     const year = this.currentMonth.getFullYear();
     const month = this.currentMonth.getMonth();
 
@@ -158,7 +177,15 @@ export class Calendar {
       month: "long",
       year: "numeric",
     });
-    this.titleEl.textContent = formatter.format(this.currentMonth);
+    if (this.titleEl) this.titleEl.textContent = formatter.format(this.currentMonth);
+    this.root.querySelector(CALENDAR_TABLE_SELECTOR)?.setAttribute("aria-label", formatter.format(this.currentMonth));
+    if (this.monthSelect) this.monthSelect.value = String(month);
+    if (this.yearSelect) {
+      if (![...this.yearSelect.options].some(option => option.value === String(year))) {
+        this.yearSelect.add(new Option(String(year), String(year)));
+      }
+      this.yearSelect.value = String(year);
+    }
 
     // Calculate grid
     const firstDay = new Date(year, month, 1);
@@ -225,18 +252,34 @@ export class Calendar {
           aria-label="${dateFormatter.format(cell.date)}"
           tabindex="${tabindex}"
           ${isDisabled ? "disabled" : ""}
-          data-date="${cell.date.toISOString().slice(0, 10)}"
+          data-date="${cell.date.getFullYear()}-${String(cell.date.getMonth() + 1).padStart(2, "0")}-${String(cell.date.getDate()).padStart(2, "0")}"
         >${cell.day}</button></td>`;
       }
       html += "</tr>";
     }
 
     this.tableBody.innerHTML = html;
+    const enabled = [...this.tableBody.querySelectorAll(CALENDAR_CELL_SELECTOR)].filter(cell => !cell.disabled);
+    const firstCurrent = enabled.find(cell => !cell.classList.contains("is-outside-month"));
+    if (!enabled.some(cell => cell.tabIndex === 0) && firstCurrent) firstCurrent.tabIndex = 0;
+    if (focused) {
+      const replacement = enabled.find(cell => cell.dataset.date === focused.iso)
+        || enabled.find(cell => !cell.classList.contains("is-outside-month") && Number(cell.textContent) === focused.day)
+        || firstCurrent;
+      if (replacement) {
+        enabled.forEach(cell => { cell.tabIndex = -1; });
+        replacement.tabIndex = 0;
+        replacement.focus();
+      }
+    }
   }
 
   // ─── Helpers ────────────────────────────────────────────────────
 
   _parseInitialMonth() {
+    const grid = this.root.querySelector(CALENDAR_TABLE_SELECTOR);
+    const month = grid?.getAttribute("aria-label")?.match(/^(\d{4})-(\d{2})$/);
+    if (month) return new Date(Number(month[1]), Number(month[2]) - 1, 1);
     const titleEl = this.root.querySelector(CALENDAR_TITLE_SELECTOR);
     if (titleEl) {
       const parsed = new Date(titleEl.textContent);
@@ -247,7 +290,8 @@ export class Calendar {
 
   _dateFromCell(btn) {
     const iso = btn.dataset.date;
-    if (iso) return new Date(iso);
+    const parts = iso?.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (parts) return new Date(Number(parts[1]), Number(parts[2]) - 1, Number(parts[3]));
     return null;
   }
 
@@ -257,6 +301,7 @@ export class Calendar {
   }
 
   _isDisabled(date) {
+    if (this.disabled) return true;
     if (this.min && date < this.min) return true;
     if (this.max && date > this.max) return true;
     return false;

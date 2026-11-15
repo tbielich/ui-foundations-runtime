@@ -9,6 +9,7 @@ playgroundUrl: /patterns/tabs-playground/
 playgroundLabel: Open Tabs Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import scaleSwitch %}
 
 <div class="docs-hero">
   <div class="docs-hero-preview">
@@ -22,16 +23,19 @@ playgroundLabel: Open Tabs Playground
         <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
         <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
       </span>
+      {{ scaleSwitch() }}
     </div>
     <div class="docs-hero-preview-stage" style="inline-size: 100%;">
-      {% call uif.tabList(ariaLabel="Example tabs") %}
-        {{ uif.tab(label="Overview", selected=true, controls="panel-1") }}
-        {{ uif.tab(label="Details", controls="panel-2") }}
-        {{ uif.tab(label="Settings", controls="panel-3") }}
-      {% endcall %}
-      {% call uif.tabPanel(id="panel-1") %}
-        <p>Overview content goes here.</p>
-      {% endcall %}
+      <div class="uif-tabs" style="inline-size: 100%; min-inline-size: 0;">
+        <uif-tab-list aria-label="Example tabs">
+          <uif-tab label="Overview" selected controls="panel-1"></uif-tab>
+          <uif-tab label="Details" controls="panel-2"></uif-tab>
+          <uif-tab label="Settings" controls="panel-3"></uif-tab>
+        </uif-tab-list>
+        <uif-tab-panel id="panel-1">Overview content goes here.</uif-tab-panel>
+        <uif-tab-panel id="panel-2" hidden>Details content goes here.</uif-tab-panel>
+        <uif-tab-panel id="panel-3" hidden>Settings content goes here.</uif-tab-panel>
+      </div>
     </div>
   </div>
   <div class="docs-hero-meta">
@@ -112,11 +116,37 @@ playgroundLabel: Open Tabs Playground
   </tbody>
 </table>
 
+### Container size
+
+Use S/M/L on the containing element: `data-scale="small|medium|large"`.
+Tabs inherit this context for font size, line height and padding; border widths
+stay unchanged. The nearest recognized container replaces the outer context,
+while an unknown value preserves inheritance. Without a container, medium is
+used. Tabs have no separate `size` attribute or Compact/Default variant.
+
+```html
+<div data-scale="small">
+  <uif-tab-list aria-label="Sections">
+    <uif-tab label="Overview" selected controls="overview"></uif-tab>
+  </uif-tab-list>
+  <uif-tab-panel id="overview">Overview content</uif-tab-panel>
+</div>
+```
+
+The same container context applies to static macro output. Macros emit semantic
+markup; use Custom Elements for the keyboard activation and panel behavior shown
+here. See the repository guide `docs/container-scale.md` for the Runtime contract.
+
 ### Overflow
 
 Horizontal tab lists use native inline scrolling when labels exceed the available width. Tab triggers do not shrink, so labels stay readable and focused tabs can be brought into view by the browser. Vertical tab lists do not use horizontal scrolling.
 
 Panel switching is state-driven through the selected tab and the controlled panel's `hidden` state; panel scroll position is not an alternate activation model.
+
+The Custom Elements retain their existing tab buttons and panel content when
+attributes change. Switching panels hides content without recreating it, so
+unsaved form values and event listeners remain intact. Changing a tab list's
+`orientation` or `aria-label` updates its existing list and preserves selection.
 
 <h2 id="keyboard-interactions">Keyboard interactions</h2>
 
@@ -144,6 +174,14 @@ Panel switching is state-driven through the selected tab and the controlled pane
 
 <div class="docs-checklist">
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>All brand/mode contexts</strong><span>Works across light and dark modes.</span></div></div>
-  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Keyboard interactions</strong><span>Full ARIA tablist pattern.</span></div></div>
+  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Keyboard interactions</strong><span>Chromium keyboard and panel-state checks; screenreader not tested.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Design tokens</strong><span>Component-scoped tokens (<code>--uif-tabs-*</code>).</span></div></div>
 </div>
+
+The selected tab uses the Solid Button's default Brand color in light mode. In dark mode, text and indicator retain the readable active Brand foreground and contour. Existing Tabs tokens now resolve through shared Navigation roles and Appearance Scheme in both Figma and Runtime; no Tabs-specific Dark CSS override is needed. The six Brand/Scheme color contexts were read back and verified. Native Figma container S/M/L projection and library publication remain separate acceptance gates.
+
+<script type="module" src="/vendor/ui-foundations/elements/ui-tabs.js"></script>
+
+Code Connect source: `schemas/web-tab.figma.ts`. Live source readback confirmed
+Tab component set `2535:286`, Selected false/true and Label. The existing mapping
+parses successfully; this check does not claim that it is published in Figma.

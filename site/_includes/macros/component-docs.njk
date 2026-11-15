@@ -1,0 +1,33 @@
+{% macro scaleSwitch() -%}
+<span class="docs-hero-switch" role="group" aria-label="Preview scale" data-hero-group="scale">
+  <span class="docs-hero-switch-label" aria-hidden="true">Scale</span>
+  <button type="button" data-hero-scale="small" aria-label="Small scale" aria-pressed="false">S</button>
+  <button type="button" data-hero-scale="medium" aria-label="Medium scale" aria-pressed="true">M</button>
+  <button type="button" data-hero-scale="large" aria-label="Large scale" aria-pressed="false">L</button>
+</span>
+{%- endmacro %}
+
+{% macro preview(scale=false) %}
+<div class="docs-hero-preview docs-component-preview">
+  <div class="docs-hero-preview-controls">
+    <span class="docs-hero-switch" role="group" aria-label="Preview brand">
+      <button type="button" data-hero-brand="a" aria-pressed="true">Brand A</button>
+      <button type="button" data-hero-brand="b" aria-pressed="false">Brand B</button>
+      <button type="button" data-hero-brand="c" aria-pressed="false">Brand C</button>
+    </span>
+    <span class="docs-hero-switch" role="group" aria-label="Preview scheme">
+      <button type="button" data-hero-mode="light" aria-pressed="true">Light</button>
+      <button type="button" data-hero-mode="dark" aria-pressed="false">Dark</button>
+    </span>
+    {% if scale %}{{ scaleSwitch() }}{% endif %}
+  </div>
+  <div class="docs-hero-preview-stage">{{ caller() | safe }}</div>
+</div>
+{% endmacro %}
+
+{% macro links(url, label, figmaUrl) %}
+<div class="docs-hero-meta">
+  <a class="docs-page-link docs-page-link--playground" href="{{ url }}">{{ label or "Open Playground" }}</a>
+  {% if figmaUrl %}<a class="docs-page-link" href="{{ figmaUrl }}" target="_blank" rel="noopener noreferrer">Open in Figma</a>{% endif %}
+</div>
+{% endmacro %}

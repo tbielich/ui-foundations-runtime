@@ -1,0 +1,35 @@
+{
+  "mode": "IMPLEMENT",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "fix/pattern-font-token-names",
+  "baseSHA": "3fa877f8dffb47be66322c8d102a0d533d45d982",
+  "authorization": "Owner requested --uif-button-font-family and equivalent stable names for every affected Pattern",
+  "scope": [
+    "Seven code-only Pattern typography slots: Button, FieldLabel, Badge, IllustratedMessage",
+    "Preserve former names as deprecated explicit override inputs",
+    "Reuse existing exported Pattern names where available; retain semantic-ID bindings",
+    "Document migration and verify local/legacy overrides and nested Brand contexts"
+  ],
+  "preserve": [
+    "Family/weight decisions A/B/C",
+    "Font ownership and Base",
+    "Figma exports and Vault governance"
+  ],
+  "checks": [
+    "npm run ci:check",
+    "Local canonical and legacy override browser checks",
+    "Existing A/B/C Light/Dark and neutral nesting checks"
+  ],
+  "necessaryRepair": "Preserve declared layer(tokens) while bundling unwrapped token exports; otherwise existing unlayered Pattern declarations override the canonical context values.",
+  "validation": {
+    "command": "npm run ci:check",
+    "node": "22.23.2",
+    "exitCode": 0,
+    "unit": 244,
+    "chromium": 60,
+    "fontBinaries": 0,
+    "automaticFontLoaders": 0
+  },
+  "state": "Implementation and independent review PASS; owner-authorized publication in progress",
+  "publicationAuthorization": "Explicit owner instruction merge on2026-11-11: commit, push, PR and merge of this reviewed scope; no release or protection change"
+}

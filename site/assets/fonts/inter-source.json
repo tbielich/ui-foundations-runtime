@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "scope": "Documentation workspace font only; does not replace UIF Runtime font tokens or component typography",
+  "cssFamily": "UIF Studio Inter",
+  "catalogueRepository": "https://github.com/google/fonts",
+  "catalogueRevision": "86aced91de05cd4f96a06838124cca45be337b2b",
+  "conversion": {
+    "python": "3.14.5",
+    "fontTools": "4.68.0",
+    "brotli": "1.2.1",
+    "method": "TTFont(BytesIO(source), recalcTimestamp=False); font.flavor=\"woff2\"; font.save(output)",
+    "subset": "None; complete source glyph set retained",
+    "modificationNotice": "Format conversion TTF to WOFF2 only; no outline, naming, metrics, axis or glyph subset edits intended."
+  },
+  "font": {
+    "family": "Inter",
+    "style": "normal",
+    "cssWeightRange": "100 900",
+    "file": "inter-variable.woff2",
+    "bytes": 350460,
+    "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a",
+    "source": {
+      "url": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "bytes": 876576,
+      "sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031"
+    },
+    "metadataUrl": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/ofl/inter/METADATA.pb",
+    "names": {
+      "1": [
+        "Inter"
+      ],
+      "2": [
+        "Regular"
+      ],
+      "3": [
+        "4.001;git-66647c0bb;RSMS;Inter-Regular-Regular"
+      ],
+      "4": [
+        "Inter Regular"
+      ],
+      "5": [
+        "Version 4.001;git-66647c0bb"
+      ],
+      "6": [
+        "Inter-Regular"
+      ],
+      "13": [
+        "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org"
+      ],
+      "14": [
+        "https://openfontlicense.org"
+      ],
+      "16": [],
+      "17": []
+    },
+    "axes": [
+      {
+        "tag": "opsz",
+        "min": 14.0,
+        "default": 14.0,
+        "max": 32.0
+      },
+      {
+        "tag": "wght",
+        "min": 100.0,
+        "default": 400.0,
+        "max": 900.0
+      }
+    ],
+    "license": {
+      "url": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/ofl/inter/OFL.txt",
+      "file": "inter-LICENSE.txt",
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "type": "OFL-1.1"
+    },
+    "glyphCheck": {
+      "required": "\u00c4\u00d6\u00dc\u00e4\u00f6\u00fc\u00df\u1e9e\u20ac Il1O0 \u2013\u2014",
+      "missing": [],
+      "requiredPresent": true,
+      "unicodeCodepoints": 2849,
+      "cmapPreserved": true
+    },
+    "binaryReadable": true
+  }
+}

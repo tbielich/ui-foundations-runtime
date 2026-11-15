@@ -36,15 +36,22 @@ Read each CSS file from `dist/tokens/css/`. Extract variable names and values.
 Token names use `/` separators in Figma (e.g. `color/neutral/100`), converted from
 CSS `--color-neutral-100`.
 
-Collections and modes by layer:
+Collections and modes by responsibility:
 
-| Layer | Figma Collection | Modes |
+| Responsibility | Figma Collection | Modes |
 |---|---|---|
 | Core | `Core (Primitives)` | Default |
-| Appearance | `Appearance (Modes)` | Light Mode, Dark Mode |
-| Semantics (Brands) | `Semantics (Brands)` | Brand A, Brand B, Brand C |
-| Typography | `Typography (Fluid)` | Min, Max |
-| Patterns | `Patterns (UI)` | Default |
+| Appearance / Brand | `Appearance (Brand)` | Brand A, Brand B, Brand C |
+| Appearance / Scheme | `Appearance (Scheme)` | Light, Dark |
+| Appearance / Scale | `Appearance (Scale)` | Min, Max |
+| Semantics | `Semantics (Roles)` | Value |
+| Patterns | `Patterns (UI)` | Value |
+
+`Interaction (States)` is a prototype/helper collection and is not a
+foundation layer. New Pattern aliases should consume `Semantics (Roles)` by
+default. Do not recreate the historical `Semantics (Brands)`,
+`Appearance (Modes)`, or `Typography (Fluid)` collection labels in Figma;
+those names survive only in Runtime compatibility exports.
 
 ### Step 2: Create Variable Collections
 

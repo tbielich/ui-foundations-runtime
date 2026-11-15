@@ -1,0 +1,67 @@
+{
+  "date": "2026-09-30",
+  "timezone": "Europe/Berlin",
+  "repositories": {
+    "vault": "tbielich/ui-foundations-vault",
+    "runtime": "tbielich/ui-foundations-runtime"
+  },
+  "branch": "agent/uif-token-projection-migration",
+  "commands": [
+    {
+      "command": "npm run lint",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run test:unit",
+      "result": "PASS",
+      "tests": 182
+    },
+    {
+      "command": "npm run ci:check",
+      "exitCode": 0,
+      "result": "PASS",
+      "browserTests": 1
+    },
+    {
+      "command": "python3 scripts/verify-token-projection.py",
+      "exitCode": 0,
+      "structuralResult": "PASS",
+      "accessibilityResult": "FAIL"
+    }
+  ],
+  "tokenCounts": {
+    "beforeVariables": 641,
+    "afterVariables": 765,
+    "projectedVariables": 761,
+    "roles": 99,
+    "valuePreservationChecks": 7692
+  },
+  "accessibilityCounts": {
+    "surfaceContent": {
+      "PASS": 58,
+      "EXEMPT": 6,
+      "FAIL": 14
+    },
+    "foreground": {
+      "PASS": 12,
+      "FAIL": 12
+    },
+    "actionOverlay": {
+      "PASS": 9,
+      "FAIL": 3
+    }
+  },
+  "warnings": [
+    "npm 11.19.1 warns about host Node 22.0.0; checks completed",
+    "Existing token contrast failures retained; architecture migration does not certify accessibility",
+    "Runtime fluid scale now follows current Figma endpoints; prior Liquid curve archived as evidence"
+  ],
+  "figmaReadme": {
+    "sectionId": "2255:1256",
+    "textEdits": 81,
+    "visualInspection": "Screenshot checked; no new overlaps or clipping observed",
+    "fontRepair": "Unavailable Menlo replaced with existing UIF SF Mono on affected documentation labels"
+  },
+  "governanceStatus": "ADR review; no consumed pack change",
+  "publication": "Feature branches for draft review; no main merge or library publish"
+}
