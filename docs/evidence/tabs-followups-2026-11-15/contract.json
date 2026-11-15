@@ -1,0 +1,36 @@
+{
+  "task": "runtime-36-tabs-followups",
+  "issue": "https://github.com/tbielich/ui-foundations-runtime/issues/36",
+  "authorization": "Owner requested merge of the state fix and implementation of remaining follow-ups; then clarified sizing is S/M/L at the container.",
+  "scope": "Complete bounded Runtime Tabs follow-ups: verify keyboard/selection/overflow; adopt existing data-scale small|medium|large container context; provide working docs/playground; confirm existing Code Connect target and properties.",
+  "baseFix": "40779fd9cf34e774ebbd0a85e42d3b6d6844d21c",
+  "allowedPaths": [
+    "src/elements/ui-tabs.js",
+    "src/ui/patterns/tabs.css",
+    "site/patterns/tabs.md",
+    "site/patterns/tabs-playground.md",
+    "site/assets/playground/renderers.js",
+    "site/assets/playground/code-generators.js",
+    "tests/browser/tabs-state.spec.mjs",
+    "tests/browser/tabs-followups.spec.mjs",
+    "docs/container-scale.md",
+    "docs/evidence/tabs-followups-2026-11-15/",
+    "docs/foundations/README.md"
+  ],
+  "constraints": [
+    "Owner correction: sizes are S/M/L at the container; no component-local size API or compact variant",
+    "Reuse existing container context and tokens",
+    "No invented Figma identities",
+    "No Figma writes or Code Connect publication",
+    "No unrelated components, dependencies or governance changes",
+    "No release"
+  ],
+  "validation": [
+    "npm run lint",
+    "npm run test:unit",
+    "npm run ci:check",
+    "npx figma connect parse --file schemas/web-tab.figma.ts --exit-on-unreadable-files",
+    "git diff --check"
+  ],
+  "delivery": "Commit/push/PR permitted. Owner authorized merge of the state fix; follow-up merge requires review under existing rules."
+}

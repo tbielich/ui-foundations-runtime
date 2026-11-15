@@ -1,6 +1,6 @@
 # Container scaling in Runtime
 
-`data-scale="small|medium|large"` sets the scale context for participating descendants. The initial adopters are StatusLight, Meter and ProgressBar. Other existing Runtime components retain their current sizing until explicitly adapted; this feature does not claim an ecosystem-wide migration.
+`data-scale="small|medium|large"` sets the scale context for participating descendants. The initial adopters are StatusLight, Meter and ProgressBar. Tabs also participates for typography and padding; it uses container S/M/L without a component-local size API. Other existing Runtime components retain their current sizing until explicitly adapted; this feature does not claim an ecosystem-wide migration.
 
 ```html
 <div data-scale="large">
@@ -56,3 +56,5 @@ The three component previews and playgrounds expose Scale (S/M/L) next to the Li
 ## Acceptance boundary
 
 This is the owner-authorized Runtime implementation of the requested container behavior, bounded to the three reintegrated components. It does not change the consumed governance pack or assert that Figma already has corresponding modes. Live Figma parity and active Code Connect mappings remain blocked as recorded in the component reintegration evidence.
+
+The owner-confirmed shared sizing rule is recorded for review in [UIF-VLT Container Scale](https://github.com/tbielich/ui-foundations-vault/blob/docs/container-scale-foundation/foundations/container-scale.md). It is not yet an accepted governance-pack projection.

@@ -9,6 +9,14 @@
   :is(.uif-tabs, .tabs) {
     display: flex;
     flex-direction: column;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+
+  uif-tab-list {
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
   }
 
   :is(.uif-tab-list, .tab-list) {
@@ -31,12 +39,12 @@
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
-    padding-inline: var(--uif-tabs-padding-inline);
-    padding-block: var(--uif-tabs-padding-block);
+    padding-inline: calc(var(--uif-tabs-padding-inline) * var(--_uif-context-scale, 1));
+    padding-block: calc(var(--uif-tabs-padding-block) * var(--_uif-context-scale, 1));
     font-family: var(--uif-semantic-font-base, var(--font-family-sans));
-    font-size: var(--font-size-md);
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-md);
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
     color: var(--uif-tabs-text-color-default);
     background: transparent;
     border: none;
@@ -84,7 +92,7 @@
 
   /* Standalone and grouped panels share the same spacing. */
   :is(.uif-tab-panel, .tab-panel) {
-    padding-block: var(--size-spacing-400);
+    padding-block: calc(var(--size-spacing-400) * var(--_uif-context-scale, 1));
   }
 
   :is(.uif-tab-panel, .tab-panel)[hidden] {

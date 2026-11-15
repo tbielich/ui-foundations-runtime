@@ -694,49 +694,33 @@
     return { element: wrapper, code: codeLines.join("\n") };
   };
 
+  let nextTabsPreview = 0;
   const renderVanillaTabs = ({ props }) => {
     const tabCount = Number(props.tabs || 3);
-    const activeIndex = Number(props.active || 0);
-
+    const activeIndex = Math.min(Number(props.active || 0), tabCount - 1);
+    const orientation = props.orientation === "vertical" ? "vertical" : "horizontal";
+    const scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    const prefix = `tabs-preview-${++nextTabsPreview}`;
     const wrapper = document.createElement("div");
     wrapper.className = "uif-tabs";
-
-    const tablist = document.createElement("div");
-    tablist.className = "uif-tab-list";
-    tablist.setAttribute("role", "tablist");
-
-    let codeLines = ['<div class="uif-tabs">', '  <div class="uif-tab-list" role="tablist">'];
-
+    wrapper.dataset.scale = scale;
+    const list = document.createElement("uif-tab-list");
+    list.setAttribute("aria-label", "Example tabs");
+    list.setAttribute("orientation", orientation);
+    wrapper.append(list);
     for (let i = 0; i < tabCount; i++) {
-      const btn = document.createElement("button");
-      btn.className = "uif-tab";
-      btn.setAttribute("role", "tab");
-      btn.setAttribute("aria-selected", String(i === activeIndex));
-      btn.setAttribute("tabindex", i === activeIndex ? "0" : "-1");
-      btn.textContent = `Tab ${i + 1}`;
-      btn.type = "button";
-      tablist.append(btn);
-
-      const sel = i === activeIndex ? ' aria-selected="true" tabindex="0"' : ' aria-selected="false" tabindex="-1"';
-      codeLines.push(`    <button class="uif-tab" role="tab"${sel} type="button">Tab ${i + 1}</button>`);
+      const tab = document.createElement("uif-tab");
+      tab.setAttribute("label", `Tab ${i + 1}`);
+      tab.setAttribute("controls", `${prefix}-panel-${i}`);
+      tab.toggleAttribute("selected", i === activeIndex);
+      list.append(tab);
+      const panel = document.createElement("uif-tab-panel");
+      panel.id = `${prefix}-panel-${i}`;
+      panel.toggleAttribute("hidden", i !== activeIndex);
+      panel.textContent = `Panel content for Tab ${i + 1}`;
+      wrapper.append(panel);
     }
-    codeLines.push("  </div>");
-
-    wrapper.append(tablist);
-
-    const panel = document.createElement("div");
-    panel.className = "uif-tab-panel";
-    panel.setAttribute("role", "tabpanel");
-    panel.setAttribute("tabindex", "0");
-    panel.innerHTML = `<p>Panel content for Tab ${activeIndex + 1}</p>`;
-    wrapper.append(panel);
-
-    codeLines.push(`  <div class="uif-tab-panel" role="tabpanel" tabindex="0">`);
-    codeLines.push(`    <p>Panel content</p>`);
-    codeLines.push(`  </div>`);
-    codeLines.push("</div>");
-
-    return { element: wrapper, code: codeLines.join("\n") };
+    return { element: wrapper, code: wrapper.outerHTML };
   };
 
   // ─── Divider ──────────────────────────────────

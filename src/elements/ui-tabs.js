@@ -1,5 +1,7 @@
 import { UIElement, define } from "./base.js";
 
+let nextTabId = 0;
+
 /**
  * <uif-tab-list aria-label="Settings">
  *   <uif-tab label="General" selected controls="panel-1"></uif-tab>
@@ -50,7 +52,7 @@ class UITabList extends UIElement {
   _tabFromEvent(event) {
     const button = event.target?.closest?.(".uif-tab");
     const tab = button?.closest?.("uif-tab");
-    return tab && this.contains(tab) ? tab : null;
+    return this._tabs().includes(tab) ? tab : null;
   }
 
   _ensureInitialSelection() {
@@ -69,6 +71,8 @@ class UITabList extends UIElement {
       const panel = this.ownerDocument?.getElementById(controls);
       if (!panel || panel.tagName.toLowerCase() !== "uif-tab-panel") continue;
 
+      const button = this._buttonFor(tab);
+      if (button) panel.setAttribute("aria-labelledby", button.id);
       panel.toggleAttribute("hidden", tab !== selectedTab);
     }
   }
@@ -163,6 +167,9 @@ class UITab extends UIElement {
       this._button = this.ownerDocument.createElement("button");
       this._button.className = "uif-tab";
       this._button.setAttribute("role", "tab");
+      do {
+        this._button.id = `uif-tab-${++nextTabId}`;
+      } while (this.ownerDocument.getElementById(this._button.id));
       this._button.type = "button";
       this.replaceChildren(this._button);
     }
