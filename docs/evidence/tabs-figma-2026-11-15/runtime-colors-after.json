@@ -1,0 +1,56 @@
+[
+  {
+    "brand": "a",
+    "mode": "light",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  },
+  {
+    "brand": "a",
+    "mode": "dark",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  },
+  {
+    "brand": "b",
+    "mode": "light",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  },
+  {
+    "brand": "b",
+    "mode": "dark",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  },
+  {
+    "brand": "c",
+    "mode": "light",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  },
+  {
+    "brand": "c",
+    "mode": "dark",
+    "color": "rgb(0, 0, 0)",
+    "border": "rgb(0, 0, 0)",
+    "fontSize": "16px",
+    "lineHeight": "24px",
+    "padding": "0px"
+  }
+]

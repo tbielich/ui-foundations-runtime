@@ -6,9 +6,16 @@ navTitle: Content Standards
 order: 5
 permalink: /foundations/content/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
+
 
 Clear, consistent language makes interfaces easier to use. These standards apply
 to every label, message, and action in the system.
+
+{% call foundation.feature("Words in use", "Name the outcome.", "A specific action label tells people what will happen before they choose it.") %}
+<div class="foundation-contrast"><div><small>Too vague</small><strong>Submit</strong></div><div><small>Clear action</small><strong>Save changes</strong></div></div><p class="foundation-caption">Use the action that matches the task. A booking flow may need “Confirm booking” instead.</p>
+{% endcall %}
+
 
 ## Labels
 
@@ -54,3 +61,5 @@ to every label, message, and action in the system.
   functional UI.
 - Use positive framing when possible: "Enter your email" rather than "Email
   cannot be empty."
+
+{{ foundation.next("/patterns/label/", "Put labels to work", "See how labels pair with controls and icons.") }}

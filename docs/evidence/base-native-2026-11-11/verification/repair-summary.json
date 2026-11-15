@@ -1,0 +1,14 @@
+{
+  "mode": "VERIFY",
+  "gate": "PASS_BOUNDED",
+  "history": "summary.json/browser.json retain original keyboardfocusFAIL; repairedfinding superseded by repair-browser.json only. Previous unrelated checks not repeated.",
+  "results": "LightDark Enter retains selected2026-05-18 focus; ArrowRight advances05-19; PageDown advances06-19; exactlyonegridtabstop each. Headernextmonth5\u21926, repeatedauto-init thennext6\u21927 once; noJSerrors.",
+  "evidence": [
+    "repair-freeze.json",
+    "repair-browser.json"
+  ],
+  "limitations": [
+    "Nofullaccessibilitycertification; only existingboundedbehaviorverified."
+  ],
+  "command": "node verification/repair-check.cjs"
+}

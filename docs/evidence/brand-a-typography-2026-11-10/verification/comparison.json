@@ -1,0 +1,19 @@
+{
+  "consumer_bc_differences": [],
+  "token_bc_differences": [],
+  "docs_bc_differences": [],
+  "a_policy_failures": [],
+  "preserved_prose_failures": [],
+  "icon_geometry_failures": [],
+  "unexpected_missing_cases": [],
+  "summary": {
+    "consumer_bc_differences": 0,
+    "token_bc_differences": 0,
+    "docs_bc_differences": 0,
+    "a_policy_failures": 0,
+    "preserved_prose_failures": 0,
+    "icon_geometry_failures": 0,
+    "unexpected_missing_cases": 0
+  },
+  "gate": "PASS"
+}

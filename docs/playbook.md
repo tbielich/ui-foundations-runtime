@@ -22,8 +22,8 @@ guessing which file owns which rule.
 If a Runtime-local reference target is missing:
 
 1. Prefer linking to an existing Runtime page that carries the concept.
-2. If no Runtime page exists, add a minimal Runtime stub that points to the
-   canonical Vault source.
+2. If no Runtime page exists, add concise implementation guidance. Public
+   pages must be usable without access to private ecosystem repositories.
 3. Do not leave unresolved links or infer canonical ownership from local drafts.
 
 Supplemental context:

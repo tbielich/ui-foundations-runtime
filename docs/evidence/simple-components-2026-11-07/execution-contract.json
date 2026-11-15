@@ -1,0 +1,13 @@
+{
+  "mode": "IMPLEMENT",
+  "selection": "owner_direct_assignment",
+  "ownerRequest": "dann nimm die einfachn kndidaten zu erst",
+  "repository": "tbielich/ui-foundations-runtime",
+  "base": "506807d037183154b420bd9f3f90a3e95a1b6d38",
+  "source": "357eb5fbb6deb434e74e8fbaae3bdc8715739c65",
+  "components": ["status-light", "meter", "progress-bar"],
+  "allowedChanges": ["component implementation", "existing component token restoration and semantic alias adaptation", "public exports and declarations", "macros", "docs/playgrounds/generators", "inactive Code Connect examples", "bounded tests and evidence"],
+  "excluded": ["other draft components", "shared semantic/color redesign", "Vault governance", "UILib", "main merge", "release/publication"],
+  "verificationCommands": ["npm run lint", "npm run test:unit", "CI=1 npm run ci:check", "npm run pack:check"],
+  "externalGate": "Live Figma parity and Code Connect mapping remain BLOCKED by source access; do not claim complete component acceptance"
+}

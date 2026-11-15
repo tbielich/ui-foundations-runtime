@@ -1,260 +1,54 @@
 ---
 layout: layouts/docs.njk
-title: System Architecture
-description: How UI Foundations is structured — from atomic layers to governance and quality controls.
-navTitle: Architecture
+title: System Overview
+description: How tokens, patterns, and components fit together in an application.
+navTitle: System Overview
 order: 1
 permalink: /foundations/architecture/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
 
-<p class="page-intro">
-  UI Foundations is the implementation repository for the runtime design system.
-  It documents how tokens, patterns, components, build output, validation, and CI
-  work together.
-</p>
 
-<p>
-  Canonical design foundation knowledge is maintained in the UI Foundations Vault. This repository only documents implementation-specific usage.
-</p>
+{% call foundation.feature("The system", "From values to interfaces.", "Start with tokens, use patterns for individual controls, and compose them into an interaction.") %}
+<ol class="foundation-stack"><li><span>01</span><div><strong>Tokens</strong><small>Color, spacing, type, and shape</small></div></li><li><span>02</span><div><strong>Patterns</strong><small>Button, Input, Checkbox</small></div></li><li><span>03</span><div><strong>Components</strong><small>Date Picker, Dialog</small></div></li><li><span>04</span><div><strong>Your interface</strong><small>Content, data, and application behavior</small></div></li></ol>
+{% endcall %}
 
-<p>
-  Vault reference: <a href="{{ 'foundations/' | vaultDocumentationUrl }}">configured vault foundations</a>
-</p>
 
-<h2 id="layers-heading">Atomic Layers</h2>
+<h2 id="tokens">Tokens</h2>
 
-<div class="arch-hero-table">
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Layer</th>
-        <th>Chemistry</th>
-        <th>Definition</th>
-        <th>Location</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Tokens</strong></td>
-        <td>Subatomic particles</td>
-        <td>Raw design values — colors, spacing, radii, typography. The physical constants of the system.</td>
-        <td><code>dist/tokens/</code></td>
-      </tr>
-      <tr>
-        <td><strong>Patterns</strong></td>
-        <td>Atoms</td>
-        <td>Smallest self-contained UI unit. CSS-only, stateless. Works without JavaScript.</td>
-        <td><code>src/ui/patterns/</code></td>
-      </tr>
-      <tr>
-        <td><strong>Components</strong></td>
-        <td>Molecules</td>
-        <td>Multiple atoms bound together with vanilla JavaScript for state and interactivity.</td>
-        <td><code>src/ui/components/</code> (planned)</td>
-      </tr>
-      <tr>
-        <td><strong>Compositions</strong></td>
-        <td>Organisms</td>
-        <td>Multiple molecules and atoms arranged for a specific task or use-case.</td>
-        <td><code>site/examples/</code> (docs only, not shipped)</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+Tokens carry visual decisions such as color, spacing, typography, and borders.
+The model follows **Core → Appearance → Semantics → Patterns**. Brand, Scheme,
+and Scale are independent Appearance concerns.
 
-<p>The binding energy that turns atoms into molecules is <strong>JavaScript and state management</strong>. If it works with pure CSS, it's a pattern. If it needs JS to function, it's a component.</p>
+Use the [token reference](/foundations/design-tokens/) to find the right role
+before overriding a visual property.
 
-<p class="section-description"><strong>Note:</strong> Compositions live in <code>site/examples/</code> on the documentation site — they are reference implementations, not shipped library code. The "Examples" section in the navigation corresponds to the Organisms layer.</p>
+<h2 id="patterns">Patterns</h2>
 
-<h2 id="token-layers-heading">Token Architecture</h2>
+[Patterns](/patterns/) provide HTML structures and CSS classes for controls
+such as Button, Input, and Checkbox. Use their documented markup with the
+package styles. Individual pages explain where JavaScript is needed for behavior.
 
-<p>
-  The token model separates <strong>raw values</strong>, <strong>context</strong>,
-  <strong>meaning</strong>, and <strong>UI usage</strong>. This makes it easier
-  to understand why a token exists and what is allowed to change it.
-</p>
+<h2 id="components">Components</h2>
 
-<pre><code>Core
-  ↓
-Appearance
-  ├─ Brand
-  ├─ Scheme
-  └─ Scale
-  ↓
-Semantics
-  ↓
-Patterns</code></pre>
+[Date Picker](/components/date-picker/) and [Dialog](/components/dialog/) document
+interactions that combine markup, state, and JavaScript. Check each page for
+integration requirements and limitations.
 
-<div class="docs-table-wrap">
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Responsibility</th>
-        <th>Question it answers</th>
-        <th>Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Core</strong></td>
-        <td>What reusable values exist?</td>
-        <td>Palette steps, spacing, radii, type values</td>
-      </tr>
-      <tr>
-        <td><strong>Appearance / Brand</strong></td>
-        <td>Which brand-specific value applies?</td>
-        <td>Brand A, Brand B, Brand C</td>
-      </tr>
-      <tr>
-        <td><strong>Appearance / Scheme</strong></td>
-        <td>How should the value resolve in light or dark UI?</td>
-        <td>Light, Dark</td>
-      </tr>
-      <tr>
-        <td><strong>Appearance / Scale</strong></td>
-        <td>How should a scalable value resolve?</td>
-        <td>Min, Max fluid endpoints</td>
-      </tr>
-      <tr>
-        <td><strong>Semantics</strong></td>
-        <td>What does the value mean in the interface?</td>
-        <td><code>Color / Action / Surface / Hover</code></td>
-      </tr>
-      <tr>
-        <td><strong>Patterns</strong></td>
-        <td>Where does that meaning apply?</td>
-        <td><code>Button / … / Background / Hover</code></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+Optional light-DOM Web Components provide JavaScript wrappers for supported
+patterns. They use the same CSS and tokens as plain HTML. Import only the
+wrappers your application needs; see [Getting Started](/getting-started/).
 
-<p>
-  Brand, Scheme, and Scale are independent Appearance axes. Semantics stays
-  stable across those contexts. Patterns normally consume Semantics rather than
-  reaching directly into Appearance or Core.
-</p>
+<h2 id="examples">Examples</h2>
 
-<h3>Example: a Button hover state</h3>
+[Examples](/examples/) show how to compose the building blocks into forms and
+page layouts. Adapt their content, validation, and application behavior to your
+own flow.
 
-<p>
-  A Button does not need to know the brand's actual hover color. It asks for a
-  semantic role, and the layers below resolve the correct value:
-</p>
+<h2 id="application-responsibilities">Application responsibilities</h2>
 
-<pre><code>Core color
-  → Appearance (Brand + Scheme)
-  → Color / Action / Surface / Hover
-  → Button / … / Background / Hover</code></pre>
+Your application supplies content, accessible labels, business validation,
+data, and actions. A styled control alone does not provide those behaviors.
+Check the documented keyboard behavior and test the completed flow in context.
 
-<p>
-  The same principle applies to accessible color pairs. A state-specific
-  <code>Surface</code> role is paired with its <code>Content</code> role;
-  <code>Foreground</code> is reserved for standalone action text, icons,
-  strokes, or outlines.
-</p>
-
-<p class="section-description">
-  <strong>Compatibility note:</strong> some generated Runtime filenames still
-  contain older collection names. They are intentionally retained to avoid
-  breaking consumers and do not redefine the architecture.
-</p>
-
-<h2 id="governance-heading">Governance &amp; Quality</h2>
-
-<p>
-  Every pattern and component decision is informed by durable foundation
-  knowledge in the vault and implemented through local rule IDs, pattern rules,
-  component rules, validation, and CI.
-</p>
-
-<div class="docs-table-wrap">
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Layer</th>
-        <th>Purpose</th>
-        <th>Examples</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong><a href="/foundations/governance/principles/">Design Principles</a></strong></td>
-        <td>Vault-owned foundation knowledge applied through local implementation rules</td>
-        <td>Pattern-rule citations and component documentation</td>
-      </tr>
-      <tr>
-        <td><strong><a href="/foundations/governance/heuristics/">Usability Heuristics</a></strong></td>
-        <td>Vault-owned usability knowledge surfaced as local traceability IDs</td>
-        <td>Rule pipeline and validation manifest</td>
-      </tr>
-      <tr>
-        <td><strong><a href="/foundations/governance/intelligence/">Design Intelligence</a></strong></td>
-        <td>Vault-owned reasoning model used as an implementation review lens</td>
-        <td>Pattern, component, and docs review</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<p>Pattern rules must cite principle and heuristic IDs. Component rules must preserve the cited pattern intent. This traceability ensures every visual decision can be traced back to a documented rationale.</p>
-
-<h2 id="context-heading">Brand, Scheme And Scale</h2>
-
-<p>
-  Brand, Scheme, and Scale are separate Appearance concerns. Runtime exposes
-  Brand and Scheme as consumer-controlled data attributes; Scale is compiled
-  from its fluid endpoints.
-</p>
-
-<p>Brand and Scheme are applied via:</p>
-
-<ul>
-  <li><code>data-brand="a|b|c"</code> — switches color palette, typography, and corner radii</li>
-  <li><code>data-mode="light|dark"</code> — switches semantic color mappings</li>
-</ul>
-
-<p>Patterns never hardcode brand or mode values. They reference semantic roles that resolve differently per context.</p>
-
-<h2 id="pipeline-heading">Build Pipeline</h2>
-
-<p>The system flows from Figma to production in a one-directional pipeline:</p>
-
-<div class="pipeline-flow">
-  <div class="pipeline-step">
-    <span class="pipeline-step-label">Figma Variables</span>
-  </div>
-  <div class="pipeline-arrow"><span>export</span></div>
-  <div class="pipeline-step">
-    <span class="pipeline-step-label">figma/exports/*.tokens.json</span>
-  </div>
-  <div class="pipeline-arrow"><span>npm run tokens:generate</span></div>
-  <div class="pipeline-step">
-    <span class="pipeline-step-label">dist/tokens/css/*.css + tokens.yaml</span>
-  </div>
-  <div class="pipeline-arrow"><span>npm run build:css</span></div>
-  <div class="pipeline-step">
-    <span class="pipeline-step-label">dist/main.css (bundled, layered)</span>
-  </div>
-  <div class="pipeline-arrow"><span>npm run docs:site</span></div>
-  <div class="pipeline-step">
-    <span class="pipeline-step-label">_site/ (documentation website)</span>
-  </div>
-</div>
-
-<p>Generated files in <code>dist/</code> are never edited directly. Changes flow from Figma exports through the pipeline.</p>
-
-<h2 id="validation-heading">Validation</h2>
-
-<p><code>npm run ci:check</code> validates the full system:</p>
-
-<ul>
-  <li>Lint — JS syntax correctness</li>
-  <li>Unit tests — token pipeline logic</li>
-  <li>Build — generates all dist artifacts</li>
-  <li>Smoke check — verifies critical outputs exist</li>
-  <li>Token validation — zero missing aliases, zero duplicates</li>
-  <li>DTCG validation — schema compliance</li>
-  <li>Asset check — all referenced icons/assets exist</li>
-  <li>Rule pipeline — principles and heuristics are properly cited</li>
-</ul>
+{{ foundation.next("/getting-started/", "Build your first interface", "Install the styles and choose an integration.") }}

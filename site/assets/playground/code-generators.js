@@ -296,8 +296,65 @@
     );
   }
 
+  function indicatorArgs(state, kind, format) {
+    var p = state.props;
+    var fields = kind === "meter" ? ["label", "value", "min", "max", "variant", "size", "valueText"]
+      : kind === "progress-bar" ? ["value", "variant", "size", "label", "showValue", "indeterminate"]
+      : ["variant", "size"];
+    var booleanFields = ["showValue", "indeterminate"];
+    var numericFields = ["value", "min", "max"];
+    var attributes = { valueText: "value-text", showValue: "show-value" };
+    var parts = [];
+    fields.forEach(function (field) {
+      var value = p[field];
+      if (value === undefined) return;
+      if (format === "njk") {
+        if (booleanFields.includes(field)) value = value === true || value === "true";
+        else if (numericFields.includes(field) && value !== "" && Number.isFinite(Number(value))) value = Number(value);
+        else value = String(value);
+        parts.push(field + "=" + JSON.stringify(value));
+      } else if (booleanFields.includes(field)) {
+        if (value === true || value === "true") parts.push(attributes[field] || field);
+      } else parts.push((attributes[field] || field) + '="' + quoteAttr(String(value)) + '"');
+    });
+    var scale = ["small", "medium", "large"].includes(p.scale) ? p.scale : null;
+    function withScale(code) {
+      return scale ? '<div data-scale="' + scale + '">\n  ' + code + '\n</div>' : code;
+    }
+    if (format === "njk") {
+      if (kind === "status-light") parts.unshift("text=" + JSON.stringify(String(state.children === undefined ? "Status" : state.children)));
+      var macro = { "status-light": "statusLight", "meter": "meter", "progress-bar": "progressBar" }[kind];
+      return withScale("{{ uif." + macro + "(" + parts.join(", ") + ") }}");
+    }
+    var text = kind === "status-light" ? quoteAttr(String(state.children === undefined ? "Status" : state.children)) : "";
+    return withScale("<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + ">" + text + "</uif-" + kind + ">");
+  }
+
+  function tabsCode(state, format) {
+    var p = state.props;
+    var count = Number(p.tabs || 3);
+    var active = Math.min(Number(p.active || 0), count - 1);
+    var scale = ["small", "medium", "large"].includes(p.scale) ? p.scale : "medium";
+    var orientation = p.orientation === "vertical" ? "vertical" : "horizontal";
+    var lines = ['<div data-scale="' + scale + '">'];
+    lines.push(format === "njk" ? '{% call uif.tabList(orientation="' + orientation + '", ariaLabel="Tabs") %}' : '<uif-tab-list orientation="' + orientation + '" aria-label="Tabs">');
+    for (var i = 0; i < count; i++) {
+      lines.push(format === "njk" ? '{{ uif.tab(label="Tab ' + (i + 1) + '", selected=' + (i === active) + ', controls="p' + i + '") }}' : '<uif-tab label="Tab ' + (i + 1) + '" controls="p' + i + '"' + (i === active ? ' selected' : '') + '></uif-tab>');
+    }
+    lines.push(format === "njk" ? '{% endcall %}' : '</uif-tab-list>');
+    for (var j = 0; j < count; j++) {
+      lines.push(format === "njk" ? '{% call uif.tabPanel(id="p' + j + '", hidden=' + (j !== active) + ') %}Panel ' + (j + 1) + '{% endcall %}' : '<uif-tab-panel id="p' + j + '"' + (j !== active ? ' hidden' : '') + '>Panel ' + (j + 1) + '</uif-tab-panel>');
+    }
+    lines.push('</div>');
+    return lines.join("\n");
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
+      "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
+      "meter": function (state) { return indicatorArgs(state, "meter", "njk"); },
+      "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "njk"); },
+
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
       "switch": njkSwitch, icon: njkIcon, radio: njkRadio, badge: njkBadge,
@@ -341,9 +398,7 @@
       accordion: function () {
         return '{% call uif.accordion() %}\n  {% call uif.accordionItem("Section 1", open=true) %}Content{% endcall %}\n  {% call uif.accordionItem("Section 2") %}Content{% endcall %}\n{% endcall %}';
       },
-      tabs: function () {
-        return '{% call uif.tabList(ariaLabel="Tabs") %}\n  {{ uif.tab("Tab 1", selected=true, controls="p1") }}\n  {{ uif.tab("Tab 2", controls="p2") }}\n{% endcall %}\n{% call uif.tabPanel(id="p1") %}Panel 1{% endcall %}\n{% call uif.tabPanel(id="p2", hidden=true) %}Panel 2{% endcall %}';
-      },
+      tabs: function (state) { return tabsCode(state, "njk"); },
       tooltip: function (state) {
         var p = state.props;
         var text = p.text || "Tooltip text";
@@ -362,6 +417,10 @@
       },
     },
     wc: {
+      "status-light": function (state) { return indicatorArgs(state, "status-light", "wc"); },
+      "meter": function (state) { return indicatorArgs(state, "meter", "wc"); },
+      "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "wc"); },
+
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,
       "switch": wcSwitch, icon: wcIcon, radio: wcRadio, badge: wcBadge,
@@ -407,9 +466,7 @@
       accordion: function () {
         return '<uif-accordion>\n  <uif-accordion-item title="Section 1" open>Content</uif-accordion-item>\n  <uif-accordion-item title="Section 2">Content</uif-accordion-item>\n</uif-accordion>';
       },
-      tabs: function () {
-        return '<uif-tab-list aria-label="Tabs">\n  <uif-tab label="Tab 1" selected controls="p1"></uif-tab>\n  <uif-tab label="Tab 2" controls="p2"></uif-tab>\n</uif-tab-list>\n<uif-tab-panel id="p1">Panel 1</uif-tab-panel>\n<uif-tab-panel id="p2" hidden>Panel 2</uif-tab-panel>';
-      },
+      tabs: function (state) { return tabsCode(state, "wc"); },
       tooltip: function (state) {
         var p = state.props;
         var text = p.text || "Tooltip text";

@@ -1,0 +1,399 @@
+{
+  "fileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+  "dump": {
+    "Core (Primitives)": [
+      {
+        "id": "VariableID:3260:2",
+        "name": "Font/Family/Roboto Slab",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_FAMILY"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--font-family-roboto-slab)",
+        "value": "Roboto Slab",
+        "alias": null
+      }
+    ],
+    "Appearance (Brand)": [
+      {
+        "id": "VariableID:3260:3",
+        "name": "Brand/Font/Heading",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_FAMILY"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--brand-font-heading)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:2",
+          "targetName": "Font/Family/Roboto Slab",
+          "targetCollectionId": "VariableCollectionId:1:200",
+          "targetCollectionName": "Core (Primitives)"
+        },
+        "modeValues": {
+          "Brand A": {
+            "$ref": "Font/Family/Roboto Slab",
+            "$targetId": "VariableID:3260:2"
+          },
+          "Brand B": {
+            "$ref": "Font/Family/Serif",
+            "$targetId": "VariableID:3:6"
+          },
+          "Brand C": {
+            "$ref": "Font/Family/Serif",
+            "$targetId": "VariableID:3:6"
+          }
+        }
+      },
+      {
+        "id": "VariableID:3260:5",
+        "name": "Brand/Typography/UI/Font/Weight",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_STYLE"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--brand-typography-ui-font-weight)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:1:218",
+          "targetName": "Font/Weight/600",
+          "targetCollectionId": "VariableCollectionId:1:200",
+          "targetCollectionName": "Core (Primitives)"
+        },
+        "modeValues": {
+          "Brand A": {
+            "$ref": "Font/Weight/600",
+            "$targetId": "VariableID:1:218"
+          },
+          "Brand B": {
+            "$ref": "Font/Weight/400",
+            "$targetId": "VariableID:1:216"
+          },
+          "Brand C": {
+            "$ref": "Font/Weight/400",
+            "$targetId": "VariableID:1:216"
+          }
+        }
+      },
+      {
+        "id": "VariableID:2006:214",
+        "name": "Brand/Font/Lead",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_FAMILY"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--brand-font-lead)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3:5",
+          "targetName": "Font/Family/Sans",
+          "targetCollectionId": "VariableCollectionId:1:200",
+          "targetCollectionName": "Core (Primitives)"
+        },
+        "modeValues": {
+          "Brand A": {
+            "$ref": "Font/Family/Sans",
+            "$targetId": "VariableID:3:5"
+          },
+          "Brand B": {
+            "$ref": "Font/Family/Serif",
+            "$targetId": "VariableID:3:6"
+          },
+          "Brand C": {
+            "$ref": "Font/Family/Serif",
+            "$targetId": "VariableID:3:6"
+          }
+        }
+      }
+    ],
+    "Semantics (Roles)": [
+      {
+        "id": "VariableID:3260:4",
+        "name": "Font/Heading",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_FAMILY"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--uif-semantic-font-heading)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:3",
+          "targetName": "Brand/Font/Heading",
+          "targetCollectionId": "VariableCollectionId:1:177",
+          "targetCollectionName": "Appearance (Brand)"
+        }
+      },
+      {
+        "id": "VariableID:3260:6",
+        "name": "Typography/UI/Font/Weight",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_STYLE"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--uif-semantic-typography-ui-font-weight)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:5",
+          "targetName": "Brand/Typography/UI/Font/Weight",
+          "targetCollectionId": "VariableCollectionId:1:177",
+          "targetCollectionName": "Appearance (Brand)"
+        }
+      }
+    ],
+    "Patterns (UI)": [
+      {
+        "id": "VariableID:3014:2",
+        "name": "Typography/Heading/Font/Family",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_FAMILY"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--typography-heading-font-family)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:4",
+          "targetName": "Font/Heading",
+          "targetCollectionId": "VariableCollectionId:3173:2",
+          "targetCollectionName": "Semantics (Roles)"
+        }
+      },
+      {
+        "id": "VariableID:2028:303",
+        "name": "Input/Font/Weight",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_STYLE"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--uif-input-font-weight)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:6",
+          "targetName": "Typography/UI/Font/Weight",
+          "targetCollectionId": "VariableCollectionId:3173:2",
+          "targetCollectionName": "Semantics (Roles)"
+        }
+      },
+      {
+        "id": "VariableID:2777:37",
+        "name": "Link/Font/Weight",
+        "resolvedType": "STRING",
+        "scopes": [
+          "FONT_STYLE"
+        ],
+        "hiddenFromPublishing": false,
+        "webSyntax": "var(--uif-link-font-weight)",
+        "value": null,
+        "alias": {
+          "targetId": "VariableID:3260:6",
+          "targetName": "Typography/UI/Font/Weight",
+          "targetCollectionId": "VariableCollectionId:3173:2",
+          "targetCollectionName": "Semantics (Roles)"
+        }
+      }
+    ]
+  },
+  "readback": [
+    {
+      "id": "VariableID:3260:2",
+      "name": "Font/Family/Roboto Slab",
+      "valuesByMode": {
+        "1:1": "Roboto Slab"
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--font-family-roboto-slab)"
+      }
+    },
+    {
+      "id": "VariableID:3260:3",
+      "name": "Brand/Font/Heading",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:2"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        }
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--brand-font-heading)"
+      }
+    },
+    {
+      "id": "VariableID:3260:4",
+      "name": "Font/Heading",
+      "valuesByMode": {
+        "3173:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:3"
+        }
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-semantic-font-heading)"
+      }
+    },
+    {
+      "id": "VariableID:3260:5",
+      "name": "Brand/Typography/UI/Font/Weight",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:218"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:216"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:1:216"
+        }
+      },
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--brand-typography-ui-font-weight)"
+      }
+    },
+    {
+      "id": "VariableID:3260:6",
+      "name": "Typography/UI/Font/Weight",
+      "valuesByMode": {
+        "3173:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:5"
+        }
+      },
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-semantic-typography-ui-font-weight)"
+      }
+    },
+    {
+      "id": "VariableID:2006:214",
+      "name": "Brand/Font/Lead",
+      "valuesByMode": {
+        "1:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:5"
+        },
+        "10:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        },
+        "2435:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3:6"
+        }
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--brand-font-lead)"
+      }
+    },
+    {
+      "id": "VariableID:3014:2",
+      "name": "Typography/Heading/Font/Family",
+      "valuesByMode": {
+        "1:3": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:4"
+        }
+      },
+      "scopes": [
+        "FONT_FAMILY"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--typography-heading-font-family)"
+      }
+    },
+    {
+      "id": "VariableID:2028:303",
+      "name": "Input/Font/Weight",
+      "valuesByMode": {
+        "1:3": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:6"
+        }
+      },
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-input-font-weight)"
+      }
+    },
+    {
+      "id": "VariableID:2777:37",
+      "name": "Link/Font/Weight",
+      "valuesByMode": {
+        "1:3": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:3260:6"
+        }
+      },
+      "scopes": [
+        "FONT_STYLE"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-link-font-weight)"
+      }
+    }
+  ],
+  "resolved": [
+    {
+      "brandMode": "1:0",
+      "VariableID:2006:214": "Inter",
+      "VariableID:3014:2": "Roboto Slab",
+      "VariableID:2028:303": "Semi Bold",
+      "VariableID:2777:37": "Semi Bold",
+      "VariableID:3260:4": "Roboto Slab",
+      "VariableID:3260:6": "Semi Bold"
+    },
+    {
+      "brandMode": "10:0",
+      "VariableID:2006:214": "Rokkitt",
+      "VariableID:3014:2": "Rokkitt",
+      "VariableID:2028:303": "Normal",
+      "VariableID:2777:37": "Normal",
+      "VariableID:3260:4": "Rokkitt",
+      "VariableID:3260:6": "Normal"
+    },
+    {
+      "brandMode": "2435:0",
+      "VariableID:2006:214": "Rokkitt",
+      "VariableID:3014:2": "Rokkitt",
+      "VariableID:2028:303": "Normal",
+      "VariableID:2777:37": "Normal",
+      "VariableID:3260:4": "Rokkitt",
+      "VariableID:3260:6": "Normal"
+    }
+  ]
+}

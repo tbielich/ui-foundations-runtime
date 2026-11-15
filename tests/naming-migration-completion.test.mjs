@@ -62,7 +62,6 @@ test("owned templates, previews, schemas, elements, and MCP fixtures do not emit
 
 test("completion guidance defines canonical owned output and v1 CSS-only compatibility", () => {
   for (const relativePath of [
-    "site/foundations/class-naming.md",
     "docs/foundations/foundation-013-class-naming.md",
   ]) {
     const documentation = read(relativePath);
@@ -73,6 +72,9 @@ test("completion guidance defines canonical owned output and v1 CSS-only compati
 });
 
 test("migration history lives in the repository guide, not public pattern pages", () => {
+  const publicNaming = read("site/foundations/class-naming.md");
+  assert.doesNotMatch(publicNaming, /migration|deprecated|Wave 4|v1\.x/i);
+
   const migration = read("MIGRATION.md");
   assert.match(migration, /Legacy selectors remain CSS-only aliases through v1\.x/);
   assert.match(migration, /No library-owned legacy token aliases or fallbacks/);

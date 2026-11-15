@@ -1,0 +1,15 @@
+{
+  "scope": "Seven canonical/legacy default accessors across12 already-collected consumer cases; root override behavior separately checked in root-overrides.json",
+  "expected": {
+    "--font-family-inter": "Inter",
+    "--font-family-rokkitt": "Rokkitt",
+    "--font-family-roboto-slab": "Roboto Slab",
+    "--font-family-sf-mono": "SF Mono",
+    "--font-family-sans": "Inter",
+    "--font-family-serif": "Rokkitt",
+    "--font-family-mono": "SF Mono"
+  },
+  "checks": 84,
+  "failures": [],
+  "gate": "PASS"
+}

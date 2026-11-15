@@ -1,0 +1,41 @@
+{
+  "task": "runtime-36-tabs-state-preservation",
+  "issue": "https://github.com/tbielich/ui-foundations-runtime/issues/36",
+  "eligibility": "Open issue carrying agent:ready, selected under the owner's request to solve one remaining component task",
+  "base": "29a183a",
+  "mode": "IMPLEMENT",
+  "scope": "Preserve existing Tab, TabList and TabPanel DOM through observed attribute updates and panel switching. Verify existing keyboard activation and disabled-tab skipping.",
+  "allowedPaths": [
+    "src/elements/ui-tabs.js",
+    "tests/browser/tabs-state.spec.mjs",
+    "site/patterns/tabs.md",
+    "docs/evidence/tabs-state-2026-11-15/"
+  ],
+  "forbidden": [
+    "Token changes",
+    "Figma writes",
+    "Other components",
+    "New tab API or size variants",
+    "Issue closure",
+    "Release"
+  ],
+  "acceptance": [
+    "Orientation and accessible-label updates retain one tablist, the original tab buttons and selection",
+    "Switching panels preserves input values, node identities and listeners",
+    "Observed tab attributes update the existing button",
+    "Horizontal/vertical navigation skips disabled tabs and synchronizes panels"
+  ],
+  "validation": [
+    "npm run lint",
+    "npm run test:unit",
+    "npm run ci:check",
+    "git diff --check"
+  ],
+  "limits": "Bounded Runtime slice only; not completion of issue 36, Figma parity, Code Connect, manual screenreader or cross-browser verification.",
+  "executor": "Current assistant; no additional CLI/model calls needed so far",
+  "deliveryAuthorization": {
+    "date": "2026-11-15",
+    "instruction": "dann den fix mergen und die follow ups umsetzen",
+    "scope": "Commit, push, PR and merge this bounded fix after validation; follow-ups remain a separate implementation slice."
+  }
+}

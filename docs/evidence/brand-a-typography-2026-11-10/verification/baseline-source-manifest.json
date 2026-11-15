@@ -1,0 +1,42 @@
+{
+  "baseSHA": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "frozenRoot": "/tmp/uif-brand-a-independent-baseline-20261110",
+  "files": [
+    {
+      "path": "dist/main.css",
+      "sha256": "ebf8327e301aa91467fdb5dd659a478cf04a34727fc8d8be31b5486f63b9eb48"
+    },
+    {
+      "path": "figma/token-projection.json",
+      "sha256": "fc68af982426f19e0874f8a30cbd9e71b15693451f6c0c5e86d7588ebb9391f7"
+    },
+    {
+      "path": "site/_includes/macros/ui.njk",
+      "sha256": "569e58544d409e80ed5d43ee383b2234b740831eb072d06e00f3163f437a306d"
+    },
+    {
+      "path": "figma/exports/Typography (Fluid).tokens.json",
+      "sha256": "0d5c9dd58d25c3ea22e61de168ef455c6090c2ff15cf4355d35058f33f0cdcc2"
+    },
+    {
+      "path": "figma/exports/Patterns (UI).tokens.json",
+      "sha256": "0bc59d2505f5c5c91ed77e3b14b3c27d7996d12b39198d289a0b2d93aee576c7"
+    },
+    {
+      "path": "figma/exports/Appearance (Modes).tokens.json",
+      "sha256": "f20c9a7dfd1a3970894d4c7d3fd2c000eabb73dc15d576a001f4d46d45ee073f"
+    },
+    {
+      "path": "figma/exports/Semantics (Brands).tokens.json",
+      "sha256": "858ab9a1f2f96c05ea4791b782e28dfe479f00902cf35fa385119807fdb52292"
+    },
+    {
+      "path": "figma/exports/Core (Primitives).tokens.json",
+      "sha256": "ec63ede3dc2cad05404408ebccb9b67176c2f990d2339b1a7ad23d7241b4031b"
+    },
+    {
+      "path": "figma/exports/Semantics (Roles).tokens.json",
+      "sha256": "642f71c289391668169f6edd777c7ad50a916dd649a0409fd0868d5d2416f89b"
+    }
+  ]
+}

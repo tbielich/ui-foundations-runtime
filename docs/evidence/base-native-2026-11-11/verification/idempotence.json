@@ -1,0 +1,6 @@
+{
+  "probe": "Base page manual constructors followed by two real registered DOMContentLoaded handler dispatches",
+  "before": "2",
+  "after": "3",
+  "oneStep": true
+}

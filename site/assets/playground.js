@@ -100,6 +100,7 @@ if (!hasRequiredApis) {
 
       syncColorPickersFromControls(form);
       syncControlsToQueryParams(queryPrefix, queryControls);
+      container.dispatchEvent(new CustomEvent("playground:statechange", { detail: state }));
     };
 
     colorPickers.forEach((picker) => {

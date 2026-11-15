@@ -1,0 +1,9 @@
+{
+  "figma/token-projection.json": "240a5f859c452135d1cd6482778b68dc3331824e004213c981f81c96957360ee",
+  "figma/exports/Appearance (Modes).tokens.json": "502fbc733c4e1ee4fdce5a21286f5ff4e75fd188bfb10c2c2075e8f420e4ca71",
+  "figma/exports/Patterns (UI).tokens.json": "c98e75276dc90836e78ccb1d21d6b4a0de98f08f38a738c14ac6dda932e62004",
+  "figma/exports/Semantics (Roles).tokens.json": "05389205194f2cb9bf9d1bfd0d37c97f4590c981be7a73275fa03245c0fc8154",
+  "src/ui/patterns/tabs.css": "0dd9b54f3ca585c3b6ea6d6dac0e4c711f32501e3e021e3cea2aacf3c9fdab47",
+  "site/patterns/tabs.md": "c7258fe8fd667cfbe5ff65d46f3ad15eeebb775f816674602b53a1cc51950241",
+  "tests/browser/tabs-color-projection.spec.mjs": "92b41d431a59392842c70dd8efb49fbb31d318e0ecdd20e9b3e9313fc03c3408"
+}

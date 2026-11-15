@@ -1460,9 +1460,11 @@
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:213",
+          "com.figma.variableName": "Brand/Font/Base",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-font-base)"
           },
@@ -1478,51 +1480,82 @@
               "$ref": "Font/Family/Sans"
             },
             "Brand B": {
-              "$ref": "Font/Family/Sans"
+              "$ref": "Font/Family/Exo 2"
             },
             "Brand C": {
-              "$ref": "Font/Family/Sans"
+              "$ref": "Font/Family/Manrope"
             }
-          },
-          "com.figma.variableName": "Brand/Font/Base",
-          "com.figma.variableCollectionName": "Appearance (Brand)",
-          "com.figma.hiddenFromPublishing": false
+          }
         }
       },
       "Lead": {
         "$type": "string",
         "$value": {
-          "$ref": "Font/Family/Serif"
+          "$ref": "Font/Family/Sans"
         },
         "$extensions": {
           "com.figma.variableId": "VariableID:2006:214",
+          "com.figma.variableName": "Brand/Font/Lead",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
             "WEB": "var(--brand-font-lead)"
           },
           "com.figma.aliasData": {
-            "targetVariableId": "VariableID:3:6",
-            "targetVariableName": "Font/Family/Serif",
+            "targetVariableId": "VariableID:3:5",
+            "targetVariableName": "Font/Family/Sans",
             "targetVariableSetId": "VariableCollectionId:1:200",
             "targetVariableSetName": "Core (Primitives)"
           },
           "com.figma.isOverride": true,
           "com.figma.modeValues": {
             "Brand A": {
-              "$ref": "Font/Family/Serif"
+              "$ref": "Font/Family/Sans"
             },
             "Brand B": {
-              "$ref": "Font/Family/Serif"
+              "$ref": "Font/Family/Exo 2"
             },
             "Brand C": {
-              "$ref": "Font/Family/Serif"
+              "$ref": "Font/Family/Manrope"
             }
+          }
+        }
+      },
+      "Heading": {
+        "$type": "string",
+        "$value": {
+          "$ref": "Font/Family/Roboto Slab"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3260:3",
+          "com.figma.variableName": "Brand/Font/Heading",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--brand-font-heading)"
           },
-          "com.figma.variableName": "Brand/Font/Lead",
-          "com.figma.variableCollectionName": "Appearance (Brand)",
-          "com.figma.hiddenFromPublishing": false
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3260:2",
+            "targetVariableName": "Font/Family/Roboto Slab",
+            "targetVariableSetId": "VariableCollectionId:1:200",
+            "targetVariableSetName": "Core (Primitives)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.modeValues": {
+            "Brand A": {
+              "$ref": "Font/Family/Roboto Slab"
+            },
+            "Brand B": {
+              "$ref": "Font/Family/Orbitron"
+            },
+            "Brand C": {
+              "$ref": "Font/Family/Bricolage Grotesque"
+            }
+          }
         }
       }
     },
@@ -2002,6 +2035,86 @@
             "com.figma.variableName": "Brand/Size/Border/Thick",
             "com.figma.variableCollectionName": "Appearance (Brand)",
             "com.figma.hiddenFromPublishing": false
+          }
+        }
+      }
+    },
+    "Typography": {
+      "UI": {
+        "Font": {
+          "Weight": {
+            "$type": "string",
+            "$value": {
+              "$ref": "Font/Weight/600"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3260:5",
+              "com.figma.variableName": "Brand/Typography/UI/Font/Weight",
+              "com.figma.scopes": [
+                "FONT_STYLE"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--brand-typography-ui-font-weight)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:1:218",
+                "targetVariableName": "Font/Weight/600",
+                "targetVariableSetId": "VariableCollectionId:1:200",
+                "targetVariableSetName": "Core (Primitives)"
+              },
+              "com.figma.isOverride": true,
+              "com.figma.modeValues": {
+                "Brand A": {
+                  "$ref": "Font/Weight/600"
+                },
+                "Brand B": {
+                  "$ref": "Font/Weight/600"
+                },
+                "Brand C": {
+                  "$ref": "Font/Weight/600"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Heading": {
+        "Font": {
+          "Weight": {
+            "$type": "string",
+            "$value": {
+              "$ref": "Font/Weight/700"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3274:6",
+              "com.figma.variableName": "Brand/Typography/Heading/Font/Weight",
+              "com.figma.scopes": [
+                "FONT_STYLE"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-appearance-typography-heading-font-weight)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:1:219",
+                "targetVariableName": "Font/Weight/700",
+                "targetVariableSetId": "VariableCollectionId:1:200",
+                "targetVariableSetName": "Core (Primitives)"
+              },
+              "com.figma.isOverride": true,
+              "com.figma.modeValues": {
+                "Brand A": {
+                  "$ref": "Font/Weight/700"
+                },
+                "Brand B": {
+                  "$ref": "Font/Weight/800"
+                },
+                "Brand C": {
+                  "$ref": "Font/Weight/700"
+                }
+              }
+            }
           }
         }
       }

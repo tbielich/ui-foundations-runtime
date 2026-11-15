@@ -1,0 +1,119 @@
+{
+  "state": "Pre-concrete-catalogue adoption output frozen before naming rebuild",
+  "sourceCSSSha256": "6b9bacda593794ea74c56dba7ab02b75b5db3746582f3ae9c636dd31c220e2bc",
+  "root": "/tmp/uif-brand-a-pre-concrete-catalogue-20261110",
+  "files": [
+    {
+      "path": "dist/tokens/tokens.yaml",
+      "sha256": "7fce6ca6bd8f7ace340d02af0872abf025d5dce6d47ddb66bd5c2821db5eebe3"
+    },
+    {
+      "path": "dist/tokens/css/semantics-roles.tokens.css",
+      "sha256": "5c3a7de2adb7f02224e62e340c4deb9dae1b7a3a2200651b24e52a11b58f90c5"
+    },
+    {
+      "path": "dist/tokens/css/core-primitives.tokens.css",
+      "sha256": "2c3e2601388a11d9159dbc05b71be6fe5030bc9baa331feab849f5101c3c10df"
+    },
+    {
+      "path": "dist/tokens/css/typography-fluid.tokens.css",
+      "sha256": "880c7e6787e99cdd8c4ffeff48ad1e97fe5e9861273c65f0626db0f95d884bae"
+    },
+    {
+      "path": "dist/tokens/css/appearance-modes.tokens.mode-dark.css",
+      "sha256": "9e0dfb0c60da674df30d5c23c1e5108ef936f364a683201c95af70327ac02517"
+    },
+    {
+      "path": "dist/tokens/css/patterns-ui.tokens.css",
+      "sha256": "5f03bab1d96d6018953fe51cb8ddf28dee58c48729fa59d1336959802f7ef041"
+    },
+    {
+      "path": "dist/tokens/css/semantics-brands.tokens.brand-a.css",
+      "sha256": "6b3882afa4040496ec1c34feb1b92803396d0e8e9ff0dc70740d0213fb3720b6"
+    },
+    {
+      "path": "dist/tokens/css/semantics-brands.tokens.brand-c.css",
+      "sha256": "223873ce081105f9df1342bbecd6d6f0fe1f35152ba5e19696cb06707574f068"
+    },
+    {
+      "path": "dist/tokens/css/semantics-brands.tokens.brand-b.css",
+      "sha256": "ac504dc6c7d1b9c44add25ff9440c20349914500e5c5c1c0cd012e60874085e9"
+    },
+    {
+      "path": "dist/tokens/css/appearance-modes.tokens.mode-light.css",
+      "sha256": "cd72fdc8237c375cbee7d7d998d1ae507fb6ee6823d994160db996a48d076030"
+    },
+    {
+      "path": "dist/tokens/json/semantics-roles.tokens.json",
+      "sha256": "6e0750a1d47c6a1f6335c6420eeb8398ef63863194ade935608d6ab1e341f5ac"
+    },
+    {
+      "path": "dist/tokens/json/semantics-brands.tokens.brand-a.json",
+      "sha256": "9abc52ea5d52eb19f6da3203cffd2f9caa1980bb0d817ed87171c9225010770e"
+    },
+    {
+      "path": "dist/tokens/json/appearance-modes.tokens.mode-light.json",
+      "sha256": "a20e80a025dd5a96371f3c754c0db7cd6be8529ddc95acf6e360a7e523d0333f"
+    },
+    {
+      "path": "dist/tokens/json/patterns-ui.tokens.json",
+      "sha256": "a4fac8a7e32987904b1acb5019f6b78a14f11dd0408814c681ef38d41dbd7bf5"
+    },
+    {
+      "path": "dist/tokens/json/typography-fluid.tokens.json",
+      "sha256": "c082677ea2eec758d89e78a19bc786d0abfb8032e2ea8383cd1425067fa43359"
+    },
+    {
+      "path": "dist/tokens/json/semantics-brands.tokens.brand-b.json",
+      "sha256": "9abc52ea5d52eb19f6da3203cffd2f9caa1980bb0d817ed87171c9225010770e"
+    },
+    {
+      "path": "dist/tokens/json/core-primitives.tokens.json",
+      "sha256": "9d169f65832837df9577c2faf6b861c5d792b1217720cb35f86695c314fcbfcd"
+    },
+    {
+      "path": "dist/tokens/json/appearance-modes.tokens.mode-dark.json",
+      "sha256": "a20e80a025dd5a96371f3c754c0db7cd6be8529ddc95acf6e360a7e523d0333f"
+    },
+    {
+      "path": "dist/tokens/json/semantics-brands.tokens.brand-c.json",
+      "sha256": "9abc52ea5d52eb19f6da3203cffd2f9caa1980bb0d817ed87171c9225010770e"
+    },
+    {
+      "path": "dist/tokens/ts/semantics-brands.tokens.brand-a.ts",
+      "sha256": "f78cca3be21488ba484e1cbb5a8cae7aad2256d4924ca432011bba7d045e6c5b"
+    },
+    {
+      "path": "dist/tokens/ts/appearance-modes.tokens.mode-light.ts",
+      "sha256": "7c260d99683f5ec1f0023bd3cce266433797a563ac21c2d242c23842ee08dd88"
+    },
+    {
+      "path": "dist/tokens/ts/patterns-ui.tokens.ts",
+      "sha256": "2b416776761488f744b8ff012f702edd44ac4499a7558f88856efa4ead18381c"
+    },
+    {
+      "path": "dist/tokens/ts/core-primitives.tokens.ts",
+      "sha256": "e914e2d6ac8f627299feb0d2625c2660e77de56448a1c07a6d3d9840d8750572"
+    },
+    {
+      "path": "dist/tokens/ts/appearance-modes.tokens.mode-dark.ts",
+      "sha256": "9b00516d4f3ba1fecdc27a5fbfee4bedc49263bb237dc42b5707a63af718b80e"
+    },
+    {
+      "path": "dist/tokens/ts/semantics-brands.tokens.brand-c.ts",
+      "sha256": "86ec51c221b81b613fba6d69f19fe961fd87c9a00476005367014049babf03c7"
+    },
+    {
+      "path": "dist/tokens/ts/semantics-roles.tokens.ts",
+      "sha256": "839ca26dae1aa10c7159cca073ae126b664fe6197bf8de6d3a134f610c48dcfe"
+    },
+    {
+      "path": "dist/tokens/ts/semantics-brands.tokens.brand-b.ts",
+      "sha256": "7d2a33cf210e7caa3d465443743152a0137ea5594a2c368a81dd093223c04758"
+    },
+    {
+      "path": "dist/tokens/ts/typography-fluid.tokens.ts",
+      "sha256": "7ea240b849af84d7c2d9521fba2c9f919991b96b9e33a1b56085c2bf31c03fbb"
+    }
+  ]
+}

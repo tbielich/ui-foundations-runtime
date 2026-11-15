@@ -1,0 +1,16 @@
+[WebServer] (node:14387) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:14388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs horizontal keyboard activation, accessible names and disabled skipping (350ms)
+  ✓  2 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs vertical keyboard activation, accessible names and disabled skipping (190ms)
+  ✓  3 [chromium] › tests/browser/tabs-followups.spec.mjs:46:1 › Tabs inherit S/M/L from containers with nested replacement and no DOM rebuild (223ms)
+  ✓  4 [chromium] › tests/browser/tabs-followups.spec.mjs:72:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation (281ms)
+  ✓  5 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (178ms)
+  ✓  6 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (275ms)
+  ✓  7 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (190ms)
+
+  7 passed (2.3s)

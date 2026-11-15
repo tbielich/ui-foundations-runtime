@@ -1,0 +1,68 @@
+@layer components {
+  .uif-status-light {
+    --_uif-local-scale: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--uif-status-light-gap-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    font-family: var(--uif-status-light-font-family, inherit);
+    font-weight: var(--uif-status-light-font-weight, inherit);
+    font-size: calc(var(--uif-status-light-font-size-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--uif-status-light-line-height-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    color: var(--uif-status-light-neutral-text-color);
+  }
+
+  .uif-status-light-indicator {
+    inline-size: var(--uif-status-light-indicator-size-md);
+    block-size: var(--uif-status-light-indicator-size-md);
+    border-radius: 50%;
+    background: var(--uif-status-light-neutral-indicator-background);
+    flex: 0 0 auto;
+  }
+
+  .uif-status-light.positive {
+    color: var(--uif-status-light-positive-text-color);
+  }
+
+  .uif-status-light.positive .uif-status-light-indicator {
+    background: var(--uif-status-light-positive-indicator-background);
+  }
+
+  .uif-status-light.negative {
+    color: var(--uif-status-light-negative-text-color);
+  }
+
+  .uif-status-light.negative .uif-status-light-indicator {
+    background: var(--uif-status-light-negative-indicator-background);
+  }
+
+  .uif-status-light.notice {
+    color: var(--uif-status-light-notice-text-color);
+  }
+
+  .uif-status-light.notice .uif-status-light-indicator {
+    background: var(--uif-status-light-notice-indicator-background);
+  }
+
+  .uif-status-light.info {
+    color: var(--uif-status-light-info-text-color);
+  }
+
+  .uif-status-light.info .uif-status-light-indicator {
+    background: var(--uif-status-light-info-indicator-background);
+  }
+
+  .uif-status-light.sm {
+    --_uif-local-scale: var(--_uif-scale-small);
+  }
+
+  .uif-status-light.sm .uif-status-light-indicator {
+    inline-size: var(--uif-status-light-indicator-size-sm);
+    block-size: var(--uif-status-light-indicator-size-sm);
+  }
+  /* A semantic content outline keeps the colored marker discernible across schemes. */
+  .uif-status-light-indicator {
+    outline: var(--uif-semantic-size-border-default) solid var(--uif-semantic-color-content-default);
+    outline-offset: calc(-1 * var(--uif-semantic-size-border-default));
+  }
+  .uif-status-light-text { color: inherit; font: inherit; }
+}

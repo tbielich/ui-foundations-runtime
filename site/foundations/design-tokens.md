@@ -6,29 +6,24 @@ navTitle: Design Tokens
 order: 4
 permalink: /foundations/design-tokens/
 ---
+{% import "macros/foundation-docs.njk" as foundation %}
 
-Design tokens provide a shared contract for visual decisions across UIF. UIF-VLT
-defines the durable architecture and contracts; Figma is the design-authoring
-projection, and UIF-RUN turns the model into consumable CSS and other runtime
-artifacts.
+
+Design tokens connect visual decisions in Figma to CSS and other generated
+outputs. UI Foundations organises them into layers so patterns can adapt to
+different brands and schemes without changing their markup.
+
+{% call foundation.feature("Token layers", "One decision, a clear role.", "Each layer adds context or intent. Patterns use semantic roles to stay adaptable across brands and schemes.") %}
+<ol class="foundation-stack"><li><span>01</span><div><strong>Core</strong><small>Reusable raw values</small></div></li><li><span>02</span><div><strong>Appearance</strong><small>Brand · Scheme · Scale</small></div></li><li><span>03</span><div><strong>Semantics</strong><small>Action / Surface / Hover</small></div></li><li><span>04</span><div><strong>Patterns</strong><small>Button hover background</small></div></li></ol>
+{% endcall %}
+
 
 ## Token layers
 
 The system separates four responsibilities so a token name can explain what it
 means without also encoding a specific brand or theme.
 
-```text
-Core
-  ↓
-Appearance
-  ├─ Brand
-  ├─ Scheme
-  └─ Scale
-  ↓
-Semantics
-  ↓
-Patterns
-```
+
 
 <table class="docs-options-table">
   <thead><tr><th>Responsibility</th><th>What it controls</th><th>Example</th></tr></thead>
@@ -65,27 +60,22 @@ Interaction state is always the final segment. UIF keeps `Active` as the
 existing Runtime name for the pressed interaction; do not introduce
 `Pressed` as a second vocabulary.
 
-## Pipeline
+## Applying tokens
 
-Figma exports JSON token files to `figma/exports/`. The build step
-`npm run tokens:generate` transforms them into CSS custom properties in `dist/tokens/css/`.
+Use the CSS custom properties listed in the [token reference](/foundations/design-tokens/all/).
+Prefer semantic roles for application UI and pattern tokens for a specific control.
 
-Generated files in `dist/` are never edited directly.
-
-## Brand and mode
-
-Brand and appearance mode are orthogonal concerns controlled by `data-brand`
-and `data-mode` attributes on the root element. Switching either attribute swaps
-the active token values without changing component markup.
+See [Theming](/foundations/theming/) for brand, scheme, and scoped overrides.
 
 ## Rules
 
-- Patterns consume Semantics by default; direct Appearance/Core dependencies are documented compatibility exceptions.
+- Use semantic roles for patterns so their intent stays consistent across brands and schemes.
 - Brand, Scheme, and Scale belong to Appearance, not to semantic token names.
 - Never hardcode color values in pattern CSS.
 - Use `var(--...)` for token-driven visual properties.
-- Generated compatibility filenames do not define architectural ownership.
 
 ## Reference
 
 - [All Tokens](/foundations/design-tokens/all/) — complete tabular index of all generated tokens
+
+{{ foundation.next("/foundations/design-tokens/all/", "Find a token", "Browse the generated names and values.") }}

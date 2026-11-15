@@ -1,0 +1,16 @@
+{
+  "mode": "VERIFY",
+  "gate": "PASS",
+  "reviewer": "/root/merge_review",
+  "blockingFindings": [],
+  "evidence": [
+    "Seven stable Pattern slots retain semantic source bindings",
+    "Fresh Chromium: BrandB Exo2/600; canonical monospace/500 override; old serif/700 priority; canonical restored after old input removed",
+    "Bundled token layer retained",
+    "60 browser checks pass; git diff --check passes"
+  ],
+  "limitations": [
+    "Read-only review, not GitHub approval",
+    "Chromium only"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "phase": "Concrete catalogue final verification",
+  "ownedSessions": [
+    {
+      "port": 8147,
+      "session": 5807,
+      "state": "stopped",
+      "exitCode": 130
+    },
+    {
+      "port": 8148,
+      "session": 21711,
+      "state": "stopped",
+      "exitCode": 130
+    }
+  ],
+  "scope": "Only verifier-owned final docs/publicRuntime servers stopped; previous phase teardown preserved in pre-concrete-verification."
+}

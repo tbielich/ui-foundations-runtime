@@ -1,0 +1,6142 @@
+[
+  {
+    "entry": "main",
+    "mode": "light",
+    "blocked": false,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=light&entry=main",
+      "http://127.0.0.1:8158/main.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(51, 51, 51)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(128, 128, 128)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(128, 128, 128)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 50
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "main",
+    "mode": "light",
+    "blocked": true,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=light&entry=main",
+      "http://127.0.0.1:8158/main.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf"
+    ],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(51, 51, 51)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(128, 128, 128)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(128, 128, 128)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 49
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz140000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "main",
+    "mode": "dark",
+    "blocked": false,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=dark&entry=main",
+      "http://127.0.0.1:8158/main.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(128, 128, 128)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204) rgb(204, 204, 204) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 50
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "main",
+    "mode": "dark",
+    "blocked": true,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=dark&entry=main",
+      "http://127.0.0.1:8158/main.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf"
+    ],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(128, 128, 128)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204) rgb(204, 204, 204) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 49
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz140000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "core",
+    "mode": "light",
+    "blocked": false,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=light&entry=core",
+      "http://127.0.0.1:8158/core/index.css",
+      "http://127.0.0.1:8158/ui/index.css",
+      "http://127.0.0.1:8158/core/base/reset.css",
+      "http://127.0.0.1:8158/core/base/fonts.css",
+      "http://127.0.0.1:8158/core/base/base.css",
+      "http://127.0.0.1:8158/core/base/typography.css",
+      "http://127.0.0.1:8158/tokens/css/core-primitives.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/typography-fluid.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-light.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-dark.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-a.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-b.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-c.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-roles.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/patterns-ui.tokens.css",
+      "http://127.0.0.1:8158/core/context/mode.css",
+      "http://127.0.0.1:8158/core/context/scale.css",
+      "http://127.0.0.1:8158/core/context/brand-typography.css",
+      "http://127.0.0.1:8158/ui/patterns/accordion.css",
+      "http://127.0.0.1:8158/ui/patterns/avatar.css",
+      "http://127.0.0.1:8158/ui/patterns/badge.css",
+      "http://127.0.0.1:8158/ui/patterns/button.css",
+      "http://127.0.0.1:8158/ui/patterns/calendar.css",
+      "http://127.0.0.1:8158/ui/patterns/checkbox.css",
+      "http://127.0.0.1:8158/ui/patterns/date-input.css",
+      "http://127.0.0.1:8158/ui/patterns/divider.css",
+      "http://127.0.0.1:8158/ui/patterns/dialog.css",
+      "http://127.0.0.1:8158/ui/patterns/form.css",
+      "http://127.0.0.1:8158/ui/patterns/icon.css",
+      "http://127.0.0.1:8158/ui/patterns/input.css",
+      "http://127.0.0.1:8158/ui/patterns/label.css",
+      "http://127.0.0.1:8158/ui/patterns/link.css",
+      "http://127.0.0.1:8158/ui/patterns/radio.css",
+      "http://127.0.0.1:8158/ui/patterns/select.css",
+      "http://127.0.0.1:8158/ui/patterns/switch.css",
+      "http://127.0.0.1:8158/ui/patterns/tabs.css",
+      "http://127.0.0.1:8158/ui/patterns/table.css",
+      "http://127.0.0.1:8158/ui/patterns/textarea.css",
+      "http://127.0.0.1:8158/ui/patterns/tooltip.css",
+      "http://127.0.0.1:8158/ui/patterns/status-light.css",
+      "http://127.0.0.1:8158/ui/patterns/meter.css",
+      "http://127.0.0.1:8158/ui/patterns/progress-bar.css",
+      "http://127.0.0.1:8158/ui/patterns/inline-alert.css",
+      "http://127.0.0.1:8158/ui/patterns/illustrated-message.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(51, 51, 51)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(128, 128, 128)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(128, 128, 128)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 50
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "core",
+    "mode": "light",
+    "blocked": true,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=light&entry=core",
+      "http://127.0.0.1:8158/core/index.css",
+      "http://127.0.0.1:8158/ui/index.css",
+      "http://127.0.0.1:8158/core/base/reset.css",
+      "http://127.0.0.1:8158/core/base/fonts.css",
+      "http://127.0.0.1:8158/core/base/base.css",
+      "http://127.0.0.1:8158/core/base/typography.css",
+      "http://127.0.0.1:8158/tokens/css/core-primitives.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/typography-fluid.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-light.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-dark.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-a.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-b.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-c.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-roles.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/patterns-ui.tokens.css",
+      "http://127.0.0.1:8158/core/context/mode.css",
+      "http://127.0.0.1:8158/core/context/scale.css",
+      "http://127.0.0.1:8158/core/context/brand-typography.css",
+      "http://127.0.0.1:8158/ui/patterns/accordion.css",
+      "http://127.0.0.1:8158/ui/patterns/avatar.css",
+      "http://127.0.0.1:8158/ui/patterns/badge.css",
+      "http://127.0.0.1:8158/ui/patterns/button.css",
+      "http://127.0.0.1:8158/ui/patterns/calendar.css",
+      "http://127.0.0.1:8158/ui/patterns/checkbox.css",
+      "http://127.0.0.1:8158/ui/patterns/date-input.css",
+      "http://127.0.0.1:8158/ui/patterns/divider.css",
+      "http://127.0.0.1:8158/ui/patterns/dialog.css",
+      "http://127.0.0.1:8158/ui/patterns/form.css",
+      "http://127.0.0.1:8158/ui/patterns/icon.css",
+      "http://127.0.0.1:8158/ui/patterns/input.css",
+      "http://127.0.0.1:8158/ui/patterns/label.css",
+      "http://127.0.0.1:8158/ui/patterns/link.css",
+      "http://127.0.0.1:8158/ui/patterns/radio.css",
+      "http://127.0.0.1:8158/ui/patterns/select.css",
+      "http://127.0.0.1:8158/ui/patterns/switch.css",
+      "http://127.0.0.1:8158/ui/patterns/tabs.css",
+      "http://127.0.0.1:8158/ui/patterns/table.css",
+      "http://127.0.0.1:8158/ui/patterns/textarea.css",
+      "http://127.0.0.1:8158/ui/patterns/tooltip.css",
+      "http://127.0.0.1:8158/ui/patterns/status-light.css",
+      "http://127.0.0.1:8158/ui/patterns/meter.css",
+      "http://127.0.0.1:8158/ui/patterns/progress-bar.css",
+      "http://127.0.0.1:8158/ui/patterns/inline-alert.css",
+      "http://127.0.0.1:8158/ui/patterns/illustrated-message.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf"
+    ],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(51, 51, 51)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(128, 128, 128)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(128, 128, 128)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(151, 71, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(58, 18, 95)",
+        "background": "rgb(255, 255, 255)",
+        "border": "rgb(58, 18, 95)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51) rgb(51, 51, 51) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 49
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz140000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "core",
+    "mode": "dark",
+    "blocked": false,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=dark&entry=core",
+      "http://127.0.0.1:8158/core/index.css",
+      "http://127.0.0.1:8158/ui/index.css",
+      "http://127.0.0.1:8158/core/base/reset.css",
+      "http://127.0.0.1:8158/core/base/fonts.css",
+      "http://127.0.0.1:8158/core/base/base.css",
+      "http://127.0.0.1:8158/core/base/typography.css",
+      "http://127.0.0.1:8158/tokens/css/core-primitives.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/typography-fluid.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-light.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-dark.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-a.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-b.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-c.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-roles.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/patterns-ui.tokens.css",
+      "http://127.0.0.1:8158/core/context/mode.css",
+      "http://127.0.0.1:8158/core/context/scale.css",
+      "http://127.0.0.1:8158/core/context/brand-typography.css",
+      "http://127.0.0.1:8158/ui/patterns/accordion.css",
+      "http://127.0.0.1:8158/ui/patterns/avatar.css",
+      "http://127.0.0.1:8158/ui/patterns/badge.css",
+      "http://127.0.0.1:8158/ui/patterns/button.css",
+      "http://127.0.0.1:8158/ui/patterns/calendar.css",
+      "http://127.0.0.1:8158/ui/patterns/checkbox.css",
+      "http://127.0.0.1:8158/ui/patterns/date-input.css",
+      "http://127.0.0.1:8158/ui/patterns/divider.css",
+      "http://127.0.0.1:8158/ui/patterns/dialog.css",
+      "http://127.0.0.1:8158/ui/patterns/form.css",
+      "http://127.0.0.1:8158/ui/patterns/icon.css",
+      "http://127.0.0.1:8158/ui/patterns/input.css",
+      "http://127.0.0.1:8158/ui/patterns/label.css",
+      "http://127.0.0.1:8158/ui/patterns/link.css",
+      "http://127.0.0.1:8158/ui/patterns/radio.css",
+      "http://127.0.0.1:8158/ui/patterns/select.css",
+      "http://127.0.0.1:8158/ui/patterns/switch.css",
+      "http://127.0.0.1:8158/ui/patterns/tabs.css",
+      "http://127.0.0.1:8158/ui/patterns/table.css",
+      "http://127.0.0.1:8158/ui/patterns/textarea.css",
+      "http://127.0.0.1:8158/ui/patterns/tooltip.css",
+      "http://127.0.0.1:8158/ui/patterns/status-light.css",
+      "http://127.0.0.1:8158/ui/patterns/meter.css",
+      "http://127.0.0.1:8158/ui/patterns/progress-bar.css",
+      "http://127.0.0.1:8158/ui/patterns/inline-alert.css",
+      "http://127.0.0.1:8158/ui/patterns/illustrated-message.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(128, 128, 128)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204) rgb(204, 204, 204) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 50
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Orbitron",
+          "postScriptName": "Orbitron-ExtraBold",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  },
+  {
+    "entry": "core",
+    "mode": "dark",
+    "blocked": true,
+    "requests": [
+      "http://127.0.0.1:8158/probe?brand=b&mode=dark&entry=core",
+      "http://127.0.0.1:8158/core/index.css",
+      "http://127.0.0.1:8158/ui/index.css",
+      "http://127.0.0.1:8158/core/base/reset.css",
+      "http://127.0.0.1:8158/core/base/fonts.css",
+      "http://127.0.0.1:8158/core/base/base.css",
+      "http://127.0.0.1:8158/core/base/typography.css",
+      "http://127.0.0.1:8158/tokens/css/core-primitives.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/typography-fluid.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-light.css",
+      "http://127.0.0.1:8158/tokens/css/appearance-modes.tokens.mode-dark.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-a.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-b.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-brands.tokens.brand-c.css",
+      "http://127.0.0.1:8158/tokens/css/semantics-roles.tokens.css",
+      "http://127.0.0.1:8158/tokens/css/patterns-ui.tokens.css",
+      "http://127.0.0.1:8158/core/context/mode.css",
+      "http://127.0.0.1:8158/core/context/scale.css",
+      "http://127.0.0.1:8158/core/context/brand-typography.css",
+      "http://127.0.0.1:8158/ui/patterns/accordion.css",
+      "http://127.0.0.1:8158/ui/patterns/avatar.css",
+      "http://127.0.0.1:8158/ui/patterns/badge.css",
+      "http://127.0.0.1:8158/ui/patterns/button.css",
+      "http://127.0.0.1:8158/ui/patterns/calendar.css",
+      "http://127.0.0.1:8158/ui/patterns/checkbox.css",
+      "http://127.0.0.1:8158/ui/patterns/date-input.css",
+      "http://127.0.0.1:8158/ui/patterns/divider.css",
+      "http://127.0.0.1:8158/ui/patterns/dialog.css",
+      "http://127.0.0.1:8158/ui/patterns/form.css",
+      "http://127.0.0.1:8158/ui/patterns/icon.css",
+      "http://127.0.0.1:8158/ui/patterns/input.css",
+      "http://127.0.0.1:8158/ui/patterns/label.css",
+      "http://127.0.0.1:8158/ui/patterns/link.css",
+      "http://127.0.0.1:8158/ui/patterns/radio.css",
+      "http://127.0.0.1:8158/ui/patterns/select.css",
+      "http://127.0.0.1:8158/ui/patterns/switch.css",
+      "http://127.0.0.1:8158/ui/patterns/tabs.css",
+      "http://127.0.0.1:8158/ui/patterns/table.css",
+      "http://127.0.0.1:8158/ui/patterns/textarea.css",
+      "http://127.0.0.1:8158/ui/patterns/tooltip.css",
+      "http://127.0.0.1:8158/ui/patterns/status-light.css",
+      "http://127.0.0.1:8158/ui/patterns/meter.css",
+      "http://127.0.0.1:8158/ui/patterns/progress-bar.css",
+      "http://127.0.0.1:8158/ui/patterns/inline-alert.css",
+      "http://127.0.0.1:8158/ui/patterns/illustrated-message.css",
+      "http://127.0.0.1:8158/assets/icons/cross-circled.svg",
+      "http://127.0.0.1:8158/assets/icons/message-info.svg",
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf",
+      "http://127.0.0.1:8158/assets/fonts/runtime/exo-2-variable.woff2",
+      "http://127.0.0.1:8158/assets/fonts/runtime/inter-variable.woff2"
+    ],
+    "aborted": [
+      "http://127.0.0.1:8158/assets/fonts/runtime/orbitron-variable.ttf"
+    ],
+    "metrics": {
+      "heading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "56px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 56
+      },
+      "body": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "button": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 100.28125,
+        "height": 42
+      },
+      "composedButton": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 152.671875,
+        "height": 42
+      },
+      "buttonText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(255, 255, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 118.671875,
+        "height": 24
+      },
+      "fieldLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 97.609375,
+        "height": 24
+      },
+      "fieldLabelText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 86.359375,
+        "height": 24
+      },
+      "required": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "700",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 7.25,
+        "height": 24
+      },
+      "inputWrapper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "input": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 550,
+        "height": 24
+      },
+      "inputClear": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "16px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "inputIcon": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "24px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(204, 204, 204)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 24,
+        "height": 24
+      },
+      "select": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px",
+        "gap": "8px",
+        "width": 600,
+        "height": 40
+      },
+      "option": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(0, 0, 0)",
+        "background": "color(srgb 0 0 0 / 0.12)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "4px",
+        "padding": "8px 12px",
+        "gap": "8px",
+        "width": 0,
+        "height": 0
+      },
+      "textarea": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "12px",
+        "gap": "normal",
+        "width": 600,
+        "height": 96
+      },
+      "badge": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgb(128, 128, 128)",
+        "border": "rgba(0, 0, 0, 0)",
+        "borderWidth": "1px",
+        "radius": "10000px",
+        "padding": "4px 12px",
+        "gap": "4px",
+        "width": 86.40625,
+        "height": 40
+      },
+      "badgeText": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 60.40625,
+        "height": 24
+      },
+      "link": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "4px",
+        "width": 52.5625,
+        "height": 24
+      },
+      "helper": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(51, 51, 51)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(51, 51, 51)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 20
+      },
+      "status": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 41.9375,
+        "height": 20
+      },
+      "meterLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 51,
+        "height": 20
+      },
+      "meterValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.9375,
+        "height": 20
+      },
+      "progressLabel": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 64.6875,
+        "height": 20
+      },
+      "progressValue": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.46875,
+        "height": 20
+      },
+      "illustratedHeading": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "20px",
+        "line": "28px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 28
+      },
+      "illustratedDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 191.140625,
+        "height": 24
+      },
+      "illustratedAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(255, 255, 255)",
+        "background": "rgb(58, 18, 95)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 101.5,
+        "height": 42
+      },
+      "alertTitle": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 20
+      },
+      "alertDescription": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 582,
+        "height": 24
+      },
+      "alertAction": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(196, 143, 255)",
+        "background": "rgb(0, 0, 0)",
+        "border": "rgb(196, 143, 255)",
+        "borderWidth": "1px",
+        "radius": "0px",
+        "padding": "8px 16px",
+        "gap": "normal",
+        "width": 103.515625,
+        "height": 40
+      },
+      "ownedBase": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 600,
+        "height": 24
+      },
+      "ownedSummary": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "600",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "8px",
+        "width": 600,
+        "height": 48
+      },
+      "ownedContent": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 600,
+        "height": 48
+      },
+      "ownedTab": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "500",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204) rgb(204, 204, 204) rgba(0, 0, 0, 0)",
+        "borderWidth": "0px 0px 2px",
+        "radius": "0px",
+        "padding": "12px 16px",
+        "gap": "normal",
+        "width": 69.15625,
+        "height": 50
+      },
+      "ownedAvatar": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 16.828125,
+        "height": 24
+      },
+      "ownedTooltip": {
+        "family": "\"Exo 2\", Inter, sans-serif",
+        "weight": "400",
+        "size": "14px",
+        "line": "20px",
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(26, 26, 26)",
+        "border": "rgb(0, 0, 0)",
+        "borderWidth": "0px",
+        "radius": "2px",
+        "padding": "8px 12px",
+        "gap": "normal",
+        "width": 67.46875,
+        "height": 33
+      },
+      "code": {
+        "family": "\"SF Mono\", monospace",
+        "weight": "400",
+        "size": "16px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 79.125,
+        "height": 19
+      },
+      "sharpS": {
+        "family": "Orbitron, Inter, sans-serif",
+        "weight": "800",
+        "size": "40px",
+        "line": "24px",
+        "color": "rgb(204, 204, 204)",
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "rgb(204, 204, 204)",
+        "borderWidth": "0px",
+        "radius": "0px",
+        "padding": "0px",
+        "gap": "normal",
+        "width": 28.53125,
+        "height": 49
+      }
+    },
+    "tokens": {},
+    "rootFamily": "\"Exo 2\", Inter, sans-serif",
+    "viewport": 1280,
+    "documentWidth": 1280,
+    "fonts": {
+      "heading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 16
+        }
+      ],
+      "body": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 21
+        }
+      ],
+      "button": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 8
+        }
+      ],
+      "buttonText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 14
+        }
+      ],
+      "fieldLabelText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 11
+        }
+      ],
+      "badgeText": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "status": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 6
+        }
+      ],
+      "meterLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "progressLabel": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 9
+        }
+      ],
+      "illustratedHeading": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz140000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 10
+        }
+      ],
+      "illustratedDescription": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 27
+        }
+      ],
+      "ownedBase": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 19
+        }
+      ],
+      "ownedSummary": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_SemiBold",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedContent": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 17
+        }
+      ],
+      "ownedTab": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular_Medium",
+          "isCustomFont": true,
+          "glyphCount": 5
+        }
+      ],
+      "ownedAvatar": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 2
+        }
+      ],
+      "ownedTooltip": [
+        {
+          "familyName": "Exo 2",
+          "postScriptName": "Exo2-Regular",
+          "isCustomFont": true,
+          "glyphCount": 7
+        }
+      ],
+      "code": [
+        {
+          "familyName": "SF Mono",
+          "postScriptName": "SFMono-Regular",
+          "isCustomFont": false,
+          "glyphCount": 8
+        }
+      ],
+      "sharpS": [
+        {
+          "familyName": "Inter",
+          "postScriptName": "Inter-Regular_opsz200000_wght3200000",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  }
+]
