@@ -82,7 +82,8 @@
     "./behaviors/calendar": "./dist/ui/components/calendar.js",
     "./behaviors/date-input": "./dist/ui/components/date-input.js",
     "./behaviors/input-field": "./dist/ui/components/input-field.js",
-    "./behaviors/table": "./dist/ui/components/table.js"
+    "./behaviors/table": "./dist/ui/components/table.js",
+    "./elements/ui-progress-circle": "./dist/elements/ui-progress-circle.js"
   },
   "scripts": {
     "icons:generate-list": "node scripts/generate-icon-list.mjs",

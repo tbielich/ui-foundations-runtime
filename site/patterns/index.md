@@ -135,4 +135,13 @@ permalink: /patterns/
   <a class="docs-component-card" href="/patterns/illustrated-message/"><div class="docs-component-card-preview">{{ uif.illustratedMessage(preset="empty") }}</div><div class="docs-component-card-body"><h2>Illustrated Message</h2><p>Empty, error and no-results states with an optional action.</p></div></a>
     </div>
   </div>
+  <a class="docs-component-card" href="/patterns/progress-circle/">
+    <div class="docs-component-card-preview">
+      {{ uif.progressCircle(value=64, label="Progress") }}
+    </div>
+    <div class="docs-component-card-body">
+      <strong>ProgressCircle</strong>
+      <p>Circular indicator for determinate progress and indeterminate loading.</p>
+    </div>
+  </a>
 </div>
