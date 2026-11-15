@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -87,4 +87,19 @@ describe('Build Output', () => {
     // If we got here without execFileSync throwing, exit code was 0
     assert.ok(true);
   });
+});
+
+
+it('Checkbox mask retains its canonical glyph in modular and bundled package output', () => {
+  const pattern = readFileSync(resolve(ROOT, 'dist/ui/patterns/checkbox.css'), 'utf8');
+  const asset = pattern.match(/mask-image:\s*url\("([^"]+)"\)/)[1];
+  assert.ok(!asset.startsWith('/'), 'modular CSS must not depend on the consumer host root');
+  const resolvedAsset = resolve(ROOT, 'dist/ui/patterns', asset);
+  assert.ok(existsSync(resolvedAsset), 'packed modular mask resolves to a shipped asset');
+  const canonical = readFileSync(resolve(ROOT, 'src/assets/icons/checkmark.svg'), 'utf8');
+  assert.equal(readFileSync(resolvedAsset, 'utf8'), canonical);
+  const bundle = readFileSync(resolve(ROOT, 'dist/main.css'), 'utf8');
+  const embedded = [...bundle.matchAll(/mask-image:\s*url\("data:image\/svg\+xml,([^"]+)"\)/g)];
+  assert.ok(embedded.length >= 2, 'both browser mask properties retain a self-contained glyph');
+  for (const match of embedded) assert.equal(decodeURIComponent(match[1]), canonical);
 });

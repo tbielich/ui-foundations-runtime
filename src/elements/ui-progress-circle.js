@@ -33,7 +33,8 @@ class UIProgressCircle extends UIElement {
       ? ""
       : ` aria-valuemin="0" aria-valuemax="100" aria-valuenow="${value}" style="--uif-progress-circle-value: ${value}"`;
 
-    this.innerHTML = `<span class="${classes.join(" ")}" role="progressbar" aria-label="${label}"${valueAttrs}><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="uif-progress-circle-track" cx="18" cy="18" r="15.9155"></circle><circle class="uif-progress-circle-indicator" cx="18" cy="18" r="15.9155" pathLength="100"></circle></svg></span>`;
+    this.innerHTML = `<span class="${classes.join(" ")}" role="progressbar"${valueAttrs}><svg viewBox="0 0 36 36" aria-hidden="true"><circle class="uif-progress-circle-track" cx="18" cy="18" r="15.9155"></circle><circle class="uif-progress-circle-indicator" cx="18" cy="18" r="15.9155" pathLength="100"></circle></svg></span>`;
+    this.querySelector('[role="progressbar"]').setAttribute("aria-label", label);
   }
 }
 

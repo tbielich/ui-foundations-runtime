@@ -2,6 +2,7 @@ import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import siteConfig from "../config/site.js";
 
 // Minimal static file server for the built Eleventy `_site/` output.
 // Used only to give the bounded browser-verification layer a real HTTP origin
@@ -31,8 +32,13 @@ const MIME_TYPES = {
 
 function resolveRequestPath(urlPath) {
   const decoded = decodeURIComponent(urlPath.split("?")[0].split("#")[0]);
+  // Serve the same configured hosting prefix used by the built HTML assets.
+  // Keep root routes available for the existing bounded browser test URLs.
+  const pathname = siteConfig.basePath && decoded.startsWith(`${siteConfig.basePath}/`)
+    ? decoded.slice(siteConfig.basePath.length)
+    : decoded;
   const safe = path
-    .normalize(decoded)
+    .normalize(pathname)
     .replace(/^(\.\.[/\\])+/, "")
     .replace(/^[/\\]+/, "");
   let target = path.join(SITE_ROOT, safe);

@@ -32,6 +32,7 @@ function vaultDocumentationUrl(path = "") {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy({ "artifacts/accessibility/result.json": "evidence/accessibility/result.json" });
   eleventyConfig.addFilter("pageSections", pageSections);
   eleventyConfig.addShortcode("componentTokenTable", renderComponentTokenTable);
   eleventyConfig.addFilter("vaultDocumentationUrl", vaultDocumentationUrl);

@@ -49,8 +49,8 @@
     inline-size: 0.75em;
     block-size: 0.75em;
     background-color: currentColor;
-    -webkit-mask-image: url("/assets/icons/checkmark.svg");
-    mask-image: url("/assets/icons/checkmark.svg");
+    -webkit-mask-image: url("../../assets/icons/checkmark.svg");
+    mask-image: url("../../assets/icons/checkmark.svg");
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;

@@ -57,7 +57,7 @@
 {%- if className -%}{%- set checkboxClasses = checkboxClasses + " " + className -%}{%- endif -%}
 {%- if wrapperClassName -%}{%- set fieldClasses = fieldClasses + " " + wrapperClassName -%}{%- endif -%}
 <label class="{{ fieldClasses }}">
-  <input class="{{ checkboxClasses }}" type="checkbox"{% if id %} id="{{ id }}"{% endif %}{% if name %} name="{{ name }}"{% endif %}{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if indeterminate or state == "indeterminate" %} aria-checked="mixed"{% endif %}{% if disabled or state == "disabled" %} disabled{% endif %} />
+  <input class="{{ checkboxClasses }}" type="checkbox"{% if id %} id="{{ id }}"{% endif %}{% if name %} name="{{ name }}"{% endif %}{% if value %} value="{{ value }}"{% endif %}{% if checked %} checked{% endif %}{% if indeterminate or state == "indeterminate" %} data-indeterminate{% endif %}{% if disabled or state == "disabled" %} disabled{% endif %} />
   <span class="uif-checkbox-field-text">{{ label }}</span>
 </label>
 {%- endmacro %}
@@ -433,11 +433,14 @@
 {%- endmacro %}
 
 {% macro progressCircle(value='', label='Loading', size='md') -%}
+{%- set number = value | float -%}
+{%- set unknown = value === '' or value === none or number is not number or number != number -%}
+{%- set value = 0 if number < 0 else (100 if number > 100 else number) -%}
 {%- set resolvedSize = size if size == 'sm' or size == 'lg' else 'md' -%}
 {%- set classes = 'uif-progress-circle' -%}
 {%- if resolvedSize != 'md' -%}{%- set classes = classes + ' ' + resolvedSize -%}{%- endif -%}
-{%- if value == '' or value == none -%}{%- set classes = classes + ' is-indeterminate' -%}{%- endif -%}
-<span class="{{ classes }}" role="progressbar" aria-label="{{ label }}"{% if value != '' and value != none %} aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ value }}" style="--uif-progress-circle-value: {{ value }}"{% endif %}>
+{%- if unknown -%}{%- set classes = classes + ' is-indeterminate' -%}{%- endif -%}
+<span class="{{ classes }}" role="progressbar" aria-label="{{ label | escape }}"{% if not unknown %} aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ value }}" style="--uif-progress-circle-value: {{ value }}"{% endif %}>
   <svg viewBox="0 0 36 36" aria-hidden="true">
     <circle class="uif-progress-circle-track" cx="18" cy="18" r="15.9155"></circle>
     <circle class="uif-progress-circle-indicator" cx="18" cy="18" r="15.9155" pathLength="100"></circle>
