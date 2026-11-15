@@ -1,0 +1,83 @@
+[WebServer] (node:6964) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:6965) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (338ms)
+(node:6980) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (5.3s)
+(node:7018) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (260ms)
+
+
+  1) [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      31 |   });
+      32 |   await expect(fixture.getByRole('tablist', { name: 'Updated tabs' })).toHaveCount(1);
+    > 33 |   expect(await fixture.locator('uif-tab-list').evaluate(list => list.querySelector('button') === list._testButton)).toBe(true);
+         |                                                                                                                     ^
+      34 |   await expect(first).toBeFocused();
+      35 |   await page.keyboard.press('ArrowDown');
+      36 |   const last = fixture.getByRole('tab', { name: 'Last', exact: true });
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state/tests/browser/tabs-state.spec.mjs:33:117
+
+    Error Context: test-results/tabs-state-TabList-attribu-f91be-cus-and-vertical-navigation-chromium/error-context.md
+
+  2) [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners 
+
+    Error: expect(locator).toHaveValue(expected) failed
+
+    Locator:  locator('#tabs-state-fixture').getByRole('textbox', { name: 'Draft' })
+    Expected: "unsaved draft"
+    Received: "initial"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveValue" locator('#tabs-state-fixture').getByRole('textbox', { name: 'Draft' }) with timeout 5000ms
+      - waiting for locator('#tabs-state-fixture').getByRole('textbox', { name: 'Draft' })
+        14 × locator resolved to <input value="initial" aria-label="Draft"/>
+           - unexpected value "initial"
+
+
+      56 |   await expect(fixture.locator('#state-a')).toBeHidden();
+      57 |   await fixture.getByRole('tab', { name: 'First', exact: true }).click();
+    > 58 |   await expect(fixture.getByRole('textbox', { name: 'Draft' })).toHaveValue('unsaved draft');
+         |                                                                 ^
+      59 |   expect(await fixture.locator('#state-a').evaluate(panel => panel.querySelector('input') === panel._testInput)).toBe(true);
+      60 |   await fixture.getByRole('button', { name: 'Count', exact: true }).click();
+      61 |   await expect(fixture.locator('#state-a')).toHaveAttribute('data-clicks', '1');
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state/tests/browser/tabs-state.spec.mjs:58:65
+
+    Error Context: test-results/tabs-state-Panel-switching-70c78-dentity-and-event-listeners-chromium/error-context.md
+
+  3) [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      69 |     tab.setAttribute('controls', 'state-a');
+      70 |   });
+    > 71 |   expect(await fixture.locator('uif-tab').first().evaluate(tab => tab.querySelector('button') === tab._testButton)).toBe(true);
+         |                                                                                                                     ^
+      72 |   const first = fixture.getByRole('tab', { name: 'Renamed', exact: true });
+      73 |   await first.focus();
+      74 |   await page.keyboard.press('ArrowRight');
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state/tests/browser/tabs-state.spec.mjs:71:117
+
+    Error Context: test-results/tabs-state-Tab-attributes--0b01c-igation-skips-disabled-tabs-chromium/error-context.md
+
+  3 failed
+    [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation 
+    [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners 
+    [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs 

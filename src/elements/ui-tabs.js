@@ -17,22 +17,20 @@ class UITabList extends UIElement {
   render() {
     const orientation = this.getAttr("orientation", "horizontal");
     const ariaLabel = this.getAttr("aria-label");
-    const children = this.innerHTML;
+    if (!this._tabList) {
+      this._tabList = this.ownerDocument.createElement("div");
+      this._tabList.className = "uif-tab-list";
+      this._tabList.setAttribute("role", "tablist");
+      this._tabList.append(...this.childNodes);
+      this.append(this._tabList);
+      this._tabList.addEventListener("click", (event) => this._handleClick(event));
+      this._tabList.addEventListener("keydown", (event) => this._handleKeydown(event));
+      queueMicrotask(() => this._ensureInitialSelection());
+    }
 
-    const attrs = [
-      'class="uif-tab-list"',
-      'role="tablist"',
-      `aria-orientation="${orientation}"`,
-    ];
-    if (ariaLabel) attrs.push(`aria-label="${ariaLabel}"`);
-
-    this.innerHTML = `<div ${attrs.join(" ")}>${children}</div>`;
-
-    const tabList = this.querySelector(":scope > .uif-tab-list");
-    tabList?.addEventListener("click", (event) => this._handleClick(event));
-    tabList?.addEventListener("keydown", (event) => this._handleKeydown(event));
-
-    queueMicrotask(() => this._ensureInitialSelection());
+    this._tabList.setAttribute("aria-orientation", orientation);
+    if (ariaLabel) this._tabList.setAttribute("aria-label", ariaLabel);
+    else this._tabList.removeAttribute("aria-label");
   }
 
   _tabs() {
@@ -161,17 +159,19 @@ class UITab extends UIElement {
     const disabled = this.getBool("disabled");
     const controls = this.getAttr("controls");
 
-    const attrs = [
-      'class="uif-tab"',
-      'role="tab"',
-      'type="button"',
-      `aria-selected="${selected}"`,
-      `tabindex="${selected ? "0" : "-1"}"`,
-    ];
-    if (controls) attrs.push(`aria-controls="${controls}"`);
-    if (disabled) attrs.push("disabled");
-
-    this.innerHTML = `<button ${attrs.join(" ")}>${label}</button>`;
+    if (!this._button) {
+      this._button = this.ownerDocument.createElement("button");
+      this._button.className = "uif-tab";
+      this._button.setAttribute("role", "tab");
+      this._button.type = "button";
+      this.replaceChildren(this._button);
+    }
+    this._button.textContent = label;
+    this._button.setAttribute("aria-selected", String(selected));
+    this._button.tabIndex = selected ? 0 : -1;
+    this._button.disabled = disabled;
+    if (controls) this._button.setAttribute("aria-controls", controls);
+    else this._button.removeAttribute("aria-controls");
   }
 }
 
@@ -189,19 +189,16 @@ class UITabPanel extends UIElement {
     return ["hidden"];
   }
 
-  constructor() {
-    super();
-    this._authoredContent = null;
-  }
-
   render() {
-    if (this._authoredContent === null) {
-      this._authoredContent = this.innerHTML;
+    if (!this._panel) {
+      this._panel = this.ownerDocument.createElement("div");
+      this._panel.className = "uif-tab-panel";
+      this._panel.append(...this.childNodes);
+      this.append(this._panel);
     }
 
     this.setAttribute("role", "tabpanel");
     this.tabIndex = 0;
-    this.innerHTML = `<div class="uif-tab-panel">${this._authoredContent}</div>`;
   }
 }
 

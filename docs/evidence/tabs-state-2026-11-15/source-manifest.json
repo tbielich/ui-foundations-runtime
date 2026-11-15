@@ -1,0 +1,9 @@
+{
+  "base": "29a183aee6941bc8e85e749ae5c1adbb97ba2f38",
+  "branch": "fix/36-tabs-state-preservation",
+  "files": {
+    "src/elements/ui-tabs.js": "08c03fa15725e96b855ec15050f336ec403000eb860a94713998725b625c82bb",
+    "site/patterns/tabs.md": "3423814c94b6568a52a5f52827b214611ad0f005941c35eea3396fbef866b268",
+    "tests/browser/tabs-state.spec.mjs": "4ba4e6421feae320aa646f7b29c6daac13c94b1545ebb2078b0e0bce3b5219d6"
+  }
+}
