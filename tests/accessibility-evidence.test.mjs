@@ -147,7 +147,7 @@ const fixtureGitArgs = (cwd, ...args) => ["-c", `safe.directory=${cwd}`, ...args
 const git = (cwd, ...args) => execFileSync("git", fixtureGitArgs(cwd, ...args), { cwd, encoding: "utf8", env: fixtureEnv }).trim();
 
 test("isolated Git fixture commands retain exact-checkout ownership trust", () => {
-  const env = { ...fixtureEnv, GIT_TEST_ASSUME_DIFFERENT_OWNER: "1" };
+  const env = { ...fixtureEnv, GIT_CONFIG_GLOBAL: "/dev/null", GIT_CONFIG_NOSYSTEM: "1", GIT_TEST_ASSUME_DIFFERENT_OWNER: "1" };
   const head = execFileSync("git", fixtureGitArgs(REPO_ROOT, "rev-parse", "HEAD"), { cwd: REPO_ROOT, encoding: "utf8", env }).trim();
   assert.match(head, /^[a-f0-9]{40}$/);
   const other = fs.mkdtempSync(path.join(os.tmpdir(), "a11y-wrong-trust-"));
