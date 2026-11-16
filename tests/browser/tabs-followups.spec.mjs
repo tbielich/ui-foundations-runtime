@@ -94,6 +94,12 @@ test('Tabs playground works at narrow widths and generated examples retain scale
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   await page.setViewportSize({ width: 320, height: 844 });
   await page.evaluate(() => { document.documentElement.style.fontSize = '200%'; });
+  // Reader text enlargement also changes the animated docs control fonts.
+  // Verify their settled geometry instead of sampling an arbitrary transition frame.
+  await page.evaluate(async () => {
+    getComputedStyle(document.documentElement).fontSize;
+    await Promise.all(document.getAnimations().filter(a => Number.isFinite(a.effect?.getComputedTiming().endTime)).map(a => a.finished.catch(() => {})));
+  });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   await page.evaluate(() => { document.documentElement.style.fontSize = ''; });
   const form = page.locator('#tabs-playground-controls');

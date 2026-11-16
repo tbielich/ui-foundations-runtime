@@ -930,6 +930,9 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 /* Code-tab bar: docs-only chrome, not bound to brand theming */
 .code-tabs-bar:is(.uif-button-group, .button-group) {
   display: inline-flex;
+  flex-wrap: wrap;
+  min-inline-size: 0;
+  max-inline-size: 100%;
   align-items: center;
   gap: 6px;
   padding: 4px;
@@ -1061,6 +1064,9 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 .docs-hero-preview-controls .docs-hero-switch {
   display: inline-flex;
+  flex-wrap: wrap;
+  min-inline-size: 0;
+  max-inline-size: 100%;
   align-items: center;
   gap: 0;
   padding: 2px;
