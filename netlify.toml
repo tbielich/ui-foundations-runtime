@@ -14,3 +14,8 @@
 
 [context.branch-deploy]
   ignore = "exit 0"
+
+[[redirects]]
+  from = "/examples/vanilla-starter/"
+  to = "/getting-started/#start-a-vanilla-app-with-vite"
+  status = 301

@@ -5,6 +5,10 @@ description: CSS class naming convention for ui-foundations components and patte
 navTitle: Class Naming
 order: 13
 permalink: /foundations/class-naming/
+breadcrumb:
+  - label: Getting Started
+    url: /getting-started/
+  - label: Class Naming
 ---
 {% import "macros/foundation-docs.njk" as foundation %}
 
@@ -16,12 +20,12 @@ permalink: /foundations/class-naming/
 {% endcall %}
 
 
-## Convention
+<h2 id="convention">Convention</h2>
 
 UI Foundations uses the `uif-` prefix for public pattern classes. Parts,
 variants, and states follow the conventions below.
 
-## Structure
+<h2 id="structure">Structure</h2>
 
 ```
 .uif-component                 → root element
@@ -31,7 +35,7 @@ variants, and states follow the conventions below.
 .uif-component.is-state        → state class (always .is- prefix)
 ```
 
-## Rules
+<h2 id="rules">Rules</h2>
 
 1. **Root class = `uif-` + component name**: `.uif-calendar`, `.uif-button`, `.uif-checkbox`
 2. **Parts use hyphen-compound**: `.uif-calendar-header`, `.uif-calendar-cell`, `.uif-input-field`
@@ -41,7 +45,7 @@ variants, and states follow the conventions below.
 6. **No alternative namespace prefixes**: never `.ui-calendar`
 7. **No BEM modifiers** (`--`): use multi-class instead (`.uif-button.ghost` not `.uif-button--ghost`)
 
-## Examples
+<h2 id="examples">Examples</h2>
 
 ```css
 /* Example: canonical */
@@ -59,7 +63,7 @@ variants, and states follow the conventions below.
 .uif-button--ghost { }       /* use multi-class */
 ```
 
-## Why This Convention
+<h2 id="why-this-convention">Why This Convention</h2>
 
 - **Readability**: `.uif-calendar-cell.is-selected` reads as plain English
 - **Flat specificity**: all selectors stay at one or two class levels

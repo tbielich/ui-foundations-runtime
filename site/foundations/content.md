@@ -17,7 +17,7 @@ to every label, message, and action in the system.
 {% endcall %}
 
 
-## Labels
+<h2 id="labels">Labels</h2>
 
 - Use sentence case for all labels and button text.
 - Keep button labels to 1–4 words. Write them as verbs that describe the action.
@@ -44,18 +44,18 @@ to every label, message, and action in the system.
   </div>
 </div>
 
-## Error messages
+<h2 id="error-messages">Error messages</h2>
 
 - Identify the field, the problem, and the recovery action.
 - Use plain language — avoid codes or jargon.
 - Place error text next to the field it describes.
 
-## Placeholder text
+<h2 id="placeholder-text">Placeholder text</h2>
 
 - Use placeholder text to show format examples, not as a replacement for labels.
 - Placeholders disappear on input and are not reliably read by screen readers.
 
-## Tone
+<h2 id="tone">Tone</h2>
 
 - Be direct and helpful. Avoid humor, emoji, or exclamation points in
   functional UI.

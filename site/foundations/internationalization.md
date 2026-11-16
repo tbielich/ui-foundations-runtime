@@ -14,13 +14,13 @@ permalink: /foundations/internationalization/
 {% endcall %}
 
 
-## Text and labels
+<h2 id="text-and-labels">Text and labels</h2>
 
 Supply translated labels, help text, and messages in your application. Allow
 space for longer text and check wrapping at narrow widths. Localise accessible
 names as well as visible text.
 
-## Right-to-left layouts
+<h2 id="right-to-left-layouts">Right-to-left layouts</h2>
 
 Set `dir="rtl"` on the document for a right-to-left interface. Prefer logical
 CSS properties such as `margin-inline-start` for application layouts.
@@ -29,7 +29,7 @@ Review each pattern you use. RTL support is not verified across the whole
 library; some styles still use physical alignment, including table text.
 Check icon direction, control order, alignment, and keyboard behavior in context.
 
-## Dates and numbers
+<h2 id="dates-and-numbers">Dates and numbers</h2>
 
 Your application supplies locale-specific formats and content. Check the Date
 Picker's documented format and behavior before using it for another locale;
