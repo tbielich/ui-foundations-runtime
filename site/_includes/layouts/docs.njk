@@ -89,38 +89,40 @@
 
         <nav class="docs-nav" aria-label="Documentation navigation" data-keytip-scope="main-nav">
           <nav class="docs-nav-group" aria-label="Foundations">
-            <details{% if page.url.indexOf("/foundations/") == 0 or page.url.indexOf("/primitives/") == 0 %} open{% endif %}>
+            <details{% if page.url.indexOf("/foundations/") == 0 or page.url.indexOf("/primitives/") == 0 or page.url == "/base/" %} open{% endif %}>
               <summary class="docs-nav-group-toggle" data-keytip="1" aria-keyshortcuts="Alt 1">Foundations</summary>
               <ul>
-                {% for entry in collections.foundationsDocs %}
+                <li><a href="/foundations/architecture/"{% if page.url == "/foundations/architecture/" %} aria-current="page"{% endif %}>System Overview</a></li>
                 <li>
-                  <a
-                    href="{{ entry.url }}"
-                    {% if entry.url == page.url %}aria-current="page"{% endif %}
-                  >
-                    {{ entry.data.navTitle or entry.data.title }}
-                  </a>
-                </li>
-                {% endfor %}
-                <li><a href="/base/"{% if page.url == "/base/" %} aria-current="page"{% endif %}>Base — Native UI</a></li>
-                <li>
-                  <details class="docs-nav-subgroup"{% if page.url.indexOf("/primitives/") == 0 or page.url == "/foundations/design-tokens/" %} open{% endif %}>
+                  <details class="docs-nav-subgroup"{% if page.url.indexOf("/primitives/") == 0 or page.url.indexOf("/foundations/design-tokens/") == 0 %} open{% endif %}>
                     <summary><a href="/foundations/design-tokens/"{% if page.url == "/foundations/design-tokens/" %} aria-current="page"{% endif %}>Design Tokens</a></summary>
                     <ul>
                       {% for entry in collections.primitivesDocs %}
-                      <li>
-                        <a
-                          href="{{ entry.url }}"
-                          {% if entry.url == page.url %}aria-current="page"{% endif %}
-                        >
-                          {{ entry.data.navTitle or entry.data.title }}
-                        </a>
-                      </li>
+                      <li><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.data.navTitle or entry.data.title }}</a></li>
                       {% endfor %}
                     </ul>
                   </details>
                 </li>
-
+                <li>
+                  <details class="docs-nav-subgroup"{% if page.url == "/foundations/theming/" or page.url == "/base/" %} open{% endif %}>
+                    <summary><a href="/foundations/theming/"{% if page.url == "/foundations/theming/" %} aria-current="page"{% endif %}>Theming</a></summary>
+                    <ul>
+                      <li><a href="/base/"{% if page.url == "/base/" %} aria-current="page"{% endif %}>Base — Native UI</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details class="docs-nav-subgroup"{% if page.url == "/foundations/accessibility/" or page.url == "/foundations/content/" or page.url == "/foundations/internationalization/" %} open{% endif %}>
+                    <summary>Guidelines</summary>
+                    <ul>
+                      {% for entry in collections.foundationsDocs %}
+                      {% if entry.url == "/foundations/accessibility/" or entry.url == "/foundations/content/" or entry.url == "/foundations/internationalization/" %}
+                      <li><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.data.navTitle or entry.data.title }}</a></li>
+                      {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </details>
+                </li>
               </ul>
             </details>
           </nav>

@@ -23,6 +23,33 @@ npm install ui-foundations
 - [Figma library](https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations)
 - [Starter template](https://github.com/tbielich/ui-foundations-starter)
 
+<h3 id="start-a-vanilla-app-with-vite">Start a vanilla app with Vite</h3>
+
+For a new JavaScript project, create a Vite app and install UI Foundations:
+
+```bash
+npm create vite@latest ui-foundations-starter -- --template vanilla
+cd ui-foundations-starter
+npm install
+npm install ui-foundations
+```
+
+In `src/main.js`, import the package styles before your application styles:
+
+```js
+import "ui-foundations/core.css";
+import "ui-foundations/ui.css";
+import "./style.css";
+```
+
+Replace the Vite demo in `#app` with the HTML example in Using Components below,
+and set the brand and mode on `<html>` as shown in Brand and Mode Switching.
+Then start the development server:
+
+```bash
+npm run dev
+```
+
 ## CSS Setup
 
 Import the full bundle for all tokens and components:
@@ -63,6 +90,8 @@ root.dataset.mode = "light"; // "light" | "dark"
 
 Components are available as plain HTML classes, Nunjucks macros for static site
 generation, and framework-agnostic Custom Elements.
+
+For the shared CSS convention, see [Class Naming](/foundations/class-naming/).
 
 ### HTML
 

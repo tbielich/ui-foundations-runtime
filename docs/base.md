@@ -6,7 +6,7 @@ Brand A heading sizes, line heights, weights and component sizing, using
 Brand A tokens; it does not copy a palette, font families, radii or shadows.
 Native browser controls, focus indicators and validation remain in charge.
 
-## Use Base
+<h2 id="use-base">Use Base</h2>
 
 ```js
 import "ui-foundations/base.css";
@@ -21,7 +21,7 @@ The host owns color-scheme policy. For example, `color-scheme: light dark` on th
 host document lets native controls follow the browser's selected scheme. Base
 uses the system Sans Serif stack and does not force a Brand palette onto the host document.
 
-## Enhanced behavior
+<h2 id="enhanced-behavior">Enhanced behavior</h2>
 
 The same custom elements and macros remain usable. For progressive enhancement
 of static markup, import the existing modules explicitly:
@@ -45,7 +45,7 @@ compositions such as a calendar grid or table resizer remain UIF enhancements;
 they are not claims of pixel-identical OS widgets. Their overlay/selection colors
 use CSS system colors rather than a UIF Brand palette.
 
-## Fonts belong to the consumer
+<h2 id="fonts-belong-to-the-consumer">Fonts belong to the consumer</h2>
 
 The npm package supplies family roles and fallback stacks but no font binaries,
 `@font-face` declarations or font-service requests. A/B/C consumers provide their
@@ -54,7 +54,7 @@ Basic families to generic platform families. The documentation is a separate
 consumer and explicitly loads its local Brand font assets; those assets are not
 part of the npm package. Base requires none of them.
 
-## Sizing boundary
+<h2 id="sizing-boundary">Sizing boundary</h2>
 
 The sizing reset shares Brand A numerical typography and component dimensions.
 Text widths vary with platform fonts. Native select widgets may ignore CSS line

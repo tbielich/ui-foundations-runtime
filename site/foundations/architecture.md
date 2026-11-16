@@ -27,7 +27,9 @@ before overriding a visual property.
 
 [Patterns](/patterns/) provide HTML structures and CSS classes for controls
 such as Button, Input, and Checkbox. Use their documented markup with the
-package styles. Individual pages explain where JavaScript is needed for behavior.
+package styles. [Class Naming](/foundations/class-naming/) explains roots, parts,
+variants, and states. Individual pattern pages explain where JavaScript is needed
+for behavior.
 
 <h2 id="components">Components</h2>
 

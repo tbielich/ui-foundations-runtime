@@ -17,7 +17,7 @@ Use the guidance below when building and reviewing an interface.
 {% endcall %}
 
 
-## Implementation expectations
+<h2 id="implementation-expectations">Implementation expectations</h2>
 
 Accessibility is a baseline requirement for shipped patterns, components,
 examples, and documentation in this repository. Local implementation guidance
@@ -48,7 +48,7 @@ your application. Test the actual state and brand/scheme combination, including
 any token overrides. Using a semantic token alone does not establish contrast
 for every possible composition.
 
-## Design checklist for accessibility
+<h2 id="design-checklist-for-accessibility">Design checklist for accessibility</h2>
 
 When reviewing an interface, check:
 
@@ -58,13 +58,13 @@ When reviewing an interface, check:
 - Keyboard interactions documented
 - Screen reader behavior verified
 
-## Testing expectations
+<h2 id="testing-expectations">Testing expectations</h2>
 
 Automated checks catch structural issues. Manual testing with screen readers
 (VoiceOver, NVDA) and keyboard-only navigation is required before a component
 reaches stable status.
 
-## Automated pilot coverage
+<h2 id="automated-pilot-coverage">Automated pilot coverage</h2>
 
 Only the **Button and Checkbox Design Checklists** are connected to automated
 evidence under [Runtime #309](https://github.com/tbielich/ui-foundations-runtime/issues/309)

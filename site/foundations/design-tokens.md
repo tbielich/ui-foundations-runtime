@@ -18,7 +18,7 @@ different brands and schemes without changing their markup.
 {% endcall %}
 
 
-## Token layers
+<h2 id="token-layers">Token layers</h2>
 
 The system separates four responsibilities so a token name can explain what it
 means without also encoding a specific brand or theme.
@@ -49,7 +49,7 @@ Semantics names intent, and Patterns apply that intent.**
 Surface and Content are paired per interaction state so accessibility can be
 verified for the actual state rather than inferred from a default color.
 
-## Naming convention
+<h2 id="naming-convention">Naming convention</h2>
 
 New semantic color roles use `Color/<Purpose>/<Role>/<State>` (or
 `Color/<Role>/<State>` for the default canvas pair).
@@ -60,21 +60,21 @@ Interaction state is always the final segment. UIF keeps `Active` as the
 existing Runtime name for the pressed interaction; do not introduce
 `Pressed` as a second vocabulary.
 
-## Applying tokens
+<h2 id="applying-tokens">Applying tokens</h2>
 
 Use the CSS custom properties listed in the [token reference](/foundations/design-tokens/all/).
 Prefer semantic roles for application UI and pattern tokens for a specific control.
 
 See [Theming](/foundations/theming/) for brand, scheme, and scoped overrides.
 
-## Rules
+<h2 id="rules">Rules</h2>
 
 - Use semantic roles for patterns so their intent stays consistent across brands and schemes.
 - Brand, Scheme, and Scale belong to Appearance, not to semantic token names.
 - Never hardcode color values in pattern CSS.
 - Use `var(--...)` for token-driven visual properties.
 
-## Reference
+<h2 id="reference">Reference</h2>
 
 - [All Tokens](/foundations/design-tokens/all/) — complete tabular index of all generated tokens
 

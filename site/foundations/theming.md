@@ -14,7 +14,7 @@ permalink: /foundations/theming/
 {% endcall %}
 
 
-## Select a brand and scheme
+<h2 id="select-a-brand-and-scheme">Select a brand and scheme</h2>
 
 Load the package styles described in [Getting Started](/getting-started/), then
 set the context on the root element:
@@ -34,7 +34,14 @@ document.documentElement.dataset.mode = "dark";
 The bundled brands are available contexts; adding another brand requires its
 own token definitions. Setting an arbitrary attribute value does not create a theme.
 
-## Customise a pattern
+<h2 id="use-native-browser-styling">Use native browser styling</h2>
+
+[Base — Native UI](/base/) is an optional presentation entry that uses system
+fonts and native browser controls with shared UIF sizing and enhancement behavior.
+Use it instead of the branded CSS bundles. Base is a rendering option, not another
+brand value.
+
+<h2 id="customise-a-pattern">Customise a pattern</h2>
 
 Use a documented pattern token to scope an override. For example:
 
@@ -48,7 +55,7 @@ Define `--booking-action-background` in your application. Check the pattern's
 token table for supported properties and set the related content and interaction
 state tokens as needed. Check contrast in each brand and scheme you support.
 
-## Scale
+<h2 id="scale">Scale</h2>
 
 Typography uses fluid values generated from Scale endpoints. It responds to
 viewport size; there is no `data-mode="min"` or `data-mode="max"` switch.
