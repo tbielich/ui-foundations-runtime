@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-11",
+  "authority": "Explicit current user instruction: push changes",
+  "scope": "Commit and push the verified local A/B/C typography implementation and its evidence to the existing feature branch.",
+  "branch": "feat/339-brand-a-typography",
+  "sourceAggregateSHA256": "fbe5712f5ff9867bb40e36a3e39179d9300e75c259ffdddf5e3d0c859a9a6e70",
+  "supersedes": "Earlier no-commit/no-push limits only; earlier evidence records describe their historical execution states.",
+  "excluded": ["PR creation", "merge", "deployment", "npm publication", "Figma-library publication", "Vault governance changes"]
+}

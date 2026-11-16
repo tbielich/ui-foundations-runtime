@@ -26,6 +26,7 @@ import { Calendar } from "./calendar.js";
 export class DateInput {
   constructor(root, options = {}) {
     this.root = root;
+    this.root.setAttribute("data-enhanced", "");
     this.locale = options.locale || "en-GB";
     this.onSelect = options.onSelect || null;
 

@@ -1,0 +1,31 @@
+{
+  "mode": "REPAIR",
+  "repository": "tbielich/ui-foundations-runtime",
+  "pr": 341,
+  "failedHead": "77b1fae7f93bb633a32cdb7ef337d98c1e342c3f",
+  "failedRuns": [
+    43056731488,
+    43056688877
+  ],
+  "failedJobs": [
+    130655406643,
+    130655407794
+  ],
+  "failure": "Install Playwright Chromium: Temporary failure resolving azure.archive.ubuntu.com; apt exit100; Run CI checks never started",
+  "retries": "Both Node20/22 failed in two attempts",
+  "scope": "CI build job only: official Playwright image matching locked1.63.0 with digest pin; version assertion prevents package/image drift",
+  "image": "mcr.microsoft.com/playwright:v1.63.0-noble@sha256:eff16c30e6f3f4af0a03fa4b706120d5e9b0891c344a27d64559aff5900a4a27",
+  "source": "https://playwright.dev/docs/docker",
+  "preserve": [
+    "Node20/22 matrix",
+    "npm ci",
+    "npm run ci:check and all browser checks",
+    "Runtime, tokens, tests, governance and repository protections"
+  ],
+  "outOfScope": "Other release workflows retain their existing browser-install setup; no release triggered",
+  "validation": {
+    "registryManifestHTTP": 200,
+    "imageMatchesPackageLock": true,
+    "remoteCI": "pending"
+  }
+}

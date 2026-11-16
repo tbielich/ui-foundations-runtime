@@ -1,0 +1,116 @@
+{
+  "legacyHeading": {
+    "id": "VariableID:3:8",
+    "name": "Typography/Heading/Font Family",
+    "collectionId": "VariableCollectionId:1:252",
+    "collectionName": "Semantics (Roles)",
+    "modes": [
+      {
+        "name": "Semantic",
+        "modeId": "1:2"
+      }
+    ],
+    "valuesByMode": {
+      "1:2": {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:2006:214"
+      }
+    },
+    "scopes": [
+      "FONT_FAMILY"
+    ],
+    "codeSyntax": {
+      "WEB": "var(--typography-heading-font-family)"
+    }
+  },
+  "inputNodes": [
+    {
+      "id": "2035:462",
+      "name": "Input",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      },
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:2007:326"
+          }
+        ],
+        "fontSize": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:41"
+          }
+        ],
+        "fontStyle": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:40"
+          }
+        ],
+        "fontFamily": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:39"
+          }
+        ],
+        "lineHeight": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:42"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2724:381",
+      "name": "Input",
+      "fontName": {
+        "family": "Inter",
+        "style": "Regular",
+        "variationSettings": {
+          "wght": 400,
+          "slnt": 0
+        }
+      },
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:2007:341"
+          }
+        ],
+        "fontSize": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:41"
+          }
+        ],
+        "fontStyle": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:40"
+          }
+        ],
+        "fontFamily": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:39"
+          }
+        ],
+        "lineHeight": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:15:42"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+/* Base reset shares Brand A dimensions, while native appearance stays in charge. */
+@layer base {
+  :root { font-family: system-ui, sans-serif; font-size: 1rem; font-weight: 400; line-height: 1.5; }
+  :where(h1,h2,h3,h4,h5,h6,.heading) { font-weight: var(--typography-heading-font-weight); }
+  :where(h1,.heading-xxxl) { font-size: var(--typography-heading-font-size-xxxl); line-height: var(--typography-heading-line-height-xxxl); }
+  :where(h2,.heading-xxl) { font-size: var(--typography-heading-font-size-xxl); line-height: var(--typography-heading-line-height-xxl); }
+  :where(h3,.heading-xl) { font-size: var(--typography-heading-font-size-xl); line-height: var(--typography-heading-line-height-xl); }
+  :where(h4,.heading-lg) { font-size: var(--typography-heading-font-size-lg); line-height: var(--typography-heading-line-height-lg); }
+  :where(h5,.heading-md) { font-size: var(--typography-heading-font-size-md); line-height: var(--typography-heading-line-height-md); }
+  :where(h6,.heading-sm) { font-size: var(--typography-heading-font-size-sm); line-height: var(--typography-heading-line-height-sm); }
+  :where(p,span,.body) { font-weight: var(--typography-body-font-weight); line-height: var(--typography-body-line-height); }
+}
+@layer components {
+  :where(.uif-button) { min-block-size: var(--uif-button-height-min); max-inline-size: 100%; white-space: normal; padding-inline: var(--uif-button-padding-inline); padding-block: var(--uif-button-padding-block); border-width: var(--uif-button-border-size-default); font-weight: var(--brand-typography-ui-font-weight); }
+  :where(.uif-button .uif-label-content,.uif-button .uif-label-content-text,.uif-field-label .uif-label-content-text) { font-weight: var(--brand-typography-ui-font-weight); line-height: inherit; }
+  :where(.uif-label-content) { gap: var(--typography-label-gap); }
+  :where(.uif-input-field) { gap: var(--uif-input-gap); inline-size: 100%; }
+  /* The native input owns the visible field box, rather than a second styled frame. */
+  :where(.uif-input) { min-inline-size: 0; inline-size: 100%; block-size: var(--uif-input-height); padding-inline: var(--uif-input-padding-inline); padding-block: var(--uif-input-padding-block); border-width: var(--uif-input-border-size-default); font-size: var(--uif-input-font-size); line-height: var(--uif-input-line-height); font-weight: var(--uif-input-font-weight); }
+  :where(.uif-input-field:not(.date)) { font-size: var(--uif-input-font-size); line-height: var(--uif-input-line-height); font-weight: var(--uif-input-font-weight); }
+  :where(.uif-input-field-control) { gap: var(--uif-input-gap); }
+  :where(.uif-input-field-control button) { padding: 0; font-size: inherit; line-height: 1; }
+  :where(.uif-select) { inline-size: 100%; block-size: var(--uif-select-height); font-size: var(--uif-select-font-size); line-height: var(--uif-select-line-height); font-weight: var(--uif-select-font-weight); padding-inline: var(--uif-select-padding-inline); padding-block: var(--uif-select-padding-block); border-width: var(--uif-select-border-size-default); }
+  :where(.uif-textarea) { inline-size: 100%; min-block-size: calc(var(--uif-textarea-line-height) * 3 + var(--uif-textarea-padding-block) * 2); padding-inline: var(--uif-textarea-padding-inline); padding-block: var(--uif-textarea-padding-block); border-width: var(--uif-textarea-border-size-default); font-size: var(--uif-textarea-font-size); line-height: var(--uif-textarea-line-height); }
+  :where(.uif-checkbox-field,.uif-radio-field,.uif-switch-field) { display: inline-flex; align-items: center; gap: var(--typography-label-gap); font-size: var(--typography-label-font-size); line-height: var(--typography-label-line-height); font-weight: var(--typography-label-font-weight); }
+  :where(.uif-checkbox,.uif-radio) { inline-size: var(--size-spacing-600); block-size: var(--size-spacing-600); }
+  :where(.uif-switch) { inline-size: var(--size-spacing-1000); block-size: var(--size-spacing-600); }
+  :where(.uif-input-field.date) { flex-wrap: wrap; }
+  :where(.uif-field-label) { gap: 0.25em; font-weight: var(--brand-typography-ui-font-weight); line-height: inherit; }
+  :where(.uif-tab) { padding-inline: var(--uif-tabs-padding-inline); padding-block: var(--uif-tabs-padding-block); font-size: var(--font-size-md); font-weight: var(--font-weight-500); line-height: var(--line-height-md); }
+  :where(.uif-tab[aria-selected="true"]) { font-weight: var(--font-weight-600); }
+  :where(.uif-tab-panel) { padding-block: var(--size-spacing-400); }
+  :where(.uif-calendar) { display: flex; flex-direction: column; gap: var(--uif-calendar-container-gap); inline-size: fit-content; max-inline-size: 100%; overflow: auto; }
+  :where(.uif-calendar.has-container) { padding: var(--uif-calendar-container-padding); }
+  :where(.uif-calendar-header,.uif-calendar-selectors,.uif-calendar-nav) { gap: var(--uif-calendar-header-gap); }
+  :where(.uif-calendar-header .uif-select) { inline-size: auto; block-size: auto; min-block-size: auto; padding-block: 0; }
+  :where(.uif-calendar-header select[name="month"]) { min-inline-size: 12ch; }
+  :where(.uif-calendar-header select[name="year"]) { min-inline-size: 7ch; }
+  :where(.uif-calendar-table) { border-spacing: 0; inline-size: 100%; }
+  :where(.uif-calendar-table th) { block-size: var(--uif-calendar-weekday-height); font-size: var(--uif-calendar-weekday-font-size); font-weight: normal; }
+  :where(.uif-calendar-table td) { padding: var(--uif-calendar-cell-gap); }
+  :where(.uif-calendar-cell) { min-inline-size: var(--uif-calendar-cell-min-size); min-block-size: var(--uif-calendar-cell-min-size); font-size: var(--typography-label-font-size); font-weight: var(--typography-label-font-weight); line-height: var(--typography-label-line-height); padding: 0; border-width: var(--uif-calendar-cell-range-border-size); }
+  :where(.uif-table) { inline-size: 100%; font-size: var(--typography-body-font-size); font-weight: var(--typography-body-font-weight); line-height: var(--typography-body-line-height); }
+  :where(.uif-table th,.uif-table td) { padding-block: var(--brand-size-spacing-component); padding-inline: var(--brand-size-spacing-comfortable); }
+  :where(.uif-table th) { font-size: var(--typography-label-font-size); font-weight: var(--typography-label-font-weight); line-height: var(--typography-label-line-height); }
+  :where(.uif-tooltip) { max-inline-size: 15rem; padding-inline: var(--uif-tooltip-padding-inline); padding-block: var(--uif-tooltip-padding-block); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+  :where(.uif-badge) { display: inline-flex; align-items: center; gap: var(--uif-badge-gap); font-size: var(--uif-badge-font-size-md); line-height: var(--uif-badge-line-height-md); padding-inline: var(--uif-badge-padding-inline-md); padding-block: var(--uif-badge-padding-block-md); min-block-size: var(--uif-badge-height-min); min-inline-size: var(--uif-badge-width-min); }
+  :where(.uif-badge-text) { font-weight: var(--brand-typography-ui-font-weight); }
+  :where(.uif-form) { display: flex; flex-direction: column; gap: var(--uif-form-gap); padding-inline: var(--uif-form-padding-inline); padding-block: var(--uif-form-padding-block); }
+  :where(.uif-form-group) { display: flex; flex-direction: column; gap: var(--uif-form-group-gap); padding: 0; min-inline-size: 0; }
+  :where(.uif-form-field) { display: flex; flex-direction: column; gap: var(--uif-form-field-gap); }
+  :where(dialog.uif-dialog) { inline-size: min(100% - (var(--size-spacing-400) * 2), var(--container-400)); max-block-size: calc(100dvh - (var(--size-spacing-400) * 2)); padding: var(--size-spacing-500); }
+  :where(.uif-dialog-header,.uif-dialog-actions) { display: flex; justify-content: space-between; gap: var(--size-spacing-300); }
+  :where(.uif-dialog-title) { font-size: var(--font-size-xl); line-height: var(--line-height-xl); }
+
+  :where(.uif-accordion-item > summary,.uif-accordion-item-content) { padding-inline: var(--uif-accordion-padding-inline); padding-block: var(--uif-accordion-padding-block); font-size: var(--font-size-md); line-height: var(--line-height-md); }
+  :where(.uif-accordion-item > summary) { font-weight: var(--font-weight-600); }
+  :where(.text-sm) { font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+  :where(.text-md) { font-size: var(--font-size-md); line-height: var(--line-height-md); }
+  :where(.text-lg) { font-size: var(--font-size-lg); line-height: var(--line-height-lg); }
+  :where(.text-xl) { font-size: var(--font-size-xl); line-height: var(--line-height-xl); }
+  :where(.text-xxl) { font-size: var(--font-size-xxl); line-height: var(--line-height-xxl); }
+  :where(.text-xxxl) { font-size: var(--font-size-xxxl); line-height: var(--line-height-xxxl); }
+}

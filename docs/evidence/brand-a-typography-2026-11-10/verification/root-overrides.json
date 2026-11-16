@@ -1,0 +1,644 @@
+{
+  "command": "node docs/evidence/brand-a-typography-2026-11-10/verification/root-overrides.cjs",
+  "scope": "Explicit legacy and canonical root CSS overrides; actual public main entry, no docs CSS. Tests effective consumer font-family routing, not variation quality of overridden system fonts.",
+  "rows": [
+    {
+      "route": "legacy",
+      "brand": "a",
+      "mode": "light",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "illustratedHeading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "legacy",
+      "brand": "a",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "illustratedHeading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "legacy",
+      "brand": "b",
+      "mode": "light",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "legacy",
+      "brand": "b",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "legacy",
+      "brand": "c",
+      "mode": "light",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "legacy",
+      "brand": "c",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-sans": "\"Courier New\"",
+        "--font-family-serif": "Georgia",
+        "--font-family-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "a",
+      "mode": "light",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "illustratedHeading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "a",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "illustratedHeading": {
+          "family": "Palatino",
+          "weight": "700"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "b",
+      "mode": "light",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "b",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "c",
+      "mode": "light",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    },
+    {
+      "route": "canonical",
+      "brand": "c",
+      "mode": "dark",
+      "overrides": {
+        "--font-family-inter": "\"Courier New\"",
+        "--font-family-rokkitt": "Georgia",
+        "--font-family-sf-mono": "monospace",
+        "--font-family-roboto-slab": "Palatino"
+      },
+      "metrics": {
+        "heading": {
+          "family": "Georgia",
+          "weight": "700"
+        },
+        "body": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "button": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "illustratedHeading": {
+          "family": "Georgia",
+          "weight": "600"
+        },
+        "base": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "summary": {
+          "family": "\"Courier New\"",
+          "weight": "600"
+        },
+        "content": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "tab": {
+          "family": "\"Courier New\"",
+          "weight": "500"
+        },
+        "tooltip": {
+          "family": "\"Courier New\"",
+          "weight": "400"
+        },
+        "code": {
+          "family": "monospace",
+          "weight": "400"
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "gate": "PASS"
+}

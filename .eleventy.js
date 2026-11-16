@@ -1,4 +1,5 @@
 const { renderComponentTokenTable } = require("./site/lib/component-token-table.js");
+const { pageSections } = require("./site/lib/page-sections.js");
 const siteConfig = require("./config/site.js");
 
 function trimTrailingSlash(value) {
@@ -31,6 +32,8 @@ function vaultDocumentationUrl(path = "") {
 }
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy({ "artifacts/accessibility/result.json": "evidence/accessibility/result.json" });
+  eleventyConfig.addFilter("pageSections", pageSections);
   eleventyConfig.addShortcode("componentTokenTable", renderComponentTokenTable);
   eleventyConfig.addFilter("vaultDocumentationUrl", vaultDocumentationUrl);
   eleventyConfig.addFilter("sitePath", (value) => siteConfig.path(value));
@@ -48,9 +51,12 @@ module.exports = function (eleventyConfig) {
         `url($1${siteConfig.basePath}/`,
       );
   });
+  eleventyConfig.addPassthroughCopy({ "src/elements": "vendor/ui-foundations/elements" });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
+    "dist/base.css": "vendor/ui-foundations/base.css",
   });
+
   eleventyConfig.addPassthroughCopy({
     "src/ui/components": "vendor/ui-foundations/components",
   });

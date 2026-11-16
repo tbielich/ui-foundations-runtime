@@ -50,7 +50,7 @@
     {% endif %}
 
     {# Task 2.4: JSON-LD structured data for component pages #}
-    {% if page.url.indexOf("/patterns/") == 0 and not isPlayground and page.url != "/patterns/" %}
+    {% if (page.url.indexOf("/patterns/") == 0 or page.url.indexOf("/components/") == 0) and not isPlayground and page.url != "/patterns/" and page.url != "/components/" %}
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,6 +69,7 @@
     {% endif %}
 
     <link rel="stylesheet" href="/vendor/ui-foundations/main.css" />
+    <link rel="stylesheet" href="/assets/brand-fonts.css" />
     <link rel="stylesheet" href="/assets/vendor/prism/prism.css" />
     <link rel="stylesheet" href="/assets/docs.css" />
     <link rel="stylesheet" href="/assets/docs-keytips.css" />
@@ -101,6 +102,7 @@
                   </a>
                 </li>
                 {% endfor %}
+                <li><a href="/base/"{% if page.url == "/base/" %} aria-current="page"{% endif %}>Base — Native UI</a></li>
                 <li>
                   <details class="docs-nav-subgroup"{% if page.url.indexOf("/primitives/") == 0 or page.url == "/foundations/design-tokens/" %} open{% endif %}>
                     <summary><a href="/foundations/design-tokens/"{% if page.url == "/foundations/design-tokens/" %} aria-current="page"{% endif %}>Design Tokens</a></summary>
@@ -118,23 +120,7 @@
                     </ul>
                   </details>
                 </li>
-                <li>
-                  <details class="docs-nav-subgroup"{% if page.url.indexOf("/foundations/governance") == 0 %} open{% endif %}>
-                    <summary><a href="/foundations/governance/"{% if page.url == "/foundations/governance/" %} aria-current="page"{% endif %}>Governance</a></summary>
-                    <ul>
-                      {% for entry in collections.governanceDocs %}
-                      <li>
-                        <a
-                          href="{{ entry.url }}"
-                          {% if entry.url == page.url %}aria-current="page"{% endif %}
-                        >
-                          {{ entry.data.navTitle or entry.data.title }}
-                        </a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </details>
-                </li>
+
               </ul>
             </details>
           </nav>
@@ -208,8 +194,7 @@
         </nav>
       </aside>
 
-      <main class="docs-main">
-        <article class="docs-content">
+      <main class="docs-main{% if page.url == "/" %} docs-main--home{% endif %}">
         <div class="docs-page-navigation">
         <div class="docs-navigation-toolbar">
           <button class="docs-navigation-trigger" type="button" aria-expanded="false" aria-controls="docs-navigation-drawer" aria-label="Open navigation">
@@ -265,16 +250,34 @@
         </div>
           {% set isComponentsOverview = page.url == "/patterns/" or page.url == "/patterns" %}
           {% set isComponentDoc = page.url and page.url.indexOf("/patterns/") == 0 and not isPlayground and not isComponentsOverview %}
+          {% if page.url == "/" %}
+          <section class="docs-page-section docs-page-section--home">
+            <article class="docs-content">{{ content | safe }}</article>
+          </section>
+          {% else %}
+          {% set sections = content | pageSections(isComponentDoc) %}
+          <section class="docs-page-hero">
+          <div class="docs-content">
           {% if title and not compactTitleInBreadcrumb %}
           <h1>{{ title }}</h1>
           {% endif %}
-          {% if description and not isPlayground %}<p class="page-intro">{{ description }}</p>{% endif %}
-          {{ content | safe }}
-        </article>
+          {% if description and not isPlayground and page.url != "/" %}<p class="page-intro">{{ description }}</p>{% endif %}
+          {{ sections.hero | safe }}
+          </div>
+          </section>
+          <section class="docs-page-section">
+          <article class="docs-content">
+          {{ sections.body | safe }}
+          </article>
+          </section>
+          {% endif %}
       </main>
     </div>
 
     <footer class="docs-footer">
+      <span>UI Foundations {{ release.version }}</span> ·
+      <a href="/release-notes/">Changes</a> ·
+      <a href="/license/">License</a> ·
       <a href="/impressum/">Imprint</a>
     </footer>
 
@@ -313,7 +316,7 @@
 
         aside.appendChild(ul);
 
-        var main = document.querySelector(".docs-main");
+        var main = document.querySelector(".docs-page-section");
         var mobileSlot = document.querySelector(".docs-toc-mobile-slot");
         var toolbar = document.querySelector(".docs-navigation-toolbar");
         var disclosure = document.querySelector(".docs-toc-mobile");
@@ -352,12 +355,14 @@
     </script>
 
     <script>
-      // Hero preview: inline brand/mode switching via token snapshot
+      // Hero preview: isolated brand/scheme snapshots and inherited container scale
       (function () {
         var previews = document.querySelectorAll(".docs-hero-preview");
         if (!previews.length) return;
 
         var root = document.documentElement;
+        var typographySlots = {{ brandTypography.slots | dump | safe }};
+        var snapshotProperties = new WeakMap();
 
         function getTokens() {
           var styles = getComputedStyle(root);
@@ -373,6 +378,7 @@
                   var matches = text.match(/--[\w-]+/g);
                   if (matches) {
                     matches.forEach(function (prop) {
+                      if (prop === "--_uif-context-scale" || prop === "--_uif-local-scale") return;
                       var val = styles.getPropertyValue(prop).trim();
                       if (val) tokens[prop] = val;
                     });
@@ -385,6 +391,8 @@
         }
 
         function applySnapshot(stage, brand, mode) {
+          stage.dataset.brand = brand;
+          stage.dataset.mode = mode;
           var origBrand = root.dataset.brand;
           var origMode = root.dataset.mode;
           root.dataset.brand = brand;
@@ -393,11 +401,12 @@
           var tokens = getTokens();
           root.dataset.brand = origBrand;
           root.dataset.mode = origMode;
-          var cssText = "";
-          Object.keys(tokens).forEach(function (prop) {
-            cssText += prop + ":" + tokens[prop] + ";";
-          });
-          stage.style.cssText = cssText;
+          // Optional slots are absent in neutral B/C snapshots. Clear the exact
+          // declared slots and prior snapshot values, preserving authored styles.
+          typographySlots.forEach(function (prop) { stage.style.removeProperty(prop); });
+          (snapshotProperties.get(stage) || []).forEach(function (prop) { stage.style.removeProperty(prop); });
+          Object.keys(tokens).forEach(function (prop) { stage.style.setProperty(prop, tokens[prop]); });
+          snapshotProperties.set(stage, Object.keys(tokens));
         }
 
         previews.forEach(function (preview) {
@@ -411,6 +420,30 @@
 
           var brandBtns = preview.querySelectorAll("[data-hero-brand]");
           var modeBtns = preview.querySelectorAll("[data-hero-mode]");
+          var scaleBtns = preview.querySelectorAll("[data-hero-scale]");
+          var playground = preview.closest("[data-playground]");
+          var scaleControl = playground && playground.querySelector('[data-playground-control][name="scale"]');
+          function syncScale(value) {
+            var scale = ["small", "medium", "large"].includes(value) ? value : "medium";
+            stage.dataset.scale = scale;
+            scaleBtns.forEach(function (button) {
+              button.setAttribute("aria-pressed", String(button.dataset.heroScale === scale));
+            });
+          }
+          if (scaleBtns.length) {
+            syncScale(scaleControl ? scaleControl.value : stage.dataset.scale);
+            scaleBtns.forEach(function (button) {
+              button.addEventListener("click", function () {
+                if (scaleControl) {
+                  scaleControl.value = button.dataset.heroScale;
+                  scaleControl.dispatchEvent(new Event("change", { bubbles: true }));
+                } else syncScale(button.dataset.heroScale);
+              });
+            });
+            if (playground) playground.addEventListener("playground:statechange", function (event) {
+              syncScale(event.detail.props.scale);
+            });
+          }
           brandBtns.forEach(function (b) {
             b.setAttribute("aria-pressed", b.dataset.heroBrand === currentBrand ? "true" : "false");
           });
@@ -486,6 +519,7 @@
     <script src="/assets/playground/renderers.js"></script>
     <script src="/assets/playground/code-generators.js"></script>
     <script src="/assets/playground.js"></script>
+    <script type="module" src="/assets/checkbox-state.js"></script>
     <script>
       // Sync is-checked class with native :checked state for radio, checkbox, switch
       (function () {

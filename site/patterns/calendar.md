@@ -124,7 +124,7 @@ The Calendar component enables date selection in forms, filters, and booking flo
 - Each cell has an `aria-label` with the full date (e.g. "15 July 2026")
 - Focus management follows roving tabindex pattern
 - Minimum 44×44px touch target per cell
-- Contrast validated for all states and modes
+- Check contrast for the states, brands, and schemes used in your application
 
 <h2 id="anatomy">Anatomy</h2>
 

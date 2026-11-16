@@ -1,0 +1,29 @@
+{
+  "mode": "IMPLEMENT",
+  "branch": "feat/indicator-scale-controls",
+  "runtimeGate": "PASS",
+  "verifiedSourceDigestExcludingEvidence": "67959fcc602f32f09d76ab2e9e52cf6ce84fc70ecdd7142307fbcfd8f2adad0a",
+  "checks": [
+    {
+      "command": "CI=1 npm run ci:check",
+      "result": "PASS",
+      "unitTests": 198,
+      "browserTests": 26
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "newBrowserCases": 6,
+  "supportedPreviews": [
+    "status-light",
+    "meter",
+    "progress-bar"
+  ],
+  "publisherIdentityVerified": "uif-intelligence",
+  "identityProof": "GitHub authenticated user endpoint; repository push permission confirmed",
+  "externalDesignGate": "Figma parity and active Code Connect still open",
+  "mainMerge": false,
+  "release": false
+}

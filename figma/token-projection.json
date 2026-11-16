@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceFileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "sourceFileKey": "uqMsy8fV1fPbQdAzgwlmBA",
   "adr": "https://github.com/tbielich/ui-foundations-vault/blob/main/decisions/token-model-and-figma-projection.md",
   "ownerOverride": "2026-09-30 bounded migration; ADR accepted via ui-foundations-vault PR #49; consumed governance pack unchanged",
   "collectionFiles": {
@@ -278,17 +278,17 @@
       "file": "Patterns (UI).tokens.json"
     },
     "VariableID:3:5": {
-      "figmaName": "Font/Family/Sans",
+      "figmaName": "Font/Family/Inter",
       "exportPath": "Font/Family/Sans",
       "file": "Core (Primitives).tokens.json"
     },
     "VariableID:3:6": {
-      "figmaName": "Font/Family/Serif",
+      "figmaName": "Font/Family/Rokkitt",
       "exportPath": "Font/Family/Serif",
       "file": "Core (Primitives).tokens.json"
     },
     "VariableID:3:7": {
-      "figmaName": "Font/Family/Mono",
+      "figmaName": "Font/Family/SF Mono",
       "exportPath": "Font/Family/Mono",
       "file": "Core (Primitives).tokens.json"
     },
@@ -3826,6 +3826,81 @@
       "figmaName": "Brand/Color/Border/Brand/Dark",
       "exportPath": "Brand/Color/Border/Brand/Dark",
       "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:2": {
+      "figmaName": "Font/Family/Roboto Slab",
+      "exportPath": "Font/Family/Roboto Slab",
+      "file": "Core (Primitives).tokens.json"
+    },
+    "VariableID:3260:3": {
+      "figmaName": "Brand/Font/Heading",
+      "exportPath": "Brand/Font/Heading",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:4": {
+      "figmaName": "Font/Heading",
+      "exportPath": "Semantics/Font/Heading",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3260:5": {
+      "figmaName": "Brand/Typography/UI/Font/Weight",
+      "exportPath": "Brand/Typography/UI/Font/Weight",
+      "file": "Semantics (Brands).tokens.json"
+    },
+    "VariableID:3260:6": {
+      "figmaName": "Typography/UI/Font/Weight",
+      "exportPath": "Semantics/Typography/UI/Font/Weight",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3274:2": {
+      "figmaName": "Font/Family/Exo 2",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Exo 2"
+    },
+    "VariableID:3274:3": {
+      "figmaName": "Font/Family/Orbitron",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Orbitron"
+    },
+    "VariableID:3274:4": {
+      "figmaName": "Font/Family/Manrope",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Manrope"
+    },
+    "VariableID:3274:5": {
+      "figmaName": "Font/Family/Bricolage Grotesque",
+      "file": "Core (Primitives).tokens.json",
+      "exportPath": "Font/Family/Bricolage Grotesque"
+    },
+    "VariableID:3274:6": {
+      "figmaName": "Brand/Typography/Heading/Font/Weight",
+      "file": "Semantics (Brands).tokens.json",
+      "exportPath": "Brand/Typography/Heading/Font/Weight"
+    },
+    "VariableID:3274:7": {
+      "figmaName": "Typography/Heading/Font/Weight",
+      "file": "Semantics (Roles).tokens.json",
+      "exportPath": "Semantics/Typography/Heading/Font/Weight"
+    },
+    "VariableID:3303:2": {
+      "figmaName": "Color/Navigation/Foreground/Active",
+      "exportPath": "Color/Navigation/Foreground/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3303:3": {
+      "figmaName": "Color/Navigation/Foreground/Active",
+      "exportPath": "Semantics/Color/Navigation/Foreground/Active",
+      "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3303:4": {
+      "figmaName": "Color/Border/Navigation/Active",
+      "exportPath": "Color/Border/Navigation/Active",
+      "file": "Appearance (Modes).tokens.json"
+    },
+    "VariableID:3303:5": {
+      "figmaName": "Color/Border/Navigation/Active",
+      "exportPath": "Semantics/Color/Border/Navigation/Active",
+      "file": "Semantics (Roles).tokens.json"
     }
   },
   "codeOnlyExceptions": [
@@ -3908,6 +3983,431 @@
       "id": null,
       "path": "Table/Border Radius",
       "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Neutral/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Neutral/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Positive/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Positive/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Negative/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Negative/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Notice/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Notice/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Info/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Info/Indicator/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Font Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Line Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Line Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Gap MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Gap SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Indicator Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Status Light/Indicator Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Label/Color/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Value/Color/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Height/MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Track/Height/SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Positive",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Notice",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Fill/Background/Negative",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Size SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Font Size MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Line Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Line Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Meter/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Track/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Default",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Positive",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Fill/Negative",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Label/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height SM",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height MD",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Height LG",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Progress Bar/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Default/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Info/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Positive/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Negative/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Container/Background",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Border/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Notice/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Border Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Border Radius",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Padding Inline",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Padding Block",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Content Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Title Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Inline Alert/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Content Gap",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Illustration/Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Illustration/Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Weight",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Heading/Line Height",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Text Color",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Font Family",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Font Size",
+      "file": "Patterns (UI).tokens.json"
+    },
+    {
+      "id": null,
+      "path": "Illustrated Message/Description/Line Height",
+      "file": "Patterns (UI).tokens.json"
     }
   ],
   "excludedCollections": [
@@ -3954,5 +4454,14 @@
       "path": "Line Height/xxxl",
       "file": "Typography (Liquid).tokens.json"
     }
-  ]
+  ],
+  "codeOnlyBrandTypography": {
+    "schemaVersion": 1,
+    "manifest": "brand-typography-compatibility.json"
+  },
+  "fontFamilyCompatibility": {
+    "schemaVersion": 1,
+    "manifest": "font-family-compatibility.json",
+    "jsonProjection": "preserve-existing-literal-accessors"
+  }
 }

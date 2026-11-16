@@ -694,49 +694,33 @@
     return { element: wrapper, code: codeLines.join("\n") };
   };
 
+  let nextTabsPreview = 0;
   const renderVanillaTabs = ({ props }) => {
     const tabCount = Number(props.tabs || 3);
-    const activeIndex = Number(props.active || 0);
-
+    const activeIndex = Math.min(Number(props.active || 0), tabCount - 1);
+    const orientation = props.orientation === "vertical" ? "vertical" : "horizontal";
+    const scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    const prefix = `tabs-preview-${++nextTabsPreview}`;
     const wrapper = document.createElement("div");
     wrapper.className = "uif-tabs";
-
-    const tablist = document.createElement("div");
-    tablist.className = "uif-tab-list";
-    tablist.setAttribute("role", "tablist");
-
-    let codeLines = ['<div class="uif-tabs">', '  <div class="uif-tab-list" role="tablist">'];
-
+    wrapper.dataset.scale = scale;
+    const list = document.createElement("uif-tab-list");
+    list.setAttribute("aria-label", "Example tabs");
+    list.setAttribute("orientation", orientation);
+    wrapper.append(list);
     for (let i = 0; i < tabCount; i++) {
-      const btn = document.createElement("button");
-      btn.className = "uif-tab";
-      btn.setAttribute("role", "tab");
-      btn.setAttribute("aria-selected", String(i === activeIndex));
-      btn.setAttribute("tabindex", i === activeIndex ? "0" : "-1");
-      btn.textContent = `Tab ${i + 1}`;
-      btn.type = "button";
-      tablist.append(btn);
-
-      const sel = i === activeIndex ? ' aria-selected="true" tabindex="0"' : ' aria-selected="false" tabindex="-1"';
-      codeLines.push(`    <button class="uif-tab" role="tab"${sel} type="button">Tab ${i + 1}</button>`);
+      const tab = document.createElement("uif-tab");
+      tab.setAttribute("label", `Tab ${i + 1}`);
+      tab.setAttribute("controls", `${prefix}-panel-${i}`);
+      tab.toggleAttribute("selected", i === activeIndex);
+      list.append(tab);
+      const panel = document.createElement("uif-tab-panel");
+      panel.id = `${prefix}-panel-${i}`;
+      panel.toggleAttribute("hidden", i !== activeIndex);
+      panel.textContent = `Panel content for Tab ${i + 1}`;
+      wrapper.append(panel);
     }
-    codeLines.push("  </div>");
-
-    wrapper.append(tablist);
-
-    const panel = document.createElement("div");
-    panel.className = "uif-tab-panel";
-    panel.setAttribute("role", "tabpanel");
-    panel.setAttribute("tabindex", "0");
-    panel.innerHTML = `<p>Panel content for Tab ${activeIndex + 1}</p>`;
-    wrapper.append(panel);
-
-    codeLines.push(`  <div class="uif-tab-panel" role="tabpanel" tabindex="0">`);
-    codeLines.push(`    <p>Panel content</p>`);
-    codeLines.push(`  </div>`);
-    codeLines.push("</div>");
-
-    return { element: wrapper, code: codeLines.join("\n") };
+    return { element: wrapper, code: wrapper.outerHTML };
   };
 
   // ─── Divider ──────────────────────────────────
@@ -1294,6 +1278,103 @@
     return { element, code };
   };
 
+  // ─── ProgressCircle ───────────────────────────
+
+  const renderVanillaProgressCircle = ({ props }) => {
+    const rawValue = props.value;
+    const determinate = rawValue !== undefined && rawValue !== null && String(rawValue) !== "";
+    const parsed = Number(rawValue);
+    const value = determinate && Number.isFinite(parsed)
+      ? Math.min(100, Math.max(0, parsed))
+      : null;
+    const size = ["sm", "md", "lg"].includes(String(props.size)) ? String(props.size) : "md";
+    const label = String(props.label || (value === null ? "Loading" : "Progress"));
+
+    const element = document.createElement("uif-progress-circle");
+    element.setAttribute("label", label);
+    element.setAttribute("size", size);
+    if (value !== null) element.setAttribute("value", String(value));
+
+    const attrs = [
+      `label="${quoteAttr(label)}"`,
+      size !== "md" ? `size="${size}"` : "",
+      value !== null ? `value="${value}"` : "",
+    ].filter(Boolean);
+
+    return { element, code: `<uif-progress-circle ${attrs.join(" ")}></uif-progress-circle>` };
+  };
+
+  const renderVanillaStatusLight = ({ props, children }) => {
+    const element = document.createElement("uif-status-light");
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    element.textContent = children === undefined ? "Status" : String(children);
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+  const renderVanillaMeter = ({ props, children }) => {
+    const element = document.createElement("uif-meter");
+    if (props.label !== undefined) element.setAttribute("label", String(props.label));
+    if (props.value !== undefined) element.setAttribute("value", String(props.value));
+    if (props.min !== undefined) element.setAttribute("min", String(props.min));
+    if (props.max !== undefined) element.setAttribute("max", String(props.max));
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (props.valueText !== undefined) element.setAttribute("value-text", String(props.valueText));
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+  const renderVanillaProgressBar = ({ props, children }) => {
+    const element = document.createElement("uif-progress-bar");
+    if (props.value !== undefined) element.setAttribute("value", String(props.value));
+    if (props.variant !== undefined) element.setAttribute("variant", String(props.variant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (props.label !== undefined) element.setAttribute("label", String(props.label));
+    if (asBoolean(props.showValue)) element.setAttribute("show-value", "");
+    if (asBoolean(props.indeterminate)) element.setAttribute("indeterminate", "");
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+  const renderVanillaInlineAlert = ({ props }) => {
+    const element = document.createElement("uif-inline-alert");
+    if (props.variant !== undefined && props.variant !== "default") element.setAttribute("variant", String(props.variant));
+    if (props.title !== undefined) element.setAttribute("title", String(props.title));
+    if (props.description !== undefined) element.setAttribute("description", String(props.description));
+    if (props.icon !== undefined && String(props.icon).length > 0) element.setAttribute("icon", String(props.icon));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    if (asBoolean(props.dismissible)) element.setAttribute("dismissible", "");
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+  const renderVanillaIllustratedMessage = ({ props }) => {
+    const element = document.createElement("uif-illustrated-message");
+    if (props.preset !== undefined) element.setAttribute("preset", String(props.preset));
+    if (props.heading !== undefined && String(props.heading).length > 0) element.setAttribute("heading", String(props.heading));
+    if (props.description !== undefined && String(props.description).length > 0) element.setAttribute("description", String(props.description));
+    if (props.illustrationIcon !== undefined && String(props.illustrationIcon).length > 0) element.setAttribute("illustration-icon", String(props.illustrationIcon));
+    if (props.actionLabel !== undefined && String(props.actionLabel).length > 0) element.setAttribute("action-label", String(props.actionLabel));
+    if (props.actionHref !== undefined && String(props.actionHref).length > 0) element.setAttribute("action-href", String(props.actionHref));
+    if (props.actionVariant !== undefined) element.setAttribute("action-variant", String(props.actionVariant));
+    if (props.size !== undefined) element.setAttribute("size", String(props.size));
+    const container = document.createElement("div");
+    container.style.inlineSize = "100%";
+    container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";
+    container.append(element);
+    return { element: container, code: container.outerHTML };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1306,6 +1387,7 @@
       input: renderVanillaInput,
       label: renderVanillaLabel,
       link: renderVanillaLink,
+      progressCircle: renderVanillaProgressCircle,
       radio: renderVanillaRadio,
       switch: renderVanillaSwitch,
       textarea: renderVanillaTextarea,
@@ -1318,6 +1400,12 @@
       calendar: renderVanillaCalendar,
       datePicker: renderVanillaDatePicker,
       table: renderVanillaTable,
+      "status-light": renderVanillaStatusLight,
+      "meter": renderVanillaMeter,
+      "progress-bar": renderVanillaProgressBar,
+      "inline-alert": renderVanillaInlineAlert,
+      "illustrated-message": renderVanillaIllustratedMessage,
+
     },
   };
 })(window);

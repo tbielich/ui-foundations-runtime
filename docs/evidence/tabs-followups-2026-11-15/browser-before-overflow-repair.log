@@ -1,0 +1,39 @@
+[WebServer] (node:14096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:14106) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs horizontal keyboard activation, accessible names and disabled skipping (372ms)
+  ✓  2 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs vertical keyboard activation, accessible names and disabled skipping (172ms)
+  ✓  3 [chromium] › tests/browser/tabs-followups.spec.mjs:46:1 › Tabs inherit S/M/L from containers with nested replacement and no DOM rebuild (216ms)
+  ✘  4 [chromium] › tests/browser/tabs-followups.spec.mjs:72:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation (206ms)
+(node:14114) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (205ms)
+  ✓  6 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (282ms)
+  ✓  7 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (163ms)
+
+
+  1) [chromium] › tests/browser/tabs-followups.spec.mjs:72:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      77 |   await expect(root.locator('[data-scale="large"]')).toHaveCount(1);
+      78 |   const list = root.getByRole('tablist');
+    > 79 |   expect(await list.evaluate(el => el.scrollWidth > el.clientWidth)).toBe(true);
+         |                                                                      ^
+      80 |   await root.getByRole('tab', { name: 'Tab 1', exact: true }).focus();
+      81 |   await page.keyboard.press('End');
+      82 |   const last = root.getByRole('tab', { name: 'Tab 10', exact: true });
+        at /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-36-tabs-state/tests/browser/tabs-followups.spec.mjs:79:70
+
+    Error Context: test-results/tabs-followups-Tabs-playgr-f6cd9-etain-scale-and-orientation-chromium/error-context.md
+
+  1 failed
+    [chromium] › tests/browser/tabs-followups.spec.mjs:72:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation 
+  6 passed (2.9s)

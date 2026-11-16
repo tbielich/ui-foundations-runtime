@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/tbielich/ui-foundations-runtime/issues/339",
+  "status": "deprecated-compatibility-output",
+  "rationale": "Owner-approved concrete font-family catalogue. Existing Sans/Serif/Mono JSON paths are legacy output projections only, with exact existing literal values. Figma names and canonical WEB syntax identify concrete families; CSS aliases and TypeScript legacy keys are derived from these same stable IDs. No duplicate Core variable or primitive value is introduced.",
+  "exports": [
+    {
+      "sourceVariableId": "VariableID:3:5",
+      "canonicalFigmaName": "Font/Family/Inter",
+      "canonicalCssVar": "--font-family-inter",
+      "legacyExportPath": "Font/Family/Sans",
+      "legacyCssVar": "--font-family-sans"
+    },
+    {
+      "sourceVariableId": "VariableID:3:6",
+      "canonicalFigmaName": "Font/Family/Rokkitt",
+      "canonicalCssVar": "--font-family-rokkitt",
+      "legacyExportPath": "Font/Family/Serif",
+      "legacyCssVar": "--font-family-serif"
+    },
+    {
+      "sourceVariableId": "VariableID:3:7",
+      "canonicalFigmaName": "Font/Family/SF Mono",
+      "canonicalCssVar": "--font-family-sf-mono",
+      "legacyExportPath": "Font/Family/Mono",
+      "legacyCssVar": "--font-family-mono"
+    }
+  ]
+}

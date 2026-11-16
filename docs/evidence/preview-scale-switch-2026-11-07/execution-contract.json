@@ -1,0 +1,23 @@
+{
+  "mode": "IMPLEMENT",
+  "selection": "owner_direct_assignment",
+  "baseCommit": "dfdf5fa3d1631902646cdc205a7d4b4a5cc167e2",
+  "ownerRequests": [
+    "Implement scaling beside the theme switch",
+    "push canges and create mr as uif-intelligence"
+  ],
+  "scope": [
+    "S/M/L beside brand/scheme in the three supported previews",
+    "move playground scale control out of property panel",
+    "synchronize selection with URL/snippets/reset",
+    "keyboard access and mobile layout"
+  ],
+  "githubPublisher": "uif-intelligence",
+  "excluded": [
+    "other component scale adoption",
+    "new tokens",
+    "Figma changes",
+    "main merge",
+    "release"
+  ]
+}

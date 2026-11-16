@@ -1,0 +1,18 @@
+{% import "ui.njk" as uif %}
+<div id="consumer" style="width:600px;{{ consumerStyle }}">
+<h1 id="generic-heading">Typografie ÄÖÜ ß</h1><p id="body-text">Body prose 1.234,56 €</p>
+<div id="plain-button">{{ uif.button("Continue") }}</div>
+<div id="composed-button"><button class="uif-button solid">{{ uif.labelContent("Composed label") }}</button></div>
+<div id="field-label">{{ uif.fieldLabel("Destination", htmlFor="destination", required=true) }}</div>
+<div id="input">{{ uif.input(placeholder="Enter a place", value="Mallorca", id="destination") }}</div>
+<div id="select">{{ uif.select(options=[{value:"one",label:"Choice one"},{value:"two",label:"Choice two"}], value="one") }}</div>
+<div id="textarea">{{ uif.textarea(value="Consumer text") }}</div>
+<div id="badge">{{ uif.badge("Available") }}</div>
+<div id="link">{{ uif.link("Details", "#details") }}</div>
+<div id="helper">{{ uif.formHelper("Helper prose remains readable.") }}</div>
+<div id="status">{{ uif.statusLight("Online") }}</div>
+<div id="meter">{{ uif.meter(label="Storage",value=50) }}</div>
+<div id="progress">{{ uif.progressBar(value=50,label="Uploading",showValue=true) }}</div>
+<div id="illustrated">{{ uif.illustratedMessage(heading="No results",description="Try a different destination.",actionLabel="Try again") }}</div>
+<div id="alert">{{ uif.inlineAlert(title="Notice",description="Alert prose remains separate.",actionLabel="Read more") }}</div>
+</div>

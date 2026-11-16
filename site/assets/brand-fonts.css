@@ -1,0 +1,55 @@
+/* Docs-owned font loading. The code-only Runtime package does not import this stylesheet.
+   Consumers load their own licensed fonts; docs and playgrounds opt into these local assets. */
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/brand/inter-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rokkitt";
+  src: url("./fonts/brand/rokkitt-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Brand A heading family. */
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("./fonts/brand/roboto-slab-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* Brand B/C families. */
+@font-face {
+  font-family: "Exo 2";
+  src: url("./fonts/brand/exo-2-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Orbitron";
+  src: url("./fonts/brand/orbitron-variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: url("./fonts/brand/manrope-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./fonts/brand/bricolage-grotesque-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+}

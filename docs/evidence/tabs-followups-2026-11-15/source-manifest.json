@@ -1,0 +1,12 @@
+{
+  "baseFix": "920dc327627e95d61e4335e13872edb7c374deff",
+  "files": {
+    "src/elements/ui-tabs.js": "011aabaa4dc7b88b62cd8d56d444e7000e86e3d0e49a601215bfe321a2814d01",
+    "src/ui/patterns/tabs.css": "4dbf8cda64d55ead35a1cc23f1414bd741f1f026ae27716f3c5d595245ac1c19",
+    "site/assets/playground/renderers.js": "483722d24f6896d754ce1aefc497a832f3c30f5d01f4e8d414a0190b503f37e3",
+    "site/assets/playground/code-generators.js": "5d137cc42186477d98ba1693daec84292d58342f501afe4d5bf550106859a4bd",
+    "site/patterns/tabs.md": "7fceeebac8e4fc003291da47d7d95868a495e63e19f59bc6d09ef66e7086ea2e",
+    "site/patterns/tabs-playground.md": "1ee296c9d09bbbf0e8883ea256c89b6185b32ea7f8f322f461985afd4af49e77",
+    "tests/browser/tabs-followups.spec.mjs": "b3a897faa4d137c396c7f27c6b511ecdb8fab79df1d03067abb744ee98a420c8"
+  }
+}

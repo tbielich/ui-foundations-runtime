@@ -74,3 +74,10 @@ The detailed foundation ADRs are the source of truth:
 - `docs/token-pipeline.md`
 - `docs/patterns/README.md`
 - `IMPLEMENTATION.md`
+
+## Container sizing
+
+S/M/L is selected on a container through the existing Runtime `data-scale` API.
+See [Container scaling](../container-scale.md) for implementation and adoption
+boundaries, and [UIF-VLT Container Scale](https://github.com/tbielich/ui-foundations-vault/pull/77)
+for the owner-confirmed foundation currently in review.

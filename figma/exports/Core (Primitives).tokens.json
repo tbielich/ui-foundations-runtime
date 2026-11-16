@@ -820,15 +820,14 @@
         "$value": "Inter",
         "$extensions": {
           "com.figma.variableId": "VariableID:3:5",
+          "com.figma.variableName": "Font/Family/Inter",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
-            "WEB": "var(--font-family-sans)"
-          },
-          "com.figma.variableName": "Font/Family/Sans",
-          "com.figma.variableCollectionName": "Core (Primitives)",
-          "com.figma.hiddenFromPublishing": false
+            "WEB": "var(--font-family-inter)"
+          }
         }
       },
       "Serif": {
@@ -836,15 +835,14 @@
         "$value": "Rokkitt",
         "$extensions": {
           "com.figma.variableId": "VariableID:3:6",
+          "com.figma.variableName": "Font/Family/Rokkitt",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
-            "WEB": "var(--font-family-serif)"
-          },
-          "com.figma.variableName": "Font/Family/Serif",
-          "com.figma.variableCollectionName": "Core (Primitives)",
-          "com.figma.hiddenFromPublishing": false
+            "WEB": "var(--font-family-rokkitt)"
+          }
         }
       },
       "Mono": {
@@ -852,15 +850,89 @@
         "$value": "SF Mono",
         "$extensions": {
           "com.figma.variableId": "VariableID:3:7",
+          "com.figma.variableName": "Font/Family/SF Mono",
           "com.figma.scopes": [
             "FONT_FAMILY"
           ],
+          "com.figma.hiddenFromPublishing": false,
           "com.figma.codeSyntax": {
-            "WEB": "var(--font-family-mono)"
-          },
-          "com.figma.variableName": "Font/Family/Mono",
-          "com.figma.variableCollectionName": "Core (Primitives)",
-          "com.figma.hiddenFromPublishing": false
+            "WEB": "var(--font-family-sf-mono)"
+          }
+        }
+      },
+      "Roboto Slab": {
+        "$type": "string",
+        "$value": "Roboto Slab",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3260:2",
+          "com.figma.variableName": "Font/Family/Roboto Slab",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--font-family-roboto-slab)"
+          }
+        }
+      },
+      "Exo 2": {
+        "$type": "string",
+        "$value": "Exo 2",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3274:2",
+          "com.figma.variableName": "Font/Family/Exo 2",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--font-family-exo-2)"
+          }
+        }
+      },
+      "Orbitron": {
+        "$type": "string",
+        "$value": "Orbitron",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3274:3",
+          "com.figma.variableName": "Font/Family/Orbitron",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--font-family-orbitron)"
+          }
+        }
+      },
+      "Manrope": {
+        "$type": "string",
+        "$value": "Manrope",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3274:4",
+          "com.figma.variableName": "Font/Family/Manrope",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--font-family-manrope)"
+          }
+        }
+      },
+      "Bricolage Grotesque": {
+        "$type": "string",
+        "$value": "Bricolage Grotesque",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:3274:5",
+          "com.figma.variableName": "Font/Family/Bricolage Grotesque",
+          "com.figma.scopes": [
+            "FONT_FAMILY"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "WEB": "var(--font-family-bricolage-grotesque)"
+          }
         }
       }
     }

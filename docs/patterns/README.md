@@ -50,3 +50,11 @@ Runtime pattern/component docs use three explicit statuses:
 - `docs/components/README.md`
 - `docs/principles/README.md`
 - `docs/validation/ci.md`
+
+## Reintegrated indicator patterns
+
+StatusLight, Meter and ProgressBar have Runtime implementations, public element exports, Nunjucks macros and playgrounds. Their live Figma parity and active Code Connect mapping remain pending source access; see [bounded reintegration evidence](../evidence/simple-components-2026-11-07/README.md).
+
+- [Status Light](../../site/patterns/status-light.md): named condition with a decorative dot.
+- [Meter](../../site/patterns/meter.md): native scalar measurement within a known range.
+- [Progress Bar](../../site/patterns/progress-bar.md): task completion and indeterminate loading.

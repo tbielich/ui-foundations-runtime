@@ -1,0 +1,458 @@
+{
+  "mode": "VERIFY",
+  "recordedAt": "2026-11-11T06:06:42.561371+00:00",
+  "repository": "tbielich/ui-foundations-runtime",
+  "branch": "feat/339-brand-a-typography",
+  "HEAD": "03d195e2c481a1c415b226d21745dae951134f0c",
+  "stateBinding": "Uncommitted local assets. Output and pinned source hashes below bind this audit; HEAD alone does not.",
+  "method": "fontTools 4.68.0 reads actual WOFF2 and pinned upstream TTF files in memory. SHA-256 hashes, decoded cmap/name/fvar, raw Orbitron tables and pinned upstream licenses compared. Only this evidence file written.",
+  "checks": {
+    "binaryHashMatches": true,
+    "byteCountMatches": true,
+    "sourceHashMatches": true,
+    "licenseHashMatches": true,
+    "licenseMatchesPinnedUpstream": true,
+    "axesMatchRecord": true,
+    "sourceCmapEqual": true,
+    "copyrightLicenseNameRecordsPreserved": true
+  },
+  "localCss": {
+    "fontFaceCount": 7,
+    "googleImportPresent": false,
+    "allFaceUrlsRelativeLocal": true,
+    "assetFormats": {
+      "woff2": 6,
+      "ttf": 1
+    },
+    "orbitronFaceUsesOriginalTruetype": true
+  },
+  "fonts": [
+    {
+      "family": "Bricolage Grotesque",
+      "file": "bricolage-grotesque-variable.woff2",
+      "bytes": 66392,
+      "sha256": "44cd3ed8c20f8c28bc3f4aaeb0027a7939cd38aff45af3292f3109c68fbf0ce0",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/bricolagegrotesque/BricolageGrotesque%5Bopsz%2Cwdth%2Cwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 800.0,
+          "max": 800.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 527,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": false,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "nameRecordDelta": {
+        "removed": [
+          [
+            266,
+            1,
+            0,
+            0,
+            "12pt"
+          ],
+          [
+            266,
+            3,
+            1,
+            1033,
+            "12pt"
+          ],
+          [
+            268,
+            1,
+            0,
+            0,
+            "24pt"
+          ],
+          [
+            268,
+            3,
+            1,
+            1033,
+            "24pt"
+          ],
+          [
+            269,
+            1,
+            0,
+            0,
+            "36pt"
+          ],
+          [
+            269,
+            3,
+            1,
+            1033,
+            "36pt"
+          ],
+          [
+            270,
+            1,
+            0,
+            0,
+            "48pt"
+          ],
+          [
+            270,
+            3,
+            1,
+            1033,
+            "48pt"
+          ],
+          [
+            271,
+            1,
+            0,
+            0,
+            "72pt"
+          ],
+          [
+            271,
+            3,
+            1,
+            1033,
+            "72pt"
+          ],
+          [
+            272,
+            1,
+            0,
+            0,
+            "96pt"
+          ],
+          [
+            272,
+            3,
+            1,
+            1033,
+            "96pt"
+          ],
+          [
+            273,
+            1,
+            0,
+            0,
+            "Condensed"
+          ],
+          [
+            273,
+            3,
+            1,
+            1033,
+            "Condensed"
+          ],
+          [
+            274,
+            1,
+            0,
+            0,
+            "SemiCondensed"
+          ],
+          [
+            274,
+            3,
+            1,
+            1033,
+            "SemiCondensed"
+          ]
+        ],
+        "added": [],
+        "note": "Bricolage deliberate axis instancing changes variation-axis name records; not compression-only."
+      },
+      "technicalGate": "PASS_WITH_NOTES"
+    },
+    {
+      "family": "Exo 2",
+      "file": "exo-2-variable.woff2",
+      "bytes": 106100,
+      "sha256": "95be8c9c7692008c2001180a0d29d0b86b888d35bf932a56293447497f3585ed",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/exo2/Exo2%5Bwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 911,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS"
+    },
+    {
+      "family": "Inter",
+      "file": "inter-variable.woff2",
+      "bytes": 350460,
+      "sha256": "13b4cddc57045d40b411008e61588c8f81aa0bd72fe884624831a0ff9c4d159a",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "opsz",
+          "min": 14.0,
+          "default": 14.0,
+          "max": 32.0
+        },
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 2849,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS"
+    },
+    {
+      "family": "Manrope",
+      "file": "manrope-variable.woff2",
+      "bytes": 53892,
+      "sha256": "30b83738add8c9edd9e3450b98036a9a8fb5668d0cbd4eb0ce5fe6761197f21f",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/manrope/Manrope%5Bwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 200.0,
+          "default": 200.0,
+          "max": 800.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 678,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS"
+    },
+    {
+      "family": "Orbitron",
+      "file": "orbitron-variable.ttf",
+      "format": "truetype",
+      "bytes": 38576,
+      "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+      "sourceHashMatches": true,
+      "byteIdenticalToPinnedUpstream": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [
+        "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: \"Orbitron\""
+      ],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 400.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 207,
+      "missingRequiredCharacters": [
+        "ẞ"
+      ],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS_WITH_NOTES",
+      "deliveryNote": "Original upstream TTF, byte-identical. No WOFF conversion, table removal or modification in final Orbitron delivery."
+    },
+    {
+      "family": "Roboto Slab",
+      "file": "roboto-slab-variable.woff2",
+      "bytes": 118296,
+      "sha256": "a85880785a54d41536259b2736492fba35dc3f258c327a5431ca998ce5f85fed",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/86aced91de05cd4f96a06838124cca45be337b2b/apache/robotoslab/RobotoSlab%5Bwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "Apache-2.0",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 400.0,
+          "max": 900.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 901,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS"
+    },
+    {
+      "family": "Rokkitt",
+      "file": "rokkitt-variable.woff2",
+      "bytes": 52468,
+      "sha256": "a10e6659f05518a4b2d53c5e8ba174d7aaaca458cab76bacd932491f8a104355",
+      "binaryHashMatches": true,
+      "byteCountMatches": true,
+      "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/rokkitt/Rokkitt%5Bwght%5D.ttf",
+      "sourceHashMatches": true,
+      "licenseType": "OFL-1.1",
+      "licenseHashMatches": true,
+      "licenseMatchesPinnedUpstream": true,
+      "licenseHeaderRFNLines": [],
+      "actualAxes": [
+        {
+          "tag": "wght",
+          "min": 100.0,
+          "default": 600.0,
+          "max": 900.0
+        }
+      ],
+      "axesMatchRecord": true,
+      "unicodeMappings": 705,
+      "missingRequiredCharacters": [],
+      "sourceCmapEqual": true,
+      "sourceNameRecordsEqual": true,
+      "copyrightLicenseNameRecordsPreserved": true,
+      "technicalGate": "PASS"
+    }
+  ],
+  "packageInventory": {
+    "path": "docs/evidence/brand-bc-typography-2026-11-10/package-font-inventory.json",
+    "sha256": "d633b9f1dde72c8e4412ada040bd8c3f1c06806e7665d21fb16eac93771486a0",
+    "reportedPass": true,
+    "independentlyReranPack": false,
+    "note": "Existing parent pack dry-run record inspected; local assets and licenses independently verified. Pack command not repeated.",
+    "state": "Previous record predates final Orbitron TTF switch; parent must bind/recheck final package inventory separately."
+  },
+  "permissionSource": {
+    "url": "https://openfontlicense.org/ofl-faq/",
+    "sections": [
+      "2.2",
+      "2.2.1",
+      "2.2.2",
+      "2.8"
+    ],
+    "readDate": "2026-11-11",
+    "summary": "RFN retention for WOFF/WOFF2 is conditional on unchanged font data except compression and preserved equivalent metadata. Converter use alone is insufficient. This audit records technical facts, not formal legal clearance."
+  },
+  "notes": [
+    "Orbitron final delivery is byte-identical original upstream TTF, retaining original RFN and metadata. Prior WOFF review retained in history only.",
+    "Orbitron U+1E9E remains missing in original source and final TTF; platform fallback risk remains explicit.",
+    "Bricolage deliberately instanced at opsz 14 / wdth 100; copyright/license metadata and full character mappings preserved. Its license header declares no RFN.",
+    "Other six asset binaries unchanged relative to prior independent verification; no repeated broad asset checks.",
+    "Upright assets only. This technical identity/provenance review is not formal legal clearance."
+  ],
+  "gate": "PASS_WITH_NOTES: seven local font faces, six WOFF2 assets and one exact original Orbitron TTF. Source identity and licenses verified; Orbitron glyph fallback limitation explicit.",
+  "history": [
+    {
+      "recordedAt": "2026-11-11T06:03:53.238192+00:00",
+      "reason": "Prior converted Orbitron WOFF2 review retained; final delivery superseded by exact original upstream TTF.",
+      "orbitron": {
+        "family": "Orbitron",
+        "file": "orbitron-variable.woff2",
+        "bytes": 16028,
+        "sha256": "206601dd7476a038ad4038f8c45f07c59bf2189b8733e328b79697a09e846bc0",
+        "binaryHashMatches": true,
+        "byteCountMatches": true,
+        "sourceURL": "https://raw.githubusercontent.com/google/fonts/5bb28733cec313b63fbd415b574b5ae35c8aa8b8/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+        "sourceHashMatches": true,
+        "licenseType": "OFL-1.1",
+        "licenseHashMatches": true,
+        "licenseMatchesPinnedUpstream": true,
+        "licenseHeaderRFNLines": [
+          "Copyright 2018 The Orbitron Project Authors (https://github.com/theleagueof/orbitron), with Reserved Font Name: \"Orbitron\""
+        ],
+        "actualAxes": [
+          {
+            "tag": "wght",
+            "min": 400.0,
+            "default": 400.0,
+            "max": 900.0
+          }
+        ],
+        "axesMatchRecord": true,
+        "unicodeMappings": 207,
+        "missingRequiredCharacters": [
+          "ẞ"
+        ],
+        "sourceCmapEqual": true,
+        "sourceNameRecordsEqual": true,
+        "copyrightLicenseNameRecordsPreserved": true,
+        "compressionAudit": {
+          "commonSfntTablesDiffering": [
+            "head"
+          ],
+          "sourceOnlyTables": [
+            "DSIG"
+          ],
+          "outputOnlyTables": [],
+          "sourceDSIG": {
+            "version": 1,
+            "numSignatures": 0,
+            "flags": 0
+          },
+          "sourceHead": {
+            "checkSumAdjustment": 3170473672,
+            "flags": 3
+          },
+          "outputHead": {
+            "checkSumAdjustment": 3792163313,
+            "flags": 2051
+          },
+          "glyphOrderEqual": true,
+          "nameTableBytesEqual": true,
+          "woffExtendedMetadataPresent": false,
+          "interpretation": "All shared tables including outlines/shaping/names/metrics byte-identical except head format bookkeeping. Empty source DSIG omitted; flags gains bit11 and checksum changes. Not every source SFNT byte/table unchanged; no formal permission/functional-equivalence certification."
+        },
+        "technicalGate": "PASS_WITH_NOTES"
+      },
+      "previousGate": "PASS_WITH_NOTES: seven local assets, provenance and licenses verified. Orbitron glyph/format notes and Bricolage instancing remain explicit. Not formal legal clearance."
+    }
+  ]
+}

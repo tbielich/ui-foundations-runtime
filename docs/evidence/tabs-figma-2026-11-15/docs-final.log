@@ -1,0 +1,127 @@
+
+> ui-foundations@1.1.0 docs:lint
+> node scripts/check-docs-drift.mjs
+
+✅ Documentation drift check passed (100 documentation files scanned)
+
+> ui-foundations@1.1.0 docs:site
+> npm run build:all && npm run docs:build
+
+
+> ui-foundations@1.1.0 build:all
+> node scripts/build.mjs
+
+╭──────────────────────────────────────╮
+│ ╻╻· │ FOUNDATIONS                    │
+│ ┗┛╹ │ BUILD 1.1.0                    │
+╰──────────────────────────────────────╯
+█ ICONS                             [OK]
+├ Entries                           0601
+└ Output                   icon-names.ts
+────────────────────────────────────────
+█ TOKENS
+├ CSS                              READY
+├ JSON                             READY
+├ TypeScript                       READY
+└ YAML                             READY
+────────────────────────────────────────
+█ INTEGRITY                         [OK]
+├ Missing WEB                       0000
+├ Unparseable WEB                   0000
+└ Duplicate vars                    0000
+────────────────────────────────────────
+█ DIST                              [OK]
+├ Token CSS                         0009
+├ Macros                           READY
+└ Bundles                          READY
+────────────────────────────────────────
+BUILD OK · READY · 568ms
+
+> ui-foundations@1.1.0 docs:build
+> eleventy
+
+[11ty] Writing ./_site/base/preview/index.html from ./site/base-preview.njk
+[11ty] Writing ./_site/llms.txt from ./site/llms.njk
+[11ty] Writing ./_site/robots.txt from ./site/robots.njk
+[11ty] Writing ./_site/site.webmanifest from ./site/site.webmanifest.njk
+[11ty] Writing ./_site/sitemap.xml from ./site/sitemap.njk
+[11ty] Writing ./_site/assets/fonts/brand/README/index.html from ./site/assets/fonts/brand/README.md (njk)
+[11ty] Writing ./_site/base/index.html from ./site/base.md (njk)
+[11ty] Writing ./_site/getting-started/index.html from ./site/getting-started.md (njk)
+[11ty] Writing ./_site/impressum/index.html from ./site/impressum.md (njk)
+[11ty] Writing ./_site/index.html from ./site/index.md (njk)
+[11ty] Writing ./_site/license/index.html from ./site/license.md (njk)
+[11ty] Writing ./_site/release-notes/index.html from ./site/release-notes.md (njk)
+[11ty] Writing ./_site/components/date-picker-playground/index.html from ./site/components/date-picker-playground.md (njk)
+[11ty] Writing ./_site/components/date-picker/index.html from ./site/components/date-picker.md (njk)
+[11ty] Writing ./_site/components/dialog-playground/index.html from ./site/components/dialog-playground.md (njk)
+[11ty] Writing ./_site/components/dialog/index.html from ./site/components/dialog.md (njk)
+[11ty] Writing ./_site/components/index.html from ./site/components/index.md (njk)
+[11ty] Writing ./_site/examples/index.html from ./site/examples/index.md (njk)
+[11ty] Writing ./_site/examples/login-form/index.html from ./site/examples/login-form.md (njk)
+[11ty] Writing ./_site/examples/pricing/index.html from ./site/examples/pricing.md (njk)
+[11ty] Writing ./_site/examples/vanilla-starter/index.html from ./site/examples/vanilla-starter.md (njk)
+[11ty] Writing ./_site/examples/writing-contract-proof/index.html from ./site/examples/writing-contract-proof.md (njk)
+[11ty] Writing ./_site/foundations/accessibility/index.html from ./site/foundations/accessibility.md (njk)
+[11ty] Writing ./_site/foundations/design-tokens/all/index.html from ./site/foundations/all-tokens.md (njk)
+[11ty] Writing ./_site/foundations/architecture/index.html from ./site/foundations/architecture.md (njk)
+[11ty] Writing ./_site/foundations/class-naming/index.html from ./site/foundations/class-naming.md (njk)
+[11ty] Writing ./_site/foundations/content/index.html from ./site/foundations/content.md (njk)
+[11ty] Writing ./_site/foundations/design-tokens/index.html from ./site/foundations/design-tokens.md (njk)
+[11ty] Writing ./_site/foundations/index.html from ./site/foundations/index.md (njk)
+[11ty] Writing ./_site/foundations/internationalization/index.html from ./site/foundations/internationalization.md (njk)
+[11ty] Writing ./_site/foundations/theming/index.html from ./site/foundations/theming.md (njk)
+[11ty] Writing ./_site/primitives/color/index.html from ./site/primitives/color-tokens.md (njk)
+[11ty] Writing ./_site/primitives/index.html from ./site/primitives/index.md (njk)
+[11ty] Writing ./_site/primitives/typography/index.html from ./site/primitives/typography-tokens.md (njk)
+[11ty] Writing ./_site/patterns/accordion-playground/index.html from ./site/patterns/accordion-playground.md (njk)
+[11ty] Writing ./_site/patterns/accordion/index.html from ./site/patterns/accordion.md (njk)
+[11ty] Writing ./_site/patterns/avatar-playground/index.html from ./site/patterns/avatar-playground.md (njk)
+[11ty] Writing ./_site/patterns/avatar/index.html from ./site/patterns/avatar.md (njk)
+[11ty] Writing ./_site/patterns/badge-playground/index.html from ./site/patterns/badge-playground.md (njk)
+[11ty] Writing ./_site/patterns/badge/index.html from ./site/patterns/badge.md (njk)
+[11ty] Writing ./_site/patterns/button-group-playground/index.html from ./site/patterns/button-group-playground.md (njk)
+[11ty] Writing ./_site/patterns/button-playground/index.html from ./site/patterns/button-playground.md (njk)
+[11ty] Writing ./_site/patterns/button/index.html from ./site/patterns/button.md (njk)
+[11ty] Writing ./_site/patterns/calendar-playground/index.html from ./site/patterns/calendar-playground.md (njk)
+[11ty] Writing ./_site/patterns/calendar/index.html from ./site/patterns/calendar.md (njk)
+[11ty] Writing ./_site/patterns/checkbox-playground/index.html from ./site/patterns/checkbox-playground.md (njk)
+[11ty] Writing ./_site/patterns/checkbox/index.html from ./site/patterns/checkbox.md (njk)
+[11ty] Writing ./_site/patterns/divider-playground/index.html from ./site/patterns/divider-playground.md (njk)
+[11ty] Writing ./_site/patterns/divider/index.html from ./site/patterns/divider.md (njk)
+[11ty] Writing ./_site/patterns/form-playground/index.html from ./site/patterns/form-playground.md (njk)
+[11ty] Writing ./_site/patterns/form/index.html from ./site/patterns/form.md (njk)
+[11ty] Writing ./_site/patterns/icon-playground/index.html from ./site/patterns/icon-playground.md (njk)
+[11ty] Writing ./_site/patterns/icon/index.html from ./site/patterns/icon.md (njk)
+[11ty] Writing ./_site/patterns/illustrated-message-playground/index.html from ./site/patterns/illustrated-message-playground.md (njk)
+[11ty] Writing ./_site/patterns/illustrated-message/index.html from ./site/patterns/illustrated-message.md (njk)
+[11ty] Writing ./_site/patterns/index.html from ./site/patterns/index.md (njk)
+[11ty] Writing ./_site/patterns/inline-alert-playground/index.html from ./site/patterns/inline-alert-playground.md (njk)
+[11ty] Writing ./_site/patterns/inline-alert/index.html from ./site/patterns/inline-alert.md (njk)
+[11ty] Writing ./_site/patterns/input-playground/index.html from ./site/patterns/input-playground.md (njk)
+[11ty] Writing ./_site/patterns/input/index.html from ./site/patterns/input.md (njk)
+[11ty] Writing ./_site/patterns/label-playground/index.html from ./site/patterns/label-playground.md (njk)
+[11ty] Writing ./_site/patterns/label/index.html from ./site/patterns/label.md (njk)
+[11ty] Writing ./_site/patterns/link-playground/index.html from ./site/patterns/link-playground.md (njk)
+[11ty] Writing ./_site/patterns/link/index.html from ./site/patterns/link.md (njk)
+[11ty] Writing ./_site/patterns/meter-playground/index.html from ./site/patterns/meter-playground.md (njk)
+[11ty] Writing ./_site/patterns/meter/index.html from ./site/patterns/meter.md (njk)
+[11ty] Writing ./_site/patterns/progress-bar-playground/index.html from ./site/patterns/progress-bar-playground.md (njk)
+[11ty] Writing ./_site/patterns/progress-bar/index.html from ./site/patterns/progress-bar.md (njk)
+[11ty] Writing ./_site/patterns/radio-playground/index.html from ./site/patterns/radio-playground.md (njk)
+[11ty] Writing ./_site/patterns/radio/index.html from ./site/patterns/radio.md (njk)
+[11ty] Writing ./_site/patterns/select-playground/index.html from ./site/patterns/select-playground.md (njk)
+[11ty] Writing ./_site/patterns/select/index.html from ./site/patterns/select.md (njk)
+[11ty] Writing ./_site/patterns/status-light-playground/index.html from ./site/patterns/status-light-playground.md (njk)
+[11ty] Writing ./_site/patterns/status-light/index.html from ./site/patterns/status-light.md (njk)
+[11ty] Writing ./_site/patterns/switch-playground/index.html from ./site/patterns/switch-playground.md (njk)
+[11ty] Writing ./_site/patterns/switch/index.html from ./site/patterns/switch.md (njk)
+[11ty] Writing ./_site/patterns/table-playground/index.html from ./site/patterns/table-playground.md (njk)
+[11ty] Writing ./_site/patterns/table/index.html from ./site/patterns/table.md (njk)
+[11ty] Writing ./_site/patterns/tabs-playground/index.html from ./site/patterns/tabs-playground.md (njk)
+[11ty] Writing ./_site/patterns/tabs/index.html from ./site/patterns/tabs.md (njk)
+[11ty] Writing ./_site/patterns/textarea-playground/index.html from ./site/patterns/textarea-playground.md (njk)
+[11ty] Writing ./_site/patterns/textarea/index.html from ./site/patterns/textarea.md (njk)
+[11ty] Writing ./_site/patterns/tooltip-playground/index.html from ./site/patterns/tooltip-playground.md (njk)
+[11ty] Writing ./_site/patterns/tooltip/index.html from ./site/patterns/tooltip.md (njk)
+[11ty] Copied 690 Wrote 84 files in 0.52 seconds (v3.1.6)

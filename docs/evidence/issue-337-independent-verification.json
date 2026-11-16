@@ -1,0 +1,62 @@
+{
+  "issue": 337,
+  "repository": "tbielich/ui-foundations-runtime",
+  "mode": "VERIFY",
+  "outcome": "PASS",
+  "verified_at": "2026-11-10T16:03:12.451137+01:00",
+  "baseline": "43e0c4db236bbd7096af9b7d857229867db489da",
+  "implementation": "Produced by Codex on HAL-9000; operator made no implementation or test changes. Operator independently verified and prepared this evidence.",
+  "scope": "Single IllustratedMessage Description/Text Color alias from Foreground/Subtle to existing Content/Default. No shared palette/semantic/source CSS changes.",
+  "commands": [
+    {
+      "command": "npm run ci:check",
+      "host": "operator Mac",
+      "exit": 0,
+      "unit_tests": 232,
+      "browser_tests": 37
+    },
+    {
+      "command": "CONTRAST_BASE_URL=http://127.0.0.1:8521 CONTRAST_OUTPUT=<evidence>/after-1 ./runtime-snapshot/node_modules/.bin/playwright test --config verification/playwright.config.cjs",
+      "host": "operator Mac",
+      "exit": 0,
+      "pairs": 36,
+      "contexts": 12,
+      "failures": 0
+    }
+  ],
+  "contrast": {
+    "before_light": 3.949439648049115,
+    "after_light": 12.63465434445799,
+    "before_dark": 1.6620953314177012,
+    "after_dark": 13.076546777106756,
+    "threshold": 4.5,
+    "surfaces": [
+      "docs hero",
+      "actual Custom Element playground"
+    ],
+    "brands": [
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  "history": [
+    "Initial independent baseline reproduced 12 failing descriptions.",
+    "Iteration 1 fixed the alias; independent contrast passed, but the new browser regression divided by zero on transparent layers. Existing 36 browser tests passed.",
+    "Iteration 2 on iMac corrected only the regression and evidence; subsequent full independent CI passed.",
+    "The second executor turn ended with usage_limit after saving changes, without a final result message. This transport failure remains recorded; it is not an artifact verification failure."
+  ],
+  "environment_limitations": [
+    "Current Playwright Chromium does not support iMac macOS 12.",
+    "Executor session also disallowed binding its test server. Browser acceptance was obtained independently on operator Mac, not claimed as an iMac browser pass."
+  ],
+  "source_sha256": {
+    "figma/exports/Patterns (UI).tokens.json": "0bc59d2505f5c5c91ed77e3b14b3c27d7996d12b39198d289a0b2d93aee576c7",
+    "tests/illustrated-message-naming-migration.test.mjs": "1e217de891b32ad3b56da95a09cd18ca7e6f5ceb07eeb4c4e4bd24b04f5fa393",
+    "tests/browser/illustrated-message-contrast.spec.mjs": "2731f6574a88f23860ec1b7b51a1a2987813064431c1f59c783d3b2a000353f9",
+    "docs/evidence/issue-337-contrast.md": "1826fa125d68223e0902be6d9df2b6787c2b48cd517fca8d7c5f8e6aa6ada1c6"
+  },
+  "independent_harness_sha256": "25988a8b216fe9c3381428c7fea4ec7a55ad9c6f74f77e78afe831b11cde3ea7",
+  "generated_css_impact": "After excluding only generated timestamp comments, exactly one property differs: IllustratedMessage description alias.",
+  "publication": "Draft PR for human review; no merge authorized by this work item."
+}

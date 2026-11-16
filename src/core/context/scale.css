@@ -1,0 +1,12 @@
+@layer context {
+  /* The nearest container replaces the inherited context; nesting never compounds it. */
+  :where([data-scale="small"]) {
+    --_uif-context-scale: var(--_uif-scale-small);
+  }
+  :where([data-scale="medium"]) {
+    --_uif-context-scale: var(--_uif-scale-medium);
+  }
+  :where([data-scale="large"]) {
+    --_uif-context-scale: var(--_uif-scale-large);
+  }
+}
