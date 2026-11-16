@@ -113,7 +113,7 @@
                 </li>
                 <li>
                   <details class="docs-nav-subgroup"{% if page.url == "/foundations/accessibility/" or page.url == "/foundations/content/" or page.url == "/foundations/internationalization/" %} open{% endif %}>
-                    <summary>Guidelines</summary>
+                    <summary class="docs-nav-subgroup-label">Guidelines</summary>
                     <ul>
                       {% for entry in collections.foundationsDocs %}
                       {% if entry.url == "/foundations/accessibility/" or entry.url == "/foundations/content/" or entry.url == "/foundations/internationalization/" %}
