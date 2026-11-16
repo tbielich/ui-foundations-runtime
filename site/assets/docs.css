@@ -2889,7 +2889,8 @@ details.color-family > .color-table-wrap {
   display: none;
 }
 
-.docs-nav-subgroup > summary > a {
+.docs-nav-subgroup > summary > a,
+.docs-nav-subgroup-label {
   display: block;
   padding: 8px 10px;
   border-radius: 10px;
@@ -2901,7 +2902,8 @@ details.color-family > .color-table-wrap {
   transition: all 120ms ease;
 }
 
-.docs-nav-subgroup > summary > a:hover {
+.docs-nav-subgroup > summary > a:hover,
+.docs-nav-subgroup-label:hover {
   border-color: var(--docs-border);
   background: var(--docs-surface-1);
   color: var(--docs-text-0);
@@ -3367,6 +3369,7 @@ details.color-family > .color-table-wrap {
 }
 
 .docs-nav :is(a, summary > a),
+.docs-nav-subgroup > summary.docs-nav-subgroup-label,
 .docs-toc-sidebar-list a {
   font-weight: 500;
 }
