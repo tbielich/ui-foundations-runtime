@@ -10,6 +10,7 @@ in the repository.
 | File | Topic |
 |---|---|
 | `assistant-behavior-rules.md` | Detailed component and token checklist |
+| `cloud-ready-tasks.md` | When a bounded issue is eligible for workstation-independent UIF-INT execution |
 | `kiro-workflow.md` | Kiro steering, specs, and workflow guidance |
 | `goose-workflow.md` | Goose audit and validation workflow guidance |
 | `codex-workflow.md` | Codex execution workflow guidance |
