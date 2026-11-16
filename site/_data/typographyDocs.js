@@ -94,6 +94,24 @@ module.exports = () => {
       brand: t.scopeId || "",
     }));
 
+  // Derive displayed families from the existing Brand roles and canonical Core
+  // catalogue. Legacy family aliases resolve through the same projection used
+  // by the Runtime; no separate brand-to-font catalogue is maintained here.
+  const compatibility = require("../../figma/font-family-compatibility.json");
+  const canonicalFamily = new Map(compatibility.exports.map(entry => [entry.legacyCssVar, entry.canonicalCssVar]));
+  const typefaceBrands = [...new Set(brandFonts.map(token => token.brand))].sort().map(id => {
+    const selected = new Map();
+    for (const token of brandFonts.filter(token => token.brand === id)) {
+      const reference = /^var\((--font-family-[a-z0-9-]+)\)$/.exec(token.value);
+      const cssVar = reference && (canonicalFamily.get(reference[1]) || reference[1]);
+      const family = families.find(family => family.cssVar === cssVar);
+      if (!family) throw new Error(`Unresolved brand typeface: ${id} ${token.cssVar}`);
+      if (!selected.has(cssVar)) selected.set(cssVar, { ...family, roles: [] });
+      selected.get(cssVar).roles.push(token.name.replace("brand-font-", ""));
+    }
+    return { id, title: `Brand ${id.toUpperCase()}`, families: [...selected.values()] };
+  });
+
   // Heading scale tokens
   const headingScale = [
     { class: "heading-xxxl", label: "XXXL", element: "h1" },
@@ -117,6 +135,7 @@ module.exports = () => {
 
   return {
     families,
+    typefaceBrands,
     sizes,
     weights,
     lineHeights,

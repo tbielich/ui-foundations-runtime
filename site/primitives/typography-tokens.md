@@ -16,7 +16,32 @@ permalink: /primitives/typography/
 
 <section id="typefaces">
 <h2 id="typefaces-heading">Typefaces</h2>
-<p class="section-description">Three typeface families — sans-serif for UI, serif for editorial content, monospace for code.</p>
+<p class="section-description">Compare the typefaces used by each brand. The rest of the documentation keeps its own appearance.</p>
+
+<div class="docs-header"><span class="docs-hero-switch" role="group" aria-label="Typeface brand">{% for brand in typographyDocs.typefaceBrands %}<button type="button" data-typeface-brand="{{ brand.id }}" aria-pressed="{{ 'true' if loop.first else 'false' }}" aria-controls="typefaces-brand-{{ brand.id }}">{{ brand.title }}</button>{% endfor %}</span></div>
+
+{% for brand in typographyDocs.typefaceBrands %}
+<div id="typefaces-brand-{{ brand.id }}" data-typeface-panel="{{ brand.id }}"{% if not loop.first %} hidden{% endif %}>
+  <h3>{{ brand.title }}</h3>
+  <div class="type-specimens">{% for family in brand.families %}
+    <div class="type-specimen">
+      <div class="type-specimen-sample" style="font-family: var({{ family.cssVar }});">
+        <span class="type-specimen-large">Aa</span>
+        <span class="type-specimen-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+        <span class="type-specimen-alphabet">abcdefghijklmnopqrstuvwxyz 0123456789</span>
+      </div>
+      <div class="type-specimen-meta">
+        <span class="type-specimen-name">{{ family.value }}</span>
+        <span>{{ family.roles | join(', ') | capitalize }}</span>
+        <code class="type-specimen-token">{{ family.cssVar }}</code>
+      </div>
+    </div>{% endfor %}
+  </div>
+</div>
+{% endfor %}
+
+<details>
+<summary>All core font families, including fallback and code fonts</summary>
 
 <div class="type-specimens">{% for family in typographyDocs.families %}
   <div class="type-specimen">
@@ -31,7 +56,10 @@ permalink: /primitives/typography/
     </div>
   </div>{% endfor %}
 </div>
+</details>
 </section>
+
+<script src="/assets/typeface-preview.js"></script>
 
 <!-- HEADING SCALE -->
 

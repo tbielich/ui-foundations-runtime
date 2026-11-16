@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "rows": [
+    {
+      "borderId": "VariableID:1:268",
+      "surfaceId": "VariableID:1:270",
+      "name": "Button/Solid/Border/Color/Default",
+      "targetId": "VariableID:3173:34",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-button-solid-border-color-default)"
+      }
+    },
+    {
+      "borderId": "VariableID:15:30",
+      "surfaceId": "VariableID:12:21",
+      "name": "Button/Solid/Border/Color/Hover",
+      "targetId": "VariableID:3173:70",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-button-solid-border-color-hover)"
+      }
+    },
+    {
+      "borderId": "VariableID:53:78",
+      "surfaceId": "VariableID:12:22",
+      "name": "Button/Solid/Border/Color/Active",
+      "targetId": "VariableID:3173:71",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-button-solid-border-color-active)"
+      }
+    },
+    {
+      "borderId": "VariableID:53:79",
+      "surfaceId": "VariableID:53:80",
+      "name": "Button/Solid/Border/Color/Focus",
+      "targetId": "VariableID:3173:77",
+      "scopes": [
+        "STROKE_COLOR"
+      ],
+      "codeSyntax": {
+        "WEB": "var(--uif-button-solid-border-color-focus)"
+      }
+    }
+  ]
+}

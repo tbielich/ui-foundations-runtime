@@ -88,7 +88,7 @@ permalink: /primitives/color/
       </thead>
       <tbody>{% for token in brand.tokens %}
         <tr>
-          <td class="color-table-preview"><span class="color-dot" style="background: var({{ token.cssVar }});"></span></td>
+          <td class="color-table-preview"><span class="color-dot" style="background: {{ token.value }};"></span></td>
           <td class="color-table-name">{{ token.name | replace("brand-color-", "") }}</td>
           <td class="color-table-token"><code>{{ token.cssVar }}</code></td>
           <td class="color-table-hex"><code>{{ token.value }}</code></td>
@@ -177,19 +177,23 @@ permalink: /primitives/color/
 
 <script>
 (function () {
-  var btns = document.querySelectorAll(".docs-brand-switch");
+  var section = document.getElementById("brands");
+  if (!section) return;
+  var btns = section.querySelectorAll(".docs-brand-switch");
   if (!btns.length) return;
-  var root = document.documentElement;
-  var sections = document.querySelectorAll("[data-brand-scope]");
+  var sections = section.querySelectorAll("[data-brand-scope]");
+  function select(brand) {
+    btns.forEach(function (button) {
+      button.setAttribute("aria-pressed", String(button.dataset.switchBrand === brand));
+    });
+    sections.forEach(function (panel) {
+      panel.hidden = panel.dataset.brandScope !== brand;
+    });
+  }
+  select(window.UIFPreviewPreferences.restore().brand);
   btns.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      root.dataset.brand = btn.dataset.switchBrand;
-      btns.forEach(function (b) {
-        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
-      });
-      sections.forEach(function (sec) {
-        sec.hidden = sec.dataset.brandScope !== btn.dataset.switchBrand;
-      });
+      select(window.UIFPreviewPreferences.save({ brand: btn.dataset.switchBrand }).brand);
     });
   });
 })();
