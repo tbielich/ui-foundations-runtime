@@ -174,34 +174,15 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addCollection("searchIndex", (collectionApi) => {
-    const foundations = collectionApi
-      .getFilteredByGlob("site/foundations/**/*.md")
-      .filter((page) => page.data.title);
-    const components = collectionApi
-      .getFilteredByGlob("site/patterns/**/*.md")
-      .filter((page) => !page.data.isPlayground && page.data.title);
-
-    const entries = [];
-
-    for (const page of foundations) {
-      entries.push({
+    const types = { foundations: "foundation", primitives: "token", patterns: "pattern", components: "component", examples: "example" };
+    return collectionApi.getFilteredByGlob("site/**/*.md")
+      .filter((page) => page.data.title && !page.data.isPlayground && !page.data.noindex)
+      .map((page) => ({
         title: page.data.title,
         description: page.data.description || "",
         url: siteConfig.path(page.url),
-        type: "token",
-      });
-    }
-
-    for (const page of components) {
-      entries.push({
-        title: page.data.title,
-        description: page.data.description || "",
-        url: siteConfig.path(page.url),
-        type: "pattern",
-      });
-    }
-
-    return entries;
+        type: types[page.url.split("/")[1]] || "guide",
+      }));
   });
 
   return {

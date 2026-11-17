@@ -3503,13 +3503,13 @@ details.color-family > .color-table-wrap {
   width: 100%;
 }
 
-/* Example thumbnails follow their local preview context, not the docs chrome. */
-.docs-examples-grid {
+/* Overview thumbnails follow their local preview context, not the docs chrome. */
+.docs-overview-grid {
   --docs-surface-white: var(--color-fill-surface);
   --docs-surface-1: var(--color-fill-surface);
   --docs-surface-2: var(--color-fill-subtle);
   --docs-text-0: var(--color-text-default);
-  --docs-text-1: var(--color-text-subtle);
+  --docs-text-1: var(--color-text-default);
   --docs-border: var(--color-border-subtle);
   --docs-border-strong: var(--color-border-strong);
   --docs-accent: var(--color-text-brand);
@@ -3518,6 +3518,9 @@ details.color-family > .color-table-wrap {
   font-family: var(--brand-font-base);
 }
 
-.docs-examples-grid .docs-component-mini-dialog > strong {
+.docs-overview-grid .docs-component-mini-dialog > strong {
   font-family: var(--brand-font-heading);
 }
+
+.docs-overview-grid { color-scheme: light; }
+.docs-hero-preview-stage[data-mode="dark"] .docs-overview-grid { color-scheme: dark; }

@@ -1,0 +1,23 @@
+---
+layout: layouts/docs.njk
+---
+{% import "macros/component-docs.njk" as docs %}
+{% call docs.preview() %}
+<div class="docs-component-grid docs-overview-grid">
+  {% for entry in collections[overviewCollection] %}
+  {% set previewTemplate = overviewPreviews[entry.url] %}
+  {% if entry.url != page.url and previewTemplate %}
+  <a class="docs-component-card" href="{{ entry.url }}">
+    <div class="docs-component-card-preview" aria-hidden="true" inert>
+      {% include previewTemplate %}
+    </div>
+    <div class="docs-component-card-body">
+      <h2>{{ entry.data.title }}</h2>
+      <p>{{ entry.data.description }}</p>
+    </div>
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endcall %}
+{{ content | safe }}
