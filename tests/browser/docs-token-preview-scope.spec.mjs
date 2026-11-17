@@ -75,8 +75,8 @@ for (const brand of ['a', 'b', 'c']) {
         stage.append(probe);
         const style = getComputedStyle(probe);
         const result = { surface: style.backgroundColor, text: style.color, border: style.borderColor };
-        probe.style.color = 'var(--color-text-subtle)';
-        result.subtle = getComputedStyle(probe).color;
+        probe.style.color = 'var(--color-text-default)';
+        result.bodyText = getComputedStyle(probe).color;
         probe.remove();
         return result;
       });
@@ -84,7 +84,7 @@ for (const brand of ['a', 'b', 'c']) {
         await expect(surface).toHaveCSS('background-color', expected.surface);
       }
       for (const description of await page.locator('.docs-component-card-body p').all()) {
-        await expect(description).toHaveCSS('color', expected.subtle);
+        await expect(description).toHaveCSS('color', expected.bodyText);
       }
       await expect(heading).toHaveCSS('color', shellColor);
       expect(await page.locator('html').getAttribute('data-mode')).toBe('light');

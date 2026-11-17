@@ -1,0 +1,22 @@
+{
+  "/patterns/button/": "overview-previews/patterns-button.njk",
+  "/patterns/icon/": "overview-previews/patterns-icon.njk",
+  "/patterns/badge/": "overview-previews/patterns-badge.njk",
+  "/patterns/label/": "overview-previews/patterns-label.njk",
+  "/patterns/input/": "overview-previews/patterns-input.njk",
+  "/patterns/checkbox/": "overview-previews/patterns-checkbox.njk",
+  "/patterns/radio/": "overview-previews/patterns-radio.njk",
+  "/patterns/switch/": "overview-previews/patterns-switch.njk",
+  "/patterns/link/": "overview-previews/patterns-link.njk",
+  "/patterns/select/": "overview-previews/patterns-select.njk",
+  "/patterns/status-light/": "overview-previews/patterns-status-light.njk",
+  "/patterns/meter/": "overview-previews/patterns-meter.njk",
+  "/patterns/progress-bar/": "overview-previews/patterns-progress-bar.njk",
+  "/patterns/inline-alert/": "overview-previews/patterns-inline-alert.njk",
+  "/patterns/illustrated-message/": "overview-previews/patterns-illustrated-message.njk",
+  "/patterns/progress-circle/": "overview-previews/patterns-progress-circle.njk",
+  "/components/date-picker/": "overview-previews/components-date-picker.njk",
+  "/components/dialog/": "overview-previews/components-dialog.njk",
+  "/examples/login-form/": "overview-previews/examples-login-form.njk",
+  "/examples/pricing/": "overview-previews/examples-pricing.njk"
+}
