@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="/assets/preview-preferences.js"></script>
 
     {# Favicon and app icons #}
     <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml" />
@@ -415,8 +416,9 @@
           var stage = preview.querySelector(".docs-hero-preview-stage");
           if (!stage) return;
 
-          var currentBrand = root.dataset.brand || "a";
-          var currentMode = root.dataset.mode || "light";
+          var preferences = window.UIFPreviewPreferences.restore();
+          var currentBrand = preferences.brand;
+          var currentMode = preferences.mode;
 
           applySnapshot(stage, currentBrand, currentMode);
 
@@ -460,6 +462,7 @@
                 b.setAttribute("aria-pressed", b === btn ? "true" : "false");
               });
               applySnapshot(stage, currentBrand, currentMode);
+              window.UIFPreviewPreferences.save({ brand: currentBrand, mode: currentMode });
             });
           });
 
@@ -470,6 +473,7 @@
                 b.setAttribute("aria-pressed", b === btn ? "true" : "false");
               });
               applySnapshot(stage, currentBrand, currentMode);
+              window.UIFPreviewPreferences.save({ brand: currentBrand, mode: currentMode });
             });
           });
         });

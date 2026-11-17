@@ -1,0 +1,962 @@
+[
+  {
+    "route": "/components/date-picker/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Overview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Overview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/components/date-picker-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/components/dialog/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/components/dialog-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/components/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/examples/login-form/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Preview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Preview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/examples/pricing/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Preview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Preview",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/foundations/theming/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Same pattern. Different context.",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Same pattern. Different context.",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/accordion/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/accordion-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/avatar/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/avatar-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/badge/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/badge-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/button/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/button-group-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/button-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/calendar/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Usage",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Usage",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/calendar-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/checkbox/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Native state initialization",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Native state initialization",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/checkbox-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/divider/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/divider-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/form/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/form-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/icon/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/icon-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/illustrated-message/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/illustrated-message-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/inline-alert/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/inline-alert-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/input/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/input-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/label/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/label-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/link/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/link-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/meter/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/meter-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/progress-bar/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/progress-bar-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/progress-circle-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/radio/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/radio-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/select/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/select-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/status-light/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/status-light-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/switch/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/switch-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/table/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/table-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/tabs/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/tabs-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/textarea/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Anatomy",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/textarea-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/tooltip/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Options",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Options",
+      "font": "\"UIF Studio Roboto Slab\", \"Roboto Slab\", Georgia, serif"
+    },
+    "leak": false
+  },
+  {
+    "route": "/patterns/tooltip-playground/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "after": {
+      "brand": "a",
+      "mode": "light",
+      "font": null
+    },
+    "leak": false
+  },
+  {
+    "route": "/primitives/color/",
+    "control": 0,
+    "before": {
+      "brand": "a",
+      "mode": "light",
+      "heading": "Brand Color Mapping",
+      "font": "\"Roboto Slab\", Rokkitt, serif"
+    },
+    "after": {
+      "brand": "b",
+      "mode": "light",
+      "heading": "Brand Color Mapping",
+      "font": "Orbitron, Inter, sans-serif"
+    },
+    "leak": true
+  }
+]

@@ -90,6 +90,9 @@ for (const brand of ["a", "b", "c"]) {
       test.info().annotations.push({ type: "contrast-evidence", description: JSON.stringify({ brand, mode, rows }) });
       for (const row of rows) {
         expect(row.ratio, JSON.stringify(row)).toBeGreaterThanOrEqual(4.5);
+        if (row.variant === "solid") {
+          expect(row.border, JSON.stringify(row)).toBe(row.background);
+        }
         if (row.variant === "outline") {
           expect(parseFloat(row.borderWidth), JSON.stringify(row)).toBeGreaterThan(0);
           expect(row.borderStyle).toBe("solid");

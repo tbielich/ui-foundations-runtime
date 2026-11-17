@@ -1,0 +1,234 @@
+{
+  "scope": "Solid Button border aliases only",
+  "authorization": "Owner explicitly requested Solid Button borders to match their button fill after investigation of PR #317.",
+  "status": "local-and-live-figma-aliases-verified",
+  "figmaFileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+  "liveFigmaRead": "Successful read, four scoped alias mutations, and separate readback in the active UIF Library. Initial access denial concerned an older file key.",
+  "unchanged": [
+    "Outline and Ghost bindings",
+    "shared Appearance/Border/Brand",
+    "variable IDs and CSS names",
+    "disabled and focus behavior"
+  ],
+  "changes": [
+    {
+      "state": "Default",
+      "id": "VariableID:1:268",
+      "before": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Border/Brand/Default"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:1:268",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-default)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:42",
+            "targetVariableName": "Semantics/Color/Border/Brand/Default",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Default",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      },
+      "after": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Action/Surface/Default"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:1:268",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-default)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:34",
+            "targetVariableName": "Semantics/Color/Action/Surface/Default",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Default",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      }
+    },
+    {
+      "state": "Hover",
+      "id": "VariableID:15:30",
+      "before": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Border/Brand/Hover"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:15:30",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-hover)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:72",
+            "targetVariableName": "Semantics/Color/Border/Brand/Hover",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Hover",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      },
+      "after": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Action/Surface/Hover"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:15:30",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-hover)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:70",
+            "targetVariableName": "Semantics/Color/Action/Surface/Hover",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Hover",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      }
+    },
+    {
+      "state": "Active",
+      "id": "VariableID:53:78",
+      "before": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Border/Brand/Active"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:53:78",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-active)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:75",
+            "targetVariableName": "Semantics/Color/Border/Brand/Active",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Active",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      },
+      "after": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Action/Surface/Active"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:53:78",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-active)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:71",
+            "targetVariableName": "Semantics/Color/Action/Surface/Active",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Active",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      }
+    },
+    {
+      "state": "Focus",
+      "id": "VariableID:53:79",
+      "before": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Border/Brand/Focus"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:53:79",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-focus)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:76",
+            "targetVariableName": "Semantics/Color/Border/Brand/Focus",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Focus",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      },
+      "after": {
+        "$type": "color",
+        "$value": {
+          "$ref": "Semantics/Color/Action/Surface/Focus"
+        },
+        "$extensions": {
+          "com.figma.variableId": "VariableID:53:79",
+          "com.figma.scopes": [
+            "STROKE_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--uif-button-solid-border-color-focus)"
+          },
+          "com.figma.aliasData": {
+            "targetVariableId": "VariableID:3173:77",
+            "targetVariableName": "Semantics/Color/Action/Surface/Focus",
+            "targetVariableSetId": "VariableCollectionId:3173:2",
+            "targetVariableSetName": "Semantics (Roles)"
+          },
+          "com.figma.isOverride": true,
+          "com.figma.variableName": "Button/Solid/Border/Color/Focus",
+          "com.figma.variableCollectionName": "Patterns (UI)",
+          "com.figma.hiddenFromPublishing": false
+        }
+      }
+    }
+  ],
+  "initialAttemptFileKey": "3G6kkLVF0AKQO2BeCpixiN",
+  "figmaSessionId": "cfdc775b-3fa6-4900-98dd-26b345ab5f94",
+  "libraryPublication": "not performed"
+}

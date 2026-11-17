@@ -132,7 +132,7 @@
         "Color Default": {
           "$type": "color",
           "$value": {
-            "$ref": "Semantics/Color/Border/Brand/Default"
+            "$ref": "Semantics/Color/Action/Surface/Default"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:1:268",
@@ -143,8 +143,8 @@
               "WEB": "var(--uif-button-solid-border-color-default)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:3173:42",
-              "targetVariableName": "Semantics/Color/Border/Brand/Default",
+              "targetVariableId": "VariableID:3173:34",
+              "targetVariableName": "Semantics/Color/Action/Surface/Default",
               "targetVariableSetId": "VariableCollectionId:3173:2",
               "targetVariableSetName": "Semantics (Roles)"
             },
@@ -157,7 +157,7 @@
         "Color Hover": {
           "$type": "color",
           "$value": {
-            "$ref": "Semantics/Color/Border/Brand/Hover"
+            "$ref": "Semantics/Color/Action/Surface/Hover"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:15:30",
@@ -168,8 +168,8 @@
               "WEB": "var(--uif-button-solid-border-color-hover)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:3173:72",
-              "targetVariableName": "Semantics/Color/Border/Brand/Hover",
+              "targetVariableId": "VariableID:3173:70",
+              "targetVariableName": "Semantics/Color/Action/Surface/Hover",
               "targetVariableSetId": "VariableCollectionId:3173:2",
               "targetVariableSetName": "Semantics (Roles)"
             },
@@ -182,7 +182,7 @@
         "Color Active": {
           "$type": "color",
           "$value": {
-            "$ref": "Semantics/Color/Border/Brand/Active"
+            "$ref": "Semantics/Color/Action/Surface/Active"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:53:78",
@@ -193,8 +193,8 @@
               "WEB": "var(--uif-button-solid-border-color-active)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:3173:75",
-              "targetVariableName": "Semantics/Color/Border/Brand/Active",
+              "targetVariableId": "VariableID:3173:71",
+              "targetVariableName": "Semantics/Color/Action/Surface/Active",
               "targetVariableSetId": "VariableCollectionId:3173:2",
               "targetVariableSetName": "Semantics (Roles)"
             },
@@ -207,7 +207,7 @@
         "Color Focus": {
           "$type": "color",
           "$value": {
-            "$ref": "Semantics/Color/Border/Brand/Focus"
+            "$ref": "Semantics/Color/Action/Surface/Focus"
           },
           "$extensions": {
             "com.figma.variableId": "VariableID:53:79",
@@ -218,8 +218,8 @@
               "WEB": "var(--uif-button-solid-border-color-focus)"
             },
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:3173:76",
-              "targetVariableName": "Semantics/Color/Border/Brand/Focus",
+              "targetVariableId": "VariableID:3173:77",
+              "targetVariableName": "Semantics/Color/Action/Surface/Focus",
               "targetVariableSetId": "VariableCollectionId:3173:2",
               "targetVariableSetName": "Semantics (Roles)"
             },

@@ -1,0 +1,142 @@
+{
+  "mutatedVariableIds": [
+    "VariableID:1:268",
+    "VariableID:15:30",
+    "VariableID:53:78",
+    "VariableID:53:79"
+  ],
+  "results": [
+    {
+      "id": "VariableID:1:268",
+      "name": "Button/Solid/Border/Color/Default",
+      "state": "Default",
+      "before": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:42"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-default)"
+        }
+      },
+      "after": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:34"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-default)"
+        }
+      }
+    },
+    {
+      "id": "VariableID:15:30",
+      "name": "Button/Solid/Border/Color/Hover",
+      "state": "Hover",
+      "before": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:72"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-hover)"
+        }
+      },
+      "after": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:70"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-hover)"
+        }
+      }
+    },
+    {
+      "id": "VariableID:53:78",
+      "name": "Button/Solid/Border/Color/Active",
+      "state": "Active",
+      "before": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:75"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-active)"
+        }
+      },
+      "after": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:71"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-active)"
+        }
+      }
+    },
+    {
+      "id": "VariableID:53:79",
+      "name": "Button/Solid/Border/Color/Focus",
+      "state": "Focus",
+      "before": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:76"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-focus)"
+        }
+      },
+      "after": {
+        "valuesByMode": {
+          "1:3": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:3173:77"
+          }
+        },
+        "scopes": [
+          "STROKE_COLOR"
+        ],
+        "codeSyntax": {
+          "WEB": "var(--uif-button-solid-border-color-focus)"
+        }
+      }
+    }
+  ]
+}

@@ -7,20 +7,36 @@ order: 1
 permalink: /examples/
 ---
 
-This section shows concrete UI compositions built from existing components.
+{% import "macros/component-docs.njk" as docs %}
 
-<ul class="docs-link-list">
-  {% for entry in collections.examplesDocs %}
-    {% if entry.url != page.url %}
-    <li>
-      <a href="{{ entry.url }}">{{ entry.data.title }}</a>
-      {% if entry.data.description %}
-      <span>{{ entry.data.description }}</span>
-      {% endif %}
-    </li>
-    {% endif %}
-  {% endfor %}
-</ul>
+{% call docs.preview() %}
+<div class="docs-component-grid docs-examples-grid">
+  {%- for entry in collections.examplesDocs -%}
+  {%- if entry.url != page.url -%}
+  <a class="docs-component-card" href="{{ entry.url }}">
+    <div class="docs-component-card-preview" aria-hidden="true">
+      {%- if entry.url == "/examples/login-form/" -%}
+      <div class="docs-component-mini-dialog">
+        <strong>Sign in</strong>
+        <section class="docs-component-mini-field"><strong>Email address</strong></section>
+        <section class="docs-component-mini-field"><strong>Password</strong></section>
+        <div><span class="uif-button solid">Sign in</span></div>
+      </div>
+      {%- elif entry.url == "/examples/pricing/" -%}
+      <div class="docs-component-mini-dialog">
+        <strong>Choose your plan</strong>
+        <div><span>Starter<br><strong>€9</strong></span><span>Pro<br><strong>€29</strong></span><span>Business<br><strong>€79</strong></span></div>
+        <span>Per month</span>
+        <div><span class="uif-button solid">Choose plan</span></div>
+      </div>
+      {%- endif -%}
+    </div>
+    <div class="docs-component-card-body"><h2>{{ entry.data.title }}</h2><p>{{ entry.data.description }}</p></div>
+  </a>
+  {%- endif -%}
+  {%- endfor -%}
+</div>
+{% endcall %}
 
 ## Creating new components
 

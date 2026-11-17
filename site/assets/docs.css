@@ -3280,7 +3280,7 @@ details.color-family > .color-table-wrap {
   white-space: nowrap;
 }
 .docs-hero-switch button { white-space: nowrap; }
-.docs-hero-switch [data-hero-scale]:focus-visible {
+.docs-hero-switch button:focus-visible {
   outline: 2px solid var(--docs-accent);
   outline-offset: 2px;
 }
@@ -3501,4 +3501,23 @@ details.color-family > .color-table-wrap {
 .docs-reduced-motion-preview .uif-progress-bar.is-indeterminate > .uif-progress-bar-track > .uif-progress-bar-fill {
   animation: none;
   width: 100%;
+}
+
+/* Example thumbnails follow their local preview context, not the docs chrome. */
+.docs-examples-grid {
+  --docs-surface-white: var(--color-fill-surface);
+  --docs-surface-1: var(--color-fill-surface);
+  --docs-surface-2: var(--color-fill-subtle);
+  --docs-text-0: var(--color-text-default);
+  --docs-text-1: var(--color-text-subtle);
+  --docs-border: var(--color-border-subtle);
+  --docs-border-strong: var(--color-border-strong);
+  --docs-accent: var(--color-text-brand);
+  --docs-font-sans: var(--brand-font-base);
+  color: var(--color-text-default);
+  font-family: var(--brand-font-base);
+}
+
+.docs-examples-grid .docs-component-mini-dialog > strong {
+  font-family: var(--brand-font-heading);
 }
