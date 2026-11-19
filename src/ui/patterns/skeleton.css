@@ -104,3 +104,49 @@
     align-items: center;
   }
 }
+
+/* Experimental character renderer. Keep shape layout ownership in CSS, not Unicode box borders. */
+@layer components {
+  .uif-skeleton.character {
+    box-sizing: border-box;
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    block-size: auto;
+    background: none;
+    border-radius: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: var(--uif-skeleton-character-font-size, 0.875rem);
+    line-height: var(--uif-skeleton-character-line-height, 1.5);
+    letter-spacing: 0;
+    color: var(--uif-skeleton-character-color, var(--color-text-subtle, currentColor));
+    animation: uif-skeleton-character-wave var(--uif-skeleton-animation-duration, 1.6s) ease-in-out infinite;
+  }
+
+  .uif-skeleton.character.heading { font-size: var(--uif-skeleton-character-heading-size, 1.25rem); }
+  .uif-skeleton.character.circle {
+    inline-size: var(--uif-skeleton-circle-size, 2.5rem);
+    block-size: var(--uif-skeleton-circle-size, 2.5rem);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: var(--uif-skeleton-circle-size, 2.5rem);
+    line-height: 1;
+  }
+  .uif-skeleton.character.rect {
+    block-size: var(--uif-skeleton-rect-height, 6rem);
+    white-space: normal;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+  }
+  .uif-skeleton.character.no-animation { animation: none; }
+  @keyframes uif-skeleton-character-wave {
+    0%, 100% { opacity: .42; }
+    50% { opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .uif-skeleton.character { animation: none; }
+  }
+}
