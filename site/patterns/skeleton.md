@@ -219,3 +219,24 @@ Use the `.uif-skeleton-group` wrapper to compose custom skeleton layouts. The `r
 <h2 id="accessibility">Accessibility</h2>
 
 Each skeleton element should carry `role="status"`, `aria-label="Loading…"`, and `aria-busy="true"` so assistive technologies announce the loading state. Remove these attributes (or the entire skeleton markup) once content has loaded.
+
+<h2 id="character-renderer-experiment">Experimental: Unicode Character Renderer</h2>
+
+The experimental `renderer="character"` option is currently supported by the Nunjucks `uif.skeleton()` macro only. It is **not** a published Web Component attribute. It uses the existing shape, size, width and animated properties, with CSS tokens controlling typography and motion.
+
+```njk
+<div role="status" aria-label="Pricing information is loading" aria-busy="true">
+  {{ uif.skeleton(shape="heading", renderer="character") }}
+  {{ uif.skeleton(shape="text", width="medium", renderer="character") }}
+</div>
+```
+
+- Character glyphs are purely decorative (`aria-hidden="true"`); announce a single loading status per region, not once per line.
+- Keep the real card's CSS grid, spacing, border and dimensions; Unicode box-drawing characters may decorate content but should not determine layout.
+- The motion is CSS opacity-only and disabled under `prefers-reduced-motion: reduce`. No JavaScript timer is required.
+- Character color follows `--uif-skeleton-character-color` with a text-token fallback. Optional typography tokens: `--uif-skeleton-character-font-size`, `--uif-skeleton-character-line-height`, `--uif-skeleton-character-heading-size`.
+- This PoC intentionally makes no claims about eliminating cumulative layout shift. Check bounding boxes and fallback fonts at mobile and desktop widths before promotion.
+- Critical-CSS extraction for initial HTML is not part of the experiment. The renderer assumes the Skeleton stylesheet is loaded.
+- Existing surface-renderer accessibility semantics (individual `role="status"` elements) remain a draft-level review item; revise with explicit compatibility and assistive-technology tests before publishing the contract.
+
+See the [Pricing Example](/examples/pricing/#character-skeleton-experiment) for a manual loading/loaded toggle.
