@@ -260,3 +260,70 @@ breadcrumb:
   <li>Cards stretch to equal height via <code>align-items: stretch</code> on the grid and <code>flex-direction: column</code> with <code>margin-block-start: auto</code> on the CTA.</li>
   <li>All color and spacing values reference semantic or core tokens. Shadow uses the docs-layer <code>--docs-shadow-md</code> variable.</li>
 </ul>
+
+<h2 id="character-skeleton-experiment">Character Skeleton experiment</h2>
+<p>This opt-in proof of use reuses the existing Skeleton macro with a Unicode renderer. The standard renderer and the public component contract remain unchanged. The cards below are placeholders only; they do not fetch data.</p>
+
+<style>
+  .pricing-character-demo { margin-block: var(--size-spacing-600); }
+  .pricing-character-demo__controls { display: flex; gap: .5rem; flex-wrap: wrap; margin-block-end: 1rem; }
+  .pricing-character-demo__card { min-inline-size: 0; }
+  .pricing-character-demo__slot { display: flex; flex-direction: column; gap: .6rem; }
+  .pricing-character-demo__card [data-pricing-loaded] { display: none; }
+  .pricing-character-demo[data-state="loaded"] [data-pricing-skeleton] { display: none; }
+  .pricing-character-demo[data-state="loaded"] [data-pricing-loaded] { display: contents; }
+  .pricing-character-demo .pricing-card-feature .uif-skeleton { flex: 1; }
+  .pricing-character-demo__price { font-size: var(--typography-heading-font-size-xxxl, 2rem); }
+</style>
+
+<div class="pricing-character-demo" data-state="loading" aria-busy="true">
+  <div class="pricing-character-demo__controls" role="group" aria-label="Pricing skeleton experiment controls">
+    <button class="uif-button outline" type="button" data-pricing-demo-state="loading" aria-pressed="true">Character loading</button>
+    <button class="uif-button outline" type="button" data-pricing-demo-state="loaded" aria-pressed="false">Loaded content</button>
+  </div>
+  <p class="pricing-character-demo__status" role="status" aria-live="polite">Pricing information is loading.</p>
+  <div class="pricing-grid" role="list" aria-label="Pricing demo">
+    {% for tier in ["Starter", "Pro", "Business"] %}
+    <article class="pricing-card pricing-character-demo__card{% if tier == 'Pro' %} pricing-card--recommended{% endif %}" role="listitem">
+      <div class="pricing-card-header">
+        <div data-pricing-skeleton class="pricing-character-demo__slot">
+          {{ uif.skeleton(shape="heading", renderer="character") }}
+          {{ uif.skeleton(shape="heading", width="short", renderer="character") }}
+          {{ uif.skeleton(shape="text", width="medium", renderer="character") }}
+        </div>
+        <div data-pricing-loaded>
+          <h3 class="pricing-card-plan">{{ tier }}</h3>
+          <p class="pricing-card-price">{% if tier == 'Starter' %}$9{% elif tier == 'Pro' %}$29{% else %}$79{% endif %}<span class="pricing-card-price-period"> / mo</span></p>
+          <p class="pricing-card-subtitle">Example plan details.</p>
+        </div>
+      </div>
+      <ul class="pricing-card-features">
+        {% for number in [1, 2, 3, 4] %}
+        <li class="pricing-card-feature">
+          <span data-pricing-skeleton>{{ uif.skeleton(shape="text", width="medium", renderer="character") }}</span>
+          <span data-pricing-loaded>Example feature {{ number }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="pricing-card-cta">
+        <div data-pricing-skeleton>{{ uif.skeleton(shape="rect", size="sm", renderer="character") }}</div>
+        <div data-pricing-loaded>{{ uif.button(label="Select plan", variant="outline") }}</div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  document.querySelectorAll(".pricing-character-demo").forEach((demo) => {
+    const controls = demo.querySelectorAll("[data-pricing-demo-state]");
+    controls.forEach((button) => button.addEventListener("click", () => {
+      const state = button.dataset.pricingDemoState;
+      demo.dataset.state = state;
+      demo.setAttribute("aria-busy", String(state === "loading"));
+      demo.querySelector(".pricing-character-demo__status").textContent =
+        state === "loading" ? "Pricing information is loading." : "Pricing information loaded.";
+      controls.forEach((control) =>
+        control.setAttribute("aria-pressed", String(control === button)));
+    }));
+  });
+</script>

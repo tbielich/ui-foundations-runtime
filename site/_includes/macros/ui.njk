@@ -295,11 +295,23 @@
 {{- _cal(month, selectedDate, todayDate, state, disabled, container, className, id, rangeStart, rangeEnd) }}
 {%- endmacro -%}
 
-{% macro skeleton(shape='text', size='', width='', animated=true) -%}
+{% macro skeleton(shape='text', size='', width='', animated=true, renderer='surface') -%}
 {%- set classes = "uif-skeleton" -%}
 {%- if shape -%}{%- set classes = classes + " " + shape -%}{%- endif -%}
 {%- if size == "sm" or size == "lg" -%}{%- set classes = classes + " " + size -%}{%- endif -%}
 {%- if width == "short" or width == "medium" -%}{%- set classes = classes + " " + width -%}{%- endif -%}
 {%- if not animated -%}{%- set classes = classes + " no-animation" -%}{%- endif -%}
+{%- if renderer == 'character' -%}
+{%- set classes = classes + " character" -%}
+{%- set glyphs = "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" -%}
+{%- if shape == 'circle' -%}{%- set glyphs = "▦" -%}
+{%- elif shape == 'rect' -%}{%- set glyphs = "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓" -%}
+{%- elif shape == 'heading' -%}{%- set glyphs = "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓" -%}
+{%- elif width == 'short' -%}{%- set glyphs = "▒▒▒▒▒▒▒▒▒▒▒▒" -%}
+{%- elif width == 'medium' -%}{%- set glyphs = "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" -%}
+{%- endif -%}
+<span class="{{ classes }}" aria-hidden="true">{{ glyphs }}</span>
+{%- else -%}
 <span class="{{ classes }}" role="status" aria-label="Loading…" aria-busy="true"></span>
+{%- endif -%}
 {%- endmacro %}
