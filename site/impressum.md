@@ -15,7 +15,7 @@ Deutschland
 
 ## Contact
 
-Email: info@konsumkit.com
+Email: hi@ui-foundations.com
 
 ## Disclaimer
 
