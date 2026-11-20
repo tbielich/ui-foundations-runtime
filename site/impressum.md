@@ -9,8 +9,9 @@ eleventyExcludeFromCollections: true
 ## Information pursuant to § 5 TMG
 
 Thomas Bielich
-Glasbläserallee 8
-10245 Berlin
+Karl-Marx-Str 21
+15328 Küstrin Kietz
+Deutschland
 
 ## Contact
 
