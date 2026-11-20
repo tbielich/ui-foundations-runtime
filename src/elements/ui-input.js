@@ -40,18 +40,6 @@ class UIInput extends UIElement {
     const wrapperClasses = ["uif-input-field"];
     if (disabled) wrapperClasses.push("is-disabled");
 
-    const inputAttrs = ['class="uif-input"', `type="${type}"`];
-    if (placeholder) inputAttrs.push(`placeholder="${placeholder}"`);
-    if (value) inputAttrs.push(`value="${value}"`);
-    if (disabled) inputAttrs.push("disabled");
-    if (readonly) inputAttrs.push("readonly");
-    if (name) inputAttrs.push(`name="${name}"`);
-    if (min) inputAttrs.push(`min="${min}"`);
-    if (max) inputAttrs.push(`max="${max}"`);
-    if (step) inputAttrs.push(`step="${step}"`);
-    if (ariaLabel) inputAttrs.push(`aria-label="${ariaLabel}"`);
-    if (ariaLabelledby) inputAttrs.push(`aria-labelledby="${ariaLabelledby}"`);
-    if (this.id) inputAttrs.push(`id="${this.id}"`);
 
     let controlHTML = "";
     const TEXT_TYPES = ["text", "email", "search", "url", "tel"];
@@ -65,10 +53,30 @@ class UIInput extends UIElement {
       controlHTML = `<button type="button" aria-label="Toggle password visibility"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/view.svg')" aria-hidden="true"></span></button>`;
     }
 
+    // Fixed markup only; user-provided values are set via DOM setAttribute.
     this.innerHTML = `<div class="${wrapperClasses.join(" ")}">
-  <input ${inputAttrs.join(" ")} />
+  <input class="uif-input" />
   <span class="uif-input-field-control">${controlHTML}</span>
 </div>`;
+
+    const input = this.querySelector("input.uif-input");
+    input.setAttribute("type", type);
+    const userAttrs = [
+      ["placeholder", placeholder],
+      ["value", value],
+      ["name", name],
+      ["min", min],
+      ["max", max],
+      ["step", step],
+      ["aria-label", ariaLabel],
+      ["aria-labelledby", ariaLabelledby],
+      ["id", this.id],
+    ];
+    for (const [attr, val] of userAttrs) {
+      if (val) input.setAttribute(attr, val);
+    }
+    if (disabled) input.setAttribute("disabled", "");
+    if (readonly) input.setAttribute("readonly", "");
   }
 }
 
