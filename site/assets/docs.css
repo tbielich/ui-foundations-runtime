@@ -51,7 +51,7 @@ body {
 
 .docs-shell {
   display: grid;
-  grid-template-columns: var(--docs-sidebar-width) minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   min-height: 100vh;
 }
 
@@ -86,6 +86,18 @@ body {
 .docs-nav {
   display: grid;
   gap: 20px;
+}
+
+/* Let navigation labels determine the desktop sidebar width. */
+@media (min-width: 761px) {
+  .docs-sidebar .docs-nav {
+    white-space: nowrap;
+  }
+
+  .docs-sidebar .docs-search {
+    contain: inline-size;
+    min-inline-size: 0;
+  }
 }
 
 /* ─── Collapsible nav groups ─── */
@@ -2186,6 +2198,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 .docs-search-input {
   width: 100%;
   padding: 8px 12px;
+  padding-inline-start: 36px;
   border: 1px solid var(--docs-border);
   border-radius: 10px;
   background: var(--docs-surface-1);
@@ -2194,6 +2207,17 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
   font-size: 0.88rem;
   outline: none;
   box-sizing: border-box;
+}
+
+.docs-search-icon {
+  position: absolute;
+  inset-inline-start: 12px;
+  top: 10px;
+  inline-size: 16px;
+  block-size: 16px;
+  background: var(--docs-text-1);
+  mask: url("./icons/search.svg") center / contain no-repeat;
+  pointer-events: none;
 }
 
 .docs-search-input::placeholder {
