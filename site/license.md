@@ -11,7 +11,7 @@ Review these terms before using or distributing the package.
 
 <https://polyformproject.org/licenses/noncommercial/1.0.0>
 
-Required Notice: Copyright Thomas Bielich (https://konsumkit.com)
+Required Notice: Copyright Thomas Bielich (https://ui-foundations.com)
 
 ## Acceptance
 
