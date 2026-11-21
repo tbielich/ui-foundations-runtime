@@ -9,7 +9,7 @@ Model Context Protocol server that exposes UI Foundations design system knowledg
 cd packages/mcp-server
 npm install
 npm run build
-node dist/mcp/index.js --root ../..
+node dist/mcp/index.js --root ../.. --profile read-only
 ```
 
 ## Usage with MCP Clients
@@ -24,7 +24,9 @@ Add to your MCP client config (Kiro, Claude Desktop, Cursor, etc.):
       "args": [
         "/path/to/ui-foundations/packages/mcp-server/dist/mcp/index.js",
         "--root",
-        "/path/to/ui-foundations"
+        "/path/to/ui-foundations",
+        "--profile",
+        "read-only"
       ]
     }
   }
@@ -49,8 +51,15 @@ Or using npx (after publish):
 | Flag | Default | Description |
 |------|---------|-------------|
 | `--root` | cwd | Path to the UI Foundations repository root |
+| `--profile` | `read-only` | `read-only` exposes approved lookup tools only; `full` enables legacy privileged tools for controlled local use |
 | `--transport` | `stdio` | Transport type: `stdio` or `http` |
 | `--port` | `3100` | Port for HTTP transport |
+
+## Security profile
+
+For agent clients, use `--profile read-only` (also the CLI default). This registers only `search_foundations`, `get_component`, `get_token`, `get_pattern`, `get_rule`, `validate_token_name`, `diagnose_drift`, and `health_check`. The privileged `apply_token_fix` and `validate_system` tools are **not registered**; calling them by name is denied by MCP. Kiro's repository configuration uses this profile and does not automatically approve the privileged tools.
+
+`--profile full` is a legacy compatibility mode for trusted local operators only: it still includes file mutation and command execution capabilities. Do not expose it to unattended agents or network clients until those handlers have been separately hardened and authorized. The profile is an exposure boundary, not an operating-system sandbox.
 
 ## Resources
 
@@ -80,7 +89,7 @@ The server exposes design system content via `uif://` URIs:
 | `apply_token_fix` | Apply a rename, value update, or removal to a Figma export token |
 | `validate_system` | Run CI check and return structured pass/fail |
 
-### Agent Loop
+### Privileged Agent Loop (full profile only)
 
 The three tools `diagnose_drift`, `apply_token_fix`, and `validate_system` are designed to be called in sequence by any MCP client to form an autonomous agent loop:
 

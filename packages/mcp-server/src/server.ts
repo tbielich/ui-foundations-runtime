@@ -28,6 +28,8 @@ export interface ServerConfig {
   version: string;
   /** Absolute path to the repository root for file system reads. */
   rootPath: string;
+  /** Tool exposure boundary; full retains legacy behavior for controlled callers. */
+  profile?: 'full' | 'read-only';
 }
 
 /** Result returned by createServer. */
@@ -113,7 +115,7 @@ export async function createServer(config: ServerConfig): Promise<CreateServerRe
   );
 
   // Load all registries (resources, tools, prompts)
-  const registryCounts = await loadRegistries(server, config.rootPath);
+  const registryCounts = await loadRegistries(server, config.rootPath, config.profile ?? 'full');
 
   // Override the default resources/list handler with paginated version.
   // The SDK sets up a handler that returns ALL resources at once.

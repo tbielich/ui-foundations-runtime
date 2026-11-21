@@ -5,13 +5,13 @@
       "args": [
         "./packages/mcp-server/dist/mcp/index.js",
         "--root",
-        "."
+        ".",
+        "--profile",
+        "read-only"
       ],
       "disabled": false,
       "autoApprove": [
         "diagnose_drift",
-        "apply_token_fix",
-        "validate_system",
         "get_token",
         "search_foundations",
         "get_component",
