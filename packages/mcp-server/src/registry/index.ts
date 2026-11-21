@@ -37,6 +37,11 @@ import { resources as resourceEntries } from './resources.js';
 import { tools as toolEntries } from './tools.js';
 import { prompts as promptEntries } from './prompts.js';
 
+export const READ_ONLY_TOOLS: ReadonlySet<string> = new Set([
+  'search_foundations', 'get_component', 'get_token', 'get_pattern',
+  'get_rule', 'validate_token_name', 'diagnose_drift',
+]);
+
 /** Result counts from loading all registries. */
 export interface RegistryLoadResult {
   resources: number;
@@ -146,6 +151,7 @@ function buildPromptArgsSchema(
 export async function loadRegistries(
   server: McpServer,
   rootPath: string,
+  profile: 'full' | 'read-only' = 'full',
 ): Promise<RegistryLoadResult> {
   const result: RegistryLoadResult = { resources: 0, tools: 0, prompts: 0 };
 
@@ -370,6 +376,9 @@ export async function loadRegistries(
   // Register tools
   for (let i = 0; i < toolEntries.length; i++) {
     const entry = toolEntries[i];
+    // Deny-by-default surface: register only explicitly approved tools in read-only mode.
+    // A hidden tool cannot be invoked by guessing its name through MCP.
+    if (profile === 'read-only' && !READ_ONLY_TOOLS.has(entry.name)) continue;
     if (!isValidToolEntry(entry)) {
       logError({
         method: 'registry/load',
