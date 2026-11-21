@@ -29,6 +29,7 @@ interface CliArgs {
   root: string;
   transport: 'stdio' | 'http';
   port: number;
+  profile: 'full' | 'read-only';
 }
 
 /**
@@ -44,6 +45,7 @@ function parseArgs(argv: string[]): CliArgs {
     root: process.cwd(),
     transport: 'stdio',
     port: 3100,
+    profile: 'read-only',
   };
 
   for (let i = 2; i < argv.length; i++) {
@@ -61,6 +63,14 @@ function parseArgs(argv: string[]): CliArgs {
         if (value === 'stdio' || value === 'http') {
           args.transport = value;
           i++;
+        }
+        break;
+      case '--profile':
+        if (value === 'read-only' || value === 'full') {
+          args.profile = value;
+          i++;
+        } else {
+          throw new Error('Invalid --profile: expected read-only or full');
         }
         break;
       case '--port':
@@ -144,7 +154,7 @@ async function main(): Promise<void> {
   const version = await readPackageVersion();
 
   // Create server with registries loaded
-  const { server, registry } = await createServer({ version, rootPath: args.root });
+  const { server, registry } = await createServer({ version, rootPath: args.root, profile: args.profile });
 
   // Create transport based on CLI flag
   if (args.transport === 'http') {
