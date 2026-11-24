@@ -37,6 +37,51 @@ test("breadcrumbs macro keeps middle items in a native disclosure", () => {
   assert.match(html, />Europe</);
 });
 
+test("breadcrumbs macro honors an expanded non-final current item", () => {
+  const html = render("{{ uif.breadcrumbs(items=items, collapseAt=4) }}", {
+    items: [
+      { label: "Home", href: "/" },
+      { label: "Trips", href: "/trips", current: true },
+      { label: "Booking", href: "/booking" },
+    ],
+  });
+  assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Trips"]);
+});
+
+test("breadcrumbs macro preserves a collapsed current item", () => {
+  const html = render("{{ uif.breadcrumbs(items=items, collapseAt=4) }}", {
+    items: ["Home", "Trips", "Europe", "Spain", "Booking"].map((label, index) => ({
+      label,
+      href: `/${index}`,
+      current: index === 2,
+    })),
+  });
+  assert.match(html, /uif-breadcrumbs-hidden-list[\s\S]*aria-current="page">Europe/);
+  assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Europe"]);
+});
+
+test("breadcrumbs macro falls back to the final item", () => {
+  const html = render("{{ uif.breadcrumbs(items=items) }}", {
+    items: [
+      { label: "Home", href: "/" },
+      { label: "Booking", href: "/booking" },
+    ],
+  });
+  assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Booking"]);
+});
+
+test("breadcrumbs macro normalizes multiple current items to the first", () => {
+  const html = render("{{ uif.breadcrumbs(items=items) }}", {
+    items: [
+      { label: "Home", href: "/" },
+      { label: "Trips", href: "/trips", current: true },
+      { label: "Booking", href: "/booking", current: true },
+    ],
+  });
+  assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Trips"]);
+  assert.match(html, /<a href="\/booking">Booking<\/a>/);
+});
+
 test("breadcrumbs generators expose macro and Custom Element surfaces", () => {
   const window = {};
   const context = vm.createContext({ window });

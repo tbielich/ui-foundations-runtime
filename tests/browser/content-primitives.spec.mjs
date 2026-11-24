@@ -19,6 +19,41 @@ test("Breadcrumbs preserve hierarchy, current page and keyboard disclosure", asy
   await expect(disclosure).toBeFocused();
 });
 
+test("Breadcrumbs resolve one current item across expanded and collapsed states", async ({ page }) => {
+  const root = await openPlayground(page, "breadcrumbs");
+  const scenarios = [
+    { currentIndexes: [1], collapseAt: 6, expected: "Trips" },
+    { currentIndexes: [2], collapseAt: 4, expected: "Europe", reveal: true },
+    { currentIndexes: [], collapseAt: 6, expected: "Booking" },
+    { currentIndexes: [1, 2], collapseAt: 6, expected: "Trips" },
+  ];
+
+  for (const scenario of scenarios) {
+    await root.evaluate((container, config) => {
+      const breadcrumbs = document.createElement("uif-breadcrumbs");
+      breadcrumbs.setAttribute("collapse-at", String(config.collapseAt));
+      ["Home", "Trips", "Europe", "Spain", "Booking"].forEach((label, index) => {
+        const item = document.createElement("a");
+        item.href = `#${label.toLowerCase()}`;
+        item.textContent = label;
+        if (config.currentIndexes.includes(index)) item.setAttribute("aria-current", "page");
+        breadcrumbs.append(item);
+      });
+      container.replaceChildren(breadcrumbs);
+    }, scenario);
+
+    const current = root.locator('[aria-current="page"]');
+    await expect(current).toHaveCount(1);
+    await expect(current).toHaveText(scenario.expected);
+    if (scenario.reveal) {
+      await root.locator("summary").click();
+      await expect(current).toBeVisible();
+    }
+    const results = await new AxeBuilder({ page }).include("#breadcrumbs-playground-root").analyze();
+    expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  }
+});
+
 test("Breadcrumbs keep a caller-provided host ID unique", async ({ page }) => {
   const root = await openPlayground(page, "breadcrumbs");
   await root.evaluate((container) => {

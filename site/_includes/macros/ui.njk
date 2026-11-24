@@ -431,16 +431,24 @@
 {%- endmacro %}
 
 {% macro breadcrumbs(items=[], label='Breadcrumb', separator='/', collapseAt=4) -%}
+{%- set currentIndexes = [] -%}
+{%- for item in items -%}
+  {%- if item.current and currentIndexes.length == 0 -%}
+    {%- set currentIndexes = (currentIndexes.push(loop.index0), currentIndexes) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- set currentIndex = currentIndexes[0] if currentIndexes.length else items.length - 1 -%}
 {%- set shouldCollapse = items.length > collapseAt -%}
 <nav class="uif-breadcrumbs" aria-label="{{ label | escape }}" style="--uif-breadcrumbs-separator: '{{ separator | escape }}';">
   <ol class="uif-breadcrumbs-list">
   {%- for item in items %}
+    {%- set isCurrent = loop.index0 == currentIndex -%}
     {%- set hiddenMiddle = shouldCollapse and loop.index0 > 0 and loop.index0 < items.length - 2 -%}
     {%- if not hiddenMiddle %}
-    <li class="uif-breadcrumbs-item">{% if item.href and not item.current %}<a href="{{ item.href | escape }}">{{ item.label | escape }}</a>{% else %}<span{% if item.current or loop.last %} aria-current="page"{% endif %}>{{ item.label | escape }}</span>{% endif %}</li>
+    <li class="uif-breadcrumbs-item">{% if item.href and not isCurrent %}<a href="{{ item.href | escape }}">{{ item.label | escape }}</a>{% else %}<span{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label | escape }}</span>{% endif %}</li>
     {%- elif loop.index0 == 1 %}
     <li class="uif-breadcrumbs-item uif-breadcrumbs-disclosure-item"><details class="uif-breadcrumbs-disclosure"><summary class="uif-breadcrumbs-disclosure-trigger" aria-label="Show hidden breadcrumb items">…</summary><ol class="uif-breadcrumbs-hidden-list">
-      {%- for hiddenItem in items.slice(1, items.length - 2) %}<li class="uif-breadcrumbs-item">{% if hiddenItem.href %}<a href="{{ hiddenItem.href | escape }}">{{ hiddenItem.label | escape }}</a>{% else %}<span>{{ hiddenItem.label | escape }}</span>{% endif %}</li>{% endfor -%}
+      {%- for hiddenItem in items.slice(1, items.length - 2) %}{% set hiddenIndex = loop.index0 + 1 %}{% set isCurrent = hiddenIndex == currentIndex %}<li class="uif-breadcrumbs-item">{% if hiddenItem.href and not isCurrent %}<a href="{{ hiddenItem.href | escape }}">{{ hiddenItem.label | escape }}</a>{% else %}<span{% if isCurrent %} aria-current="page"{% endif %}>{{ hiddenItem.label | escape }}</span>{% endif %}</li>{% endfor -%}
     </ol></details></li>
     {%- endif %}
   {%- endfor %}

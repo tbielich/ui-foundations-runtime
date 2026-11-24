@@ -28,7 +28,7 @@ Set `separator` to a short visual separator and `collapse-at` to the maximum ite
 </uif-breadcrumbs>
 ```
 
-The `uif.breadcrumbs` macro accepts `items` with `label`, optional `href` and optional `current` fields. Use only one current item.
+The `uif.breadcrumbs` macro accepts `items` with `label`, optional `href` and optional `current` fields. The first item marked `current` takes precedence. If none is marked, the final item is current.
 
 <h2 id="accessibility">Accessibility</h2>
 
