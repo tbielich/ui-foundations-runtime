@@ -103,3 +103,40 @@ test("page jump navigation stacks below mobile breadcrumbs and beside desktop co
   expect(desktopToc.x).toBeGreaterThanOrEqual(desktopContent.x + desktopContent.width);
   expect(await toc.evaluate(el => getComputedStyle(el).position)).toBe("sticky");
 });
+
+
+for (const width of [390, 1440]) {
+  for (const [label, destination] of [["Foundations", "/foundations/"], ["Patterns", "/patterns/"], ["Components", "/components/"], ["Examples", "/examples/"]]) {
+    test(`category ${label} opens its overview while the arrow only toggles (${width}px)`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto("/getting-started/");
+      if (width === 390) await page.getByRole("button", { name: "Open navigation" }).click();
+      const group = page.getByRole("navigation", { name: label, exact: true });
+      const details = group.locator(":scope > details");
+      const summary = details.locator(":scope > summary");
+      const url = page.url();
+      await summary.click({ position: { x: 5, y: 12 } });
+      await expect(details).toHaveAttribute("open", "");
+      expect(page.url()).toBe(url);
+      await summary.click({ position: { x: 5, y: 12 } });
+      await expect(details).not.toHaveAttribute("open");
+      await summary.getByRole("link", { name: label, exact: true }).click();
+      await expect(page).toHaveURL(new RegExp(destination + "$"));
+      // The mobile drawer closes on navigation; reopen it so the group is exposed to role queries.
+      if (width === 390) await page.getByRole("button", { name: "Open navigation" }).click();
+      const current = page.getByRole("navigation", { name: label, exact: true }).locator(":scope > details > summary > a");
+      await expect(current).toHaveAttribute("aria-current", "page");
+    });
+  }
+}
+
+test("category links work without JavaScript and support keyboard activation", async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 1440, height: 1000 } });
+  const page = await context.newPage();
+  await page.goto("http://127.0.0.1:8099/getting-started/");
+  const link = page.getByRole("navigation", { name: "Foundations", exact: true }).locator(":scope > details > summary > a");
+  await link.focus();
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/\/foundations\/$/);
+  await context.close();
+});

@@ -91,7 +91,7 @@
         <nav class="docs-nav" aria-label="Documentation navigation" data-keytip-scope="main-nav">
           <nav class="docs-nav-group" aria-label="Foundations">
             <details{% if page.url.indexOf("/foundations/") == 0 or page.url.indexOf("/primitives/") == 0 or page.url == "/base/" %} open{% endif %}>
-              <summary class="docs-nav-group-toggle" data-keytip="1" aria-keyshortcuts="Alt 1">Foundations</summary>
+              <summary class="docs-nav-group-toggle"><a href="/foundations/"{% if page.url == "/foundations/" %} aria-current="page"{% endif %} data-keytip="1" aria-keyshortcuts="Alt 1">Foundations</a></summary>
               <ul>
                 <li><a href="/foundations/architecture/"{% if page.url == "/foundations/architecture/" %} aria-current="page"{% endif %}>System Overview</a></li>
                 <li>
@@ -130,7 +130,7 @@
 
           <nav class="docs-nav-group" aria-label="Patterns">
             <details{% if page.url.indexOf("/patterns/") == 0 or page.url == "/patterns/" %} open{% endif %}>
-              <summary class="docs-nav-group-toggle" data-keytip="2" aria-keyshortcuts="Alt 2">Patterns</summary>
+              <summary class="docs-nav-group-toggle"><a href="/patterns/"{% if page.url == "/patterns/" %} aria-current="page"{% endif %} data-keytip="2" aria-keyshortcuts="Alt 2">Patterns</a></summary>
               <ul>
                 {% for entry in collections.componentsDocs %}
                 <li>
@@ -148,7 +148,7 @@
 
           <nav class="docs-nav-group" aria-label="Components">
             <details{% if page.url.indexOf("/components/") == 0 %} open{% endif %}>
-              <summary class="docs-nav-group-toggle" data-keytip="3" aria-keyshortcuts="Alt 3">Components</summary>
+              <summary class="docs-nav-group-toggle"><a href="/components/"{% if page.url == "/components/" %} aria-current="page"{% endif %} data-keytip="3" aria-keyshortcuts="Alt 3">Components</a></summary>
               <ul>
                 {% for entry in collections.interactiveComponentsDocs %}
                 <li>
@@ -166,7 +166,7 @@
 
           <nav class="docs-nav-group" aria-label="Examples">
             <details{% if page.url.indexOf("/examples/") == 0 or page.url == "/examples/" %} open{% endif %}>
-              <summary class="docs-nav-group-toggle" data-keytip="4" aria-keyshortcuts="Alt 4">Examples</summary>
+              <summary class="docs-nav-group-toggle"><a href="/examples/"{% if page.url == "/examples/" %} aria-current="page"{% endif %} data-keytip="4" aria-keyshortcuts="Alt 4">Examples</a></summary>
               <ul>
                 {% for entry in collections.examplesDocs %}
                 <li>
