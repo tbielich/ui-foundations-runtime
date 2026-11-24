@@ -56,6 +56,14 @@ The static macros are `uif.breadcrumbs`, `uif.card`, `uif.tagGroup`, `uif.tag` a
 
 Live Figma component/token reconciliation and Code Connect publication remain deferred for these four primitives.
 
+## Native input-control components
+
+Import `ui-foundations/elements/ui-search-field`, `/ui-number-field`, `/ui-segmented-control` or `/ui-range-slider`, or use the aggregate elements entry. The registered tags are `<uif-search-field>`, `<uif-number-field>`, `<uif-segmented-control>` and `<uif-range-slider>`.
+
+The static macros are `uif.searchField`, `uif.numberField`, `uif.segmentedControl` and `uif.rangeSlider`. Each surface keeps native input, radio or range semantics. Search Field adds clear and `uif-search` behavior without replacing form submission. Number Field keeps formatting in output text and `aria-valuetext`. Segmented Control is a labelled radio group. Range Slider uses two labelled non-crossing range inputs. Enhanced controls dispatch `uif-change` where a component-level value event is useful; native `input` and `change` events continue to bubble.
+
+Live Figma component/token reconciliation and Code Connect publication remain deferred for issues #48, #49, #60 and #63.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

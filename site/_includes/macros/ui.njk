@@ -502,6 +502,51 @@
 </span>
 {%- endmacro %}
 
+{% macro searchField(label='Search', id='search-field', name='search', value='', placeholder='', disabled=false, quiet=false) -%}
+<div class="uif-search-field"{% if quiet %} data-quiet{% endif %}>
+  <label class="uif-search-field-label" for="{{ id | escape }}">{{ label | escape }}</label>
+  <div class="uif-search-field-control">
+    <span class="uif-icon uif-search-field-icon" style="--uif-icon-src: url('/assets/icons/search.svg')" aria-hidden="true"></span>
+    <input class="uif-search-field-input" id="{{ id | escape }}" type="search" name="{{ name | escape }}"{% if value %} value="{{ value | escape }}"{% endif %}{% if placeholder %} placeholder="{{ placeholder | escape }}"{% endif %}{% if disabled %} disabled{% endif %}>
+    <button class="uif-search-field-clear" type="button" aria-label="Clear {{ label | escape }}"{% if disabled or not value %} disabled{% endif %}><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross-circled.svg')" aria-hidden="true"></span></button>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro numberField(label='Number', id='number-field', name='number', value=0, min='', max='', step=1, disabled=false, readonly=false, invalid=false, error='', format='decimal', currency='EUR', locale='en') -%}
+{%- set displayValue = (currency + ' ' + value) if format == 'currency' else ((value + '%') if format == 'percent' else value) -%}
+<div class="uif-number-field"{% if invalid %} data-invalid{% endif %}>
+  <label class="uif-number-field-label" for="{{ id | escape }}">{{ label | escape }}</label>
+  <div class="uif-number-field-control">
+    <button class="uif-number-field-step uif-number-field-step-down" type="button" aria-label="Decrease {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>−</button>
+    <input class="uif-number-field-input" id="{{ id | escape }}" type="number" name="{{ name | escape }}" value="{{ value }}"{% if min !== '' %} min="{{ min }}"{% endif %}{% if max !== '' %} max="{{ max }}"{% endif %} step="{{ step }}" aria-valuetext="{{ displayValue | escape }}" aria-describedby="{{ id | escape }}-formatted{% if error %} {{ id | escape }}-error{% endif %}"{% if invalid %} aria-invalid="true"{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}>
+    <button class="uif-number-field-step uif-number-field-step-up" type="button" aria-label="Increase {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>+</button>
+  </div>
+  <output class="uif-number-field-formatted" id="{{ id | escape }}-formatted" for="{{ id | escape }}">{{ displayValue }}</output>
+  {%- if error %}<p class="uif-number-field-error" id="{{ id | escape }}-error">{{ error | escape }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro segmentedControl(label='Options', name='option', value='', options=[], size='md', disabled=false) -%}
+<fieldset class="uif-segmented-control {{ size if size in ['sm', 'lg'] else 'md' }}"{% if disabled %} disabled{% endif %}>
+  <legend class="uif-segmented-control-label">{{ label | escape }}</legend>
+  <div class="uif-segmented-control-options">
+    {%- for option in options %}
+    <label class="uif-segmented-control-option"><input class="uif-segmented-control-input" type="radio" name="{{ name | escape }}" value="{{ option.value | escape }}"{% if option.value == value or (not value and loop.first) %} checked{% endif %}{% if option.disabled %} disabled{% endif %}><span class="uif-segmented-control-content">{% if option.icon %}<span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ option.icon | escape }}.svg')" aria-hidden="true"></span>{% endif %}<span>{{ option.label | escape }}</span></span></label>
+    {%- endfor %}
+  </div>
+</fieldset>
+{%- endmacro %}
+
+{% macro rangeSlider(label='Range', id='range-slider', min=0, max=100, step=1, lower=25, upper=75, minLabel='Minimum', maxLabel='Maximum', disabled=false, invalid=false, error='') -%}
+<fieldset class="uif-range-slider" style="--uif-range-slider-lower: {{ ((lower - min) / (max - min) * 100) if max > min else 0 }}%; --uif-range-slider-upper: {{ ((upper - min) / (max - min) * 100) if max > min else 100 }}%;"{% if disabled %} disabled{% endif %}{% if invalid %} data-invalid{% endif %}>
+  <legend class="uif-range-slider-label">{{ label | escape }}</legend>
+  <div class="uif-range-slider-values"><span class="uif-range-slider-value"><label for="{{ id | escape }}-lower">{{ minLabel | escape }}</label><output class="uif-range-slider-output" for="{{ id | escape }}-lower">{{ lower }}</output></span><span class="uif-range-slider-value"><label for="{{ id | escape }}-upper">{{ maxLabel | escape }}</label><output class="uif-range-slider-output" for="{{ id | escape }}-upper">{{ upper }}</output></span></div>
+  <div class="uif-range-slider-track"><span class="uif-range-slider-fill" aria-hidden="true"></span><input class="uif-range-slider-input uif-range-slider-input-lower" id="{{ id | escape }}-lower" type="range" name="min" min="{{ min }}" max="{{ upper }}" step="{{ step }}" value="{{ lower }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ id | escape }}-error"{% endif %}><input class="uif-range-slider-input uif-range-slider-input-upper" id="{{ id | escape }}-upper" type="range" name="max" min="{{ lower }}" max="{{ max }}" step="{{ step }}" value="{{ upper }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ id | escape }}-error"{% endif %}></div>
+  {%- if error %}<p class="uif-range-slider-error" id="{{ id | escape }}-error">{{ error | escape }}</p>{% endif %}
+</fieldset>
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

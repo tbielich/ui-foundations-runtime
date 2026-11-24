@@ -3,7 +3,8 @@
     uif-form, uif-form-group, uif-form-field, uif-form-helper, uif-form-actions,
     uif-dialog, uif-meter, uif-progress-bar, uif-inline-alert,
     uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
-    uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton) {
+    uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton,
+    uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider) {
     display: block;
   }
   :where(uif-tag) { display: inline-block; }
@@ -28,6 +29,23 @@
   :where(.uif-skeleton) { display: block; min-block-size: 1em; border: 1px solid CanvasText; }
   :where(.uif-skeleton.circle) { inline-size: 3em; block-size: 3em; border-radius: 50%; }
   :where(.uif-skeleton.rectangle) { min-block-size: 8em; }
+
+  :where(.uif-search-field, .uif-number-field, .uif-segmented-control, .uif-range-slider) {
+    min-inline-size: 0;
+  }
+  :where(.uif-search-field-control, .uif-number-field-control) {
+    display: flex;
+    align-items: center;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-search-field-input, .uif-number-field-input) { min-inline-size: 0; inline-size: 100%; }
+  :where(.uif-segmented-control-options) { display: flex; flex-wrap: wrap; }
+  :where(.uif-segmented-control-option) { position: relative; }
+  :where(.uif-segmented-control-input:checked + .uif-segmented-control-content) { outline: 2px solid Highlight; }
+  :where(.uif-range-slider-values) { display: flex; justify-content: space-between; gap: 0.5em; }
+  :where(.uif-range-slider-track) { position: relative; }
+  :where(.uif-range-slider-input) { inline-size: 100%; }
+  :where(.uif-number-field-error, .uif-range-slider-error) { font-weight: bold; }
 
   :where(uif-tab-panel[hidden], .uif-tab-panel[hidden], .uif-inline-alert.is-hidden) {
     display: none !important;

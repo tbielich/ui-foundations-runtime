@@ -1482,6 +1482,51 @@
     return { element: container, code: container.outerHTML };
   };
 
+  const renderVanillaInputControl = ({ props }, kind) => {
+    const element = document.createElement(`uif-${kind}`);
+    const attributes = {
+      label: "label",
+      name: "name",
+      value: "value",
+      placeholder: "placeholder",
+      min: "min",
+      max: "max",
+      step: "step",
+      format: "format",
+      currency: "currency",
+      locale: "locale",
+      size: "size",
+      lower: "lower",
+      upper: "upper",
+      minLabel: "min-label",
+      maxLabel: "max-label",
+      error: "error",
+    };
+    Object.entries(attributes).forEach(([property, attribute]) => {
+      if (props[property] !== undefined && String(props[property]) !== "") {
+        element.setAttribute(attribute, String(props[property]));
+      }
+    });
+    ["disabled", "readonly", "invalid", "quiet"].forEach((property) => {
+      if (asBoolean(props[property])) element.setAttribute(property, "");
+    });
+    if (kind === "segmented-control") {
+      [
+        ["list", "List", "list"],
+        ["grid", "Grid", "view"],
+        ["map", "Map", "location"],
+      ].forEach(([value, label, icon], index) => {
+        const option = document.createElement("span");
+        option.dataset.value = value;
+        option.dataset.label = label;
+        option.dataset.icon = icon;
+        if (index === 2 && asBoolean(props.disableLast)) option.dataset.disabled = "";
+        element.append(option);
+      });
+    }
+    return { element, code: element.outerHTML };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1518,6 +1563,10 @@
       "card": renderVanillaCard,
       "tag": renderVanillaTag,
       "skeleton": renderVanillaSkeleton,
+      "search-field": (state) => renderVanillaInputControl(state, "search-field"),
+      "number-field": (state) => renderVanillaInputControl(state, "number-field"),
+      "segmented-control": (state) => renderVanillaInputControl(state, "segmented-control"),
+      "range-slider": (state) => renderVanillaInputControl(state, "range-slider"),
 
     },
   };

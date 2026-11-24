@@ -1,0 +1,28 @@
+---
+layout: layouts/docs.njk
+title: Segmented Control
+description: A compact native radio group for one selection.
+navTitle: Segmented Control
+order: 99
+permalink: /patterns/segmented-control/
+playgroundUrl: /patterns/segmented-control-playground/
+playgroundLabel: Open Segmented Control Playground
+---
+{% import "macros/ui.njk" as uif %}
+{% set viewOptions = [{ value: "list", label: "List", icon: "list" }, { value: "grid", label: "Grid", icon: "view" }, { value: "map", label: "Map", icon: "location" }] %}
+
+<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.segmentedControl(label="Results view", name="view-doc", value="list", options=viewOptions) }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+
+## Behavior
+
+`<uif-segmented-control>` renders a labelled `fieldset` of same-name native radio inputs. Browser radio behavior provides one selection and Arrow-key navigation. Options are authored as direct children with `data-value`, `data-label`, optional `data-icon`, and optional `data-disabled`. A selection emits the native `change` event and `uif-change` with `{ value }`.
+
+## Accessibility
+
+The legend names the group. Each visible icon is decorative because the adjacent text is the option name. Checked state uses native radio state plus weight, inset indicator and forced-color outline; color is not the only cue. Disabled options remain programmatically disabled. Sizes `sm`, `md` and `lg` preserve the minimum target size. Indicator transitions stop when reduced motion is requested.
+
+## API
+
+Attributes: `label`, `name`, `value`, `size="sm|md|lg"`, and `disabled`. The `value` property returns the checked radio value.
+
+Live Figma component/token reconciliation and Code Connect publication for issue #60 are deferred. No Figma identifier is recorded by this technical implementation.

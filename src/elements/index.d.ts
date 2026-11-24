@@ -69,6 +69,18 @@ export declare class UITagGroup extends UIElement {
   removeTag(tag: UITag): void;
 }
 export declare class UISkeleton extends UIElement {}
+export declare class UISearchField extends UIElement {
+  value: string;
+}
+export declare class UINumberField extends UIElement {
+  readonly valueAsNumber: number;
+}
+export declare class UISegmentedControl extends UIElement {
+  readonly value: string;
+}
+export declare class UIRangeSlider extends UIElement {
+  readonly value: { lower: number; upper: number };
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -87,6 +99,10 @@ declare global {
     "uif-tag": UITag;
     "uif-tag-group": UITagGroup;
     "uif-skeleton": UISkeleton;
+    "uif-search-field": UISearchField;
+    "uif-number-field": UINumberField;
+    "uif-segmented-control": UISegmentedControl;
+    "uif-range-slider": UIRangeSlider;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

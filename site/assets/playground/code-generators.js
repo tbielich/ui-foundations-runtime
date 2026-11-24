@@ -450,6 +450,50 @@
     return '<section aria-busy="true" aria-label="Loading holiday details">\n  <uif-skeleton shape="' + shape + '" lines="' + lines + '"></uif-skeleton>\n</section>';
   }
 
+  function inputControlCode(state, kind, format) {
+    var p = state.props;
+    var macro = {
+      "search-field": "searchField",
+      "number-field": "numberField",
+      "segmented-control": "segmentedControl",
+      "range-slider": "rangeSlider",
+    }[kind];
+    var fields = {
+      "search-field": ["label", "name", "value", "placeholder", "disabled", "quiet"],
+      "number-field": ["label", "name", "value", "min", "max", "step", "disabled", "readonly", "invalid", "error", "format", "currency", "locale"],
+      "segmented-control": ["label", "name", "value", "size", "disabled"],
+      "range-slider": ["label", "min", "max", "step", "lower", "upper", "minLabel", "maxLabel", "disabled", "invalid", "error"],
+    }[kind];
+    var booleans = ["disabled", "readonly", "invalid", "quiet"];
+    var numbers = ["value", "min", "max", "step", "lower", "upper"];
+    var attributes = { minLabel: "min-label", maxLabel: "max-label" };
+    var parts = [];
+    fields.forEach(function (field) {
+      var value = p[field];
+      if (value === undefined || value === "" || value === false) return;
+      if (format === "njk") {
+        if (booleans.includes(field)) {
+          if (value === true || value === "true") parts.push(field + "=true");
+        }
+        else if (numbers.includes(field) && Number.isFinite(Number(value))) parts.push(field + "=" + Number(value));
+        else parts.push(field + "=" + JSON.stringify(String(value)));
+      } else if (booleans.includes(field)) {
+        if (value === true || value === "true") parts.push(attributes[field] || field);
+      } else {
+        parts.push((attributes[field] || field) + '="' + quoteAttr(String(value)) + '"');
+      }
+    });
+    if (kind === "segmented-control") {
+      if (format === "njk") {
+        parts.push('options=[{value: "list", label: "List", icon: "list"}, {value: "grid", label: "Grid", icon: "view"}, {value: "map", label: "Map", icon: "location"}]');
+        return "{{ uif." + macro + "(" + parts.join(", ") + ") }}";
+      }
+      return "<uif-segmented-control" + (parts.length ? " " + parts.join(" ") : "") + ">\n  <span data-value=\"list\" data-label=\"List\" data-icon=\"list\"></span>\n  <span data-value=\"grid\" data-label=\"Grid\" data-icon=\"view\"></span>\n  <span data-value=\"map\" data-label=\"Map\" data-icon=\"location\"></span>\n</uif-segmented-control>";
+    }
+    if (format === "njk") return "{{ uif." + macro + "(" + parts.join(", ") + ") }}";
+    return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">";
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
@@ -463,6 +507,10 @@
       "card": function (state) { return contentPrimitiveCode(state, "card", "njk"); },
       "tag": function (state) { return contentPrimitiveCode(state, "tag", "njk"); },
       "skeleton": function (state) { return contentPrimitiveCode(state, "skeleton", "njk"); },
+      "search-field": function (state) { return inputControlCode(state, "search-field", "njk"); },
+      "number-field": function (state) { return inputControlCode(state, "number-field", "njk"); },
+      "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "njk"); },
+      "range-slider": function (state) { return inputControlCode(state, "range-slider", "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -537,6 +585,10 @@
       "card": function (state) { return contentPrimitiveCode(state, "card", "wc"); },
       "tag": function (state) { return contentPrimitiveCode(state, "tag", "wc"); },
       "skeleton": function (state) { return contentPrimitiveCode(state, "skeleton", "wc"); },
+      "search-field": function (state) { return inputControlCode(state, "search-field", "wc"); },
+      "number-field": function (state) { return inputControlCode(state, "number-field", "wc"); },
+      "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "wc"); },
+      "range-slider": function (state) { return inputControlCode(state, "range-slider", "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,
