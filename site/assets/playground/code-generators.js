@@ -434,7 +434,7 @@
       var layout = p.layout === "horizontal" ? "horizontal" : "vertical";
       var selectable = p.selectable === true || p.selectable === "true";
       var selected = p.selected === true || p.selected === "true";
-      if (format === "njk") return '{% call uif.card(title=' + JSON.stringify(title) + ', layout=' + JSON.stringify(layout) + (selectable ? ', selectable=true, selected=' + selected : ', href="#mallorca"') + ') %}<p>Seven nights with breakfast and direct flights.</p>{% endcall %}';
+      if (format === "njk") return '{% call uif.card(id="card-example", title=' + JSON.stringify(title) + ', layout=' + JSON.stringify(layout) + (selectable ? ', selectable=true, selected=' + selected : ', href="#mallorca"') + ') %}<p>Seven nights with breakfast and direct flights.</p>{% endcall %}';
       return '<uif-card title="' + quoteAttr(title) + '" layout="' + layout + '"' + (selectable ? ' selectable' + (selected ? ' selected' : '') : ' href="#mallorca"') + '>\n  <p slot="body">Seven nights with breakfast and direct flights.</p>\n  <strong slot="footer">From €499</strong>\n</uif-card>';
     }
     if (kind === "tag") {

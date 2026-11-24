@@ -67,7 +67,7 @@
     cursor: pointer;
   }
   .uif-tag-remove .uif-icon { inline-size: 1em; block-size: 1em; }
-  :is(uif-tag, .uif-tag-remove):focus-visible {
+  :is(.uif-tag-group, uif-tag, .uif-tag-remove):focus-visible {
     outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
     outline-offset: var(--uif-semantic-size-border-default);
   }

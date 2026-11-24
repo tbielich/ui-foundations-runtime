@@ -1,7 +1,5 @@
 import { UIElement, define } from "./base.js";
 
-let nextBreadcrumbsId = 0;
-
 /**
  * <uif-breadcrumbs label="Breadcrumb" collapse-at="4" separator="/">
  *   <a href="/">Home</a>
@@ -81,7 +79,6 @@ class UIBreadcrumbs extends UIElement {
       this.warnDev("<uif-breadcrumbs> requires at least one breadcrumb item.");
     }
 
-    nav.id = this.id || `uif-breadcrumbs-${++nextBreadcrumbsId}`;
     nav.append(list);
     this.replaceChildren(nav);
   }

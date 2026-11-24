@@ -448,11 +448,12 @@
 </nav>
 {%- endmacro %}
 
-{% macro card(title='', layout='vertical', href='', selectable=false, selected=false, actionLabel='') -%}
+{% macro card(title='', layout='vertical', href='', selectable=false, selected=false, actionLabel='', id='') -%}
 {%- set layout = 'horizontal' if layout == 'horizontal' else 'vertical' -%}
-{%- set titleId = 'uif-card-title-' + (title | replace(' ', '-') | lower) -%}
-<article class="uif-card" data-layout="{{ layout }}"{% if title %} aria-labelledby="{{ titleId | escape }}"{% else %} aria-label="Card"{% endif %}{% if selectable %} data-selected="{{ 'true' if selected else 'false' }}"{% endif %}>
-  {%- if title %}<header class="uif-card-header" data-slot="header"><h3 class="uif-card-title" id="{{ titleId | escape }}">{{ title | escape }}</h3></header>{% endif %}
+{%- set cardId = id | trim -%}
+{%- set titleId = cardId + '-title' -%}
+<article class="uif-card" data-layout="{{ layout }}"{% if cardId %} id="{{ cardId | escape }}"{% endif %}{% if title and cardId %} aria-labelledby="{{ titleId | escape }}"{% else %} aria-label="{{ (title or 'Card') | escape }}"{% endif %}{% if selectable %} data-selected="{{ 'true' if selected else 'false' }}"{% endif %}>
+  {%- if title %}<header class="uif-card-header" data-slot="header"><h3 class="uif-card-title"{% if cardId %} id="{{ titleId | escape }}"{% endif %}>{{ title | escape }}</h3></header>{% endif %}
   <div class="uif-card-body" data-slot="body">{{ caller() }}</div>
   {%- if selectable or href %}<footer class="uif-card-footer" data-slot="footer">{% if selectable %}<button class="uif-card-control" type="button" aria-pressed="{{ 'true' if selected else 'false' }}">{{ (actionLabel or ('Deselect ' if selected else 'Select ') + (title or 'card')) | escape }}</button>{% else %}<a class="uif-card-control" href="{{ href | escape }}">{{ (actionLabel or 'Open ' + (title or 'card')) | escape }}</a>{% endif %}</footer>{% endif %}
 </article>

@@ -19,6 +19,21 @@ test("Breadcrumbs preserve hierarchy, current page and keyboard disclosure", asy
   await expect(disclosure).toBeFocused();
 });
 
+test("Breadcrumbs keep a caller-provided host ID unique", async ({ page }) => {
+  const root = await openPlayground(page, "breadcrumbs");
+  await root.evaluate((container) => {
+    const breadcrumbs = document.createElement("uif-breadcrumbs");
+    breadcrumbs.id = "trip-breadcrumbs";
+    const current = document.createElement("span");
+    current.textContent = "Booking";
+    current.setAttribute("aria-current", "page");
+    breadcrumbs.append(current);
+    container.replaceChildren(breadcrumbs);
+  });
+  await expect(root.locator("#trip-breadcrumbs")).toHaveCount(1);
+  await expect(root.getByRole("navigation", { name: "Breadcrumb" })).not.toHaveAttribute("id", /.+/);
+});
+
 test("Card exposes one explicit control and toggles selectable state", async ({ page }) => {
   const root = await openPlayground(page, "card");
   await root.evaluate((container) => {
@@ -39,6 +54,17 @@ test("Card exposes one explicit control and toggles selectable state", async ({ 
   await expect(article.locator("a, button, input, select, textarea")).toHaveCount(1);
 });
 
+test("Disabled navigation Card remains a non-activating link outside tab order", async ({ page }) => {
+  const root = await openPlayground(page, "card");
+  await root.evaluate((container) => container.querySelector("uif-card").setAttribute("disabled", ""));
+  const control = root.getByRole("link", { name: "View Mallorca escape" });
+  await expect(control).toHaveAttribute("href", "#mallorca");
+  await expect(control).toHaveAttribute("aria-disabled", "true");
+  await expect(control).toHaveAttribute("tabindex", "-1");
+  const activationPrevented = await control.evaluate((link) => !link.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true })));
+  expect(activationPrevented).toBe(true);
+});
+
 test("TagGroup roves focus, removes by keyboard and preserves focus", async ({ page }) => {
   const root = await openPlayground(page, "tag", "tag");
   const controls = root.getByRole("button", { name: /^Remove / });
@@ -53,6 +79,13 @@ test("TagGroup roves focus, removes by keyboard and preserves focus", async ({ p
   await page.keyboard.press("Delete");
   await expect(root.locator("uif-tag")).toHaveCount(2);
   await expect(root.getByRole("button", { name: "Remove Beach" })).toBeFocused();
+  await page.keyboard.press("Delete");
+  await page.keyboard.press("Delete");
+  const emptyGroup = root.getByRole("list", { name: "Selected filters" });
+  await expect(root.locator("uif-tag")).toHaveCount(0);
+  await expect(emptyGroup).toHaveAttribute("tabindex", "-1");
+  await expect(emptyGroup).toBeFocused();
+  await expect(emptyGroup).toHaveCSS("outline-style", "solid");
 });
 
 test("Skeleton leaves announcements to its busy containing region", async ({ page }) => {

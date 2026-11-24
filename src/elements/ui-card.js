@@ -89,9 +89,12 @@ class UICard extends UIElement {
       } else {
         control.href = href;
         if (disabled) {
-          control.removeAttribute("href");
           control.setAttribute("aria-disabled", "true");
           control.tabIndex = -1;
+          control.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+          });
         }
       }
       sections.get("footer").append(control);

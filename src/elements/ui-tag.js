@@ -82,6 +82,7 @@ class UITagGroup extends UIElement {
       this._group = this.ownerDocument.createElement("div");
       this._group.className = "uif-tag-group";
       this._group.setAttribute("role", "list");
+      this._group.tabIndex = -1;
       this._group.append(...this.childNodes);
       this.append(this._group);
       this._group.addEventListener("keydown", (event) => this._handleKeydown(event));
@@ -107,8 +108,7 @@ class UITagGroup extends UIElement {
   _focusAt(index) {
     const tags = this._tags();
     if (!tags.length) {
-      this.tabIndex = -1;
-      this.focus();
+      this._group.focus();
       return;
     }
     const resolvedIndex = (index + tags.length) % tags.length;
