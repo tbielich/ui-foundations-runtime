@@ -122,6 +122,8 @@ for (const width of [390, 1440]) {
       await expect(details).not.toHaveAttribute("open");
       await summary.getByRole("link", { name: label, exact: true }).click();
       await expect(page).toHaveURL(new RegExp(destination + "$"));
+      // The mobile drawer closes on navigation; reopen it so the group is exposed to role queries.
+      if (width === 390) await page.getByRole("button", { name: "Open navigation" }).click();
       const current = page.getByRole("navigation", { name: label, exact: true }).locator(":scope > details > summary > a");
       await expect(current).toHaveAttribute("aria-current", "page");
     });
