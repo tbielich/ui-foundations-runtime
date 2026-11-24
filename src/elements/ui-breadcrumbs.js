@@ -54,22 +54,42 @@ class UIBreadcrumbs extends UIElement {
       return item;
     };
 
-    if (items.length > collapseAt) {
-      list.append(createItem(items[0]));
+    const createDisclosure = (hiddenItems, label) => {
       const disclosureItem = this.ownerDocument.createElement("li");
       disclosureItem.className = "uif-breadcrumbs-item uif-breadcrumbs-disclosure-item";
       const disclosure = this.ownerDocument.createElement("details");
       disclosure.className = "uif-breadcrumbs-disclosure";
       const summary = this.ownerDocument.createElement("summary");
       summary.className = "uif-breadcrumbs-disclosure-trigger";
-      summary.setAttribute("aria-label", "Show hidden breadcrumb items");
+      summary.setAttribute("aria-label", label);
       summary.textContent = "…";
       const hiddenList = this.ownerDocument.createElement("ol");
       hiddenList.className = "uif-breadcrumbs-hidden-list";
-      for (const item of items.slice(1, -2)) hiddenList.append(createItem(item));
+      for (const item of hiddenItems) hiddenList.append(createItem(item));
       disclosure.append(summary, hiddenList);
       disclosureItem.append(disclosure);
-      list.append(disclosureItem, createItem(items.at(-2)), createItem(items.at(-1)));
+      return disclosureItem;
+    };
+
+    if (items.length > collapseAt) {
+      const visibleIndexes = new Set([0, resolvedCurrentIndex]);
+      if (resolvedCurrentIndex > 0) visibleIndexes.add(resolvedCurrentIndex - 1);
+      else if (items.length > 1) visibleIndexes.add(1);
+
+      for (let index = 0; index < items.length; ) {
+        if (visibleIndexes.has(index)) {
+          list.append(createItem(items[index]));
+          index += 1;
+          continue;
+        }
+
+        const hiddenStart = index;
+        while (index < items.length && !visibleIndexes.has(index)) index += 1;
+        const label = index <= resolvedCurrentIndex
+          ? "Show previous breadcrumb items"
+          : "Show following breadcrumb items";
+        list.append(createDisclosure(items.slice(hiddenStart, index), label));
+      }
       nav.dataset.collapsed = "true";
     } else {
       for (const item of items) list.append(createItem(item));

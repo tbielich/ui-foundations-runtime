@@ -23,7 +23,7 @@ test("breadcrumbs macro emits labelled ordered navigation and current page", () 
   assert.doesNotMatch(html, /aria-label=">"/);
 });
 
-test("breadcrumbs macro keeps middle items in a native disclosure", () => {
+test("breadcrumbs macro keeps hidden items in native disclosures", () => {
   const html = render("{{ uif.breadcrumbs(items=items, collapseAt=4) }}", {
     items: ["Home", "Trips", "Europe", "Spain", "Booking"].map((label, index, all) => ({
       label,
@@ -32,9 +32,29 @@ test("breadcrumbs macro keeps middle items in a native disclosure", () => {
     })),
   });
   assert.match(html, /<details class="uif-breadcrumbs-disclosure">/);
-  assert.match(html, /Show hidden breadcrumb items/);
+  assert.match(html, /Show previous breadcrumb items/);
   assert.match(html, />Trips</);
   assert.match(html, />Europe</);
+});
+
+test("breadcrumbs macro keeps collapsed current items visible in logical order", () => {
+  const labels = ["Home", "Trips", "Europe", "Spain", "Portugal", "Lisbon", "Booking"];
+
+  for (const currentIndex of [0, 3, labels.length - 1]) {
+    const html = render("{{ uif.breadcrumbs(items=items, collapseAt=4) }}", {
+      items: labels.map((label, index) => ({
+        label,
+        href: `/${index}`,
+        current: index === currentIndex,
+      })),
+    });
+    const details = [...html.matchAll(/<details[\s\S]*?<\/details>/g)].map((match) => match[0]);
+    const labelOffsets = labels.map((label) => html.indexOf(`>${label}<`));
+
+    assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), [labels[currentIndex]]);
+    assert.ok(details.every((detail) => !detail.includes('aria-current="page"')));
+    assert.deepEqual([...labelOffsets].sort((a, b) => a - b), labelOffsets);
+  }
 });
 
 test("breadcrumbs macro honors an expanded non-final current item", () => {
@@ -46,18 +66,6 @@ test("breadcrumbs macro honors an expanded non-final current item", () => {
     ],
   });
   assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Trips"]);
-});
-
-test("breadcrumbs macro preserves a collapsed current item", () => {
-  const html = render("{{ uif.breadcrumbs(items=items, collapseAt=4) }}", {
-    items: ["Home", "Trips", "Europe", "Spain", "Booking"].map((label, index) => ({
-      label,
-      href: `/${index}`,
-      current: index === 2,
-    })),
-  });
-  assert.match(html, /uif-breadcrumbs-hidden-list[\s\S]*aria-current="page">Europe/);
-  assert.deepEqual([...html.matchAll(/aria-current="page">([^<]+)/g)].map((match) => match[1]), ["Europe"]);
 });
 
 test("breadcrumbs macro falls back to the final item", () => {

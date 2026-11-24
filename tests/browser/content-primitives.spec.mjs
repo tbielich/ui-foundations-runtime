@@ -19,20 +19,21 @@ test("Breadcrumbs preserve hierarchy, current page and keyboard disclosure", asy
   await expect(disclosure).toBeFocused();
 });
 
-test("Breadcrumbs resolve one current item across expanded and collapsed states", async ({ page }) => {
+test("Breadcrumbs resolve one visible current item when collapsed and expanded", async ({ page }) => {
   const root = await openPlayground(page, "breadcrumbs");
+  const labels = ["Home", "Trips", "Europe", "Spain", "Portugal", "Lisbon", "Booking"];
   const scenarios = [
-    { currentIndexes: [1], collapseAt: 6, expected: "Trips" },
-    { currentIndexes: [2], collapseAt: 4, expected: "Europe", reveal: true },
-    { currentIndexes: [], collapseAt: 6, expected: "Booking" },
-    { currentIndexes: [1, 2], collapseAt: 6, expected: "Trips" },
+    { currentIndexes: [0], expected: "Home" },
+    { currentIndexes: [3], expected: "Spain" },
+    { currentIndexes: [labels.length - 1], expected: "Booking" },
+    { currentIndexes: [1, 3], expected: "Trips" },
   ];
 
   for (const scenario of scenarios) {
     await root.evaluate((container, config) => {
       const breadcrumbs = document.createElement("uif-breadcrumbs");
-      breadcrumbs.setAttribute("collapse-at", String(config.collapseAt));
-      ["Home", "Trips", "Europe", "Spain", "Booking"].forEach((label, index) => {
+      breadcrumbs.setAttribute("collapse-at", "4");
+      config.labels.forEach((label, index) => {
         const item = document.createElement("a");
         item.href = `#${label.toLowerCase()}`;
         item.textContent = label;
@@ -40,14 +41,30 @@ test("Breadcrumbs resolve one current item across expanded and collapsed states"
         breadcrumbs.append(item);
       });
       container.replaceChildren(breadcrumbs);
-    }, scenario);
+    }, { ...scenario, labels });
 
-    const current = root.locator('[aria-current="page"]');
+    const nav = root.getByRole("navigation", { name: "Breadcrumb" });
+    const current = nav.locator('[aria-current="page"]');
+    const disclosures = nav.locator("details");
+    const summaries = disclosures.locator("summary");
+    const breadcrumbContent = nav.locator('a, [aria-current="page"]');
+
     await expect(current).toHaveCount(1);
     await expect(current).toHaveText(scenario.expected);
-    if (scenario.reveal) {
-      await root.locator("summary").click();
-      await expect(current).toBeVisible();
+    await expect(current).toBeVisible();
+    expect(await breadcrumbContent.allTextContents()).toEqual(labels);
+
+    for (let index = 0; index < await summaries.count(); index += 1) {
+      await expect(summaries.nth(index)).toHaveAttribute(
+        "aria-label",
+        /^Show (previous|following) breadcrumb items$/,
+      );
+      await summaries.nth(index).click();
+    }
+
+    await expect(current).toBeVisible();
+    for (let index = 0; index < labels.length; index += 1) {
+      await expect(breadcrumbContent.nth(index)).toBeVisible();
     }
     const results = await new AxeBuilder({ page }).include("#breadcrumbs-playground-root").analyze();
     expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
