@@ -34,6 +34,7 @@ class UIRangeSlider extends UIElement {
     fieldset.className = "uif-range-slider";
     fieldset.disabled = disabled;
     fieldset.toggleAttribute("data-invalid", invalid);
+    fieldset.dataset.activeThumb = lower === upper && lower === max ? "lower" : "upper";
 
     const legend = this.ownerDocument.createElement("legend");
     legend.className = "uif-range-slider-label";
@@ -125,7 +126,14 @@ class UIRangeSlider extends UIElement {
       }
     };
 
-    for (const input of [lowerInput, upperInput]) {
+    const inputs = [
+      [lowerInput, "lower"],
+      [upperInput, "upper"],
+    ];
+    for (const [input, kind] of inputs) {
+      const activate = () => { fieldset.dataset.activeThumb = kind; };
+      input.addEventListener("focus", activate);
+      input.addEventListener("pointerdown", activate);
       input.addEventListener("input", () => sync(input, true));
       input.addEventListener("change", () => sync(input, true));
     }

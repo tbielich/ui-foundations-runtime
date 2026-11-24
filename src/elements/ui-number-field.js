@@ -13,25 +13,26 @@ function positiveStep(value) {
   return number !== null && number > 0 ? number : 1;
 }
 
+function normalizeLocale(locale) {
+  const value = locale.trim();
+  return /^[A-Za-z]{2,3}(?:-[A-Za-z]{4})?(?:-(?:[A-Za-z]{2}|[0-9]{3}))?$/.test(value) ? value : "en";
+}
+
 function formatNumberFieldValue(value, format, currency, locale) {
   if (!Number.isFinite(value)) return "No value";
-  const resolvedLocale = locale.trim() || "en";
+  const resolvedLocale = normalizeLocale(locale);
   const currencyValue = currency.trim().toUpperCase();
   const resolvedCurrency = /^[A-Z]{3}$/.test(currencyValue) ? currencyValue : "EUR";
-  try {
-    if (format === "currency") {
-      return new Intl.NumberFormat(resolvedLocale, {
-        style: "currency",
-        currency: resolvedCurrency,
-      }).format(value);
-    }
-    if (format === "percent") {
-      return new Intl.NumberFormat(resolvedLocale, { style: "percent" }).format(value / 100);
-    }
-    return new Intl.NumberFormat(resolvedLocale).format(value);
-  } catch {
-    return String(value);
+  if (format === "currency") {
+    return new Intl.NumberFormat(resolvedLocale, {
+      style: "currency",
+      currency: resolvedCurrency,
+    }).format(value);
   }
+  if (format === "percent") {
+    return new Intl.NumberFormat(resolvedLocale, { style: "percent" }).format(value / 100);
+  }
+  return new Intl.NumberFormat(resolvedLocale).format(value);
 }
 
 /** A labelled native number input with clamped step controls and formatted output. */

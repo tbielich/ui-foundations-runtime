@@ -21,15 +21,15 @@ test("number macro preserves native constraints and labelled controls", () => {
 test("number macro matches Intl decimal, currency, and percent formatting", () => {
   const cases = [
     {
-      source: '{{ uif.numberField(value="1234.5", locale="de-DE") }}',
+      source: '{{ uif.numberField(id="decimal", value="1234.5", locale="de-DE") }}',
       expected: new Intl.NumberFormat("de-DE").format(1234.5),
     },
     {
-      source: '{{ uif.numberField(value="1234.5", format="currency", currency="eur", locale="de-DE") }}',
+      source: '{{ uif.numberField(id="currency", value="1234.5", format="currency", currency="eur", locale="de-DE") }}',
       expected: new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(1234.5),
     },
     {
-      source: '{{ uif.numberField(value="25", format="percent", locale="de-DE") }}',
+      source: '{{ uif.numberField(id="percent", value="25", format="percent", locale="de-DE") }}',
       expected: new Intl.NumberFormat("de-DE", { style: "percent" }).format(0.25),
     },
   ];
@@ -41,11 +41,32 @@ test("number macro matches Intl decimal, currency, and percent formatting", () =
   }
 });
 
+test("number macro falls back to en for empty and malformed locales", () => {
+  const fallback = new Intl.NumberFormat("en").format(1234.5);
+  for (const locale of ["", "de_DE", "en-US-"]) {
+    const html = render(`{{ uif.numberField(id="locale-test", value="1234.5", locale="${locale}") }}`);
+    assert.ok(html.includes(`aria-valuetext="${fallback}"`));
+  }
+
+  const valid = render('{{ uif.numberField(id="valid-locale", value="1234.5", locale="zh-Hant-TW") }}');
+  assert.ok(valid.includes(`aria-valuetext="${new Intl.NumberFormat("zh-Hant-TW").format(1234.5)}"`));
+});
+
+test("number macro requires unique caller ids for repeated instances", () => {
+  const html = render('{{ uif.numberField(id="number-one") }}{{ uif.numberField(id="number-two") }}');
+  const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
+  assert.equal(ids.length, new Set(ids).size);
+  assert.match(html, /for="number-one"/);
+  assert.match(html, /for="number-two"/);
+  assert.doesNotMatch(render('{{ uif.numberField(id=" ") }}'), /<input/);
+  assert.doesNotMatch(render('{{ uif.numberField() }}'), /<input/);
+});
+
 test("number macro normalizes numeric strings and invalid arguments", () => {
-  const normalized = render('{{ uif.numberField(value="0500.50", min="000", max="1000.00", step="050") }}');
+  const normalized = render('{{ uif.numberField(id="normalized", value="0500.50", min="000", max="1000.00", step="050") }}');
   assert.match(normalized, /value="500\.5" min="0" max="1000" step="50"/);
 
-  const invalid = render('{{ uif.numberField(value="not-a-number", min="bad", max="Infinity", step="0") }}');
+  const invalid = render('{{ uif.numberField(id="invalid", value="not-a-number", min="bad", max="Infinity", step="0") }}');
   assert.match(invalid, /value="" step="1" aria-valuetext="No value"/);
   assert.doesNotMatch(invalid, /\smin=/);
   assert.doesNotMatch(invalid, /\smax=/);

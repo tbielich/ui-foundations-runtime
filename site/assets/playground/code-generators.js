@@ -468,6 +468,7 @@
     var numbers = ["value", "min", "max", "step", "lower", "upper"];
     var attributes = { minLabel: "min-label", maxLabel: "max-label" };
     var parts = [];
+    if (format === "njk" && kind !== "segmented-control") parts.push('id="' + kind + '-example"');
     fields.forEach(function (field) {
       var value = p[field];
       if (value === undefined || value === "" || value === false) return;

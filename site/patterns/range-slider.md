@@ -18,10 +18,12 @@ playgroundLabel: Open Range Slider Playground
 
 ## Accessibility
 
-A fieldset legend names the interval, while visible Minimum and Maximum labels name each thumb. Current numbers appear next to those labels and in `aria-valuetext`. Invalid state combines a thicker border with connected error text. The track, fill, thumbs and focus indicator remain visible in forced colors. Both controls remain keyboard-operable at 200% text and narrow widths.
+A fieldset legend names the interval, while visible Minimum and Maximum labels name each thumb. Current numbers appear next to those labels and in `aria-valuetext`. Invalid state combines a thicker border with connected error text. The track, fill, thumbs and focus indicator remain visible in forced colors. Active and value-aware stacking keeps overlapping thumbs reachable by pointer; either visible label can focus and raise its corresponding thumb before dragging. Keyboard order remains Minimum, then Maximum. Both controls remain keyboard-operable at 200% text and narrow widths.
 
 ## API
 
 Attributes: `label`, `min-label`, `max-label`, `min`, `max`, `step`, `lower`, `upper`, `lower-name`, `upper-name`, `disabled`, `invalid`, and `error`. The `value` property returns `{ lower, upper }`.
+
+The `uif.rangeSlider` Nunjucks macro requires a non-empty, caller-owned `id` as its first argument. Give every rendered instance a unique ID. Calls that relied on the former `range-slider` default must pass an explicit value, for example `uif.rangeSlider("price-range", label="Price range")`; missing or empty IDs emit no control.
 
 Live Figma component/token reconciliation and Code Connect publication for issue #63 are deferred. No Figma identifier is recorded by this technical implementation.

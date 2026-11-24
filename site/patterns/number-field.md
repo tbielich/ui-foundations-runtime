@@ -16,7 +16,7 @@ playgroundLabel: Open Number Field Playground
 
 `<uif-number-field>` uses `input type="number"`; Arrow keys, validity and mobile numeric entry remain browser-owned. Step buttons call `stepUp()` or `stepDown()`, clamp to `min` and `max`, and emit native `input` and `change` plus `uif-change`. `readonly` leaves the value focusable while disabling both steppers. `invalid` and `error` connect visible error text with `aria-describedby`.
 
-`format="currency"` uses `Intl.NumberFormat` with `currency` and `locale`. `format="percent"` displays an editable value of `25` as a locale-formatted 25%. Formatting is output text and `aria-valuetext`; it never replaces the numeric value used by min, max, step or form submission. The Custom Element and Nunjucks macro both default to `value=0`, `step=1`, `format="decimal"`, `currency="EUR"`, and `locale="en"`. Numeric strings are normalized. An invalid value leaves the input empty and displays “No value”; invalid `min` or `max` values are omitted, and an invalid or non-positive `step` falls back to `1`.
+`format="currency"` uses `Intl.NumberFormat` with `currency` and `locale`. `format="percent"` displays an editable value of `25` as a locale-formatted 25%. Formatting is output text and `aria-valuetext`; it never replaces the numeric value used by min, max, step or form submission. The Custom Element and Nunjucks macro both default to `value=0`, `step=1`, `format="decimal"`, `currency="EUR"`, and `locale="en"`. Empty or malformed locales also fall back to `en` without interrupting rendering. Numeric strings are normalized. An invalid value leaves the input empty and displays “No value”; invalid `min` or `max` values are omitted, and an invalid or non-positive `step` falls back to `1`.
 
 ## Accessibility
 
@@ -25,5 +25,7 @@ The visible label names the native input. Stepper names include that label. Erro
 ## API
 
 Attributes: `label`, `name`, `value`, `min`, `max`, `step`, `disabled`, `readonly`, `invalid`, `error`, `format="decimal|currency|percent"`, `currency`, and `locale`. `valueAsNumber` exposes the current numeric value.
+
+The `uif.numberField` Nunjucks macro requires a non-empty, caller-owned `id` as its first argument. Give every rendered instance a unique ID. Calls that relied on the former `number-field` default must pass an explicit value, for example `uif.numberField("booking-budget", label="Budget")`; missing or empty IDs emit no control.
 
 Live Figma component/token reconciliation and Code Connect publication for issue #49 are deferred. No Figma identifier is recorded by this technical implementation.

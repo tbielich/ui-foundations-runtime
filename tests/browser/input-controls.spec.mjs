@@ -72,6 +72,8 @@ test("Number Field macro and element keep normalized Intl output consistent", as
     { value: "1234.5", min: "000", max: "2000.00", step: "000.5", format: "decimal", currency: "EUR", locale: "de-DE" },
     { value: "1234.5", min: "", max: "", step: "1", format: "currency", currency: "eur", locale: "de-DE" },
     { value: "25", min: "0", max: "100", step: "1", format: "percent", currency: "EUR", locale: "de-DE" },
+    { value: "1234.5", min: "", max: "", step: "1", format: "decimal", currency: "EUR", locale: "" },
+    { value: "1234.5", min: "", max: "", step: "1", format: "decimal", currency: "EUR", locale: "de_DE" },
     { value: "invalid", min: "bad", max: "Infinity", step: "0", format: "decimal", currency: "EUR", locale: "en" },
   ];
 
@@ -136,6 +138,73 @@ test("Range Slider keeps native thumbs labelled and non-crossing", async ({ page
   await expect(upper).toHaveValue("1200");
   await expect(lower).toHaveAttribute("max", "1200");
   await expect(lower).toHaveAttribute("aria-valuetext", "Minimum: 1200");
+});
+
+test("Range Slider lets pointer users reopen overlapping thumbs in either direction", async ({ page }) => {
+  const root = await openPlayground(page, "range-slider");
+  await root.evaluate((container) => {
+    const element = document.createElement("uif-range-slider");
+    element.id = "overlap-range";
+    element.setAttribute("min", "0");
+    element.setAttribute("max", "10");
+    element.setAttribute("step", "1");
+    element.setAttribute("lower", "5");
+    element.setAttribute("upper", "5");
+    container.replaceChildren(element);
+  });
+
+  const slider = root.locator("uif-range-slider");
+  const fieldset = slider.locator(".uif-range-slider");
+  const lower = slider.getByRole("slider", { name: "Minimum" });
+  const upper = slider.getByRole("slider", { name: "Maximum" });
+  const lowerLabel = slider.getByText("Minimum", { exact: true });
+  const upperLabel = slider.getByText("Maximum", { exact: true });
+
+  const dragThumb = async (input, delta) => {
+    const box = await input.boundingBox();
+    const state = await input.evaluate((element) => ({
+      min: Number(element.min),
+      max: Number(element.max),
+      value: Number(element.value),
+    }));
+    const ratio = state.max === state.min ? 0 : (state.value - state.min) / (state.max - state.min);
+    const thumbRadius = 12;
+    const x = box.x + thumbRadius + ratio * Math.max(0, box.width - thumbRadius * 2);
+    const y = box.y + box.height / 2;
+    await page.mouse.move(x, y);
+    await page.mouse.down();
+    await page.mouse.move(x + delta, y, { steps: 5 });
+    await page.mouse.up();
+  };
+
+  await lowerLabel.click();
+  await expect(lower).toBeFocused();
+  await expect(fieldset).toHaveAttribute("data-active-thumb", "lower");
+  await dragThumb(lower, -60);
+  await expect.poll(async () => Number(await lower.inputValue())).toBeLessThan(5);
+  await expect(upper).toHaveValue("5");
+
+  await slider.evaluate((element) => {
+    element.setAttribute("lower", "5");
+    element.setAttribute("upper", "5");
+  });
+  await upperLabel.click();
+  await expect(upper).toBeFocused();
+  await expect(fieldset).toHaveAttribute("data-active-thumb", "upper");
+  await dragThumb(upper, 60);
+  await expect.poll(async () => Number(await upper.inputValue())).toBeGreaterThan(5);
+  await expect(lower).toHaveValue("5");
+
+  await slider.evaluate((element) => {
+    element.setAttribute("lower", "4");
+    element.setAttribute("upper", "5");
+  });
+  await lowerLabel.click();
+  await expect(fieldset).toHaveAttribute("data-active-thumb", "lower");
+  await upperLabel.click();
+  await expect(fieldset).toHaveAttribute("data-active-thumb", "upper");
+  await expect(lower).toHaveAttribute("max", "5");
+  await expect(upper).toHaveAttribute("min", "4");
 });
 
 test("Range Slider applies defaults to missing, empty, and invalid numbers", async ({ page }) => {

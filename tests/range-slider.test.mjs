@@ -18,6 +18,16 @@ test("range macro emits two visible labels and constrained native ranges", () =>
   assert.equal((html.match(/aria-describedby="price-error"/g) || []).length, 2);
 });
 
+test("range macro requires unique caller ids for repeated instances", () => {
+  const html = render('{{ uif.rangeSlider(id="range-one") }}{{ uif.rangeSlider(id="range-two") }}');
+  for (const id of ["range-one-lower", "range-one-upper", "range-two-lower", "range-two-upper"]) {
+    assert.equal((html.match(new RegExp(`id="${id}"`, "g")) || []).length, 1);
+  }
+  assert.doesNotMatch(html, /id="range-slider-/);
+  assert.doesNotMatch(render('{{ uif.rangeSlider(id=" ") }}'), /<input/);
+  assert.doesNotMatch(render('{{ uif.rangeSlider() }}'), /<input/);
+});
+
 test("range element normalizes values and exposes component change detail", () => {
   const source = readFileSync("src/elements/ui-range-slider.js", "utf8");
   assert.match(source, /if \(source === lowerInput && nextLower > nextUpper\) nextLower = nextUpper/);

@@ -24,4 +24,6 @@ The search icon is decorative. The clear button name includes the field label, r
 
 Attributes: `label`, `name`, `value`, `placeholder`, `disabled`, `quiet`, and `clear-label`. The `value` property reads the current input value. Use a `form` with an appropriate submit button when search submission must work without JavaScript.
 
+The `uif.searchField` Nunjucks macro requires a non-empty, caller-owned `id` as its first argument. Give every rendered instance a unique ID. Calls that previously relied on the `search-field` default must migrate to an explicit value, for example `uif.searchField("holiday-search", label="Search holidays")`; missing or empty IDs emit no control.
+
 Live Figma component/token reconciliation and Code Connect publication for issue #48 are deferred. No Figma identifier is recorded by this technical implementation.

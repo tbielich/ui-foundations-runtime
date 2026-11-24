@@ -18,6 +18,15 @@ test("search macro keeps a visible label and native search semantics", () => {
   assert.doesNotMatch(html, /uif-search-field-clear[^>]*disabled/);
 });
 
+test("search macro requires unique caller ids for repeated instances", () => {
+  const html = render('{{ uif.searchField(id="search-one") }}{{ uif.searchField(id="search-two") }}');
+  assert.equal((html.match(/id="search-one"/g) || []).length, 1);
+  assert.equal((html.match(/id="search-two"/g) || []).length, 1);
+  assert.doesNotMatch(html, /id="search-field"/);
+  assert.doesNotMatch(render('{{ uif.searchField(id=" ") }}'), /<input/);
+  assert.doesNotMatch(render('{{ uif.searchField() }}'), /<input/);
+});
+
 test("search element implements clear and search event contracts", () => {
   const source = readFileSync("src/elements/ui-search-field.js", "utf8");
   assert.match(source, /CustomEvent\("uif-search"/);

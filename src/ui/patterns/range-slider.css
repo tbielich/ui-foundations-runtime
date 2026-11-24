@@ -60,6 +60,19 @@
     background: transparent;
   }
 
+  .uif-range-slider-input-lower {
+    z-index: 1;
+    inline-size: var(--uif-range-slider-upper, 100%);
+  }
+  .uif-range-slider-input-upper {
+    z-index: 2;
+    inset-inline-start: var(--uif-range-slider-lower, 0%);
+    inline-size: calc(100% - var(--uif-range-slider-lower, 0%));
+  }
+  .uif-range-slider[data-active-thumb="lower"] .uif-range-slider-input-lower,
+  .uif-range-slider[data-active-thumb="upper"] .uif-range-slider-input-upper { z-index: 3; }
+  .uif-range-slider-input:focus { z-index: 4; }
+
   .uif-range-slider-input::-webkit-slider-runnable-track { background: transparent; border: 0; }
   .uif-range-slider-input::-moz-range-track { background: transparent; border: 0; }
 
