@@ -1126,15 +1126,20 @@
     const rootClasses = ["uif-input-field", "date"];
     if (isOpen) rootClasses.push("is-open");
 
+    // Use a "-picker-" id namespace for the rendered Datepicker's own inputs so
+    // they never collide with the external playground config controls, which
+    // use "date-picker-playground-<name>". A shared id makes both #id and
+    // label[for] ambiguous and lets tests accidentally assert against the config
+    // panel instead of the real user-facing value.
     let html = `<div class="uif-form-field date-picker-field">`;
-    html += `<label class="uif-field-label" id="date-picker-playground-label" for="date-picker-playground-day"><span class="uif-label-content"><span class="uif-label-content-text">Travel date</span></span></label>`;
+    html += `<label class="uif-field-label" id="date-picker-playground-label" for="date-picker-playground-picker-day"><span class="uif-label-content"><span class="uif-label-content-text">Travel date</span></span></label>`;
     html += `<div class="${rootClasses.join(" ")}" role="group" aria-labelledby="date-picker-playground-label">`;
     html += `<div class="date-segments">`;
-    html += `<input class="date-segment day" id="date-picker-playground-day" type="text" inputmode="numeric" maxlength="2" placeholder="DD" aria-label="Day" value="${quoteAttr(day)}"${disabledAttr}>`;
+    html += `<input class="date-segment day" id="date-picker-playground-picker-day" type="text" inputmode="numeric" maxlength="2" placeholder="DD" aria-label="Day" value="${quoteAttr(day)}"${disabledAttr}>`;
     html += `<span class="date-separator">/</span>`;
-    html += `<input class="date-segment month" id="date-picker-playground-month" type="text" inputmode="numeric" maxlength="2" placeholder="MM" aria-label="Month" value="${quoteAttr(month)}"${disabledAttr}>`;
+    html += `<input class="date-segment month" id="date-picker-playground-picker-month" type="text" inputmode="numeric" maxlength="2" placeholder="MM" aria-label="Month" value="${quoteAttr(month)}"${disabledAttr}>`;
     html += `<span class="date-separator">/</span>`;
-    html += `<input class="date-segment year" id="date-picker-playground-year" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY" aria-label="Year" value="${quoteAttr(year)}"${disabledAttr}>`;
+    html += `<input class="date-segment year" id="date-picker-playground-picker-year" type="text" inputmode="numeric" maxlength="4" placeholder="YYYY" aria-label="Year" value="${quoteAttr(year)}"${disabledAttr}>`;
     html += `</div>`;
     html += `<span class="uif-input-field-control">`;
     html += `<button type="button" aria-label="Open calendar" aria-expanded="${isOpen}" aria-haspopup="grid" aria-controls="date-picker-playground-calendar"${disabledAttr}>`;

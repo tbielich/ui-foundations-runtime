@@ -1,69 +1,117 @@
 import { test, expect } from "@playwright/test";
 
 // Bounded real-browser regression test (UIF-VLT ADR:
-// decisions/bounded-browser-verification.md; Runtime issue #307).
+// decisions/bounded-browser-verification.md; Runtime issue #307/#309).
 //
-// This proves the browser-only failure class the lightweight `node --test`
-// stack cannot: a real user click on a rendered calendar day must travel
-// through the DOM/event path (a genuine mousedown → mouseup → click sequence in
-// Chromium) and land in the Date Picker's day/month/year state with the correct
-// selected DOM state. Scope is intentionally the single Datepicker interaction
-// that motivated the decision — nothing broader.
+// This proves the real end-user Datepicker interaction that the lightweight
+// `node --test` stack cannot: opening the calendar from the rendered trigger and
+// selecting a day with a genuine Chromium mouse click must update the SAME
+// user-facing Datepicker value that direct keyboard entry updates, and the
+// selected day must survive the subsequent re-render.
+//
+// The assertions target the rendered Datepicker's OWN segment inputs
+// (`.date-segment` inside the preview mount) and the rendered calendar cell —
+// i.e. the value a consumer sees and edits — NOT the external playground config
+// panel (`#date-picker-playground-controls`), which is only test configuration.
+// Setup uses the Datepicker's own affordances (trigger + calendar month/year
+// selectors), never manual entry of the selected day into the config panel.
 
 const PLAYGROUND_PATH = "/components/date-picker-playground/";
 
-// Fixed visible month so the assertion is deterministic regardless of "today".
-const TARGET_MONTH = "3"; // March (1-based, as the day/month/year controls use)
+const TARGET_MONTH_INDEX = "2"; // March, 0-based (calendar <select> is 0-based)
 const TARGET_YEAR = "2026";
 const TARGET_DAY = "15";
 
-test("clicking a calendar day drives day/month/year state and selected DOM state", async ({
+// Locators scoped to the rendered Datepicker preview (the user-facing UI).
+const mountSelector = "#date-picker-playground-root";
+
+test("selecting a calendar day updates the rendered Datepicker value", async ({
   page,
 }) => {
   await page.goto(PLAYGROUND_PATH);
 
-  const controls = "#date-picker-playground-controls";
-  const dayControl = page.locator(`${controls} [name='day']`);
-  const monthControl = page.locator(`${controls} [name='month']`);
-  const yearControl = page.locator(`${controls} [name='year']`);
-  const stateControl = page.locator(`${controls} [name='state']`);
+  const mount = page.locator(mountSelector);
 
-  // Playground controls are the source of truth; the preview re-renders from
-  // them. Pin a deterministic visible month/year, then open the calendar.
-  await monthControl.fill(TARGET_MONTH);
-  await yearControl.fill(TARGET_YEAR);
-  await stateControl.selectOption("open");
+  // The rendered Datepicker's own value = its segment inputs.
+  const day = mount.locator(".date-segment.day");
+  const month = mount.locator(".date-segment.month");
+  const year = mount.locator(".date-segment.year");
 
-  const mount = page.locator("#date-picker-playground-root");
+  // 1. + 2. Open the calendar via the actual visible trigger a user clicks.
+  await mount.locator("[aria-label='Open calendar']").click();
   const calendar = mount.locator(".uif-calendar");
   await expect(calendar).toBeVisible();
-  await expect(calendar.locator(".uif-calendar-table")).toHaveAttribute(
+
+  // Deterministic setup using the calendar's OWN month/year selectors (real
+  // user affordances inside the Datepicker), not the external config panel.
+  await mount
+    .locator(".uif-calendar-header-select[name='month']")
+    .selectOption(TARGET_MONTH_INDEX);
+  await mount
+    .locator(".uif-calendar-header-select[name='year']")
+    .selectOption(TARGET_YEAR);
+  await expect(mount.locator(".uif-calendar-table")).toHaveAttribute(
     "aria-label",
     "March 2026",
   );
 
-  // Commit control state and drop focus so no focus-driven re-render happens
-  // between the day cell's mousedown and mouseup. This mirrors a real user
-  // clicking a day in an already-open, settled calendar.
-  await page.evaluate(() => {
-    if (document.activeElement instanceof HTMLElement) {
-      document.activeElement.blur();
-    }
-  });
-
-  // 1. + 2. Click an actual rendered calendar day with a real Chromium mouse
-  // click (produces a genuine mousedown → mouseup → click event sequence).
+  // 3. Click a real rendered calendar day with a genuine Chromium mouse click
+  // (produces a real mousedown → mouseup → click sequence). No blur workaround,
+  // no dispatchEvent, no writing the day into the config panel.
   const dayCell = mount.locator("button.uif-calendar-cell", { hasText: /^15$/ });
   await expect(dayCell).toBeVisible();
   await dayCell.click();
 
-  // 3. / 4. / 5. Verify the resulting day / month / year state.
-  await expect(dayControl).toHaveValue(TARGET_DAY);
-  await expect(monthControl).toHaveValue(TARGET_MONTH);
-  await expect(yearControl).toHaveValue(TARGET_YEAR);
+  // 4. The actual rendered Datepicker value (its segment inputs) must reflect
+  // the selected date — the same value keyboard entry would produce.
+  await expect(day).toHaveValue(TARGET_DAY);
+  await expect(month).toHaveValue("3"); // segment shows 1-based month
+  await expect(year).toHaveValue(TARGET_YEAR);
 
-  // 6. Verify the clicked date has the expected selected DOM state after the
-  // re-render (class + ARIA both assert the real rendered selection).
+  // 5. The selected day must remain selected after the re-render.
+  const selectedCell = mount.locator("button.uif-calendar-cell.is-selected", {
+    hasText: /^15$/,
+  });
+  await expect(selectedCell).toHaveCount(1);
+  await expect(selectedCell).toHaveAttribute("aria-selected", "true");
+});
+
+test("typing a date and clicking a day converge on one Datepicker value", async ({
+  page,
+}) => {
+  await page.goto(PLAYGROUND_PATH);
+
+  const mount = page.locator(mountSelector);
+  const day = mount.locator(".date-segment.day");
+  const month = mount.locator(".date-segment.month");
+  const year = mount.locator(".date-segment.year");
+
+  // Type a date directly into the rendered Datepicker input (keyboard entry).
+  await month.click();
+  await month.pressSequentially("3");
+  await year.click();
+  await year.pressSequentially(TARGET_YEAR);
+
+  // The typed value must survive re-render (opening the calendar re-renders).
+  await mount.locator("[aria-label='Open calendar']").click();
+  await expect(mount.locator(".uif-calendar")).toBeVisible();
+  await expect(mount.locator(".uif-calendar-table")).toHaveAttribute(
+    "aria-label",
+    "March 2026",
+  );
+  await expect(month).toHaveValue("3");
+  await expect(year).toHaveValue(TARGET_YEAR);
+
+  // Now select a day by clicking. It must update the same value, preserving the
+  // typed month/year (one coherent selected-date state), even though a control
+  // is focused and no manual blur() is performed first.
+  const dayCell = mount.locator("button.uif-calendar-cell", { hasText: /^15$/ });
+  await dayCell.click();
+
+  await expect(day).toHaveValue(TARGET_DAY);
+  await expect(month).toHaveValue("3");
+  await expect(year).toHaveValue(TARGET_YEAR);
+
   const selectedCell = mount.locator("button.uif-calendar-cell.is-selected", {
     hasText: /^15$/,
   });
