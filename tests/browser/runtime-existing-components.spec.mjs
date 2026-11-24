@@ -80,6 +80,71 @@ test("Inline Alert generated examples encode text and preserve action and dismis
   expect(await page.evaluate(() => document.activeElement?.closest?.(".is-hidden") === null)).toBe(true);
 });
 
+test("Inline Alert moves focus to an explicit consumer target on keyboard dismissal", async ({ page }) => {
+  const { root } = await openPlayground(page, "inline-alert");
+  await root.evaluate((container) => {
+    container.replaceChildren();
+    const alert = document.createElement("uif-inline-alert");
+    alert.setAttribute("title", "Dismiss me");
+    alert.setAttribute("dismissible", "");
+    const automaticTarget = document.createElement("button");
+    automaticTarget.id = "automatic-target";
+    automaticTarget.textContent = "Automatic target";
+    const explicitTarget = document.createElement("button");
+    explicitTarget.id = "explicit-target";
+    explicitTarget.textContent = "Explicit target";
+    container.append(alert, automaticTarget, explicitTarget);
+    alert.dismissFocusTarget = explicitTarget;
+  });
+
+  const dismiss = root.getByRole("button", { name: "Dismiss" });
+  await dismiss.focus();
+  await page.keyboard.press("Enter");
+
+  await expect(root.getByRole("alert")).toBeHidden();
+  await expect(root.locator("#explicit-target")).toBeFocused();
+});
+
+test("Inline Alert falls forward to the next focusable element", async ({ page }) => {
+  const { root } = await openPlayground(page, "inline-alert");
+  await root.evaluate((container) => {
+    container.replaceChildren();
+    const alert = document.createElement("uif-inline-alert");
+    alert.setAttribute("title", "Dismiss me");
+    alert.setAttribute("dismissible", "");
+    const next = document.createElement("button");
+    next.id = "next-target";
+    next.textContent = "Next target";
+    container.append(alert, next);
+  });
+
+  const dismiss = root.getByRole("button", { name: "Dismiss" });
+  await dismiss.focus();
+  await page.keyboard.press("Enter");
+
+  await expect(root.locator("#next-target")).toBeFocused();
+});
+
+test("Inline Alert falls back at the end of the document order", async ({ page }) => {
+  await openPlayground(page, "inline-alert");
+  await page.evaluate(() => {
+    const previous = document.createElement("button");
+    previous.id = "previous-target";
+    previous.textContent = "Previous target";
+    const alert = document.createElement("uif-inline-alert");
+    alert.id = "end-alert";
+    alert.setAttribute("title", "Dismiss me");
+    alert.setAttribute("dismissible", "");
+    document.body.append(previous, alert);
+  });
+
+  const dismiss = page.locator("#end-alert").getByRole("button", { name: "Dismiss" });
+  await dismiss.focus();
+  await page.keyboard.press("Enter");
+
+  await expect(page.locator("#previous-target")).toBeFocused();
+});
+
 test("Illustrated Message generated examples encode overrides and retain action focus", async ({ page }) => {
   const { root, controls } = await openPlayground(page, "illustrated-message");
   await controls.locator('[name="heading"]').fill("Could not <load>");
