@@ -89,6 +89,7 @@ class UIInlineAlert extends UIElement {
         btn.addEventListener("click", () => {
           const alert = this.querySelector(".uif-inline-alert");
           if (alert) {
+            btn.blur();
             alert.classList.add("is-hidden");
             this.dispatchEvent(new CustomEvent("uif-dismiss", { bubbles: true }));
           }

@@ -26,6 +26,7 @@ const ALLOWLIST = new Set([
   "--uif-field-label-line-height",
   "--uif-field-label-required-color",
   "--uif-icon-src",
+  "--uif-progress-bar-fill-info",
   "--uif-progress-circle-value",
   "--uif-tooltip-hide-delay",
   "--uif-tooltip-show-delay",

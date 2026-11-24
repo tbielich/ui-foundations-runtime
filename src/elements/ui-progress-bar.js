@@ -17,7 +17,7 @@ class UIProgressBar extends UIElement {
     const showValue = this.getBool("show-value") && !indeterminate;
     const root = document.createElement("div");
     root.className = "uif-progress-bar";
-    if (["positive", "negative"].includes(variant)) root.classList.add(variant);
+    if (["info", "positive", "negative"].includes(variant)) root.classList.add(variant);
     if (["sm", "lg"].includes(size)) root.classList.add(size);
     if (indeterminate) root.classList.add("is-indeterminate");
     root.setAttribute("role", "progressbar");

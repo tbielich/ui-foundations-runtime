@@ -60,6 +60,10 @@
 
   /* ── Variants ── */
 
+  .uif-progress-bar.info > .uif-progress-bar-track > .uif-progress-bar-fill {
+    background: var(--uif-progress-bar-fill-info, var(--uif-semantic-color-foreground-subtle));
+  }
+
   .uif-progress-bar.positive > .uif-progress-bar-track > .uif-progress-bar-fill {
     background: var(--uif-progress-bar-fill-positive);
   }

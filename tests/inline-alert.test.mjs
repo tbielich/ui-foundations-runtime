@@ -1,6 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { readFileSync } from "node:fs";
+import vm from "node:vm";
 
 const require = createRequire(import.meta.url);
 const nunjucks = require("nunjucks");
@@ -65,4 +67,34 @@ test("inline alert optional action supports button, link and omission", () => {
   assert.match(render('{{ uif.inlineAlert(actionLabel="Retry") }}'), /<button type="button" class="uif-button outline">Retry<\/button>/);
   assert.match(render('{{ uif.inlineAlert(actionLabel="Retry", actionHref="/retry") }}'), /<a class="uif-button outline" href="\/retry">Retry<\/a>/);
   assert.doesNotMatch(render('{{ uif.inlineAlert(title="Hello") }}'), /uif-inline-alert-action/);
+});
+
+test("inline alert playground generators preserve safe text, actions and scale", () => {
+  const window = {};
+  const context = vm.createContext({ window });
+  vm.runInContext(readFileSync("site/assets/playground/shared.js", "utf8"), context);
+  vm.runInContext(readFileSync("site/assets/playground/code-generators.js", "utf8"), context);
+  const state = {
+    props: {
+      scale: "large",
+      title: '<img src=x onerror="alert(1)">',
+      description: "Details & context",
+      variant: "negative",
+      size: "sm",
+      dismissible: true,
+      actionLabel: "Retry <now>",
+      actionHref: "javascript:alert(1)",
+    },
+    meta: {},
+  };
+  const generators = window.UIPlaygroundCodeGenerators;
+  const rendered = render(generators.njk["inline-alert"](state));
+  assert.match(rendered, /data-scale="large"/);
+  assert.match(rendered, /&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt;/);
+  assert.match(rendered, /href="#"/);
+  assert.match(rendered, /Retry &lt;now&gt;/);
+  const wc = generators.wc["inline-alert"](state);
+  assert.match(wc, /title="&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt;"/);
+  assert.match(wc, /action-href="#"/);
+  assert.match(wc, /dismissible/);
 });

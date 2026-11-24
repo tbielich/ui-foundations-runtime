@@ -1,6 +1,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { readFileSync } from "node:fs";
+import vm from "node:vm";
 
 const require = createRequire(import.meta.url);
 const nunjucks = require("nunjucks");
@@ -63,3 +65,34 @@ test("illustrated message macro honors overrides and the sm local size", () => {
     assert.ok(html.includes('href="' + href.replaceAll('&', '&amp;') + '"'));
   }
  });
+
+test("illustrated message playground generators preserve safe overrides and actions", () => {
+  const window = {};
+  const context = vm.createContext({ window });
+  vm.runInContext(readFileSync("site/assets/playground/shared.js", "utf8"), context);
+  vm.runInContext(readFileSync("site/assets/playground/code-generators.js", "utf8"), context);
+  const state = {
+    props: {
+      scale: "small",
+      preset: "error",
+      heading: "Could not <load>",
+      description: 'Try again & keep "working".',
+      illustrationIcon: "message-alert",
+      actionLabel: "Retry <now>",
+      actionHref: "javascript:alert(1)",
+      actionVariant: "outline",
+      size: "sm",
+    },
+    meta: {},
+  };
+  const generators = window.UIPlaygroundCodeGenerators;
+  const rendered = render(generators.njk["illustrated-message"](state));
+  assert.match(rendered, /data-scale="small"/);
+  assert.match(rendered, /Could not &lt;load&gt;/);
+  assert.match(rendered, /href="#"/);
+  assert.match(rendered, /Retry &lt;now&gt;/);
+  const wc = generators.wc["illustrated-message"](state);
+  assert.match(wc, /heading="Could not &lt;load&gt;"/);
+  assert.match(wc, /action-href="#"/);
+  assert.match(wc, /action-variant="outline"/);
+});

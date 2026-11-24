@@ -92,6 +92,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
     padding: 0;
     background: none;
     border: none;

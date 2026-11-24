@@ -44,6 +44,7 @@ playground:
       default: default
       options:
         - default
+        - info
         - positive
         - negative
     - kind: select
@@ -60,12 +61,12 @@ playground:
       label: Label
       query: true
       default: Loading…
-    - kind: toggle
+    - kind: boolean
       name: showValue
       label: Show value
       query: true
       default: false
-    - kind: toggle
+    - kind: boolean
       name: indeterminate
       label: Indeterminate
       query: true

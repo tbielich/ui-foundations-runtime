@@ -63,8 +63,9 @@ Use determinate progress only when a meaningful completion value is available. A
 
 ### Variants
 
-<div class="docs-states-grid" style="--docs-states-cols: 3">
+<div class="docs-states-grid" style="--docs-states-cols: 4">
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(label="Default", value=60, variant="default") }}</div></div><span class="docs-states-grid-item-label">Default</span></div>
+  <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(label="Information", value=60, variant="info") }}</div></div><span class="docs-states-grid-item-label">Info</span></div>
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(label="Positive", value=60, variant="positive") }}</div></div><span class="docs-states-grid-item-label">Positive</span></div>
   <div class="docs-states-grid-item"><div class="docs-states-grid-item-preview" style="inline-size: 100%;"><div style="inline-size: 100%;">{{ uif.progressBar(label="Negative", value=60, variant="negative") }}</div></div><span class="docs-states-grid-item-label">Negative</span></div>
 </div>
@@ -101,7 +102,7 @@ The default context is medium. Nested containers can replace the inherited conte
     <tr><td><code>label</code></td><td><code>label</code></td><td>Visible task text and accessible name. Default: empty; the accessible fallback is <code>Progress</code> or <code>Loading</code>. Supply a task-specific label.</td></tr>
     <tr><td><code>show-value</code></td><td><code>showValue</code></td><td>Boolean. Default: false. Shows the rounded percentage only for determinate progress.</td></tr>
     <tr><td><code>indeterminate</code></td><td><code>indeterminate</code></td><td>Boolean. Default: false. Forces unknown progress even when value is present.</td></tr>
-    <tr><td><code>variant</code></td><td><code>variant</code></td><td><code>default</code> (default), <code>positive</code> or <code>negative</code>.</td></tr>
+    <tr><td><code>variant</code></td><td><code>variant</code></td><td><code>default</code> (default), <code>info</code>, <code>positive</code> or <code>negative</code>.</td></tr>
     <tr><td><code>size</code></td><td><code>size</code></td><td><code>sm</code>, <code>md</code> (default) or <code>lg</code>, relative to container scale.</td></tr>
   </tbody>
 </table>
@@ -207,7 +208,7 @@ The scale belongs to the container, not to the component's size attribute:
 
 <h2 id="theming">Theming</h2>
 
-Use the brand and mode switches in the preview above. Visual values come from the pattern's <code>--uif-progress-bar-*</code> slots and existing Semantic roles. Labels use semantic content color. An inward outline keeps colored markers or fills discernible across light and dark surfaces.
+Use the brand and mode switches in the preview above. Visual values come from the pattern's <code>--uif-progress-bar-*</code> slots and existing Semantic roles. The authored <code>--uif-progress-bar-fill-info</code> override falls back to the existing semantic subtle foreground color until later Figma token reconciliation. Labels use semantic content color. An inward outline keeps colored markers or fills discernible across light and dark surfaces.
 
 Set <code>data-brand="a"</code>, <code>"b"</code> or <code>"c"</code> and <code>data-mode="light"</code> or <code>"dark"</code> on the root element. Consumers own activation of these contexts. See [Design Tokens](/foundations/design-tokens/).
 

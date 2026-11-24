@@ -48,6 +48,9 @@ test("indicator playground generators preserve all controls and render usable es
   assert.match(progress, /aria-valuenow="0"/);
   assert.match(progress, /uif-progress-bar-value">0%/);
   assert.match(progress, /A &quot;quote&quot; &amp; &lt;label&gt;/);
+  state.props.variant = "info";
+  assert.match(render(generators.njk["progress-bar"](state)), /class="uif-progress-bar info sm"/);
+  assert.match(generators.wc["progress-bar"](state), /variant="info"/);
   assert.match(generators.wc["progress-bar"](state), /value="0"/);
   assert.match(generators.wc["progress-bar"](state), /show-value/);
   assert.doesNotMatch(generators.wc["progress-bar"](state), / indeterminate/);
