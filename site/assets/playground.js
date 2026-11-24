@@ -149,6 +149,41 @@ if (!hasRequiredApis) {
     // every render(), so selection must write back to the day/month/year
     // controls (the source of truth) rather than to the throwaway preview DOM.
     if (rendererId === "datePicker") {
+      // A render() replaces the entire preview subtree (mountNode.innerHTML =
+      // ""). If that happens between a day cell's pointerdown and the browser's
+      // synthesized click — e.g. a focused segment fires a blur-driven `change`
+      // as the pointer presses a day — the pressed node is detached and the
+      // click is never delivered, so the day is not selected. Guard against
+      // that by deferring any Datepicker render requested during an active
+      // pointer gesture on the preview and flushing it once the gesture ends
+      // (on `click`, which fires after mouseup, keeping the pressed node intact
+      // for the full pointerdown → mouseup → click sequence). Scoped to the
+      // Datepicker; no debouncing, timeouts, or new event layers.
+      let pointerActive = false;
+      let renderPending = false;
+      const dpRender = () => {
+        if (pointerActive) {
+          renderPending = true;
+          return;
+        }
+        render();
+      };
+      const endGesture = () => {
+        pointerActive = false;
+        if (renderPending) {
+          renderPending = false;
+          render();
+        }
+      };
+      mountNode.addEventListener("pointerdown", () => {
+        pointerActive = true;
+      });
+      // Bubble-phase document listeners so they run after the preview's own
+      // click handlers have committed state, and so a pointer released/clicked
+      // outside the preview still ends the gesture.
+      document.addEventListener("click", endGesture);
+      document.addEventListener("pointercancel", endGesture);
+
       const setControl = (name, value) => {
         const control = controlByName.get(name);
         if (control) control.value = value;
@@ -193,7 +228,7 @@ if (!hasRequiredApis) {
             setControl("month", String(readMonthControl()));
             setControl("year", String(readYearControl()));
             setState("default");
-            render();
+            dpRender();
           }
           return;
         }
@@ -206,7 +241,7 @@ if (!hasRequiredApis) {
             stateControl instanceof HTMLSelectElement &&
             stateControl.value === "open";
           setState(isOpen ? "default" : "open");
-          render();
+          dpRender();
           return;
         }
 
@@ -215,7 +250,7 @@ if (!hasRequiredApis) {
           event.preventDefault();
           shiftMonth(-1);
           setState("open");
-          render();
+          dpRender();
           return;
         }
         const next = event.target.closest("[aria-label='Next month']");
@@ -223,7 +258,7 @@ if (!hasRequiredApis) {
           event.preventDefault();
           shiftMonth(1);
           setState("open");
-          render();
+          dpRender();
           return;
         }
       });
@@ -235,11 +270,52 @@ if (!hasRequiredApis) {
         if (name === "month") {
           setControl("month", String(parseInt(select.value, 10) + 1));
           setState("open");
-          render();
+          dpRender();
         } else if (name === "year") {
           setControl("year", select.value);
           setState("open");
-          render();
+          dpRender();
+        }
+      });
+
+      // The rendered Datepicker's own segment inputs (.date-segment) are the
+      // user-facing value. They are regenerated from the day/month/year state on
+      // every render(), so text typed into them must be committed back into that
+      // same state — otherwise the typed value is silently discarded on the next
+      // render and there is no single coherent selected-date value. This makes
+      // typing a date and clicking a calendar day converge on one state.
+      const commitSegment = (input) => {
+        const raw = input.value.trim();
+        if (input.classList.contains("day")) {
+          setControl("day", raw);
+        } else if (input.classList.contains("month")) {
+          setControl("month", raw);
+        } else if (input.classList.contains("year")) {
+          setControl("year", raw);
+        }
+      };
+      // Commit live on input so the value survives any subsequent render (e.g.
+      // opening the calendar), preserving the caret since render() rebuilds the
+      // segment from the committed state on the next settled render.
+      mountNode.addEventListener("input", (event) => {
+        const input = event.target;
+        if (
+          input instanceof HTMLInputElement &&
+          input.classList.contains("date-segment")
+        ) {
+          commitSegment(input);
+        }
+      });
+      // On change/blur, commit and re-render so the calendar and selected state
+      // reflect the typed date.
+      mountNode.addEventListener("change", (event) => {
+        const input = event.target;
+        if (
+          input instanceof HTMLInputElement &&
+          input.classList.contains("date-segment")
+        ) {
+          commitSegment(input);
+          dpRender();
         }
       });
     }
