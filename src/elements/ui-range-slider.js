@@ -3,7 +3,9 @@ import { UIElement, define } from "./base.js";
 let nextRangeSliderId = 0;
 
 function numberAttribute(element, name, fallback) {
-  const value = Number(element.getAttribute(name));
+  const attribute = element.getAttribute(name);
+  if (attribute === null || attribute.trim() === "") return fallback;
+  const value = Number(attribute);
   return Number.isFinite(value) ? value : fallback;
 }
 
@@ -20,7 +22,8 @@ class UIRangeSlider extends UIElement {
     const baseId = this.id || `uif-range-slider-${++nextRangeSliderId}`;
     const min = numberAttribute(this, "min", 0);
     const max = Math.max(min, numberAttribute(this, "max", 100));
-    const step = Math.max(Number.EPSILON, numberAttribute(this, "step", 1));
+    const stepValue = numberAttribute(this, "step", 1);
+    const step = stepValue > 0 ? stepValue : 1;
     const lower = Math.min(max, Math.max(min, numberAttribute(this, "lower", min)));
     const upper = Math.min(max, Math.max(lower, numberAttribute(this, "upper", max)));
     const disabled = this.getBool("disabled");

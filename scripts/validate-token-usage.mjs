@@ -51,6 +51,7 @@ const ALLOWLIST = new Set([
   "--uif-number-field-text-color",
   "--uif-range-slider-border-color",
   "--uif-range-slider-fill-color",
+  "--uif-range-slider-focus-color",
   "--uif-range-slider-gap",
   "--uif-range-slider-lower",
   "--uif-range-slider-text-color",

@@ -1,5 +1,14 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const nunjucks = require("nunjucks");
+const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("site/_includes"), { autoescape: false });
+const renderNumberField = (context) => env.renderString(
+  '{% import "macros/ui.njk" as uif %}{{ uif.numberField(id="ssr-number", value=value, min=min, max=max, step=step, format=format, currency=currency, locale=locale) }}',
+  context,
+);
 
 async function openPlayground(page, slug) {
   await page.goto(`/patterns/${slug}-playground/`);
@@ -57,6 +66,44 @@ test("Number Field clamps steps and keeps formatted speech separate", async ({ p
   await expect(input).toHaveValue("500");
 });
 
+test("Number Field macro and element keep normalized Intl output consistent", async ({ page }) => {
+  const root = await openPlayground(page, "number-field");
+  const cases = [
+    { value: "1234.5", min: "000", max: "2000.00", step: "000.5", format: "decimal", currency: "EUR", locale: "de-DE" },
+    { value: "1234.5", min: "", max: "", step: "1", format: "currency", currency: "eur", locale: "de-DE" },
+    { value: "25", min: "0", max: "100", step: "1", format: "percent", currency: "EUR", locale: "de-DE" },
+    { value: "invalid", min: "bad", max: "Infinity", step: "0", format: "decimal", currency: "EUR", locale: "en" },
+  ];
+
+  for (const attributes of cases) {
+    const html = renderNumberField(attributes);
+    const comparison = await root.evaluate((container, { markup, elementAttributes }) => {
+      const server = document.createElement("div");
+      server.innerHTML = markup;
+      const client = document.createElement("uif-number-field");
+      client.id = "client-number";
+      for (const [name, value] of Object.entries(elementAttributes)) client.setAttribute(name, value);
+      server.append(client);
+      container.replaceChildren(server);
+      const inputs = server.querySelectorAll("input[type=number]");
+      const outputs = server.querySelectorAll(".uif-number-field-formatted");
+      const state = (input, output) => ({
+        value: input.value,
+        min: input.min,
+        max: input.max,
+        step: input.step,
+        formatted: output.textContent,
+        valueText: input.getAttribute("aria-valuetext"),
+      });
+      return {
+        server: state(inputs[0], outputs[0]),
+        client: state(inputs[1], outputs[1]),
+      };
+    }, { markup: html, elementAttributes: attributes });
+    expect(comparison.client).toEqual(comparison.server);
+  }
+});
+
 test("Segmented Control uses native radio navigation and disabled state", async ({ page }) => {
   const root = await openPlayground(page, "segmented-control");
   await root.evaluate((container) => {
@@ -89,6 +136,52 @@ test("Range Slider keeps native thumbs labelled and non-crossing", async ({ page
   await expect(upper).toHaveValue("1200");
   await expect(lower).toHaveAttribute("max", "1200");
   await expect(lower).toHaveAttribute("aria-valuetext", "Minimum: 1200");
+});
+
+test("Range Slider applies defaults to missing, empty, and invalid numbers", async ({ page }) => {
+  const root = await openPlayground(page, "range-slider");
+  const states = await root.evaluate((container) => {
+    const cases = [
+      {},
+      { min: "", max: "", step: "", lower: "", upper: "" },
+      { min: "bad", max: "Infinity", step: "bad", lower: "NaN", upper: "-Infinity" },
+      { step: "0" },
+    ];
+    return cases.map((attributes) => {
+      const element = document.createElement("uif-range-slider");
+      for (const [name, value] of Object.entries(attributes)) element.setAttribute(name, value);
+      container.append(element);
+      const [lower, upper] = element.querySelectorAll("input[type=range]");
+      return {
+        lower: { min: lower.min, max: lower.max, step: lower.step, value: lower.value },
+        upper: { min: upper.min, max: upper.max, step: upper.step, value: upper.value },
+      };
+    });
+  });
+  for (const state of states) {
+    expect(state).toEqual({
+      lower: { min: "0", max: "100", step: "1", value: "0" },
+      upper: { min: "0", max: "100", step: "1", value: "100" },
+    });
+  }
+});
+
+test("Range Slider visually identifies each focused thumb in forced colors", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.emulateMedia({ forcedColors: "active" });
+  const root = await openPlayground(page, "range-slider");
+  const lower = root.getByRole("slider", { name: "Minimum" });
+  const upper = root.getByRole("slider", { name: "Maximum" });
+  const track = root.locator(".uif-range-slider-track");
+
+  await lower.focus();
+  await expect(lower).toBeFocused();
+  const lowerFocused = await track.screenshot({ animations: "disabled" });
+  await upper.focus();
+  await expect(upper).toBeFocused();
+  const upperFocused = await track.screenshot({ animations: "disabled" });
+
+  expect(lowerFocused.equals(upperFocused)).toBe(false);
 });
 
 test("Disabled and error states remain native and programmatically connected", async ({ page }) => {

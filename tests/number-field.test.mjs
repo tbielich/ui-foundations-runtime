@@ -18,10 +18,46 @@ test("number macro preserves native constraints and labelled controls", () => {
   assert.match(html, /aria-describedby="budget-formatted budget-error"/);
 });
 
-test("number element keeps formatting separate from editable state", () => {
+test("number macro matches Intl decimal, currency, and percent formatting", () => {
+  const cases = [
+    {
+      source: '{{ uif.numberField(value="1234.5", locale="de-DE") }}',
+      expected: new Intl.NumberFormat("de-DE").format(1234.5),
+    },
+    {
+      source: '{{ uif.numberField(value="1234.5", format="currency", currency="eur", locale="de-DE") }}',
+      expected: new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(1234.5),
+    },
+    {
+      source: '{{ uif.numberField(value="25", format="percent", locale="de-DE") }}',
+      expected: new Intl.NumberFormat("de-DE", { style: "percent" }).format(0.25),
+    },
+  ];
+
+  for (const { source, expected } of cases) {
+    const html = render(source);
+    assert.ok(html.includes(`aria-valuetext="${expected}"`));
+    assert.ok(html.includes(`>${expected}</output>`));
+  }
+});
+
+test("number macro normalizes numeric strings and invalid arguments", () => {
+  const normalized = render('{{ uif.numberField(value="0500.50", min="000", max="1000.00", step="050") }}');
+  assert.match(normalized, /value="500\.5" min="0" max="1000" step="50"/);
+
+  const invalid = render('{{ uif.numberField(value="not-a-number", min="bad", max="Infinity", step="0") }}');
+  assert.match(invalid, /value="" step="1" aria-valuetext="No value"/);
+  assert.doesNotMatch(invalid, /\smin=/);
+  assert.doesNotMatch(invalid, /\smax=/);
+  assert.match(invalid, />No value<\/output>/);
+});
+
+test("number element keeps normalization and formatting separate from editable state", () => {
   const source = readFileSync("src/elements/ui-number-field.js", "utf8");
   assert.match(source, /new Intl\.NumberFormat/);
   assert.match(source, /format\(value \/ 100\)/);
+  assert.match(source, /valueAttribute === null \? 0 : finiteNumber\(valueAttribute\)/);
+  assert.match(source, /const step = positiveStep/);
   assert.match(source, /setAttribute\("aria-valuetext", formatted\)/);
   assert.match(source, /stepDown\(\)/);
   assert.match(source, /stepUp\(\)/);

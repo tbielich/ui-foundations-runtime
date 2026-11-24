@@ -14,7 +14,7 @@ playgroundLabel: Open Range Slider Playground
 
 ## Behavior
 
-`<uif-range-slider>` renders two native `type="range"` inputs over one visual track. `min`, `max` and `step` apply to both controls. The lower value cannot move above the upper value, and the upper value cannot move below the lower value. Native Arrow, Page Up/Down, Home and End behavior remains available. Native `input` and `change` events bubble; `uif-change` reports `{ lower, upper }`.
+`<uif-range-slider>` renders two native `type="range"` inputs over one visual track. `min`, `max` and `step` apply to both controls and default to `0`, `100`, and `1`. Missing, empty, invalid, and non-finite numeric attributes use their documented defaults; a non-positive step also falls back to `1`. The lower value cannot move above the upper value, and the upper value cannot move below the lower value. Native Arrow, Page Up/Down, Home and End behavior remains available. Native `input` and `change` events bubble; `uif-change` reports `{ lower, upper }`.
 
 ## Accessibility
 

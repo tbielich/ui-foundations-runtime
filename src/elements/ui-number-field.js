@@ -2,9 +2,36 @@ import { UIElement, define } from "./base.js";
 
 let nextNumberFieldId = 0;
 
-function finiteNumber(value, fallback) {
+function finiteNumber(value, fallback = null) {
+  if (value === null || String(value).trim() === "") return fallback;
   const number = Number(value);
   return Number.isFinite(number) ? number : fallback;
+}
+
+function positiveStep(value) {
+  const number = finiteNumber(value);
+  return number !== null && number > 0 ? number : 1;
+}
+
+function formatNumberFieldValue(value, format, currency, locale) {
+  if (!Number.isFinite(value)) return "No value";
+  const resolvedLocale = locale.trim() || "en";
+  const currencyValue = currency.trim().toUpperCase();
+  const resolvedCurrency = /^[A-Z]{3}$/.test(currencyValue) ? currencyValue : "EUR";
+  try {
+    if (format === "currency") {
+      return new Intl.NumberFormat(resolvedLocale, {
+        style: "currency",
+        currency: resolvedCurrency,
+      }).format(value);
+    }
+    if (format === "percent") {
+      return new Intl.NumberFormat(resolvedLocale, { style: "percent" }).format(value / 100);
+    }
+    return new Intl.NumberFormat(resolvedLocale).format(value);
+  } catch {
+    return String(value);
+  }
 }
 
 /** A labelled native number input with clamped step controls and formatted output. */
@@ -22,9 +49,11 @@ class UINumberField extends UIElement {
     const outputId = `${baseId}-formatted`;
     const errorId = `${baseId}-error`;
     const label = this.getAttr("label").trim() || "Number";
-    const min = this.getAttr("min");
-    const max = this.getAttr("max");
-    const step = this.getAttr("step", "1");
+    const valueAttribute = this.getAttribute("value");
+    const value = valueAttribute === null ? 0 : finiteNumber(valueAttribute);
+    const min = finiteNumber(this.getAttribute("min"));
+    const max = finiteNumber(this.getAttribute("max"));
+    const step = positiveStep(this.getAttribute("step"));
     const disabled = this.getBool("disabled");
     const readonly = this.getBool("readonly");
     const invalid = this.getBool("invalid");
@@ -46,10 +75,10 @@ class UINumberField extends UIElement {
     input.id = inputId;
     input.type = "number";
     input.name = this.getAttr("name");
-    input.value = this.getAttr("value");
-    if (min) input.min = min;
-    if (max) input.max = max;
-    input.step = step;
+    input.value = value === null ? "" : String(value);
+    if (min !== null) input.min = String(min);
+    if (max !== null) input.max = String(max);
+    input.step = String(step);
     input.disabled = disabled;
     input.readOnly = readonly;
     if (invalid) input.setAttribute("aria-invalid", "true");
@@ -100,28 +129,18 @@ class UINumberField extends UIElement {
   }
 
   _format(value) {
-    const locale = this.getAttr("locale").trim() || undefined;
-    const format = this.getAttr("format", "decimal");
-    try {
-      if (format === "currency") {
-        return new Intl.NumberFormat(locale, {
-          style: "currency",
-          currency: this.getAttr("currency").trim() || "EUR",
-        }).format(value);
-      }
-      if (format === "percent") {
-        return new Intl.NumberFormat(locale, { style: "percent" }).format(value / 100);
-      }
-      return new Intl.NumberFormat(locale).format(value);
-    } catch {
-      return String(value);
-    }
+    return formatNumberFieldValue(
+      value,
+      this.getAttr("format", "decimal"),
+      this.getAttr("currency", "EUR"),
+      this.getAttr("locale", "en"),
+    );
   }
 
   _syncFormatted() {
     if (!this._input || !this._output) return;
     const value = this._input.valueAsNumber;
-    const formatted = Number.isFinite(value) ? this._format(value) : "No value";
+    const formatted = this._format(value);
     this._output.value = formatted;
     this._output.textContent = formatted;
     this._input.setAttribute("aria-valuetext", formatted);

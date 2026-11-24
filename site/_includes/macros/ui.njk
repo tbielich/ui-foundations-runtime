@@ -514,15 +514,35 @@
 {%- endmacro %}
 
 {% macro numberField(label='Number', id='number-field', name='number', value=0, min='', max='', step=1, disabled=false, readonly=false, invalid=false, error='', format='decimal', currency='EUR', locale='en') -%}
-{%- set displayValue = (currency + ' ' + value) if format == 'currency' else ((value + '%') if format == 'percent' else value) -%}
+{%- set valueNumber = value | float -%}
+{%- set hasValue = valueNumber is number and valueNumber == valueNumber and valueNumber - valueNumber == 0 -%}
+{%- set minNumber = min | float -%}
+{%- set hasMin = min !== '' and min !== none and minNumber is number and minNumber == minNumber and minNumber - minNumber == 0 -%}
+{%- set maxNumber = max | float -%}
+{%- set hasMax = max !== '' and max !== none and maxNumber is number and maxNumber == maxNumber and maxNumber - maxNumber == 0 -%}
+{%- set stepNumber = step | float -%}
+{%- set hasStep = stepNumber is number and stepNumber == stepNumber and stepNumber - stepNumber == 0 and stepNumber > 0 -%}
+{%- set stepNumber = stepNumber if hasStep else 1 -%}
+{%- set resolvedFormat = format if format in ['currency', 'percent'] else 'decimal' -%}
+{%- set resolvedCurrency = currency | trim | upper -%}
+{%- set resolvedCurrency = resolvedCurrency if r/^[A-Z]{3}$/.test(resolvedCurrency) else 'EUR' -%}
+{%- set resolvedLocale = (locale | trim) or 'en' -%}
+{%- set displayValue = 'No value' -%}
+{%- if hasValue and resolvedFormat == 'currency' -%}
+  {%- set displayValue = valueNumber.toLocaleString(resolvedLocale, { style: 'currency', currency: resolvedCurrency }) -%}
+{%- elif hasValue and resolvedFormat == 'percent' -%}
+  {%- set displayValue = (valueNumber / 100).toLocaleString(resolvedLocale, { style: 'percent' }) -%}
+{%- elif hasValue -%}
+  {%- set displayValue = valueNumber.toLocaleString(resolvedLocale) -%}
+{%- endif -%}
 <div class="uif-number-field"{% if invalid %} data-invalid{% endif %}>
   <label class="uif-number-field-label" for="{{ id | escape }}">{{ label | escape }}</label>
   <div class="uif-number-field-control">
     <button class="uif-number-field-step uif-number-field-step-down" type="button" aria-label="Decrease {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>−</button>
-    <input class="uif-number-field-input" id="{{ id | escape }}" type="number" name="{{ name | escape }}" value="{{ value }}"{% if min !== '' %} min="{{ min }}"{% endif %}{% if max !== '' %} max="{{ max }}"{% endif %} step="{{ step }}" aria-valuetext="{{ displayValue | escape }}" aria-describedby="{{ id | escape }}-formatted{% if error %} {{ id | escape }}-error{% endif %}"{% if invalid %} aria-invalid="true"{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}>
+    <input class="uif-number-field-input" id="{{ id | escape }}" type="number" name="{{ name | escape }}" value="{{ valueNumber if hasValue else '' }}"{% if hasMin %} min="{{ minNumber }}"{% endif %}{% if hasMax %} max="{{ maxNumber }}"{% endif %} step="{{ stepNumber }}" aria-valuetext="{{ displayValue | escape }}" aria-describedby="{{ id | escape }}-formatted{% if error %} {{ id | escape }}-error{% endif %}"{% if invalid %} aria-invalid="true"{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}>
     <button class="uif-number-field-step uif-number-field-step-up" type="button" aria-label="Increase {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>+</button>
   </div>
-  <output class="uif-number-field-formatted" id="{{ id | escape }}-formatted" for="{{ id | escape }}">{{ displayValue }}</output>
+  <output class="uif-number-field-formatted" id="{{ id | escape }}-formatted" for="{{ id | escape }}">{{ displayValue | escape }}</output>
   {%- if error %}<p class="uif-number-field-error" id="{{ id | escape }}-error">{{ error | escape }}</p>{% endif %}
 </div>
 {%- endmacro %}
