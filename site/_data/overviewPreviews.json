@@ -14,6 +14,8 @@
   "/patterns/progress-bar/": "overview-previews/patterns-progress-bar.njk",
   "/patterns/inline-alert/": "overview-previews/patterns-inline-alert.njk",
   "/patterns/illustrated-message/": "overview-previews/patterns-illustrated-message.njk",
+  "/patterns/toast/": "overview-previews/patterns-toast.njk",
+  "/patterns/popover/": "overview-previews/patterns-popover.njk",
   "/patterns/progress-circle/": "overview-previews/patterns-progress-circle.njk",
   "/components/date-picker/": "overview-previews/components-date-picker.njk",
   "/components/dialog/": "overview-previews/components-dialog.njk",

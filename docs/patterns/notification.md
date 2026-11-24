@@ -2,25 +2,24 @@
 
 ## Status
 
-**Placeholder (non-canonical component tracker).**
-
-This page reserves a stable location for future Runtime notification component
-documentation. It does not define final notification behavior.
+Implemented as the Runtime Toast pattern.
 
 ## Purpose
 
-Track where notification component documentation should live once implemented.
+Toast provides transient, stacked feedback with info, success, warning and error variants. It supports configurable auto-dismiss timing, pause during pointer or focus interaction, an optional action, explicit dismissal and polite or assertive announcements selected by urgency.
 
-## Current canonical references
+## Canonical implementation
 
-- `docs/components/README.md`
-- `docs/patterns/feedback.md`
+- Pattern documentation: `site/patterns/toast.md`
+- CSS: `src/ui/patterns/toast.css`
+- Custom Elements: `src/elements/ui-toast.js`
+- Nunjucks macros: `toastRegion` and `toast` in `site/_includes/macros/ui.njk`
+- Browser evidence: `tests/browser/toast-popover.spec.mjs`
+
+Live Figma reconciliation and Code Connect publication are deferred. No Figma identity is recorded by this technical implementation.
 
 ## Related docs
 
-- `docs/principles/usability-heuristics.md`
+- `docs/components/README.md`
+- `docs/public-api.md`
 - `docs/validation/README.md`
-
-## TODO
-
-No notification component documentation exists in the current repo yet.

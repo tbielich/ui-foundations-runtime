@@ -1,0 +1,4 @@
+{% import "macros/ui.njk" as uif %}
+<div style="position: relative; min-block-size: 8rem; inline-size: 100%;">
+{% call uif.toastRegion(label="Notifications") %}{{ uif.toast(message="Booking saved", variant="success", duration=0) }}{% endcall %}
+</div>

@@ -407,6 +407,29 @@
 </div>
 {%- endmacro %}
 
+{% macro toast(message='', variant='info', duration=5000, urgency='', actionLabel='', dismissLabel='Dismiss notification') -%}
+{%- set variant = variant if variant in ['info', 'success', 'warning', 'error'] else 'info' -%}
+{%- set urgency = urgency if urgency in ['polite', 'assertive'] else ('assertive' if variant == 'error' else 'polite') -%}
+{%- set role = 'alert' if urgency == 'assertive' else 'status' -%}
+{%- set icons = { 'info': 'info-circled', 'success': 'checkmark-circled', 'warning': 'exclamation-mark-circled', 'error': 'cross-circled' } -%}
+<div class="uif-toast {{ variant }}" role="{{ role }}" aria-live="{{ urgency }}" aria-atomic="true" data-duration="{{ duration }}">
+  <span class="uif-toast-icon"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ icons[variant] }}.svg')" aria-hidden="true"></span></span>
+  <div class="uif-toast-content"><p class="uif-toast-message">{{ message | escape }}</p>{% if actionLabel %}<button type="button" class="uif-toast-action uif-button ghost">{{ actionLabel | escape }}</button>{% endif %}</div>
+  <button type="button" class="uif-toast-dismiss" aria-label="{{ dismissLabel | escape }}"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross.svg')" aria-hidden="true"></span></button>
+</div>
+{%- endmacro %}
+
+{% macro toastRegion(label='Notifications', position='top-end') -%}
+{%- set position = position if position in ['top-start', 'top-end', 'bottom-start', 'bottom-end'] else 'top-end' -%}
+<div class="uif-toast-region" role="region" aria-label="{{ label | escape }}" data-position="{{ position }}">{{ caller() }}</div>
+{%- endmacro %}
+
+{% macro popover(triggerId='popover-trigger', triggerLabel='Show details', label='Details', placement='bottom', open=false) -%}
+{%- set placement = placement if placement in ['top', 'bottom', 'left', 'right'] else 'bottom' -%}
+<button id="{{ triggerId | escape }}" class="uif-button outline" type="button" aria-haspopup="dialog" aria-controls="{{ triggerId | escape }}-popover" aria-expanded="{{ 'true' if open else 'false' }}">{{ triggerLabel | escape }}</button>
+<uif-popover trigger="{{ triggerId | escape }}" label="{{ label | escape }}" placement="{{ placement }}"{% if open %} open{% endif %}>{{ caller() }}</uif-popover>
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

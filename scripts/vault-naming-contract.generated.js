@@ -102,6 +102,7 @@ const VAULT_NAMING_CONTRACT = Object.freeze({
       "label",
       "link",
       "meter",
+      "popover",
       "progress-bar",
       "progress-circle",
       "radio",
@@ -111,6 +112,7 @@ const VAULT_NAMING_CONTRACT = Object.freeze({
       "table",
       "tabs",
       "textarea",
+      "toast",
       "tooltip"
     ]
   },

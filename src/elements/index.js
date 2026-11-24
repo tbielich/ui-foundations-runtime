@@ -33,3 +33,5 @@ export { UIMeter } from "./ui-meter.js";
 export { UIProgressBar } from "./ui-progress-bar.js";
 export { UIInlineAlert } from "./ui-inline-alert.js";
 export { UIIllustratedMessage } from "./ui-illustrated-message.js";
+export { UIToast, UIToastRegion } from "./ui-toast.js";
+export { UIPopover } from "./ui-popover.js";

@@ -78,6 +78,8 @@
     "./elements/ui-progress-bar": "./dist/elements/ui-progress-bar.js",
     "./elements/ui-inline-alert": "./dist/elements/ui-inline-alert.js",
     "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js",
+    "./elements/ui-toast": "./dist/elements/ui-toast.js",
+    "./elements/ui-popover": "./dist/elements/ui-popover.js",
     "./base.css": "./dist/base.css",
     "./behaviors/calendar": "./dist/ui/components/calendar.js",
     "./behaviors/date-input": "./dist/ui/components/date-input.js",

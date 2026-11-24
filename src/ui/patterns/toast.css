@@ -1,0 +1,101 @@
+@layer components {
+  .uif-toast-region {
+    --uif-toast-region-gap: var(--size-spacing-300);
+    position: fixed;
+    z-index: var(--zindex-tooltip);
+    display: flex;
+    flex-direction: column;
+    gap: var(--uif-toast-region-gap);
+    inline-size: min(calc(100vw - (var(--size-spacing-400) * 2)), 26rem);
+    max-block-size: calc(100dvh - (var(--size-spacing-400) * 2));
+    overflow: auto;
+    pointer-events: none;
+  }
+
+  .uif-toast-region[data-position^="top"] { inset-block-start: var(--size-spacing-400); }
+  .uif-toast-region[data-position^="bottom"] { inset-block-end: var(--size-spacing-400); }
+  .uif-toast-region[data-position$="start"] { inset-inline-start: var(--size-spacing-400); }
+  .uif-toast-region[data-position$="end"] { inset-inline-end: var(--size-spacing-400); }
+
+  .uif-toast-host { display: block; pointer-events: auto; }
+
+  .uif-toast {
+    --uif-toast-container-background: var(--uif-inline-alert-info-container-background, var(--color-fill-surface));
+    --uif-toast-border-color: var(--uif-inline-alert-info-border-color, var(--color-border-default));
+    --uif-toast-text-color: var(--uif-inline-alert-info-text-color, var(--color-text-default));
+    --uif-toast-border-radius: var(--size-radius-300);
+    --uif-toast-padding: var(--size-spacing-400);
+    --uif-toast-gap: var(--size-spacing-300);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--uif-toast-gap);
+    padding: var(--uif-toast-padding);
+    color: var(--uif-toast-text-color);
+    background: var(--uif-toast-container-background);
+    border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-toast-border-color);
+    border-radius: var(--uif-toast-border-radius);
+    animation: uif-toast-enter 160ms ease-out;
+  }
+
+  .uif-toast.success {
+    --uif-toast-container-background: var(--uif-inline-alert-positive-container-background, var(--color-fill-surface));
+    --uif-toast-border-color: var(--uif-inline-alert-positive-border-color, var(--color-border-default));
+    --uif-toast-text-color: var(--uif-inline-alert-positive-text-color, var(--color-text-default));
+  }
+
+  .uif-toast.warning {
+    --uif-toast-container-background: var(--uif-inline-alert-notice-container-background, var(--color-fill-surface));
+    --uif-toast-border-color: var(--uif-inline-alert-notice-border-color, var(--color-border-default));
+    --uif-toast-text-color: var(--uif-inline-alert-notice-text-color, var(--color-text-default));
+  }
+
+  .uif-toast.error {
+    --uif-toast-container-background: var(--uif-inline-alert-negative-container-background, var(--color-fill-surface));
+    --uif-toast-border-color: var(--uif-inline-alert-negative-border-color, var(--color-border-default));
+    --uif-toast-text-color: var(--uif-inline-alert-negative-text-color, var(--color-text-default));
+  }
+
+  .uif-toast.is-exiting { animation: uif-toast-exit 160ms ease-in forwards; }
+  .uif-toast-icon { flex: none; display: inline-flex; }
+  .uif-toast-icon .uif-icon { inline-size: 1.25em; block-size: 1.25em; }
+  .uif-toast-content { flex: 1 1 auto; min-inline-size: 0; display: grid; gap: var(--size-spacing-200); }
+  .uif-toast-message { margin: 0; overflow-wrap: anywhere; }
+  .uif-toast-action { justify-self: start; }
+  .uif-toast-dismiss {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: var(--uif-toast-border-radius);
+    cursor: pointer;
+  }
+  .uif-toast-dismiss .uif-icon { inline-size: 1em; block-size: 1em; }
+  .uif-toast-dismiss:focus-visible,
+  .uif-toast-action:focus-visible {
+    outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
+    outline-offset: var(--uif-semantic-size-border-default);
+  }
+
+  @keyframes uif-toast-enter {
+    from { opacity: 0; transform: translateY(-0.5rem); }
+  }
+  @keyframes uif-toast-exit {
+    to { opacity: 0; transform: translateY(-0.5rem); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .uif-toast,
+    .uif-toast.is-exiting { animation: none; }
+  }
+
+  @media (forced-colors: active) {
+    .uif-toast { border: 2px solid CanvasText; box-shadow: none; }
+    .uif-toast-icon { forced-color-adjust: none; color: CanvasText; }
+  }
+}
