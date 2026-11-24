@@ -1,0 +1,78 @@
+@layer components {
+  uif-tag-group {
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+  uif-tag {
+    display: inline-block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+
+  .uif-tag-group {
+    --uif-tag-group-gap: var(--size-spacing-200);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--uif-tag-group-gap);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+  .uif-tag-group[data-overflow="scroll"] {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-block-end: var(--size-spacing-100);
+  }
+  .uif-tag {
+    --uif-tag-container-background: var(--color-fill-surface);
+    --uif-tag-border-color: var(--color-border-default);
+    --uif-tag-text-color: var(--color-text-default);
+    --uif-tag-gap: var(--size-spacing-200);
+    display: inline-flex;
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    align-items: center;
+    gap: var(--uif-tag-gap);
+    max-inline-size: 100%;
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    padding-block: var(--size-spacing-100);
+    padding-inline: var(--size-spacing-300);
+    color: var(--uif-tag-text-color);
+    background: var(--uif-tag-container-background);
+    border: var(--uif-semantic-size-border-default) solid var(--uif-tag-border-color);
+    border-radius: var(--size-radius-full);
+  }
+  .uif-tag.sm {
+    min-block-size: 24px;
+    padding-inline: var(--size-spacing-200);
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+  .uif-tag-label { min-inline-size: 0; overflow-wrap: anywhere; }
+  .uif-tag-avatar,
+  .uif-tag-icon { flex: none; inline-size: 1.25em; block-size: 1.25em; border-radius: 50%; object-fit: cover; }
+  .uif-tag-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    margin-block: calc(var(--size-spacing-100) * -1);
+    margin-inline-end: calc(var(--size-spacing-200) * -1);
+    padding: 0;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .uif-tag-remove .uif-icon { inline-size: 1em; block-size: 1em; }
+  :is(.uif-tag-group, uif-tag, .uif-tag-remove):focus-visible {
+    outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
+    outline-offset: var(--uif-semantic-size-border-default);
+  }
+  @media (forced-colors: active) {
+    .uif-tag { border: 1px solid CanvasText; }
+    .uif-tag-remove { border: 1px solid ButtonText; }
+  }
+}

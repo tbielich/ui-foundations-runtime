@@ -35,3 +35,7 @@ export { UIInlineAlert } from "./ui-inline-alert.js";
 export { UIIllustratedMessage } from "./ui-illustrated-message.js";
 export { UIToast, UIToastRegion } from "./ui-toast.js";
 export { UIPopover } from "./ui-popover.js";
+export { UIBreadcrumbs } from "./ui-breadcrumbs.js";
+export { UICard } from "./ui-card.js";
+export { UITag, UITagGroup } from "./ui-tag.js";
+export { UISkeleton } from "./ui-skeleton.js";

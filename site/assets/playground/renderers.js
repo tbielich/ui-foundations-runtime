@@ -1403,6 +1403,68 @@
     return { element: wrapper, code: wrapper.innerHTML };
   };
 
+  const renderVanillaBreadcrumbs = ({ props }) => {
+    const element = document.createElement("uif-breadcrumbs");
+    element.setAttribute("label", String(props.label || "Breadcrumb"));
+    element.setAttribute("separator", String(props.separator || "/"));
+    element.setAttribute("collapse-at", String(props.collapseAt || 4));
+    ["Home", "Holidays", "Spain", "Mallorca", "Booking"].forEach((label, index, labels) => {
+      const item = document.createElement(index === labels.length - 1 ? "span" : "a");
+      if (item instanceof HTMLAnchorElement) item.href = `#${label.toLowerCase()}`;
+      if (index === labels.length - 1) item.setAttribute("aria-current", "page");
+      item.textContent = label;
+      element.append(item);
+    });
+    return { element, code: element.outerHTML };
+  };
+
+  const renderVanillaCard = ({ props }) => {
+    const element = document.createElement("uif-card");
+    element.setAttribute("title", String(props.title || "Mallorca escape"));
+    element.setAttribute("layout", String(props.layout || "vertical"));
+    element.setAttribute("action-label", String(props.actionLabel || "View Mallorca escape"));
+    if (asBoolean(props.selectable)) element.setAttribute("selectable", "");
+    else element.setAttribute("href", "#mallorca");
+    if (asBoolean(props.selected)) element.setAttribute("selected", "");
+    const media = document.createElement("div");
+    media.setAttribute("slot", "media");
+    media.textContent = "Coastal holiday";
+    const body = document.createElement("p");
+    body.setAttribute("slot", "body");
+    body.textContent = "Seven nights with breakfast and direct flights.";
+    const footer = document.createElement("strong");
+    footer.setAttribute("slot", "footer");
+    footer.textContent = "From €499";
+    element.append(media, body, footer);
+    return { element, code: element.outerHTML };
+  };
+
+  const renderVanillaTag = ({ props }) => {
+    const group = document.createElement("uif-tag-group");
+    group.setAttribute("label", "Selected filters");
+    group.setAttribute("overflow", String(props.overflow || "wrap"));
+    [String(props.label || "Family"), "Beach", "Breakfast included"].forEach((label, index) => {
+      const tag = document.createElement("uif-tag");
+      tag.setAttribute("label", label);
+      tag.setAttribute("size", String(props.size || "md"));
+      if (index === 0 && props.icon) tag.setAttribute("icon", String(props.icon));
+      if (asBoolean(props.removable)) tag.setAttribute("removable", "");
+      group.append(tag);
+    });
+    return { element: group, code: group.outerHTML };
+  };
+
+  const renderVanillaSkeleton = ({ props }) => {
+    const region = document.createElement("section");
+    region.setAttribute("aria-busy", "true");
+    region.setAttribute("aria-label", "Loading holiday details");
+    const element = document.createElement("uif-skeleton");
+    element.setAttribute("shape", String(props.shape || "text"));
+    element.setAttribute("lines", String(props.lines || 3));
+    region.append(element);
+    return { element: region, code: region.outerHTML };
+  };
+
   const renderVanillaIllustratedMessage = ({ props }) => {
     const element = document.createElement("uif-illustrated-message");
     if (props.preset !== undefined) element.setAttribute("preset", String(props.preset));
@@ -1452,6 +1514,10 @@
       "illustrated-message": renderVanillaIllustratedMessage,
       "toast": renderVanillaToast,
       "popover": renderVanillaPopover,
+      "breadcrumbs": renderVanillaBreadcrumbs,
+      "card": renderVanillaCard,
+      "tag": renderVanillaTag,
+      "skeleton": renderVanillaSkeleton,
 
     },
   };

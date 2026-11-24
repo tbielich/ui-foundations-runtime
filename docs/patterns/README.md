@@ -27,7 +27,10 @@ Runtime pattern/component docs use three explicit statuses:
 | `input.md` | Implemented pattern | Active | `site/patterns/input.md`, `src/ui/patterns/input.css`, `src/elements/ui-input.js` |
 | `forms.md` | Pattern guidance | Active | `.kiro/steering/pattern-rules/forms.md` |
 | `navigation.md` | Pattern guidance | Active | `.kiro/steering/pattern-rules/navigation.md` |
-| `cards.md` | Pattern guidance | Active | `.kiro/steering/pattern-rules/cards.md` |
+| `cards.md` | Implemented pattern | Active | `site/patterns/card.md`, `src/ui/patterns/card.css`, `src/elements/ui-card.js` |
+| `breadcrumbs` | Implemented pattern | Active | `site/patterns/breadcrumbs.md`, `src/ui/patterns/breadcrumbs.css`, `src/elements/ui-breadcrumbs.js` |
+| `tag` | Implemented pattern | Active | `site/patterns/tag.md`, `src/ui/patterns/tag.css`, `src/elements/ui-tag.js` |
+| `skeleton` | Implemented pattern | Active | `site/patterns/skeleton.md`, `src/ui/patterns/skeleton.css`, `src/elements/ui-skeleton.js` |
 | `feedback.md` | Pattern guidance | Placeholder summary | See TODO in page; no standalone feedback rule yet |
 | `layout.md` | Pattern guidance | Placeholder summary | Foundations references only; no standalone layout pattern rule |
 | `modal.md` | Component placeholder | Placeholder | No runtime component documentation yet |

@@ -1,0 +1,41 @@
+@layer components {
+  .uif-skeleton-group {
+    --uif-skeleton-color: var(--color-fill-surface);
+    --uif-skeleton-highlight-color: var(--color-fill-hover);
+    --uif-skeleton-gap: var(--size-spacing-200);
+    display: grid;
+    gap: var(--uif-skeleton-gap);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+  .uif-skeleton {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    overflow: hidden;
+    background-color: var(--uif-skeleton-color);
+    background-image: linear-gradient(90deg, transparent, var(--uif-skeleton-highlight-color), transparent);
+    background-size: 200% 100%;
+    border: var(--uif-semantic-size-border-default) solid transparent;
+    animation: uif-skeleton-shimmer 1.4s linear infinite;
+  }
+  .uif-skeleton.text { block-size: 1em; border-radius: var(--size-radius-100); }
+  .uif-skeleton.text.is-last-line { inline-size: 70%; }
+  .uif-skeleton.circle { inline-size: 3rem; block-size: 3rem; border-radius: 50%; }
+  .uif-skeleton.rectangle { min-block-size: 8rem; border-radius: var(--size-radius-200); }
+  @keyframes uif-skeleton-shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .uif-skeleton { animation: none; background-image: none; }
+  }
+  @media (forced-colors: active) {
+    .uif-skeleton {
+      forced-color-adjust: none;
+      background: Canvas;
+      border-color: CanvasText;
+      animation: none;
+    }
+  }
+}
