@@ -25,3 +25,5 @@
 @import url("./patterns/progress-bar.css") layer(components);
 @import url("./patterns/inline-alert.css") layer(components);
 @import url("./patterns/illustrated-message.css") layer(components);
+@import url("./patterns/toast.css") layer(components);
+@import url("./patterns/popover.css") layer(components);

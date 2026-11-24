@@ -2,7 +2,7 @@
   :where(uif-accordion, uif-accordion-item, uif-tab-list, uif-tab-panel,
     uif-form, uif-form-group, uif-form-field, uif-form-helper, uif-form-actions,
     uif-dialog, uif-meter, uif-progress-bar, uif-inline-alert,
-    uif-illustrated-message) {
+    uif-illustrated-message, uif-toast-region, uif-toast, uif-popover) {
     display: block;
   }
 
@@ -52,6 +52,33 @@
   :where(.uif-tooltip[data-placement="bottom"]) { inset-block-start: 100%; inset-inline-start: 0; }
   :where(.uif-tooltip[data-placement="left"]) { inset-inline-end: 100%; inset-block-start: 0; }
   :where(.uif-tooltip[data-placement="right"]) { inset-inline-start: 100%; inset-block-start: 0; }
+
+  :where(.uif-toast-region) {
+    position: fixed;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    pointer-events: none;
+  }
+  :where(.uif-toast-host) { display: block; pointer-events: auto; }
+  :where(.uif-toast) {
+    display: flex;
+    align-items: flex-start;
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-toast-content) { flex: 1; min-inline-size: 0; }
+  :where(.uif-toast-message) { margin: 0; }
+  :where(.uif-popover) {
+    position: fixed;
+    z-index: 1000;
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-popover[hidden]) { display: none !important; }
 
   :where(.uif-input-field.date) { position: relative; }
   :where(.date-segment.day, .date-segment.month) { inline-size: calc(2ch + 0.5em + 2px); }

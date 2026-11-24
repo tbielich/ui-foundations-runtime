@@ -1360,6 +1360,49 @@
     container.append(element);
     return { element: container, code: container.outerHTML };
   };
+  const renderVanillaToast = ({ props }) => {
+    const region = document.createElement("uif-toast-region");
+    region.setAttribute("label", "Notifications");
+    region.setAttribute("position", String(props.position || "top-end"));
+    const toast = document.createElement("uif-toast");
+    toast.setAttribute("message", String(props.message || "Your booking was saved."));
+    toast.setAttribute("variant", String(props.variant || "info"));
+    toast.setAttribute("duration", String(props.duration ?? "0"));
+    if (props.urgency && props.urgency !== "auto") toast.setAttribute("urgency", String(props.urgency));
+    if (props.actionLabel) toast.setAttribute("action-label", String(props.actionLabel));
+    region.append(toast);
+    const container = document.createElement("div");
+    container.style.position = "relative";
+    container.style.minBlockSize = "14rem";
+    container.style.inlineSize = "100%";
+    container.append(region);
+    return { element: container, code: container.innerHTML };
+  };
+
+  const renderVanillaPopover = ({ props }) => {
+    const wrapper = document.createElement("div");
+    wrapper.style.minBlockSize = "12rem";
+    wrapper.style.inlineSize = "100%";
+    wrapper.style.minInlineSize = "0";
+    const trigger = document.createElement("button");
+    trigger.id = "popover-playground-trigger";
+    trigger.className = "uif-button outline uif-popover-trigger";
+    trigger.type = "button";
+    trigger.textContent = String(props.triggerLabel || "Show booking details");
+    const popover = document.createElement("uif-popover");
+    popover.setAttribute("trigger", trigger.id);
+    popover.setAttribute("label", String(props.label || "Booking details"));
+    popover.setAttribute("placement", String(props.placement || "bottom"));
+    const content = document.createElement("p");
+    content.textContent = String(props.content || "Your fare can be changed before departure.");
+    const link = document.createElement("a");
+    link.href = "#popover-playground-controls";
+    link.textContent = "Review fare conditions";
+    popover.append(content, link);
+    wrapper.append(trigger, popover);
+    return { element: wrapper, code: wrapper.innerHTML };
+  };
+
   const renderVanillaIllustratedMessage = ({ props }) => {
     const element = document.createElement("uif-illustrated-message");
     if (props.preset !== undefined) element.setAttribute("preset", String(props.preset));
@@ -1407,6 +1450,8 @@
       "progress-bar": renderVanillaProgressBar,
       "inline-alert": renderVanillaInlineAlert,
       "illustrated-message": renderVanillaIllustratedMessage,
+      "toast": renderVanillaToast,
+      "popover": renderVanillaPopover,
 
     },
   };

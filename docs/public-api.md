@@ -40,6 +40,14 @@ Import `ui-foundations/elements/ui-status-light`, `ui-foundations/elements/ui-me
 
 The corresponding macros in `ui-foundations/macros/ui.njk` are `uif.statusLight`, `uif.meter` and `uif.progressBar`. The macros emit static semantic HTML without requiring Custom Elements. Usage and numeric input contracts are documented in the respective pattern pages.
 
+## Feedback overlay elements and macros
+
+Import `ui-foundations/elements/ui-toast` for `<uif-toast-region>` and `<uif-toast>`, or `ui-foundations/elements/ui-popover` for `<uif-popover>`. Both modules are also included by the aggregate `ui-foundations/elements` entry.
+
+The static macro surface provides `uif.toastRegion`, `uif.toast` and `uif.popover`. Toast actions dispatch `uif-action`; dismissals dispatch `uif-dismiss`. Popover triggers are bound by ID and synchronize `aria-expanded`, `aria-controls` and `aria-haspopup="dialog"`. See the Toast and Popover pattern pages for timing, urgency, focus and placement contracts.
+
+Figma identity, token reconciliation and Code Connect publication remain deferred for these feedback overlays.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

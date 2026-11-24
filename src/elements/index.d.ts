@@ -49,6 +49,17 @@ export declare class UIInlineAlert extends UIElement {
   dismissFocusTarget: HTMLElement | null;
 }
 export declare class UIIllustratedMessage extends UIElement {}
+export declare class UIToast extends UIElement {
+  pause(): void;
+  resume(): void;
+  dismiss(reason?: string): void;
+}
+export declare class UIToastRegion extends UIElement {}
+export declare class UIPopover extends UIElement {
+  open(): void;
+  close(reason?: string, restoreFocus?: boolean): void;
+  toggle(): void;
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -59,6 +70,9 @@ declare global {
     "uif-progress-bar": UIProgressBar;
     "uif-inline-alert": UIInlineAlert;
     "uif-illustrated-message": UIIllustratedMessage;
+    "uif-toast": UIToast;
+    "uif-toast-region": UIToastRegion;
+    "uif-popover": UIPopover;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

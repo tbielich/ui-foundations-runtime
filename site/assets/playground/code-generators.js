@@ -386,6 +386,43 @@
     return withContainerScale("<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">", p);
   }
 
+  function toastCode(state, format) {
+    var p = state.props;
+    var message = String(p.message || "Your booking was saved.");
+    var variant = ["info", "success", "warning", "error"].includes(p.variant) ? p.variant : "info";
+    var duration = p.duration === undefined || p.duration === "" ? 0 : Number(p.duration);
+    if (!Number.isFinite(duration) || duration < 0) duration = 0;
+    var urgency = ["polite", "assertive"].includes(p.urgency) ? p.urgency : "";
+    var actionLabel = String(p.actionLabel || "");
+    var position = ["top-start", "top-end", "bottom-start", "bottom-end"].includes(p.position) ? p.position : "top-end";
+    if (format === "njk") {
+      var args = ["message=" + JSON.stringify(message), "variant=" + JSON.stringify(variant), "duration=" + duration];
+      if (urgency) args.push("urgency=" + JSON.stringify(urgency));
+      if (actionLabel) args.push("actionLabel=" + JSON.stringify(actionLabel));
+      return "{% call uif.toastRegion(label=\"Notifications\", position=" + JSON.stringify(position) + ") %}{{ uif.toast(" + args.join(", ") + ") }}{% endcall %}";
+    }
+    var attrs = [
+      'variant="' + quoteAttr(variant) + '"',
+      'message="' + quoteAttr(message) + '"',
+      'duration="' + duration + '"',
+    ];
+    if (urgency) attrs.push('urgency="' + quoteAttr(urgency) + '"');
+    if (actionLabel) attrs.push('action-label="' + quoteAttr(actionLabel) + '"');
+    return '<uif-toast-region label="Notifications" position="' + quoteAttr(position) + '">\n  <uif-toast ' + attrs.join(" ") + '></uif-toast>\n</uif-toast-region>';
+  }
+
+  function popoverCode(state, format) {
+    var p = state.props;
+    var triggerLabel = String(p.triggerLabel || "Show booking details");
+    var label = String(p.label || "Booking details");
+    var content = String(p.content || "Your fare can be changed before departure.");
+    var placement = ["top", "bottom", "left", "right"].includes(p.placement) ? p.placement : "bottom";
+    if (format === "njk") {
+      return '{% call uif.popover(triggerId="popover-example-trigger", triggerLabel=' + JSON.stringify(triggerLabel) + ', label=' + JSON.stringify(label) + ', placement=' + JSON.stringify(placement) + ') %}<p>' + quoteAttr(content) + '</p><a href="#fare-conditions">Review fare conditions</a>{% endcall %}';
+    }
+    return '<button id="popover-example-trigger" type="button" aria-haspopup="dialog" aria-controls="popover-example" aria-expanded="false">' + quoteAttr(triggerLabel) + '</button>\n<uif-popover trigger="popover-example-trigger" label="' + quoteAttr(label) + '" placement="' + quoteAttr(placement) + '">\n  <p>' + quoteAttr(content) + '</p>\n  <a href="#fare-conditions">Review fare conditions</a>\n</uif-popover>';
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
@@ -393,6 +430,8 @@
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "njk"); },
       "inline-alert": function (state) { return messageArgs(state, "inline-alert", "njk"); },
       "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "njk"); },
+      "toast": function (state) { return toastCode(state, "njk"); },
+      "popover": function (state) { return popoverCode(state, "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -461,6 +500,8 @@
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "wc"); },
       "inline-alert": function (state) { return messageArgs(state, "inline-alert", "wc"); },
       "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "wc"); },
+      "toast": function (state) { return toastCode(state, "wc"); },
+      "popover": function (state) { return popoverCode(state, "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

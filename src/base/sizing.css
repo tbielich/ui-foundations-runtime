@@ -44,6 +44,11 @@
   :where(.uif-table th,.uif-table td) { padding-block: var(--brand-size-spacing-component); padding-inline: var(--brand-size-spacing-comfortable); }
   :where(.uif-table th) { font-size: var(--typography-label-font-size); font-weight: var(--typography-label-font-weight); line-height: var(--typography-label-line-height); }
   :where(.uif-tooltip) { max-inline-size: 15rem; padding-inline: var(--uif-tooltip-padding-inline); padding-block: var(--uif-tooltip-padding-block); font-size: var(--font-size-sm); line-height: var(--line-height-sm); }
+  :where(.uif-toast-region) { inline-size: min(calc(100vw - 2rem), 26rem); max-block-size: calc(100dvh - 2rem); }
+  :where(.uif-toast) { padding: var(--size-spacing-400); gap: var(--size-spacing-300); }
+  :where(.uif-toast-dismiss,.uif-toast-action) { min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default)); min-block-size: max(24px, var(--uif-semantic-scale-size-target-default)); }
+  :where(.uif-popover) { max-inline-size: min(24rem, calc(100vw - 1rem)); max-block-size: calc(100dvh - 1rem); padding: var(--size-spacing-400); }
+  :where(.uif-popover-trigger) { min-inline-size: 0; max-inline-size: min(100%, calc(100vw - var(--size-spacing-400) - var(--size-spacing-400))); white-space: normal; overflow-wrap: anywhere; }
   :where(.uif-badge) { display: inline-flex; align-items: center; gap: var(--uif-badge-gap); font-size: var(--uif-badge-font-size-md); line-height: var(--uif-badge-line-height-md); padding-inline: var(--uif-badge-padding-inline-md); padding-block: var(--uif-badge-padding-block-md); min-block-size: var(--uif-badge-height-min); min-inline-size: var(--uif-badge-width-min); }
   :where(.uif-badge-text) { font-weight: var(--brand-typography-ui-font-weight); }
   :where(.uif-form) { display: flex; flex-direction: column; gap: var(--uif-form-gap); padding-inline: var(--uif-form-padding-inline); padding-block: var(--uif-form-padding-block); }

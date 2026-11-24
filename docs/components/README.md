@@ -21,7 +21,7 @@ are pattern-level only, and which are placeholders.
 
 Runtime currently provides light-DOM Custom Element surfaces under
 `src/elements/` (for example: `ui-button.js`, `ui-input.js`, `ui-select.js`,
-`ui-tooltip.js`, `ui-tabs.js`).
+`ui-tooltip.js`, `ui-tabs.js`, `ui-toast.js` and `ui-popover.js`).
 
 These are implementation surfaces for existing UI patterns and are not treated
 as separate product-component governance in this documentation layer.
@@ -31,7 +31,8 @@ as separate product-component governance in this documentation layer.
 | Topic | Status | Current source |
 |---|---|---|
 | Modal | Placeholder | `docs/patterns/modal.md` |
-| Notification | Placeholder | `docs/patterns/notification.md` |
+| Notification | Implemented as Toast | `site/patterns/toast.md` |
+| Popover | Implemented | `site/patterns/popover.md` |
 | Select (standalone component doc) | Placeholder | `docs/patterns/select.md` |
 
 Placeholder pages are explicitly non-canonical and must not be interpreted as

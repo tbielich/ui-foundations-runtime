@@ -31,7 +31,8 @@ Runtime pattern/component docs use three explicit statuses:
 | `feedback.md` | Pattern guidance | Placeholder summary | See TODO in page; no standalone feedback rule yet |
 | `layout.md` | Pattern guidance | Placeholder summary | Foundations references only; no standalone layout pattern rule |
 | `modal.md` | Component placeholder | Placeholder | No runtime component documentation yet |
-| `notification.md` | Component placeholder | Placeholder | No runtime component documentation yet |
+| `notification.md` | Implemented pattern | Active | `site/patterns/toast.md`, `src/ui/patterns/toast.css`, `src/elements/ui-toast.js` |
+| `popover` | Implemented pattern | Active | `site/patterns/popover.md`, `src/ui/patterns/popover.css`, `src/elements/ui-popover.js` |
 | `select.md` | Component placeholder | Placeholder | No standalone select component documentation yet |
 
 ## Canonical rules
