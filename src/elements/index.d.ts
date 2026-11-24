@@ -45,7 +45,9 @@ export declare class UIFormActions extends UIElement {}
 export declare class UIStatusLight extends UIElement {}
 export declare class UIMeter extends UIElement {}
 export declare class UIProgressBar extends UIElement {}
-export declare class UIInlineAlert extends UIElement {}
+export declare class UIInlineAlert extends UIElement {
+  dismissFocusTarget: HTMLElement | null;
+}
 export declare class UIIllustratedMessage extends UIElement {}
 
 // --- Custom Element Tag Name Map ---

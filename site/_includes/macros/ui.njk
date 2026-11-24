@@ -379,7 +379,7 @@
 {%- set value = 0 if number < 0 else (100 if number > 100 else number) -%}
 {%- set label = label | trim -%}
 {%- set classes = 'uif-progress-bar' -%}
-{%- if variant in ['positive', 'negative'] -%}{%- set classes = classes + ' ' + variant -%}{%- endif -%}
+{%- if variant in ['info', 'positive', 'negative'] -%}{%- set classes = classes + ' ' + variant -%}{%- endif -%}
 {%- if size in ['sm', 'lg'] -%}{%- set classes = classes + ' ' + size -%}{%- endif -%}
 {%- if unknown -%}{%- set classes = classes + ' is-indeterminate' -%}{%- endif -%}
 <div class="{{ classes }}" role="progressbar" aria-label="{{ (label or ('Loading' if unknown else 'Progress')) | escape }}" aria-valuemin="0" aria-valuemax="100"{% if not unknown %} aria-valuenow="{{ value }}"{% endif %}>

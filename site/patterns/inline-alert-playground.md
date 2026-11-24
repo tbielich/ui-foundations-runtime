@@ -61,11 +61,21 @@ playground:
       options:
         - md
         - sm
-    - kind: checkbox
+    - kind: boolean
       name: dismissible
       label: Dismissible
       query: true
       default: false
+    - kind: text
+      name: actionLabel
+      label: Action label
+      query: true
+      default: ""
+    - kind: text
+      name: actionHref
+      label: Action href
+      query: true
+      default: ""
 ---
 
 {% from "macros/playground.njk" import playground as uiPlayground with context %}

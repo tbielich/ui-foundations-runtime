@@ -203,7 +203,7 @@ Use the brand and mode switches in the preview above. Visual values come from th
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Runtime and examples</strong><span>CSS, Custom Element, static macro and playground are implemented.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Preset coverage and slots</strong><span>Empty, error and no-results presets; illustration and action slots supported.</span></div></div>
   <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">○</div><div class="docs-checklist-text"><strong>Figma parity and Code Connect</strong><span>Live source access is unavailable. Design parity is unverified and the mapping example is inactive.</span></div></div>
-  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">○</div><div class="docs-checklist-text"><strong>Playground code tabs (Nunjucks / Web Component)</strong><span>The HTML tab and live preview work. The Nunjucks and Web Component tabs are not yet wired to a code generator.</span></div></div>
+  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Playground code tabs (Nunjucks / Web Component)</strong><span>The playground generates escaped HTML, Nunjucks and Web Component examples for presets, overrides and actions.</span></div></div>
 </div>
 
 Automated checks cover markup, token resolution and naming. They do not certify complete accessibility or live design parity.

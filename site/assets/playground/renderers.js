@@ -1352,6 +1352,8 @@
     if (props.icon !== undefined && String(props.icon).length > 0) element.setAttribute("icon", String(props.icon));
     if (props.size !== undefined) element.setAttribute("size", String(props.size));
     if (asBoolean(props.dismissible)) element.setAttribute("dismissible", "");
+    if (props.actionLabel !== undefined && String(props.actionLabel).length > 0) element.setAttribute("action-label", String(props.actionLabel));
+    if (props.actionHref !== undefined && String(props.actionHref).length > 0) element.setAttribute("action-href", String(props.actionHref));
     const container = document.createElement("div");
     container.style.inlineSize = "100%";
     container.dataset.scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : "medium";

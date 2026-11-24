@@ -349,11 +349,50 @@
     return lines.join("\n");
   }
 
+  function withContainerScale(code, props) {
+    var scale = ["small", "medium", "large"].includes(props.scale) ? props.scale : null;
+    return scale ? '<div data-scale="' + scale + '">\n  ' + code + '\n</div>' : code;
+  }
+
+  function messageArgs(state, kind, format) {
+    var p = state.props;
+    var fields = kind === "inline-alert"
+      ? ["title", "description", "variant", "icon", "size", "dismissible", "actionLabel", "actionHref"]
+      : ["preset", "heading", "description", "illustrationIcon", "actionLabel", "actionHref", "actionVariant", "size"];
+    var booleanFields = ["dismissible"];
+    var attributes = {
+      actionLabel: "action-label",
+      actionHref: "action-href",
+      illustrationIcon: "illustration-icon",
+      actionVariant: "action-variant",
+    };
+    var parts = [];
+    fields.forEach(function (field) {
+      var value = p[field];
+      if (field === "actionHref" && value && !/^(?:https?:|mailto:|tel:|\/|#)/.test(String(value))) value = "#";
+      if (value === undefined || value === "" || value === false) return;
+      if (format === "njk") {
+        parts.push(field + "=" + (booleanFields.includes(field) ? "true" : JSON.stringify(String(value))));
+      } else if (booleanFields.includes(field)) {
+        if (value === true || value === "true") parts.push(attributes[field] || field);
+      } else {
+        parts.push((attributes[field] || field) + '="' + quoteAttr(String(value)) + '"');
+      }
+    });
+    if (format === "njk") {
+      var macro = kind === "inline-alert" ? "inlineAlert" : "illustratedMessage";
+      return withContainerScale("{{ uif." + macro + "(" + parts.join(", ") + ") }}", p);
+    }
+    return withContainerScale("<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">", p);
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
       "meter": function (state) { return indicatorArgs(state, "meter", "njk"); },
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "njk"); },
+      "inline-alert": function (state) { return messageArgs(state, "inline-alert", "njk"); },
+      "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -420,6 +459,8 @@
       "status-light": function (state) { return indicatorArgs(state, "status-light", "wc"); },
       "meter": function (state) { return indicatorArgs(state, "meter", "wc"); },
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "wc"); },
+      "inline-alert": function (state) { return messageArgs(state, "inline-alert", "wc"); },
+      "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

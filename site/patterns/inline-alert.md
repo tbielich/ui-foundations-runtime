@@ -100,6 +100,7 @@ The default context is medium. A nested container replaces the inherited context
     <tr><td><code>icon</code></td><td><code>icon</code></td><td>Icon name override. Defaults to a variant-appropriate icon; the neutral default has no icon unless set.</td></tr>
     <tr><td><code>size</code></td><td><code>size</code></td><td><code>md</code> (default) or <code>sm</code>. Relative to the inherited container scale.</td></tr>
     <tr><td><code>dismissible</code></td><td><code>dismissible</code></td><td><code>false</code> (default) or present/<code>true</code>. Adds a dismiss button.</td></tr>
+    <tr><td><code>dismissFocusTarget</code> property / <code>dismiss-focus-target</code> attribute</td><td>—</td><td>Optional focus destination after dismissal. Set the property to an <code>HTMLElement</code>, or set the attribute to the ID of an element outside the alert.</td></tr>
   </tbody>
 </table>
 </div>
@@ -108,7 +109,7 @@ The default context is medium. A nested container replaces the inherited context
 <h2 id="behaviors">Behaviors</h2>
 
 <div class="docs-behavior-list">
-  <div class="docs-behavior-item"><div class="docs-behavior-preview" style="inline-size: 100%;">{{ uif.inlineAlert(title="Dismissible", description="Activate the close button to hide this alert.", variant="info", dismissible=true) }}</div><div class="docs-behavior-body"><h3>Dismiss</h3><p>When <code>dismissible</code> is set, a close button appears. Activating it adds the <code>is-hidden</code> class and the Custom Element dispatches a <code>uif-dismiss</code> event. Dismissal does not remove the element from the DOM.</p></div></div>
+  <div class="docs-behavior-item"><div class="docs-behavior-preview" style="inline-size: 100%;">{{ uif.inlineAlert(title="Dismissible", description="Activate the close button to hide this alert.", variant="info", dismissible=true) }}</div><div class="docs-behavior-body"><h3>Dismiss</h3><p>When <code>dismissible</code> is set, a close button appears. Activating it adds the <code>is-hidden</code> class and the Custom Element dispatches a <code>uif-dismiss</code> event. Dismissal does not remove the element from the DOM. Focus moves to a connected target supplied through <code>dismissFocusTarget</code> or <code>dismiss-focus-target</code>. Without a valid explicit target, focus moves to the next focusable element after the alert, or to the previous one when the alert is last.</p></div></div>
   <div class="docs-behavior-item"><div class="docs-behavior-preview" style="inline-size: 100%;">{{ uif.inlineAlert(title="Title only", variant="positive") }}</div><div class="docs-behavior-body"><h3>Title-only</h3><p>The description is optional. When omitted, the title occupies the content area on its own.</p></div></div>
 </div>
 
@@ -205,7 +206,7 @@ Use the brand and mode switches in the preview above. Visual values come from th
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Runtime and examples</strong><span>CSS, Custom Element, static macro and playground are implemented.</span></div></div>
   <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Accessible use of color and role</strong><span>role="alert", decorative icons as a second cue, and labelled dismiss control.</span></div></div>
   <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">○</div><div class="docs-checklist-text"><strong>Figma parity and Code Connect</strong><span>Live source access is unavailable. Design parity is unverified and the mapping example is inactive.</span></div></div>
-  <div class="docs-checklist-item" data-done="false"><div class="docs-checklist-icon">○</div><div class="docs-checklist-text"><strong>Playground code tabs (Nunjucks / Web Component)</strong><span>The HTML tab and live preview work. The Nunjucks and Web Component tabs are not yet wired to a code generator.</span></div></div>
+  <div class="docs-checklist-item" data-done="true"><div class="docs-checklist-icon">✓</div><div class="docs-checklist-text"><strong>Generated examples and interaction evidence</strong><span>The playground generates escaped HTML, Nunjucks and Web Component examples. Browser checks cover actions, dismissal, focus, target size, reflow, forced colors and reduced motion.</span></div></div>
 </div>
 
 Automated checks cover markup, token resolution and naming. They do not certify complete accessibility or live design parity.
