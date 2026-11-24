@@ -12,6 +12,7 @@ const render = (source, context = {}) => env.renderString('{% import "macros/ui.
 test("popover macro binds a labelled trigger and dialog", () => {
   const html = render('{% call uif.popover(triggerId="booking-help", triggerLabel="Booking help", label="Booking details", placement="top") %}<a href="/help">Read help</a>{% endcall %}');
   assert.match(html, /id="booking-help"/);
+  assert.match(html, /class="uif-button outline uif-popover-trigger"/);
   assert.match(html, /aria-haspopup="dialog"/);
   assert.match(html, /aria-expanded="false"/);
   assert.match(html, /<uif-popover trigger="booking-help" label="Booking details" placement="top">/);

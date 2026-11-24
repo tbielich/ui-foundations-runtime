@@ -1382,9 +1382,11 @@
   const renderVanillaPopover = ({ props }) => {
     const wrapper = document.createElement("div");
     wrapper.style.minBlockSize = "12rem";
+    wrapper.style.inlineSize = "100%";
+    wrapper.style.minInlineSize = "0";
     const trigger = document.createElement("button");
     trigger.id = "popover-playground-trigger";
-    trigger.className = "uif-button outline";
+    trigger.className = "uif-button outline uif-popover-trigger";
     trigger.type = "button";
     trigger.textContent = String(props.triggerLabel || "Show booking details");
     const popover = document.createElement("uif-popover");

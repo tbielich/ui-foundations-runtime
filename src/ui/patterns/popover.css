@@ -1,4 +1,11 @@
 @layer components {
+  .uif-popover-trigger {
+    min-inline-size: 0;
+    max-inline-size: min(100%, calc(100vw - var(--size-spacing-400) - var(--size-spacing-400)));
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
   .uif-popover {
     --uif-popover-container-background: var(--color-fill-surface);
     --uif-popover-text-color: var(--color-text-default);

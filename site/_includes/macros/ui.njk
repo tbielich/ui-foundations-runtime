@@ -426,7 +426,7 @@
 
 {% macro popover(triggerId='popover-trigger', triggerLabel='Show details', label='Details', placement='bottom', open=false) -%}
 {%- set placement = placement if placement in ['top', 'bottom', 'left', 'right'] else 'bottom' -%}
-<button id="{{ triggerId | escape }}" class="uif-button outline" type="button" aria-haspopup="dialog" aria-controls="{{ triggerId | escape }}-popover" aria-expanded="{{ 'true' if open else 'false' }}">{{ triggerLabel | escape }}</button>
+<button id="{{ triggerId | escape }}" class="uif-button outline uif-popover-trigger" type="button" aria-haspopup="dialog" aria-controls="{{ triggerId | escape }}-popover" aria-expanded="{{ 'true' if open else 'false' }}">{{ triggerLabel | escape }}</button>
 <uif-popover trigger="{{ triggerId | escape }}" label="{{ label | escape }}" placement="{{ placement }}"{% if open %} open{% endif %}>{{ caller() }}</uif-popover>
 {%- endmacro %}
 

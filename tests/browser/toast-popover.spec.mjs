@@ -137,19 +137,36 @@ test("Popover flips within the viewport and outside interaction dismisses it", a
 test("Feedback overlays retain reflow, forced-color, reduced-motion and axe evidence", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 844 });
   await page.emulateMedia({ forcedColors: "active", reducedMotion: "reduce" });
+  const longTriggerLabel = "Show all booking details and fare conditions before continuing";
   for (const slug of ["toast", "popover"]) {
     const { root, controls } = await openPlayground(page, slug);
     if (slug === "toast") await controls.locator('[name="duration"]').fill("0");
-    if (slug === "popover") await root.getByRole("button", { name: "Show booking details" }).click();
+    if (slug === "popover") {
+      await root.getByRole("button", { name: "Show booking details" }).evaluate((trigger, label) => {
+        trigger.textContent = label;
+      }, longTriggerLabel);
+    }
     await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });
-    const geometry = await root.evaluate((element) => ({
-      documentWidth: document.documentElement.scrollWidth,
-      viewportWidth: innerWidth,
-      rootWidth: element.scrollWidth,
-      rootClientWidth: element.clientWidth,
-    }));
-    expect(geometry.documentWidth).toBeLessThanOrEqual(geometry.viewportWidth + 1);
-    expect(geometry.rootWidth).toBeLessThanOrEqual(geometry.rootClientWidth + 1);
+    if (slug === "popover") await root.getByRole("button", { name: longTriggerLabel }).evaluate((trigger) => trigger.click());
+    const geometry = await root.evaluate((element) => {
+      const triggerBounds = element.querySelector(".uif-popover-trigger")?.getBoundingClientRect();
+      return {
+        documentWidth: document.documentElement.scrollWidth,
+        viewportWidth: innerWidth,
+        rootWidth: element.scrollWidth,
+        rootClientWidth: element.clientWidth,
+        triggerLeft: triggerBounds?.left ?? null,
+        triggerRight: triggerBounds?.right ?? null,
+        triggerWidth: triggerBounds?.width ?? null,
+      };
+    });
+    expect(geometry.documentWidth, JSON.stringify(geometry)).toBeLessThanOrEqual(geometry.viewportWidth + 1);
+    expect(geometry.rootWidth, JSON.stringify(geometry)).toBeLessThanOrEqual(geometry.rootClientWidth + 1);
+    if (slug === "popover") {
+      expect(geometry.triggerLeft).toBeGreaterThanOrEqual(-1);
+      expect(geometry.triggerRight).toBeLessThanOrEqual(geometry.viewportWidth + 1);
+      expect(geometry.triggerWidth).toBeLessThanOrEqual(geometry.viewportWidth + 1);
+    }
     const results = await new AxeBuilder({ page }).include(`#${slug}-playground-root`).analyze();
     expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
     await page.evaluate(() => { document.documentElement.style.fontSize = ""; });
