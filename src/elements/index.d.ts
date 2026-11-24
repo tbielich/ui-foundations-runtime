@@ -60,6 +60,15 @@ export declare class UIPopover extends UIElement {
   close(reason?: string, restoreFocus?: boolean): void;
   toggle(): void;
 }
+export declare class UIBreadcrumbs extends UIElement {}
+export declare class UICard extends UIElement {}
+export declare class UITag extends UIElement {
+  removeTag(): void;
+}
+export declare class UITagGroup extends UIElement {
+  removeTag(tag: UITag): void;
+}
+export declare class UISkeleton extends UIElement {}
 
 // --- Custom Element Tag Name Map ---
 
@@ -73,6 +82,11 @@ declare global {
     "uif-toast": UIToast;
     "uif-toast-region": UIToastRegion;
     "uif-popover": UIPopover;
+    "uif-breadcrumbs": UIBreadcrumbs;
+    "uif-card": UICard;
+    "uif-tag": UITag;
+    "uif-tag-group": UITagGroup;
+    "uif-skeleton": UISkeleton;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

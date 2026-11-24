@@ -27,3 +27,7 @@
 @import url("./patterns/illustrated-message.css") layer(components);
 @import url("./patterns/toast.css") layer(components);
 @import url("./patterns/popover.css") layer(components);
+@import url("./patterns/breadcrumbs.css") layer(components);
+@import url("./patterns/card.css") layer(components);
+@import url("./patterns/tag.css") layer(components);
+@import url("./patterns/skeleton.css") layer(components);

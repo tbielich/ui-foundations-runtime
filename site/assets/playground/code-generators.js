@@ -423,6 +423,33 @@
     return '<button id="popover-example-trigger" type="button" aria-haspopup="dialog" aria-controls="popover-example" aria-expanded="false">' + quoteAttr(triggerLabel) + '</button>\n<uif-popover trigger="popover-example-trigger" label="' + quoteAttr(label) + '" placement="' + quoteAttr(placement) + '">\n  <p>' + quoteAttr(content) + '</p>\n  <a href="#fare-conditions">Review fare conditions</a>\n</uif-popover>';
   }
 
+  function contentPrimitiveCode(state, kind, format) {
+    var p = state.props;
+    if (kind === "breadcrumbs") {
+      if (format === "njk") return '{{ uif.breadcrumbs(items=[{label: "Home", href: "/"}, {label: "Holidays", href: "/holidays"}, {label: "Spain", href: "/spain"}, {label: "Mallorca", href: "/mallorca"}, {label: "Booking", current: true}], label=' + JSON.stringify(String(p.label || "Breadcrumb")) + ', separator=' + JSON.stringify(String(p.separator || "/")) + ', collapseAt=' + Number(p.collapseAt || 4) + ') }}';
+      return '<uif-breadcrumbs label="' + quoteAttr(String(p.label || "Breadcrumb")) + '" separator="' + quoteAttr(String(p.separator || "/")) + '" collapse-at="' + Number(p.collapseAt || 4) + '">\n  <a href="/">Home</a>\n  <a href="/holidays">Holidays</a>\n  <a href="/spain">Spain</a>\n  <a href="/mallorca">Mallorca</a>\n  <span aria-current="page">Booking</span>\n</uif-breadcrumbs>';
+    }
+    if (kind === "card") {
+      var title = String(p.title || "Mallorca escape");
+      var layout = p.layout === "horizontal" ? "horizontal" : "vertical";
+      var selectable = p.selectable === true || p.selectable === "true";
+      var selected = p.selected === true || p.selected === "true";
+      if (format === "njk") return '{% call uif.card(title=' + JSON.stringify(title) + ', layout=' + JSON.stringify(layout) + (selectable ? ', selectable=true, selected=' + selected : ', href="#mallorca"') + ') %}<p>Seven nights with breakfast and direct flights.</p>{% endcall %}';
+      return '<uif-card title="' + quoteAttr(title) + '" layout="' + layout + '"' + (selectable ? ' selectable' + (selected ? ' selected' : '') : ' href="#mallorca"') + '>\n  <p slot="body">Seven nights with breakfast and direct flights.</p>\n  <strong slot="footer">From €499</strong>\n</uif-card>';
+    }
+    if (kind === "tag") {
+      var label = String(p.label || "Family");
+      var size = p.size === "sm" ? "sm" : "md";
+      var removable = p.removable === true || p.removable === "true";
+      if (format === "njk") return '{% call uif.tagGroup(label="Selected filters") %}{{ uif.tag(label=' + JSON.stringify(label) + ', size="' + size + '", removable=' + removable + ') }}{{ uif.tag(label="Beach", size="' + size + '", removable=' + removable + ') }}{% endcall %}';
+      return '<uif-tag-group label="Selected filters">\n  <uif-tag label="' + quoteAttr(label) + '" size="' + size + '"' + (removable ? ' removable' : '') + '></uif-tag>\n  <uif-tag label="Beach" size="' + size + '"' + (removable ? ' removable' : '') + '></uif-tag>\n</uif-tag-group>';
+    }
+    var shape = ["text", "circle", "rectangle"].includes(p.shape) ? p.shape : "text";
+    var lines = Math.max(1, Number(p.lines || 3));
+    if (format === "njk") return '<section aria-busy="true" aria-label="Loading holiday details">{{ uif.skeleton(shape="' + shape + '", lines=' + lines + ') }}</section>';
+    return '<section aria-busy="true" aria-label="Loading holiday details">\n  <uif-skeleton shape="' + shape + '" lines="' + lines + '"></uif-skeleton>\n</section>';
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
@@ -432,6 +459,10 @@
       "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "njk"); },
       "toast": function (state) { return toastCode(state, "njk"); },
       "popover": function (state) { return popoverCode(state, "njk"); },
+      "breadcrumbs": function (state) { return contentPrimitiveCode(state, "breadcrumbs", "njk"); },
+      "card": function (state) { return contentPrimitiveCode(state, "card", "njk"); },
+      "tag": function (state) { return contentPrimitiveCode(state, "tag", "njk"); },
+      "skeleton": function (state) { return contentPrimitiveCode(state, "skeleton", "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -502,6 +533,10 @@
       "illustrated-message": function (state) { return messageArgs(state, "illustrated-message", "wc"); },
       "toast": function (state) { return toastCode(state, "wc"); },
       "popover": function (state) { return popoverCode(state, "wc"); },
+      "breadcrumbs": function (state) { return contentPrimitiveCode(state, "breadcrumbs", "wc"); },
+      "card": function (state) { return contentPrimitiveCode(state, "card", "wc"); },
+      "tag": function (state) { return contentPrimitiveCode(state, "tag", "wc"); },
+      "skeleton": function (state) { return contentPrimitiveCode(state, "skeleton", "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

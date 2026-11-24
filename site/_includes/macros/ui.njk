@@ -430,6 +430,54 @@
 <uif-popover trigger="{{ triggerId | escape }}" label="{{ label | escape }}" placement="{{ placement }}"{% if open %} open{% endif %}>{{ caller() }}</uif-popover>
 {%- endmacro %}
 
+{% macro breadcrumbs(items=[], label='Breadcrumb', separator='/', collapseAt=4) -%}
+{%- set shouldCollapse = items.length > collapseAt -%}
+<nav class="uif-breadcrumbs" aria-label="{{ label | escape }}" style="--uif-breadcrumbs-separator: '{{ separator | escape }}';">
+  <ol class="uif-breadcrumbs-list">
+  {%- for item in items %}
+    {%- set hiddenMiddle = shouldCollapse and loop.index0 > 0 and loop.index0 < items.length - 2 -%}
+    {%- if not hiddenMiddle %}
+    <li class="uif-breadcrumbs-item">{% if item.href and not item.current %}<a href="{{ item.href | escape }}">{{ item.label | escape }}</a>{% else %}<span{% if item.current or loop.last %} aria-current="page"{% endif %}>{{ item.label | escape }}</span>{% endif %}</li>
+    {%- elif loop.index0 == 1 %}
+    <li class="uif-breadcrumbs-item uif-breadcrumbs-disclosure-item"><details class="uif-breadcrumbs-disclosure"><summary class="uif-breadcrumbs-disclosure-trigger" aria-label="Show hidden breadcrumb items">…</summary><ol class="uif-breadcrumbs-hidden-list">
+      {%- for hiddenItem in items.slice(1, items.length - 2) %}<li class="uif-breadcrumbs-item">{% if hiddenItem.href %}<a href="{{ hiddenItem.href | escape }}">{{ hiddenItem.label | escape }}</a>{% else %}<span>{{ hiddenItem.label | escape }}</span>{% endif %}</li>{% endfor -%}
+    </ol></details></li>
+    {%- endif %}
+  {%- endfor %}
+  </ol>
+</nav>
+{%- endmacro %}
+
+{% macro card(title='', layout='vertical', href='', selectable=false, selected=false, actionLabel='') -%}
+{%- set layout = 'horizontal' if layout == 'horizontal' else 'vertical' -%}
+{%- set titleId = 'uif-card-title-' + (title | replace(' ', '-') | lower) -%}
+<article class="uif-card" data-layout="{{ layout }}"{% if title %} aria-labelledby="{{ titleId | escape }}"{% else %} aria-label="Card"{% endif %}{% if selectable %} data-selected="{{ 'true' if selected else 'false' }}"{% endif %}>
+  {%- if title %}<header class="uif-card-header" data-slot="header"><h3 class="uif-card-title" id="{{ titleId | escape }}">{{ title | escape }}</h3></header>{% endif %}
+  <div class="uif-card-body" data-slot="body">{{ caller() }}</div>
+  {%- if selectable or href %}<footer class="uif-card-footer" data-slot="footer">{% if selectable %}<button class="uif-card-control" type="button" aria-pressed="{{ 'true' if selected else 'false' }}">{{ (actionLabel or ('Deselect ' if selected else 'Select ') + (title or 'card')) | escape }}</button>{% else %}<a class="uif-card-control" href="{{ href | escape }}">{{ (actionLabel or 'Open ' + (title or 'card')) | escape }}</a>{% endif %}</footer>{% endif %}
+</article>
+{%- endmacro %}
+
+{% macro tag(label='Tag', size='md', removable=false, icon='', avatarSrc='', removeLabel='') -%}
+<span class="uif-tag{% if size == 'sm' %} sm{% endif %}" role="listitem">
+  {%- if avatarSrc %}<img class="uif-tag-avatar" src="{{ avatarSrc | escape }}" alt="" aria-hidden="true">{% elif icon %}<span class="uif-icon uif-tag-icon" style="--uif-icon-src: url('/assets/icons/{{ icon | escape }}.svg')" aria-hidden="true"></span>{% endif %}
+  <span class="uif-tag-label">{{ label | escape }}</span>
+  {%- if removable %}<button class="uif-tag-remove" type="button" aria-label="{{ (removeLabel or 'Remove ' + label) | escape }}"><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross.svg')" aria-hidden="true"></span></button>{% endif %}
+</span>
+{%- endmacro %}
+
+{% macro tagGroup(label='Tags', overflow='wrap') -%}
+<div class="uif-tag-group" role="list" aria-label="{{ label | escape }}" data-overflow="{{ 'scroll' if overflow == 'scroll' else 'wrap' }}">{{ caller() }}</div>
+{%- endmacro %}
+
+{% macro skeleton(shape='text', lines=1, width='', height='') -%}
+{%- set shape = shape if shape in ['text', 'circle', 'rectangle'] else 'text' -%}
+{%- set lines = lines if shape == 'text' and lines > 0 else 1 -%}
+<span class="uif-skeleton-group" aria-hidden="true">
+  {%- for index in range(0, lines) %}<span class="uif-skeleton {{ shape }}{% if lines > 1 and loop.last %} is-last-line{% endif %}"{% if width or height %} style="{% if width %}inline-size: {{ width | escape }};{% endif %}{% if height %} block-size: {{ height | escape }};{% endif %}"{% endif %}></span>{% endfor %}
+</span>
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

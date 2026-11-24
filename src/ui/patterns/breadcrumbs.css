@@ -1,0 +1,71 @@
+@layer components {
+  .uif-breadcrumbs {
+    --uif-breadcrumbs-separator: "/";
+    --uif-breadcrumbs-gap: var(--size-spacing-200);
+    --uif-breadcrumbs-text-color: var(--color-text-default);
+    --uif-breadcrumbs-link-color: var(--uif-link-text-color-default);
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    color: var(--uif-breadcrumbs-text-color);
+  }
+
+  .uif-breadcrumbs-list,
+  .uif-breadcrumbs-hidden-list {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--uif-breadcrumbs-gap);
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .uif-breadcrumbs-item {
+    display: inline-flex;
+    align-items: baseline;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .uif-breadcrumbs-item:not(:last-child)::after {
+    content: var(--uif-breadcrumbs-separator);
+    flex: none;
+    margin-inline-start: var(--uif-breadcrumbs-gap);
+    color: currentColor;
+  }
+
+  .uif-breadcrumbs a { color: var(--uif-breadcrumbs-link-color); }
+  .uif-breadcrumbs [aria-current="page"] { font-weight: var(--font-weight-600); }
+  .uif-breadcrumbs-disclosure { position: relative; }
+  .uif-breadcrumbs-disclosure-trigger {
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    cursor: pointer;
+  }
+  .uif-breadcrumbs-hidden-list {
+    position: absolute;
+    z-index: var(--zindex-tooltip);
+    inset-block-start: 100%;
+    inset-inline-start: 0;
+    flex-direction: column;
+    align-items: stretch;
+    min-inline-size: min(16rem, calc(100vw - var(--size-spacing-400) * 2));
+    max-inline-size: calc(100vw - var(--size-spacing-400) * 2);
+    padding: var(--size-spacing-300);
+    color: var(--uif-breadcrumbs-text-color);
+    background: var(--color-fill-surface);
+    border: var(--uif-semantic-size-border-default) solid var(--color-border-default);
+    border-radius: var(--size-radius-200);
+  }
+  .uif-breadcrumbs-hidden-list .uif-breadcrumbs-item::after { content: none; }
+  .uif-breadcrumbs :focus-visible {
+    outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
+    outline-offset: var(--uif-semantic-size-border-default);
+  }
+
+  @media (forced-colors: active) {
+    .uif-breadcrumbs-hidden-list { border: 2px solid CanvasText; }
+  }
+}

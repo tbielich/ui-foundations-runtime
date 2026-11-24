@@ -2,9 +2,32 @@
   :where(uif-accordion, uif-accordion-item, uif-tab-list, uif-tab-panel,
     uif-form, uif-form-group, uif-form-field, uif-form-helper, uif-form-actions,
     uif-dialog, uif-meter, uif-progress-bar, uif-inline-alert,
-    uif-illustrated-message, uif-toast-region, uif-toast, uif-popover) {
+    uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
+    uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton) {
     display: block;
   }
+  :where(uif-tag) { display: inline-block; }
+
+  :where(.uif-breadcrumbs-list, .uif-breadcrumbs-hidden-list) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  :where(.uif-breadcrumbs-item:not(:last-child))::after {
+    content: var(--uif-breadcrumbs-separator, "/");
+    margin-inline-start: 0.5em;
+  }
+  :where(.uif-card) { display: grid; border: 1px solid ButtonBorder; }
+  :where(.uif-card[data-selected="true"]) { outline: 2px solid Highlight; }
+  :where(.uif-tag-group) { display: flex; flex-wrap: wrap; gap: 0.5em; }
+  :where(.uif-tag) { display: inline-flex; align-items: center; border: 1px solid ButtonBorder; }
+  :where(.uif-skeleton-group) { display: grid; gap: 0.5em; }
+  :where(.uif-skeleton) { display: block; min-block-size: 1em; border: 1px solid CanvasText; }
+  :where(.uif-skeleton.circle) { inline-size: 3em; block-size: 3em; border-radius: 50%; }
+  :where(.uif-skeleton.rectangle) { min-block-size: 8em; }
 
   :where(uif-tab-panel[hidden], .uif-tab-panel[hidden], .uif-inline-alert.is-hidden) {
     display: none !important;

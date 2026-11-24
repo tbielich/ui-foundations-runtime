@@ -48,6 +48,14 @@ The static macro surface provides `uif.toastRegion`, `uif.toast` and `uif.popove
 
 Figma identity, token reconciliation and Code Connect publication remain deferred for these feedback overlays.
 
+## Content and navigation primitives
+
+Import `ui-foundations/elements/ui-breadcrumbs`, `/ui-card`, `/ui-tag` or `/ui-skeleton`, or use the aggregate elements entry. The registered tags are `<uif-breadcrumbs>`, `<uif-card>`, `<uif-tag-group>` with `<uif-tag>`, and `<uif-skeleton>`.
+
+The static macros are `uif.breadcrumbs`, `uif.card`, `uif.tagGroup`, `uif.tag` and `uif.skeleton`. Breadcrumbs emit a labelled navigation list with a native disclosure for collapsed middle items. Card exposes media/header/body/footer light-DOM regions and one explicit link or selectable button. TagGroup provides roving focus and stable focus after `uif-remove`; selectable Card dispatches `uif-select`. Skeleton placeholders stay hidden from assistive technology while their containing region owns `aria-busy` and its loading label.
+
+Live Figma component/token reconciliation and Code Connect publication remain deferred for these four primitives.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.
