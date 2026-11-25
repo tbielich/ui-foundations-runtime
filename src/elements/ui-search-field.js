@@ -16,63 +16,72 @@ class UISearchField extends UIElement {
   render() {
     const inputId = `${this.id || `uif-search-field-${++nextSearchFieldId}`}-input`;
     const label = this.getAttr("label").trim() || "Search";
-    const input = this.ownerDocument.createElement("input");
-    input.className = "uif-search-field-input";
-    input.id = inputId;
-    input.type = "search";
-    input.name = this.getAttr("name");
-    input.value = this.getAttr("value");
-    input.placeholder = this.getAttr("placeholder");
-    input.disabled = this.getBool("disabled");
 
-    const field = this.ownerDocument.createElement("div");
-    field.className = "uif-search-field";
-    field.toggleAttribute("data-quiet", this.getBool("quiet"));
+    if (!this._input || !this.contains(this._input)) {
+      const field = this.ownerDocument.createElement("div");
+      field.className = "uif-search-field";
 
-    const labelElement = this.ownerDocument.createElement("label");
-    labelElement.className = "uif-search-field-label";
-    labelElement.htmlFor = inputId;
-    labelElement.textContent = label;
+      const labelElement = this.ownerDocument.createElement("label");
+      labelElement.className = "uif-search-field-label";
 
-    const control = this.ownerDocument.createElement("div");
-    control.className = "uif-search-field-control";
+      const control = this.ownerDocument.createElement("div");
+      control.className = "uif-search-field-control";
 
-    const icon = this.ownerDocument.createElement("span");
-    icon.className = "uif-icon uif-search-field-icon";
-    icon.style.setProperty("--uif-icon-src", "url('/assets/icons/search.svg')");
-    icon.setAttribute("aria-hidden", "true");
+      const icon = this.ownerDocument.createElement("span");
+      icon.className = "uif-icon uif-search-field-icon";
+      icon.style.setProperty("--uif-icon-src", "url('/assets/icons/search.svg')");
+      icon.setAttribute("aria-hidden", "true");
 
-    const clear = this.ownerDocument.createElement("button");
-    clear.className = "uif-search-field-clear";
-    clear.type = "button";
-    clear.setAttribute("aria-label", this.getAttr("clear-label").trim() || `Clear ${label}`);
-    const clearIcon = this.ownerDocument.createElement("span");
-    clearIcon.className = "uif-icon";
-    clearIcon.style.setProperty("--uif-icon-src", "url('/assets/icons/cross-circled.svg')");
-    clearIcon.setAttribute("aria-hidden", "true");
-    clear.append(clearIcon);
+      const input = this.ownerDocument.createElement("input");
+      input.className = "uif-search-field-input";
+      input.type = "search";
+      input.addEventListener("input", () => this._syncInput());
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") this._emitSearch(input.value);
+      });
 
-    const syncInput = () => {
-      clear.disabled = input.disabled || input.value.length === 0;
-      this._reflectValue(input.value);
-    };
-    input.addEventListener("input", syncInput);
-    input.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") this._emitSearch(input.value);
-    });
-    clear.addEventListener("click", () => {
-      if (clear.disabled) return;
-      input.value = "";
-      input.dispatchEvent(new Event("input", { bubbles: true }));
-      input.dispatchEvent(new Event("change", { bubbles: true }));
-      input.focus();
-    });
+      const clear = this.ownerDocument.createElement("button");
+      clear.className = "uif-search-field-clear";
+      clear.type = "button";
+      const clearIcon = this.ownerDocument.createElement("span");
+      clearIcon.className = "uif-icon";
+      clearIcon.style.setProperty("--uif-icon-src", "url('/assets/icons/cross-circled.svg')");
+      clearIcon.setAttribute("aria-hidden", "true");
+      clear.append(clearIcon);
+      clear.addEventListener("click", () => {
+        if (clear.disabled) return;
+        input.value = "";
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        input.dispatchEvent(new Event("change", { bubbles: true }));
+        input.focus();
+      });
 
-    control.append(icon, input, clear);
-    field.append(labelElement, control);
-    this.replaceChildren(field);
-    this._input = input;
-    syncInput();
+      control.append(icon, input, clear);
+      field.append(labelElement, control);
+      this.replaceChildren(field);
+      this._field = field;
+      this._label = labelElement;
+      this._input = input;
+      this._clear = clear;
+    }
+
+    this._field.toggleAttribute("data-quiet", this.getBool("quiet"));
+    this._label.htmlFor = inputId;
+    this._label.textContent = label;
+    this._input.id = inputId;
+    this._input.name = this.getAttr("name");
+    const value = this.getAttr("value");
+    if (this._input.value !== value) this._input.value = value;
+    this._input.placeholder = this.getAttr("placeholder");
+    this._input.disabled = this.getBool("disabled");
+    this._clear.setAttribute("aria-label", this.getAttr("clear-label").trim() || `Clear ${label}`);
+    this._syncInput();
+  }
+
+  _syncInput() {
+    if (!this._input || !this._clear) return;
+    this._clear.disabled = this._input.disabled || this._input.value.length === 0;
+    this._reflectValue(this._input.value);
   }
 
   _reflectValue(value) {

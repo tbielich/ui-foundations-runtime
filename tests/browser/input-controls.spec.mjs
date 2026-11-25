@@ -123,36 +123,41 @@ test("Segmented Control uses native radio navigation and disabled state", async 
   await expect.poll(() => page.evaluate(() => window.__segmentChanges)).toEqual(["grid"]);
 });
 
-test("Input controls preserve live values across state renders", async ({ page }) => {
+test("Input controls preserve live values and focus across state renders", async ({ page }) => {
   let root = await openPlayground(page, "search-field");
-  await root.getByRole("searchbox", { name: "Search holidays" }).fill("Tenerife");
-  await root.locator("uif-search-field").evaluate((element) => {
-    element.setAttribute("quiet", "");
-    element.setAttribute("disabled", "");
-  });
-  await expect(root.getByRole("searchbox", { name: "Search holidays" })).toHaveValue("Tenerife");
+  const search = root.getByRole("searchbox", { name: "Search holidays" });
+  await search.fill("Tenerife");
+  await search.evaluate((input) => input.setSelectionRange(2, 6));
+  await root.locator("uif-search-field").evaluate((element) => element.setAttribute("quiet", ""));
+  await expect(search).toHaveValue("Tenerife");
+  await expect(search).toBeFocused();
+  await expect.poll(() => search.evaluate((input) => [input.selectionStart, input.selectionEnd])).toEqual([2, 6]);
 
   root = await openPlayground(page, "number-field");
-  await root.getByRole("spinbutton", { name: "Holiday budget" }).fill("475");
+  const number = root.getByRole("spinbutton", { name: "Holiday budget" });
+  await number.fill("475");
   await root.locator("uif-number-field").evaluate((element) => {
     element.setAttribute("invalid", "");
     element.setAttribute("error", "Check this amount");
     element.setAttribute("readonly", "");
   });
-  await expect(root.getByRole("spinbutton", { name: "Holiday budget" })).toHaveValue("475");
+  await expect(number).toHaveValue("475");
+  await expect(number).toBeFocused();
 
   root = await openPlayground(page, "range-slider");
   const lower = root.getByRole("slider", { name: "Minimum" });
+  const upper = root.getByRole("slider", { name: "Maximum" });
   await lower.focus();
   await page.keyboard.press("ArrowRight");
   await expect(lower).toHaveValue("350");
-  await root.locator("uif-range-slider").evaluate((element) => {
-    element.setAttribute("invalid", "");
-    element.setAttribute("error", "Check this range");
-    element.setAttribute("disabled", "");
-  });
-  await expect(root.getByRole("slider", { name: "Minimum" })).toHaveValue("350");
-  await expect(root.getByRole("slider", { name: "Maximum" })).toHaveValue("1200");
+  await root.locator("uif-range-slider").evaluate((element) => element.setAttribute("invalid", ""));
+  await expect(lower).toHaveValue("350");
+  await expect(lower).toBeFocused();
+
+  await upper.focus();
+  await root.locator("uif-range-slider").evaluate((element) => element.setAttribute("error", "Check this range"));
+  await expect(upper).toHaveValue("1200");
+  await expect(upper).toBeFocused();
 });
 
 test("Segmented Control resolves enabled fallbacks across static and dynamic states", async ({ page }) => {

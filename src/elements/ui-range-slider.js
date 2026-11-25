@@ -35,119 +35,148 @@ class UIRangeSlider extends UIElement {
     const invalid = this.getBool("invalid");
     const label = this.getAttr("label").trim() || "Range";
 
-    const fieldset = this.ownerDocument.createElement("fieldset");
-    fieldset.className = "uif-range-slider";
-    fieldset.disabled = disabled;
-    fieldset.toggleAttribute("data-invalid", invalid);
-    fieldset.dataset.activeThumb = lower === upper && lower === max ? "lower" : "upper";
+    if (!this._lowerInput || !this.contains(this._lowerInput)) {
+      const fieldset = this.ownerDocument.createElement("fieldset");
+      fieldset.className = "uif-range-slider";
 
-    const legend = this.ownerDocument.createElement("legend");
-    legend.className = "uif-range-slider-label";
-    legend.textContent = label;
-    fieldset.append(legend);
+      const legend = this.ownerDocument.createElement("legend");
+      legend.className = "uif-range-slider-label";
+      fieldset.append(legend);
 
-    const values = this.ownerDocument.createElement("div");
-    values.className = "uif-range-slider-values";
+      const values = this.ownerDocument.createElement("div");
+      values.className = "uif-range-slider-values";
+      const createValue = (kind) => {
+        const wrapper = this.ownerDocument.createElement("span");
+        wrapper.className = "uif-range-slider-value";
+        const labelElement = this.ownerDocument.createElement("label");
+        const output = this.ownerDocument.createElement("output");
+        output.className = `uif-range-slider-output uif-range-slider-output-${kind}`;
+        wrapper.append(labelElement, output);
+        values.append(wrapper);
+        return { labelElement, output };
+      };
+      const lowerValue = createValue("lower");
+      const upperValue = createValue("upper");
+      fieldset.append(values);
 
-    const createValue = (kind, value) => {
-      const wrapper = this.ownerDocument.createElement("span");
-      wrapper.className = "uif-range-slider-value";
-      const labelElement = this.ownerDocument.createElement("label");
-      labelElement.htmlFor = `${baseId}-${kind}`;
-      labelElement.textContent = this.getAttr(`${kind === "lower" ? "min" : "max"}-label`).trim() || (kind === "lower" ? "Minimum" : "Maximum");
-      const output = this.ownerDocument.createElement("output");
-      output.className = `uif-range-slider-output uif-range-slider-output-${kind}`;
-      output.htmlFor = `${baseId}-${kind}`;
-      output.textContent = String(value);
-      wrapper.append(labelElement, output);
-      values.append(wrapper);
-      return output;
-    };
+      const track = this.ownerDocument.createElement("div");
+      track.className = "uif-range-slider-track";
+      const fill = this.ownerDocument.createElement("span");
+      fill.className = "uif-range-slider-fill";
+      fill.setAttribute("aria-hidden", "true");
+      track.append(fill);
 
-    const lowerOutput = createValue("lower", lower);
-    const upperOutput = createValue("upper", upper);
-    fieldset.append(values);
+      const createInput = (kind) => {
+        const input = this.ownerDocument.createElement("input");
+        input.className = `uif-range-slider-input uif-range-slider-input-${kind}`;
+        input.type = "range";
+        const activate = () => { fieldset.dataset.activeThumb = kind; };
+        input.addEventListener("focus", activate);
+        input.addEventListener("pointerdown", activate);
+        input.addEventListener("input", () => this._syncRange(input, true));
+        input.addEventListener("change", () => this._syncRange(input, true));
+        return input;
+      };
+      const lowerInput = createInput("lower");
+      const upperInput = createInput("upper");
+      track.append(lowerInput, upperInput);
+      fieldset.append(track);
 
-    const track = this.ownerDocument.createElement("div");
-    track.className = "uif-range-slider-track";
-    const fill = this.ownerDocument.createElement("span");
-    fill.className = "uif-range-slider-fill";
-    fill.setAttribute("aria-hidden", "true");
-    track.append(fill);
+      const errorElement = this.ownerDocument.createElement("p");
+      errorElement.className = "uif-range-slider-error";
+      this.replaceChildren(fieldset);
+      this._fieldset = fieldset;
+      this._legend = legend;
+      this._lowerLabel = lowerValue.labelElement;
+      this._upperLabel = upperValue.labelElement;
+      this._lowerOutput = lowerValue.output;
+      this._upperOutput = upperValue.output;
+      this._lowerInput = lowerInput;
+      this._upperInput = upperInput;
+      this._error = errorElement;
+      fieldset.dataset.activeThumb = lower === upper && lower === max ? "lower" : "upper";
+    }
 
-    const createInput = (kind, value, name) => {
-      const input = this.ownerDocument.createElement("input");
-      input.className = `uif-range-slider-input uif-range-slider-input-${kind}`;
-      input.id = `${baseId}-${kind}`;
-      input.type = "range";
-      input.name = name;
-      input.min = String(min);
-      input.max = String(max);
-      input.step = String(step);
-      input.value = String(value);
-      if (invalid) input.setAttribute("aria-invalid", "true");
-      return input;
-    };
+    this._rangeMin = min;
+    this._rangeMax = max;
+    if (this._fieldset.disabled !== disabled) this._fieldset.disabled = disabled;
+    this._fieldset.toggleAttribute("data-invalid", invalid);
+    this._legend.textContent = label;
 
-    const lowerInput = createInput("lower", lower, this.getAttr("lower-name", "min"));
-    const upperInput = createInput("upper", upper, this.getAttr("upper-name", "max"));
-    track.append(lowerInput, upperInput);
-    fieldset.append(track);
+    const lowerId = `${baseId}-lower`;
+    const upperId = `${baseId}-upper`;
+    const lowerLabel = this.getAttr("min-label").trim() || "Minimum";
+    const upperLabel = this.getAttr("max-label").trim() || "Maximum";
+    this._lowerLabel.htmlFor = lowerId;
+    this._lowerLabel.textContent = lowerLabel;
+    this._upperLabel.htmlFor = upperId;
+    this._upperLabel.textContent = upperLabel;
+    this._lowerOutput.htmlFor = lowerId;
+    this._upperOutput.htmlFor = upperId;
+
+    this._lowerInput.id = lowerId;
+    this._lowerInput.name = this.getAttr("lower-name", "min");
+    this._upperInput.id = upperId;
+    this._upperInput.name = this.getAttr("upper-name", "max");
+    this._lowerInput.min = String(min);
+    this._lowerInput.max = String(upper);
+    this._upperInput.min = String(lower);
+    this._upperInput.max = String(max);
+    this._lowerInput.step = String(step);
+    this._upperInput.step = String(step);
+    if (this._lowerInput.value !== String(lower)) this._lowerInput.value = String(lower);
+    if (this._upperInput.value !== String(upper)) this._upperInput.value = String(upper);
+    if (invalid) {
+      this._lowerInput.setAttribute("aria-invalid", "true");
+      this._upperInput.setAttribute("aria-invalid", "true");
+    } else {
+      this._lowerInput.removeAttribute("aria-invalid");
+      this._upperInput.removeAttribute("aria-invalid");
+    }
 
     const error = this.getAttr("error").trim();
     if (error) {
-      const errorElement = this.ownerDocument.createElement("p");
-      errorElement.className = "uif-range-slider-error";
-      errorElement.id = `${baseId}-error`;
-      errorElement.textContent = error;
-      lowerInput.setAttribute("aria-describedby", errorElement.id);
-      upperInput.setAttribute("aria-describedby", errorElement.id);
-      fieldset.append(errorElement);
+      this._error.id = `${baseId}-error`;
+      this._error.textContent = error;
+      this._fieldset.append(this._error);
+      this._lowerInput.setAttribute("aria-describedby", this._error.id);
+      this._upperInput.setAttribute("aria-describedby", this._error.id);
+    } else {
+      this._error.remove();
+      this._lowerInput.removeAttribute("aria-describedby");
+      this._upperInput.removeAttribute("aria-describedby");
     }
+    this._syncRange(null, false);
+  }
 
-    const sync = (source, emit) => {
-      let nextLower = Number(lowerInput.value);
-      let nextUpper = Number(upperInput.value);
-      if (source === lowerInput && nextLower > nextUpper) nextLower = nextUpper;
-      if (source === upperInput && nextUpper < nextLower) nextUpper = nextLower;
-      lowerInput.value = String(nextLower);
-      upperInput.value = String(nextUpper);
-      lowerInput.max = String(nextUpper);
-      upperInput.min = String(nextLower);
-      lowerOutput.value = String(nextLower);
-      lowerOutput.textContent = String(nextLower);
-      upperOutput.value = String(nextUpper);
-      upperOutput.textContent = String(nextUpper);
-      lowerInput.setAttribute("aria-valuetext", `${lowerOutput.previousElementSibling.textContent}: ${nextLower}`);
-      upperInput.setAttribute("aria-valuetext", `${upperOutput.previousElementSibling.textContent}: ${nextUpper}`);
-      const span = max - min || 1;
-      fieldset.style.setProperty("--uif-range-slider-lower", `${((nextLower - min) / span) * 100}%`);
-      fieldset.style.setProperty("--uif-range-slider-upper", `${((nextUpper - min) / span) * 100}%`);
-      if (emit) {
-        this._reflectValues(nextLower, nextUpper);
-        this.dispatchEvent(new CustomEvent("uif-change", {
-          bubbles: true,
-          detail: { lower: nextLower, upper: nextUpper },
-        }));
-      }
-    };
-
-    const inputs = [
-      [lowerInput, "lower"],
-      [upperInput, "upper"],
-    ];
-    for (const [input, kind] of inputs) {
-      const activate = () => { fieldset.dataset.activeThumb = kind; };
-      input.addEventListener("focus", activate);
-      input.addEventListener("pointerdown", activate);
-      input.addEventListener("input", () => sync(input, true));
-      input.addEventListener("change", () => sync(input, true));
+  _syncRange(source, emit) {
+    const lowerInput = this._lowerInput;
+    const upperInput = this._upperInput;
+    if (!lowerInput || !upperInput) return;
+    let nextLower = Number(lowerInput.value);
+    let nextUpper = Number(upperInput.value);
+    if (source === lowerInput && nextLower > nextUpper) nextLower = nextUpper;
+    if (source === upperInput && nextUpper < nextLower) nextUpper = nextLower;
+    lowerInput.value = String(nextLower);
+    upperInput.value = String(nextUpper);
+    lowerInput.max = String(nextUpper);
+    upperInput.min = String(nextLower);
+    this._lowerOutput.value = String(nextLower);
+    this._lowerOutput.textContent = String(nextLower);
+    this._upperOutput.value = String(nextUpper);
+    this._upperOutput.textContent = String(nextUpper);
+    lowerInput.setAttribute("aria-valuetext", `${this._lowerLabel.textContent}: ${nextLower}`);
+    upperInput.setAttribute("aria-valuetext", `${this._upperLabel.textContent}: ${nextUpper}`);
+    const span = this._rangeMax - this._rangeMin || 1;
+    this._fieldset.style.setProperty("--uif-range-slider-lower", `${((nextLower - this._rangeMin) / span) * 100}%`);
+    this._fieldset.style.setProperty("--uif-range-slider-upper", `${((nextUpper - this._rangeMin) / span) * 100}%`);
+    if (emit) {
+      this._reflectValues(nextLower, nextUpper);
+      this.dispatchEvent(new CustomEvent("uif-change", {
+        bubbles: true,
+        detail: { lower: nextLower, upper: nextUpper },
+      }));
     }
-
-    this.replaceChildren(fieldset);
-    this._lowerInput = lowerInput;
-    this._upperInput = upperInput;
-    sync(null, false);
   }
 
   _reflectValues(lower, upper) {

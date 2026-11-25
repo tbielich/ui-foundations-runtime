@@ -64,77 +64,91 @@ class UINumberField extends UIElement {
     const readonly = this.getBool("readonly");
     const invalid = this.getBool("invalid");
 
-    const field = this.ownerDocument.createElement("div");
-    field.className = "uif-number-field";
-    field.toggleAttribute("data-invalid", invalid);
+    if (!this._input || !this.contains(this._input)) {
+      const field = this.ownerDocument.createElement("div");
+      field.className = "uif-number-field";
 
-    const labelElement = this.ownerDocument.createElement("label");
-    labelElement.className = "uif-number-field-label";
-    labelElement.htmlFor = inputId;
-    labelElement.textContent = label;
+      const labelElement = this.ownerDocument.createElement("label");
+      labelElement.className = "uif-number-field-label";
 
-    const control = this.ownerDocument.createElement("div");
-    control.className = "uif-number-field-control";
+      const control = this.ownerDocument.createElement("div");
+      control.className = "uif-number-field-control";
 
-    const input = this.ownerDocument.createElement("input");
-    input.className = "uif-number-field-input";
-    input.id = inputId;
-    input.type = "number";
-    input.name = this.getAttr("name");
-    input.value = value === null ? "" : String(value);
-    if (min !== null) input.min = String(min);
-    if (max !== null) input.max = String(max);
-    input.step = String(step);
-    input.disabled = disabled;
-    input.readOnly = readonly;
-    if (invalid) input.setAttribute("aria-invalid", "true");
+      const input = this.ownerDocument.createElement("input");
+      input.className = "uif-number-field-input";
+      input.type = "number";
+      const syncInput = () => {
+        this._reflectValue(input.value);
+        this._syncFormatted();
+      };
+      input.addEventListener("input", syncInput);
+      input.addEventListener("change", syncInput);
 
-    const output = this.ownerDocument.createElement("output");
-    output.className = "uif-number-field-formatted";
-    output.id = outputId;
-    output.htmlFor = inputId;
+      const makeButton = (direction) => {
+        const button = this.ownerDocument.createElement("button");
+        button.className = `uif-number-field-step uif-number-field-step-${direction}`;
+        button.type = "button";
+        const icon = this.ownerDocument.createElement("span");
+        icon.className = "uif-icon";
+        icon.style.setProperty("--uif-icon-src", `url('/assets/icons/${direction === "down" ? "minus" : "plus"}-circled.svg')`);
+        icon.setAttribute("aria-hidden", "true");
+        button.append(icon);
+        button.addEventListener("click", () => this._step(direction));
+        return button;
+      };
 
-    const makeButton = (direction) => {
-      const button = this.ownerDocument.createElement("button");
-      button.className = `uif-number-field-step uif-number-field-step-${direction}`;
-      button.type = "button";
-      button.disabled = disabled || readonly;
-      button.setAttribute("aria-label", `${direction === "down" ? "Decrease" : "Increase"} ${label}`);
-      const icon = this.ownerDocument.createElement("span");
-      icon.className = "uif-icon";
-      icon.style.setProperty("--uif-icon-src", `url('/assets/icons/${direction === "down" ? "minus" : "plus"}-circled.svg')`);
-      icon.setAttribute("aria-hidden", "true");
-      button.append(icon);
-      button.addEventListener("click", () => this._step(direction));
-      return button;
-    };
+      const down = makeButton("down");
+      const up = makeButton("up");
+      const output = this.ownerDocument.createElement("output");
+      output.className = "uif-number-field-formatted";
+      const errorElement = this.ownerDocument.createElement("p");
+      errorElement.className = "uif-number-field-error";
 
-    const down = makeButton("down");
-    const up = makeButton("up");
-    control.append(down, input, up);
-    field.append(labelElement, control, output);
+      control.append(down, input, up);
+      field.append(labelElement, control, output);
+      this.replaceChildren(field);
+      this._field = field;
+      this._label = labelElement;
+      this._input = input;
+      this._down = down;
+      this._up = up;
+      this._output = output;
+      this._error = errorElement;
+    }
+
+    this._field.toggleAttribute("data-invalid", invalid);
+    this._label.htmlFor = inputId;
+    this._label.textContent = label;
+    this._input.id = inputId;
+    this._input.name = this.getAttr("name");
+    const normalizedValue = value === null ? "" : String(value);
+    if (this._input.value !== normalizedValue) this._input.value = normalizedValue;
+    if (min === null) this._input.removeAttribute("min");
+    else this._input.min = String(min);
+    if (max === null) this._input.removeAttribute("max");
+    else this._input.max = String(max);
+    this._input.step = String(step);
+    this._input.disabled = disabled;
+    this._input.readOnly = readonly;
+    if (invalid) this._input.setAttribute("aria-invalid", "true");
+    else this._input.removeAttribute("aria-invalid");
+    this._down.disabled = disabled || readonly;
+    this._up.disabled = disabled || readonly;
+    this._down.setAttribute("aria-label", `Decrease ${label}`);
+    this._up.setAttribute("aria-label", `Increase ${label}`);
+    this._output.id = outputId;
+    this._output.htmlFor = inputId;
 
     const error = this.getAttr("error").trim();
     if (error) {
-      const errorElement = this.ownerDocument.createElement("p");
-      errorElement.className = "uif-number-field-error";
-      errorElement.id = errorId;
-      errorElement.textContent = error;
-      input.setAttribute("aria-describedby", `${outputId} ${errorId}`);
-      field.append(errorElement);
+      this._error.id = errorId;
+      this._error.textContent = error;
+      this._field.append(this._error);
+      this._input.setAttribute("aria-describedby", `${outputId} ${errorId}`);
     } else {
-      input.setAttribute("aria-describedby", outputId);
+      this._error.remove();
+      this._input.setAttribute("aria-describedby", outputId);
     }
-
-    const syncInput = () => {
-      this._reflectValue(input.value);
-      this._syncFormatted();
-    };
-    input.addEventListener("input", syncInput);
-    input.addEventListener("change", syncInput);
-    this.replaceChildren(field);
-    this._input = input;
-    this._output = output;
     this._syncFormatted();
   }
 

@@ -577,10 +577,29 @@
 {% macro rangeSlider(id='', label='Range', min=0, max=100, step=1, lower=25, upper=75, minLabel='Minimum', maxLabel='Maximum', disabled=false, invalid=false, error='') -%}
 {%- set fieldId = id | trim -%}
 {%- if fieldId %}
-<fieldset class="uif-range-slider" data-active-thumb="{{ 'lower' if lower == upper and lower == max else 'upper' }}" style="--uif-range-slider-lower: {{ ((lower - min) / (max - min) * 100) if max > min else 0 }}%; --uif-range-slider-upper: {{ ((upper - min) / (max - min) * 100) if max > min else 100 }}%;"{% if disabled %} disabled{% endif %}{% if invalid %} data-invalid{% endif %}>
+{%- set minNumber = min | float -%}
+{%- set hasMin = min !== '' and min !== none and minNumber is number and minNumber == minNumber and minNumber - minNumber == 0 -%}
+{%- set minNumber = minNumber if hasMin else 0 -%}
+{%- set maxNumber = max | float -%}
+{%- set hasMax = max !== '' and max !== none and maxNumber is number and maxNumber == maxNumber and maxNumber - maxNumber == 0 -%}
+{%- set maxNumber = maxNumber if hasMax else 100 -%}
+{%- set maxNumber = minNumber if maxNumber < minNumber else maxNumber -%}
+{%- set stepNumber = step | float -%}
+{%- set hasStep = stepNumber is number and stepNumber == stepNumber and stepNumber - stepNumber == 0 and stepNumber > 0 -%}
+{%- set stepNumber = stepNumber if hasStep else 1 -%}
+{%- set lowerNumber = lower | float -%}
+{%- set hasLower = lower !== '' and lower !== none and lowerNumber is number and lowerNumber == lowerNumber and lowerNumber - lowerNumber == 0 -%}
+{%- set lowerNumber = lowerNumber if hasLower else minNumber -%}
+{%- set lowerNumber = minNumber if lowerNumber < minNumber else (maxNumber if lowerNumber > maxNumber else lowerNumber) -%}
+{%- set upperNumber = upper | float -%}
+{%- set hasUpper = upper !== '' and upper !== none and upperNumber is number and upperNumber == upperNumber and upperNumber - upperNumber == 0 -%}
+{%- set upperNumber = upperNumber if hasUpper else maxNumber -%}
+{%- set upperNumber = lowerNumber if upperNumber < lowerNumber else (maxNumber if upperNumber > maxNumber else upperNumber) -%}
+{%- set span = (maxNumber - minNumber) if maxNumber > minNumber else 1 -%}
+<fieldset class="uif-range-slider" data-active-thumb="{{ 'lower' if lowerNumber == upperNumber and lowerNumber == maxNumber else 'upper' }}" style="--uif-range-slider-lower: {{ (lowerNumber - minNumber) / span * 100 }}%; --uif-range-slider-upper: {{ (upperNumber - minNumber) / span * 100 }}%;"{% if disabled %} disabled{% endif %}{% if invalid %} data-invalid{% endif %}>
   <legend class="uif-range-slider-label">{{ label | escape }}</legend>
-  <div class="uif-range-slider-values"><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-lower">{{ minLabel | escape }}</label><output class="uif-range-slider-output" for="{{ fieldId | escape }}-lower">{{ lower }}</output></span><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-upper">{{ maxLabel | escape }}</label><output class="uif-range-slider-output" for="{{ fieldId | escape }}-upper">{{ upper }}</output></span></div>
-  <div class="uif-range-slider-track"><span class="uif-range-slider-fill" aria-hidden="true"></span><input class="uif-range-slider-input uif-range-slider-input-lower" id="{{ fieldId | escape }}-lower" type="range" name="min" min="{{ min }}" max="{{ upper }}" step="{{ step }}" value="{{ lower }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}><input class="uif-range-slider-input uif-range-slider-input-upper" id="{{ fieldId | escape }}-upper" type="range" name="max" min="{{ lower }}" max="{{ max }}" step="{{ step }}" value="{{ upper }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}></div>
+  <div class="uif-range-slider-values"><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-lower">{{ minLabel | escape }}</label><output class="uif-range-slider-output" for="{{ fieldId | escape }}-lower">{{ lowerNumber }}</output></span><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-upper">{{ maxLabel | escape }}</label><output class="uif-range-slider-output" for="{{ fieldId | escape }}-upper">{{ upperNumber }}</output></span></div>
+  <div class="uif-range-slider-track"><span class="uif-range-slider-fill" aria-hidden="true"></span><input class="uif-range-slider-input uif-range-slider-input-lower" id="{{ fieldId | escape }}-lower" type="range" name="min" min="{{ minNumber }}" max="{{ upperNumber }}" step="{{ stepNumber }}" value="{{ lowerNumber }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}><input class="uif-range-slider-input uif-range-slider-input-upper" id="{{ fieldId | escape }}-upper" type="range" name="max" min="{{ lowerNumber }}" max="{{ maxNumber }}" step="{{ stepNumber }}" value="{{ upperNumber }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}></div>
   {%- if error %}<p class="uif-range-slider-error" id="{{ fieldId | escape }}-error">{{ error | escape }}</p>{% endif %}
 </fieldset>
 {%- else %}<!-- uif.rangeSlider requires a non-empty id -->{% endif %}
