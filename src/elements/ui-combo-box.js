@@ -1,4 +1,5 @@
 import { UIElement, define } from "./base.js";
+import { connectFormReset, disconnectFormReset } from "./form-reset.js";
 
 let nextComboBoxId = 0;
 
@@ -18,6 +19,7 @@ class UIComboBox extends UIElement {
   connectedCallback() {
     if (!this._optionData) this._optionData = this._readAuthoredOptions();
     super.connectedCallback();
+    connectFormReset(this, this._hidden?.form, () => this._resetFormValue());
     this.ownerDocument.addEventListener("pointerdown", this._handleOutsidePointer);
     window.addEventListener("resize", this._handleViewportChange);
     window.addEventListener("scroll", this._handleViewportChange, true);
@@ -26,6 +28,7 @@ class UIComboBox extends UIElement {
   }
 
   disconnectedCallback() {
+    disconnectFormReset(this);
     this.ownerDocument.removeEventListener("pointerdown", this._handleOutsidePointer);
     window.removeEventListener("resize", this._handleViewportChange);
     window.removeEventListener("scroll", this._handleViewportChange, true);
@@ -35,6 +38,14 @@ class UIComboBox extends UIElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value" && this._reflectingValue) return;
+    if (name === "value" && this._input) {
+      const defaultValue = String(newValue ?? "");
+      const selected = this._optionData.find((option) => option.value === defaultValue);
+      this._defaultValue = defaultValue;
+      this._defaultQuery = selected?.textValue ?? "";
+      this._input.defaultValue = this._defaultQuery;
+      this._hidden.defaultValue = defaultValue;
+    }
     super.attributeChangedCallback(name, oldValue, newValue);
   }
 
@@ -48,6 +59,7 @@ class UIComboBox extends UIElement {
     const loading = this.getBool("loading");
     const error = this.getAttr("error").trim();
     const invalid = this.getBool("invalid") || Boolean(error);
+    const validationMessage = error || (invalid ? "Select a valid option." : "");
 
     this._label.textContent = label;
     this._input.placeholder = this.getAttr("placeholder");
@@ -74,14 +86,14 @@ class UIComboBox extends UIElement {
       this._hidden.value = this._selectedValue;
     }
 
-    this._error.textContent = error;
-    this._error.hidden = !error;
-    if (error) this._input.setAttribute("aria-describedby", this._error.id);
+    this._error.textContent = validationMessage;
+    this._error.hidden = !validationMessage;
+    if (validationMessage) this._input.setAttribute("aria-describedby", this._error.id);
     else this._input.removeAttribute("aria-describedby");
 
     if (disabled) this.close();
     this._renderOptions(false);
-    this._announceStateChange(loading, error);
+    this._announceStateChange(loading);
   }
 
   _createStructure() {
@@ -140,11 +152,12 @@ class UIComboBox extends UIElement {
     error.id = `${baseId}-error`;
     error.hidden = true;
 
-    const status = this.ownerDocument.createElement("span");
+    const status = this.ownerDocument.createElement("p");
     status.className = "uif-combo-box-status";
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
+    status.hidden = true;
 
     input.addEventListener("input", () => {
       if (this._committing) return;
@@ -193,10 +206,12 @@ class UIComboBox extends UIElement {
     const selected = this._optionData.find((option) => option.value === initialValue);
     this._selectedValue = initialValue;
     this._query = selected?.textValue ?? "";
+    this._defaultValue = initialValue;
+    this._defaultQuery = this._query;
     input.value = this._query;
     hidden.value = initialValue;
-    input.defaultValue = this._query;
-    hidden.defaultValue = initialValue;
+    input.defaultValue = this._defaultQuery;
+    hidden.defaultValue = this._defaultValue;
     this._lastValueAttribute = initialValue;
   }
 
@@ -282,9 +297,8 @@ class UIComboBox extends UIElement {
     const loading = this.getBool("loading");
     const error = this.getAttr("error").trim();
     let stateMessage = "";
-    if (loading) stateMessage = this.getAttr("loading-message").trim() || "Loading options…";
-    else if (error && filtered.length === 0) stateMessage = this.getAttr("error-message").trim() || error;
-    else if (filtered.length === 0) stateMessage = this.getAttr("empty-message").trim() || "No suggestions found.";
+    if (!loading && error && filtered.length === 0) stateMessage = this.getAttr("error-message").trim() || error;
+    else if (!loading && filtered.length === 0) stateMessage = this.getAttr("empty-message").trim() || "No suggestions found.";
     this._state.textContent = stateMessage;
     this._state.hidden = !stateMessage;
     this._listbox.hidden = filtered.length === 0;
@@ -368,6 +382,23 @@ class UIComboBox extends UIElement {
     this._input.value = this._query;
   }
 
+  _resetFormValue() {
+    const value = this._defaultValue ?? "";
+    const selected = this._optionData.find((option) => option.value === value);
+    this._selectedValue = value;
+    this._query = this._defaultQuery ?? selected?.textValue ?? "";
+    this._activeKey = selected?.key ?? "";
+    this._input.value = this._query;
+    this._hidden.value = value;
+    this._reflectValue(value);
+    this.close();
+    this._renderOptions(false);
+    if (!this.getBool("loading")) {
+      this._status.textContent = "";
+      this._status.hidden = true;
+    }
+  }
+
   _reflectValue(value) {
     this._lastValueAttribute = value;
     if (this.getAttr("value") === value) return;
@@ -376,20 +407,18 @@ class UIComboBox extends UIElement {
     this._reflectingValue = false;
   }
 
-  _announceStateChange(loading, error) {
+  _announceStateChange(loading) {
     if (loading && !this._lastLoading) {
-      this._announce(this.getAttr("loading-message").trim() || "Loading options.");
+      this._announce(this.getAttr("loading-message").trim() || "Loading options…");
     } else if (!loading && this._lastLoading) {
       this._renderOptions(true);
-    } else if (error && error !== this._lastError) {
-      this._announce(this.getAttr("error-message").trim() || error);
     }
     this._lastLoading = loading;
-    this._lastError = error;
   }
 
   _announce(message) {
     if (!this._status || this._status.textContent === message) return;
+    this._status.hidden = false;
     this._status.textContent = "";
     requestAnimationFrame(() => {
       if (this._status) this._status.textContent = message;

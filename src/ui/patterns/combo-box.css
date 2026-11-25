@@ -91,7 +91,8 @@
   .uif-combo-box-option[aria-disabled="true"] { color: GrayText; cursor: not-allowed; }
 
   .uif-combo-box-state,
-  .uif-combo-box-error {
+  .uif-combo-box-error,
+  .uif-combo-box-status {
     margin: 0;
     padding: var(--size-spacing-300);
     overflow-wrap: anywhere;
@@ -101,18 +102,7 @@
   .uif-combo-box[data-invalid] .uif-combo-box-control { border-color: var(--uif-input-border-color-invalid); }
   .uif-combo-box[data-disabled] { color: var(--uif-input-text-color-disabled); }
   .uif-combo-box[data-disabled] .uif-combo-box-control { cursor: not-allowed; }
-
-  .uif-combo-box-status {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
-  }
+  .uif-combo-box-status[hidden] { display: none; }
 
   @media (prefers-reduced-motion: reduce) {
     .uif-combo-box-popup { scroll-behavior: auto; }

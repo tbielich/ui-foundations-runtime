@@ -45,19 +45,79 @@ test("ComboBox exposes role, name, ownership, filtering and custom option conten
   ]);
 });
 
-test("ComboBox preserves query, focus and active option during async updates", async ({ page }) => {
+test("ComboBox restores complete initial state after selected and free-form edits", async ({ page }) => {
+  const root = await openPlayground(page);
+  await root.evaluate((container) => {
+    container.innerHTML = `
+      <form>
+        <uif-combo-box label="Destination" name="destination" value="pmi" freeform>
+          <uif-combo-box-option value="pmi" text-value="Palma de Mallorca">Palma de Mallorca — PMI</uif-combo-box-option>
+          <uif-combo-box-option value="tfs" text-value="Tenerife">Tenerife — TFS</uif-combo-box-option>
+        </uif-combo-box>
+      </form>`;
+  });
+
+  const form = root.locator("form");
+  const combo = form.locator("uif-combo-box");
+  const input = form.getByRole("combobox", { name: "Destination" });
+  const hidden = combo.locator('input[type="hidden"]');
+  const initialOption = combo.locator('.uif-combo-box-option[data-value="pmi"]');
+  const popup = combo.locator(".uif-combo-box-popup");
+
+  const expectInitialState = async () => {
+    await expect(input).toHaveValue("Palma de Mallorca");
+    await expect(input).toBeFocused();
+    await expect(input).toHaveAttribute("aria-expanded", "false");
+    await expect(input).not.toHaveAttribute("aria-activedescendant", /.+/);
+    await expect(popup).toBeHidden();
+    await expect(combo).toHaveAttribute("value", "pmi");
+    await expect(hidden).toHaveValue("pmi");
+    await expect(initialOption).toHaveAttribute("aria-selected", "true");
+    await expect.poll(() => form.evaluate((element) => new FormData(element).get("destination"))).toBe("pmi");
+    await expect.poll(() => combo.evaluate((element) => {
+      const active = element._optionData.find((option) => option.key === element._activeKey);
+      return active?.value;
+    })).toBe("pmi");
+  };
+
+  await input.focus();
+  await input.fill("Tener");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
+  await expect(combo).toHaveAttribute("value", "tfs");
+  await form.evaluate((element) => element.reset());
+  await expectInitialState();
+
+  await input.fill("Atlantis");
+  await page.keyboard.press("Enter");
+  await expect(combo).toHaveAttribute("value", "Atlantis");
+  await expect(hidden).toHaveValue("Atlantis");
+  await form.evaluate((element) => element.reset());
+  await expectInitialState();
+});
+
+test("ComboBox keeps one visible polite loading status while closed and open", async ({ page }) => {
   const root = await openPlayground(page);
   const combo = root.locator("uif-combo-box");
   const input = root.getByRole("combobox", { name: "Destination" });
+  const status = root.getByRole("status");
+
+  await expect(input).not.toBeFocused();
+  await expect(input).toHaveAttribute("aria-expanded", "false");
+  await combo.evaluate((element) => element.setAttribute("loading", ""));
+  await expect(input).toHaveAttribute("aria-busy", "true");
+  await expect(status).toBeVisible();
+  await expect(status).toHaveText("Loading options…");
+  await expect(root.getByText("Loading options…", { exact: true })).toHaveCount(1);
+  await expect(root.locator(".uif-combo-box-popup")).toBeHidden();
+
   await input.focus();
   await input.fill("a");
   await page.keyboard.press("ArrowDown");
   const activeBefore = await input.getAttribute("aria-activedescendant");
-
-  await combo.evaluate((element) => element.setAttribute("loading", ""));
-  await expect(input).toHaveAttribute("aria-busy", "true");
-  await expect(root.getByText("Loading options…")).toBeVisible();
-  await expect(root.getByRole("status")).toHaveText("Loading options.");
+  await expect(root.locator(".uif-combo-box-popup")).toBeVisible();
+  await expect(status).toHaveText("Loading options…");
+  await expect(root.getByText("Loading options…", { exact: true })).toHaveCount(1);
 
   await combo.evaluate((element) => {
     element.options = [
@@ -72,12 +132,12 @@ test("ComboBox preserves query, focus and active option during async updates", a
   await expect(input).toBeFocused();
   await expect(input).toHaveAttribute("aria-busy", "false");
   await expect(input).toHaveAttribute("aria-activedescendant", activeBefore);
-  await expect(root.getByRole("status")).toContainText("3 suggestions available");
+  await expect(status).toContainText("3 suggestions available");
 
-  const announcement = await root.getByRole("status").textContent();
+  const announcement = await status.textContent();
   await input.fill("Mal");
   await expect(root.getByRole("option")).toHaveCount(3);
-  await expect(root.getByRole("status")).toHaveText(announcement);
+  await expect(status).toHaveText(announcement);
 });
 
 test("ComboBox separates free-form commits from option-only selection and exposes states", async ({ page }) => {
@@ -102,9 +162,15 @@ test("ComboBox separates free-form commits from option-only selection and expose
   await expect(hidden).toHaveValue("");
   await expect(root.getByText("No suggestions found.")).toBeVisible();
 
-  await combo.evaluate((element) => element.setAttribute("error", "Could not load destinations."));
+  await combo.evaluate((element) => element.setAttribute("invalid", ""));
   await expect(input).toHaveAttribute("aria-invalid", "true");
   await expect(input).toHaveAttribute("aria-describedby", /-error$/);
+  await expect(input).toHaveAccessibleDescription("Select a valid option.");
+  await expect(root.locator(".uif-combo-box-error")).toHaveText("Select a valid option.");
+  await expect(root.locator(".uif-combo-box-error")).toBeVisible();
+
+  await combo.evaluate((element) => element.setAttribute("error", "Could not load destinations."));
+  await expect(input).toHaveAccessibleDescription("Could not load destinations.");
   await expect(root.locator(".uif-combo-box-state")).toHaveText("Could not load destinations.");
   await expect(root.locator(".uif-combo-box-error")).toHaveText("Could not load destinations.");
 
