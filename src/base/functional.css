@@ -5,7 +5,8 @@
     uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
     uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton,
     uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider,
-    uif-combo-box, uif-color-picker, uif-drop-zone) {
+    uif-combo-box, uif-color-picker, uif-drop-zone, uif-tree-view,
+    uif-tree-item) {
     display: block;
   }
   :where(uif-tag) { display: inline-block; }
@@ -78,6 +79,14 @@
   :where(.uif-drop-zone-file) { overflow-wrap: anywhere; }
   :where(.uif-drop-zone-file)::marker { content: "✓  "; }
   :where(.uif-drop-zone-status[data-error]) { font-weight: bold; }
+  :where(.uif-tree-view,.uif-tree-item) { min-inline-size: 0; max-inline-size: 100%; }
+  :where(.uif-tree-item-row) { display: flex; align-items: center; gap: 0.5em; border: 1px solid transparent; }
+  :where(.uif-tree-item[aria-selected="true"] > .uif-tree-item-row) { outline: 1px solid Highlight; }
+  :where(.uif-tree-item:focus-visible > .uif-tree-item-row) { outline: 2px solid Highlight; outline-offset: 2px; }
+  :where(.uif-tree-item-group) { margin-inline-start: 1.5em; border-inline-start: 1px solid ButtonBorder; }
+  :where(.uif-tree-item-group[hidden]) { display: none; }
+  :where(.uif-tree-item[data-load-error] > .uif-tree-item-row) { border-style: double; border-color: CanvasText; }
+  :where(.uif-tree-item[data-drop-position] > .uif-tree-item-row) { outline: 2px solid Highlight; }
   :where(.uif-segmented-control-options) { display: flex; flex-wrap: wrap; }
   :where(.uif-segmented-control-option) { position: relative; }
   :where(.uif-segmented-control-input:checked + .uif-segmented-control-content) { outline: 2px solid Highlight; }

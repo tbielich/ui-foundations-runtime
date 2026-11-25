@@ -46,3 +46,4 @@ export { UIRangeSlider } from "./ui-range-slider.js";
 export { UIComboBox, UIComboBoxOption } from "./ui-combo-box.js";
 export { UIColorPicker } from "./ui-color-picker.js";
 export { UIDropZone } from "./ui-drop-zone.js";
+export { UITreeItem, UITreeView } from "./ui-tree-view.js";

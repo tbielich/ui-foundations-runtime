@@ -1566,6 +1566,35 @@
     return { element, code: element.outerHTML };
   };
 
+  const renderVanillaTreeView = ({ props }) => {
+    const element = document.createElement("uif-tree-view");
+    element.setAttribute("label", String(props.label || "Destinations"));
+    element.setAttribute("selection", ["single", "multiple", "none"].includes(props.selection) ? props.selection : "multiple");
+    if (asBoolean(props.reorderable)) element.setAttribute("reorderable", "");
+
+    const item = (value, label, attributes = {}, children = []) => {
+      const node = document.createElement("uif-tree-item");
+      node.setAttribute("value", value);
+      node.setAttribute("label", label);
+      Object.entries(attributes).forEach(([name, enabled]) => {
+        if (enabled) node.setAttribute(name, "");
+      });
+      node.append(...children);
+      return node;
+    };
+    element.append(
+      item("europe", "Europe", { expanded: true }, [item("spain", "Spain"), item("greece", "Greece")]),
+      item("americas", "Americas", {}, [item("mexico", "Mexico"), item("canada", "Canada")]),
+    );
+    if (asBoolean(props.lazy)) {
+      element.append(item("islands", "Islands", { lazy: true }));
+      element.addEventListener("uif-load", (event) => {
+        if (event.detail.value === "islands") event.detail.resolve([{ value: "crete", label: "Crete" }]);
+      });
+    }
+    return { element, code: element.outerHTML };
+  };
+
   const renderVanillaColorPicker = ({ props }) => {
     const element = document.createElement("uif-color-picker");
     element.setAttribute("label", String(props.label || "Brand color"));
@@ -1621,6 +1650,7 @@
       "combo-box": renderVanillaComboBox,
       "color-picker": renderVanillaColorPicker,
       "drop-zone": renderVanillaDropZone,
+      "tree-view": renderVanillaTreeView,
 
     },
   };

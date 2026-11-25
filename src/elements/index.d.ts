@@ -121,6 +121,18 @@ export declare class UIColorPicker extends UIElement {
 export declare class UIDropZone extends UIElement {
   readonly files: File[];
 }
+export interface UITreeItemData {
+  value: string;
+  label?: string;
+  expanded?: boolean;
+  selected?: boolean;
+  lazy?: boolean;
+  children?: UITreeItemData[];
+}
+export declare class UITreeItem extends UIElement {}
+export declare class UITreeView extends UIElement {
+  readonly selectedValues: string[];
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -147,6 +159,8 @@ declare global {
     "uif-combo-box-option": UIComboBoxOption;
     "uif-color-picker": UIColorPicker;
     "uif-drop-zone": UIDropZone;
+    "uif-tree-item": UITreeItem;
+    "uif-tree-view": UITreeView;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

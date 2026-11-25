@@ -24,8 +24,8 @@ Runtime currently provides light-DOM Custom Element surfaces under
 `ui-tooltip.js`, `ui-tabs.js`, `ui-toast.js`, `ui-popover.js`,
 `ui-breadcrumbs.js`, `ui-card.js`, `ui-tag.js`, `ui-skeleton.js`,
 `ui-search-field.js`, `ui-number-field.js`, `ui-segmented-control.js`,
-`ui-range-slider.js`, `ui-combo-box.js`, `ui-color-picker.js` and
-`ui-drop-zone.js`).
+`ui-range-slider.js`, `ui-combo-box.js`, `ui-color-picker.js`,
+`ui-drop-zone.js` and `ui-tree-view.js`).
 
 These are implementation surfaces for existing UI patterns and are not treated
 as separate product-component governance in this documentation layer.
