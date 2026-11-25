@@ -619,6 +619,13 @@
 {%- else %}<!-- uif.comboBox requires a non-empty id -->{% endif %}
 {%- endmacro %}
 
+{% macro colorPicker(id='', label='Color', name='', value='#0066CC', swatches='', disabled=false, readonly=false, invalid=false, error='') -%}
+{%- set fieldId = id | trim -%}
+{%- if fieldId %}
+<uif-color-picker id="{{ fieldId | escape }}" label="{{ label | escape }}"{% if name %} name="{{ name | escape }}"{% endif %}{% if value %} value="{{ value | escape }}"{% endif %}{% if swatches %} swatches="{{ swatches | escape }}"{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}{% if invalid %} invalid{% endif %}{% if error %} error="{{ error | escape }}"{% endif %}></uif-color-picker>
+{%- else %}<!-- uif.colorPicker requires a non-empty id -->{% endif %}
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

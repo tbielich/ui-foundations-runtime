@@ -498,6 +498,32 @@
     return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">";
   }
 
+  function colorPickerCode(state, format) {
+    var p = state.props;
+    var attributes = [];
+    var label = String(p.label || "Brand color");
+    var value = String(p.value || "#0066CC");
+    if (format === "njk") {
+      attributes.push('id="color-picker-example"');
+      attributes.push("label=" + JSON.stringify(label));
+      attributes.push('name="brandColor"');
+      attributes.push("value=" + JSON.stringify(value));
+      ["readonly", "disabled", "invalid"].forEach(function (name) {
+        if (p[name] === true || p[name] === "true") attributes.push(name + "=true");
+      });
+      if (p.error) attributes.push("error=" + JSON.stringify(String(p.error)));
+      return "{{ uif.colorPicker(" + attributes.join(", ") + ") }}";
+    }
+    attributes.push('label="' + quoteAttr(label) + '"');
+    attributes.push('name="brandColor"');
+    attributes.push('value="' + quoteAttr(value) + '"');
+    ["readonly", "disabled", "invalid"].forEach(function (name) {
+      if (p[name] === true || p[name] === "true") attributes.push(name);
+    });
+    if (p.error) attributes.push('error="' + quoteAttr(String(p.error)) + '"');
+    return "<uif-color-picker " + attributes.join(" ") + "></uif-color-picker>";
+  }
+
   function comboBoxCode(state, format) {
     var p = state.props;
     var attributes = [];
@@ -543,6 +569,7 @@
       "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "njk"); },
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "njk"); },
       "combo-box": function (state) { return comboBoxCode(state, "njk"); },
+      "color-picker": function (state) { return colorPickerCode(state, "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -622,6 +649,7 @@
       "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "wc"); },
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "wc"); },
       "combo-box": function (state) { return comboBoxCode(state, "wc"); },
+      "color-picker": function (state) { return colorPickerCode(state, "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

@@ -1553,6 +1553,18 @@
     return { element, code: element.outerHTML };
   };
 
+  const renderVanillaColorPicker = ({ props }) => {
+    const element = document.createElement("uif-color-picker");
+    element.setAttribute("label", String(props.label || "Brand color"));
+    element.setAttribute("name", "brandColor");
+    element.setAttribute("value", String(props.value || "#0066CC"));
+    ["readonly", "disabled", "invalid"].forEach((property) => {
+      if (asBoolean(props[property])) element.setAttribute(property, "");
+    });
+    if (props.error) element.setAttribute("error", String(props.error));
+    return { element, code: element.outerHTML };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1594,6 +1606,7 @@
       "segmented-control": (state) => renderVanillaInputControl(state, "segmented-control"),
       "range-slider": (state) => renderVanillaInputControl(state, "range-slider"),
       "combo-box": renderVanillaComboBox,
+      "color-picker": renderVanillaColorPicker,
 
     },
   };
