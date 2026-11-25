@@ -18,6 +18,11 @@ class UIRangeSlider extends UIElement {
     ];
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (this._reflectingValues && (name === "lower" || name === "upper")) return;
+    super.attributeChangedCallback(name, oldValue, newValue);
+  }
+
   render() {
     const baseId = this.id || `uif-range-slider-${++nextRangeSliderId}`;
     const min = numberAttribute(this, "min", 0);
@@ -119,6 +124,7 @@ class UIRangeSlider extends UIElement {
       fieldset.style.setProperty("--uif-range-slider-lower", `${((nextLower - min) / span) * 100}%`);
       fieldset.style.setProperty("--uif-range-slider-upper", `${((nextUpper - min) / span) * 100}%`);
       if (emit) {
+        this._reflectValues(nextLower, nextUpper);
         this.dispatchEvent(new CustomEvent("uif-change", {
           bubbles: true,
           detail: { lower: nextLower, upper: nextUpper },
@@ -142,6 +148,13 @@ class UIRangeSlider extends UIElement {
     this._lowerInput = lowerInput;
     this._upperInput = upperInput;
     sync(null, false);
+  }
+
+  _reflectValues(lower, upper) {
+    this._reflectingValues = true;
+    if (this.getAttribute("lower") !== String(lower)) this.setAttribute("lower", String(lower));
+    if (this.getAttribute("upper") !== String(upper)) this.setAttribute("upper", String(upper));
+    this._reflectingValues = false;
   }
 
   get value() {

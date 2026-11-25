@@ -123,6 +123,111 @@ test("Segmented Control uses native radio navigation and disabled state", async 
   await expect.poll(() => page.evaluate(() => window.__segmentChanges)).toEqual(["grid"]);
 });
 
+test("Input controls preserve live values across state renders", async ({ page }) => {
+  let root = await openPlayground(page, "search-field");
+  await root.getByRole("searchbox", { name: "Search holidays" }).fill("Tenerife");
+  await root.locator("uif-search-field").evaluate((element) => {
+    element.setAttribute("quiet", "");
+    element.setAttribute("disabled", "");
+  });
+  await expect(root.getByRole("searchbox", { name: "Search holidays" })).toHaveValue("Tenerife");
+
+  root = await openPlayground(page, "number-field");
+  await root.getByRole("spinbutton", { name: "Holiday budget" }).fill("475");
+  await root.locator("uif-number-field").evaluate((element) => {
+    element.setAttribute("invalid", "");
+    element.setAttribute("error", "Check this amount");
+    element.setAttribute("readonly", "");
+  });
+  await expect(root.getByRole("spinbutton", { name: "Holiday budget" })).toHaveValue("475");
+
+  root = await openPlayground(page, "range-slider");
+  const lower = root.getByRole("slider", { name: "Minimum" });
+  await lower.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(lower).toHaveValue("350");
+  await root.locator("uif-range-slider").evaluate((element) => {
+    element.setAttribute("invalid", "");
+    element.setAttribute("error", "Check this range");
+    element.setAttribute("disabled", "");
+  });
+  await expect(root.getByRole("slider", { name: "Minimum" })).toHaveValue("350");
+  await expect(root.getByRole("slider", { name: "Maximum" })).toHaveValue("1200");
+});
+
+test("Segmented Control resolves enabled fallbacks across static and dynamic states", async ({ page }) => {
+  const root = await openPlayground(page, "segmented-control");
+  const state = await root.evaluate((container) => {
+    const createControl = (id, value, options) => {
+      const control = document.createElement("uif-segmented-control");
+      control.id = id;
+      if (value !== null) control.setAttribute("value", value);
+      for (const option of options) {
+        const item = document.createElement("span");
+        item.dataset.value = option.value;
+        item.dataset.label = option.label;
+        item.toggleAttribute("data-disabled", Boolean(option.disabled));
+        control.append(item);
+      }
+      container.append(control);
+      return control;
+    };
+    const enabled = [
+      { value: "list", label: "List" },
+      { value: "grid", label: "Grid" },
+    ];
+    const controls = {
+      unknown: createControl("segments-unknown", "unknown", enabled),
+      missing: createControl("segments-missing", null, enabled),
+      disabledTarget: createControl("segments-disabled-target", "grid", [enabled[0], { ...enabled[1], disabled: true }]),
+      firstDisabled: createControl("segments-first-disabled", null, [{ ...enabled[0], disabled: true }, enabled[1]]),
+      allDisabled: createControl("segments-all-disabled", "grid", enabled.map((option) => ({ ...option, disabled: true }))),
+      empty: createControl("segments-empty", null, []),
+    };
+    const selected = (control) => control.querySelector("input:checked")?.value ?? "";
+
+    const dynamic = createControl("segments-dynamic", "grid", enabled);
+    dynamic.options = dynamic.options.map((option) => option.value === "list" ? { ...option, disabled: true } : option);
+    const keptSelection = selected(dynamic);
+    dynamic.options = dynamic.options.map((option) => ({ ...option, disabled: option.value === "grid" }));
+    const fallbackSelection = selected(dynamic);
+    dynamic.setAttribute("disabled", "");
+    const disabledSelection = selected(dynamic);
+    const groupDisabled = dynamic.querySelector("fieldset").disabled;
+    dynamic.removeAttribute("disabled");
+
+    return {
+      unknown: selected(controls.unknown),
+      missing: selected(controls.missing),
+      disabledTarget: selected(controls.disabledTarget),
+      firstDisabled: selected(controls.firstDisabled),
+      allDisabled: selected(controls.allDisabled),
+      allDisabledValue: controls.allDisabled.getAttribute("value"),
+      empty: selected(controls.empty),
+      keptSelection,
+      fallbackSelection,
+      disabledSelection,
+      enabledAgainSelection: selected(dynamic),
+      groupDisabled,
+    };
+  });
+
+  expect(state).toEqual({
+    unknown: "list",
+    missing: "list",
+    disabledTarget: "list",
+    firstDisabled: "grid",
+    allDisabled: "",
+    allDisabledValue: null,
+    empty: "",
+    keptSelection: "grid",
+    fallbackSelection: "list",
+    disabledSelection: "list",
+    enabledAgainSelection: "list",
+    groupDisabled: true,
+  });
+});
+
 test("Range Slider keeps native thumbs labelled and non-crossing", async ({ page }) => {
   const root = await openPlayground(page, "range-slider");
   const lower = root.getByRole("slider", { name: "Minimum" });

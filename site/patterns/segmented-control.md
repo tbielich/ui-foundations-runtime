@@ -15,7 +15,9 @@ playgroundLabel: Open Segmented Control Playground
 
 ## Behavior
 
-`<uif-segmented-control>` renders a labelled `fieldset` of same-name native radio inputs. Browser radio behavior provides one selection and Arrow-key navigation. Options are authored as direct children with `data-value`, `data-label`, optional `data-icon`, and optional `data-disabled`. A selection emits the native `change` event and `uif-change` with `{ value }`.
+`<uif-segmented-control>` renders a labelled `fieldset` of same-name native radio inputs. Browser radio behavior provides one selection and Arrow-key navigation. Options are authored as direct children with `data-value`, `data-label`, optional `data-icon`, and optional `data-disabled`. The `options` property accepts the equivalent `{ value, label, icon?, disabled? }[]` data when options change after connection. A selection emits the native `change` event and `uif-change` with `{ value }`.
+
+A missing or unknown value, or a value that names a disabled option, selects the first enabled option in document order. If every option is disabled or no options exist, no radio is checked. Replacing `options` keeps the current enabled selection when possible and otherwise applies the same fallback. Changing the group-level `disabled` attribute keeps the selection.
 
 ## Accessibility
 

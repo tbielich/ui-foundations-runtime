@@ -2,6 +2,16 @@ import { UIElement, define } from "./base.js";
 
 let nextSegmentedControlId = 0;
 
+function normalizeOptions(options) {
+  if (!Array.isArray(options)) return [];
+  return options.map((option) => ({
+    value: String(option?.value ?? option?.label ?? ""),
+    label: String(option?.label ?? option?.value ?? ""),
+    icon: String(option?.icon ?? ""),
+    disabled: Boolean(option?.disabled),
+  }));
+}
+
 /** A labelled native radio group presented as connected segments. */
 class UISegmentedControl extends UIElement {
   static get observedAttributes() {
@@ -10,12 +20,12 @@ class UISegmentedControl extends UIElement {
 
   connectedCallback() {
     if (!this._options) {
-      this._options = [...this.querySelectorAll(":scope > [data-value]")].map((option) => ({
+      this._options = normalizeOptions([...this.querySelectorAll(":scope > [data-value]")].map((option) => ({
         value: option.getAttribute("data-value") || option.textContent.trim(),
         label: option.getAttribute("data-label") || option.textContent.trim(),
         icon: option.getAttribute("data-icon") || "",
         disabled: option.hasAttribute("data-disabled"),
-      }));
+      })));
     }
     super.connectedCallback();
   }
@@ -29,7 +39,10 @@ class UISegmentedControl extends UIElement {
     const baseId = this.id || `uif-segmented-control-${++nextSegmentedControlId}`;
     const label = this.getAttr("label").trim() || "Options";
     const name = this.getAttr("name").trim() || `${baseId}-option`;
-    const selected = this.getAttr("value").trim() || this._options?.[0]?.value || "";
+    const requestedValue = this.getAttr("value").trim();
+    const options = this._options || [];
+    let selectedIndex = options.findIndex((option) => !option.disabled && option.value === requestedValue);
+    if (selectedIndex < 0) selectedIndex = options.findIndex((option) => !option.disabled);
     const size = ["sm", "lg"].includes(this.getAttr("size")) ? this.getAttr("size") : "md";
     const groupDisabled = this.getBool("disabled");
 
@@ -44,7 +57,7 @@ class UISegmentedControl extends UIElement {
 
     const segments = this.ownerDocument.createElement("div");
     segments.className = "uif-segmented-control-options";
-    for (const [index, option] of (this._options || []).entries()) {
+    for (const [index, option] of options.entries()) {
       const optionId = `${baseId}-option-${index}`;
       const wrapper = this.ownerDocument.createElement("label");
       wrapper.className = "uif-segmented-control-option";
@@ -56,13 +69,11 @@ class UISegmentedControl extends UIElement {
       input.type = "radio";
       input.name = name;
       input.value = option.value;
-      input.checked = option.value === selected;
+      input.checked = index === selectedIndex;
       input.disabled = option.disabled;
       input.addEventListener("change", () => {
         if (!input.checked) return;
-        this._reflectingValue = true;
-        this.setAttribute("value", input.value);
-        this._reflectingValue = false;
+        this._reflectValue(input.value);
         this.dispatchEvent(new CustomEvent("uif-change", {
           bubbles: true,
           detail: { value: input.value },
@@ -87,6 +98,23 @@ class UISegmentedControl extends UIElement {
 
     fieldset.append(segments);
     this.replaceChildren(fieldset);
+    this._reflectValue(selectedIndex < 0 ? null : options[selectedIndex].value);
+  }
+
+  _reflectValue(value) {
+    this._reflectingValue = true;
+    if (value === null) this.removeAttribute("value");
+    else if (this.getAttribute("value") !== value) this.setAttribute("value", value);
+    this._reflectingValue = false;
+  }
+
+  get options() {
+    return (this._options || []).map((option) => ({ ...option }));
+  }
+
+  set options(options) {
+    this._options = normalizeOptions(options);
+    if (this._initialized) this.render();
   }
 
   get value() {

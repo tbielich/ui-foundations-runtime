@@ -44,6 +44,11 @@ class UINumberField extends UIElement {
     ];
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (this._reflectingValue && name === "value") return;
+    super.attributeChangedCallback(name, oldValue, newValue);
+  }
+
   render() {
     const baseId = this.id || `uif-number-field-${++nextNumberFieldId}`;
     const inputId = `${baseId}-input`;
@@ -121,12 +126,23 @@ class UINumberField extends UIElement {
       input.setAttribute("aria-describedby", outputId);
     }
 
-    input.addEventListener("input", () => this._syncFormatted());
-    input.addEventListener("change", () => this._syncFormatted());
+    const syncInput = () => {
+      this._reflectValue(input.value);
+      this._syncFormatted();
+    };
+    input.addEventListener("input", syncInput);
+    input.addEventListener("change", syncInput);
     this.replaceChildren(field);
     this._input = input;
     this._output = output;
     this._syncFormatted();
+  }
+
+  _reflectValue(value) {
+    if (this.getAttribute("value") === value) return;
+    this._reflectingValue = true;
+    this.setAttribute("value", value);
+    this._reflectingValue = false;
   }
 
   _format(value) {

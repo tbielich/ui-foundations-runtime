@@ -8,6 +8,11 @@ class UISearchField extends UIElement {
     return ["label", "name", "value", "placeholder", "disabled", "quiet", "clear-label"];
   }
 
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (this._reflectingValue && name === "value") return;
+    super.attributeChangedCallback(name, oldValue, newValue);
+  }
+
   render() {
     const inputId = `${this.id || `uif-search-field-${++nextSearchFieldId}`}-input`;
     const label = this.getAttr("label").trim() || "Search";
@@ -47,17 +52,17 @@ class UISearchField extends UIElement {
     clearIcon.setAttribute("aria-hidden", "true");
     clear.append(clearIcon);
 
-    const syncClear = () => {
+    const syncInput = () => {
       clear.disabled = input.disabled || input.value.length === 0;
+      this._reflectValue(input.value);
     };
-    input.addEventListener("input", syncClear);
+    input.addEventListener("input", syncInput);
     input.addEventListener("keydown", (event) => {
       if (event.key === "Enter") this._emitSearch(input.value);
     });
     clear.addEventListener("click", () => {
       if (clear.disabled) return;
       input.value = "";
-      syncClear();
       input.dispatchEvent(new Event("input", { bubbles: true }));
       input.dispatchEvent(new Event("change", { bubbles: true }));
       input.focus();
@@ -66,8 +71,15 @@ class UISearchField extends UIElement {
     control.append(icon, input, clear);
     field.append(labelElement, control);
     this.replaceChildren(field);
-    syncClear();
     this._input = input;
+    syncInput();
+  }
+
+  _reflectValue(value) {
+    if (this.getAttribute("value") === value) return;
+    this._reflectingValue = true;
+    this.setAttribute("value", value);
+    this._reflectingValue = false;
   }
 
   _emitSearch(query) {

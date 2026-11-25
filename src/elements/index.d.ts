@@ -75,7 +75,14 @@ export declare class UISearchField extends UIElement {
 export declare class UINumberField extends UIElement {
   readonly valueAsNumber: number;
 }
+export interface UISegmentedControlOption {
+  value: string;
+  label: string;
+  icon?: string;
+  disabled?: boolean;
+}
 export declare class UISegmentedControl extends UIElement {
+  options: UISegmentedControlOption[];
   readonly value: string;
 }
 export declare class UIRangeSlider extends UIElement {
