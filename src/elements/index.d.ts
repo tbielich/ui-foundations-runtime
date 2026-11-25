@@ -88,6 +88,21 @@ export declare class UISegmentedControl extends UIElement {
 export declare class UIRangeSlider extends UIElement {
   readonly value: { lower: number; upper: number };
 }
+export interface UIComboBoxOptionData {
+  value: string;
+  textValue?: string;
+  label?: string;
+  disabled?: boolean;
+  content?: string | Node;
+}
+export declare class UIComboBoxOption extends UIElement {}
+export declare class UIComboBox extends UIElement {
+  value: string;
+  readonly query: string;
+  options: UIComboBoxOptionData[];
+  open(): void;
+  close(): void;
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -110,6 +125,8 @@ declare global {
     "uif-number-field": UINumberField;
     "uif-segmented-control": UISegmentedControl;
     "uif-range-slider": UIRangeSlider;
+    "uif-combo-box": UIComboBox;
+    "uif-combo-box-option": UIComboBoxOption;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

@@ -608,6 +608,17 @@
 {%- else %}<!-- uif.rangeSlider requires a non-empty id -->{% endif %}
 {%- endmacro %}
 
+{% macro comboBox(id='', label='Choose an option', name='', value='', placeholder='', options=[], freeform=false, loading=false, disabled=false, readonly=false, invalid=false, error='') -%}
+{%- set fieldId = id | trim -%}
+{%- if fieldId %}
+<uif-combo-box id="{{ fieldId | escape }}" label="{{ label | escape }}"{% if name %} name="{{ name | escape }}"{% endif %}{% if value %} value="{{ value | escape }}"{% endif %}{% if placeholder %} placeholder="{{ placeholder | escape }}"{% endif %}{% if freeform %} freeform{% endif %}{% if loading %} loading{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}{% if invalid %} invalid{% endif %}{% if error %} error="{{ error | escape }}"{% endif %}>
+  {%- for option in options %}
+  <uif-combo-box-option value="{{ option.value | escape }}" text-value="{{ (option.textValue or option.label or option.value) | escape }}"{% if option.disabled %} disabled{% endif %}>{{ (option.label or option.textValue or option.value) | escape }}</uif-combo-box-option>
+  {%- endfor %}
+</uif-combo-box>
+{%- else %}<!-- uif.comboBox requires a non-empty id -->{% endif %}
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

@@ -43,3 +43,4 @@ export { UISearchField } from "./ui-search-field.js";
 export { UINumberField } from "./ui-number-field.js";
 export { UISegmentedControl } from "./ui-segmented-control.js";
 export { UIRangeSlider } from "./ui-range-slider.js";
+export { UIComboBox, UIComboBoxOption } from "./ui-combo-box.js";

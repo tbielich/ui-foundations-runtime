@@ -35,6 +35,7 @@ Runtime pattern/component docs use three explicit statuses:
 | `number-field` | Implemented pattern | Active | `site/patterns/number-field.md`, `src/ui/patterns/number-field.css`, `src/elements/ui-number-field.js` |
 | `segmented-control` | Implemented pattern | Active | `site/patterns/segmented-control.md`, `src/ui/patterns/segmented-control.css`, `src/elements/ui-segmented-control.js` |
 | `range-slider` | Implemented pattern | Active | `site/patterns/range-slider.md`, `src/ui/patterns/range-slider.css`, `src/elements/ui-range-slider.js` |
+| `combo-box` | Implemented pattern | Active | `site/patterns/combo-box.md`, `src/ui/patterns/combo-box.css`, `src/elements/ui-combo-box.js` |
 | `feedback.md` | Pattern guidance | Placeholder summary | See TODO in page; no standalone feedback rule yet |
 | `layout.md` | Pattern guidance | Placeholder summary | Foundations references only; no standalone layout pattern rule |
 | `modal.md` | Component placeholder | Placeholder | No runtime component documentation yet |
