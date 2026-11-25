@@ -497,6 +497,11 @@ class UIComboBox extends UIElement {
     this._optionData = this._normalizeOptions(options);
     const active = this._optionData.find((option) => option.value === activeValue && !option.disabled);
     this._activeKey = active?.key ?? "";
+    const defaultOption = this._optionData.find((option) => option.value === this._defaultValue);
+    if (defaultOption && !this._defaultQuery) {
+      this._defaultQuery = defaultOption.textValue;
+      if (this._input) this._input.defaultValue = this._defaultQuery;
+    }
     const selected = this._optionData.find((option) => option.value === this._selectedValue);
     if (selected && !this._query) {
       this._query = selected.textValue;

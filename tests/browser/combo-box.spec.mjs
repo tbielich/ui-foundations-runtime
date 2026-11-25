@@ -96,6 +96,42 @@ test("ComboBox restores complete initial state after selected and free-form edit
   await expectInitialState();
 });
 
+test("ComboBox restores an asynchronously resolved initial value on form reset", async ({ page }) => {
+  const root = await openPlayground(page);
+  await root.evaluate((container) => {
+    container.innerHTML = `
+      <form>
+        <uif-combo-box label="Destination" name="destination" value="pmi"></uif-combo-box>
+      </form>`;
+  });
+
+  const form = root.locator("form");
+  const combo = form.locator("uif-combo-box");
+  const input = form.getByRole("combobox", { name: "Destination" });
+  const hidden = combo.locator('input[type="hidden"]');
+
+  await expect(input).toHaveValue("");
+  await combo.evaluate((element) => {
+    element.options = [
+      { value: "pmi", textValue: "Palma de Mallorca" },
+      { value: "tfs", textValue: "Tenerife" },
+    ];
+  });
+  await expect(input).toHaveValue("Palma de Mallorca");
+
+  await input.focus();
+  await input.fill("Tener");
+  await page.keyboard.press("ArrowDown");
+  await page.keyboard.press("Enter");
+  await expect(combo).toHaveAttribute("value", "tfs");
+
+  await form.evaluate((element) => element.reset());
+  await expect(input).toHaveValue("Palma de Mallorca");
+  await expect(combo).toHaveAttribute("value", "pmi");
+  await expect(hidden).toHaveValue("pmi");
+  await expect.poll(() => form.evaluate((element) => new FormData(element).get("destination"))).toBe("pmi");
+});
+
 test("ComboBox keeps one visible polite loading status while closed and open", async ({ page }) => {
   const root = await openPlayground(page);
   const combo = root.locator("uif-combo-box");
