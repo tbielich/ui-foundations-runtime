@@ -12,9 +12,11 @@ playgroundLabel: Open Search Field Playground
 
 <div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.searchField(label="Search holidays", id="search-doc", name="query", value="Mallorca") }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
+<script type="module" src="/vendor/ui-foundations/components/input-controls.js"></script>
+
 ## Behavior
 
-`<uif-search-field>` keeps a visible label and native `type="search"` input. Enter retains ancestor-form submission and also dispatches `uif-search` with `{ query }`. The clear button is enabled only when a value exists; clearing emits bubbling native `input` and `change` events, then returns focus to the input. `quiet` removes the enclosing surface without removing the focus border.
+`<uif-search-field>` keeps a visible label and native `type="search"` input. Enter retains ancestor-form submission and also dispatches `uif-search` with `{ query }`. The clear button is enabled only when a value exists; clearing emits bubbling native `input` and `change` events, then returns focus to the input. `quiet` removes the enclosing surface without removing the focus border. Macro output gets the same clear behavior from `ui-foundations/behaviors/input-controls`.
 
 ## Accessibility
 

@@ -12,9 +12,11 @@ playgroundLabel: Open Number Field Playground
 
 <div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.numberField(label="Holiday budget", id="budget-doc", value=500, min=0, max=5000, step=50) }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
+<script type="module" src="/vendor/ui-foundations/components/input-controls.js"></script>
+
 ## Behavior
 
-`<uif-number-field>` uses `input type="number"`; Arrow keys, validity and mobile numeric entry remain browser-owned. Step buttons call `stepUp()` or `stepDown()`, clamp to `min` and `max`, and emit native `input` and `change` plus `uif-change`. `readonly` leaves the value focusable while disabling both steppers. `invalid` and `error` connect visible error text with `aria-describedby`.
+`<uif-number-field>` uses `input type="number"`; Arrow keys, validity and mobile numeric entry remain browser-owned. Step buttons call `stepUp()` or `stepDown()`, clamp to `min` and `max`, and emit native `input` and `change` plus `uif-change`. `readonly` leaves the value focusable while disabling both steppers. `invalid` and `error` connect visible error text with `aria-describedby`. Macro output gets the same stepping and formatting behavior from `ui-foundations/behaviors/input-controls`.
 
 `format="currency"` uses `Intl.NumberFormat` with `currency` and `locale`. `format="percent"` displays an editable value of `25` as a locale-formatted 25%. Formatting is output text and `aria-valuetext`; it never replaces the numeric value used by min, max, step or form submission. The Custom Element and Nunjucks macro both default to `value=0`, `step=1`, `format="decimal"`, `currency="EUR"`, and `locale="en"`. Empty or malformed locales also fall back to `en` without interrupting rendering. Numeric strings are normalized. An invalid value leaves the input empty and displays “No value”; invalid `min` or `max` values are omitted, and an invalid or non-positive `step` falls back to `1`.
 

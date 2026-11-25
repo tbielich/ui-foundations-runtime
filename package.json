@@ -92,6 +92,7 @@
     "./behaviors/calendar": "./dist/ui/components/calendar.js",
     "./behaviors/date-input": "./dist/ui/components/date-input.js",
     "./behaviors/input-field": "./dist/ui/components/input-field.js",
+    "./behaviors/input-controls": "./dist/ui/components/input-controls.js",
     "./behaviors/table": "./dist/ui/components/table.js",
     "./elements/ui-progress-circle": "./dist/elements/ui-progress-circle.js"
   },

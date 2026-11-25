@@ -7,6 +7,7 @@ const slugs = ["search-field", "number-field", "segmented-control", "range-slide
 
 test("input controls are exported through package and aggregate surfaces", () => {
   const pkg = JSON.parse(read("package.json"));
+  assert.equal(pkg.exports["./behaviors/input-controls"], "./dist/ui/components/input-controls.js");
   for (const slug of slugs) {
     assert.equal(pkg.exports[`./elements/ui-${slug}`], `./dist/elements/ui-${slug}.js`);
   }

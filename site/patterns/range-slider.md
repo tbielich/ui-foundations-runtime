@@ -12,9 +12,11 @@ playgroundLabel: Open Range Slider Playground
 
 <div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.rangeSlider(label="Price range", id="price-doc", min=0, max=2000, step=50, lower=300, upper=1200) }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
+<script type="module" src="/vendor/ui-foundations/components/input-controls.js"></script>
+
 ## Behavior
 
-`<uif-range-slider>` renders two native `type="range"` inputs over one visual track. `min`, `max` and `step` apply to both controls and default to `0`, `100`, and `1`. Missing, empty, invalid, and non-finite numeric attributes use their documented defaults; a non-positive step also falls back to `1`. The lower value cannot move above the upper value, and the upper value cannot move below the lower value. Native Arrow, Page Up/Down, Home and End behavior remains available. Native `input` and `change` events bubble; `uif-change` reports `{ lower, upper }`.
+`<uif-range-slider>` renders two native `type="range"` inputs over one visual track. `min`, `max` and `step` apply to both controls and default to `0`, `100`, and `1`. Missing, empty, invalid, and non-finite numeric attributes use their documented defaults; a non-positive step also falls back to `1`. The lower value cannot move above the upper value, and the upper value cannot move below the lower value. Native Arrow, Page Up/Down, Home and End behavior remains available. Native `input` and `change` events bubble; `uif-change` reports `{ lower, upper }`. Macro output gets the same constraint, visible-value, and fill synchronization from `ui-foundations/behaviors/input-controls`.
 
 ## Accessibility
 

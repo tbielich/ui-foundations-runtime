@@ -45,25 +45,87 @@ test("Search Field clears accessibly and retains native form submission", async 
   await expect.poll(() => page.evaluate(() => [window.__searchInputs, window.__searchChanges])).toEqual([1, 1]);
 });
 
+test("Macro input controls support keyboard, pointer, events, and non-live values", async ({ page }) => {
+  await page.goto("/patterns/search-field/");
+  const searchField = page.locator(".docs-hero .uif-search-field");
+  const searchInput = searchField.getByRole("searchbox", { name: "Search holidays" });
+  const clear = searchField.getByRole("button", { name: "Clear Search holidays" });
+  const clearControl = searchField.locator(".uif-search-field-clear");
+  await searchField.evaluate((field) => {
+    window.__macroSearchEvents = [];
+    const input = field.querySelector("input");
+    input.addEventListener("input", () => window.__macroSearchEvents.push("input"));
+    input.addEventListener("change", () => window.__macroSearchEvents.push("change"));
+  });
+  await clear.focus();
+  await page.keyboard.press("Enter");
+  await expect(searchInput).toHaveValue("");
+  await expect(searchInput).toBeFocused();
+  await expect(clearControl).toBeDisabled();
+  await expect.poll(() => page.evaluate(() => window.__macroSearchEvents)).toEqual(["input", "change"]);
+
+  await page.goto("/patterns/number-field/");
+  const numberField = page.locator(".docs-hero .uif-number-field");
+  const numberInput = numberField.getByRole("spinbutton", { name: "Holiday budget" });
+  const increase = numberField.getByRole("button", { name: "Increase Holiday budget" });
+  await numberField.evaluate((field) => {
+    window.__macroNumberEvents = [];
+    const input = field.querySelector("input");
+    input.addEventListener("input", () => window.__macroNumberEvents.push("input"));
+    input.addEventListener("change", () => window.__macroNumberEvents.push("change"));
+    field.addEventListener("uif-change", (event) => window.__macroNumberEvents.push(event.detail.value));
+  });
+  await increase.click();
+  await expect(numberInput).toHaveValue("550");
+  await expect(numberField.locator(".uif-number-field-formatted")).toHaveText("550");
+  await expect(numberInput).toHaveAttribute("aria-valuetext", "550");
+  await expect.poll(() => page.evaluate(() => window.__macroNumberEvents)).toEqual(["input", "change", 550]);
+  await expect(numberField.getByRole("status")).toHaveCount(0);
+  await numberInput.evaluate((input) => { input.readOnly = true; });
+  await increase.click();
+  await expect(numberInput).toHaveValue("550");
+
+  await page.goto("/patterns/range-slider/");
+  const range = page.locator(".docs-hero .uif-range-slider");
+  const lower = range.getByRole("slider", { name: "Minimum" });
+  const upper = range.getByRole("slider", { name: "Maximum" });
+  await range.evaluate((field) => {
+    window.__macroRangeChanges = [];
+    field.addEventListener("uif-change", (event) => window.__macroRangeChanges.push(event.detail));
+  });
+  await lower.focus();
+  await page.keyboard.press("End");
+  await expect(lower).toHaveValue("1200");
+  await expect(upper).toHaveAttribute("min", "1200");
+  await expect(range.locator(".uif-range-slider-output-lower")).toHaveText("1200");
+  await expect(lower).toHaveAttribute("aria-valuetext", "Minimum: 1200");
+  await expect(range).toHaveCSS("--uif-range-slider-lower", "60%");
+  await expect(range.getByRole("status")).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => window.__macroRangeChanges.length)).toBeGreaterThan(0);
+});
+
 test("Number Field clamps steps and keeps formatted speech separate", async ({ page }) => {
   const root = await openPlayground(page, "number-field");
+  await page.evaluate(() => import("/vendor/ui-foundations/components/input-controls.js"));
   await root.evaluate((container) => {
     const field = container.querySelector("uif-number-field");
-    field.setAttribute("max", "550");
+    field.setAttribute("max", "600");
     window.__numberChanges = [];
     field.addEventListener("uif-change", (event) => window.__numberChanges.push(event.detail.value));
   });
   const input = root.getByRole("spinbutton", { name: "Holiday budget" });
   const increase = root.getByRole("button", { name: "Increase Holiday budget" });
   await increase.click();
-  await increase.click();
   await expect(input).toHaveValue("550");
+  await increase.click();
+  await expect(input).toHaveValue("600");
   await expect(input).toHaveAttribute("aria-valuetext", /.+/);
-  await expect(root.locator(".uif-number-field-formatted")).not.toHaveText("550");
-  await expect.poll(() => page.evaluate(() => window.__numberChanges)).toEqual([550, 550]);
+  await expect(root.locator(".uif-number-field-formatted")).not.toHaveText("600");
+  await expect(root.locator("uif-number-field").getByRole("status")).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => window.__numberChanges)).toEqual([550, 600]);
   await input.focus();
   await page.keyboard.press("ArrowDown");
-  await expect(input).toHaveValue("500");
+  await expect(input).toHaveValue("550");
 });
 
 test("Number Field macro and element keep normalized Intl output consistent", async ({ page }) => {
@@ -248,6 +310,7 @@ test("Range Slider keeps native thumbs labelled and non-crossing", async ({ page
   await expect(upper).toHaveValue("1200");
   await expect(lower).toHaveAttribute("max", "1200");
   await expect(lower).toHaveAttribute("aria-valuetext", "Minimum: 1200");
+  await expect(root.locator("uif-range-slider").getByRole("status")).toHaveCount(0);
 });
 
 test("Range Slider lets pointer users reopen overlapping thumbs in either direction", async ({ page }) => {
@@ -376,7 +439,7 @@ test("Disabled and error states remain native and programmatically connected", a
   });
   const number = root.getByRole("spinbutton", { name: "Holiday budget" });
   await expect(number).toHaveAttribute("aria-invalid", "true");
-  await expect(number).toHaveAttribute("aria-describedby", /-formatted .+-error/);
+  await expect(number).toHaveAttribute("aria-describedby", /-error$/);
   await expect(root.getByText("Enter a budget up to 5000")).toBeVisible();
 
   root = await openPlayground(page, "segmented-control");

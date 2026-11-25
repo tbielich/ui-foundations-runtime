@@ -14,7 +14,8 @@ test("range macro emits two visible labels and constrained native ranges", () =>
   assert.match(html, /for="price-lower">Minimum<\/label>/);
   assert.match(html, /for="price-upper">Maximum<\/label>/);
   assert.match(html, /id="price-lower" type="range" name="min" min="0" max="800" step="50" value="200"/);
-  assert.match(html, /id="price-upper" type="range" name="max" min="200" max="1000" step="50" value="800"/);
+  assert.match(html, /id="price-upper" type="range" name="max" min="200" max="1000" step="50" value="800" aria-valuetext="Maximum: 800"/);
+  assert.doesNotMatch(html, /<output/);
   assert.equal((html.match(/aria-describedby="price-error"/g) || []).length, 2);
 });
 

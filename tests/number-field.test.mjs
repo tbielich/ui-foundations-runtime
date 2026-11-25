@@ -15,7 +15,8 @@ test("number macro preserves native constraints and labelled controls", () => {
   assert.match(html, /aria-label="Increase Budget"/);
   assert.match(html, /aria-valuetext="500"/);
   assert.match(html, /aria-invalid="true"/);
-  assert.match(html, /aria-describedby="budget-formatted budget-error"/);
+  assert.match(html, /aria-describedby="budget-error"/);
+  assert.doesNotMatch(html, /<output/);
 });
 
 test("number macro matches Intl decimal, currency, and percent formatting", () => {
@@ -37,7 +38,7 @@ test("number macro matches Intl decimal, currency, and percent formatting", () =
   for (const { source, expected } of cases) {
     const html = render(source);
     assert.ok(html.includes(`aria-valuetext="${expected}"`));
-    assert.ok(html.includes(`>${expected}</output>`));
+    assert.ok(html.includes(`>${expected}</span>`));
   }
 });
 
@@ -70,7 +71,7 @@ test("number macro normalizes numeric strings and invalid arguments", () => {
   assert.match(invalid, /value="" step="1" aria-valuetext="No value"/);
   assert.doesNotMatch(invalid, /\smin=/);
   assert.doesNotMatch(invalid, /\smax=/);
-  assert.match(invalid, />No value<\/output>/);
+  assert.match(invalid, />No value<\/span>/);
 });
 
 test("number element keeps normalization and formatting separate from editable state", () => {

@@ -49,7 +49,7 @@ class UIRangeSlider extends UIElement {
         const wrapper = this.ownerDocument.createElement("span");
         wrapper.className = "uif-range-slider-value";
         const labelElement = this.ownerDocument.createElement("label");
-        const output = this.ownerDocument.createElement("output");
+        const output = this.ownerDocument.createElement("span");
         output.className = `uif-range-slider-output uif-range-slider-output-${kind}`;
         wrapper.append(labelElement, output);
         values.append(wrapper);
@@ -111,8 +111,6 @@ class UIRangeSlider extends UIElement {
     this._lowerLabel.textContent = lowerLabel;
     this._upperLabel.htmlFor = upperId;
     this._upperLabel.textContent = upperLabel;
-    this._lowerOutput.htmlFor = lowerId;
-    this._upperOutput.htmlFor = upperId;
 
     this._lowerInput.id = lowerId;
     this._lowerInput.name = this.getAttr("lower-name", "min");
@@ -161,9 +159,7 @@ class UIRangeSlider extends UIElement {
     upperInput.value = String(nextUpper);
     lowerInput.max = String(nextUpper);
     upperInput.min = String(nextLower);
-    this._lowerOutput.value = String(nextLower);
     this._lowerOutput.textContent = String(nextLower);
-    this._upperOutput.value = String(nextUpper);
     this._upperOutput.textContent = String(nextUpper);
     lowerInput.setAttribute("aria-valuetext", `${this._lowerLabel.textContent}: ${nextLower}`);
     upperInput.setAttribute("aria-valuetext", `${this._upperLabel.textContent}: ${nextUpper}`);

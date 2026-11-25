@@ -99,7 +99,7 @@ class UINumberField extends UIElement {
 
       const down = makeButton("down");
       const up = makeButton("up");
-      const output = this.ownerDocument.createElement("output");
+      const output = this.ownerDocument.createElement("span");
       output.className = "uif-number-field-formatted";
       const errorElement = this.ownerDocument.createElement("p");
       errorElement.className = "uif-number-field-error";
@@ -137,17 +137,16 @@ class UINumberField extends UIElement {
     this._down.setAttribute("aria-label", `Decrease ${label}`);
     this._up.setAttribute("aria-label", `Increase ${label}`);
     this._output.id = outputId;
-    this._output.htmlFor = inputId;
 
     const error = this.getAttr("error").trim();
     if (error) {
       this._error.id = errorId;
       this._error.textContent = error;
       this._field.append(this._error);
-      this._input.setAttribute("aria-describedby", `${outputId} ${errorId}`);
+      this._input.setAttribute("aria-describedby", errorId);
     } else {
       this._error.remove();
-      this._input.setAttribute("aria-describedby", outputId);
+      this._input.removeAttribute("aria-describedby");
     }
     this._syncFormatted();
   }
@@ -172,7 +171,6 @@ class UINumberField extends UIElement {
     if (!this._input || !this._output) return;
     const value = this._input.valueAsNumber;
     const formatted = this._format(value);
-    this._output.value = formatted;
     this._output.textContent = formatted;
     this._input.setAttribute("aria-valuetext", formatted);
   }
