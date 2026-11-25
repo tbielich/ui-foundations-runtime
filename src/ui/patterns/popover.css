@@ -61,6 +61,29 @@
     outline-offset: var(--uif-semantic-size-border-default);
   }
 
+  .uif-popover-trigger {
+    max-inline-size: min(100%, calc(100vw - (var(--size-spacing-400) * 2 * var(--_uif-context-scale, 1))));
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-popover {
+    --uif-popover-border-radius: calc(var(--size-radius-300) * var(--_uif-context-scale, 1));
+    --uif-popover-padding: calc(var(--size-spacing-400) * var(--_uif-context-scale, 1));
+    max-inline-size: min(calc(24rem * var(--_uif-context-scale, 1)), calc(100vw - (var(--size-spacing-400) * var(--_uif-context-scale, 1))));
+    max-block-size: calc(100dvh - (var(--size-spacing-400) * var(--_uif-context-scale, 1)));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-popover-arrow {
+    inline-size: calc(0.75rem * var(--_uif-context-scale, 1));
+    block-size: calc(0.75rem * var(--_uif-context-scale, 1));
+  }
+  .uif-popover[data-placement="top"] .uif-popover-arrow { inset-block-end: calc(-0.4375rem * var(--_uif-context-scale, 1)); inset-inline-start: calc(50% - (0.375rem * var(--_uif-context-scale, 1))); }
+  .uif-popover[data-placement="bottom"] .uif-popover-arrow { inset-block-start: calc(-0.4375rem * var(--_uif-context-scale, 1)); inset-inline-start: calc(50% - (0.375rem * var(--_uif-context-scale, 1))); }
+  .uif-popover[data-placement="left"] .uif-popover-arrow { inset-inline-end: calc(-0.4375rem * var(--_uif-context-scale, 1)); inset-block-start: calc(50% - (0.375rem * var(--_uif-context-scale, 1))); }
+  .uif-popover[data-placement="right"] .uif-popover-arrow { inset-inline-start: calc(-0.4375rem * var(--_uif-context-scale, 1)); inset-block-start: calc(50% - (0.375rem * var(--_uif-context-scale, 1))); }
+
   @media (forced-colors: active) {
     .uif-popover { border: 2px solid CanvasText; box-shadow: none; }
     .uif-popover-arrow { border-color: CanvasText; }

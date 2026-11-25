@@ -9,8 +9,9 @@ playgroundUrl: /patterns/search-field-playground/
 playgroundLabel: Open Search Field Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.searchField(label="Search holidays", id="search-doc", name="query", value="Mallorca") }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{{ uif.searchField(label="Search holidays", id="search-doc", name="query", value="Mallorca") }}{% endcall %}<div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 <script type="module" src="/vendor/ui-foundations/components/input-controls.js"></script>
 

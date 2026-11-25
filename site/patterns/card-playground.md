@@ -17,9 +17,19 @@ playground:
   id: card-playground
   queryPrefix: card
   runtime: vanilla
+  containerScale: true
   renderer: card
   tokenCssPath: src/ui/patterns/card.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: title
       label: Title

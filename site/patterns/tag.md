@@ -9,8 +9,9 @@ playgroundUrl: /patterns/tag-playground/
 playgroundLabel: Open Tag Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{% call uif.tagGroup(label="Selected filters") %}{{ uif.tag("Family", removable=true, icon="user") }}{{ uif.tag("Beach", removable=true) }}{{ uif.tag("Breakfast included", removable=true) }}{% endcall %}</div></div><div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{% call uif.tagGroup(label="Selected filters") %}{{ uif.tag("Family", removable=true, icon="user") }}{{ uif.tag("Beach", removable=true) }}{{ uif.tag("Breakfast included", removable=true) }}{% endcall %}{% endcall %}<div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 Tags label categories and filters. Prefix icons and avatars are decorative because the text remains the accessible label. Use `size="sm"` only for the local compact variant. Groups wrap by default; `overflow="scroll"` keeps one line with local scrolling.
 

@@ -17,9 +17,19 @@ playground:
   id: search-field-playground
   queryPrefix: search-field
   runtime: vanilla
+  containerScale: true
   renderer: search-field
   tokenCssPath: src/ui/patterns/search-field.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

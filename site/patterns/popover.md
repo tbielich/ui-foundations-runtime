@@ -9,9 +9,10 @@ playgroundUrl: /patterns/popover-playground/
 playgroundLabel: Open Popover Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
 <div class="docs-hero">
-  <div class="docs-hero-preview"><div class="docs-hero-preview-stage">{% call uif.popover(triggerId="popover-docs-trigger", triggerLabel="Show booking details", label="Booking details", placement="bottom") %}<p>Your fare can be changed before departure.</p><a href="#implementation">Review implementation</a>{% endcall %}</div></div>
+  {% call preview(scale=true) %}{% call uif.popover(triggerId="popover-docs-trigger", triggerLabel="Show booking details", label="Booking details", placement="bottom") %}<p>Your fare can be changed before departure.</p><a href="#implementation">Review implementation</a>{% endcall %}{% endcall %}
   <div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div>
 </div>
 

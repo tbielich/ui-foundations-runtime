@@ -9,8 +9,9 @@ playgroundUrl: /patterns/breadcrumbs-playground/
 playgroundLabel: Open Breadcrumbs Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.breadcrumbs(items=[{label: "Home", href: "/"}, {label: "Holidays", href: "#holidays"}, {label: "Spain", href: "#spain"}, {label: "Mallorca", href: "#mallorca"}, {label: "Booking", current: true}]) }}</div></div><div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{{ uif.breadcrumbs(items=[{label: "Home", href: "/"}, {label: "Holidays", href: "#holidays"}, {label: "Spain", href: "#spain"}, {label: "Mallorca", href: "#mallorca"}, {label: "Booking", current: true}]) }}{% endcall %}<div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 Breadcrumbs expose one labelled `nav` containing an ordered list. The current item uses `aria-current="page"`. Separators are CSS-generated decoration, so assistive technology does not announce them.
 

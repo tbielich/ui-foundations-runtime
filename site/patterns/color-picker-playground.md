@@ -17,9 +17,19 @@ playground:
   id: color-picker-playground
   queryPrefix: color-picker
   runtime: vanilla
+  containerScale: true
   renderer: color-picker
   tokenCssPath: src/ui/patterns/color-picker.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

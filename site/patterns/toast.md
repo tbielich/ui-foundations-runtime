@@ -9,11 +9,10 @@ playgroundUrl: /patterns/toast-playground/
 playgroundLabel: Open Toast Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
 <div class="docs-hero">
-  <div class="docs-hero-preview">
-    <div class="docs-hero-preview-stage" style="min-block-size: 14rem; position: relative;">{% call uif.toastRegion(label="Notifications") %}{{ uif.toast(message="Your booking was saved.", variant="success", duration=0, actionLabel="Undo") }}{% endcall %}</div>
-  </div>
+  {% call preview(scale=true, stageStyle="min-block-size: 14rem; position: relative;") %}{% call uif.toastRegion(label="Notifications") %}{{ uif.toast(message="Your booking was saved.", variant="success", duration=0, actionLabel="Undo") }}{% endcall %}{% endcall %}
   <div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div>
 </div>
 

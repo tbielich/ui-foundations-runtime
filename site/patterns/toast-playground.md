@@ -17,9 +17,19 @@ playground:
   id: toast-playground
   queryPrefix: toast
   runtime: vanilla
+  containerScale: true
   renderer: toast
   tokenCssPath: src/ui/patterns/toast.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: message
       label: Message

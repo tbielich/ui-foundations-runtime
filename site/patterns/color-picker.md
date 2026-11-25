@@ -9,8 +9,9 @@ playgroundUrl: /patterns/color-picker-playground/
 playgroundLabel: Open ColorPicker Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.colorPicker(id="brand-color", label="Brand color", name="brandColor", value="#0066CC") }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{{ uif.colorPicker(id="brand-color", label="Brand color", name="brandColor", value="#0066CC") }}{% endcall %}<div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 <script type="module" src="/vendor/ui-foundations/elements/ui-color-picker.js"></script>
 

@@ -9,8 +9,9 @@ playgroundUrl: /patterns/skeleton-playground/
 playgroundLabel: Open Skeleton Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage"><section aria-busy="true" aria-label="Loading holiday details">{{ uif.skeleton(shape="text", lines=3) }}</section></div></div><div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}<section aria-busy="true" aria-label="Loading holiday details">{{ uif.skeleton(shape="text", lines=3) }}</section>{% endcall %}<div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 Skeleton provides composable `text`, `circle` and `rectangle` shapes. The placeholders are always `aria-hidden`. Put `aria-busy="true"` and a concise loading label on the content region that the shapes represent; remove busy state when real content replaces them.
 

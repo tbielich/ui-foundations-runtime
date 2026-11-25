@@ -104,6 +104,37 @@
   .uif-combo-box[data-disabled] .uif-combo-box-control { cursor: not-allowed; }
   .uif-combo-box-status[hidden] { display: none; }
 
+  .uif-combo-box {
+    gap: calc(var(--uif-combo-box-gap, var(--size-spacing-200)) * var(--_uif-context-scale, 1));
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-combo-box-control {
+    min-block-size: max(24px, calc(var(--uif-input-height, var(--size-spacing-800)) * var(--_uif-context-scale, 1)));
+    border-radius: calc(var(--uif-combo-box-border-radius, var(--uif-input-border-radius)) * var(--_uif-context-scale, 1));
+  }
+  .uif-combo-box-input { padding: calc(var(--uif-input-padding-block) * var(--_uif-context-scale, 1)) calc(var(--uif-input-padding-inline) * var(--_uif-context-scale, 1)); }
+  .uif-combo-box-toggle {
+    min-inline-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1)));
+    min-block-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1)));
+    padding-inline: calc(var(--size-spacing-300) * var(--_uif-context-scale, 1));
+  }
+  .uif-combo-box-popup {
+    border-radius: calc(var(--uif-combo-box-popup-border-radius, var(--size-radius-300)) * var(--_uif-context-scale, 1));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-combo-box-listbox { padding: calc(var(--size-spacing-100) * var(--_uif-context-scale, 1)); }
+  .uif-combo-box-option {
+    min-block-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1)));
+    padding: calc(var(--size-spacing-200) * var(--_uif-context-scale, 1)) calc(var(--size-spacing-300) * var(--_uif-context-scale, 1));
+    border-radius: calc(var(--size-radius-200) * var(--_uif-context-scale, 1));
+  }
+  .uif-combo-box-state,
+  .uif-combo-box-error,
+  .uif-combo-box-status { padding: calc(var(--size-spacing-300) * var(--_uif-context-scale, 1)); }
+
   @media (prefers-reduced-motion: reduce) {
     .uif-combo-box-popup { scroll-behavior: auto; }
   }

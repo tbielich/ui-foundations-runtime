@@ -17,9 +17,19 @@ playground:
   id: range-slider-playground
   queryPrefix: range-slider
   runtime: vanilla
+  containerScale: true
   renderer: range-slider
   tokenCssPath: src/ui/patterns/range-slider.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

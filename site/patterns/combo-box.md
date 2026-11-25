@@ -9,8 +9,9 @@ playgroundUrl: /patterns/combo-box-playground/
 playgroundLabel: Open ComboBox Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.comboBox(id="destination-combo", label="Destination", name="destination", value="pmi", options=[{value: "pmi", textValue: "Palma de Mallorca", label: "Palma de Mallorca — PMI"}, {value: "tfs", textValue: "Tenerife", label: "Tenerife — TFS"}, {value: "lpa", textValue: "Gran Canaria", label: "Gran Canaria — LPA"}]) }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{{ uif.comboBox(id="destination-combo", label="Destination", name="destination", value="pmi", options=[{value: "pmi", textValue: "Palma de Mallorca", label: "Palma de Mallorca — PMI"}, {value: "tfs", textValue: "Tenerife", label: "Tenerife — TFS"}, {value: "lpa", textValue: "Gran Canaria", label: "Gran Canaria — LPA"}]) }}{% endcall %}<div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 <script type="module" src="/vendor/ui-foundations/elements/ui-combo-box.js"></script>
 
