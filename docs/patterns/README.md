@@ -38,6 +38,7 @@ Runtime pattern/component docs use three explicit statuses:
 | `combo-box` | Implemented pattern | Active | `site/patterns/combo-box.md`, `src/ui/patterns/combo-box.css`, `src/elements/ui-combo-box.js` |
 | `color-picker` | Implemented pattern | Active | `site/patterns/color-picker.md`, `src/ui/patterns/color-picker.css`, `src/elements/ui-color-picker.js` |
 | `drop-zone` | Implemented pattern | Active | `site/patterns/drop-zone.md`, `src/ui/patterns/drop-zone.css`, `src/elements/ui-drop-zone.js` |
+| `tree-view` | Implemented pattern | Active | `site/patterns/tree-view.md`, `src/ui/patterns/tree-view.css`, `src/elements/ui-tree-view.js` |
 | `feedback.md` | Pattern guidance | Placeholder summary | See TODO in page; no standalone feedback rule yet |
 | `layout.md` | Pattern guidance | Placeholder summary | Foundations references only; no standalone layout pattern rule |
 | `modal.md` | Component placeholder | Placeholder | No runtime component documentation yet |

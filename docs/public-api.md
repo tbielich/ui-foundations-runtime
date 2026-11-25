@@ -92,6 +92,14 @@ The visible selection control and labelled native `input type="file"` remain the
 
 Live Figma component/token reconciliation and Code Connect publication for issue #57 remain deferred. No Figma identifier is recorded.
 
+## TreeView
+
+Import `ui-foundations/elements/ui-tree-view` for `<uif-tree-view>` and nested `<uif-tree-item>` children, or use the aggregate elements entry. The `uif.treeView` macro emits the same authored hierarchy from an `items` array.
+
+The tree exposes programmatic hierarchy, expansion and single/multiple selection with visible-node roving focus, Arrow/Home/End navigation, Enter/Space selection and typeahead. `reorderable` provides pointer drag-and-drop plus Control+Shift+Arrow keyboard moves with polite announcements and `uif-reorder` detail. Lazy items dispatch a cancelable `uif-load` request with an `AbortSignal` and host-owned `resolve`/`reject` callbacks; the element performs no network request and ignores duplicate direct child values.
+
+Live Figma component/token reconciliation, verified node/property identities and Code Connect publication for issue #58 remain deferred. No Figma identifier is recorded.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

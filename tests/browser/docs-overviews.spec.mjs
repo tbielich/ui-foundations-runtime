@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-for (const [category, count] of [['patterns', 29], ['components', 2], ['examples', 2]]) {
+for (const [category, count] of [['patterns', 30], ['components', 2], ['examples', 2]]) {
   test(`${category} overview uses the shared grid with inert previews and responsive cards`, async ({ page }) => {
     await page.goto(`/${category}/`);
     const grid = page.locator('.docs-hero-preview-stage > .docs-overview-grid');

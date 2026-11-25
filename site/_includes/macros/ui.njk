@@ -641,6 +641,17 @@
 {%- else %}<!-- uif.dropZone requires a non-empty id -->{% endif %}
 {%- endmacro %}
 
+{% macro treeItems(items=[]) -%}
+{%- for item in items %}
+<uif-tree-item value="{{ (item.value or item.label) | escape }}" label="{{ (item.label or item.value) | escape }}"{% if item.expanded %} expanded{% endif %}{% if item.selected %} selected{% endif %}{% if item.lazy %} lazy{% endif %}><span class="uif-tree-item-label">{{ (item.label or item.value) | escape }}</span>{% if item.children %}{{ treeItems(item.children) }}{% endif %}</uif-tree-item>
+{%- endfor %}
+{%- endmacro %}
+
+{% macro treeView(id='', label='Tree', items=[], selection='single', reorderable=false) -%}
+{%- set resolvedSelection = selection if selection in ['single', 'multiple', 'none'] else 'single' -%}
+<uif-tree-view{% if id | trim %} id="{{ id | trim | escape }}"{% endif %} label="{{ label | escape }}" selection="{{ resolvedSelection }}"{% if reorderable %} reorderable{% endif %}>{{ treeItems(items) }}</uif-tree-view>
+{%- endmacro %}
+
 {% macro colorPicker(id='', label='Color', name='', value='#0066CC', swatches='', disabled=false, readonly=false, invalid=false, error='') -%}
 {%- set fieldId = id | trim -%}
 {%- if fieldId %}

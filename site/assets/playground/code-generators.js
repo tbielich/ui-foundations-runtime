@@ -527,6 +527,23 @@
     return "<uif-drop-zone " + attributes.join(" ") + "></uif-drop-zone>";
   }
 
+  function treeViewCode(state, format) {
+    var p = state.props;
+    var label = String(p.label || "Destinations");
+    var selection = ["single", "multiple", "none"].includes(p.selection) ? p.selection : "multiple";
+    var reorderable = p.reorderable === true || p.reorderable === "true";
+    var lazy = p.lazy === true || p.lazy === "true";
+    if (format === "njk") {
+      var items = '[{value: "europe", label: "Europe", expanded: true, children: [{value: "spain", label: "Spain"}, {value: "greece", label: "Greece"}]}, {value: "americas", label: "Americas", children: [{value: "mexico", label: "Mexico"}, {value: "canada", label: "Canada"}]}' + (lazy ? ', {value: "islands", label: "Islands", lazy: true}' : "") + "]";
+      return "{{ uif.treeView(id=\"tree-view-example\", label=" + JSON.stringify(label) + ", selection=\"" + selection + "\", reorderable=" + (reorderable ? "true" : "false") + ", items=" + items + ") }}";
+    }
+    return '<uif-tree-view label="' + quoteAttr(label) + '" selection="' + selection + '"' + (reorderable ? " reorderable" : "") + '>\n' +
+      '  <uif-tree-item value="europe" label="Europe" expanded>\n    <uif-tree-item value="spain" label="Spain"></uif-tree-item>\n    <uif-tree-item value="greece" label="Greece"></uif-tree-item>\n  </uif-tree-item>\n' +
+      '  <uif-tree-item value="americas" label="Americas">\n    <uif-tree-item value="mexico" label="Mexico"></uif-tree-item>\n    <uif-tree-item value="canada" label="Canada"></uif-tree-item>\n  </uif-tree-item>' +
+      (lazy ? '\n  <uif-tree-item value="islands" label="Islands" lazy></uif-tree-item>' : "") +
+      "\n</uif-tree-view>";
+  }
+
   function colorPickerCode(state, format) {
     var p = state.props;
     var attributes = [];
@@ -600,6 +617,7 @@
       "combo-box": function (state) { return comboBoxCode(state, "njk"); },
       "color-picker": function (state) { return colorPickerCode(state, "njk"); },
       "drop-zone": function (state) { return dropZoneCode(state, "njk"); },
+      "tree-view": function (state) { return treeViewCode(state, "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -681,6 +699,7 @@
       "combo-box": function (state) { return comboBoxCode(state, "wc"); },
       "color-picker": function (state) { return colorPickerCode(state, "wc"); },
       "drop-zone": function (state) { return dropZoneCode(state, "wc"); },
+      "tree-view": function (state) { return treeViewCode(state, "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

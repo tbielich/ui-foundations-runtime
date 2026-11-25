@@ -1,0 +1,120 @@
+@layer components {
+  uif-tree-view {
+    display: block;
+    min-inline-size: 0;
+    inline-size: 100%;
+    max-inline-size: 100%;
+  }
+
+  .uif-tree-view,
+  .uif-tree-view-tree {
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    color: var(--uif-tree-view-text-color, var(--color-text-default));
+  }
+
+  .uif-tree-item {
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    outline: none;
+  }
+
+  .uif-tree-item-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--uif-tree-view-gap, var(--size-spacing-200));
+    min-block-size: max(44px, var(--uif-semantic-scale-size-target-default));
+    max-inline-size: 100%;
+    padding: var(--uif-tree-view-item-padding, var(--size-spacing-200) var(--size-spacing-300));
+    border: var(--uif-semantic-size-border-default, 1px) solid transparent;
+    border-radius: var(--uif-tree-view-border-radius, var(--size-radius-200));
+    cursor: default;
+  }
+
+  .uif-tree-item-label {
+    min-inline-size: 0;
+    flex: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .uif-tree-item-toggle {
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    color: var(--uif-tree-view-toggle-color, currentColor);
+  }
+
+  .uif-tree-item-selection {
+    flex: 0 0 auto;
+    font-size: var(--font-size-sm);
+    font-weight: var(--brand-typography-ui-font-weight);
+  }
+
+  .uif-tree-item[aria-selected="true"] > .uif-tree-item-row {
+    color: var(--uif-tree-view-selected-text-color, var(--color-text-default));
+    background: var(--uif-tree-view-selected-background, var(--color-fill-subtle));
+    border-color: var(--uif-tree-view-selected-border-color, var(--color-border-default));
+  }
+
+  .uif-tree-item:focus-visible > .uif-tree-item-row {
+    outline: 2px solid var(--uif-tree-view-focus-color, var(--color-focus));
+    outline-offset: 2px;
+  }
+
+  .uif-tree-item-group {
+    display: block;
+    min-inline-size: 0;
+    margin-inline-start: var(--uif-tree-view-indent, var(--size-spacing-500));
+    padding-inline-start: var(--size-spacing-200);
+    border-inline-start: var(--uif-semantic-size-border-default, 1px) solid var(--uif-tree-view-guide-color, var(--color-border-default));
+  }
+
+  .uif-tree-item-group[hidden] { display: none; }
+  .uif-tree-item[data-loading] > .uif-tree-item-row { cursor: progress; }
+  .uif-tree-item[data-load-error] > .uif-tree-item-row { border-color: var(--uif-semantic-color-border-danger-default); }
+  .uif-tree-item[data-dragging] { opacity: 0.55; }
+
+  .uif-tree-item[data-drop-position="before"] > .uif-tree-item-row::before,
+  .uif-tree-item[data-drop-position="after"] > .uif-tree-item-row::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    border-block-start: 3px solid var(--uif-tree-view-drop-color, var(--color-focus));
+  }
+  .uif-tree-item[data-drop-position="before"] > .uif-tree-item-row::before { inset-block-start: -2px; }
+  .uif-tree-item[data-drop-position="after"] > .uif-tree-item-row::after { inset-block-end: -2px; }
+  .uif-tree-item[data-drop-position="inside"] > .uif-tree-item-row {
+    outline: 3px solid var(--uif-tree-view-drop-color, var(--color-focus));
+    outline-offset: -3px;
+  }
+
+  .uif-tree-view-status {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .uif-tree-item,
+    .uif-tree-item-row { scroll-behavior: auto; transition: none; }
+  }
+
+  @media (forced-colors: active) {
+    .uif-tree-item[aria-selected="true"] > .uif-tree-item-row { color: HighlightText; background: Highlight; border-color: Highlight; }
+    .uif-tree-item:focus-visible > .uif-tree-item-row { outline-color: Highlight; }
+    .uif-tree-item-group { border-color: CanvasText; }
+    .uif-tree-item[data-load-error] > .uif-tree-item-row { border-color: CanvasText; border-style: double; }
+    .uif-tree-item[data-drop-position] > .uif-tree-item-row { outline-color: Highlight; }
+    .uif-tree-item[data-drop-position="before"] > .uif-tree-item-row::before,
+    .uif-tree-item[data-drop-position="after"] > .uif-tree-item-row::after { border-color: Highlight; }
+  }
+}

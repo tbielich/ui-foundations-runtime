@@ -1,0 +1,2 @@
+{% import "macros/ui.njk" as uif %}
+{{ uif.treeView(id="tree-view-preview", label="Destinations", items=[{value: "europe", label: "Europe", expanded: true, children: [{value: "spain", label: "Spain"}, {value: "greece", label: "Greece"}]}, {value: "americas", label: "Americas"}]) }}
