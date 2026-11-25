@@ -118,6 +118,9 @@ export declare class UIColorPicker extends UIElement {
   readonly color: UIColorValue;
   swatches: UIColorSwatch[];
 }
+export declare class UIDropZone extends UIElement {
+  readonly files: File[];
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -143,6 +146,7 @@ declare global {
     "uif-combo-box": UIComboBox;
     "uif-combo-box-option": UIComboBoxOption;
     "uif-color-picker": UIColorPicker;
+    "uif-drop-zone": UIDropZone;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

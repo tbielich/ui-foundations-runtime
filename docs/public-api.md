@@ -84,6 +84,14 @@ Keyboard and pointer updates emit bubbling `input` and `change` events; committe
 
 Live Figma component/token reconciliation and Code Connect publication for issue #56 remain deferred. No Figma identifier is recorded.
 
+## DropZone
+
+Import `ui-foundations/elements/ui-drop-zone` for `<uif-drop-zone>`, or use the aggregate elements entry. The `uif.dropZone` macro requires a unique caller-owned `id` and emits a complete static native file-input fallback.
+
+The visible selection control and labelled native `input type="file"` remain the complete keyboard, voice and touch path. Drag-and-drop uses the same `accept` and `multiple` validation, while accepted filenames and specific rejection errors remain visible in text. Successful selections emit `uif-files-selected` with local `File` objects and their picker or drop source. The component does not upload, read or send files.
+
+Live Figma component/token reconciliation and Code Connect publication for issue #57 remain deferred. No Figma identifier is recorded.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

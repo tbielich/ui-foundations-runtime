@@ -1553,6 +1553,19 @@
     return { element, code: element.outerHTML };
   };
 
+  const renderVanillaDropZone = ({ props }) => {
+    const element = document.createElement("uif-drop-zone");
+    element.setAttribute("label", String(props.label || "Travel documents"));
+    element.setAttribute("description", String(props.description || "PDF or image files"));
+    element.setAttribute("name", "documents");
+    element.setAttribute("accept", String(props.accept || ".pdf,image/*"));
+    ["multiple", "loading", "disabled", "invalid"].forEach((property) => {
+      if (asBoolean(props[property])) element.setAttribute(property, "");
+    });
+    if (props.error) element.setAttribute("error", String(props.error));
+    return { element, code: element.outerHTML };
+  };
+
   const renderVanillaColorPicker = ({ props }) => {
     const element = document.createElement("uif-color-picker");
     element.setAttribute("label", String(props.label || "Brand color"));
@@ -1607,6 +1620,7 @@
       "range-slider": (state) => renderVanillaInputControl(state, "range-slider"),
       "combo-box": renderVanillaComboBox,
       "color-picker": renderVanillaColorPicker,
+      "drop-zone": renderVanillaDropZone,
 
     },
   };

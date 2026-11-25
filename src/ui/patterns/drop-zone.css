@@ -1,0 +1,99 @@
+@layer components {
+  uif-drop-zone { display: block; min-inline-size: 0; inline-size: 100%; max-inline-size: 100%; }
+
+  .uif-drop-zone {
+    display: grid;
+    gap: var(--uif-drop-zone-gap, var(--size-spacing-300));
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    color: var(--uif-drop-zone-text-color, var(--color-text-default));
+  }
+
+  .uif-drop-zone-label,
+  .uif-drop-zone-description,
+  .uif-drop-zone-status { margin: 0; overflow-wrap: anywhere; }
+  .uif-drop-zone-label { font-weight: var(--brand-typography-ui-font-weight); }
+
+  .uif-drop-zone-target {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-spacing-300);
+    min-block-size: var(--uif-drop-zone-min-height, var(--size-spacing-1000));
+    max-inline-size: 100%;
+    padding: var(--uif-drop-zone-padding, var(--size-spacing-500));
+    border: var(--uif-semantic-size-border-default, 1px) dashed var(--uif-drop-zone-border-color, var(--color-border-default));
+    border-radius: var(--uif-drop-zone-border-radius, var(--size-radius-300));
+    background: var(--uif-drop-zone-container-background, var(--color-fill-surface));
+  }
+
+  .uif-drop-zone-target[data-drag-active] {
+    border-style: solid;
+    border-color: var(--uif-drop-zone-active-border-color, var(--uif-input-border-color-focus));
+    background: var(--uif-drop-zone-active-background, var(--color-fill-hover));
+    outline: var(--uif-semantic-size-border-default, 1px) solid var(--uif-drop-zone-active-border-color, var(--uif-input-border-color-focus));
+  }
+
+  .uif-drop-zone-input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .uif-drop-zone-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: max(44px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(44px, var(--uif-semantic-scale-size-target-default));
+    max-inline-size: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+  }
+
+  .uif-drop-zone-input:focus-visible + .uif-drop-zone-button {
+    outline: 2px solid var(--uif-drop-zone-focus-color, var(--color-focus));
+    outline-offset: 2px;
+  }
+
+  .uif-drop-zone-target[data-disabled] .uif-drop-zone-button {
+    color: GrayText;
+    cursor: not-allowed;
+  }
+
+  .uif-drop-zone-files {
+    display: grid;
+    gap: var(--size-spacing-200);
+    margin: 0;
+    padding-inline-start: var(--size-spacing-600);
+    max-inline-size: 100%;
+  }
+
+  .uif-drop-zone-files[hidden],
+  .uif-drop-zone-status[hidden] { display: none; }
+  .uif-drop-zone-file { overflow-wrap: anywhere; }
+  .uif-drop-zone-file::marker { content: "✓  "; }
+  .uif-drop-zone-status[data-error] { color: var(--uif-semantic-color-danger-foreground-default); }
+  .uif-drop-zone[data-invalid] .uif-drop-zone-target { border-color: var(--uif-input-border-color-invalid); }
+
+  @media (max-width: 30rem) {
+    .uif-drop-zone-target { align-items: stretch; flex-direction: column; }
+    .uif-drop-zone-button { inline-size: 100%; }
+    .uif-drop-zone-hint { text-align: center; }
+  }
+
+  @media (forced-colors: active) {
+    .uif-drop-zone-target { border-color: ButtonBorder; background: Canvas; }
+    .uif-drop-zone-target[data-drag-active] { border-color: Highlight; outline-color: Highlight; }
+    .uif-drop-zone-input:focus-visible + .uif-drop-zone-button { outline-color: Highlight; }
+    .uif-drop-zone-file::marker { color: CanvasText; }
+    .uif-drop-zone-status[data-error] { color: CanvasText; font-weight: bold; }
+  }
+}
