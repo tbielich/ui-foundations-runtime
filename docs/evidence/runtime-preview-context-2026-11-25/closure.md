@@ -64,3 +64,19 @@ A further isolated independent Chromium run reproduced the interrupted command's
 final context (Brand C, dark Scheme, large Scale, 320px viewport, 200% text).
 All twelve overview pages had `document.documentElement.scrollWidth = 320`;
 all preview stages confirmed `c / dark / large`.
+
+## CI matrix timing follow-up
+
+On `efa013d`, the push CI jobs for Node 20/22 and PR CI job for Node 22 passed.
+The PR Node 20 job completed 215 browser tests successfully but exceeded the
+120-second limit of the single 432-context matrix test (run `45601802022`).
+No matrix assertion failed. The matrix is now split into 24 page-specific tests
+with the normal per-test limit. Brand and Scheme buttons are clicked at their
+respective loop levels instead of redundantly before every Scale value.
+All 432 combinations and state/exclusivity assertions remain covered.
+
+Final verification after splitting the matrix: complete `npm run ci:check` with
+Node 22.22.1 passed (exit 0): 348/348 unit, 239/239 Chromium, 12/12 accessibility
+tests. The preview-context file contributes 55 passing tests, including all
+24 matrix page tests. Independent diff review approved the test split with no
+findings and confirmed that no assertions were removed or weakened.

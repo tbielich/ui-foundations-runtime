@@ -226,18 +226,17 @@ test("overview option tables remain keyboard-scrollable at 320px and 200% text",
   }
 });
 
-test("every overview and playground preserves the complete Brand Scheme Scale matrix", async ({ page }) => {
-  test.setTimeout(120_000);
-  for (const [slug] of surfaces) {
-    for (const suffix of ["", "-playground"]) {
+for (const [slug] of surfaces) {
+  for (const suffix of ["", "-playground"]) {
+    test(`${slug}${suffix} preserves the complete Brand Scheme Scale matrix`, async ({ page }) => {
       await page.goto(`/patterns/${slug}${suffix}/`);
       const preview = page.locator(suffix ? ".playground-preview" : ".docs-component-preview");
       const stage = preview.locator(".docs-hero-preview-stage");
       for (const brand of ["a", "b", "c"]) {
+        await preview.locator(`[data-hero-brand="${brand}"]`).click();
         for (const scheme of ["light", "dark"]) {
+          await preview.locator(`[data-hero-mode="${scheme}"]`).click();
           for (const scale of ["small", "medium", "large"]) {
-            await preview.locator(`[data-hero-brand="${brand}"]`).click();
-            await preview.locator(`[data-hero-mode="${scheme}"]`).click();
             await preview.locator(`[data-hero-scale="${scale}"]`).click();
             await expect(stage).toHaveAttribute("data-brand", brand);
             await expect(stage).toHaveAttribute("data-mode", scheme);
@@ -248,6 +247,6 @@ test("every overview and playground preserves the complete Brand Scheme Scale ma
           }
         }
       }
-    }
+    });
   }
-});
+}
