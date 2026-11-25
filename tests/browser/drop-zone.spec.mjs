@@ -1,5 +1,11 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const nunjucks = require("nunjucks");
+const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("site/_includes"), { autoescape: false });
+const render = (source) => env.renderString('{% import "macros/ui.njk" as uif %}' + source);
 
 async function openPlayground(page) {
   await page.goto("/patterns/drop-zone-playground/");
@@ -18,6 +24,53 @@ async function dropFiles(target, files) {
     element.dispatchEvent(new DragEvent("drop", { bubbles: true, dataTransfer: transfer }));
   }, files);
 }
+
+test("macro fallback stays picker-only until its in-place upgrade", async ({ page }) => {
+  const html = render('{{ uif.dropZone(id="macro-zone", label="Travel documents", name="documents", accept=".pdf", multiple=true) }}');
+  await page.goto("/impressum/");
+  await page.setContent(`<link rel="stylesheet" href="/vendor/ui-foundations/main.css"><form>${html}</form>`);
+
+  const form = page.locator("form");
+  const zone = form.locator("uif-drop-zone");
+  const target = zone.locator(".uif-drop-zone-target");
+  const description = zone.locator(".uif-drop-zone-description");
+  const hint = zone.locator(".uif-drop-zone-hint");
+  const input = zone.locator('input[type="file"]');
+  await expect(zone).not.toHaveAttribute("data-enhanced", "");
+  await expect(input).toHaveAccessibleName("Travel documents Choose files");
+  await expect(input).toHaveAttribute("name", "documents");
+  await expect(input).toHaveAttribute("accept", ".pdf");
+  await expect(input).toHaveAttribute("multiple", "");
+  await expect(hint).toBeHidden();
+  await expect.poll(() => description.evaluate((element) => element.innerText.trim())).toBe("Choose files with the button.");
+
+  await input.setInputFiles({ name: "passport.pdf", mimeType: "application/pdf", buffer: Buffer.from("pdf") });
+  await expect.poll(() => form.evaluate((element) => new FormData(element).get("documents")?.name)).toBe("passport.pdf");
+  await form.evaluate((element) => element.reset());
+  await expect.poll(() => input.evaluate((element) => element.files.length)).toBe(0);
+
+  await input.setInputFiles({ name: "passport.pdf", mimeType: "application/pdf", buffer: Buffer.from("pdf") });
+  const descriptionBefore = await description.boundingBox();
+  const targetBefore = await target.boundingBox();
+  await page.addScriptTag({
+    type: "module",
+    url: "/vendor/ui-foundations/elements/ui-drop-zone.js",
+  });
+  await page.evaluate(() => customElements.upgrade(document.querySelector("uif-drop-zone")));
+  await expect(zone).toHaveAttribute("data-enhanced", "");
+  await expect(description).toHaveText("Choose files with the button. Or drag and drop them here.");
+  await expect(hint).toBeVisible();
+  await expect.poll(() => input.evaluate((element) => element.files[0]?.name)).toBe("passport.pdf");
+  await expect.poll(() => zone.evaluate((element) => element.files[0]?.name)).toBe("passport.pdf");
+  const descriptionAfter = await description.boundingBox();
+  const targetAfter = await target.boundingBox();
+  expect(Math.abs((descriptionAfter?.height || 0) - (descriptionBefore?.height || 0))).toBeLessThanOrEqual(1);
+  expect(Math.abs((targetAfter?.height || 0) - (targetBefore?.height || 0))).toBeLessThanOrEqual(1);
+
+  await form.evaluate((element) => element.reset());
+  await expect(zone.getByRole("status")).toHaveText("File selection cleared.");
+  await expect.poll(() => input.evaluate((element) => element.files.length)).toBe(0);
+});
 
 test("DropZone exposes a named native picker and persistent status", async ({ page }) => {
   const root = await openPlayground(page);

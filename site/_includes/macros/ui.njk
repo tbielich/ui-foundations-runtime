@@ -619,25 +619,28 @@
 {%- else %}<!-- uif.comboBox requires a non-empty id -->{% endif %}
 {%- endmacro %}
 
-{% macro dropZone(id='', label='Choose files', description='Choose files with the button or drag and drop them here.', buttonLabel='Choose files', name='', accept='', multiple=false, disabled=false, invalid=false, error='', loading=false, loadingMessage='Processing files…') -%}
+{% macro dropZone(id='', label='Choose files', description='', buttonLabel='Choose files', name='', accept='', multiple=false, disabled=false, invalid=false, error='', loading=false, loadingMessage='Processing files…') -%}
 {%- set fieldId = id | trim -%}
 {%- if fieldId %}
 {%- set fieldLabel = label | trim -%}
+{%- set fieldDescription = description | trim -%}
 {%- set actionLabel = buttonLabel | trim or 'Choose files' -%}
 {%- set hasError = invalid or error -%}
 {%- set status = loadingMessage if loading else error -%}
 {%- if invalid and not status -%}{%- set status = 'Choose supported files.' -%}{%- endif -%}
-<div class="uif-drop-zone"{% if hasError %} data-invalid{% endif %}{% if disabled or loading %} data-disabled{% endif %}>
-  <p class="uif-drop-zone-label" id="{{ fieldId | escape }}-label">{{ fieldLabel | escape }}</p>
-  <p class="uif-drop-zone-description" id="{{ fieldId | escape }}-description">{{ description | escape }}</p>
-  <div class="uif-drop-zone-target" role="group" aria-labelledby="{{ fieldId | escape }}-label" aria-describedby="{{ fieldId | escape }}-description" aria-busy="{{ 'true' if loading else 'false' }}" aria-disabled="{{ 'true' if disabled or loading else 'false' }}"{% if hasError %} data-invalid{% endif %}{% if loading %} data-loading{% endif %}>
-    <input class="uif-drop-zone-input" id="{{ fieldId | escape }}-input" type="file" aria-labelledby="{{ fieldId | escape }}-label{% if fieldLabel | lower != actionLabel | lower %} {{ fieldId | escape }}-button-label{% endif %}" aria-describedby="{{ fieldId | escape }}-description {{ fieldId | escape }}-status" aria-invalid="{{ 'true' if hasError else 'false' }}"{% if name %} name="{{ name | escape }}"{% endif %}{% if accept %} accept="{{ accept | escape }}"{% endif %}{% if multiple %} multiple{% endif %}{% if disabled or loading %} disabled{% endif %}>
-    <label class="uif-button outline uif-drop-zone-button" id="{{ fieldId | escape }}-button-label" for="{{ fieldId | escape }}-input">{{ actionLabel | escape }}</label>
-    <span class="uif-drop-zone-hint" aria-hidden="true">or drag and drop files here</span>
+<uif-drop-zone id="{{ fieldId | escape }}" label="{{ fieldLabel | escape }}" button-label="{{ actionLabel | escape }}"{% if fieldDescription %} description="{{ fieldDescription | escape }}"{% endif %}{% if name %} name="{{ name | escape }}"{% endif %}{% if accept %} accept="{{ accept | escape }}"{% endif %}{% if multiple %} multiple{% endif %}{% if disabled %} disabled{% endif %}{% if invalid %} invalid{% endif %}{% if error %} error="{{ error | escape }}"{% endif %}{% if loading %} loading{% endif %}{% if loadingMessage %} loading-message="{{ loadingMessage | escape }}"{% endif %}>
+  <div class="uif-drop-zone" data-uif-drop-zone-fallback{% if hasError %} data-invalid{% endif %}{% if disabled or loading %} data-disabled{% endif %}>
+    <p class="uif-drop-zone-label" id="{{ fieldId | escape }}-label">{{ fieldLabel | escape }}</p>
+    <p class="uif-drop-zone-description" id="{{ fieldId | escape }}-description">{% if fieldDescription %}{{ fieldDescription | escape }}{% else %}Choose files with the button.<span class="uif-drop-zone-upgrade-copy" aria-hidden="true"> Or drag and drop them here.</span>{% endif %}</p>
+    <div class="uif-drop-zone-target" role="group" aria-labelledby="{{ fieldId | escape }}-label" aria-describedby="{{ fieldId | escape }}-description" aria-busy="{{ 'true' if loading else 'false' }}" aria-disabled="{{ 'true' if disabled or loading else 'false' }}"{% if hasError %} data-invalid{% endif %}{% if loading %} data-loading{% endif %}>
+      <input class="uif-drop-zone-input" id="{{ fieldId | escape }}-input" type="file" aria-labelledby="{{ fieldId | escape }}-label{% if fieldLabel | lower != actionLabel | lower %} {{ fieldId | escape }}-button-label{% endif %}" aria-describedby="{{ fieldId | escape }}-description {{ fieldId | escape }}-status" aria-invalid="{{ 'true' if hasError else 'false' }}"{% if name %} name="{{ name | escape }}"{% endif %}{% if accept %} accept="{{ accept | escape }}"{% endif %}{% if multiple %} multiple{% endif %}{% if disabled or loading %} disabled{% endif %}>
+      <label class="uif-button outline uif-drop-zone-button" id="{{ fieldId | escape }}-button-label" for="{{ fieldId | escape }}-input">{{ actionLabel | escape }}</label>
+      <span class="uif-drop-zone-hint" aria-hidden="true">or drag and drop files here</span>
+    </div>
+    <ul class="uif-drop-zone-files" aria-label="Selected files" hidden></ul>
+    <p class="uif-drop-zone-status" id="{{ fieldId | escape }}-status" role="status" aria-live="polite" aria-atomic="true"{% if hasError and not loading %} data-error{% endif %}>{{ status | escape }}</p>
   </div>
-  <ul class="uif-drop-zone-files" aria-label="Selected files" hidden></ul>
-  <p class="uif-drop-zone-status" id="{{ fieldId | escape }}-status" role="status" aria-live="polite" aria-atomic="true"{% if hasError and not loading %} data-error{% endif %}>{{ status | escape }}</p>
-</div>
+</uif-drop-zone>
 {%- else %}<!-- uif.dropZone requires a non-empty id -->{% endif %}
 {%- endmacro %}
 

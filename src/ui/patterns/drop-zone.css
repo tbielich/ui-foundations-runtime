@@ -1,5 +1,6 @@
 @layer components {
   uif-drop-zone { display: block; min-inline-size: 0; inline-size: 100%; max-inline-size: 100%; }
+  uif-drop-zone:not([data-enhanced]) :is(.uif-drop-zone-upgrade-copy, .uif-drop-zone-hint) { visibility: hidden; }
 
   .uif-drop-zone {
     display: grid;

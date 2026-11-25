@@ -16,7 +16,7 @@ playgroundLabel: Open DropZone Playground
 
 ## Behavior
 
-DropZone keeps a labelled native `input type="file"` and its visible “Choose files” control as the complete primary path. Drag-and-drop is an optional pointer enhancement over the same validation path. `accept` filters extensions, exact MIME types and MIME wildcards for both paths. Without `multiple`, the first accepted file is retained and later files receive a specific error. The filled state lists every accepted filename in text.
+DropZone keeps a labelled native `input type="file"` and its visible “Choose files” control as the complete primary path. The `uif.dropZone` macro renders that picker as a working no-JavaScript fallback and only promises picker behavior before upgrade. When `<uif-drop-zone>` upgrades successfully, it hydrates the existing input in place, preserves a pending native selection and reveals the reserved drag-and-drop guidance without changing the layout. Drag-and-drop then becomes an optional pointer enhancement over the same validation path. `accept` filters extensions, exact MIME types and MIME wildcards for both paths. Without `multiple`, the first accepted file is retained and later files receive a specific error. The filled state lists every accepted filename in text.
 
 A successful picker or drop action emits `uif-files-selected` with `{ files, source }`, where `source` is `picker` or `drop`. A dropped selection also emits the native bubbling `change` event from the file input. The read-only `files` property returns the accepted files. A native form reset clears the filled and validation states and announces “File selection cleared” when it removes a selection or validation result.
 
