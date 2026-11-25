@@ -90,6 +90,7 @@
     "./elements/ui-range-slider": "./dist/elements/ui-range-slider.js",
     "./elements/ui-combo-box": "./dist/elements/ui-combo-box.js",
     "./elements/ui-color-picker": "./dist/elements/ui-color-picker.js",
+    "./elements/ui-drop-zone": "./dist/elements/ui-drop-zone.js",
     "./base.css": "./dist/base.css",
     "./behaviors/calendar": "./dist/ui/components/calendar.js",
     "./behaviors/date-input": "./dist/ui/components/date-input.js",

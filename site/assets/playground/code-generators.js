@@ -498,6 +498,35 @@
     return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">";
   }
 
+  function dropZoneCode(state, format) {
+    var p = state.props;
+    var attributes = [];
+    var label = String(p.label || "Travel documents");
+    var description = String(p.description || "PDF or image files");
+    var accept = String(p.accept || ".pdf,image/*");
+    if (format === "njk") {
+      attributes.push('id="drop-zone-example"');
+      attributes.push("label=" + JSON.stringify(label));
+      attributes.push("description=" + JSON.stringify(description));
+      attributes.push('name="documents"');
+      attributes.push("accept=" + JSON.stringify(accept));
+      ["multiple", "loading", "disabled", "invalid"].forEach(function (name) {
+        if (p[name] === true || p[name] === "true") attributes.push(name + "=true");
+      });
+      if (p.error) attributes.push("error=" + JSON.stringify(String(p.error)));
+      return "{{ uif.dropZone(" + attributes.join(", ") + ") }}";
+    }
+    attributes.push('label="' + quoteAttr(label) + '"');
+    attributes.push('description="' + quoteAttr(description) + '"');
+    attributes.push('name="documents"');
+    attributes.push('accept="' + quoteAttr(accept) + '"');
+    ["multiple", "loading", "disabled", "invalid"].forEach(function (name) {
+      if (p[name] === true || p[name] === "true") attributes.push(name);
+    });
+    if (p.error) attributes.push('error="' + quoteAttr(String(p.error)) + '"');
+    return "<uif-drop-zone " + attributes.join(" ") + "></uif-drop-zone>";
+  }
+
   function colorPickerCode(state, format) {
     var p = state.props;
     var attributes = [];
@@ -570,6 +599,7 @@
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "njk"); },
       "combo-box": function (state) { return comboBoxCode(state, "njk"); },
       "color-picker": function (state) { return colorPickerCode(state, "njk"); },
+      "drop-zone": function (state) { return dropZoneCode(state, "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -650,6 +680,7 @@
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "wc"); },
       "combo-box": function (state) { return comboBoxCode(state, "wc"); },
       "color-picker": function (state) { return colorPickerCode(state, "wc"); },
+      "drop-zone": function (state) { return dropZoneCode(state, "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

@@ -37,3 +37,4 @@
 @import url("./patterns/range-slider.css") layer(components);
 @import url("./patterns/combo-box.css") layer(components);
 @import url("./patterns/color-picker.css") layer(components);
+@import url("./patterns/drop-zone.css") layer(components);

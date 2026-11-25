@@ -98,6 +98,7 @@ const VAULT_NAMING_CONTRACT = Object.freeze({
       "date-input",
       "dialog",
       "divider",
+      "drop-zone",
       "form",
       "icon",
       "illustrated-message",

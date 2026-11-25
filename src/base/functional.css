@@ -5,7 +5,7 @@
     uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
     uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton,
     uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider,
-    uif-combo-box, uif-color-picker) {
+    uif-combo-box, uif-color-picker, uif-drop-zone) {
     display: block;
   }
   :where(uif-tag) { display: inline-block; }
@@ -69,6 +69,15 @@
   :where(.uif-color-picker-swatch) { min-inline-size: 2.75em; min-block-size: 2.75em; border: 2px solid ButtonBorder; }
   :where(.uif-color-picker-swatch[aria-selected="true"])::after { content: "✓"; }
   :where(.uif-color-picker-error) { font-weight: bold; }
+  :where(.uif-drop-zone) { display: grid; gap: 0.5em; min-inline-size: 0; }
+  :where(.uif-drop-zone-target) { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em; padding: 1em; border: 1px dashed ButtonBorder; }
+  :where(.uif-drop-zone-target[data-drag-active]) { border-style: solid; outline: 1px solid Highlight; }
+  :where(.uif-drop-zone-input) { position: absolute; inline-size: 1px; block-size: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); }
+  :where(.uif-drop-zone-input:focus-visible + .uif-drop-zone-button) { outline: 2px solid Highlight; outline-offset: 2px; }
+  :where(.uif-drop-zone-files) { max-inline-size: 100%; }
+  :where(.uif-drop-zone-file) { overflow-wrap: anywhere; }
+  :where(.uif-drop-zone-file)::marker { content: "✓  "; }
+  :where(.uif-drop-zone-status[data-error]) { font-weight: bold; }
   :where(.uif-segmented-control-options) { display: flex; flex-wrap: wrap; }
   :where(.uif-segmented-control-option) { position: relative; }
   :where(.uif-segmented-control-input:checked + .uif-segmented-control-content) { outline: 2px solid Highlight; }
