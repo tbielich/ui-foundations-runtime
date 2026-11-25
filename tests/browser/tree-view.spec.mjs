@@ -129,6 +129,60 @@ test("TreeView pointer reorder emits a pointer move with valid feedback", async 
   await expect(americas).not.toHaveAttribute("data-drop-position");
 });
 
+test("TreeView replaces single selection and deselects in multiple mode", async ({ page }) => {
+  const root = await openPlayground(page);
+  await root.evaluate((container) => {
+    container.innerHTML = `<uif-tree-view label="Single tree">
+      <uif-tree-item value="alpha" label="Alpha" selected></uif-tree-item>
+      <uif-tree-item value="beta" label="Beta"></uif-tree-item>
+    </uif-tree-view>
+    <uif-tree-view label="Multiple tree" selection="multiple">
+      <uif-tree-item value="gamma" label="Gamma" selected></uif-tree-item>
+      <uif-tree-item value="delta" label="Delta"></uif-tree-item>
+    </uif-tree-view>`;
+  });
+
+  const singleTree = root.getByRole("tree", { name: "Single tree" });
+  const alpha = singleTree.getByRole("treeitem", { name: "Alpha" });
+  const beta = singleTree.getByRole("treeitem", { name: "Beta" });
+  await beta.focus();
+  await page.keyboard.press("Space");
+  await expect(alpha).toHaveAttribute("aria-selected", "false");
+  await expect(beta).toHaveAttribute("aria-selected", "true");
+
+  const multipleTree = root.getByRole("tree", { name: "Multiple tree" });
+  const gamma = multipleTree.getByRole("treeitem", { name: "Gamma" });
+  await gamma.focus();
+  await page.keyboard.press("Space");
+  await expect(gamma).toHaveAttribute("aria-selected", "false");
+});
+
+test("TreeView keeps drop feedback within a row and clears it between targets", async ({ page }) => {
+  const root = await openPlayground(page);
+  const tree = root.getByRole("tree");
+  const americas = tree.getByRole("treeitem", { name: "Americas" });
+  await tree.evaluate((element) => {
+    const source = element.querySelector('uif-tree-item[value="europe"]');
+    const target = element.querySelector('uif-tree-item[value="americas"]');
+    const nextTarget = element.querySelector('uif-tree-item[value="islands"]');
+    const transfer = new DataTransfer();
+    source.querySelector(":scope > .uif-tree-item-row").dispatchEvent(new DragEvent("dragstart", { bubbles: true, dataTransfer: transfer }));
+    const row = target.querySelector(":scope > .uif-tree-item-row");
+    const label = row.querySelector(".uif-tree-item-label");
+    const rect = row.getBoundingClientRect();
+    row.dispatchEvent(new DragEvent("dragover", { bubbles: true, cancelable: true, clientY: rect.top + rect.height / 2, dataTransfer: transfer }));
+    row.dispatchEvent(new DragEvent("dragleave", { bubbles: true, relatedTarget: label, dataTransfer: transfer }));
+    window.__dropFeedbackWithinRow = target.getAttribute("data-drop-position");
+    row.dispatchEvent(new DragEvent("dragleave", {
+      bubbles: true,
+      relatedTarget: nextTarget.querySelector(":scope > .uif-tree-item-row"),
+      dataTransfer: transfer,
+    }));
+  });
+  await expect.poll(() => page.evaluate(() => window.__dropFeedbackWithinRow)).toBe("inside");
+  await expect(americas).not.toHaveAttribute("data-drop-position");
+});
+
 test("TreeView lazy loading supports failure, retry, idempotency and cancellation", async ({ page }) => {
   const root = await openPlayground(page);
   await root.evaluate((container) => {

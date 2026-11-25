@@ -218,7 +218,7 @@ class UITreeView extends UIElement {
         item.removeAttribute("aria-selected");
         return;
       }
-      let selected = item.hasAttribute("selected") || item.getAttribute("aria-selected") === "true";
+      let selected = item.hasAttribute("selected");
       if (mode === "single" && selected) {
         if (selectedFound) selected = false;
         selectedFound = true;
@@ -448,7 +448,7 @@ class UITreeView extends UIElement {
   _handleDragLeave(event) {
     if (!this._dropTarget) return;
     const next = event.relatedTarget;
-    if (!next || !this._dropTarget.contains(next)) this._clearDropTarget(false);
+    if (!next || !this._dropTarget.item.contains(next)) this._clearDropTarget(false);
   }
 
   _handleDrop(event) {
