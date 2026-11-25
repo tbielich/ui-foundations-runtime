@@ -176,3 +176,78 @@ test("scale keeps relevant reduced-motion fallbacks intact", async ({ page }) =>
   const duration = await page.locator("#segmented-control-playground-root .uif-segmented-control-content").first().evaluate((element) => parseFloat(getComputedStyle(element).transitionDuration));
   expect(duration).toBeLessThan(0.001);
 });
+
+test("all overview pages reflow at 320px and 200% text, including disclosures", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  for (const [slug] of surfaces) {
+    await page.goto(`/patterns/${slug}/`);
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      document.documentElement.style.fontSize = "200%";
+    });
+    const preview = page.locator(".docs-component-preview");
+    await preview.getByRole("button", { name: "Large scale" }).click();
+    const fits = () => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    await expect.poll(fits, { message: `${slug} overview must reflow` }).toBe(true);
+    if (slug === "breadcrumbs") {
+      await preview.locator("summary").focus();
+      await page.keyboard.press("Enter");
+      await expect(preview.getByRole("link", { name: "Holidays" })).toBeVisible();
+      await expect.poll(fits).toBe(true);
+      await page.keyboard.press("Tab");
+      await expect(preview.getByRole("link", { name: "Holidays" })).toBeFocused();
+    }
+    if (slug === "popover") {
+      const trigger = preview.getByRole("button", { name: "Show booking details" });
+      await trigger.focus();
+      await page.keyboard.press("Enter");
+      const dialog = preview.getByRole("dialog", { name: "Booking details" });
+      await expect(dialog).toBeVisible();
+      await expect(dialog.getByRole("link", { name: "Review implementation" })).toBeFocused();
+      await expect.poll(fits).toBe(true);
+      await page.keyboard.press("Escape");
+      await expect(dialog).toBeHidden();
+      await expect(trigger).toBeFocused();
+    }
+  }
+});
+
+test("overview option tables remain keyboard-scrollable at 320px and 200% text", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  for (const slug of ["toast", "popover"]) {
+    await page.goto(`/patterns/${slug}/`);
+    await page.evaluate(() => { document.documentElement.style.fontSize = "200%"; });
+    const region = page.getByRole("region", { name: `${slug === "toast" ? "Toast" : "Popover"} options` });
+    await expect(region.getByRole("table")).toBeVisible();
+    await region.focus();
+    await expect(region).toBeFocused();
+    await page.keyboard.press("ArrowRight");
+    await expect.poll(() => region.evaluate((element) => element.scrollLeft)).toBeGreaterThan(0);
+  }
+});
+
+test("every overview and playground preserves the complete Brand Scheme Scale matrix", async ({ page }) => {
+  test.setTimeout(120_000);
+  for (const [slug] of surfaces) {
+    for (const suffix of ["", "-playground"]) {
+      await page.goto(`/patterns/${slug}${suffix}/`);
+      const preview = page.locator(suffix ? ".playground-preview" : ".docs-component-preview");
+      const stage = preview.locator(".docs-hero-preview-stage");
+      for (const brand of ["a", "b", "c"]) {
+        for (const scheme of ["light", "dark"]) {
+          for (const scale of ["small", "medium", "large"]) {
+            await preview.locator(`[data-hero-brand="${brand}"]`).click();
+            await preview.locator(`[data-hero-mode="${scheme}"]`).click();
+            await preview.locator(`[data-hero-scale="${scale}"]`).click();
+            await expect(stage).toHaveAttribute("data-brand", brand);
+            await expect(stage).toHaveAttribute("data-mode", scheme);
+            await expect(stage).toHaveAttribute("data-scale", scale);
+            for (const name of ["brand", "scheme", "scale"]) {
+              await expect(preview.getByRole("group", { name: `Preview ${name}` }).locator('[aria-pressed="true"]')).toHaveCount(1);
+            }
+          }
+        }
+      }
+    }
+  }
+});

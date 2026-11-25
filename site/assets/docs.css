@@ -213,11 +213,16 @@ details[open] > .docs-nav-group-toggle::before {
   grid-column: 1;
   grid-row: 1;
   max-width: 1120px;
+  min-inline-size: 0;
   padding: 34px var(--docs-content-pad-inline) 48px;
 }
 
 .docs-content > * + * {
   margin-top: 2rem;
+}
+
+.docs-content > :is(h1, h2, h3, p, ul, ol) {
+  overflow-wrap: anywhere;
 }
 
 .docs-content > h1 {
@@ -281,6 +286,8 @@ details[open] > .docs-nav-group-toggle::before {
 }
 
 .docs-page-link {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -1025,6 +1032,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 
 /* ─── Spectrum-style component hero ─── */
 .docs-hero {
+  min-inline-size: 0;
   display: grid;
   gap: 16px;
   padding-block-end: 28px;
@@ -1033,6 +1041,7 @@ html[data-brand="c"] .palette-group[data-brand-scope="b"] {
 }
 
 .docs-hero-preview {
+  min-inline-size: 0;
   display: flex;
   flex-direction: column;
   gap: 0;

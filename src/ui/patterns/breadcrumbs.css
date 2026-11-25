@@ -59,6 +59,8 @@
     border: var(--uif-semantic-size-border-default) solid var(--color-border-default);
     border-radius: var(--size-radius-200);
   }
+  .uif-breadcrumbs-disclosure:not([open]) > .uif-breadcrumbs-hidden-list { display: none; }
+
   .uif-breadcrumbs-hidden-list .uif-breadcrumbs-item::after { content: none; }
   .uif-breadcrumbs :focus-visible {
     outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
@@ -76,6 +78,14 @@
     max-inline-size: calc(100vw - (var(--size-spacing-400) * 2 * var(--_uif-context-scale, 1)));
     padding: calc(var(--size-spacing-300) * var(--_uif-context-scale, 1));
     border-radius: calc(var(--size-radius-200) * var(--_uif-context-scale, 1));
+  }
+
+  @media (max-width: 600px) {
+    .uif-breadcrumbs-hidden-list {
+      position: static;
+      min-inline-size: 0;
+      max-inline-size: 100%;
+    }
   }
 
   @media (forced-colors: active) {

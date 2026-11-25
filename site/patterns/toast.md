@@ -20,6 +20,8 @@ A Toast reports a short action result without interrupting the current task. Toa
 
 <h2 id="options">Options</h2>
 
+<div class="docs-table-wrap" role="region" aria-label="Toast options" tabindex="0">
+
 | Custom Element | Nunjucks | Values and defaults |
 |---|---|---|
 | `variant` | `variant` | `info` (default), `success`, `warning`, `error`. The icon and text provide cues in addition to color. |
@@ -29,6 +31,8 @@ A Toast reports a short action result without interrupting the current task. Toa
 | `action-label` | `actionLabel` | Optional action button. Activation dispatches `uif-action`; it does not dismiss the toast. |
 | `dismiss-label` | `dismissLabel` | Accessible dismiss button label. Default: “Dismiss notification”. |
 | region `position` | `position` | `top-end` (default), `top-start`, `bottom-end`, `bottom-start`. |
+
+</div>
 
 <h2 id="behavior">Behavior</h2>
 
