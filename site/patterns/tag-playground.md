@@ -17,9 +17,19 @@ playground:
   id: tag-playground
   queryPrefix: tag
   runtime: vanilla
+  containerScale: true
   renderer: tag
   tokenCssPath: src/ui/patterns/tag.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: First tag label

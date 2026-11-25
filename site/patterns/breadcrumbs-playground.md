@@ -17,9 +17,19 @@ playground:
   id: breadcrumbs-playground
   queryPrefix: breadcrumbs
   runtime: vanilla
+  containerScale: true
   renderer: breadcrumbs
   tokenCssPath: src/ui/patterns/breadcrumbs.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Navigation label

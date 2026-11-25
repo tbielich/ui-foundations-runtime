@@ -26,7 +26,7 @@ class UIDropZone extends UIElement {
 
     const label = this.getAttr("label").trim() || "Choose files";
     const description = this.getAttr("description").trim()
-      || "Choose files with the button or drag and drop them here.";
+      || "Choose files with the button. Or drag and drop them here.";
     const buttonLabel = this.getAttr("button-label").trim() || "Choose files";
     const loading = this.getBool("loading");
     const disabled = this.getBool("disabled");
@@ -67,55 +67,74 @@ class UIDropZone extends UIElement {
     this._status.textContent = status;
     this._status.toggleAttribute("data-error", Boolean(error) && !loading);
     this._renderFiles();
+    this.setAttribute("data-enhanced", "");
   }
 
   _createStructure() {
     const baseId = this.id || `uif-drop-zone-${++nextDropZoneId}`;
+    const fallback = this._fallbackStructure();
+    let field;
+    let label;
+    let description;
+    let target;
+    let input;
+    let button;
+    let hint;
+    let files;
+    let status;
 
-    const field = this.ownerDocument.createElement("div");
-    field.className = "uif-drop-zone";
+    if (fallback) {
+      ({ field, label, description, target, input, button, hint, files, status } = fallback);
+    } else {
+      field = this.ownerDocument.createElement("div");
+      field.className = "uif-drop-zone";
 
-    const label = this.ownerDocument.createElement("p");
-    label.className = "uif-drop-zone-label";
-    label.id = `${baseId}-label`;
+      label = this.ownerDocument.createElement("p");
+      label.className = "uif-drop-zone-label";
+      label.id = `${baseId}-label`;
 
-    const description = this.ownerDocument.createElement("p");
-    description.className = "uif-drop-zone-description";
-    description.id = `${baseId}-description`;
+      description = this.ownerDocument.createElement("p");
+      description.className = "uif-drop-zone-description";
+      description.id = `${baseId}-description`;
 
-    const target = this.ownerDocument.createElement("div");
-    target.className = "uif-drop-zone-target";
-    target.setAttribute("role", "group");
-    target.setAttribute("aria-labelledby", label.id);
-    target.setAttribute("aria-describedby", description.id);
+      target = this.ownerDocument.createElement("div");
+      target.className = "uif-drop-zone-target";
+      target.setAttribute("role", "group");
+      target.setAttribute("aria-labelledby", label.id);
+      target.setAttribute("aria-describedby", description.id);
 
-    const input = this.ownerDocument.createElement("input");
-    input.className = "uif-drop-zone-input";
-    input.id = `${baseId}-input`;
-    input.type = "file";
-    input.setAttribute("aria-labelledby", label.id);
+      input = this.ownerDocument.createElement("input");
+      input.className = "uif-drop-zone-input";
+      input.id = `${baseId}-input`;
+      input.type = "file";
+      input.setAttribute("aria-labelledby", label.id);
 
-    const button = this.ownerDocument.createElement("label");
-    button.className = "uif-button outline uif-drop-zone-button";
-    button.id = `${baseId}-button-label`;
-    button.htmlFor = input.id;
+      button = this.ownerDocument.createElement("label");
+      button.className = "uif-button outline uif-drop-zone-button";
+      button.id = `${baseId}-button-label`;
+      button.htmlFor = input.id;
 
-    const hint = this.ownerDocument.createElement("span");
-    hint.className = "uif-drop-zone-hint";
-    hint.textContent = "or drag and drop files here";
-    hint.setAttribute("aria-hidden", "true");
+      hint = this.ownerDocument.createElement("span");
+      hint.className = "uif-drop-zone-hint";
+      hint.textContent = "or drag and drop files here";
+      hint.setAttribute("aria-hidden", "true");
 
-    const files = this.ownerDocument.createElement("ul");
-    files.className = "uif-drop-zone-files";
-    files.setAttribute("aria-label", "Selected files");
-    files.hidden = true;
+      files = this.ownerDocument.createElement("ul");
+      files.className = "uif-drop-zone-files";
+      files.setAttribute("aria-label", "Selected files");
+      files.hidden = true;
 
-    const status = this.ownerDocument.createElement("p");
-    status.className = "uif-drop-zone-status";
-    status.id = `${baseId}-status`;
-    status.setAttribute("role", "status");
-    status.setAttribute("aria-live", "polite");
-    status.setAttribute("aria-atomic", "true");
+      status = this.ownerDocument.createElement("p");
+      status.className = "uif-drop-zone-status";
+      status.id = `${baseId}-status`;
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      status.setAttribute("aria-atomic", "true");
+
+      target.append(input, button, hint);
+      field.append(label, description, target, files, status);
+      this.replaceChildren(field);
+    }
 
     input.addEventListener("change", () => {
       if (!this._dispatchingDropChange) this._applyFiles(input.files, "picker");
@@ -125,10 +144,6 @@ class UIDropZone extends UIElement {
     target.addEventListener("dragleave", (event) => this._handleDragLeave(event));
     target.addEventListener("drop", (event) => this._handleDrop(event));
 
-    target.append(input, button, hint);
-    field.append(label, description, target, files, status);
-    this.replaceChildren(field);
-
     this._field = field;
     this._label = label;
     this._description = description;
@@ -137,10 +152,29 @@ class UIDropZone extends UIElement {
     this._button = button;
     this._files = files;
     this._status = status;
-    this._selectedFiles = [];
-    this._selectionStatus = "";
+    this._selectedFiles = Array.from(input.files || []);
+    this._selectionStatus = this._selectedFiles.length
+      ? `${this._selectedFiles.length} file${this._selectedFiles.length === 1 ? "" : "s"} selected.`
+      : "";
     this._validationError = "";
     this._dragDepth = 0;
+  }
+
+  _fallbackStructure() {
+    const field = this.firstElementChild;
+    if (!field?.matches(".uif-drop-zone[data-uif-drop-zone-fallback]")) return null;
+    const structure = {
+      field,
+      label: field.querySelector(".uif-drop-zone-label"),
+      description: field.querySelector(".uif-drop-zone-description"),
+      target: field.querySelector(".uif-drop-zone-target"),
+      input: field.querySelector(".uif-drop-zone-input"),
+      button: field.querySelector(".uif-drop-zone-button"),
+      hint: field.querySelector(".uif-drop-zone-hint"),
+      files: field.querySelector(".uif-drop-zone-files"),
+      status: field.querySelector(".uif-drop-zone-status"),
+    };
+    return Object.values(structure).every(Boolean) ? structure : null;
   }
 
   _applyFiles(fileList, source) {

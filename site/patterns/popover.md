@@ -8,10 +8,13 @@ permalink: /patterns/popover/
 playgroundUrl: /patterns/popover-playground/
 playgroundLabel: Open Popover Playground
 ---
+<script type="module" src="/vendor/ui-foundations/elements/ui-popover.js"></script>
+
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
 <div class="docs-hero">
-  <div class="docs-hero-preview"><div class="docs-hero-preview-stage">{% call uif.popover(triggerId="popover-docs-trigger", triggerLabel="Show booking details", label="Booking details", placement="bottom") %}<p>Your fare can be changed before departure.</p><a href="#implementation">Review implementation</a>{% endcall %}</div></div>
+  {% call preview(scale=true) %}{% call uif.popover(triggerId="popover-docs-trigger", triggerLabel="Show booking details", label="Booking details", placement="bottom") %}<p>Your fare can be changed before departure.</p><a href="#implementation">Review implementation</a>{% endcall %}{% endcall %}
   <div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div>
 </div>
 
@@ -19,12 +22,16 @@ A Popover presents supplementary interactive content next to a trigger. It is no
 
 <h2 id="options">Options</h2>
 
+<div class="docs-table-wrap" role="region" aria-label="Popover options" tabindex="0">
+
 | Custom Element | Nunjucks | Values and defaults |
 |---|---|---|
 | `trigger` | `triggerId` | ID of the trigger element. The component synchronizes `aria-controls`, `aria-expanded` and `aria-haspopup="dialog"`. |
 | `label` | `label` | Required accessible name for the dialog panel. |
 | `placement` | `placement` | Preferred `top`, `bottom`, `left` or `right`; default `bottom`. The panel flips when the opposite side has more usable space. |
 | `open` | `open` | Shows the panel. Trigger activation toggles this state. |
+
+</div>
 
 Add `data-uif-popover-close` to a control inside the panel when the content needs an explicit close action.
 

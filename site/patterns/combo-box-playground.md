@@ -17,9 +17,19 @@ playground:
   id: combo-box-playground
   queryPrefix: combo-box
   runtime: vanilla
+  containerScale: true
   renderer: combo-box
   tokenCssPath: src/ui/patterns/combo-box.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

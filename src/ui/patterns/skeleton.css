@@ -23,6 +23,15 @@
   .uif-skeleton.text.is-last-line { inline-size: 70%; }
   .uif-skeleton.circle { inline-size: 3rem; block-size: 3rem; border-radius: 50%; }
   .uif-skeleton.rectangle { min-block-size: 8rem; border-radius: var(--size-radius-200); }
+  .uif-skeleton-group {
+    --uif-skeleton-gap: calc(var(--size-spacing-200) * var(--_uif-context-scale, 1));
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-skeleton.text { border-radius: calc(var(--size-radius-100) * var(--_uif-context-scale, 1)); }
+  .uif-skeleton.circle { inline-size: calc(3rem * var(--_uif-context-scale, 1)); block-size: calc(3rem * var(--_uif-context-scale, 1)); }
+  .uif-skeleton.rectangle { min-block-size: calc(8rem * var(--_uif-context-scale, 1)); border-radius: calc(var(--size-radius-200) * var(--_uif-context-scale, 1)); }
   @keyframes uif-skeleton-shimmer {
     from { background-position: 200% 0; }
     to { background-position: -200% 0; }

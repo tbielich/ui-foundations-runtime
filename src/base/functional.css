@@ -70,6 +70,7 @@
   :where(.uif-color-picker-swatch) { min-inline-size: 2.75em; min-block-size: 2.75em; border: 2px solid ButtonBorder; }
   :where(.uif-color-picker-swatch[aria-selected="true"])::after { content: "✓"; }
   :where(.uif-color-picker-error) { font-weight: bold; }
+  :where(uif-drop-zone:not([data-enhanced])) :where(.uif-drop-zone-upgrade-copy, .uif-drop-zone-hint) { visibility: hidden; }
   :where(.uif-drop-zone) { display: grid; gap: 0.5em; min-inline-size: 0; }
   :where(.uif-drop-zone-target) { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5em; padding: 1em; border: 1px dashed ButtonBorder; }
   :where(.uif-drop-zone-target[data-drag-active]) { border-style: solid; outline: 1px solid Highlight; }

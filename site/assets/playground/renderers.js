@@ -5,6 +5,23 @@
     shared.normalizeIconName || ((rawValue) => String(rawValue || "").trim());
   const asBoolean = (value) =>
     value === true || value === "true" || value === 1 || value === "1";
+  const withContainerScale = (result, props) => {
+    const scale = ["small", "medium", "large"].includes(props.scale)
+      ? props.scale
+      : "medium";
+    const container = document.createElement("div");
+    container.style.display = "contents";
+    container.dataset.scale = scale;
+    container.append(result.element);
+    const code = String(result.code)
+      .split("\n")
+      .map((line) => `  ${line}`)
+      .join("\n");
+    return {
+      element: container,
+      code: `<div data-scale="${scale}">\n${code}\n</div>`,
+    };
+  };
 
   const iconLabelFromName = (name) =>
     String(name || "")
@@ -1550,7 +1567,7 @@
       option.append(name);
       element.append(option);
     });
-    return { element, code: element.outerHTML };
+    return withContainerScale({ element, code: element.outerHTML }, props);
   };
 
   const renderVanillaDropZone = ({ props }) => {
@@ -1604,7 +1621,7 @@
       if (asBoolean(props[property])) element.setAttribute(property, "");
     });
     if (props.error) element.setAttribute("error", String(props.error));
-    return { element, code: element.outerHTML };
+    return withContainerScale({ element, code: element.outerHTML }, props);
   };
 
   global.UIPlaygroundRenderers = {
@@ -1637,16 +1654,16 @@
       "progress-bar": renderVanillaProgressBar,
       "inline-alert": renderVanillaInlineAlert,
       "illustrated-message": renderVanillaIllustratedMessage,
-      "toast": renderVanillaToast,
-      "popover": renderVanillaPopover,
-      "breadcrumbs": renderVanillaBreadcrumbs,
-      "card": renderVanillaCard,
-      "tag": renderVanillaTag,
-      "skeleton": renderVanillaSkeleton,
-      "search-field": (state) => renderVanillaInputControl(state, "search-field"),
-      "number-field": (state) => renderVanillaInputControl(state, "number-field"),
-      "segmented-control": (state) => renderVanillaInputControl(state, "segmented-control"),
-      "range-slider": (state) => renderVanillaInputControl(state, "range-slider"),
+      "toast": (state) => withContainerScale(renderVanillaToast(state), state.props),
+      "popover": (state) => withContainerScale(renderVanillaPopover(state), state.props),
+      "breadcrumbs": (state) => withContainerScale(renderVanillaBreadcrumbs(state), state.props),
+      "card": (state) => withContainerScale(renderVanillaCard(state), state.props),
+      "tag": (state) => withContainerScale(renderVanillaTag(state), state.props),
+      "skeleton": (state) => withContainerScale(renderVanillaSkeleton(state), state.props),
+      "search-field": (state) => withContainerScale(renderVanillaInputControl(state, "search-field"), state.props),
+      "number-field": (state) => withContainerScale(renderVanillaInputControl(state, "number-field"), state.props),
+      "segmented-control": (state) => withContainerScale(renderVanillaInputControl(state, "segmented-control"), state.props),
+      "range-slider": (state) => withContainerScale(renderVanillaInputControl(state, "range-slider"), state.props),
       "combo-box": renderVanillaComboBox,
       "color-picker": renderVanillaColorPicker,
       "drop-zone": renderVanillaDropZone,

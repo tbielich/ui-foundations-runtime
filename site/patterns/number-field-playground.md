@@ -17,9 +17,19 @@ playground:
   id: number-field-playground
   queryPrefix: number-field
   runtime: vanilla
+  containerScale: true
   renderer: number-field
   tokenCssPath: src/ui/patterns/number-field.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Label

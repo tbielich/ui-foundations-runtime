@@ -9,9 +9,10 @@ playgroundUrl: /patterns/segmented-control-playground/
 playgroundLabel: Open Segmented Control Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 {% set viewOptions = [{ value: "list", label: "List", icon: "list" }, { value: "grid", label: "Grid", icon: "view" }, { value: "map", label: "Map", icon: "location" }] %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{{ uif.segmentedControl(label="Results view", name="view-doc", value="list", options=viewOptions) }}</div></div><div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{{ uif.segmentedControl(label="Results view", name="view-doc", value="list", options=viewOptions) }}{% endcall %}<div class="docs-hero-meta"><span class="docs-status" data-status="stable">Stable</span><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 ## Behavior
 

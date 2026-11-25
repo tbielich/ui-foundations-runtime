@@ -7,7 +7,7 @@
 </span>
 {%- endmacro %}
 
-{% macro preview(scale=false) %}
+{% macro preview(scale=false, stageStyle="") %}
 <div class="docs-hero-preview docs-component-preview">
   <div class="docs-hero-preview-controls">
     <span class="docs-hero-switch" role="group" aria-label="Preview brand">
@@ -21,7 +21,7 @@
     </span>
     {% if scale %}{{ scaleSwitch() }}{% endif %}
   </div>
-  <div class="docs-hero-preview-stage">{{ caller() | safe }}</div>
+  <div class="docs-hero-preview-stage"{% if stageStyle %} style="{{ stageStyle }}"{% endif %}>{{ caller() | safe }}</div>
 </div>
 {% endmacro %}
 

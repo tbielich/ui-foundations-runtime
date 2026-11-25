@@ -17,9 +17,19 @@ playground:
   id: segmented-control-playground
   queryPrefix: segmented-control
   runtime: vanilla
+  containerScale: true
   renderer: segmented-control
   tokenCssPath: src/ui/patterns/segmented-control.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: label
       label: Group label

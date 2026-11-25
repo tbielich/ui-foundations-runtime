@@ -9,8 +9,9 @@ playgroundUrl: /patterns/card-playground/
 playgroundLabel: Open Card Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
-<div class="docs-hero"><div class="docs-hero-preview"><div class="docs-hero-preview-stage">{% call uif.card(id="card-mallorca", title="Mallorca escape", href="#mallorca", actionLabel="View Mallorca escape") %}<p>Seven nights with breakfast and direct flights.</p><strong>From €499</strong>{% endcall %}</div></div><div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
+<div class="docs-hero">{% call preview(scale=true) %}{% call uif.card(id="card-mallorca", title="Mallorca escape", href="#mallorca", actionLabel="View Mallorca escape") %}<p>Seven nights with breakfast and direct flights.</p><strong>From €499</strong>{% endcall %}{% endcall %}<div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div></div>
 
 Card groups one subject with media, header, body and footer content. Custom Element children use `slot="media|header|body|footer"` in light DOM. The element maps them to canonical `.uif-card-*` regions. Pass a unique `id` to every Nunjucks Card instance so its heading and `aria-labelledby` reference remain unique.
 

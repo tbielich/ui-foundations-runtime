@@ -9,9 +9,10 @@ const nunjucks = require("nunjucks");
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader("site/_includes"), { autoescape: false });
 const render = (source) => env.renderString('{% import "macros/ui.njk" as uif %}' + source);
 
-test("drop zone macro emits a labelled native file fallback", () => {
+test("drop zone macro emits an upgradeable native file fallback", () => {
   const html = render('{{ uif.dropZone(id="documents", label="Travel documents", name="documents", accept=".pdf,image/*", multiple=true) }}');
-  assert.match(html, /class="uif-drop-zone"/);
+  assert.match(html, /<uif-drop-zone[^>]+id="documents"[^>]+label="Travel documents"/);
+  assert.match(html, /<div class="uif-drop-zone" data-uif-drop-zone-fallback/);
   assert.match(html, /<input[^>]+id="documents-input"[^>]+type="file"/);
   assert.match(html, /aria-labelledby="documents-label documents-button-label"/);
   assert.match(html, /aria-describedby="documents-description documents-status"/);
@@ -19,6 +20,8 @@ test("drop zone macro emits a labelled native file fallback", () => {
   assert.match(html, /accept="\.pdf,image\/\*"/);
   assert.match(html, /multiple/);
   assert.match(html, /id="documents-button-label"[^>]+for="documents-input"[^>]*>Choose files</);
+  assert.match(html, /Choose files with the button\.<span class="uif-drop-zone-upgrade-copy" aria-hidden="true"> Or drag and drop them here\.<\/span>/);
+  assert.match(html, /class="uif-drop-zone-hint" aria-hidden="true">or drag and drop files here</);
   const status = html.match(/<p class="uif-drop-zone-status"[^>]*>/)?.[0] || "";
   assert.match(status, /role="status"/);
   assert.doesNotMatch(status, /hidden/);
@@ -43,8 +46,12 @@ test("drop zone macro keeps default, custom and localized action labels stable",
   );
 });
 
-test("drop zone element shares picker and drop validation", () => {
+test("drop zone element hydrates the fallback and shares picker and drop validation", () => {
   const source = readFileSync("src/elements/ui-drop-zone.js", "utf8");
+  assert.match(source, /_fallbackStructure\(\)/);
+  assert.match(source, /data-uif-drop-zone-fallback/);
+  assert.match(source, /this\.setAttribute\("data-enhanced", ""\)/);
+  assert.match(source, /this\._selectedFiles = Array\.from\(input\.files \|\| \[\]\)/);
   assert.match(source, /input\.addEventListener\("change"/);
   assert.match(source, /target\.addEventListener\("drop"/);
   assert.match(source, /this\._applyFiles\(input\.files, "picker"\)/);
@@ -77,6 +84,7 @@ test("drop zone CSS preserves focus, reflow and forced-color cues", () => {
   assert.match(css, /max-width: 30rem/);
   assert.match(css, /min-inline-size: max\(44px/);
   assert.match(css, /uif-drop-zone-input:focus-visible \+ \.uif-drop-zone-button/);
+  assert.match(css, /uif-drop-zone:not\(\[data-enhanced\]\).*visibility: hidden/);
   assert.match(css, /\[data-drag-active\]/);
   assert.match(css, /var\(--uif-drop-zone-container-background, var\(--color-fill-surface\)\)/);
 });

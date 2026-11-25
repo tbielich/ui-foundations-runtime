@@ -17,9 +17,19 @@ playground:
   id: popover-playground
   queryPrefix: popover
   runtime: vanilla
+  containerScale: true
   renderer: popover
   tokenCssPath: src/ui/patterns/popover.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: text
       name: triggerLabel
       label: Trigger label

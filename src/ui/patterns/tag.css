@@ -71,6 +71,31 @@
     outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-focus);
     outline-offset: var(--uif-semantic-size-border-default);
   }
+  .uif-tag-group {
+    --uif-tag-group-gap: calc(var(--size-spacing-200) * var(--_uif-context-scale, 1));
+  }
+  .uif-tag-group[data-overflow="scroll"] { padding-block-end: calc(var(--size-spacing-100) * var(--_uif-context-scale, 1)); }
+  .uif-tag {
+    --_uif-local-scale: 1;
+    --uif-tag-gap: calc(var(--size-spacing-200) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    min-block-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1) * var(--_uif-local-scale)));
+    padding-block: calc(var(--size-spacing-100) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    padding-inline: calc(var(--size-spacing-300) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+  .uif-tag.sm {
+    --_uif-local-scale: var(--_uif-scale-small);
+    min-block-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1) * var(--_uif-local-scale)));
+    padding-inline: calc(var(--size-spacing-300) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
+  .uif-tag-remove {
+    margin-block: calc(var(--size-spacing-100) * -1 * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+    margin-inline-end: calc(var(--size-spacing-200) * -1 * var(--_uif-context-scale, 1) * var(--_uif-local-scale));
+  }
   @media (forced-colors: active) {
     .uif-tag { border: 1px solid CanvasText; }
     .uif-tag-remove { border: 1px solid ButtonText; }

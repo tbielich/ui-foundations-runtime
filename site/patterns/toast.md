@@ -9,17 +9,18 @@ playgroundUrl: /patterns/toast-playground/
 playgroundLabel: Open Toast Playground
 ---
 {% import "macros/ui.njk" as uif %}
+{% from "macros/component-docs.njk" import preview %}
 
 <div class="docs-hero">
-  <div class="docs-hero-preview">
-    <div class="docs-hero-preview-stage" style="min-block-size: 14rem; position: relative;">{% call uif.toastRegion(label="Notifications") %}{{ uif.toast(message="Your booking was saved.", variant="success", duration=0, actionLabel="Undo") }}{% endcall %}</div>
-  </div>
+  {% call preview(scale=true, stageStyle="min-block-size: 14rem; position: relative;") %}{% call uif.toastRegion(label="Notifications") %}{{ uif.toast(message="Your booking was saved.", variant="success", duration=0, actionLabel="Undo") }}{% endcall %}{% endcall %}
   <div class="docs-hero-meta"><a class="docs-page-link docs-page-link--playground" href="{{ playgroundUrl }}">{{ playgroundLabel }}</a></div>
 </div>
 
 A Toast reports a short action result without interrupting the current task. Toasts appear in a labelled region, stack in DOM order and never move focus when they appear. Use [Inline Alert](/patterns/inline-alert/) when a message must remain beside related content.
 
 <h2 id="options">Options</h2>
+
+<div class="docs-table-wrap" role="region" aria-label="Toast options" tabindex="0">
 
 | Custom Element | Nunjucks | Values and defaults |
 |---|---|---|
@@ -30,6 +31,8 @@ A Toast reports a short action result without interrupting the current task. Toa
 | `action-label` | `actionLabel` | Optional action button. Activation dispatches `uif-action`; it does not dismiss the toast. |
 | `dismiss-label` | `dismissLabel` | Accessible dismiss button label. Default: “Dismiss notification”. |
 | region `position` | `position` | `top-end` (default), `top-start`, `bottom-end`, `bottom-start`. |
+
+</div>
 
 <h2 id="behavior">Behavior</h2>
 

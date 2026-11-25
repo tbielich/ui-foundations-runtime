@@ -17,9 +17,19 @@ playground:
   id: skeleton-playground
   queryPrefix: skeleton
   runtime: vanilla
+  containerScale: true
   renderer: skeleton
   tokenCssPath: src/ui/patterns/skeleton.css
   controls:
+    - kind: select
+      name: scale
+      label: Container scale
+      query: true
+      default: medium
+      options:
+        - small
+        - medium
+        - large
     - kind: select
       name: shape
       label: Shape

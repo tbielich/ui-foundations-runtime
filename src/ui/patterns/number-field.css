@@ -62,6 +62,22 @@
   .uif-number-field-formatted { color: var(--uif-semantic-color-content-default); }
   .uif-number-field-error { margin: 0; color: var(--uif-semantic-color-content-default); font-weight: var(--brand-typography-ui-font-weight); }
 
+  .uif-number-field {
+    gap: calc(var(--uif-number-field-gap, var(--size-spacing-200)) * var(--_uif-context-scale, 1));
+    font-family: var(--uif-semantic-font-base, var(--font-family-sans));
+    font-size: calc(var(--font-size-md) * var(--_uif-context-scale, 1));
+    line-height: calc(var(--line-height-md) * var(--_uif-context-scale, 1));
+  }
+  .uif-number-field-control {
+    min-block-size: max(24px, calc(var(--uif-input-height, var(--size-spacing-800)) * var(--_uif-context-scale, 1)));
+    border-radius: calc(var(--uif-number-field-border-radius, var(--uif-input-border-radius)) * var(--_uif-context-scale, 1));
+  }
+  .uif-number-field-input { padding: calc(var(--uif-input-padding-block) * var(--_uif-context-scale, 1)) calc(var(--size-spacing-200) * var(--_uif-context-scale, 1)); }
+  .uif-number-field-step {
+    min-inline-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1)));
+    min-block-size: max(24px, calc(var(--uif-semantic-scale-size-target-default) * var(--_uif-context-scale, 1)));
+  }
+
   @media (forced-colors: active) {
     .uif-number-field-control { border-color: ButtonBorder; }
     .uif-number-field-control:focus-within { outline-color: Highlight; }
