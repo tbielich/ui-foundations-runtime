@@ -1,0 +1,70 @@
+@layer components {
+  uif-number-field { display: block; min-inline-size: 0; inline-size: 100%; max-inline-size: 100%; }
+
+  .uif-number-field {
+    display: grid;
+    gap: var(--uif-number-field-gap, var(--size-spacing-200));
+    min-inline-size: 0;
+    color: var(--uif-number-field-text-color, var(--uif-input-text-color-default));
+  }
+
+  .uif-number-field-label { font-weight: var(--brand-typography-ui-font-weight); }
+
+  .uif-number-field-control {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    min-block-size: var(--uif-input-height, var(--size-spacing-800));
+    border: var(--uif-input-border-size-default) solid var(--uif-number-field-border-color, var(--uif-input-border-color-default));
+    border-radius: var(--uif-number-field-border-radius, var(--uif-input-border-radius));
+    background: var(--uif-number-field-container-background, var(--uif-input-container-background-default));
+  }
+
+  .uif-number-field-control:focus-within {
+    border-color: var(--uif-input-border-color-focus);
+    outline: 2px solid transparent;
+    box-shadow: 0 0 var(--shadow-focus, 0) 0 var(--color-focus, transparent);
+  }
+
+  .uif-number-field[data-invalid] .uif-number-field-control { border-color: var(--uif-input-border-color-invalid); }
+
+  .uif-number-field-input {
+    min-inline-size: 0;
+    inline-size: 100%;
+    border: 0;
+    padding: var(--uif-input-padding-block) var(--size-spacing-200);
+    appearance: textfield;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+  }
+
+  .uif-number-field-input::-webkit-inner-spin-button,
+  .uif-number-field-input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+  .uif-number-field-input:focus-visible { outline: none; }
+
+  .uif-number-field-step {
+    display: inline-grid;
+    place-items: center;
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .uif-number-field-step:disabled,
+  .uif-number-field-input:disabled { cursor: not-allowed; opacity: 0.6; }
+
+  .uif-number-field-formatted { color: var(--uif-semantic-color-content-default); }
+  .uif-number-field-error { margin: 0; color: var(--uif-semantic-color-content-default); font-weight: var(--brand-typography-ui-font-weight); }
+
+  @media (forced-colors: active) {
+    .uif-number-field-control { border-color: ButtonBorder; }
+    .uif-number-field-control:focus-within { outline-color: Highlight; }
+    .uif-number-field[data-invalid] .uif-number-field-control { border-style: double; }
+  }
+}

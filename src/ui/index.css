@@ -31,3 +31,7 @@
 @import url("./patterns/card.css") layer(components);
 @import url("./patterns/tag.css") layer(components);
 @import url("./patterns/skeleton.css") layer(components);
+@import url("./patterns/search-field.css") layer(components);
+@import url("./patterns/number-field.css") layer(components);
+@import url("./patterns/segmented-control.css") layer(components);
+@import url("./patterns/range-slider.css") layer(components);

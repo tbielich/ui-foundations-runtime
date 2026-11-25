@@ -502,6 +502,112 @@
 </span>
 {%- endmacro %}
 
+{% macro searchField(id='', label='Search', name='search', value='', placeholder='', disabled=false, quiet=false) -%}
+{%- set fieldId = id | trim -%}
+{%- if fieldId %}
+<div class="uif-search-field"{% if quiet %} data-quiet{% endif %}>
+  <label class="uif-search-field-label" for="{{ fieldId | escape }}">{{ label | escape }}</label>
+  <div class="uif-search-field-control">
+    <span class="uif-icon uif-search-field-icon" style="--uif-icon-src: url('/assets/icons/search.svg')" aria-hidden="true"></span>
+    <input class="uif-search-field-input" id="{{ fieldId | escape }}" type="search" name="{{ name | escape }}"{% if value %} value="{{ value | escape }}"{% endif %}{% if placeholder %} placeholder="{{ placeholder | escape }}"{% endif %}{% if disabled %} disabled{% endif %}>
+    <button class="uif-search-field-clear" type="button" aria-label="Clear {{ label | escape }}"{% if disabled or not value %} disabled{% endif %}><span class="uif-icon" style="--uif-icon-src: url('/assets/icons/cross-circled.svg')" aria-hidden="true"></span></button>
+  </div>
+</div>
+{%- else %}<!-- uif.searchField requires a non-empty id -->{% endif %}
+{%- endmacro %}
+
+{% macro numberField(id='', label='Number', name='number', value=0, min='', max='', step=1, disabled=false, readonly=false, invalid=false, error='', format='decimal', currency='EUR', locale='en') -%}
+{%- set fieldId = id | trim -%}
+{%- if fieldId %}
+{%- set valueNumber = value | float -%}
+{%- set hasValue = valueNumber is number and valueNumber == valueNumber and valueNumber - valueNumber == 0 -%}
+{%- set minNumber = min | float -%}
+{%- set hasMin = min !== '' and min !== none and minNumber is number and minNumber == minNumber and minNumber - minNumber == 0 -%}
+{%- set maxNumber = max | float -%}
+{%- set hasMax = max !== '' and max !== none and maxNumber is number and maxNumber == maxNumber and maxNumber - maxNumber == 0 -%}
+{%- set stepNumber = step | float -%}
+{%- set hasStep = stepNumber is number and stepNumber == stepNumber and stepNumber - stepNumber == 0 and stepNumber > 0 -%}
+{%- set stepNumber = stepNumber if hasStep else 1 -%}
+{%- set resolvedFormat = format if format in ['currency', 'percent'] else 'decimal' -%}
+{%- set resolvedCurrency = currency | trim | upper -%}
+{%- set resolvedCurrency = resolvedCurrency if r/^[A-Z]{3}$/.test(resolvedCurrency) else 'EUR' -%}
+{%- set localeValue = locale | trim -%}
+{%- set resolvedLocale = localeValue if r/^[A-Za-z]{2,3}(?:-[A-Za-z]{4})?(?:-(?:[A-Za-z]{2}|[0-9]{3}))?$/.test(localeValue) else 'en' -%}
+{%- set displayValue = 'No value' -%}
+{%- if hasValue and resolvedFormat == 'currency' -%}
+  {%- set displayValue = valueNumber.toLocaleString(resolvedLocale, { style: 'currency', currency: resolvedCurrency }) -%}
+{%- elif hasValue and resolvedFormat == 'percent' -%}
+  {%- set displayValue = (valueNumber / 100).toLocaleString(resolvedLocale, { style: 'percent' }) -%}
+{%- elif hasValue -%}
+  {%- set displayValue = valueNumber.toLocaleString(resolvedLocale) -%}
+{%- endif -%}
+<div class="uif-number-field" data-format="{{ resolvedFormat }}" data-currency="{{ resolvedCurrency }}" data-locale="{{ resolvedLocale }}"{% if invalid %} data-invalid{% endif %}>
+  <label class="uif-number-field-label" for="{{ fieldId | escape }}">{{ label | escape }}</label>
+  <div class="uif-number-field-control">
+    <button class="uif-number-field-step uif-number-field-step-down" type="button" aria-label="Decrease {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>−</button>
+    <input class="uif-number-field-input" id="{{ fieldId | escape }}" type="number" name="{{ name | escape }}" value="{{ valueNumber if hasValue else '' }}"{% if hasMin %} min="{{ minNumber }}"{% endif %}{% if hasMax %} max="{{ maxNumber }}"{% endif %} step="{{ stepNumber }}" aria-valuetext="{{ displayValue | escape }}"{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}{% if invalid %} aria-invalid="true"{% endif %}{% if disabled %} disabled{% endif %}{% if readonly %} readonly{% endif %}>
+    <button class="uif-number-field-step uif-number-field-step-up" type="button" aria-label="Increase {{ label | escape }}"{% if disabled or readonly %} disabled{% endif %}>+</button>
+  </div>
+  <span class="uif-number-field-formatted" id="{{ fieldId | escape }}-formatted">{{ displayValue | escape }}</span>
+  {%- if error %}<p class="uif-number-field-error" id="{{ fieldId | escape }}-error">{{ error | escape }}</p>{% endif %}
+</div>
+{%- else %}<!-- uif.numberField requires a non-empty id -->{% endif %}
+{%- endmacro %}
+
+{% macro segmentedControl(label='Options', name='', value='', options=[], size='md', disabled=false) -%}
+{%- set groupName = name | trim -%}
+{%- if groupName -%}
+{%- set selectedIndex = -1 -%}
+{%- for option in options -%}
+  {%- if selectedIndex < 0 and not option.disabled and option.value == value -%}{%- set selectedIndex = loop.index0 -%}{%- endif -%}
+{%- endfor -%}
+{%- if selectedIndex < 0 -%}
+  {%- for option in options -%}
+    {%- if selectedIndex < 0 and not option.disabled -%}{%- set selectedIndex = loop.index0 -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+<fieldset class="uif-segmented-control {{ size if size in ['sm', 'lg'] else 'md' }}"{% if disabled %} disabled{% endif %}>
+  <legend class="uif-segmented-control-label">{{ label | escape }}</legend>
+  <div class="uif-segmented-control-options">
+    {%- for option in options %}
+    <label class="uif-segmented-control-option"><input class="uif-segmented-control-input" type="radio" name="{{ groupName | escape }}" value="{{ option.value | escape }}"{% if loop.index0 == selectedIndex %} checked{% endif %}{% if option.disabled %} disabled{% endif %}><span class="uif-segmented-control-content">{% if option.icon %}<span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ option.icon | escape }}.svg')" aria-hidden="true"></span>{% endif %}<span>{{ option.label | escape }}</span></span></label>
+    {%- endfor %}
+  </div>
+</fieldset>
+{%- else -%}<!-- uif.segmentedControl requires a non-empty name -->{%- endif -%}
+{%- endmacro %}
+
+{% macro rangeSlider(id='', label='Range', min=0, max=100, step=1, lower=25, upper=75, minLabel='Minimum', maxLabel='Maximum', disabled=false, invalid=false, error='') -%}
+{%- set fieldId = id | trim -%}
+{%- if fieldId %}
+{%- set minNumber = min | float -%}
+{%- set hasMin = min !== '' and min !== none and minNumber is number and minNumber == minNumber and minNumber - minNumber == 0 -%}
+{%- set minNumber = minNumber if hasMin else 0 -%}
+{%- set maxNumber = max | float -%}
+{%- set hasMax = max !== '' and max !== none and maxNumber is number and maxNumber == maxNumber and maxNumber - maxNumber == 0 -%}
+{%- set maxNumber = maxNumber if hasMax else 100 -%}
+{%- set maxNumber = minNumber if maxNumber < minNumber else maxNumber -%}
+{%- set stepNumber = step | float -%}
+{%- set hasStep = stepNumber is number and stepNumber == stepNumber and stepNumber - stepNumber == 0 and stepNumber > 0 -%}
+{%- set stepNumber = stepNumber if hasStep else 1 -%}
+{%- set lowerNumber = lower | float -%}
+{%- set hasLower = lower !== '' and lower !== none and lowerNumber is number and lowerNumber == lowerNumber and lowerNumber - lowerNumber == 0 -%}
+{%- set lowerNumber = lowerNumber if hasLower else minNumber -%}
+{%- set lowerNumber = minNumber if lowerNumber < minNumber else (maxNumber if lowerNumber > maxNumber else lowerNumber) -%}
+{%- set upperNumber = upper | float -%}
+{%- set hasUpper = upper !== '' and upper !== none and upperNumber is number and upperNumber == upperNumber and upperNumber - upperNumber == 0 -%}
+{%- set upperNumber = upperNumber if hasUpper else maxNumber -%}
+{%- set upperNumber = lowerNumber if upperNumber < lowerNumber else (maxNumber if upperNumber > maxNumber else upperNumber) -%}
+{%- set span = (maxNumber - minNumber) if maxNumber > minNumber else 1 -%}
+<fieldset class="uif-range-slider" data-active-thumb="{{ 'lower' if lowerNumber == upperNumber and lowerNumber == maxNumber else 'upper' }}" style="--uif-range-slider-lower: {{ (lowerNumber - minNumber) / span * 100 }}%; --uif-range-slider-upper: {{ (upperNumber - minNumber) / span * 100 }}%;"{% if disabled %} disabled{% endif %}{% if invalid %} data-invalid{% endif %}>
+  <legend class="uif-range-slider-label">{{ label | escape }}</legend>
+  <div class="uif-range-slider-values"><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-lower">{{ minLabel | escape }}</label><span class="uif-range-slider-output uif-range-slider-output-lower">{{ lowerNumber }}</span></span><span class="uif-range-slider-value"><label for="{{ fieldId | escape }}-upper">{{ maxLabel | escape }}</label><span class="uif-range-slider-output uif-range-slider-output-upper">{{ upperNumber }}</span></span></div>
+  <div class="uif-range-slider-track"><span class="uif-range-slider-fill" aria-hidden="true"></span><input class="uif-range-slider-input uif-range-slider-input-lower" id="{{ fieldId | escape }}-lower" type="range" name="min" min="{{ minNumber }}" max="{{ upperNumber }}" step="{{ stepNumber }}" value="{{ lowerNumber }}" aria-valuetext="{{ minLabel | escape }}: {{ lowerNumber }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}><input class="uif-range-slider-input uif-range-slider-input-upper" id="{{ fieldId | escape }}-upper" type="range" name="max" min="{{ lowerNumber }}" max="{{ maxNumber }}" step="{{ stepNumber }}" value="{{ upperNumber }}" aria-valuetext="{{ maxLabel | escape }}: {{ upperNumber }}"{% if invalid %} aria-invalid="true"{% endif %}{% if error %} aria-describedby="{{ fieldId | escape }}-error"{% endif %}></div>
+  {%- if error %}<p class="uif-range-slider-error" id="{{ fieldId | escape }}-error">{{ error | escape }}</p>{% endif %}
+</fieldset>
+{%- else %}<!-- uif.rangeSlider requires a non-empty id -->{% endif %}
+{%- endmacro %}
+
 {% macro illustratedMessage(preset='empty', heading='', description='', illustrationIcon='', actionLabel='', actionHref='', actionVariant='solid', size='md') -%}
 {%- if actionHref and not r/^(?:https?:|mailto:|tel:|\/|#)/.test(actionHref) -%}{%- set actionHref = '#' -%}{%- endif -%}
 {%- set presets = {

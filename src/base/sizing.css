@@ -56,6 +56,9 @@
   :where(.uif-tag-group) { max-inline-size: 100%; }
   :where(.uif-tag) { gap: var(--size-spacing-200); padding-inline: var(--size-spacing-300); }
   :where(.uif-skeleton-group,.uif-skeleton) { max-inline-size: 100%; }
+  :where(.uif-search-field,.uif-number-field,.uif-segmented-control,.uif-range-slider) { max-inline-size: 100%; }
+  :where(.uif-search-field-clear,.uif-number-field-step,.uif-segmented-control-content) { min-block-size: max(24px, var(--uif-semantic-scale-size-target-default)); }
+  :where(.uif-range-slider-input) { min-block-size: max(24px, var(--uif-semantic-scale-size-target-default)); }
   :where(.uif-badge) { display: inline-flex; align-items: center; gap: var(--uif-badge-gap); font-size: var(--uif-badge-font-size-md); line-height: var(--uif-badge-line-height-md); padding-inline: var(--uif-badge-padding-inline-md); padding-block: var(--uif-badge-padding-block-md); min-block-size: var(--uif-badge-height-min); min-inline-size: var(--uif-badge-width-min); }
   :where(.uif-badge-text) { font-weight: var(--brand-typography-ui-font-weight); }
   :where(.uif-form) { display: flex; flex-direction: column; gap: var(--uif-form-gap); padding-inline: var(--uif-form-padding-inline); padding-block: var(--uif-form-padding-block); }

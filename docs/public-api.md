@@ -56,6 +56,18 @@ The static macros are `uif.breadcrumbs`, `uif.card`, `uif.tagGroup`, `uif.tag` a
 
 Live Figma component/token reconciliation and Code Connect publication remain deferred for these four primitives.
 
+## Native input-control components
+
+Import `ui-foundations/elements/ui-search-field`, `/ui-number-field`, `/ui-segmented-control` or `/ui-range-slider`, or use the aggregate elements entry. The registered tags are `<uif-search-field>`, `<uif-number-field>`, `<uif-segmented-control>` and `<uif-range-slider>`.
+
+The static macros are `uif.searchField`, `uif.numberField`, `uif.segmentedControl` and `uif.rangeSlider`. Each surface keeps native input, radio or range semantics. Search Field adds clear and `uif-search` behavior without replacing form submission. Number Field keeps formatting in output text and `aria-valuetext`. Segmented Control is a labelled radio group; its macro and Custom Element select the first enabled option when the requested value is missing, unknown or disabled, and leave all-disabled or empty groups unselected. Runtime option changes use the element's `options` property and preserve the current selection while it remains enabled. Range Slider uses two labelled non-crossing range inputs. Enhanced controls dispatch `uif-change` where a component-level value event is useful; native `input` and `change` events continue to bubble.
+
+`uif.searchField`, `uif.numberField` and `uif.rangeSlider` require a non-empty, caller-owned `id` as their first macro argument. The macro uses it as the base for every `id`, `for` and ARIA reference; every instance on a page therefore needs a unique value. Migrate calls that omitted `id` or relied on the former fixed defaults by passing an explicit ID, such as `uif.numberField("booking-budget", label="Budget")`. Missing or empty IDs emit no control.
+
+`uif.segmentedControl` requires a non-empty, caller-owned `name`. Use a different name for every independent radio group with the same form owner. Calls without a name emit no control instead of joining an unrelated `name="option"` group. The Custom Element continues to derive an instance-local radio name when its `name` attribute is omitted.
+
+Live Figma component/token reconciliation and Code Connect publication remain deferred for issues #48, #49, #60 and #63.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

@@ -1,0 +1,2 @@
+{% import "macros/ui.njk" as uif %}
+{{ uif.segmentedControl(label="Results view", name="view-preview", value="list", options=[{value: "list", label: "List"}, {value: "grid", label: "Grid"}]) }}

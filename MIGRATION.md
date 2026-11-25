@@ -38,6 +38,14 @@ token names with the same value in consumer-owned CSS. UIF does not provide a
 token alias layer because bidirectional custom-property aliases cannot preserve
 all ancestor- and component-scoped overrides reliably.
 
+## Segmented Control macro names
+
+Pass a non-empty, caller-owned `name` to every `uif.segmentedControl` call. The
+former implicit `name="option"` joined otherwise independent controls under the
+same form owner into one radio group. Calls without a name now emit no control.
+Use distinct names for independent groups, for example
+`uif.segmentedControl(name="booking-view", options=viewOptions)`.
+
 ## Component-family map
 
 The table lists representative public roots and token families. Structural

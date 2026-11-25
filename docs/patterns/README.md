@@ -31,6 +31,10 @@ Runtime pattern/component docs use three explicit statuses:
 | `breadcrumbs` | Implemented pattern | Active | `site/patterns/breadcrumbs.md`, `src/ui/patterns/breadcrumbs.css`, `src/elements/ui-breadcrumbs.js` |
 | `tag` | Implemented pattern | Active | `site/patterns/tag.md`, `src/ui/patterns/tag.css`, `src/elements/ui-tag.js` |
 | `skeleton` | Implemented pattern | Active | `site/patterns/skeleton.md`, `src/ui/patterns/skeleton.css`, `src/elements/ui-skeleton.js` |
+| `search-field` | Implemented pattern | Active | `site/patterns/search-field.md`, `src/ui/patterns/search-field.css`, `src/elements/ui-search-field.js` |
+| `number-field` | Implemented pattern | Active | `site/patterns/number-field.md`, `src/ui/patterns/number-field.css`, `src/elements/ui-number-field.js` |
+| `segmented-control` | Implemented pattern | Active | `site/patterns/segmented-control.md`, `src/ui/patterns/segmented-control.css`, `src/elements/ui-segmented-control.js` |
+| `range-slider` | Implemented pattern | Active | `site/patterns/range-slider.md`, `src/ui/patterns/range-slider.css`, `src/elements/ui-range-slider.js` |
 | `feedback.md` | Pattern guidance | Placeholder summary | See TODO in page; no standalone feedback rule yet |
 | `layout.md` | Pattern guidance | Placeholder summary | Foundations references only; no standalone layout pattern rule |
 | `modal.md` | Component placeholder | Placeholder | No runtime component documentation yet |
