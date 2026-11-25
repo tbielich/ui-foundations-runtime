@@ -1,4 +1,5 @@
 import { UIElement, define } from "./base.js";
+import { connectFormReset, disconnectFormReset } from "./form-reset.js";
 
 let nextSegmentedControlId = 0;
 
@@ -28,11 +29,20 @@ class UISegmentedControl extends UIElement {
       })));
     }
     super.connectedCallback();
+    connectFormReset(this, this.querySelector("input")?.form, () => {
+      this._reflectValue(this.querySelector("input:checked")?.value ?? null);
+    });
+  }
+
+  disconnectedCallback() {
+    disconnectFormReset(this);
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
     if (this._reflectingValue && name === "value") return;
+    this._updatingDefaultValue = name === "value";
     super.attributeChangedCallback(name, oldValue, newValue);
+    this._updatingDefaultValue = false;
   }
 
   render() {
@@ -43,6 +53,12 @@ class UISegmentedControl extends UIElement {
     const options = this._options || [];
     let selectedIndex = options.findIndex((option) => !option.disabled && option.value === requestedValue);
     if (selectedIndex < 0) selectedIndex = options.findIndex((option) => !option.disabled);
+    if (!this._defaultValueInitialized || this._updatingDefaultValue) {
+      this._defaultValue = selectedIndex < 0 ? null : options[selectedIndex].value;
+      this._defaultValueInitialized = true;
+    }
+    let defaultIndex = options.findIndex((option) => !option.disabled && option.value === this._defaultValue);
+    if (defaultIndex < 0) defaultIndex = options.findIndex((option) => !option.disabled);
     const size = ["sm", "lg"].includes(this.getAttr("size")) ? this.getAttr("size") : "md";
     const groupDisabled = this.getBool("disabled");
 
@@ -70,6 +86,7 @@ class UISegmentedControl extends UIElement {
       input.name = name;
       input.value = option.value;
       input.checked = index === selectedIndex;
+      input.defaultChecked = index === defaultIndex;
       input.disabled = option.disabled;
       input.addEventListener("change", () => {
         if (!input.checked) return;

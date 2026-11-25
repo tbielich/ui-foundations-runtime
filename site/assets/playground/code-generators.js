@@ -469,6 +469,9 @@
     var attributes = { minLabel: "min-label", maxLabel: "max-label" };
     var parts = [];
     if (format === "njk" && kind !== "segmented-control") parts.push('id="' + kind + '-example"');
+    if (format === "njk" && kind === "segmented-control" && !String(p.name || "").trim()) {
+      parts.push('name="segmented-control-example"');
+    }
     fields.forEach(function (field) {
       var value = p[field];
       if (value === undefined || value === "" || value === false) return;

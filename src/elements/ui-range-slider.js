@@ -1,4 +1,5 @@
 import { UIElement, define } from "./base.js";
+import { connectFormReset, disconnectFormReset } from "./form-reset.js";
 
 let nextRangeSliderId = 0;
 
@@ -18,9 +19,20 @@ class UIRangeSlider extends UIElement {
     ];
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    connectFormReset(this, this._lowerInput?.form, () => this._resetFormValue());
+  }
+
+  disconnectedCallback() {
+    disconnectFormReset(this);
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (this._reflectingValues && (name === "lower" || name === "upper")) return;
+    this._updatingDefaultAttribute = name === "lower" || name === "upper" ? name : null;
     super.attributeChangedCallback(name, oldValue, newValue);
+    this._updatingDefaultAttribute = null;
   }
 
   render() {
@@ -124,6 +136,15 @@ class UIRangeSlider extends UIElement {
     this._upperInput.step = String(step);
     if (this._lowerInput.value !== String(lower)) this._lowerInput.value = String(lower);
     if (this._upperInput.value !== String(upper)) this._upperInput.value = String(upper);
+    if (!this._defaultValuesInitialized) {
+      this._lowerInput.defaultValue = String(lower);
+      this._upperInput.defaultValue = String(upper);
+      this._defaultValuesInitialized = true;
+    } else if (this._updatingDefaultAttribute === "lower") {
+      this._lowerInput.defaultValue = String(lower);
+    } else if (this._updatingDefaultAttribute === "upper") {
+      this._upperInput.defaultValue = String(upper);
+    }
     if (invalid) {
       this._lowerInput.setAttribute("aria-invalid", "true");
       this._upperInput.setAttribute("aria-invalid", "true");
@@ -145,6 +166,19 @@ class UIRangeSlider extends UIElement {
       this._upperInput.removeAttribute("aria-describedby");
     }
     this._syncRange(null, false);
+  }
+
+  _resetFormValue() {
+    const lower = Math.min(this._rangeMax, Math.max(this._rangeMin, Number(this._lowerInput.defaultValue)));
+    const upper = Math.min(this._rangeMax, Math.max(lower, Number(this._upperInput.defaultValue)));
+    this._lowerInput.min = String(this._rangeMin);
+    this._lowerInput.max = String(this._rangeMax);
+    this._upperInput.min = String(this._rangeMin);
+    this._upperInput.max = String(this._rangeMax);
+    this._lowerInput.value = String(lower);
+    this._upperInput.value = String(upper);
+    this._syncRange(null, false);
+    this._reflectValues(lower, upper);
   }
 
   _syncRange(source, emit) {

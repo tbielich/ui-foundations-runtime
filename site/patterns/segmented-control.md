@@ -25,6 +25,6 @@ The legend names the group. Each visible icon is decorative because the adjacent
 
 ## API
 
-Attributes: `label`, `name`, `value`, `size="sm|md|lg"`, and `disabled`. The `value` property returns the checked radio value.
+Attributes: `label`, `name`, `value`, `size="sm|md|lg"`, and `disabled`. The `value` property returns the checked radio value. The `uif.segmentedControl` macro requires a non-empty, caller-owned `name`; every independent group under the same form owner must use a different name. Missing or empty names emit no control. The Custom Element derives an instance-local name when its `name` attribute is omitted.
 
 Live Figma component/token reconciliation and Code Connect publication for issue #60 are deferred. No Figma identifier is recorded by this technical implementation.

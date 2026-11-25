@@ -20,6 +20,16 @@ function dispatchNativeChanges(input) {
   input.dispatchEvent(new Event("change", { bubbles: true }));
 }
 
+function syncAfterFormReset(input, synchronize) {
+  const form = input.form;
+  if (!form) return;
+  form.addEventListener("reset", (event) => {
+    setTimeout(() => {
+      if (!event.defaultPrevented && input.form === form) synchronize();
+    }, 0);
+  });
+}
+
 function enhanceSearchField(field) {
   const input = field.querySelector('.uif-search-field-input[type="search"]');
   const clear = field.querySelector(".uif-search-field-clear");
@@ -33,6 +43,7 @@ function enhanceSearchField(field) {
     dispatchNativeChanges(input);
     input.focus();
   });
+  syncAfterFormReset(input, sync);
   sync();
 }
 
@@ -89,6 +100,7 @@ function enhanceNumberField(field) {
   input.addEventListener("change", sync);
   down.addEventListener("click", () => step("down"));
   up.addEventListener("click", () => step("up"));
+  syncAfterFormReset(input, sync);
   sync();
 }
 
@@ -101,6 +113,8 @@ function enhanceRangeSlider(field) {
 
   const rangeMin = Number(lowerInput.min);
   const rangeMax = Number(upperInput.max);
+  const defaultLower = Number(lowerInput.defaultValue);
+  const defaultUpper = Number(upperInput.defaultValue);
   const sync = (source, emit) => {
     let lower = Number(lowerInput.value);
     let upper = Number(upperInput.value);
@@ -133,9 +147,19 @@ function enhanceRangeSlider(field) {
     input.addEventListener("input", () => sync(input, true));
     input.addEventListener("change", () => sync(input, true));
   };
+  const reset = () => {
+    lowerInput.min = String(rangeMin);
+    lowerInput.max = String(rangeMax);
+    upperInput.min = String(rangeMin);
+    upperInput.max = String(rangeMax);
+    lowerInput.value = String(defaultLower);
+    upperInput.value = String(Math.max(defaultLower, defaultUpper));
+    sync(null, false);
+  };
 
   bindInput(lowerInput, "lower");
   bindInput(upperInput, "upper");
+  syncAfterFormReset(lowerInput, reset);
   sync(null, false);
 }
 

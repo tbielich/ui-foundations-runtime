@@ -21,12 +21,21 @@ test("segmented macro emits a labelled native radio group", () => {
 });
 
 test("segmented macro resolves selection to the first enabled option", () => {
-  assert.deepEqual(checkedValues(render(`{{ uif.segmentedControl(value="unknown", options=${options}) }}`)), ["list"]);
-  assert.deepEqual(checkedValues(render(`{{ uif.segmentedControl(options=${options}) }}`)), ["list"]);
-  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(value="grid", options=[{value: "list", label: "List"}, {value: "grid", label: "Grid", disabled: true}]) }}')), ["list"]);
-  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(options=[{value: "list", label: "List", disabled: true}, {value: "grid", label: "Grid"}]) }}')), ["grid"]);
-  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(options=[{value: "list", label: "List", disabled: true}, {value: "grid", label: "Grid", disabled: true}]) }}')), []);
-  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(options=[]) }}')), []);
+  assert.deepEqual(checkedValues(render(`{{ uif.segmentedControl(name="unknown-view", value="unknown", options=${options}) }}`)), ["list"]);
+  assert.deepEqual(checkedValues(render(`{{ uif.segmentedControl(name="default-view", options=${options}) }}`)), ["list"]);
+  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(name="disabled-target", value="grid", options=[{value: "list", label: "List"}, {value: "grid", label: "Grid", disabled: true}]) }}')), ["list"]);
+  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(name="first-disabled", options=[{value: "list", label: "List", disabled: true}, {value: "grid", label: "Grid"}]) }}')), ["grid"]);
+  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(name="all-disabled", options=[{value: "list", label: "List", disabled: true}, {value: "grid", label: "Grid", disabled: true}]) }}')), []);
+  assert.deepEqual(checkedValues(render('{{ uif.segmentedControl(name="empty", options=[]) }}')), []);
+});
+
+test("segmented macro requires a caller-owned non-empty name", () => {
+  const repeated = render(`{{ uif.segmentedControl(name="primary-view", options=${options}) }}{{ uif.segmentedControl(name="secondary-view", options=${options}) }}`);
+  assert.equal((repeated.match(/name="primary-view"/g) || []).length, 2);
+  assert.equal((repeated.match(/name="secondary-view"/g) || []).length, 2);
+  assert.doesNotMatch(repeated, /name="option"/);
+  assert.doesNotMatch(render(`{{ uif.segmentedControl(options=${options}) }}`), /<input/);
+  assert.doesNotMatch(render(`{{ uif.segmentedControl(name=" ", options=${options}) }}`), /<input/);
 });
 
 test("segmented element uses enabled-option fallback and component change event", () => {

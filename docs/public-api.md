@@ -64,6 +64,8 @@ The static macros are `uif.searchField`, `uif.numberField`, `uif.segmentedContro
 
 `uif.searchField`, `uif.numberField` and `uif.rangeSlider` require a non-empty, caller-owned `id` as their first macro argument. The macro uses it as the base for every `id`, `for` and ARIA reference; every instance on a page therefore needs a unique value. Migrate calls that omitted `id` or relied on the former fixed defaults by passing an explicit ID, such as `uif.numberField("booking-budget", label="Budget")`. Missing or empty IDs emit no control.
 
+`uif.segmentedControl` requires a non-empty, caller-owned `name`. Use a different name for every independent radio group with the same form owner. Calls without a name emit no control instead of joining an unrelated `name="option"` group. The Custom Element continues to derive an instance-local radio name when its `name` attribute is omitted.
+
 Live Figma component/token reconciliation and Code Connect publication remain deferred for issues #48, #49, #60 and #63.
 
 ## Container scale

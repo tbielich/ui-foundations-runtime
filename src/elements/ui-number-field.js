@@ -1,4 +1,5 @@
 import { UIElement, define } from "./base.js";
+import { connectFormReset, disconnectFormReset } from "./form-reset.js";
 
 let nextNumberFieldId = 0;
 
@@ -44,9 +45,23 @@ class UINumberField extends UIElement {
     ];
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    connectFormReset(this, this._input?.form, () => {
+      this._reflectValue(this._input.value);
+      this._syncFormatted();
+    });
+  }
+
+  disconnectedCallback() {
+    disconnectFormReset(this);
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (this._reflectingValue && name === "value") return;
+    this._updatingDefaultValue = name === "value";
     super.attributeChangedCallback(name, oldValue, newValue);
+    this._updatingDefaultValue = false;
   }
 
   render() {
@@ -123,6 +138,10 @@ class UINumberField extends UIElement {
     this._input.name = this.getAttr("name");
     const normalizedValue = value === null ? "" : String(value);
     if (this._input.value !== normalizedValue) this._input.value = normalizedValue;
+    if (!this._defaultValueInitialized || this._updatingDefaultValue) {
+      this._input.defaultValue = normalizedValue;
+      this._defaultValueInitialized = true;
+    }
     if (min === null) this._input.removeAttribute("min");
     else this._input.min = String(min);
     if (max === null) this._input.removeAttribute("max");

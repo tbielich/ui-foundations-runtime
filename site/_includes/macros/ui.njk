@@ -554,7 +554,9 @@
 {%- else %}<!-- uif.numberField requires a non-empty id -->{% endif %}
 {%- endmacro %}
 
-{% macro segmentedControl(label='Options', name='option', value='', options=[], size='md', disabled=false) -%}
+{% macro segmentedControl(label='Options', name='', value='', options=[], size='md', disabled=false) -%}
+{%- set groupName = name | trim -%}
+{%- if groupName -%}
 {%- set selectedIndex = -1 -%}
 {%- for option in options -%}
   {%- if selectedIndex < 0 and not option.disabled and option.value == value -%}{%- set selectedIndex = loop.index0 -%}{%- endif -%}
@@ -568,10 +570,11 @@
   <legend class="uif-segmented-control-label">{{ label | escape }}</legend>
   <div class="uif-segmented-control-options">
     {%- for option in options %}
-    <label class="uif-segmented-control-option"><input class="uif-segmented-control-input" type="radio" name="{{ name | escape }}" value="{{ option.value | escape }}"{% if loop.index0 == selectedIndex %} checked{% endif %}{% if option.disabled %} disabled{% endif %}><span class="uif-segmented-control-content">{% if option.icon %}<span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ option.icon | escape }}.svg')" aria-hidden="true"></span>{% endif %}<span>{{ option.label | escape }}</span></span></label>
+    <label class="uif-segmented-control-option"><input class="uif-segmented-control-input" type="radio" name="{{ groupName | escape }}" value="{{ option.value | escape }}"{% if loop.index0 == selectedIndex %} checked{% endif %}{% if option.disabled %} disabled{% endif %}><span class="uif-segmented-control-content">{% if option.icon %}<span class="uif-icon" style="--uif-icon-src: url('/assets/icons/{{ option.icon | escape }}.svg')" aria-hidden="true"></span>{% endif %}<span>{{ option.label | escape }}</span></span></label>
     {%- endfor %}
   </div>
 </fieldset>
+{%- else -%}<!-- uif.segmentedControl requires a non-empty name -->{%- endif -%}
 {%- endmacro %}
 
 {% macro rangeSlider(id='', label='Range', min=0, max=100, step=1, lower=25, upper=75, minLabel='Minimum', maxLabel='Maximum', disabled=false, invalid=false, error='') -%}

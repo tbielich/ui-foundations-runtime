@@ -16,6 +16,110 @@ async function openPlayground(page, slug) {
   return page.locator(`#${slug}-playground-root`);
 }
 
+const resetMacroMarkup = env.renderString(`
+  {% import "macros/ui.njk" as uif %}
+  <form id="macro-reset-form">
+    {{ uif.searchField(id="macro-search", label="Macro search", value="") }}
+    {{ uif.numberField(id="macro-number", label="Macro number", value=25, min=0, max=100, format="currency", locale="en") }}
+    {{ uif.segmentedControl(label="Primary view", name="macro-primary-view", value="list", options=[{value: "list", label: "List"}, {value: "grid", label: "Grid"}]) }}
+    {{ uif.segmentedControl(label="Secondary view", name="macro-secondary-view", value="list", options=[{value: "list", label: "List"}, {value: "grid", label: "Grid"}]) }}
+    {{ uif.rangeSlider(id="macro-range", label="Macro range", min=0, max=100, lower=20, upper=80) }}
+  </form>
+`);
+
+async function exerciseFormReset(page, root, prefix) {
+  const search = root.getByRole("searchbox", { name: `${prefix} search` });
+  const number = root.getByRole("spinbutton", { name: `${prefix} number` });
+  const groups = root.locator(".uif-segmented-control");
+  const primary = groups.nth(0);
+  const secondary = groups.nth(1);
+  const range = root.locator(".uif-range-slider");
+  const lower = range.getByRole("slider", { name: "Minimum" });
+  const upper = range.getByRole("slider", { name: "Maximum" });
+
+  await search.fill("changed");
+  await number.fill("75");
+  await primary.getByRole("radio", { name: "Grid" }).check();
+  await secondary.getByRole("radio", { name: "Grid" }).check();
+  await expect(primary.getByRole("radio", { name: "Grid" })).toBeChecked();
+  await upper.evaluate((input) => {
+    input.value = "90";
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  await lower.evaluate((input) => {
+    input.value = "85";
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+  });
+  await number.focus();
+  await root.locator("form").evaluate((form) => form.reset());
+
+  await expect(search).toHaveValue("");
+  await expect(root.locator(".uif-search-field-clear")).toBeDisabled();
+  await expect(number).toHaveValue("25");
+  await expect(number).toHaveAttribute("aria-valuetext", /25/);
+  await expect(root.locator(".uif-number-field-formatted")).toContainText("25");
+  await expect(number).toBeFocused();
+  await expect(primary.getByRole("radio", { name: "List" })).toBeChecked();
+  await expect(secondary.getByRole("radio", { name: "List" })).toBeChecked();
+  await expect(lower).toHaveValue("20");
+  await expect(upper).toHaveValue("80");
+  await expect(lower).toHaveAttribute("max", "80");
+  await expect(upper).toHaveAttribute("min", "20");
+  await expect(lower).toHaveAttribute("aria-valuetext", "Minimum: 20");
+  await expect(upper).toHaveAttribute("aria-valuetext", "Maximum: 80");
+  await expect(range.locator(".uif-range-slider-output-lower")).toHaveText("20");
+  await expect(range.locator(".uif-range-slider-output-upper")).toHaveText("80");
+  await expect(range).toHaveCSS("--uif-range-slider-lower", "20%");
+  await expect(range).toHaveCSS("--uif-range-slider-upper", "80%");
+}
+
+test("Macro input controls synchronize derived state after native form reset", async ({ page }) => {
+  await page.goto("/patterns/search-field/");
+  const root = page.locator("#reset-test-root");
+  await page.locator("body").evaluate((body, markup) => {
+    const container = document.createElement("div");
+    container.id = "reset-test-root";
+    container.innerHTML = markup;
+    body.append(container);
+  }, resetMacroMarkup);
+  await exerciseFormReset(page, root, "Macro");
+});
+
+test("Custom Element input controls restore native defaults after form reset", async ({ page }) => {
+  await page.goto("/patterns/search-field/");
+  await page.evaluate(async () => Promise.all([
+    import("/vendor/ui-foundations/elements/ui-search-field.js"),
+    import("/vendor/ui-foundations/elements/ui-number-field.js"),
+    import("/vendor/ui-foundations/elements/ui-segmented-control.js"),
+    import("/vendor/ui-foundations/elements/ui-range-slider.js"),
+  ]));
+  const root = page.locator("#reset-test-root");
+  await page.locator("body").evaluate((body) => {
+    const container = document.createElement("div");
+    container.id = "reset-test-root";
+    container.innerHTML = `
+      <form id="element-reset-form">
+        <uif-search-field label="Element search" value=""></uif-search-field>
+        <uif-number-field label="Element number" value="25" min="0" max="100" format="currency" locale="en"></uif-number-field>
+        <uif-segmented-control label="Primary view" name="element-primary-view" value="list">
+          <span data-value="list" data-label="List"></span><span data-value="grid" data-label="Grid"></span>
+        </uif-segmented-control>
+        <uif-segmented-control label="Secondary view" name="element-secondary-view" value="list">
+          <span data-value="list" data-label="List"></span><span data-value="grid" data-label="Grid"></span>
+        </uif-segmented-control>
+        <uif-range-slider label="Element range" min="0" max="100" lower="20" upper="80"></uif-range-slider>
+      </form>`;
+    body.append(container);
+  });
+  await exerciseFormReset(page, root, "Element");
+  await expect(root.locator("uif-search-field")).toHaveAttribute("value", "");
+  await expect(root.locator("uif-number-field")).toHaveAttribute("value", "25");
+  await expect(root.locator("uif-segmented-control").nth(0)).toHaveAttribute("value", "list");
+  await expect(root.locator("uif-segmented-control").nth(1)).toHaveAttribute("value", "list");
+  await expect(root.locator("uif-range-slider")).toHaveAttribute("lower", "20");
+  await expect(root.locator("uif-range-slider")).toHaveAttribute("upper", "80");
+});
+
 test("Search Field clears accessibly and retains native form submission", async ({ page }) => {
   const root = await openPlayground(page, "search-field");
   await root.evaluate((container) => {

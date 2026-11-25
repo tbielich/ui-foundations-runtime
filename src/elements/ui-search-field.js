@@ -1,4 +1,5 @@
 import { UIElement, define } from "./base.js";
+import { connectFormReset, disconnectFormReset } from "./form-reset.js";
 
 let nextSearchFieldId = 0;
 
@@ -8,9 +9,20 @@ class UISearchField extends UIElement {
     return ["label", "name", "value", "placeholder", "disabled", "quiet", "clear-label"];
   }
 
+  connectedCallback() {
+    super.connectedCallback();
+    connectFormReset(this, this._input?.form, () => this._syncInput());
+  }
+
+  disconnectedCallback() {
+    disconnectFormReset(this);
+  }
+
   attributeChangedCallback(name, oldValue, newValue) {
     if (this._reflectingValue && name === "value") return;
+    this._updatingDefaultValue = name === "value";
     super.attributeChangedCallback(name, oldValue, newValue);
+    this._updatingDefaultValue = false;
   }
 
   render() {
@@ -72,6 +84,10 @@ class UISearchField extends UIElement {
     this._input.name = this.getAttr("name");
     const value = this.getAttr("value");
     if (this._input.value !== value) this._input.value = value;
+    if (!this._defaultValueInitialized || this._updatingDefaultValue) {
+      this._input.defaultValue = value;
+      this._defaultValueInitialized = true;
+    }
     this._input.placeholder = this.getAttr("placeholder");
     this._input.disabled = this.getBool("disabled");
     this._clear.setAttribute("aria-label", this.getAttr("clear-label").trim() || `Clear ${label}`);
