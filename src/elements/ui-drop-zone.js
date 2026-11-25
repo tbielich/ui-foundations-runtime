@@ -27,6 +27,7 @@ class UIDropZone extends UIElement {
     const label = this.getAttr("label").trim() || "Choose files";
     const description = this.getAttr("description").trim()
       || "Choose files with the button or drag and drop them here.";
+    const buttonLabel = this.getAttr("button-label").trim() || "Choose files";
     const loading = this.getBool("loading");
     const disabled = this.getBool("disabled");
     const blocked = disabled || loading;
@@ -39,7 +40,13 @@ class UIDropZone extends UIElement {
 
     this._label.textContent = label;
     this._description.textContent = description;
-    this._button.textContent = this.getAttr("button-label").trim() || "Choose files";
+    this._button.textContent = buttonLabel;
+    const normalizedLabel = label.replace(/\s+/g, " ").toLowerCase();
+    const normalizedButtonLabel = buttonLabel.replace(/\s+/g, " ").toLowerCase();
+    const labelledBy = normalizedLabel === normalizedButtonLabel
+      ? this._label.id
+      : `${this._label.id} ${this._button.id}`;
+    this._input.setAttribute("aria-labelledby", labelledBy);
     this._input.name = this.getAttr("name");
     this._input.accept = this.getAttr("accept");
     this._input.multiple = this.getBool("multiple");
@@ -56,11 +63,8 @@ class UIDropZone extends UIElement {
     this._field.toggleAttribute("data-invalid", Boolean(error));
     if (blocked) this._resetDragState();
 
-    const describedBy = [this._description.id];
-    if (status) describedBy.push(this._status.id);
-    this._input.setAttribute("aria-describedby", describedBy.join(" "));
+    this._input.setAttribute("aria-describedby", `${this._description.id} ${this._status.id}`);
     this._status.textContent = status;
-    this._status.hidden = !status;
     this._status.toggleAttribute("data-error", Boolean(error) && !loading);
     this._renderFiles();
   }
@@ -93,6 +97,7 @@ class UIDropZone extends UIElement {
 
     const button = this.ownerDocument.createElement("label");
     button.className = "uif-button outline uif-drop-zone-button";
+    button.id = `${baseId}-button-label`;
     button.htmlFor = input.id;
 
     const hint = this.ownerDocument.createElement("span");
@@ -111,7 +116,6 @@ class UIDropZone extends UIElement {
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
-    status.hidden = true;
 
     input.addEventListener("change", () => {
       if (!this._dispatchingDropChange) this._applyFiles(input.files, "picker");
@@ -255,9 +259,11 @@ class UIDropZone extends UIElement {
   }
 
   _resetFormValue() {
+    const hadSelectionState = this._selectedFiles.length > 0
+      || Boolean(this._selectionStatus) || Boolean(this._validationError);
     this._selectedFiles = [];
     this._validationError = "";
-    this._selectionStatus = "";
+    this._selectionStatus = hadSelectionState ? "File selection cleared." : "";
     this._resetDragState();
     this.render();
   }

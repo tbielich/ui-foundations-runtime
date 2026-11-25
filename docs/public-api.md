@@ -88,7 +88,7 @@ Live Figma component/token reconciliation and Code Connect publication for issue
 
 Import `ui-foundations/elements/ui-drop-zone` for `<uif-drop-zone>`, or use the aggregate elements entry. The `uif.dropZone` macro requires a unique caller-owned `id` and emits a complete static native file-input fallback.
 
-The visible selection control and labelled native `input type="file"` remain the complete keyboard, voice and touch path. Drag-and-drop uses the same `accept` and `multiple` validation, while accepted filenames and specific rejection errors remain visible in text. Successful selections emit `uif-files-selected` with local `File` objects and their picker or drop source. The component does not upload, read or send files.
+The visible selection control and labelled native `input type="file"` remain the complete keyboard, voice and touch path. The input’s accessible name combines the field `label` with the visible `button-label`, which defaults to “Choose files”; identical labels are referenced once, and localized action labels remain part of the name. Drag-and-drop uses the same `accept` and `multiple` validation, while accepted filenames and specific rejection errors remain visible in text. A persistent polite status region reports selection, rejection, loading and meaningful form-reset updates without announcing anything on initial render. Successful selections emit `uif-files-selected` with local `File` objects and their picker or drop source. The component does not upload, read or send files.
 
 Live Figma component/token reconciliation and Code Connect publication for issue #57 remain deferred. No Figma identifier is recorded.
 

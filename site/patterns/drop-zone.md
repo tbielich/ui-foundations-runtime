@@ -18,23 +18,23 @@ playgroundLabel: Open DropZone Playground
 
 DropZone keeps a labelled native `input type="file"` and its visible “Choose files” control as the complete primary path. Drag-and-drop is an optional pointer enhancement over the same validation path. `accept` filters extensions, exact MIME types and MIME wildcards for both paths. Without `multiple`, the first accepted file is retained and later files receive a specific error. The filled state lists every accepted filename in text.
 
-A successful picker or drop action emits `uif-files-selected` with `{ files, source }`, where `source` is `picker` or `drop`. A dropped selection also emits the native bubbling `change` event from the file input. The read-only `files` property returns the accepted files. A native form reset clears the filled and validation states.
+A successful picker or drop action emits `uif-files-selected` with `{ files, source }`, where `source` is `picker` or `drop`. A dropped selection also emits the native bubbling `change` event from the file input. The read-only `files` property returns the accepted files. A native form reset clears the filled and validation states and announces “File selection cleared” when it removes a selection or validation result.
 
 DropZone only selects local files. It does not upload, read or send them, and its loading state means that the host application is processing a selection. Applications own any upload service, progress and cancellation behavior.
 
 ## Validation and states
 
-Use `accept` and `multiple` instead of maintaining a second drag-only rule. Rejected filenames and the accepted rule are shown in a polite status. `error` supplies an application validation message; `invalid` without a message uses a generic recoverable prompt. `disabled` and `loading` disable the native input and ignore drop handling. `loading-message` defaults to “Processing files…”.
+Use `accept` and `multiple` instead of maintaining a second drag-only rule. Rejected filenames and the accepted rule are shown in a polite status. The empty status region is present from initial render, remains in `aria-describedby`, and receives text only when selection, validation, loading or reset feedback exists. `error` supplies an application validation message; `invalid` without a message uses a generic recoverable prompt. `disabled` and `loading` disable the native input and ignore drop handling. `loading-message` defaults to “Processing files…”.
 
 ## Accessibility
 
-The visible label names the group and the native file input. The button path provides full keyboard, voice-control and touch access without requiring a drag gesture. Focus remains on the native control, with a visible indicator on the associated button. Selected filenames, validation errors and loading state are text, not color-only cues. The target and button reflow at 320 CSS pixels and 200% text; forced-colors styles preserve borders, active-drop feedback and focus.
+The field `label` and visible `button-label` jointly name the native file input, so its screen-reader and speech-input name includes the visible action. When both labels are the same, DropZone references that text once to avoid a duplicated name. The button path provides full keyboard, voice-control and touch access without requiring a drag gesture. Focus remains on the native control, with a visible indicator on the associated button. Selected filenames, validation errors and loading state are text, not color-only cues. The target and button reflow at 320 CSS pixels and 200% text; forced-colors styles preserve borders, active-drop feedback and focus.
 
 Automated Chromium and axe checks cover the implemented role, name, state, keyboard fallback, target size, zoom, forced-colors, picker/drop parity and reset behavior. They do not constitute manual screen-reader certification.
 
 ## API
 
-Attributes: `label`, `description`, `button-label`, `name`, `accept`, `multiple`, `disabled`, `invalid`, `error`, `loading`, and `loading-message`. Property: read-only `files`. Event: `uif-files-selected`.
+Attributes: `label`, `description`, `button-label`, `name`, `accept`, `multiple`, `disabled`, `invalid`, `error`, `loading`, and `loading-message`. `button-label` defaults to “Choose files”; localize it with the visible action and keep each instance’s caller-owned `id` unique. Property: read-only `files`. Event: `uif-files-selected`.
 
 The `uif.dropZone` macro requires a non-empty caller-owned `id`. Every instance on a page needs a unique ID.
 

@@ -76,8 +76,7 @@
     max-inline-size: 100%;
   }
 
-  .uif-drop-zone-files[hidden],
-  .uif-drop-zone-status[hidden] { display: none; }
+  .uif-drop-zone-files[hidden] { display: none; }
   .uif-drop-zone-file { overflow-wrap: anywhere; }
   .uif-drop-zone-file::marker { content: "✓  "; }
   .uif-drop-zone-status[data-error] { color: var(--uif-semantic-color-danger-foreground-default); }

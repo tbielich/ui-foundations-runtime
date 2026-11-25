@@ -13,12 +13,34 @@ test("drop zone macro emits a labelled native file fallback", () => {
   const html = render('{{ uif.dropZone(id="documents", label="Travel documents", name="documents", accept=".pdf,image/*", multiple=true) }}');
   assert.match(html, /class="uif-drop-zone"/);
   assert.match(html, /<input[^>]+id="documents-input"[^>]+type="file"/);
+  assert.match(html, /aria-labelledby="documents-label documents-button-label"/);
+  assert.match(html, /aria-describedby="documents-description documents-status"/);
   assert.match(html, /name="documents"/);
   assert.match(html, /accept="\.pdf,image\/\*"/);
   assert.match(html, /multiple/);
-  assert.match(html, /for="documents-input"[^>]*>Choose files</);
-  assert.match(html, /role="status"/);
+  assert.match(html, /id="documents-button-label"[^>]+for="documents-input"[^>]*>Choose files</);
+  const status = html.match(/<p class="uif-drop-zone-status"[^>]*>/)?.[0] || "";
+  assert.match(status, /role="status"/);
+  assert.doesNotMatch(status, /hidden/);
   assert.doesNotMatch(render("{{ uif.dropZone() }}"), /class="uif-drop-zone"/);
+});
+
+test("drop zone macro keeps default, custom and localized action labels stable", () => {
+  const html = render(`
+    {{ uif.dropZone(id="default-zone") }}
+    {{ uif.dropZone(id="custom-zone", label="Travel documents", buttonLabel="Browse files") }}
+    {{ uif.dropZone(id="localized-zone", label="Reisedokumente", buttonLabel="Dateien auswählen") }}
+  `);
+  assert.match(html, /id="default-zone-input"[^>]+aria-labelledby="default-zone-label"/);
+  assert.doesNotMatch(html, /aria-labelledby="default-zone-label default-zone-button-label"/);
+  assert.match(html, /id="custom-zone-input"[^>]+aria-labelledby="custom-zone-label custom-zone-button-label"/);
+  assert.match(html, /id="custom-zone-button-label"[^>]*>Browse files</);
+  assert.match(html, /id="localized-zone-input"[^>]+aria-labelledby="localized-zone-label localized-zone-button-label"/);
+  assert.match(html, /id="localized-zone-button-label"[^>]*>Dateien auswählen</);
+  assert.deepEqual(
+    Array.from(html.matchAll(/<input[^>]+id="([^"]+-input)"/g), (match) => match[1]),
+    ["default-zone-input", "custom-zone-input", "localized-zone-input"],
+  );
 });
 
 test("drop zone element shares picker and drop validation", () => {
@@ -28,6 +50,7 @@ test("drop zone element shares picker and drop validation", () => {
   assert.match(source, /this\._applyFiles\(input\.files, "picker"\)/);
   assert.match(source, /this\._applyFiles\(event\.dataTransfer\?\.files, "drop"\)/);
   assert.match(source, /CustomEvent\("uif-files-selected"/);
+  assert.match(source, /File selection cleared\./);
   assert.match(source, /only one file is allowed/);
   assert.match(source, /is not an accepted file type/);
   assert.doesNotMatch(source, /fetch\(|XMLHttpRequest|upload/i);

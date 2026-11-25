@@ -19,10 +19,11 @@ async function dropFiles(target, files) {
   }, files);
 }
 
-test("DropZone exposes a named native picker and selected file list", async ({ page }) => {
+test("DropZone exposes a named native picker and persistent status", async ({ page }) => {
   const root = await openPlayground(page);
   const zone = root.locator("uif-drop-zone");
   const input = root.locator('input[type="file"]');
+  const status = root.getByRole("status");
   await zone.evaluate((element) => {
     window.__dropZoneEvents = [];
     element.addEventListener("uif-files-selected", (event) => {
@@ -35,8 +36,12 @@ test("DropZone exposes a named native picker and selected file list", async ({ p
 
   await expect(input).toHaveAttribute("accept", ".pdf,image/*");
   await expect(input).toHaveAttribute("multiple", "");
-  await expect(input).toHaveAccessibleName("Travel documents");
+  await expect(input).toHaveAccessibleName("Travel documents Choose files");
+  await expect(input).toHaveAttribute("aria-describedby", /description.*status/);
   await expect(root.getByText("Choose files", { exact: true })).toBeVisible();
+  await expect(status).toHaveCount(1);
+  await expect(status).toHaveText("");
+  await expect(status).not.toHaveAttribute("hidden", "");
 
   await input.setInputFiles([
     { name: "passport.pdf", mimeType: "application/pdf", buffer: Buffer.from("pdf") },
@@ -45,11 +50,34 @@ test("DropZone exposes a named native picker and selected file list", async ({ p
 
   await expect(root.getByRole("list", { name: "Selected files" })).toBeVisible();
   await expect(root.getByRole("listitem")).toHaveText(["passport.pdf", "portrait.png"]);
-  await expect(root.getByRole("status")).toHaveText("2 files selected.");
+  await expect(status).toHaveText("2 files selected.");
   await expect(zone).toHaveAttribute("data-filled", "");
   await expect.poll(() => page.evaluate(() => window.__dropZoneEvents)).toEqual([
     { names: ["passport.pdf", "portrait.png"], source: "picker" },
   ]);
+});
+
+test("DropZone keeps default, custom and localized action names unique", async ({ page }) => {
+  const root = await openPlayground(page);
+  await root.evaluate((container) => {
+    container.innerHTML = `
+      <uif-drop-zone></uif-drop-zone>
+      <uif-drop-zone label="Travel documents" button-label="Browse files"></uif-drop-zone>
+      <uif-drop-zone label="Reisedokumente" button-label="Dateien auswählen"></uif-drop-zone>
+    `;
+  });
+  const inputs = root.locator('input[type="file"]');
+  await expect(inputs).toHaveCount(3);
+  await expect(inputs.nth(0)).toHaveAccessibleName("Choose files");
+  await expect(inputs.nth(1)).toHaveAccessibleName("Travel documents Browse files");
+  await expect(inputs.nth(2)).toHaveAccessibleName("Reisedokumente Dateien auswählen");
+  await expect(root.getByText("Browse files", { exact: true })).toBeVisible();
+  await expect(root.getByText("Dateien auswählen", { exact: true })).toBeVisible();
+  await expect.poll(() => inputs.evaluateAll((elements) => {
+    const ids = elements.map((element) => element.id);
+    const labelledBy = elements.map((element) => element.getAttribute("aria-labelledby"));
+    return new Set([...ids, ...labelledBy]).size;
+  })).toBe(6);
 });
 
 test("DropZone applies accept filtering to picker and drop with recoverable text", async ({ page }) => {
@@ -84,7 +112,7 @@ test("DropZone applies accept filtering to picker and drop with recoverable text
   ]);
 });
 
-test("DropZone applies the single-file rule and clears on native form reset", async ({ page }) => {
+test("DropZone applies the single-file rule and announces native form reset", async ({ page }) => {
   const root = await openPlayground(page);
   await root.evaluate((container) => {
     container.innerHTML = '<form><uif-drop-zone label="Attachments" name="attachments" accept=".pdf"></uif-drop-zone></form>';
@@ -106,7 +134,8 @@ test("DropZone applies the single-file rule and clears on native form reset", as
 
   await form.evaluate((element) => element.reset());
   await expect(zone.getByRole("list", { name: "Selected files" })).toBeHidden();
-  await expect(zone.getByRole("status")).toBeHidden();
+  await expect(zone.getByRole("status")).toHaveText("File selection cleared.");
+  await expect(zone.getByRole("status")).not.toHaveAttribute("hidden", "");
   await expect(zone).not.toHaveAttribute("data-filled", "");
 });
 
