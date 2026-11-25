@@ -1527,6 +1527,32 @@
     return { element, code: element.outerHTML };
   };
 
+  const renderVanillaComboBox = ({ props }) => {
+    const element = document.createElement("uif-combo-box");
+    element.setAttribute("label", String(props.label || "Destination"));
+    element.setAttribute("name", "destination");
+    element.setAttribute("placeholder", String(props.placeholder || "Search destinations"));
+    ["freeform", "loading", "readonly", "disabled", "invalid"].forEach((property) => {
+      if (asBoolean(props[property])) element.setAttribute(property, "");
+    });
+    if (props.error) element.setAttribute("error", String(props.error));
+    [
+      ["pmi", "Palma de Mallorca", "Palma de Mallorca — PMI"],
+      ["tfs", "Tenerife", "Tenerife — TFS"],
+      ["lpa", "Gran Canaria", "Gran Canaria — LPA"],
+      ["fao", "Faro", "Faro — FAO"],
+    ].forEach(([value, textValue, label]) => {
+      const option = document.createElement("uif-combo-box-option");
+      option.setAttribute("value", value);
+      option.setAttribute("text-value", textValue);
+      const name = document.createElement("strong");
+      name.textContent = label;
+      option.append(name);
+      element.append(option);
+    });
+    return { element, code: element.outerHTML };
+  };
+
   global.UIPlaygroundRenderers = {
     renderers: {
       badge: renderVanillaBadge,
@@ -1567,6 +1593,7 @@
       "number-field": (state) => renderVanillaInputControl(state, "number-field"),
       "segmented-control": (state) => renderVanillaInputControl(state, "segmented-control"),
       "range-slider": (state) => renderVanillaInputControl(state, "range-slider"),
+      "combo-box": renderVanillaComboBox,
 
     },
   };

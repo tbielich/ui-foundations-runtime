@@ -498,6 +498,33 @@
     return "<uif-" + kind + (parts.length ? " " + parts.join(" ") : "") + "></uif-" + kind + ">";
   }
 
+  function comboBoxCode(state, format) {
+    var p = state.props;
+    var attributes = [];
+    var label = String(p.label || "Destination");
+    var placeholder = String(p.placeholder || "Search destinations");
+    if (format === "njk") {
+      attributes.push('id="combo-box-example"');
+      attributes.push("label=" + JSON.stringify(label));
+      attributes.push('name="destination"');
+      attributes.push("placeholder=" + JSON.stringify(placeholder));
+      ["freeform", "loading", "readonly", "disabled", "invalid"].forEach(function (name) {
+        if (p[name] === true || p[name] === "true") attributes.push(name + "=true");
+      });
+      if (p.error) attributes.push("error=" + JSON.stringify(String(p.error)));
+      attributes.push('options=[{value: "pmi", textValue: "Palma de Mallorca", label: "Palma de Mallorca — PMI"}, {value: "tfs", textValue: "Tenerife", label: "Tenerife — TFS"}, {value: "lpa", textValue: "Gran Canaria", label: "Gran Canaria — LPA"}]');
+      return "{{ uif.comboBox(" + attributes.join(", ") + ") }}";
+    }
+    attributes.push('label="' + quoteAttr(label) + '"');
+    attributes.push('name="destination"');
+    attributes.push('placeholder="' + quoteAttr(placeholder) + '"');
+    ["freeform", "loading", "readonly", "disabled", "invalid"].forEach(function (name) {
+      if (p[name] === true || p[name] === "true") attributes.push(name);
+    });
+    if (p.error) attributes.push('error="' + quoteAttr(String(p.error)) + '"');
+    return '<uif-combo-box ' + attributes.join(" ") + '>\n  <uif-combo-box-option value="pmi" text-value="Palma de Mallorca"><strong>Palma de Mallorca — PMI</strong></uif-combo-box-option>\n  <uif-combo-box-option value="tfs" text-value="Tenerife"><strong>Tenerife — TFS</strong></uif-combo-box-option>\n  <uif-combo-box-option value="lpa" text-value="Gran Canaria"><strong>Gran Canaria — LPA</strong></uif-combo-box-option>\n</uif-combo-box>';
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
@@ -515,6 +542,7 @@
       "number-field": function (state) { return inputControlCode(state, "number-field", "njk"); },
       "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "njk"); },
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "njk"); },
+      "combo-box": function (state) { return comboBoxCode(state, "njk"); },
 
       dialog: njkDialog,
       button: njkButton, input: njkInput, checkbox: njkCheckbox,
@@ -593,6 +621,7 @@
       "number-field": function (state) { return inputControlCode(state, "number-field", "wc"); },
       "segmented-control": function (state) { return inputControlCode(state, "segmented-control", "wc"); },
       "range-slider": function (state) { return inputControlCode(state, "range-slider", "wc"); },
+      "combo-box": function (state) { return comboBoxCode(state, "wc"); },
 
       dialog: wcDialog,
       button: wcButton, input: wcInput, checkbox: wcCheckbox,

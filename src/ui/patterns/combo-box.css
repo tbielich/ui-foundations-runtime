@@ -1,0 +1,118 @@
+@layer components {
+  uif-combo-box { display: block; min-inline-size: 0; inline-size: 100%; max-inline-size: 100%; }
+  uif-combo-box-option { display: none; }
+
+  .uif-combo-box {
+    display: grid;
+    gap: var(--uif-combo-box-gap, var(--size-spacing-200));
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    color: var(--uif-combo-box-text-color, var(--uif-input-text-color-default));
+  }
+
+  .uif-combo-box-label {
+    font: inherit;
+    font-weight: var(--brand-typography-ui-font-weight);
+  }
+
+  .uif-combo-box-control {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    min-block-size: var(--uif-input-height, var(--size-spacing-800));
+    border: var(--uif-input-border-size-default) solid var(--uif-combo-box-border-color, var(--uif-input-border-color-default));
+    border-radius: var(--uif-combo-box-border-radius, var(--uif-input-border-radius));
+    background: var(--uif-combo-box-container-background, var(--uif-input-container-background-default));
+  }
+
+  .uif-combo-box-control:focus-within {
+    border-color: var(--uif-input-border-color-focus);
+    outline: 2px solid transparent;
+    box-shadow: 0 0 var(--shadow-focus, 0) 0 var(--color-focus, transparent);
+  }
+
+  .uif-combo-box-input {
+    min-inline-size: 0;
+    inline-size: 100%;
+    border: 0;
+    padding: var(--uif-input-padding-block) var(--uif-input-padding-inline);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+  }
+
+  .uif-combo-box-input:focus-visible { outline: none; }
+
+  .uif-combo-box-toggle {
+    display: inline-grid;
+    place-items: center;
+    min-inline-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    border: 0;
+    padding: 0 var(--size-spacing-300);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .uif-combo-box-popup {
+    position: fixed;
+    z-index: var(--zindex-popover, 1000);
+    overflow: auto;
+    overscroll-behavior: contain;
+    color: var(--uif-combo-box-popup-text-color, var(--color-text-default));
+    background: var(--uif-combo-box-popup-background, var(--color-fill-surface));
+    border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-combo-box-popup-border-color, var(--color-border-default));
+    border-radius: var(--uif-combo-box-popup-border-radius, var(--size-radius-300));
+    box-shadow: var(--uif-combo-box-popup-shadow, none);
+  }
+
+  .uif-combo-box-popup[hidden] { display: none; }
+  .uif-combo-box-listbox { padding: var(--size-spacing-100); }
+
+  .uif-combo-box-option {
+    display: block;
+    min-block-size: max(24px, var(--uif-semantic-scale-size-target-default));
+    padding: var(--size-spacing-200) var(--size-spacing-300);
+    border-radius: var(--size-radius-200);
+    overflow-wrap: anywhere;
+    cursor: pointer;
+  }
+
+  .uif-combo-box-option[data-active] {
+    color: var(--uif-combo-box-option-active-text-color, var(--color-text-default));
+    background: var(--uif-combo-box-option-active-background, var(--color-fill-hover));
+    outline: var(--uif-semantic-size-border-default, 1px) solid var(--uif-combo-box-option-active-border-color, var(--color-border-default));
+  }
+
+  .uif-combo-box-option[aria-selected="true"] { font-weight: var(--brand-typography-ui-font-weight); }
+  .uif-combo-box-option[aria-selected="true"]::before { content: "✓ "; }
+  .uif-combo-box-option[aria-disabled="true"] { color: GrayText; cursor: not-allowed; }
+
+  .uif-combo-box-state,
+  .uif-combo-box-error,
+  .uif-combo-box-status {
+    margin: 0;
+    padding: var(--size-spacing-300);
+    overflow-wrap: anywhere;
+  }
+
+  .uif-combo-box-error { color: var(--uif-semantic-color-danger-foreground-default); }
+  .uif-combo-box[data-invalid] .uif-combo-box-control { border-color: var(--uif-input-border-color-invalid); }
+  .uif-combo-box[data-disabled] { color: var(--uif-input-text-color-disabled); }
+  .uif-combo-box[data-disabled] .uif-combo-box-control { cursor: not-allowed; }
+  .uif-combo-box-status[hidden] { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .uif-combo-box-popup { scroll-behavior: auto; }
+  }
+
+  @media (forced-colors: active) {
+    .uif-combo-box-control,
+    .uif-combo-box-popup { border-color: ButtonBorder; box-shadow: none; }
+    .uif-combo-box-control:focus-within { outline-color: Highlight; }
+    .uif-combo-box-option[data-active] { color: HighlightText; background: Highlight; outline-color: Highlight; }
+    .uif-combo-box-option[aria-selected="true"]::before { color: currentColor; }
+  }
+}

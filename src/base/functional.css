@@ -4,7 +4,8 @@
     uif-dialog, uif-meter, uif-progress-bar, uif-inline-alert,
     uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
     uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton,
-    uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider) {
+    uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider,
+    uif-combo-box) {
     display: block;
   }
   :where(uif-tag) { display: inline-block; }
@@ -38,7 +39,24 @@
     align-items: center;
     border: 1px solid ButtonBorder;
   }
-  :where(.uif-search-field-input, .uif-number-field-input) { min-inline-size: 0; inline-size: 100%; }
+  :where(.uif-search-field-input, .uif-number-field-input, .uif-combo-box-input) { min-inline-size: 0; inline-size: 100%; }
+  :where(.uif-combo-box-control) {
+    display: flex;
+    align-items: center;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-combo-box-popup) {
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+    color: CanvasText;
+    background: Canvas;
+    border: 1px solid ButtonBorder;
+  }
+  :where(.uif-combo-box-option) { padding: 0.5em; }
+  :where(.uif-combo-box-option[data-active]) { color: HighlightText; background: Highlight; }
+  :where(.uif-combo-box-option[aria-selected="true"])::before { content: "✓ "; }
+  :where(.uif-combo-box-error) { font-weight: bold; }
   :where(.uif-segmented-control-options) { display: flex; flex-wrap: wrap; }
   :where(.uif-segmented-control-option) { position: relative; }
   :where(.uif-segmented-control-input:checked + .uif-segmented-control-content) { outline: 2px solid Highlight; }

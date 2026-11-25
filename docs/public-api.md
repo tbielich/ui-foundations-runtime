@@ -68,6 +68,14 @@ The static macros are `uif.searchField`, `uif.numberField`, `uif.segmentedContro
 
 Live Figma component/token reconciliation and Code Connect publication remain deferred for issues #48, #49, #60 and #63.
 
+## Editable ComboBox
+
+Import `ui-foundations/elements/ui-combo-box` for `<uif-combo-box>` and its authored `<uif-combo-box-option>` children, or use the aggregate elements entry. The `uif.comboBox` macro emits the same authored element surface and requires a unique caller-owned `id`.
+
+The editable input owns `role="combobox"`, popup ownership, expanded and active-descendant state. Local options filter by stable `text-value`; asynchronous consumers replace the `options` property while `loading` exposes busy and polite status. Only enabled options commit unless `freeform` is present. Commits emit native `input` and `change` events plus `uif-selection`; the hidden named input submits the committed underlying value.
+
+Live Figma component and token reconciliation and Code Connect publication for issue #64 remain deferred. No Figma identifier is recorded.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

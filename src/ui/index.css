@@ -35,3 +35,4 @@
 @import url("./patterns/number-field.css") layer(components);
 @import url("./patterns/segmented-control.css") layer(components);
 @import url("./patterns/range-slider.css") layer(components);
+@import url("./patterns/combo-box.css") layer(components);
