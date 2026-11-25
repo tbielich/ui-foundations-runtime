@@ -50,17 +50,7 @@ class UIColorPicker extends UIElement {
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value" && this._reflectingValue) return;
     if (name === "value" && this._initialized && oldValue !== newValue) {
-      const parsed = parseColor(newValue || "");
-      if (parsed) {
-        this._color = parsed;
-        this._parseError = "";
-        this._invalidInput = null;
-        this._reflectValue(rgbaToHex(parsed));
-      } else {
-        this._parseError = FORMAT_ERRORS.hex;
-        this._invalidInput = null;
-        this._reflectValue(rgbaToHex(this._color || DEFAULT_COLOR));
-      }
+      this._applyValue(newValue);
     }
     if (name === "swatches" && this._initialized && oldValue !== newValue) {
       this._swatchData = this._parseSwatches(newValue);
@@ -80,7 +70,9 @@ class UIColorPicker extends UIElement {
     const parsedInitial = authoredValue ? parseColor(authoredValue) : null;
     const initial = parsedInitial || DEFAULT_COLOR;
     this._color = normalizeRgba(initial);
+    this._hsva = rgbaToHsva(this._color);
     this._defaultColor = { ...this._color };
+    this._defaultHsva = { ...this._hsva };
     this._parseError = authoredValue && !parsedInitial ? FORMAT_ERRORS.hex : "";
     if (authoredValue) this._reflectValue(rgbaToHex(this._color));
     if (!this._swatchData) this._swatchData = this._parseSwatches(this.getAttr("swatches"));
@@ -190,13 +182,11 @@ class UIColorPicker extends UIElement {
     this._bindPointerControl(area, (event) => this._updateFromAreaPointer(event), false);
     this._bindPointerControl(wheel, (event) => this._updateFromWheelPointer(event));
 
-    this._bindRange(this._saturation, (numeric) => {
-      const hsv = rgbaToHsva(this._color);
-      return hsvaToRgba({ ...hsv, s: clamp(numeric / 100) });
+    this._bindRange(this._saturation, (numeric, eventType) => {
+      this._setHsva({ ...this._hsva, s: clamp(numeric / 100) }, eventType);
     });
-    this._bindRange(this._brightness, (numeric) => {
-      const hsv = rgbaToHsva(this._color);
-      return hsvaToRgba({ ...hsv, v: clamp(numeric / 100) });
+    this._bindRange(this._brightness, (numeric, eventType) => {
+      this._setHsva({ ...this._hsva, v: clamp(numeric / 100) }, eventType);
     });
     [
       [this._saturation, "saturation", "Saturation"],
@@ -211,11 +201,12 @@ class UIColorPicker extends UIElement {
         this._areaFocus.textContent = "";
       });
     });
-    this._bindRange(this._hue, (numeric) => {
-      const hsv = rgbaToHsva(this._color);
-      return hsvaToRgba({ ...hsv, h: wrapHue(numeric) });
+    this._bindRange(this._hue, (numeric, eventType) => {
+      this._setHsva({ ...this._hsva, h: wrapHue(numeric) }, eventType);
     });
-    this._bindRange(this._alpha, (numeric) => ({ ...this._color, a: clamp(numeric / 100) }));
+    this._bindRange(this._alpha, (numeric, eventType) => {
+      this._setHsva({ ...this._hsva, a: clamp(numeric / 100) }, eventType);
+    });
     [this._hex, this._rgb, this._hsl].forEach((input) => {
       input.addEventListener("input", (event) => event.stopPropagation());
       input.addEventListener("change", (event) => {
@@ -282,7 +273,7 @@ class UIColorPicker extends UIElement {
     return { row, input };
   }
 
-  _bindRange(input, resolveColor) {
+  _bindRange(input, update) {
     input.addEventListener("keydown", (event) => {
       if (this.getBool("readonly")) event.preventDefault();
     });
@@ -292,7 +283,7 @@ class UIColorPicker extends UIElement {
         this._renderState();
         return;
       }
-      this._setColor(resolveColor(Number(input.value)), "input");
+      update(Number(input.value), "input");
     });
     input.addEventListener("change", (event) => {
       event.stopPropagation();
@@ -321,19 +312,17 @@ class UIColorPicker extends UIElement {
 
   _updateFromAreaPointer(event) {
     const rect = this._area.getBoundingClientRect();
-    const hsv = rgbaToHsva(this._color);
     const s = clamp((event.clientX - rect.left) / Math.max(rect.width, 1));
     const v = clamp(1 - (event.clientY - rect.top) / Math.max(rect.height, 1));
-    this._setColor(hsvaToRgba({ ...hsv, s, v }), "input");
+    this._setHsva({ ...this._hsva, s, v }, "input");
   }
 
   _updateFromWheelPointer(event) {
     const rect = this._wheel.getBoundingClientRect();
     const x = event.clientX - (rect.left + rect.width / 2);
     const y = event.clientY - (rect.top + rect.height / 2);
-    const hsv = rgbaToHsva(this._color);
     const h = wrapHue(Math.atan2(y, x) * 180 / Math.PI + 90);
-    this._setColor(hsvaToRgba({ ...hsv, h }), "input");
+    this._setHsva({ ...this._hsva, h }, "input");
   }
 
   _handleWheelKeydown(event) {
@@ -341,11 +330,11 @@ class UIColorPicker extends UIElement {
     const deltas = { ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1, PageDown: -10, PageUp: 10 };
     if (!(event.key in deltas) && event.key !== "Home" && event.key !== "End") return;
     event.preventDefault();
-    const hsv = rgbaToHsva(this._color);
+    const hsv = { ...this._hsva };
     if (event.key === "Home") hsv.h = 0;
     else if (event.key === "End") hsv.h = 359;
     else hsv.h = wrapHue(hsv.h + deltas[event.key] * (event.shiftKey ? 10 : 1));
-    this._setColor(hsvaToRgba(hsv), "input");
+    this._setHsva(hsv, "input");
     this._emit("change");
   }
 
@@ -364,8 +353,44 @@ class UIColorPicker extends UIElement {
     this._emit("change");
   }
 
+  _applyValue(value) {
+    const parsed = parseColor(value || "");
+    if (parsed) {
+      this._setColor(parsed);
+      return;
+    }
+    this._parseError = FORMAT_ERRORS.hex;
+    this._invalidInput = null;
+    this._reflectValue(rgbaToHex(this._color || DEFAULT_COLOR));
+    this._renderState();
+  }
+
   _setColor(color, eventType = "") {
-    this._color = normalizeRgba(color);
+    const normalized = normalizeRgba(color);
+    const derived = rgbaToHsva(normalized);
+    if (!this._hsva || derived.s > 0) {
+      this._hsva = derived;
+    } else if (derived.v > 0) {
+      this._hsva = { ...derived, h: this._hsva.h };
+    } else {
+      this._hsva = { ...this._hsva, v: 0, a: derived.a };
+    }
+    this._color = normalized;
+    this._finishColorUpdate(eventType);
+  }
+
+  _setHsva(color, eventType = "") {
+    this._hsva = {
+      h: wrapHue(color?.h),
+      s: clamp(color?.s),
+      v: clamp(color?.v),
+      a: clamp(color?.a ?? 1),
+    };
+    this._color = hsvaToRgba(this._hsva);
+    this._finishColorUpdate(eventType);
+  }
+
+  _finishColorUpdate(eventType) {
     this._parseError = "";
     this._invalidInput = null;
     this._reflectValue(rgbaToHex(this._color));
@@ -397,7 +422,7 @@ class UIColorPicker extends UIElement {
     const externalError = this.getAttr("error").trim();
     const invalid = this.getBool("invalid") || Boolean(externalError) || Boolean(this._parseError);
     const errorMessage = this._parseError || externalError || (this.getBool("invalid") ? "Choose a valid color." : "");
-    const hsv = rgbaToHsva(this._color);
+    const hsv = this._hsva || rgbaToHsva(this._color);
     const value = rgbaToHex(this._color);
     const opacity = Math.round(this._color.a * 100);
     const hueColor = rgbaToCss(hsvaToRgba({ h: hsv.h, s: 1, v: 1, a: 1 }));
@@ -557,7 +582,7 @@ class UIColorPicker extends UIElement {
   }
 
   _resetFormValue() {
-    this._setColor(this._defaultColor);
+    this._setHsva(this._defaultHsva);
     this._hidden.value = rgbaToHex(this._defaultColor);
   }
 
@@ -566,7 +591,9 @@ class UIColorPicker extends UIElement {
   }
 
   set value(value) {
-    this.setAttribute("value", String(value ?? ""));
+    const nextValue = String(value ?? "");
+    if (this._initialized) this._applyValue(nextValue);
+    else this.setAttribute("value", nextValue);
   }
 
   get color() {

@@ -109,6 +109,11 @@ test("ColorPicker rejects malformed text and authored values consistently", asyn
   await expect(hex).toHaveValue("#0C223880");
   await expect(error).toHaveText("Enter a valid Hex color.");
 
+  await picker.evaluate((element) => { element.value = "#0C223880"; });
+  await expect(picker).toHaveAttribute("value", "#0C223880");
+  await expect(error).toBeHidden();
+  await expect(hex).toHaveAttribute("aria-invalid", "false");
+
   await root.evaluate((container) => {
     const authored = document.createElement("uif-color-picker");
     authored.id = "authored-color";
@@ -127,6 +132,52 @@ test("ColorPicker rejects malformed text and authored values consistently", asyn
   await expect.poll(() => root.locator("form").evaluate((form) => new FormData(form).get("authoredColor"))).toBe("#0066CC");
 });
 
+test("ColorPicker preserves latent HSVA axes across achromatic states", async ({ page }) => {
+  const root = await openPlayground(page);
+  const picker = root.locator("uif-color-picker");
+  const rgb = root.getByLabel("RGB");
+  const hsl = root.getByLabel("HSL");
+  const saturation = root.getByRole("slider", { name: "Saturation", exact: true });
+  const brightness = root.getByRole("slider", { name: "Brightness", exact: true });
+  const hue = root.getByRole("slider", { name: "Hue", exact: true });
+  const wheel = root.getByRole("slider", { name: "Hue wheel" });
+
+  await hsl.fill("hsl(240 100% 50%)");
+  await hsl.press("Enter");
+  await rgb.fill("rgb(128, 128, 128)");
+  await rgb.press("Enter");
+  await expect(picker).toHaveAttribute("value", "#808080");
+  await expect(hue).toHaveValue("240");
+  await expect(saturation).toHaveValue("0");
+
+  await saturation.focus();
+  await page.keyboard.press("End");
+  await expect(picker).toHaveAttribute("value", "#000080");
+
+  await saturation.focus();
+  await page.keyboard.press("Home");
+  const wheelBox = await wheel.boundingBox();
+  await page.mouse.click(wheelBox.x + wheelBox.width / 2, wheelBox.y + wheelBox.height * 0.9);
+  await expect(picker).toHaveAttribute("value", "#808080");
+  await expect(hue).toHaveValue("180");
+  await saturation.focus();
+  await page.keyboard.press("End");
+  await expect(picker).toHaveAttribute("value", "#008080");
+
+  await brightness.focus();
+  await page.keyboard.press("Home");
+  await expect(picker).toHaveAttribute("value", "#000000");
+  await expect(hue).toHaveValue("180");
+  await expect(saturation).toHaveValue("100");
+  await page.keyboard.press("ArrowUp");
+  await expect.poll(() => picker.evaluate((element) => element.color)).toEqual({ r: 0, g: 3, b: 3, a: 1 });
+
+  const area = root.locator(".uif-color-picker-area");
+  const areaBox = await area.boundingBox();
+  await page.mouse.click(areaBox.x + areaBox.width * 0.75, areaBox.y + areaBox.height * 0.5);
+  await expect.poll(() => picker.evaluate((element) => element.color)).toEqual({ r: 32, g: 128, b: 128, a: 1 });
+});
+
 test("ColorPicker synchronizes pointer input, separate axes, grid focus and form reset", async ({ page }) => {
   const root = await openPlayground(page);
   await root.evaluate((container) => {
@@ -137,6 +188,7 @@ test("ColorPicker synchronizes pointer input, separate axes, grid focus and form
   const area = root.locator(".uif-color-picker-area");
   const saturation = root.getByRole("slider", { name: "Saturation", exact: true });
   const brightness = root.getByRole("slider", { name: "Brightness", exact: true });
+  const hue = root.getByRole("slider", { name: "Hue", exact: true });
   const box = await area.boundingBox();
   await page.mouse.click(box.x + box.width * 0.5, box.y + box.height * 0.5);
   await expect(saturation).toHaveValue("50");
@@ -160,8 +212,15 @@ test("ColorPicker synchronizes pointer input, separate axes, grid focus and form
   await page.keyboard.press("Enter");
   await expect(root.getByRole("gridcell").last()).toHaveAttribute("aria-selected", "true");
 
+  await hue.fill("120");
+  await hue.dispatchEvent("input");
+  await brightness.focus();
+  await page.keyboard.press("Home");
+  await expect(picker).toHaveAttribute("value", "#000000");
+
   await form.evaluate((element) => element.reset());
   await expect(picker).toHaveAttribute("value", "#FF0000");
+  await expect(hue).toHaveValue("0");
   await expect(saturation).toHaveValue("100");
   await expect(brightness).toHaveValue("100");
   await expect.poll(() => form.evaluate((element) => new FormData(element).get("accent"))).toBe("#FF0000");
