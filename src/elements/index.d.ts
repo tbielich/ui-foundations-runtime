@@ -103,6 +103,21 @@ export declare class UIComboBox extends UIElement {
   open(): void;
   close(): void;
 }
+export interface UIColorValue {
+  r: number;
+  g: number;
+  b: number;
+  a: number;
+}
+export interface UIColorSwatch {
+  value: string;
+  label?: string;
+}
+export declare class UIColorPicker extends UIElement {
+  value: string;
+  readonly color: UIColorValue;
+  swatches: UIColorSwatch[];
+}
 
 // --- Custom Element Tag Name Map ---
 
@@ -127,6 +142,7 @@ declare global {
     "uif-range-slider": UIRangeSlider;
     "uif-combo-box": UIComboBox;
     "uif-combo-box-option": UIComboBoxOption;
+    "uif-color-picker": UIColorPicker;
 
     "uif-icon": UIIcon;
     "uif-button": UIButton;

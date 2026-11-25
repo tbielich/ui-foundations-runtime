@@ -76,6 +76,14 @@ The editable input owns `role="combobox"`, popup ownership, expanded and active-
 
 Live Figma component and token reconciliation and Code Connect publication for issue #64 remain deferred. No Figma identifier is recorded.
 
+## ColorPicker family
+
+Import `ui-foundations/elements/ui-color-picker` for `<uif-color-picker>`, or use the aggregate elements entry. The `uif.colorPicker` macro requires a unique caller-owned `id`. The element synchronizes a two-axis saturation/brightness area, hue and alpha ranges, hue wheel, named preview, Hex/RGB/HSL text fields, and a roving swatch grid through one canonical RGBA value. Its optional named hidden input participates in native forms and reset.
+
+Keyboard and pointer updates emit bubbling `input` and `change` events; committed changes also emit `uif-color-change` with the normalized Hex `value` and RGBA channels. Invalid text preserves the last valid color and exposes a format-specific associated error. Selection includes a check mark and programmatic state, while forced-colors, reduced-motion, touch target, zoom, disabled, read-only and invalid behavior remain explicit.
+
+Live Figma component/token reconciliation and Code Connect publication for issue #56 remain deferred. No Figma identifier is recorded.
+
 ## Container scale
 
 `data-scale="small|medium|large"` on a container sets the inherited scale for StatusLight, Meter and ProgressBar. Local `size` stays relative to that context. The supported scaled properties are font size, line height, spacing and radii. See [Container scaling](container-scale.md) for nesting, source derivation and the current adoption boundary.

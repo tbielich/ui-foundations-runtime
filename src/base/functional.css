@@ -5,7 +5,7 @@
     uif-illustrated-message, uif-toast-region, uif-toast, uif-popover,
     uif-breadcrumbs, uif-card, uif-tag-group, uif-skeleton,
     uif-search-field, uif-number-field, uif-segmented-control, uif-range-slider,
-    uif-combo-box) {
+    uif-combo-box, uif-color-picker) {
     display: block;
   }
   :where(uif-tag) { display: inline-block; }
@@ -57,6 +57,18 @@
   :where(.uif-combo-box-option[data-active]) { color: HighlightText; background: Highlight; }
   :where(.uif-combo-box-option[aria-selected="true"])::before { content: "✓ "; }
   :where(.uif-combo-box-error) { font-weight: bold; }
+  :where(.uif-color-picker) { display: grid; gap: 1em; min-inline-size: 0; border: 0; padding: 0; }
+  :where(.uif-color-picker-visuals) { display: grid; grid-template-columns: minmax(9em, 2fr) minmax(7em, 1fr); gap: 1em; }
+  :where(.uif-color-picker-area) { position: relative; min-block-size: 10em; border: 1px solid ButtonBorder; }
+  :where(.uif-color-picker-wheel) { position: relative; aspect-ratio: 1; border: 1px solid ButtonBorder; border-radius: 50%; }
+  :where(.uif-color-picker-marker, .uif-color-picker-wheel-marker) { position: absolute; inline-size: 1.25em; block-size: 1.25em; border: 2px solid Canvas; border-radius: 50%; outline: 2px solid CanvasText; }
+  :where(.uif-color-picker-range, .uif-color-picker-summary) { display: flex; align-items: center; gap: 0.5em; }
+  :where(.uif-color-picker-range input, .uif-color-picker-input input) { min-inline-size: 0; inline-size: 100%; }
+  :where(.uif-color-picker-swatches, .uif-color-picker-swatch-row) { display: grid; gap: 0.5em; }
+  :where(.uif-color-picker-swatch-row) { grid-template-columns: repeat(4, minmax(2.75em, 1fr)); }
+  :where(.uif-color-picker-swatch) { min-inline-size: 2.75em; min-block-size: 2.75em; border: 2px solid ButtonBorder; }
+  :where(.uif-color-picker-swatch[aria-selected="true"])::after { content: "✓"; }
+  :where(.uif-color-picker-error) { font-weight: bold; }
   :where(.uif-segmented-control-options) { display: flex; flex-wrap: wrap; }
   :where(.uif-segmented-control-option) { position: relative; }
   :where(.uif-segmented-control-input:checked + .uif-segmented-control-content) { outline: 2px solid Highlight; }

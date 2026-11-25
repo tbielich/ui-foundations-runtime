@@ -1,0 +1,149 @@
+@layer components {
+  uif-color-picker { display: block; min-inline-size: 0; inline-size: 100%; max-inline-size: 100%; }
+
+  .uif-color-picker {
+    display: grid;
+    gap: var(--uif-color-picker-gap, var(--size-spacing-400));
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    color: var(--uif-color-picker-text-color, var(--color-text-default));
+  }
+
+  .uif-color-picker-legend { padding: 0; font-weight: var(--brand-typography-ui-font-weight); }
+  .uif-color-picker-visuals { display: grid; grid-template-columns: minmax(9rem, 2fr) minmax(7rem, 1fr); gap: var(--uif-color-picker-gap, var(--size-spacing-400)); align-items: center; }
+
+  .uif-color-picker-area {
+    position: relative;
+    min-block-size: 10rem;
+    border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-color-picker-border-color, var(--color-border-default));
+    border-radius: var(--uif-color-picker-border-radius, var(--size-radius-300));
+    background-color: var(--uif-color-picker-hue, red);
+    background-image: linear-gradient(to top, black, transparent), linear-gradient(to right, white, transparent);
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  .uif-color-picker-area-axis {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .uif-color-picker-area-focus {
+    display: none;
+    position: absolute;
+    inset-block-start: var(--size-spacing-200);
+    inset-inline-start: var(--size-spacing-200);
+    z-index: 1;
+    border: 1px solid currentcolor;
+    border-radius: var(--size-radius-200);
+    padding: var(--size-spacing-100) var(--size-spacing-200);
+    color: CanvasText;
+    background: Canvas;
+    pointer-events: none;
+  }
+
+  .uif-color-picker-area[data-focus-axis] {
+    outline: 2px solid var(--uif-color-picker-focus-color, var(--color-focus));
+    outline-offset: 2px;
+  }
+
+  .uif-color-picker-area[data-focus-axis] .uif-color-picker-area-focus { display: block; }
+  .uif-color-picker-area[data-focus-axis="saturation"] { box-shadow: inset 0 -4px 0 var(--uif-color-picker-focus-color, var(--color-focus)); }
+  .uif-color-picker-area[data-focus-axis="brightness"] { box-shadow: inset 4px 0 0 var(--uif-color-picker-focus-color, var(--color-focus)); }
+
+  .uif-color-picker-marker,
+  .uif-color-picker-wheel-marker {
+    position: absolute;
+    inline-size: max(20px, var(--uif-color-picker-marker-size, var(--size-spacing-500)));
+    block-size: max(20px, var(--uif-color-picker-marker-size, var(--size-spacing-500)));
+    border: 2px solid white;
+    border-radius: 50%;
+    outline: 2px solid black;
+    translate: -50% -50%;
+    pointer-events: none;
+  }
+
+  .uif-color-picker-wheel {
+    position: relative;
+    aspect-ratio: 1;
+    min-inline-size: 7rem;
+    border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-color-picker-border-color, var(--color-border-default));
+    border-radius: 50%;
+    background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red);
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  .uif-color-picker-wheel::after {
+    content: "";
+    position: absolute;
+    inset: 24%;
+    border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-color-picker-border-color, var(--color-border-default));
+    border-radius: 50%;
+    background: var(--uif-color-picker-container-background, var(--color-fill-surface));
+  }
+
+  .uif-color-picker-wheel:focus-visible,
+  .uif-color-picker-swatch:focus-visible {
+    outline: 2px solid var(--uif-color-picker-focus-color, var(--color-focus));
+    outline-offset: 2px;
+  }
+
+  .uif-color-picker-ranges,
+  .uif-color-picker-inputs { display: grid; gap: var(--size-spacing-300); }
+  .uif-color-picker-range { display: grid; grid-template-columns: minmax(5rem, auto) minmax(0, 1fr) auto; gap: var(--size-spacing-300); align-items: center; }
+  .uif-color-picker-range input { min-inline-size: 0; inline-size: 100%; min-block-size: max(24px, var(--uif-semantic-scale-size-target-default)); }
+  .uif-color-picker-range .uif-color-picker-range-value { min-inline-size: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
+
+  .uif-color-picker-summary { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--size-spacing-300); align-items: center; }
+  .uif-color-picker-preview { inline-size: max(44px, var(--uif-semantic-scale-size-target-default)); block-size: max(44px, var(--uif-semantic-scale-size-target-default)); border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-color-picker-border-color, var(--color-border-default)); border-radius: var(--uif-color-picker-border-radius, var(--size-radius-300)); background-color: var(--uif-color-picker-current-color, transparent); background-image: linear-gradient(45deg, Canvas 25%, transparent 25%), linear-gradient(-45deg, Canvas 25%, transparent 25%), linear-gradient(45deg, transparent 75%, Canvas 75%), linear-gradient(-45deg, transparent 75%, Canvas 75%); background-size: 12px 12px; }
+  .uif-color-picker-value { margin: 0; overflow-wrap: anywhere; }
+
+  .uif-color-picker-input { display: grid; gap: var(--size-spacing-100); }
+  .uif-color-picker-input input { min-inline-size: 0; inline-size: 100%; min-block-size: var(--uif-input-height, var(--size-spacing-800)); border: var(--uif-input-border-size-default) solid var(--uif-color-picker-border-color, var(--uif-input-border-color-default)); border-radius: var(--uif-input-border-radius); padding: var(--uif-input-padding-block) var(--uif-input-padding-inline); color: inherit; background: var(--uif-color-picker-container-background, var(--uif-input-container-background-default)); font: inherit; }
+  .uif-color-picker-input input[aria-invalid="true"] { border-color: var(--uif-input-border-color-invalid); }
+
+  .uif-color-picker-swatches { display: grid; gap: var(--size-spacing-200); }
+  .uif-color-picker-swatch-row { display: grid; grid-template-columns: repeat(4, minmax(44px, 1fr)); gap: var(--size-spacing-200); }
+  .uif-color-picker-swatch { position: relative; min-inline-size: max(44px, var(--uif-semantic-scale-size-target-default)); min-block-size: max(44px, var(--uif-semantic-scale-size-target-default)); border: 2px solid var(--uif-color-picker-border-color, var(--color-border-default)); border-radius: var(--uif-color-picker-border-radius, var(--size-radius-300)); background: var(--uif-color-picker-swatch-color, transparent); color: CanvasText; cursor: pointer; }
+  .uif-color-picker-swatch[aria-selected="true"]::after { content: "✓"; display: inline-grid; place-items: center; inline-size: 1.5rem; block-size: 1.5rem; border-radius: 50%; color: CanvasText; background: Canvas; font-weight: bold; }
+
+  .uif-color-picker-error { margin: 0; color: var(--uif-semantic-color-danger-foreground-default); font-weight: var(--brand-typography-ui-font-weight); }
+  .uif-color-picker-error[hidden] { display: none; }
+  .uif-color-picker[disabled] { color: GrayText; }
+  .uif-color-picker[disabled] :where(.uif-color-picker-area, .uif-color-picker-wheel, .uif-color-picker-swatch) { cursor: not-allowed; opacity: 0.65; }
+  .uif-color-picker[data-readonly] :where(.uif-color-picker-area, .uif-color-picker-wheel, .uif-color-picker-swatch) { cursor: default; }
+
+  @media (max-width: 24rem) {
+    .uif-color-picker-visuals { grid-template-columns: minmax(0, 1fr); }
+    .uif-color-picker-wheel { inline-size: min(10rem, 70vw); justify-self: center; }
+    .uif-color-picker-range { grid-template-columns: 1fr auto; }
+    .uif-color-picker-range input { grid-column: 1 / -1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .uif-color-picker-marker,
+    .uif-color-picker-wheel-marker { transition: none; }
+  }
+
+  @media (forced-colors: active) {
+    .uif-color-picker-area,
+    .uif-color-picker-wheel,
+    .uif-color-picker-preview,
+    .uif-color-picker-swatch { border-color: ButtonBorder; forced-color-adjust: none; }
+    .uif-color-picker-marker,
+    .uif-color-picker-wheel-marker { border-color: HighlightText; outline-color: Highlight; }
+    .uif-color-picker-area[data-focus-axis] { outline-color: Highlight; box-shadow: inset 0 0 0 4px Highlight; }
+    .uif-color-picker-area-focus { border-color: Highlight; color: HighlightText; background: Highlight; forced-color-adjust: none; }
+    .uif-color-picker-swatch[aria-selected="true"] { outline: 3px solid Highlight; outline-offset: 2px; }
+    .uif-color-picker-swatch[aria-selected="true"]::after { color: HighlightText; background: Highlight; }
+  }
+}

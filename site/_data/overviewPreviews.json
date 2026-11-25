@@ -25,6 +25,7 @@
   "/patterns/segmented-control/": "overview-previews/patterns-segmented-control.njk",
   "/patterns/range-slider/": "overview-previews/patterns-range-slider.njk",
   "/patterns/combo-box/": "overview-previews/patterns-combo-box.njk",
+  "/patterns/color-picker/": "overview-previews/patterns-color-picker.njk",
   "/patterns/progress-circle/": "overview-previews/patterns-progress-circle.njk",
   "/components/date-picker/": "overview-previews/components-date-picker.njk",
   "/components/dialog/": "overview-previews/components-dialog.njk",
