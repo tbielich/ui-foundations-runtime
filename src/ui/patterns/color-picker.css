@@ -26,6 +26,39 @@
     touch-action: none;
   }
 
+  .uif-color-picker-area-axis {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .uif-color-picker-area-focus {
+    display: none;
+    position: absolute;
+    inset-block-start: var(--size-spacing-200);
+    inset-inline-start: var(--size-spacing-200);
+    z-index: 1;
+    border: 1px solid currentcolor;
+    border-radius: var(--size-radius-200);
+    padding: var(--size-spacing-100) var(--size-spacing-200);
+    color: CanvasText;
+    background: Canvas;
+    pointer-events: none;
+  }
+
+  .uif-color-picker-area[data-focus-axis] {
+    outline: 2px solid var(--uif-color-picker-focus-color, var(--color-focus));
+    outline-offset: 2px;
+  }
+
+  .uif-color-picker-area[data-focus-axis] .uif-color-picker-area-focus { display: block; }
+  .uif-color-picker-area[data-focus-axis="saturation"] { box-shadow: inset 0 -4px 0 var(--uif-color-picker-focus-color, var(--color-focus)); }
+  .uif-color-picker-area[data-focus-axis="brightness"] { box-shadow: inset 4px 0 0 var(--uif-color-picker-focus-color, var(--color-focus)); }
+
   .uif-color-picker-marker,
   .uif-color-picker-wheel-marker {
     position: absolute;
@@ -58,7 +91,6 @@
     background: var(--uif-color-picker-container-background, var(--color-fill-surface));
   }
 
-  .uif-color-picker-area:focus-visible,
   .uif-color-picker-wheel:focus-visible,
   .uif-color-picker-swatch:focus-visible {
     outline: 2px solid var(--uif-color-picker-focus-color, var(--color-focus));
@@ -69,7 +101,7 @@
   .uif-color-picker-inputs { display: grid; gap: var(--size-spacing-300); }
   .uif-color-picker-range { display: grid; grid-template-columns: minmax(5rem, auto) minmax(0, 1fr) auto; gap: var(--size-spacing-300); align-items: center; }
   .uif-color-picker-range input { min-inline-size: 0; inline-size: 100%; min-block-size: max(24px, var(--uif-semantic-scale-size-target-default)); }
-  .uif-color-picker-range output { min-inline-size: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
+  .uif-color-picker-range .uif-color-picker-range-value { min-inline-size: 4ch; text-align: end; font-variant-numeric: tabular-nums; }
 
   .uif-color-picker-summary { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--size-spacing-300); align-items: center; }
   .uif-color-picker-preview { inline-size: max(44px, var(--uif-semantic-scale-size-target-default)); block-size: max(44px, var(--uif-semantic-scale-size-target-default)); border: var(--uif-semantic-size-border-default, 1px) solid var(--uif-color-picker-border-color, var(--color-border-default)); border-radius: var(--uif-color-picker-border-radius, var(--size-radius-300)); background-color: var(--uif-color-picker-current-color, transparent); background-image: linear-gradient(45deg, Canvas 25%, transparent 25%), linear-gradient(-45deg, Canvas 25%, transparent 25%), linear-gradient(45deg, transparent 75%, Canvas 75%), linear-gradient(-45deg, transparent 75%, Canvas 75%); background-size: 12px 12px; }
@@ -109,6 +141,8 @@
     .uif-color-picker-swatch { border-color: ButtonBorder; forced-color-adjust: none; }
     .uif-color-picker-marker,
     .uif-color-picker-wheel-marker { border-color: HighlightText; outline-color: Highlight; }
+    .uif-color-picker-area[data-focus-axis] { outline-color: Highlight; box-shadow: inset 0 0 0 4px Highlight; }
+    .uif-color-picker-area-focus { border-color: Highlight; color: HighlightText; background: Highlight; forced-color-adjust: none; }
     .uif-color-picker-swatch[aria-selected="true"] { outline: 3px solid Highlight; outline-offset: 2px; }
     .uif-color-picker-swatch[aria-selected="true"]::after { color: HighlightText; background: Highlight; }
   }

@@ -119,18 +119,27 @@ function parseHex(value) {
   });
 }
 
+const NUMBER_TOKEN = "[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)(?:[eE][+-]?\\d+)?";
+const NUMBER_ONLY = new RegExp(`^(${NUMBER_TOKEN})$`);
+const NUMBER_OR_PERCENT = new RegExp(`^(${NUMBER_TOKEN})(%)?$`);
+
+function parseNumericToken(value, allowPercentage = false) {
+  const match = String(value).trim().match(allowPercentage ? NUMBER_OR_PERCENT : NUMBER_ONLY);
+  if (!match) return null;
+  const numeric = Number(match[1]);
+  return Number.isFinite(numeric) ? { numeric, percentage: match[2] === "%" } : null;
+}
+
 function parseAlpha(value) {
-  const text = String(value).trim();
-  const numeric = Number.parseFloat(text);
-  if (!Number.isFinite(numeric)) return null;
-  return clamp(text.endsWith("%") ? numeric / 100 : numeric);
+  const token = parseNumericToken(value, true);
+  if (!token) return null;
+  return clamp(token.percentage ? token.numeric / 100 : token.numeric);
 }
 
 function parseChannel(value) {
-  const text = String(value).trim();
-  const numeric = Number.parseFloat(text);
-  if (!Number.isFinite(numeric)) return null;
-  return clamp(text.endsWith("%") ? numeric * 2.55 : numeric, 0, 255);
+  const token = parseNumericToken(value, true);
+  if (!token) return null;
+  return clamp(token.percentage ? token.numeric * 2.55 : token.numeric, 0, 255);
 }
 
 function functionParts(value, names) {
@@ -162,12 +171,12 @@ function parseRgb(value) {
 function parseHsl(value) {
   const parts = functionParts(value, ["hsl", "hsla"]);
   if (!parts || parts.length < 3 || parts.length > 4 || parts.some((part) => part === "")) return null;
-  const h = Number.parseFloat(parts[0]);
-  const s = Number.parseFloat(parts[1]);
-  const l = Number.parseFloat(parts[2]);
+  const h = parseNumericToken(parts[0]);
+  const s = parseNumericToken(parts[1], true);
+  const l = parseNumericToken(parts[2], true);
   const alpha = parts.length === 4 ? parseAlpha(parts[3]) : 1;
-  if (![h, s, l].every(Number.isFinite) || alpha === null) return null;
-  return hslaToRgba({ h, s: clamp(s / 100), l: clamp(l / 100), a: alpha });
+  if (!h || !s || !l || alpha === null) return null;
+  return hslaToRgba({ h: h.numeric, s: clamp(s.numeric / 100), l: clamp(l.numeric / 100), a: alpha });
 }
 
 function parseColor(value, format = "auto") {

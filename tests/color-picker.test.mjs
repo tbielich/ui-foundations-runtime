@@ -24,6 +24,10 @@ test("ColorPicker macro emits a safe labelled authored surface", () => {
 test("ColorPicker element includes synchronized semantic interaction contracts", () => {
   const source = readFileSync("src/elements/ui-color-picker.js", "utf8");
   assert.match(source, /setAttribute\("role", "slider"\)/);
+  assert.match(source, /setAttribute\("role", "group"\)/);
+  assert.match(source, /_createAreaAxis\(`\$\{baseId\}-saturation`, "Saturation"\)/);
+  assert.match(source, /_createAreaAxis\(`\$\{baseId\}-brightness`, "Brightness"\)/);
+  assert.doesNotMatch(source, /createElement\("output"\)/);
   assert.match(source, /setAttribute\("role", "grid"\)/);
   assert.match(source, /setAttribute\("role", "gridcell"\)/);
   assert.match(source, /aria-valuetext/);
@@ -51,6 +55,8 @@ test("ColorPicker generators retain value and state", () => {
 test("ColorPicker CSS preserves non-color, target, forced-color and reduced-motion cues", () => {
   const css = readFileSync("src/ui/patterns/color-picker.css", "utf8");
   assert.match(css, /aria-selected="true"\]\:\:after/);
+  assert.match(css, /data-focus-axis="saturation"/);
+  assert.match(css, /data-focus-axis="brightness"/);
   assert.match(css, /content: "✓"/);
   assert.match(css, /max\(44px, var\(--uif-semantic-scale-size-target-default\)\)/);
   assert.match(css, /@media \(forced-colors: active\)/);

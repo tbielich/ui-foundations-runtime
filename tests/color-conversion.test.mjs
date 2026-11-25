@@ -30,6 +30,25 @@ test("color parsing accepts canonical Hex, RGB and HSL with alpha", () => {
   assert.deepEqual(parseHex("#12"), null);
 });
 
+test("color parsing rejects malformed numeric tokens completely", () => {
+  for (const value of [
+    "rgb(12px, 34, 56)",
+    "rgb(12, 34, 56 / 50%%)",
+    "rgb(12, 34, 56 / .5garbage)",
+    "rgb(1e2oops, 34, 56)",
+  ]) {
+    assert.equal(parseRgb(value), null, value);
+  }
+  for (const value of [
+    "hsl(120deg, 100%, 50%)",
+    "hsl(120, 100%%, 50%)",
+    "hsl(120, 100%, 50% / .5garbage)",
+    "hsl(120oops, 100%, 50%)",
+  ]) {
+    assert.equal(parseHsl(value), null, value);
+  }
+});
+
 test("clamping and hue wrapping never produce unsafe numeric state", () => {
   assert.equal(clamp(-1), 0);
   assert.equal(clamp(4), 1);

@@ -58,6 +58,8 @@ class UIColorPicker extends UIElement {
         this._reflectValue(rgbaToHex(parsed));
       } else {
         this._parseError = FORMAT_ERRORS.hex;
+        this._invalidInput = null;
+        this._reflectValue(rgbaToHex(this._color || DEFAULT_COLOR));
       }
     }
     if (name === "swatches" && this._initialized && oldValue !== newValue) {
@@ -74,10 +76,14 @@ class UIColorPicker extends UIElement {
 
   _createStructure() {
     const baseId = this.id || `uif-color-picker-${++nextColorPickerId}`;
-    const initial = parseColor(this.getAttr("value")) || DEFAULT_COLOR;
+    const authoredValue = this.getAttr("value").trim();
+    const parsedInitial = authoredValue ? parseColor(authoredValue) : null;
+    const initial = parsedInitial || DEFAULT_COLOR;
     this._color = normalizeRgba(initial);
     this._defaultColor = { ...this._color };
-    this._swatchData = this._parseSwatches(this.getAttr("swatches"));
+    this._parseError = authoredValue && !parsedInitial ? FORMAT_ERRORS.hex : "";
+    if (authoredValue) this._reflectValue(rgbaToHex(this._color));
+    if (!this._swatchData) this._swatchData = this._parseSwatches(this.getAttr("swatches"));
 
     const field = this.ownerDocument.createElement("fieldset");
     field.className = "uif-color-picker";
@@ -90,15 +96,17 @@ class UIColorPicker extends UIElement {
 
     const area = this.ownerDocument.createElement("div");
     area.className = "uif-color-picker-area";
-    area.tabIndex = 0;
-    area.setAttribute("role", "slider");
-    area.setAttribute("aria-label", "Color saturation and brightness");
-    area.setAttribute("aria-valuemin", "0");
-    area.setAttribute("aria-valuemax", "100");
+    area.setAttribute("role", "group");
+    area.setAttribute("aria-label", "Saturation and brightness");
+    const saturation = this._createAreaAxis(`${baseId}-saturation`, "Saturation");
+    const brightness = this._createAreaAxis(`${baseId}-brightness`, "Brightness");
+    const areaFocus = this.ownerDocument.createElement("span");
+    areaFocus.className = "uif-color-picker-area-focus";
+    areaFocus.setAttribute("aria-hidden", "true");
     const areaMarker = this.ownerDocument.createElement("span");
     areaMarker.className = "uif-color-picker-marker";
     areaMarker.setAttribute("aria-hidden", "true");
-    area.append(areaMarker);
+    area.append(saturation, brightness, areaFocus, areaMarker);
 
     const wheel = this.ownerDocument.createElement("div");
     wheel.className = "uif-color-picker-wheel";
@@ -159,6 +167,9 @@ class UIColorPicker extends UIElement {
     this._field = field;
     this._legend = legend;
     this._area = area;
+    this._saturation = saturation;
+    this._brightness = brightness;
+    this._areaFocus = areaFocus;
     this._areaMarker = areaMarker;
     this._wheel = wheel;
     this._wheelMarker = wheelMarker;
@@ -175,11 +186,31 @@ class UIColorPicker extends UIElement {
     this._error = error;
     this._hidden = hidden;
 
-    area.addEventListener("keydown", (event) => this._handleAreaKeydown(event));
     wheel.addEventListener("keydown", (event) => this._handleWheelKeydown(event));
-    this._bindPointerControl(area, (event) => this._updateFromAreaPointer(event));
+    this._bindPointerControl(area, (event) => this._updateFromAreaPointer(event), false);
     this._bindPointerControl(wheel, (event) => this._updateFromWheelPointer(event));
 
+    this._bindRange(this._saturation, (numeric) => {
+      const hsv = rgbaToHsva(this._color);
+      return hsvaToRgba({ ...hsv, s: clamp(numeric / 100) });
+    });
+    this._bindRange(this._brightness, (numeric) => {
+      const hsv = rgbaToHsva(this._color);
+      return hsvaToRgba({ ...hsv, v: clamp(numeric / 100) });
+    });
+    [
+      [this._saturation, "saturation", "Saturation"],
+      [this._brightness, "brightness", "Brightness"],
+    ].forEach(([input, axis, label]) => {
+      input.addEventListener("focus", () => {
+        this._area.dataset.focusAxis = axis;
+        this._areaFocus.textContent = label;
+      });
+      input.addEventListener("blur", () => {
+        this._area.removeAttribute("data-focus-axis");
+        this._areaFocus.textContent = "";
+      });
+    });
     this._bindRange(this._hue, (numeric) => {
       const hsv = rgbaToHsva(this._color);
       return hsvaToRgba({ ...hsv, h: wrapHue(numeric) });
@@ -203,6 +234,18 @@ class UIColorPicker extends UIElement {
     this._hidden.defaultValue = rgbaToHex(this._defaultColor);
   }
 
+  _createAreaAxis(id, label) {
+    const input = this.ownerDocument.createElement("input");
+    input.id = id;
+    input.className = "uif-color-picker-area-axis";
+    input.type = "range";
+    input.min = "0";
+    input.max = "100";
+    input.step = "1";
+    input.setAttribute("aria-label", label);
+    return input;
+  }
+
   _createRange(id, labelText, min, max, step) {
     const row = this.ownerDocument.createElement("div");
     row.className = "uif-color-picker-range";
@@ -215,8 +258,9 @@ class UIColorPicker extends UIElement {
     input.min = String(min);
     input.max = String(max);
     input.step = String(step);
-    const output = this.ownerDocument.createElement("output");
-    output.htmlFor = id;
+    const output = this.ownerDocument.createElement("span");
+    output.className = "uif-color-picker-range-value";
+    output.setAttribute("aria-hidden", "true");
     row.append(label, input, output);
     return { row, input, output };
   }
@@ -257,11 +301,11 @@ class UIColorPicker extends UIElement {
     });
   }
 
-  _bindPointerControl(control, update) {
+  _bindPointerControl(control, update, focusOnPointer = true) {
     control.addEventListener("pointerdown", (event) => {
       if (this._isInteractionBlocked()) return;
       event.preventDefault();
-      control.focus();
+      if (focusOnPointer) control.focus();
       control.setPointerCapture(event.pointerId);
       update(event);
     });
@@ -290,23 +334,6 @@ class UIColorPicker extends UIElement {
     const hsv = rgbaToHsva(this._color);
     const h = wrapHue(Math.atan2(y, x) * 180 / Math.PI + 90);
     this._setColor(hsvaToRgba({ ...hsv, h }), "input");
-  }
-
-  _handleAreaKeydown(event) {
-    if (this._isInteractionBlocked()) return;
-    const keys = ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Home", "End"];
-    if (!keys.includes(event.key)) return;
-    event.preventDefault();
-    const hsv = rgbaToHsva(this._color);
-    const amount = event.shiftKey ? 0.1 : 0.01;
-    if (event.key === "ArrowLeft") hsv.s = clamp(hsv.s - amount);
-    if (event.key === "ArrowRight") hsv.s = clamp(hsv.s + amount);
-    if (event.key === "ArrowUp") hsv.v = clamp(hsv.v + amount);
-    if (event.key === "ArrowDown") hsv.v = clamp(hsv.v - amount);
-    if (event.key === "Home") hsv.s = 0;
-    if (event.key === "End") hsv.s = 1;
-    this._setColor(hsvaToRgba(hsv), "input");
-    this._emit("change");
   }
 
   _handleWheelKeydown(event) {
@@ -384,12 +411,16 @@ class UIColorPicker extends UIElement {
     this._hidden.disabled = disabled;
 
     this._area.style.setProperty("--uif-color-picker-hue", hueColor);
-    this._area.setAttribute("aria-valuenow", String(Math.round(hsv.s * 100)));
-    this._area.setAttribute("aria-valuetext", `Saturation ${Math.round(hsv.s * 100)}%, brightness ${Math.round(hsv.v * 100)}%`);
-    this._area.setAttribute("aria-readonly", String(readOnly));
-    this._area.setAttribute("aria-disabled", String(disabled));
-    this._area.setAttribute("aria-invalid", String(invalid));
-    this._area.tabIndex = disabled ? -1 : 0;
+    this._saturation.value = String(Math.round(hsv.s * 100));
+    this._saturation.disabled = disabled;
+    this._saturation.setAttribute("aria-readonly", String(readOnly));
+    this._saturation.setAttribute("aria-invalid", String(invalid));
+    this._saturation.setAttribute("aria-valuetext", `Saturation ${Math.round(hsv.s * 100)}%`);
+    this._brightness.value = String(Math.round(hsv.v * 100));
+    this._brightness.disabled = disabled;
+    this._brightness.setAttribute("aria-readonly", String(readOnly));
+    this._brightness.setAttribute("aria-invalid", String(invalid));
+    this._brightness.setAttribute("aria-valuetext", `Brightness ${Math.round(hsv.v * 100)}%`);
     this._areaMarker.style.left = `${hsv.s * 100}%`;
     this._areaMarker.style.top = `${(1 - hsv.v) * 100}%`;
 
@@ -408,14 +439,12 @@ class UIColorPicker extends UIElement {
     this._hue.setAttribute("aria-readonly", String(readOnly));
     this._hue.setAttribute("aria-invalid", String(invalid));
     this._hue.setAttribute("aria-valuetext", `${Math.round(hsv.h)} degrees`);
-    this._hueOutput.value = `${Math.round(hsv.h)}°`;
     this._hueOutput.textContent = `${Math.round(hsv.h)}°`;
     this._alpha.value = String(opacity);
     this._alpha.disabled = disabled;
     this._alpha.setAttribute("aria-readonly", String(readOnly));
     this._alpha.setAttribute("aria-invalid", String(invalid));
     this._alpha.setAttribute("aria-valuetext", `${opacity}%`);
-    this._alphaOutput.value = `${opacity}%`;
     this._alphaOutput.textContent = `${opacity}%`;
 
     this._preview.style.setProperty("--uif-color-picker-current-color", rgbaToCss(this._color));
@@ -434,7 +463,18 @@ class UIColorPicker extends UIElement {
       input.setAttribute("aria-invalid", String(invalid && (this._invalidInput ? input === this._invalidInput : true)));
     });
 
-    const describedControls = [this._area, this._wheel, this._hue, this._alpha, this._hex, this._rgb, this._hsl];
+    this._swatches.setAttribute("aria-invalid", String(invalid));
+    const describedControls = [
+      this._saturation,
+      this._brightness,
+      this._wheel,
+      this._hue,
+      this._alpha,
+      this._hex,
+      this._rgb,
+      this._hsl,
+      this._swatches,
+    ];
     describedControls.forEach((control) => {
       if (errorMessage) control.setAttribute("aria-describedby", this._error.id);
       else control.removeAttribute("aria-describedby");
@@ -493,7 +533,6 @@ class UIColorPicker extends UIElement {
       button.tabIndex = index === selectedIndex ? 0 : -1;
       button.setAttribute("aria-selected", String(selected));
       button.setAttribute("aria-readonly", String(readOnly));
-      button.setAttribute("aria-invalid", String(Boolean(this._parseError || this.getBool("invalid") || this.getAttr("error").trim())));
       button.setAttribute("aria-label", `${swatch.label}, ${swatch.value}${selected ? ", selected" : ""}`);
     });
   }
