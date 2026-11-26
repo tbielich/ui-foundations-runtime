@@ -1,0 +1,36 @@
+{
+  "task_id": "uif-run-368-103f5ea5c792",
+  "executor_id": "kiro",
+  "status": "blocked",
+  "output": "rpc_error:session/prompt",
+  "trace_id": "trace-8a27b825990d4fd89ce3960c325329cd",
+  "artifacts": [],
+  "changes": [],
+  "metadata": {
+    "provider": "kiro",
+    "transport": "acp",
+    "auth_method": "cli",
+    "changed_paths_source": "workspace_diff",
+    "command": [
+      "kiro-cli",
+      "acp",
+      "--agent-engine=v3",
+      "--auth-method=cli"
+    ],
+    "agent_info": null,
+    "kiro_session_id": "sess_4f55112c-6bc8-40b6-87c0-3eba98be2476",
+    "agent_mode": "uif-bounded",
+    "tool_tags": [
+      "read",
+      "write"
+    ],
+    "model": "auto",
+    "usage": [],
+    "error_code": "rpc_error:session/prompt",
+    "worker_reaped": true,
+    "changes_complete": true,
+    "approvals": [],
+    "tools": [],
+    "duration_seconds": 4.78385804197751
+  }
+}

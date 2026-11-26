@@ -1,0 +1,23 @@
+{
+  "mode": "VERIFY",
+  "findings": [
+    {
+      "id": "pseudo-selector",
+      "status": "FAIL",
+      "evidence": "Browser computed button::before content=none, width=auto; screenshot has no button motif. Pseudo-elements nested inside :is() cannot match these hosts.",
+      "repair": "Use top-level selector list with ::before/::after outside :is(); same for Forced Colors plus/cross."
+    },
+    {
+      "id": "token-loading",
+      "status": "FAIL",
+      "evidence": "Generated files are semantics-brands.tokens.brand-a.css and appearance-modes.tokens.mode-light.css / mode-dark.css; HTML links two nonexistent unsuffixed paths and data-brand=tui while tokens use a.",
+      "repair": "Load actual generated brand-a/light/dark filenames, use brand a; preserve scheme toggle."
+    }
+  ],
+  "repair_budget_used": 1,
+  "scope": [
+    "candidate.css",
+    "comparison.html"
+  ],
+  "production_changes": 0
+}

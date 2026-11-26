@@ -1,0 +1,41 @@
+{
+  "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "candidate_revision": null,
+  "verification_outcome": "blocked",
+  "execution": "BLOCKED",
+  "independent_tracked_diff": [],
+  "all_four_candidate_files_absent": true,
+  "attempts": 2,
+  "worker_cleanup": "PASS both attempts",
+  "scope_check": "PASS zero worker writes; orchestration evidence is outside worker write authority",
+  "required_checks": {
+    "lint": {
+      "status": "BLOCKED",
+      "command": "npm run lint",
+      "reason": "No candidate implementation: Kiro session/prompt RPC failed before tools"
+    },
+    "test:unit": {
+      "status": "BLOCKED",
+      "command": "npm run test:unit",
+      "reason": "No candidate implementation: Kiro session/prompt RPC failed before tools"
+    },
+    "ci:check": {
+      "status": "BLOCKED",
+      "command": "npm run ci:check",
+      "reason": "No candidate implementation: Kiro session/prompt RPC failed before tools"
+    }
+  },
+  "visual_semantics_footprint": "BLOCKED no candidate",
+  "manual_screenreader": "BLOCKED not performed",
+  "physical_eink": "BLOCKED not performed",
+  "publication_identity_check": {
+    "status": "PASS",
+    "login": "uif-intelligence",
+    "id": 336409410,
+    "push": true
+  },
+  "draft_pr": "NOT_CREATED no implementation",
+  "root_cause": "Unknown; adapter intentionally sanitizes provider errors; no credential changes or provider substitution",
+  "repair": "NOT_STARTED no demonstrated implementation defect",
+  "next_action": "Restore Kiro ACP session/prompt availability, then dispatch the persisted contract through the existing adapter; preserve both attempts; do not broaden scope."
+}

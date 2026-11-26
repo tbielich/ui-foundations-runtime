@@ -1,0 +1,86 @@
+{
+  "task_id": "uif-run-368-103f5ea5c792",
+  "prompt": "Implement only the isolated internal geometry PoC for UIF-RUN #368. Read DESIGN.md, AGENTS.md, docs/playbook.md, docs/working-context.md, docs/ui-foundations-rules.md, docs/foundations, docs/agentic/assistant-behavior-rules.md and IMPLEMENTATION.md. Inspect src/ui/patterns/{checkbox,select,button,icon}.css, src/assets/icons/{checkmark,plus,cross}.svg, figma/exports and asset pipeline. Your only writable files are listed in constraints. Do not edit production, tokens, manifests, governance, Git metadata or any other file. No publication, new dependencies, public Symbol Pattern, universal compiler or production integration. Read-only shell inspection is permitted. Do not run validation, build, install or publication commands: orchestrator performs declared validation. Do not delegate. Implement using file editing tools.\nCreate candidate.css, comparison.html, measure.mjs, README.md in docs/evidence/symbol-poc-368/. Isolated HTML must be directly viewable from repository root static server, load actual baseline pattern CSS and generated existing tokens where available and use real input type checkbox, button, select with visible labels. Compare all five motifs (checkmark,dash,chevron,plus,cross) baseline vs candidate; include decorative standalone and pseudo-element reuse, show actual limitations instead of inventing nested pseudo-elements. Native Select fallback retained, picker-icon only progressive, do not automate Select. Plus/cross single element using backgrounds if practical, forced-colors preserve visible indicator via borders or system colors. Existing SVG mask already single element. Inherited currentColor; internal geometry parameters only (not tokens). Weight hypothesis 100..900 and 400 = 1/24 size, sizes 12/16/24/32/48. Do not claim exact fidelity for approximations. No production adoption.\nRead codex-contract.json and thresholds.json before implementation. measure.mjs must use Node builtins only and reproducibly output JSON actual raw/minified/gzip/Brotli CSS AND SVG/markup payloads, shared utility cost, baseline extracted relevant geometry rather than entire pattern styling, explicit request/cache assumptions, 1/100/1000 repeat costs. Do not claim timing without reproducible measurement. Mark unavailable checks BLOCKED; never invent results. README describes sources, geometry, per-motif actual hosts and reuse, public Pattern HOLD, recommendation provisional retain existing pending independent verification. No visual regression infrastructure or new browser scripts. All checks run independently by orchestrator; worker self-report is not acceptance. Return artifacts and complete observed change list.",
+  "parent_task_id": null,
+  "task_kind": "IMPLEMENT",
+  "workspace": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-poc-368",
+  "capability_ids": [
+    "coding"
+  ],
+  "constraints": {
+    "allowed_paths": [
+      "docs/evidence/symbol-poc-368/candidate.css",
+      "docs/evidence/symbol-poc-368/comparison.html",
+      "docs/evidence/symbol-poc-368/measure.mjs",
+      "docs/evidence/symbol-poc-368/README.md"
+    ],
+    "forbidden_paths": [
+      "src/",
+      "figma/",
+      "dist/",
+      "site/",
+      "package.json",
+      "package-lock.json",
+      ".git/",
+      ".uif/",
+      "AGENTS.md"
+    ],
+    "allowed_actions": [
+      "read",
+      "edit"
+    ],
+    "forbidden_actions": [
+      "validate"
+    ],
+    "required_validations": [
+      "lint",
+      "test:unit",
+      "ci:check"
+    ],
+    "timeout_seconds": 900,
+    "approval": "scoped"
+  },
+  "source_refs": [
+    "issue:tbielich/ui-foundations-runtime#368",
+    "https://github.com/tbielich/ui-foundations-runtime/issues/368#issuecomment-7185178739",
+    "https://github.com/tbielich/ui-foundations-vault/blob/main/knowledge/components/parametric-symbol-research.md",
+    "https://github.com/tbielich/ui-foundations-studio/issues/21"
+  ],
+  "trace_id": "trace-8a27b825990d4fd89ce3960c325329cd-codex",
+  "metadata": {
+    "repo": "tbielich/ui-foundations-runtime",
+    "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+    "intelligence_revision": "004565cfe66ddd20fe835349dc32bde6d0d16fbe",
+    "repair_budget": 2,
+    "validation_bindings": {
+      "lint": {
+        "command": "npm run lint",
+        "runner": "independent orchestrator",
+        "evidence": "docs/evidence/symbol-poc-368/lint.log"
+      },
+      "test:unit": {
+        "command": "npm run test:unit",
+        "runner": "independent orchestrator",
+        "evidence": "docs/evidence/symbol-poc-368/test-unit.log"
+      },
+      "ci:check": {
+        "command": "npm run ci:check",
+        "runner": "independent orchestrator",
+        "evidence": "docs/evidence/symbol-poc-368/ci-check.log"
+      }
+    },
+    "additional_evidence": {
+      "visual": "Manual inspection only within existing Chromium capability; full matrix BLOCKED if unperformed. No visual regression system.",
+      "semantics": "Existing Button/Checkbox accessibility criterion IDs via ci:check; candidate coverage separate, never inferred",
+      "footprint": "node docs/evidence/symbol-poc-368/measure.mjs"
+    },
+    "human_authorization": "Direct assignment 2026-11-26: materialize, validate, dispatch Kiro, independent verify, bounded repair, draft PR; no merge/adoption; user approved Codex substitution after Kiro credits exhausted.",
+    "provider_switch": {
+      "from": "kiro",
+      "to": "codex",
+      "reason": "user confirms no Kiro credits",
+      "authorization": "user: ja",
+      "limits": "same four writable paths; read-only inspection shell permitted for Codex; no validation/publication/scope expansion"
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # UIF-RUN #368 internal geometry PoC
 
+Current independent results and recommendation: [REPORT.md](REPORT.md). The worker handoff below records the initial state before orchestrator validation and scoped repairs.
+
 Public Symbol Pattern: **HOLD**. Recommendation: **provisionally retain existing implementations pending independent verification**. Worker self-report is not acceptance. No production adoption or integration.
 
 Open `/docs/evidence/symbol-poc-368/comparison.html` from an existing repository-root static server. It loads actual Checkbox, Select, Button and Icon source CSS, plus optional existing generated token CSS. `dist/tokens/css` was absent during inspection: full baseline token styling and alias resolution are **BLOCKED**. No outputs were generated. Neutral docs layout is not a substitute token projection.

@@ -1,0 +1,340 @@
+{
+  "methodology": {
+    "script": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-poc-368/docs/evidence/symbol-poc-368/measure.mjs",
+    "node": "v22.0.0",
+    "zlib": "1.3.0.1-motley-24c07df",
+    "minifier": "Conservative comment/whitespace CSS and inter-tag XML removal; not production optimizer",
+    "compression": "gzip level 9; Brotli quality 11; each resource compressed independently",
+    "repeats": "Each repeat = five decorative motif spans + one checked input; one CSS response and three unique baseline SVG assets per cold page. Equal motif counts do not establish optical equivalence.",
+    "assumptions": "Cold: HTML+CSS+3 unique cached-on-first-use external SVGs for baseline, HTML+CSS for candidate. Warm: CSS and assets cached, HTML transferred. Zero HTTP/header/TLS cost; compression assumed even for SVG. Shared production control/token CSS excluded equally. Candidate whole stylesheet includes adapters and forced-colors; baseline only extracted geometry. Demo page overhead excluded. No winner inferred.",
+    "flatBundle": "Production build-css.mjs embeds local SVG masks when flattening; external-cache scenario here models modular source CSS, not flat main.css.",
+    "select": "Embedded SVG already counted inside extracted CSS; no extra request."
+  },
+  "hashes": {
+    "candidate": "f4e8312df428fc0badff13c8ff4d30829004a1fca792a71fe2eb1df2132a11a8",
+    "baselineCss": "aa61e1cee42bd0ec9564a05a50cdbe59228dc3cbd65347a59fdff2b1251590b3",
+    "checkmark": "1afea78ceddb775da8c331a6b75f7e005e9b03207709018981d703ba8bf13bc8",
+    "plus": "1adbb46c73cbcc4b757cb40099f8bc291e246eb4b20164ffc37b260bdb10dc34",
+    "cross": "04125896c6ed707157e0668774bb43e6c6c8f9f1cf5101c454fd47cecfba7c65"
+  },
+  "css": {
+    "baseline": {
+      "raw": 3371,
+      "minified": 3116,
+      "gzip": 617,
+      "brotli": 494
+    },
+    "candidate": {
+      "raw": 2713,
+      "minified": 2164,
+      "gzip": 712,
+      "brotli": 600
+    },
+    "sharedCandidateUtility": {
+      "raw": 700,
+      "minified": 646,
+      "gzip": 333,
+      "brotli": 263
+    },
+    "baselineExtracted": {
+      "checked": "  :is(.uif-checkbox, .checkbox):checked::after,\n  :is(.uif-checkbox, .checkbox).is-checked::after {\n    content: \"\";\n    inline-size: 0.75em;\n    block-size: 0.75em;\n    background-color: currentColor;\n    -webkit-mask-image: url(\"../../assets/icons/checkmark.svg\");\n    mask-image: url(\"../../assets/icons/checkmark.svg\");\n    -webkit-mask-size: contain;\n    mask-size: contain;\n    -webkit-mask-repeat: no-repeat;\n    mask-repeat: no-repeat;\n    -webkit-mask-position: center;\n    mask-position: center;\n  }",
+      "mixed": "  :is(.uif-checkbox, .checkbox):indeterminate::after,\n  :is(.uif-checkbox, .checkbox).is-indeterminate::after {\n    inline-size: 0.75rem;\n    block-size: var(--size-border-200);\n    border-radius: var(--size-radius-full);\n    background: currentColor;\n  }",
+      "mask": "  :is(.uif-icon, .icon) {\n    display: inline-block;\n    inline-size: 1em;\n    block-size: 1em;\n    inline-size: 1lh;\n    block-size: 1lh;\n    line-height: inherit;\n    background-color: currentColor;\n    -webkit-mask-image: var(--uif-icon-src);\n    mask-image: var(--uif-icon-src);\n    -webkit-mask-repeat: no-repeat;\n    mask-repeat: no-repeat;\n    -webkit-mask-position: center;\n    mask-position: center;\n    -webkit-mask-size: contain;\n    mask-size: contain;\n    vertical-align: middle;\n  }",
+      "selectGeometry": "    background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 6 4 4 4-4'/%3E%3C/svg%3E\");\n    background-repeat: no-repeat;\n    background-position: right var(--uif-select-padding-inline) center;\n    background-size: 1em;\n      background-image: none;\n      content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 6 4 4 4-4'/%3E%3C/svg%3E\");\n    background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 6 4 4 4-4'/%3E%3C/svg%3E\");\n      background-image: none;\n    background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 6 4 4 4-4'/%3E%3C/svg%3E\");\n      background-image: none;\n    background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m4 6 4 4 4-4'/%3E%3C/svg%3E\");\n      background-image: none;"
+    }
+  },
+  "svg": {
+    "checkmark": {
+      "raw": 196,
+      "minified": 193,
+      "gzip": 162,
+      "brotli": 134
+    },
+    "plus": {
+      "raw": 196,
+      "minified": 193,
+      "gzip": 164,
+      "brotli": 133
+    },
+    "cross": {
+      "raw": 244,
+      "minified": 241,
+      "gzip": 176,
+      "brotli": 152
+    }
+  },
+  "markup": {
+    "baseline": {
+      "source": "<span class=\"uif-icon\" aria-hidden=\"true\" style=\"--uif-icon-src:url(../../../src/assets/icons/checkmark.svg)\"></span><span class=\"uif-icon\" aria-hidden=\"true\" style=\"--uif-icon-src:url(../../../src/assets/icons/plus.svg)\"></span><span class=\"uif-icon\" aria-hidden=\"true\" style=\"--uif-icon-src:url(../../../src/assets/icons/cross.svg)\"></span><span class=\"baseline-dash\" aria-hidden=\"true\"></span><span class=\"baseline-chevron\" aria-hidden=\"true\"></span>",
+      "raw": 453,
+      "minified": 453,
+      "gzip": 150,
+      "brotli": 109
+    },
+    "candidate": {
+      "source": "<span class=\"poc-geometry poc-checkmark\" aria-hidden=\"true\"></span><span class=\"poc-geometry poc-plus\" aria-hidden=\"true\"></span><span class=\"poc-geometry poc-cross\" aria-hidden=\"true\"></span><span class=\"poc-geometry poc-dash\" aria-hidden=\"true\"></span><span class=\"poc-geometry poc-chevron\" aria-hidden=\"true\"></span>",
+      "raw": 319,
+      "minified": 319,
+      "gzip": 110,
+      "brotli": 71
+    },
+    "baselinePseudo": {
+      "source": "<input class=\"uif-checkbox\" type=\"checkbox\" aria-label=\"Example\" checked>",
+      "raw": 73,
+      "minified": 73,
+      "gzip": 81,
+      "brotli": 47
+    },
+    "candidatePseudo": {
+      "source": "<input class=\"uif-checkbox poc-checkbox\" type=\"checkbox\" aria-label=\"Example\" checked>",
+      "raw": 86,
+      "minified": 86,
+      "gzip": 87,
+      "brotli": 53
+    }
+  },
+  "repeats": {
+    "1": {
+      "baseline": {
+        "css": {
+          "raw": 3371,
+          "minified": 3116,
+          "gzip": 617,
+          "brotli": 494
+        },
+        "markup": {
+          "raw": 526,
+          "minified": 526,
+          "gzip": 188,
+          "brotli": 136
+        },
+        "assets": [
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 162,
+            "brotli": 134
+          },
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 164,
+            "brotli": 133
+          },
+          {
+            "raw": 244,
+            "minified": 241,
+            "gzip": 176,
+            "brotli": 152
+          }
+        ],
+        "coldTotal": {
+          "raw": 4533,
+          "minified": 4269,
+          "gzip": 1307,
+          "brotli": 1049
+        },
+        "warmCssAndAssetCache": {
+          "raw": 526,
+          "minified": 526,
+          "gzip": 188,
+          "brotli": 136
+        },
+        "coldRequests": 5,
+        "warmRequests": 1
+      },
+      "candidate": {
+        "css": {
+          "raw": 2713,
+          "minified": 2164,
+          "gzip": 712,
+          "brotli": 600
+        },
+        "markup": {
+          "raw": 405,
+          "minified": 405,
+          "gzip": 153,
+          "brotli": 103
+        },
+        "assets": [],
+        "coldTotal": {
+          "raw": 3118,
+          "minified": 2569,
+          "gzip": 865,
+          "brotli": 703
+        },
+        "warmCssAndAssetCache": {
+          "raw": 405,
+          "minified": 405,
+          "gzip": 153,
+          "brotli": 103
+        },
+        "coldRequests": 2,
+        "warmRequests": 1
+      }
+    },
+    "100": {
+      "baseline": {
+        "css": {
+          "raw": 3371,
+          "minified": 3116,
+          "gzip": 617,
+          "brotli": 494
+        },
+        "markup": {
+          "raw": 52600,
+          "minified": 52600,
+          "gzip": 472,
+          "brotli": 142
+        },
+        "assets": [
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 162,
+            "brotli": 134
+          },
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 164,
+            "brotli": 133
+          },
+          {
+            "raw": 244,
+            "minified": 241,
+            "gzip": 176,
+            "brotli": 152
+          }
+        ],
+        "coldTotal": {
+          "raw": 56607,
+          "minified": 56343,
+          "gzip": 1591,
+          "brotli": 1055
+        },
+        "warmCssAndAssetCache": {
+          "raw": 52600,
+          "minified": 52600,
+          "gzip": 472,
+          "brotli": 142
+        },
+        "coldRequests": 5,
+        "warmRequests": 1
+      },
+      "candidate": {
+        "css": {
+          "raw": 2713,
+          "minified": 2164,
+          "gzip": 712,
+          "brotli": 600
+        },
+        "markup": {
+          "raw": 40500,
+          "minified": 40500,
+          "gzip": 354,
+          "brotli": 108
+        },
+        "assets": [],
+        "coldTotal": {
+          "raw": 43213,
+          "minified": 42664,
+          "gzip": 1066,
+          "brotli": 708
+        },
+        "warmCssAndAssetCache": {
+          "raw": 40500,
+          "minified": 40500,
+          "gzip": 354,
+          "brotli": 108
+        },
+        "coldRequests": 2,
+        "warmRequests": 1
+      }
+    },
+    "1000": {
+      "baseline": {
+        "css": {
+          "raw": 3371,
+          "minified": 3116,
+          "gzip": 617,
+          "brotli": 494
+        },
+        "markup": {
+          "raw": 526000,
+          "minified": 526000,
+          "gzip": 2765,
+          "brotli": 142
+        },
+        "assets": [
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 162,
+            "brotli": 134
+          },
+          {
+            "raw": 196,
+            "minified": 193,
+            "gzip": 164,
+            "brotli": 133
+          },
+          {
+            "raw": 244,
+            "minified": 241,
+            "gzip": 176,
+            "brotli": 152
+          }
+        ],
+        "coldTotal": {
+          "raw": 530007,
+          "minified": 529743,
+          "gzip": 3884,
+          "brotli": 1055
+        },
+        "warmCssAndAssetCache": {
+          "raw": 526000,
+          "minified": 526000,
+          "gzip": 2765,
+          "brotli": 142
+        },
+        "coldRequests": 5,
+        "warmRequests": 1
+      },
+      "candidate": {
+        "css": {
+          "raw": 2713,
+          "minified": 2164,
+          "gzip": 712,
+          "brotli": 600
+        },
+        "markup": {
+          "raw": 405000,
+          "minified": 405000,
+          "gzip": 1944,
+          "brotli": 109
+        },
+        "assets": [],
+        "coldTotal": {
+          "raw": 407713,
+          "minified": 407164,
+          "gzip": 2656,
+          "brotli": 709
+        },
+        "warmCssAndAssetCache": {
+          "raw": 405000,
+          "minified": 405000,
+          "gzip": 1944,
+          "brotli": 109
+        },
+        "coldRequests": 2,
+        "warmRequests": 1
+      }
+    }
+  },
+  "checks": {
+    "visual": "BLOCKED",
+    "timing": "BLOCKED: not measured",
+    "acceptance": "Independent orchestrator only"
+  }
+}

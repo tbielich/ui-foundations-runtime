@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "baseline": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "exact_allowed_paths": [
+    "docs/evidence/symbol-poc-368/candidate.css",
+    "docs/evidence/symbol-poc-368/comparison.html",
+    "docs/evidence/symbol-poc-368/measure.mjs",
+    "docs/evidence/symbol-poc-368/README.md"
+  ],
+  "validation_bindings": {
+    "lint": {
+      "command": "npm run lint",
+      "runner": "independent orchestrator",
+      "evidence": "docs/evidence/symbol-poc-368/lint.log"
+    },
+    "test:unit": {
+      "command": "npm run test:unit",
+      "runner": "independent orchestrator",
+      "evidence": "docs/evidence/symbol-poc-368/test-unit.log"
+    },
+    "ci:check": {
+      "command": "npm run ci:check",
+      "runner": "independent orchestrator",
+      "evidence": "docs/evidence/symbol-poc-368/ci-check.log"
+    }
+  },
+  "provider_switch_authorized": true,
+  "scope_unchanged": true,
+  "enforcement_limit": "Existing Codex adapter uses workspace sandbox and independent before/after snapshots; exact paths are contractual and verified after execution, unlike ACP native write rules."
+}

@@ -1,0 +1,9 @@
+
+> ui-foundations@1.1.0 lint
+> npm run lint:js
+
+
+> ui-foundations@1.1.0 lint:js
+> node scripts/lint-js.mjs
+
+✅ JS syntax lint passed (96 files)
