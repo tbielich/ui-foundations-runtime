@@ -2,7 +2,7 @@
 
 All notable UI Foundations release changes are documented here.
 
-## Unreleased
+## 1.2.0 — 2026-11-26
 
 ### Added
 
