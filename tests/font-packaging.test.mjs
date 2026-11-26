@@ -23,7 +23,7 @@ test("Runtime source contains no bundled font binaries or automatic font loader"
 
 test("docs opt into their own relative local font loader", () => {
   const css = fs.readFileSync(path.join(root, "site/assets/brand-fonts.css"), "utf8");
-  assert.equal([...css.matchAll(/@font-face/g)].length, 7);
+  assert.equal([...css.matchAll(/@font-face/g)].length, 8);
   for (const match of css.matchAll(/url\(["']([^"']+)["']\)/g)) {
     assert.ok(match[1].startsWith("./fonts/brand/"));
     assert.ok(fs.existsSync(path.resolve(root, "site/assets", match[1])), match[1]);

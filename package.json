@@ -79,11 +79,13 @@
     "./elements/ui-inline-alert": "./dist/elements/ui-inline-alert.js",
     "./elements/ui-illustrated-message": "./dist/elements/ui-illustrated-message.js",
     "./base.css": "./dist/base.css",
+    "./legacy.css": "./dist/legacy.css",
     "./behaviors/calendar": "./dist/ui/components/calendar.js",
     "./behaviors/date-input": "./dist/ui/components/date-input.js",
     "./behaviors/input-field": "./dist/ui/components/input-field.js",
     "./behaviors/table": "./dist/ui/components/table.js",
-    "./elements/ui-progress-circle": "./dist/elements/ui-progress-circle.js"
+    "./elements/ui-progress-circle": "./dist/elements/ui-progress-circle.js",
+    "./behaviors/content": "./dist/ui/components/content.js"
   },
   "scripts": {
     "icons:generate-list": "node scripts/generate-icon-list.mjs",

@@ -18,5 +18,6 @@
   "/components/date-picker/": "overview-previews/components-date-picker.njk",
   "/components/dialog/": "overview-previews/components-dialog.njk",
   "/examples/login-form/": "overview-previews/examples-login-form.njk",
-  "/examples/pricing/": "overview-previews/examples-pricing.njk"
+  "/examples/pricing/": "overview-previews/examples-pricing.njk",
+  "/patterns/content/": "overview-previews/patterns-content.njk"
 }

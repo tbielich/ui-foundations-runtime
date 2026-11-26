@@ -1,0 +1,154 @@
+[
+  {
+    "file": "DroidSansMono.ttf",
+    "families": [
+      "Droid Sans Mono"
+    ],
+    "unitsPerEm": 2048,
+    "characters": {
+      " ": {
+        "advance": 1229,
+        "em": 0.60009765625
+      },
+      "i": {
+        "advance": 1229,
+        "em": 0.60009765625
+      },
+      "W": {
+        "advance": 1229,
+        "em": 0.60009765625
+      },
+      "─": null,
+      "│": null,
+      "╭": null,
+      "╮": null,
+      "╰": null,
+      "╯": null,
+      "◜": null,
+      "◝": null,
+      "◞": null,
+      "◟": null,
+      "◠": null,
+      "◡": null,
+      "▘": null,
+      "▝": null,
+      "▖": null,
+      "▗": null,
+      "▀": null,
+      "▄": null,
+      "▌": null,
+      "▐": null,
+      "█": null,
+      "✓": null
+    }
+  },
+  {
+    "file": "CutiveMono.ttf",
+    "families": [
+      "Cutive Mono"
+    ],
+    "unitsPerEm": 2048,
+    "characters": {
+      " ": {
+        "advance": 1240,
+        "em": 0.60546875
+      },
+      "i": {
+        "advance": 1240,
+        "em": 0.60546875
+      },
+      "W": {
+        "advance": 1240,
+        "em": 0.60546875
+      },
+      "─": null,
+      "│": null,
+      "╭": null,
+      "╮": null,
+      "╰": null,
+      "╯": null,
+      "◜": null,
+      "◝": null,
+      "◞": null,
+      "◟": null,
+      "◠": null,
+      "◡": null,
+      "▘": null,
+      "▝": null,
+      "▖": null,
+      "▗": null,
+      "▀": null,
+      "▄": null,
+      "▌": null,
+      "▐": null,
+      "█": null,
+      "✓": null
+    }
+  },
+  {
+    "file": "CourierStd.otf",
+    "families": [
+      "Courier Std Medium",
+      "CourierStd",
+      "Courier Std"
+    ],
+    "unitsPerEm": 1000,
+    "characters": {
+      " ": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "i": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "W": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "─": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "│": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "╭": null,
+      "╮": null,
+      "╰": null,
+      "╯": null,
+      "◜": null,
+      "◝": null,
+      "◞": null,
+      "◟": null,
+      "◠": null,
+      "◡": null,
+      "▘": null,
+      "▝": null,
+      "▖": null,
+      "▗": null,
+      "▀": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "▄": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "▌": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "▐": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "█": {
+        "advance": 600,
+        "em": 0.6
+      },
+      "✓": null
+    }
+  }
+]

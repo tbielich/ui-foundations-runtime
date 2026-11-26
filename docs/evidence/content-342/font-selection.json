@@ -1,0 +1,12 @@
+{
+  "font": "DejaVu Sans Mono 2.37",
+  "sha256": "b4a6c3e4faab8773f4ff761d56451646409f29abedd68f05d38c2df667d3c582",
+  "repertoire": " ╭╮╰╯─│├┤┬┴┼═║╔╗╚╝╱╲▘▝▖▗▀▄▌▐▚▞▛▜▙▟░▒▓█•○●✓✔×←↑→↓◆◇…◜◝◞◟◠◡",
+  "missing": [],
+  "advanceUnits": [
+    1233
+  ],
+  "unitsPerEm": 2048,
+  "squareCells": false,
+  "scope": "built-in Drawpad repertoire only, arbitrary added Unicode not guaranteed"
+}

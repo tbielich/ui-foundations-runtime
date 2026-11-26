@@ -1,4 +1,5 @@
 import fs from "fs";
+import { buildLegacyCss } from "./build-legacy-css.mjs";
 import path from "path";
 import { buildScaleContext } from "./scale-context.mjs";
 import { buildBrandTypographyContext } from "./brand-typography-context.mjs";
@@ -252,6 +253,7 @@ function buildDocs() {
   const uiCss = inlineImports(path.join(DIST_DIR, "ui", "index.css"));
   const bundledCss = hoistRemoteImports(`${coreCss}\n${uiCss}`);
   writeFile(path.join(DIST_DIR, "main.css"), bundledCss);
+  writeFile(path.join(DIST_DIR, "legacy.css"), buildLegacyCss(bundledCss));
 
   console.log("✅ Dist bundles generated in dist/");
 }

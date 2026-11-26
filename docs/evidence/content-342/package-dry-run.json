@@ -1,0 +1,3686 @@
+[
+  {
+    "id": "ui-foundations@1.1.0",
+    "name": "ui-foundations",
+    "version": "1.1.0",
+    "size": 288673,
+    "unpackedSize": 1866455,
+    "shasum": "1b2a856b73de633a82948ab54c8487456c4eb092",
+    "integrity": "sha512-vCGxBg7p+7X0m0uaH8feAd8W+fH0jxzEG1vaReBoFGOW7hgKqMC1HD47RddRNIJHBXWfOu4g5+ifOyXTS16/tw==",
+    "filename": "ui-foundations-1.1.0.tgz",
+    "files": [
+      {
+        "path": "CHANGELOG.md",
+        "size": 3570,
+        "mode": 420
+      },
+      {
+        "path": "LICENSE",
+        "size": 4549,
+        "mode": 420
+      },
+      {
+        "path": "MIGRATION.md",
+        "size": 5642,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 18678,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/accessibility-circled.svg",
+        "size": 769,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/accommodation.svg",
+        "size": 426,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/adults-only.svg",
+        "size": 1760,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft--left.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft--right.svg",
+        "size": 384,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft-check.svg",
+        "size": 669,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft-double.svg",
+        "size": 717,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft-down.svg",
+        "size": 461,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft-up.svg",
+        "size": 472,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/aircraft.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-extras.svg",
+        "size": 834,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-gate.svg",
+        "size": 1565,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-hotel-parking.svg",
+        "size": 422,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-hotel.svg",
+        "size": 327,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-lounge.svg",
+        "size": 1286,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/airport-parking.svg",
+        "size": 457,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/anchor.svg",
+        "size": 619,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/apple.svg",
+        "size": 545,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/armchair.svg",
+        "size": 518,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow--down.svg",
+        "size": 205,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow--left.svg",
+        "size": 204,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow--top.svg",
+        "size": 204,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-browser-back.svg",
+        "size": 207,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circle--flip.svg",
+        "size": 382,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circle.svg",
+        "size": 385,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circled--down.svg",
+        "size": 394,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circled--left.svg",
+        "size": 393,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circled--top.svg",
+        "size": 394,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-circled.svg",
+        "size": 395,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-left-right.svg",
+        "size": 219,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-long.svg",
+        "size": 205,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-to--bottom.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow-to--top.svg",
+        "size": 211,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/arrow.svg",
+        "size": 205,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/assembly-point.svg",
+        "size": 956,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/at.svg",
+        "size": 2381,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/average.svg",
+        "size": 380,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/baby-carriage.svg",
+        "size": 1312,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/baby.svg",
+        "size": 620,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/badge-check.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/badger.svg",
+        "size": 2056,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/baggage-claim.svg",
+        "size": 504,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bar-horizontal.svg",
+        "size": 193,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bar-vertical.svg",
+        "size": 193,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/basic.svg",
+        "size": 418,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/battery.svg",
+        "size": 868,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/beachball.svg",
+        "size": 1984,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/beachchair-reservation.svg",
+        "size": 985,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed-double.svg",
+        "size": 615,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed-extra-location.svg",
+        "size": 1014,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed-extra-selection.svg",
+        "size": 883,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed-extra.svg",
+        "size": 690,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed-single.svg",
+        "size": 537,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bed.svg",
+        "size": 373,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bee.svg",
+        "size": 567,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/before-you-go.svg",
+        "size": 1192,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bell.svg",
+        "size": 346,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bellboy.svg",
+        "size": 1907,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bike.svg",
+        "size": 543,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/binocular.svg",
+        "size": 1410,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/board-upgrade.svg",
+        "size": 554,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/booking.svg",
+        "size": 665,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bookmark.svg",
+        "size": 205,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bowl.svg",
+        "size": 511,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bowtie.svg",
+        "size": 569,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/box.svg",
+        "size": 507,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/browser-checkin.svg",
+        "size": 660,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/browser.svg",
+        "size": 637,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bug.svg",
+        "size": 1322,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/building.svg",
+        "size": 420,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/bus.svg",
+        "size": 1211,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cabin-luggage-backpacker.svg",
+        "size": 1664,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cabin-luggage.svg",
+        "size": 505,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calculator.svg",
+        "size": 280,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-checkin.svg",
+        "size": 339,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-checkout.svg",
+        "size": 460,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-day.svg",
+        "size": 360,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-month.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-price.svg",
+        "size": 879,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-week.svg",
+        "size": 395,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar-year.svg",
+        "size": 395,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/calendar.svg",
+        "size": 352,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/camera.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/camper.svg",
+        "size": 1216,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-camper.svg",
+        "size": 546,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-door.svg",
+        "size": 408,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-fuel.svg",
+        "size": 717,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-gear-a.svg",
+        "size": 1873,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-gear-m.svg",
+        "size": 1864,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-gear.svg",
+        "size": 1140,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-navi.svg",
+        "size": 438,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-rental.svg",
+        "size": 1194,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-taxi.svg",
+        "size": 660,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-transporter.svg",
+        "size": 659,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car-wheel.svg",
+        "size": 1469,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/car.svg",
+        "size": 652,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/card-debit-tui.svg",
+        "size": 815,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/card-debit.svg",
+        "size": 780,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-bus.svg",
+        "size": 597,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-convertible.svg",
+        "size": 450,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-large.svg",
+        "size": 443,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-medium.svg",
+        "size": 442,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-small.svg",
+        "size": 514,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-stationwagon.svg",
+        "size": 511,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cartype-suv.svg",
+        "size": 640,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/catalog.svg",
+        "size": 459,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cert-check.svg",
+        "size": 465,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cert-first.svg",
+        "size": 519,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cert.svg",
+        "size": 428,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/champagne.svg",
+        "size": 575,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chat-question.svg",
+        "size": 1200,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chat.svg",
+        "size": 576,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/checkbox-checked.svg",
+        "size": 548,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/checkbox-unchecked.svg",
+        "size": 313,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/checkbox.svg",
+        "size": 404,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/checkmark-circled.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/checkmark.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron--down.svg",
+        "size": 195,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron--left.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron--top.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron-circled--down.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron-circled--left.svg",
+        "size": 385,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron-circled--top.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron-circled.svg",
+        "size": 387,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/chevron.svg",
+        "size": 195,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/church.svg",
+        "size": 846,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/circle.svg",
+        "size": 293,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clean.svg",
+        "size": 464,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-01.svg",
+        "size": 387,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-02.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-03.svg",
+        "size": 381,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-04.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-05.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-06.svg",
+        "size": 378,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-07.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-08.svg",
+        "size": 391,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-09.svg",
+        "size": 380,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-10.svg",
+        "size": 391,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-11.svg",
+        "size": 387,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-12.svg",
+        "size": 378,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-alarm-late.svg",
+        "size": 759,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-alarm.svg",
+        "size": 576,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-check.svg",
+        "size": 539,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock-stopwatch.svg",
+        "size": 630,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clock.svg",
+        "size": 384,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-fog.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-rain.svg",
+        "size": 441,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-rainbow.svg",
+        "size": 694,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-snow.svg",
+        "size": 789,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-storm.svg",
+        "size": 445,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud-sun.svg",
+        "size": 584,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cloud.svg",
+        "size": 403,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/clubbing.svg",
+        "size": 1348,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/code.svg",
+        "size": 222,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/coffee-cup.svg",
+        "size": 474,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/coffee.svg",
+        "size": 360,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/compass.svg",
+        "size": 651,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/controls.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/copy.svg",
+        "size": 329,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/corona-test.svg",
+        "size": 776,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/couch.svg",
+        "size": 930,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/croissant.svg",
+        "size": 1025,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cross-circled.svg",
+        "size": 390,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/cross.svg",
+        "size": 244,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/crown.svg",
+        "size": 943,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/currency-coin.svg",
+        "size": 666,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/currency-coins.svg",
+        "size": 1409,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/currency-euro.svg",
+        "size": 939,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/currency-pound.svg",
+        "size": 478,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-desktop.svg",
+        "size": 564,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-laptop.svg",
+        "size": 688,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-phone.svg",
+        "size": 1306,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-tablet.svg",
+        "size": 574,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-tv.svg",
+        "size": 560,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/device-walkie-talkie.svg",
+        "size": 635,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/diamond.svg",
+        "size": 516,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/digital-service.svg",
+        "size": 2451,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/disability-deaf.svg",
+        "size": 623,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/disability-elder.svg",
+        "size": 715,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/disability-mental.svg",
+        "size": 624,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/disco.svg",
+        "size": 878,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/distance.svg",
+        "size": 236,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/diving.svg",
+        "size": 881,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/document-hotel.svg",
+        "size": 381,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/document-search.svg",
+        "size": 649,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/document.svg",
+        "size": 398,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/door-tag.svg",
+        "size": 375,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/download.svg",
+        "size": 283,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/droid.svg",
+        "size": 790,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/during-your-holiday.svg",
+        "size": 639,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/duty-free.svg",
+        "size": 414,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ear.svg",
+        "size": 760,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/eat-extra.svg",
+        "size": 475,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/eat.svg",
+        "size": 269,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/edit.svg",
+        "size": 462,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ellipsis--vertical.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ellipsis-circled.svg",
+        "size": 992,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ellipsis.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/entertainment.svg",
+        "size": 2531,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/equals-circled.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/equals.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/exclamation-mark-bold.svg",
+        "size": 864,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/exclamation-mark-circled.svg",
+        "size": 389,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/exclamation-mark-ultrabold.svg",
+        "size": 902,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/exclamation-mark.svg",
+        "size": 199,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/excursions.svg",
+        "size": 1195,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-disappointed.svg",
+        "size": 578,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-grinning.svg",
+        "size": 534,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-neutral.svg",
+        "size": 394,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-smile.svg",
+        "size": 665,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-to-face-service.svg",
+        "size": 1128,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/face-worried.svg",
+        "size": 669,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/facemask-head.svg",
+        "size": 1262,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/facemask.svg",
+        "size": 610,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/factory.svg",
+        "size": 284,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/feed.svg",
+        "size": 1902,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/filter.svg",
+        "size": 284,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/fitness-course.svg",
+        "size": 1090,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/fitness.svg",
+        "size": 1792,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flag-striped-large.svg",
+        "size": 638,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flag-striped.svg",
+        "size": 672,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flag.svg",
+        "size": 333,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flex.svg",
+        "size": 734,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flight-extras.svg",
+        "size": 886,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flip-flop.svg",
+        "size": 1440,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/floorplan.svg",
+        "size": 297,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flower-daisy.svg",
+        "size": 1961,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/flower-rose.svg",
+        "size": 1272,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/focus.svg",
+        "size": 328,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/folder.svg",
+        "size": 209,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/food-package.svg",
+        "size": 867,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/football.svg",
+        "size": 800,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/forbidden.svg",
+        "size": 380,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/gas-station.svg",
+        "size": 926,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ghost.svg",
+        "size": 1964,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/gift.svg",
+        "size": 389,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glass-cocktail.svg",
+        "size": 228,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glass-drink.svg",
+        "size": 337,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glass-sparkling-full.svg",
+        "size": 443,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glass-sparkling.svg",
+        "size": 269,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glass-wine.svg",
+        "size": 254,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glasses-sun.svg",
+        "size": 1783,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/glasses.svg",
+        "size": 308,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/golf-buggy.svg",
+        "size": 1319,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/golf-clubs.svg",
+        "size": 1149,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/golf-player.svg",
+        "size": 524,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/golf.svg",
+        "size": 261,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/grain.svg",
+        "size": 1023,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/gsm.svg",
+        "size": 223,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet--down.svg",
+        "size": 212,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet--left.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet--up.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet-down.svg",
+        "size": 212,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet-left.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet-up.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/guillemet.svg",
+        "size": 212,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hairdresser.svg",
+        "size": 798,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-back-pointing--left.svg",
+        "size": 1005,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-back-pointing.svg",
+        "size": 580,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-handshake.svg",
+        "size": 1695,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointing--left.svg",
+        "size": 2213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointing-top.svg",
+        "size": 1118,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointing-up.svg",
+        "size": 1112,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointing.svg",
+        "size": 2070,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointleft.svg",
+        "size": 2153,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-pointright.svg",
+        "size": 2011,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-rock-on.svg",
+        "size": 944,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-seed.svg",
+        "size": 838,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-service-debit.svg",
+        "size": 409,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand-service.svg",
+        "size": 431,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hand.svg",
+        "size": 990,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hat.svg",
+        "size": 363,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/heart.svg",
+        "size": 325,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/heartbeat.svg",
+        "size": 469,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/helmet-jockey.svg",
+        "size": 533,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/home.svg",
+        "size": 300,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/horse-head.svg",
+        "size": 1052,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/hotel.svg",
+        "size": 294,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/house.svg",
+        "size": 202,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ice-cream.svg",
+        "size": 903,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/info-bold.svg",
+        "size": 1019,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/info-circled.svg",
+        "size": 388,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/info-ultrabold.svg",
+        "size": 1024,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/info.svg",
+        "size": 197,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/injection.svg",
+        "size": 827,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/insurance-cancellation.svg",
+        "size": 414,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/insurance.svg",
+        "size": 602,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/island.svg",
+        "size": 3348,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/jetski.svg",
+        "size": 767,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/keycode-del.svg",
+        "size": 270,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/keycode-e.svg",
+        "size": 451,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/late-check-out.svg",
+        "size": 759,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/layers.svg",
+        "size": 1414,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/leaf.svg",
+        "size": 409,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lifebelt.svg",
+        "size": 512,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lift-cabin.svg",
+        "size": 1042,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lift-chair.svg",
+        "size": 879,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lift-gondola.svg",
+        "size": 536,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lift-railway.svg",
+        "size": 1864,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lift-slow.svg",
+        "size": 905,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/light-bulb.svg",
+        "size": 878,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/linked-folder.svg",
+        "size": 1067,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/linked.svg",
+        "size": 727,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/list-circle.svg",
+        "size": 299,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/list-disc.svg",
+        "size": 325,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/list-square.svg",
+        "size": 199,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/list-stroke.svg",
+        "size": 188,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/list.svg",
+        "size": 1354,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-map.svg",
+        "size": 777,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-round-dashed.svg",
+        "size": 734,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-round-dotted.svg",
+        "size": 836,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-round.svg",
+        "size": 937,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-roundtrip.svg",
+        "size": 1099,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location-track.svg",
+        "size": 763,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/location.svg",
+        "size": 570,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lock-checkmark.svg",
+        "size": 643,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lock-close.svg",
+        "size": 659,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lock-open.svg",
+        "size": 771,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/login.svg",
+        "size": 295,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/logout.svg",
+        "size": 244,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/loudspeaker.svg",
+        "size": 369,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lounge-chair.svg",
+        "size": 1286,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-backpack.svg",
+        "size": 1308,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-backpacker.svg",
+        "size": 1877,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-box.svg",
+        "size": 432,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-extra.svg",
+        "size": 707,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-golf.svg",
+        "size": 570,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-hand-plus.svg",
+        "size": 816,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-hand.svg",
+        "size": 505,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-liquids.svg",
+        "size": 794,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-notincluded.svg",
+        "size": 383,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-plus.svg",
+        "size": 764,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-sport.svg",
+        "size": 570,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-suitcase-extra.svg",
+        "size": 1279,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-suitcase.svg",
+        "size": 1094,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-trolley-extra.svg",
+        "size": 1233,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-trolley.svg",
+        "size": 569,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage-weekender.svg",
+        "size": 708,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/luggage.svg",
+        "size": 363,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/lying-chair.svg",
+        "size": 741,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/magnet.svg",
+        "size": 363,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/mail.svg",
+        "size": 337,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/map.svg",
+        "size": 336,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/meal-serving-plate.svg",
+        "size": 617,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/meal.svg",
+        "size": 542,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/medal.svg",
+        "size": 551,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/megaphone.svg",
+        "size": 580,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/menu-filter.svg",
+        "size": 212,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/menu.svg",
+        "size": 211,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message-alert.svg",
+        "size": 491,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message-info.svg",
+        "size": 977,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message-love.svg",
+        "size": 987,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message-push.svg",
+        "size": 656,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message-text.svg",
+        "size": 1661,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/message.svg",
+        "size": 466,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/mic.svg",
+        "size": 585,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/miniclub.svg",
+        "size": 2890,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/minimize.svg",
+        "size": 215,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/minus-circled.svg",
+        "size": 378,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/minus-heavy.svg",
+        "size": 198,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/minus.svg",
+        "size": 188,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/moon.svg",
+        "size": 399,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/moose.svg",
+        "size": 1463,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/mountain.svg",
+        "size": 460,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/mouth.svg",
+        "size": 298,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/muffin.svg",
+        "size": 585,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/museum.svg",
+        "size": 444,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/mustache.svg",
+        "size": 455,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/network.svg",
+        "size": 272,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/newsletter.svg",
+        "size": 1088,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/none.svg",
+        "size": 268,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/nordic-walking.svg",
+        "size": 632,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/notepad.svg",
+        "size": 329,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/number.svg",
+        "size": 234,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/on-board-meals.svg",
+        "size": 867,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/paperjet.svg",
+        "size": 364,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/parasol.svg",
+        "size": 656,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/parking-garage.svg",
+        "size": 418,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/parking-time.svg",
+        "size": 662,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/pass-boarding.svg",
+        "size": 815,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/paw.svg",
+        "size": 1265,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/pencil.svg",
+        "size": 232,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/pharmacy.svg",
+        "size": 451,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/phone-checkin.svg",
+        "size": 865,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/phone-push.svg",
+        "size": 1150,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/phone.svg",
+        "size": 835,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/picture-mountain.svg",
+        "size": 776,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/picture-stack.svg",
+        "size": 552,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/picture-sunset.svg",
+        "size": 716,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/picture.svg",
+        "size": 211,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/piggy-bank.svg",
+        "size": 724,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/pin.svg",
+        "size": 231,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-circled.svg",
+        "size": 436,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-next.svg",
+        "size": 224,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-pause.svg",
+        "size": 213,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-prev.svg",
+        "size": 225,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-stop-circled.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play-stop.svg",
+        "size": 195,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/play.svg",
+        "size": 206,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/plug.svg",
+        "size": 781,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/plus-circled.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/plus-heavy.svg",
+        "size": 221,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/plus.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/popsicle.svg",
+        "size": 633,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/postit.svg",
+        "size": 415,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/pricetag.svg",
+        "size": 759,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/printer.svg",
+        "size": 584,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/projector-canvas.svg",
+        "size": 236,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/puzzle.svg",
+        "size": 1342,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/question-mark-bold.svg",
+        "size": 1368,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/question-mark-circled.svg",
+        "size": 569,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/question-mark-ultrabold.svg",
+        "size": 1424,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/question-mark.svg",
+        "size": 376,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/rainbow.svg",
+        "size": 611,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/reduced-circled.svg",
+        "size": 845,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/reduced.svg",
+        "size": 416,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/relax.svg",
+        "size": 731,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/resize.svg",
+        "size": 466,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/robot-smile.svg",
+        "size": 2295,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/robot.svg",
+        "size": 1987,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/room-location.svg",
+        "size": 1014,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/room-selection.svg",
+        "size": 883,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/room-upgrade.svg",
+        "size": 867,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/running-shoe.svg",
+        "size": 1015,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sail.svg",
+        "size": 549,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sailboat.svg",
+        "size": 372,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sailing-yawl.svg",
+        "size": 312,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/save.svg",
+        "size": 392,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/scan-code.svg",
+        "size": 918,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/scissors.svg",
+        "size": 609,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seal.svg",
+        "size": 549,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/search-heart.svg",
+        "size": 726,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/search-list.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/search.svg",
+        "size": 378,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-check.svg",
+        "size": 758,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-child.svg",
+        "size": 981,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-comfort.svg",
+        "size": 775,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-extra-legroom.svg",
+        "size": 1145,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-extra-space.svg",
+        "size": 1128,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-extra.svg",
+        "size": 1090,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-plus.svg",
+        "size": 766,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-premium.svg",
+        "size": 1074,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-selection.svg",
+        "size": 2192,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-star.svg",
+        "size": 930,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-top-booked.svg",
+        "size": 1921,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat-top.svg",
+        "size": 1040,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/seat.svg",
+        "size": 718,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/security-check.svg",
+        "size": 808,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/select.svg",
+        "size": 314,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/send.svg",
+        "size": 420,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/service-bell.svg",
+        "size": 317,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/serving-trolley.svg",
+        "size": 1144,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/settings.svg",
+        "size": 1190,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sex-diversity.svg",
+        "size": 753,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sex-female.svg",
+        "size": 304,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sex-male.svg",
+        "size": 317,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/share-box.svg",
+        "size": 1046,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/share.svg",
+        "size": 813,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shield-check.svg",
+        "size": 532,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shield-flex.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shield-warning.svg",
+        "size": 414,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shield.svg",
+        "size": 395,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ship-river.svg",
+        "size": 436,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ship.svg",
+        "size": 847,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shoe.svg",
+        "size": 690,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shop.svg",
+        "size": 687,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shopping-bag-tui.svg",
+        "size": 525,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shopping-bag.svg",
+        "size": 455,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shoppingcart.svg",
+        "size": 821,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shower-rain.svg",
+        "size": 619,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/shower.svg",
+        "size": 306,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-airport.svg",
+        "size": 1116,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-bio.svg",
+        "size": 851,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-directions.svg",
+        "size": 1413,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-first-aid.svg",
+        "size": 1138,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-gluten-free.svg",
+        "size": 1152,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-hotel.svg",
+        "size": 1016,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-info.svg",
+        "size": 1319,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-parking.svg",
+        "size": 1116,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-vegan.svg",
+        "size": 444,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sign-vegetarian.svg",
+        "size": 656,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/signpost-direction.svg",
+        "size": 221,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/signpost-directions.svg",
+        "size": 254,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/signpost-hotel.svg",
+        "size": 570,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ski-crosscountry.svg",
+        "size": 1079,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ski-mountain.svg",
+        "size": 852,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/snow.svg",
+        "size": 443,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/social-distancing.svg",
+        "size": 952,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sort.svg",
+        "size": 227,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/square.svg",
+        "size": 196,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/star-circled.svg",
+        "size": 549,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/star-half.svg",
+        "size": 252,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/star.svg",
+        "size": 319,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/stats-bar.svg",
+        "size": 277,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/stats-growth.svg",
+        "size": 327,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/stats-pie.svg",
+        "size": 676,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/stats-rise.svg",
+        "size": 301,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/steering-wheel.svg",
+        "size": 1542,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/steering.svg",
+        "size": 425,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/stewardess.svg",
+        "size": 1275,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/suitcase-purchase.svg",
+        "size": 1279,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sum.svg",
+        "size": 201,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun-circled.svg",
+        "size": 639,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun-hours.svg",
+        "size": 590,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun-set.svg",
+        "size": 404,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun-tui-half.svg",
+        "size": 854,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun-tui.svg",
+        "size": 1302,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sun.svg",
+        "size": 490,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/surfing.svg",
+        "size": 682,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/swimming-bath.svg",
+        "size": 633,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/swimming-pool.svg",
+        "size": 303,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sync-failed.svg",
+        "size": 664,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/sync.svg",
+        "size": 416,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tape-measure.svg",
+        "size": 602,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/target-blank.svg",
+        "size": 370,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/target.svg",
+        "size": 1009,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/teddy.svg",
+        "size": 4446,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/temp-air.svg",
+        "size": 986,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/temp-low.svg",
+        "size": 652,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/temp-time.svg",
+        "size": 1036,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/temp-water.svg",
+        "size": 1002,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/temp.svg",
+        "size": 651,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tennis-ball.svg",
+        "size": 559,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tennis.svg",
+        "size": 1153,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tent.svg",
+        "size": 411,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/thumbnails.svg",
+        "size": 274,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/thumbs-up--down.svg",
+        "size": 640,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/thumbs-up.svg",
+        "size": 654,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/thunder.svg",
+        "size": 239,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ticket-coins.svg",
+        "size": 1067,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ticket-envelope.svg",
+        "size": 613,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ticket.svg",
+        "size": 645,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tickets.svg",
+        "size": 672,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tipi.svg",
+        "size": 397,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/toilet-paper.svg",
+        "size": 719,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/toilet.svg",
+        "size": 798,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/toolkit-cases-open.svg",
+        "size": 882,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/toolkit-cases.svg",
+        "size": 568,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/toolkit.svg",
+        "size": 1473,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/towel.svg",
+        "size": 316,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/track.svg",
+        "size": 560,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/train.svg",
+        "size": 1272,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/transfer-private.svg",
+        "size": 991,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/transfer-taxi.svg",
+        "size": 984,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/transfers-coach.svg",
+        "size": 1097,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/transfers-train.svg",
+        "size": 1272,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/trash-crossed.svg",
+        "size": 302,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/trash.svg",
+        "size": 403,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/travel-documents.svg",
+        "size": 953,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/travel-guide.svg",
+        "size": 941,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/travel-money.svg",
+        "size": 939,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/treats-in-flight.svg",
+        "size": 522,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/trolley-purchase.svg",
+        "size": 1234,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tub.svg",
+        "size": 1143,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tui-card.svg",
+        "size": 815,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tui-chat.svg",
+        "size": 1203,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tui-cloud.svg",
+        "size": 505,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/tui-extras.svg",
+        "size": 386,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/typography.svg",
+        "size": 222,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ui-banner.svg",
+        "size": 664,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/ui.svg",
+        "size": 624,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/umbrella.svg",
+        "size": 937,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/undo.svg",
+        "size": 360,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/upload.svg",
+        "size": 280,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-business.svg",
+        "size": 794,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-casual.svg",
+        "size": 781,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-chat.svg",
+        "size": 784,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-circled.svg",
+        "size": 820,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-couple.svg",
+        "size": 1313,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-driver.svg",
+        "size": 1108,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-drivers.svg",
+        "size": 1575,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-expert.svg",
+        "size": 802,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-family.svg",
+        "size": 1863,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-friends.svg",
+        "size": 1053,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-group.svg",
+        "size": 3326,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-passport.svg",
+        "size": 1044,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-plus.svg",
+        "size": 706,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-skipass.svg",
+        "size": 542,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user-visa.svg",
+        "size": 1253,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/user.svg",
+        "size": 619,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/users.svg",
+        "size": 1136,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/view-hidden.svg",
+        "size": 485,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/view.svg",
+        "size": 539,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/villa.svg",
+        "size": 566,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/virtualtour.svg",
+        "size": 489,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/warehouse.svg",
+        "size": 253,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wash-hands.svg",
+        "size": 847,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/watch.svg",
+        "size": 513,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/water-boiler.svg",
+        "size": 854,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/water-slide.svg",
+        "size": 640,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/water.svg",
+        "size": 417,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/welcome-pack.svg",
+        "size": 389,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wellness.svg",
+        "size": 1471,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/whatsapp.svg",
+        "size": 1200,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wheel.svg",
+        "size": 904,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wheelchair.svg",
+        "size": 697,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wifi.svg",
+        "size": 897,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/wind-surfing.svg",
+        "size": 290,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/world-globe.svg",
+        "size": 1269,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/world-travel.svg",
+        "size": 1180,
+        "mode": 420
+      },
+      {
+        "path": "dist/assets/icons/world.svg",
+        "size": 831,
+        "mode": 420
+      },
+      {
+        "path": "dist/base.css",
+        "size": 24787,
+        "mode": 420
+      },
+      {
+        "path": "dist/base/functional.css",
+        "size": 3961,
+        "mode": 420
+      },
+      {
+        "path": "dist/base/geometry.css",
+        "size": 10563,
+        "mode": 420
+      },
+      {
+        "path": "dist/base/index.css",
+        "size": 338,
+        "mode": 420
+      },
+      {
+        "path": "dist/base/sizing.css",
+        "size": 8750,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/base/base.css",
+        "size": 340,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/base/reset.css",
+        "size": 761,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/base/typography.css",
+        "size": 3148,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/context/brand-typography.css",
+        "size": 1532,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/context/mode.css",
+        "size": 63,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/context/scale.css",
+        "size": 617,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/index.css",
+        "size": 989,
+        "mode": 420
+      },
+      {
+        "path": "dist/core/recipes/layout.css",
+        "size": 620,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/base.js",
+        "size": 1366,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/index.d.ts",
+        "size": 3212,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/index.js",
+        "size": 1502,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-accordion.js",
+        "size": 1497,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-avatar.js",
+        "size": 1089,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-badge.js",
+        "size": 1225,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-button.js",
+        "size": 3395,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-checkbox.js",
+        "size": 1789,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-dialog.js",
+        "size": 5819,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-divider.js",
+        "size": 845,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-form.js",
+        "size": 2687,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-icon.js",
+        "size": 1499,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-illustrated-message.js",
+        "size": 4859,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-inline-alert.js",
+        "size": 4192,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-input.js",
+        "size": 3483,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-label.js",
+        "size": 1403,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-link.js",
+        "size": 1436,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-meter.js",
+        "size": 2814,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-progress-bar.js",
+        "size": 2790,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-progress-circle.js",
+        "size": 1770,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-radio.js",
+        "size": 1680,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-select.js",
+        "size": 2151,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-status-light.js",
+        "size": 1601,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-switch.js",
+        "size": 1720,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-tabs.js",
+        "size": 6286,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-textarea.js",
+        "size": 1743,
+        "mode": 420
+      },
+      {
+        "path": "dist/elements/ui-tooltip.js",
+        "size": 2324,
+        "mode": 420
+      },
+      {
+        "path": "dist/legacy.css",
+        "size": 175532,
+        "mode": 420
+      },
+      {
+        "path": "dist/macros/ui.njk",
+        "size": 29970,
+        "mode": 420
+      },
+      {
+        "path": "dist/main.css",
+        "size": 176228,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/appearance-modes.tokens.mode-dark.css",
+        "size": 2535,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/appearance-modes.tokens.mode-light.css",
+        "size": 2285,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/core-primitives.tokens.css",
+        "size": 9826,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/patterns-ui.tokens.css",
+        "size": 32737,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/semantics-brands.tokens.brand-a.css",
+        "size": 3484,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/semantics-brands.tokens.brand-b.css",
+        "size": 3603,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/semantics-brands.tokens.brand-c.css",
+        "size": 3611,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/semantics-roles.tokens.css",
+        "size": 8133,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/css/typography-fluid.tokens.css",
+        "size": 2278,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/appearance-modes.tokens.mode-dark.json",
+        "size": 4114,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/appearance-modes.tokens.mode-light.json",
+        "size": 4114,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/core-primitives.tokens.json",
+        "size": 23858,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/patterns-ui.tokens.json",
+        "size": 50492,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/semantics-brands.tokens.brand-a.json",
+        "size": 6363,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/semantics-brands.tokens.brand-b.json",
+        "size": 6363,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/semantics-brands.tokens.brand-c.json",
+        "size": 6363,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/semantics-roles.tokens.json",
+        "size": 13491,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/json/typography-fluid.tokens.json",
+        "size": 3539,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/tokens.yaml",
+        "size": 421896,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/appearance-modes.tokens.mode-dark.ts",
+        "size": 2913,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/appearance-modes.tokens.mode-light.ts",
+        "size": 2681,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/core-primitives.tokens.ts",
+        "size": 11841,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/patterns-ui.tokens.ts",
+        "size": 35408,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/semantics-brands.tokens.brand-a.ts",
+        "size": 4138,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/semantics-brands.tokens.brand-b.ts",
+        "size": 4257,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/semantics-brands.tokens.brand-c.ts",
+        "size": 4265,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/semantics-roles.tokens.ts",
+        "size": 8860,
+        "mode": 420
+      },
+      {
+        "path": "dist/tokens/ts/typography-fluid.tokens.ts",
+        "size": 2264,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/components/calendar.js",
+        "size": 11443,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/components/content.js",
+        "size": 11367,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/components/date-input.js",
+        "size": 7970,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/components/input-field.js",
+        "size": 5602,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/components/table.js",
+        "size": 9034,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/index.css",
+        "size": 1611,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/accordion.css",
+        "size": 2968,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/avatar.css",
+        "size": 1308,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/badge.css",
+        "size": 2675,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/button.css",
+        "size": 9777,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/calendar.css",
+        "size": 8911,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/checkbox.css",
+        "size": 5331,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/content.css",
+        "size": 2483,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/date-input.css",
+        "size": 1914,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/dialog.css",
+        "size": 1347,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/divider.css",
+        "size": 599,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/form.css",
+        "size": 3846,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/icon.css",
+        "size": 668,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/illustrated-message.css",
+        "size": 2717,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/inline-alert.css",
+        "size": 4063,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/input.css",
+        "size": 6942,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/label.css",
+        "size": 2253,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/link.css",
+        "size": 1941,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/meter.css",
+        "size": 2778,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/progress-bar.css",
+        "size": 3461,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/progress-circle.css",
+        "size": 1474,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/radio.css",
+        "size": 3581,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/select.css",
+        "size": 7917,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/status-light.css",
+        "size": 2415,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/switch.css",
+        "size": 5150,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/table.css",
+        "size": 6169,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/tabs.css",
+        "size": 2852,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/textarea.css",
+        "size": 1853,
+        "mode": 420
+      },
+      {
+        "path": "dist/ui/patterns/tooltip.css",
+        "size": 3108,
+        "mode": 420
+      },
+      {
+        "path": "docs/agentic/assistant-behavior-rules.md",
+        "size": 5647,
+        "mode": 420
+      },
+      {
+        "path": "docs/agentic/MIGRATION.md",
+        "size": 3067,
+        "mode": 420
+      },
+      {
+        "path": "docs/agentic/README.md",
+        "size": 1350,
+        "mode": 420
+      },
+      {
+        "path": "docs/agentic/skills/component-accessibility-audit.md",
+        "size": 4426,
+        "mode": 420
+      },
+      {
+        "path": "docs/agentic/skills/ux-writing-coach.md",
+        "size": 3224,
+        "mode": 420
+      },
+      {
+        "path": "docs/base.md",
+        "size": 3329,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-001-token-layering.md",
+        "size": 1687,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-002-naming-and-grouping.md",
+        "size": 1203,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-003-color-semantics-and-status.md",
+        "size": 1279,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-004-typography-scale-and-line-height.md",
+        "size": 1044,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-005-responsive-breakpoints-and-containers.md",
+        "size": 800,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-006-z-index-layering.md",
+        "size": 943,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-007-typography-selectors-and-specificity.md",
+        "size": 957,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-008-mode-activation-and-consumer-control.md",
+        "size": 1030,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-009-component-boundaries-and-utility.md",
+        "size": 1385,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-010-implementation-and-pipeline-workflow.md",
+        "size": 2737,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-011-branching-and-release-governance.md",
+        "size": 1400,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-012-minimal-markup-and-composition.md",
+        "size": 1826,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/foundation-013-class-naming.md",
+        "size": 2948,
+        "mode": 420
+      },
+      {
+        "path": "docs/foundations/README.md",
+        "size": 3544,
+        "mode": 420
+      },
+      {
+        "path": "docs/migrations/public-api-namespace-v1.md",
+        "size": 2927,
+        "mode": 420
+      },
+      {
+        "path": "docs/migrations/react-to-web-components.md",
+        "size": 6489,
+        "mode": 420
+      },
+      {
+        "path": "docs/README.md",
+        "size": 3284,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 8096,
+        "mode": 420
+      }
+    ],
+    "entryCount": 734,
+    "bundled": []
+  }
+]

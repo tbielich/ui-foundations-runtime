@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:18800/patterns/content/?completion=1",
+  "ua": "Mozilla/5.0 (Linux; Android 6.0.1; Max2Pro Build/2023-06-09_07-56_3.3.2_cd8a1c2; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Safari/537.36",
+  "legacyLoaded": true,
+  "borderToken": "rgb(51 51 51)",
+  "monoToken": "\"DejaVu Sans Mono\", monospace",
+  "fontLoaded": true,
+  "widths": [
+    115.59375,
+    115.59375,
+    115.59375
+  ],
+  "family": "\"DejaVu Sans Mono\", monospace, ui-monospace, monospace",
+  "lineHeight": "16px",
+  "fontSize": "16px",
+  "initial": "Working with formatted contentUse Content to display text with headings, lists and code. Mark a word with emphasis when it needs attention. Use uif-code for monospaced code.Review the exampleUse headings to find a sectionCopy the code you needCheck the code before using itTreat generated content as untrusted input. HTML is displayed as text.const message = '<script>shown as text</script>';\nconsole.log(message);\nOutputPurposeMarkdownStructured explanationPlain textUnchanged Unicode drawing",
+  "changes": [
+    {
+      "variant": "formatted",
+      "text": "Working with formatted contentUse Content to display text with headings, lists and code. Mark a word with emphasis when it needs attention. Use uif-code for monospaced code.Review the exampleUse headings to find a sectionCopy the code you needCheck the code before using itTreat generated content as untrusted input. HTML is displayed as text.const message = '<script>shown as text</script>';\nconsole.log(message);\nOutputPurposeMarkdownStructured explanationPlain textUnchanged Unicode drawing",
+      "pressed": "true",
+      "footerY": 809.8285522460938
+    },
+    {
+      "variant": "inline",
+      "text": "Run npm run build to build the project.",
+      "pressed": "true",
+      "footerY": 809.8285522460938
+    },
+    {
+      "variant": "code",
+      "text": "const message = \"Hello UIF\";\nconsole.log(message);\n",
+      "pressed": "true",
+      "footerY": 809.8285522460938
+    },
+    {
+      "variant": "unicode",
+      "text": "╭────╮\n│    │\n├────┤\n│    │\n╰────╯",
+      "pressed": "true",
+      "footerY": 809.8285522460938
+    }
+  ],
+  "copyButtons": 0,
+  "pageOverflow": false
+}

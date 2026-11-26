@@ -1,0 +1,53 @@
+--- a/src/public/chat-client.js
++++ b/src/public/chat-client.js
+@@ -26,8 +26,19 @@
+     article.setAttribute('data-role', message.role);
+     var heading = document.createElement('h3');
+     heading.textContent = message.role === 'user' ? 'Du' : (isCodex(message.model || '') ? 'Codex · ' + message.model.slice(6) : 'Ollama · ' + (message.model || 'iMac'));
+-    var text = document.createElement('p');
++    var text = document.createElement(message.role === 'assistant' ? 'div' : 'p');
+     text.textContent = message.content;
++    if (message.role === 'assistant') {
++      text.setAttribute('data-uif-answer', '');
++      text.className = 'uif-code';
++      if (window.uifRenderContent) {
++        text.classList.remove('uif-code');
++        window.uifRenderContent(text, message.content, {
++        headingLevel: 4, copy: true,
++        labels: { copy: 'Code kopieren', copied: 'Code kopiert.', failed: 'Kopieren nicht verfügbar. Code bitte markieren und manuell kopieren.', code: 'Codebeispiel', table: 'Tabelle' }
++        });
++      }
++    }
+     article.appendChild(heading); article.appendChild(text);
+     if (Array.isArray(message.sources) && message.sources.length) { var sources = document.createElement('p'); sources.textContent = 'Gelesene Quellen:\n' + message.sources.map(function (source) { return source.path + ':' + (source.ranges || [{ startLine: source.startLine, endLine: source.endLine }]).map(function (range) { return range.startLine + '–' + range.endLine; }).join(', '); }).join('\n'); article.appendChild(sources); }
+     if (message.toolCalls != null) { var evidence = document.createElement('small'); evidence.textContent = (message.sources && message.sources.length ? message.sources.length + ' Quellen gelesen' + (message.toolCalls ? ' · ' + message.toolCalls + ' weitere Werkzeugaufrufe' : '') : message.toolCalls + ' Werkzeugaufrufe') + ' · nur lesend'; article.appendChild(evidence); }
+--- a/src/chat/index.html
++++ b/src/chat/index.html
+@@ -38,6 +38,7 @@
+       <p class="footnote">Verlauf bleibt in diesem Browser gespeichert. Keine Cloud-API.</p>
+       <noscript>Für diesen Chat bitte JavaScript aktivieren.</noscript>
+     </main>
++    <script type="module" src="./content-renderer.js"></script>
+     <script src="/chat-client.js?v=codex-sources-2" defer></script>
+   </body>
+ </html>
+--- /dev/null
++++ b/src/chat/content-renderer.js
+@@ -0,0 +1,17 @@
++import { renderContent } from "ui-foundations/behaviors/content";
++import "ui-foundations/core.css";
++import "ui-foundations/ui.css";
++
++// Vite includes this published-package entry. No local Runtime copy.
++const options = {
++  headingLevel: 4, copy: true,
++  labels: { copy: "Code kopieren", copied: "Code kopiert.", failed: "Kopieren nicht verfügbar. Code bitte markieren und manuell kopieren.", code: "Codebeispiel", table: "Tabelle" },
++};
++window.uifRenderContent = renderContent;
++// The classic chat client can run before this module: upgrade its text fallback.
++document.querySelectorAll("[data-uif-answer]").forEach(target => {
++  if (!target.classList.contains("uif-content")) {
++    target.classList.remove("uif-code");
++    renderContent(target, target.textContent, options);
++  }
++});

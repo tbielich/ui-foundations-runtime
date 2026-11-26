@@ -3524,3 +3524,44 @@ details.color-family > .color-table-wrap {
 
 .docs-overview-grid { color-scheme: light; }
 .docs-hero-preview-stage[data-mode="dark"] .docs-overview-grid { color-scheme: dark; }
+
+/* Shared preview context: brand left, scheme centred, optional scale right. */
+.docs-hero-preview-controls:not(.docs-content-footer) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+.docs-hero-preview-controls > [data-hero-group="brand"] { grid-column: 1; justify-self: start; }
+.docs-hero-preview-controls > [data-hero-group="mode"] { grid-column: 2; justify-self: center; }
+.docs-hero-preview-controls > [data-hero-group="scale"] { grid-column: 3; justify-self: end; }
+@media (max-width: 600px) {
+  .docs-hero-preview-controls:not(.docs-content-footer) { display: flex; justify-content: space-between; flex-wrap: wrap; }
+}
+
+.docs-hero-preview-controls.docs-content-footer {
+  justify-content: center;
+  border-block-start: 1px solid var(--docs-border);
+  border-block-end: 0;
+  border-radius: 0 0 16px 16px;
+}
+.docs-content-footer .docs-hero-switch { flex-wrap: wrap; justify-content: center; }
+
+.docs-hero-preview-controls.docs-content-footer { flex-direction: column; gap: 8px; }
+.docs-content-footer p { margin: 0; text-align: center; text-transform: none; letter-spacing: normal; }
+.docs-content-preview .docs-hero-preview-stage { border-radius: 0; }
+
+/* Keep the example switch and following documentation stationary. */
+.docs-content-preview .docs-hero-preview-stage {
+  block-size: 36rem;
+  min-block-size: 0;
+  overflow: auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.docs-content-preview #content-variant-description { min-block-size: 3em; }
+@media (max-width: 600px) {
+  .docs-content-preview .docs-hero-preview-stage { block-size: 30rem; }
+}
+@media (max-width: 600px) {
+  .docs-content-preview #content-variant-description { min-block-size: 4.5em; }
+}

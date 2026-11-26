@@ -1,0 +1,9 @@
+{
+  "app/drawpad/index.html": "33f4ddee66fd8fe1a30b9e1ca17fcdcf08230f2ec23869c3fb02b8ecfa330237",
+  "candidateHtmlSha256": "5b63f2deb6e7b6a45cf7d2e448f83bea93f01e4cd78804f8c0101be97633188e",
+  "fontsCssSha256": "1b782cfdec6094c557e3b18f6f12a0f29c84e457824cc50032247763872123a9",
+  "runtimeBaseline": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "scope": "isolated integration diagnostic, no published package adoption or production changes",
+  "patchSha256": "5fa773b650c7378d5da4684eba2836a9c3150a213c8d7d9e5cf381a47af3730b",
+  "patchApplyCheck": true
+}

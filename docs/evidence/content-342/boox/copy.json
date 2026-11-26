@@ -1,0 +1,6 @@
+{
+  "status": "Copy unavailable. Select and copy the code manually.",
+  "clipboard": null,
+  "clipboardError": "NotAllowedError",
+  "expected": "const message = '<script>shown as text</script>';\nconsole.log(message);\n"
+}
