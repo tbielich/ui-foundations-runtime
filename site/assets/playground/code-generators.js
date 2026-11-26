@@ -349,8 +349,27 @@
     return lines.join("\n");
   }
 
+  // Match the decorative Symbol preview; use DOM style setters for parent context.
+  function symbolCode(state, format) {
+    var p = state.props || {};
+    var names = ["checkmark", "dash", "chevron", "plus", "cross"];
+    var name = names.includes(p.motif) ? p.motif : "";
+    var raw = typeof p.weight === "number" || typeof p.weight === "string" ? String(p.weight).trim() : "";
+    var number = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?$/.test(raw) ? Number(raw) : NaN;
+    var weight = Number.isFinite(number) ? Math.min(900, Math.max(100, number)) : 400;
+    var parent = document.createElement("span");
+    parent.style.lineHeight = ["16px", "20px", "24px", "28px", "32px"].includes(p.lineHeight) ? p.lineHeight : "24px";
+    parent.style.color = typeof p.color === "string" ? p.color : "currentColor";
+    var symbol = "";
+    if (name) symbol = format === "njk"
+      ? '{{ uif.symbol("' + name + '", weight=' + weight + ') }}'
+      : '<uif-symbol name="' + name + '" weight="' + weight + '"></uif-symbol>';
+    return '<span style="' + quoteAttr(parent.getAttribute("style") || "") + '">' + symbol + ' Continue</span>';
+  }
+
   global.UIPlaygroundCodeGenerators = {
     njk: {
+      symbol: function (state) { return symbolCode(state, "njk"); },
       "status-light": function (state) { return indicatorArgs(state, "status-light", "njk"); },
       "meter": function (state) { return indicatorArgs(state, "meter", "njk"); },
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "njk"); },
@@ -417,6 +436,7 @@
       },
     },
     wc: {
+      symbol: function (state) { return symbolCode(state, "wc"); },
       "status-light": function (state) { return indicatorArgs(state, "status-light", "wc"); },
       "meter": function (state) { return indicatorArgs(state, "meter", "wc"); },
       "progress-bar": function (state) { return indicatorArgs(state, "progress-bar", "wc"); },

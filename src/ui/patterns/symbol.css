@@ -1,0 +1,16 @@
+@layer components {
+  .uif-symbol {
+    display: inline-block;
+    inline-size: 1em;
+    block-size: 1em;
+    inline-size: 1lh;
+    block-size: 1lh;
+    vertical-align: middle;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* Experimental control, independent of font-weight; SVG stroke scales. */
+    stroke-width: calc(var(--uif-symbol-default-glyph-stroke-width-default) * var(--uif-symbol-weight, 400) / 400);
+  }
+}

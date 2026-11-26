@@ -163,6 +163,34 @@
     return { element, code };
   };
 
+  // Fixed trusted geometry mirrors symbol.js; covered by source consistency tests.
+  const symbolPaths = {'checkmark': 'M4 13L10 19L20 5', 'dash': 'M6 12H18', 'chevron': 'M9 6L15 12L9 18', 'plus': 'M6 12H18M12 6V18', 'cross': 'M6.06979 6.06982L17.9302 17.9302M17.9302 6.06982L6.06979 17.9302'};
+  const renderVanillaSymbol = ({ props }) => {
+    const host = document.createElement("span");
+    const lineHeight = ["16px", "20px", "24px", "28px", "32px"].includes(props.lineHeight) ? props.lineHeight : "24px";
+    host.style.lineHeight = lineHeight;
+    // A single CSS property assignment cannot introduce additional declarations.
+    host.style.color = typeof props.color === "string" ? props.color : "currentColor";
+    const raw = typeof props.weight === "number" || typeof props.weight === "string" ? String(props.weight).trim() : "";
+    const number = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?$/.test(raw) ? Number(raw) : NaN;
+    const weight = Number.isFinite(number) ? Math.min(900, Math.max(100, number)) : 400;
+    if (typeof props.motif === "string" && Object.hasOwn(symbolPaths, props.motif)) {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      svg.setAttribute("class", "uif-symbol");
+      svg.setAttribute("viewBox", "0 0 24 24");
+      svg.setAttribute("aria-hidden", "true");
+      svg.setAttribute("focusable", "false");
+      svg.style.setProperty("--uif-symbol-weight", String(weight));
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", symbolPaths[props.motif]);
+      svg.append(path);
+      host.append(svg);
+    }
+    host.append(document.createTextNode(" Continue"));
+    return { element: host, code: host.outerHTML };
+  };
+
   const renderVanillaIcon = ({ props }) => {
     const name = normalizeIconName(props.name) || "search";
     const lineHeight = String(props.lineHeight || "24px");
@@ -1384,6 +1412,7 @@
       divider: renderVanillaDivider,
       dialog: renderVanillaDialog,
       icon: renderVanillaIcon,
+      symbol: renderVanillaSymbol,
       input: renderVanillaInput,
       label: renderVanillaLabel,
       link: renderVanillaLink,

@@ -1,0 +1,109 @@
+{
+  "package": [
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M4 13L10 19L20 5",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "checkmark",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6 12H18",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "dash",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M9 6L15 12L9 18",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "chevron",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6 12H18M12 6V18",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "plus",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "0.25px",
+      "weight": "100",
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6 12H18M12 6V18",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "plus",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "2.25px",
+      "weight": "900",
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6.06979 6.06982L17.9302 17.9302M17.9302 6.06982L6.06979 17.9302",
+      "focusable": "false",
+      "height": "24px",
+      "join": "round",
+      "name": "cross",
+      "stroke": "rgb(192, 32, 128)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "24px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6 12H18M12 6V18",
+      "focusable": "false",
+      "height": "12px",
+      "join": "round",
+      "name": "plus",
+      "stroke": "rgb(51, 51, 51)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "12px"
+    },
+    {
+      "ariaHidden": "true",
+      "cap": "round",
+      "d": "M6 12H18M12 6V18",
+      "focusable": "false",
+      "height": "48px",
+      "join": "round",
+      "name": "plus",
+      "stroke": "rgb(51, 51, 51)",
+      "strokeWidth": "1px",
+      "weight": null,
+      "width": "48px"
+    }
+  ],
+  "playgroundCode": "<span style=\"line-height: 24px; color: rgb(192, 32, 128);\"><uif-symbol name=\"plus\" weight=\"900\"></uif-symbol> Continue</span>"
+}

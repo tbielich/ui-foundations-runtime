@@ -3901,6 +3901,11 @@
       "figmaName": "Color/Border/Navigation/Active",
       "exportPath": "Semantics/Color/Border/Navigation/Active",
       "file": "Semantics (Roles).tokens.json"
+    },
+    "VariableID:3336:3817": {
+      "figmaName": "Symbol/Default/Glyph/Stroke-width/Default",
+      "exportPath": "Symbol/Default/Glyph/Stroke-width/Default",
+      "file": "Patterns (UI).tokens.json"
     }
   },
   "codeOnlyExceptions": [

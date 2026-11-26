@@ -1,0 +1,87 @@
+{
+  "task_id": "uif-run-symbol-first-slice",
+  "mode": "IMPLEMENT",
+  "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "workspace": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern",
+  "owner_authorization": [
+    "Begin Symbol Pattern",
+    "Create necessary default stroke tokens in Figma and build first implementation",
+    "similar to SVGs"
+  ],
+  "allowed_paths": [
+    "src/ui/patterns/symbol.css",
+    "src/ui/components/symbol.js",
+    "src/ui/index.css",
+    "src/elements/ui-symbol.js",
+    "src/elements/index.js",
+    "site/_includes/macros/ui.njk",
+    "site/assets/playground/renderers.js",
+    "site/patterns/symbol.md",
+    "site/patterns/symbol-playground.md",
+    "site/patterns/index.md",
+    "schemas/web-symbol.figma.ts",
+    "schemas/web-symbol.ts",
+    "tests/symbol.test.mjs",
+    "package.json"
+  ],
+  "orchestrator_paths": [
+    "figma/exports/Patterns (UI).tokens.json",
+    "figma/token-projection.json",
+    "docs/evidence/symbol-pattern/",
+    "scripts/vault-naming-contract.generated.js",
+    ".eleventy.js",
+    "scripts/validate-token-usage.mjs",
+    "site/_data/overviewPreviews.json",
+    "site/_includes/overview-previews/patterns-symbol.njk",
+    "site/assets/playground/code-generators.js",
+    "tests/browser/docs-overviews.spec.mjs"
+  ],
+  "source_refs": [
+    "issue:tbielich/ui-foundations-runtime#368",
+    "pr:tbielich/ui-foundations-runtime#369",
+    "https://figma.com/design/uqMsy8fV1fPbQdAzgwlmBA"
+  ],
+  "figma_scope": {
+    "fileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+    "collectionId": "VariableCollectionId:1:264",
+    "new_variable": "Symbol/Default/Glyph/Stroke-width/Default",
+    "semantic_alias": "VariableID:3173:61",
+    "components": "one Symbol set, five decorative motifs in existing Patterns page; readback required"
+  },
+  "decisions": {
+    "renderer": "Native inline SVG root/path with fixed trusted source d values; CSS currentColor and variable stroke, viewBox24. Preserves round caps/joins and source geometry without compiler. CSS-only span approximation superseded for this first SVG-faithful slice.",
+    "motifs": [
+      "checkmark",
+      "dash",
+      "chevron",
+      "plus",
+      "cross"
+    ],
+    "weight": "100..900 bounded experimental control, reference400 gives source1unit; no public design-scale governance claim",
+    "color": "inherit currentColor, no new color token",
+    "size": "contextual1lh, no size token",
+    "semantics": "decorative only aria-hidden=true focusable=false; parent owns interaction",
+    "markup": "macro/CSS SVG root+path; optional lightDOM CustomElement emits same SVG, no mandatory wrapper",
+    "token": "one Figma FLOAT stroke-width alias semantic borderdefault; exact WEB syntax var(--uif-symbol-default-glyph-stroke-width-default)"
+  },
+  "forbidden": [
+    "dependencies/lockfile",
+    "unrelated production changes",
+    "Checkbox/Select replacements",
+    "SVG asset changes",
+    "universal compiler",
+    "merge/release",
+    "public color/size tokens",
+    "invented Figma IDs"
+  ],
+  "validation_bindings": {
+    "lint": "npm run lint",
+    "unit": "npm run test:unit",
+    "ci": "npm run ci:check",
+    "targeted": "node --test tests/symbol.test.mjs",
+    "figma": "token readback and component variable binding, screenshot; actual IDs only"
+  },
+  "repair_budget": 2,
+  "human_gate": "first isolated review PR; no merge or production adoption",
+  "scope_resolution": "Complete the already-authorized pattern docs/playground integration using existing derived inventory, exact code-only parameter registry, overview preview map and code-tab generators; no new feature or verification framework."
+}

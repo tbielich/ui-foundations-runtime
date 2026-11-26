@@ -1,0 +1,66 @@
+TAP version 13
+# Subtest: all emitted geometry is exact source SVG geometry with decorative root semantics
+ok 1 - all emitted geometry is exact source SVG geometry with decorative root semantics
+  ---
+  duration_ms: 29.290084
+  type: 'test'
+  ...
+# Subtest: macro and JS normalize decimal weights identically, rejecting invalid and nonfinite input
+not ok 2 - macro and JS normalize decimal weights identically, rejecting invalid and nonfinite input
+  ---
+  duration_ms: 0.417166
+  type: 'test'
+  location: '/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/tests/symbol.test.mjs:35:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    (unknown path)
+      Template render error: (unknown path)
+      Template render error: (unknown path)
+      TypeError: Cannot read properties of undefined (reading 'toString')
+  code: 'ERR_TEST_FAILURE'
+  name: 'Template render error'
+  stack: |-
+    Object._prettifyError (/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/node_modules/nunjucks/src/lib.js:32:11)
+    /Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/node_modules/nunjucks/src/environment.js:464:19
+    Template.root [as rootRenderFunc] (eval at _compile (/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/node_modules/nunjucks/src/environment.js:527:18), <anonymous>:22:3)
+    Template.render (/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/node_modules/nunjucks/src/environment.js:454:10)
+    Environment.renderString (/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/node_modules/nunjucks/src/environment.js:313:17)
+    macro (file:///Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/tests/symbol.test.mjs:13:53)
+    TestContext.<anonymous> (file:///Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern/tests/symbol.test.mjs:38:27)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+  ...
+# Subtest: unknown motifs and hostile values cannot introduce HTML or CSS
+ok 3 - unknown motifs and hostile values cannot introduce HTML or CSS
+  ---
+  duration_ms: 1.640125
+  type: 'test'
+  ...
+# Subtest: Custom Element forwards only name and weight to the same trusted renderer
+ok 4 - Custom Element forwards only name and weight to the same trusted renderer
+  ---
+  duration_ms: 1.07275
+  type: 'test'
+  ...
+# Subtest: playground uses namespace DOM creation and keeps its duplicate geometry consistent
+ok 5 - playground uses namespace DOM creation and keeps its duplicate geometry consistent
+  ---
+  duration_ms: 0.619625
+  type: 'test'
+  ...
+# Subtest: CSS consumes the approved token and package exports the light DOM element
+ok 6 - CSS consumes the approved token and package exports the light DOM element
+  ---
+  duration_ms: 0.418875
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 132.064625

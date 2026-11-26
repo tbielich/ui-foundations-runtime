@@ -1,0 +1,40 @@
+{
+  "setId": "3336:3818",
+  "variants": [
+    {
+      "id": "3336:3821",
+      "name": "Name=checkmark"
+    },
+    {
+      "id": "3336:3824",
+      "name": "Name=dash"
+    },
+    {
+      "id": "3336:3827",
+      "name": "Name=chevron"
+    },
+    {
+      "id": "3336:3830",
+      "name": "Name=plus"
+    },
+    {
+      "id": "3336:3833",
+      "name": "Name=cross"
+    }
+  ],
+  "vectorIds": [
+    "3336:3820",
+    "3336:3823",
+    "3336:3826",
+    "3336:3829",
+    "3336:3832"
+  ],
+  "all_observed": {
+    "strokeWeight": 1,
+    "strokeCap": "ROUND",
+    "strokeJoin": "ROUND",
+    "bound_stroke_variable": "VariableID:3336:3817",
+    "bound_preview_color_variable": "VariableID:3173:28"
+  },
+  "verification": "use_figma live readback after mutation, not worker self-report"
+}

@@ -1,0 +1,97 @@
+{
+  "trace_id": "trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2",
+  "executor_id": "codex",
+  "task_id": "symbol-first-b9eaf8f458",
+  "events": [
+    {
+      "event": "executor.started",
+      "timestamp": "2026-11-26T14:18:08.809834+00:00",
+      "sequence": 1,
+      "metadata": {
+        "task_kind": "IMPLEMENT",
+        "workspace": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern",
+        "source_refs": [
+          "issue:tbielich/ui-foundations-runtime#368",
+          "pr:tbielich/ui-foundations-runtime#369",
+          "https://figma.com/design/uqMsy8fV1fPbQdAzgwlmBA"
+        ]
+      }
+    },
+    {
+      "event": "executor.completed",
+      "timestamp": "2026-11-26T14:21:20.321945+00:00",
+      "sequence": 2,
+      "metadata": {
+        "status": "completed",
+        "artifacts": [],
+        "changes": [
+          "package.json",
+          "schemas/web-symbol.figma.ts",
+          "schemas/web-symbol.ts",
+          "site/_includes/macros/ui.njk",
+          "site/assets/playground/renderers.js",
+          "site/patterns/index.md",
+          "site/patterns/symbol-playground.md",
+          "site/patterns/symbol.md",
+          "src/elements/index.js",
+          "src/elements/ui-symbol.js",
+          "src/ui/components/symbol.js",
+          "src/ui/index.css",
+          "src/ui/patterns/symbol.css",
+          "tests/symbol.test.mjs"
+        ]
+      }
+    }
+  ],
+  "approvals": [],
+  "usage": {},
+  "started_at": "2026-11-26T14:18:08.809834+00:00",
+  "completed_at": "2026-11-26T14:21:20.321945+00:00",
+  "duration_ms": null,
+  "metadata": {
+    "source": "agent_dispatcher",
+    "constraints": {
+      "allowed_paths": [
+        "src/ui/patterns/symbol.css",
+        "src/ui/components/symbol.js",
+        "src/ui/index.css",
+        "src/elements/ui-symbol.js",
+        "src/elements/index.js",
+        "site/_includes/macros/ui.njk",
+        "site/assets/playground/renderers.js",
+        "site/patterns/symbol.md",
+        "site/patterns/symbol-playground.md",
+        "site/patterns/index.md",
+        "schemas/web-symbol.figma.ts",
+        "schemas/web-symbol.ts",
+        "tests/symbol.test.mjs",
+        "package.json"
+      ],
+      "forbidden_paths": [
+        "figma/",
+        "docs/evidence/",
+        "README.md",
+        "package-lock.json",
+        "src/assets/",
+        ".git/",
+        ".uif/"
+      ],
+      "allowed_actions": [
+        "read",
+        "edit"
+      ],
+      "forbidden_actions": [
+        "validate"
+      ],
+      "required_validations": [
+        "lint",
+        "test:unit",
+        "ci:check"
+      ],
+      "timeout_seconds": 900
+    },
+    "capability_ids": [
+      "coding"
+    ]
+  }
+}

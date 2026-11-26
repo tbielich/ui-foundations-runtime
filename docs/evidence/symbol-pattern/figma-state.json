@@ -1,0 +1,82 @@
+{
+  "sessionId": "39ba2af0-3716-4f17-bb7a-a22d1e9bdb58",
+  "fileKey": "uqMsy8fV1fPbQdAzgwlmBA",
+  "scope": "single-component Symbol five motifs + one stroke token",
+  "created": {
+    "strokeVariableId": "VariableID:3336:3817",
+    "setId": "3336:3818",
+    "reviewId": "3336:3834",
+    "componentIds": [
+      {
+        "id": "3336:3821",
+        "name": "Name=checkmark"
+      },
+      {
+        "id": "3336:3824",
+        "name": "Name=dash"
+      },
+      {
+        "id": "3336:3827",
+        "name": "Name=chevron"
+      },
+      {
+        "id": "3336:3830",
+        "name": "Name=plus"
+      },
+      {
+        "id": "3336:3833",
+        "name": "Name=cross"
+      }
+    ],
+    "vectorIds": [
+      "3336:3820",
+      "3336:3823",
+      "3336:3826",
+      "3336:3829",
+      "3336:3832"
+    ],
+    "reviewInstances": [
+      {
+        "id": "3336:3835",
+        "type": "INSTANCE"
+      },
+      {
+        "id": "3336:3837",
+        "type": "INSTANCE"
+      },
+      {
+        "id": "3336:3839",
+        "type": "INSTANCE"
+      },
+      {
+        "id": "3336:3841",
+        "type": "INSTANCE"
+      },
+      {
+        "id": "3336:3843",
+        "type": "INSTANCE"
+      }
+    ],
+    "bounds": {
+      "x": 0,
+      "y": 3400,
+      "width": 328,
+      "height": 72
+    }
+  },
+  "pending": [
+    "Code Connect library publication and mapping confirmation",
+    "human review",
+    "full rendering matrix and actual AT/E-Ink"
+  ],
+  "completed": [
+    "stroke token readback alias verified",
+    "five component variant strokes/caps/joins/bindings verified",
+    "Figma review screenshot inspected",
+    "Runtime integration",
+    "6 Symbol targeted checks",
+    "266 unit tests",
+    "119 Chromium checks plus12 accessibility checks",
+    "manual package/playground smoke"
+  ]
+}

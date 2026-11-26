@@ -9467,5 +9467,37 @@
         }
       }
     }
+  },
+  "Symbol": {
+    "Default": {
+      "Glyph": {
+        "Stroke-width": {
+          "Default": {
+            "$type": "number",
+            "$value": {
+              "$ref": "Semantics/Size/Border/Default"
+            },
+            "$extensions": {
+              "com.figma.variableId": "VariableID:3336:3817",
+              "com.figma.variableName": "Symbol/Default/Glyph/Stroke-width/Default",
+              "com.figma.scopes": [
+                "STROKE_FLOAT"
+              ],
+              "com.figma.hiddenFromPublishing": false,
+              "com.figma.codeSyntax": {
+                "WEB": "var(--uif-symbol-default-glyph-stroke-width-default)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:3173:61",
+                "targetVariableName": "Semantics/Size/Border/Default",
+                "targetVariableSetId": "VariableCollectionId:3173:2",
+                "targetVariableSetName": "Semantics (Roles)"
+              },
+              "com.figma.isOverride": true
+            }
+          }
+        }
+      }
+    }
   }
 }
