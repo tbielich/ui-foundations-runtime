@@ -1,0 +1,50 @@
+{
+  "symbol": {
+    "status": "passed",
+    "command": "node --test tests/symbol.test.mjs",
+    "evidence": "docs/evidence/symbol-pattern/symbol.log",
+    "exit_code": 0,
+    "seconds": 0.2,
+    "environment": {
+      "node": "22.22.1",
+      "CI": "1",
+      "SITE_PORT": "8099"
+    }
+  },
+  "lint": {
+    "status": "passed",
+    "command": "npm run lint",
+    "evidence": "docs/evidence/symbol-pattern/lint.log",
+    "exit_code": 0,
+    "seconds": 6.63,
+    "environment": {
+      "node": "22.22.1",
+      "CI": "1",
+      "SITE_PORT": "8099"
+    }
+  },
+  "test:unit": {
+    "status": "passed",
+    "command": "npm run test:unit",
+    "evidence": "docs/evidence/symbol-pattern/test-unit.log",
+    "exit_code": 0,
+    "seconds": 3.86,
+    "environment": {
+      "node": "22.22.1",
+      "CI": "1",
+      "SITE_PORT": "8099"
+    }
+  },
+  "ci:check": {
+    "status": "passed",
+    "command": "npm run ci:check",
+    "evidence": "docs/evidence/symbol-pattern/ci-check.log",
+    "exit_code": 0,
+    "seconds": 69.21,
+    "environment": {
+      "node": "22.22.1",
+      "CI": "1",
+      "SITE_PORT": "8099"
+    }
+  }
+}

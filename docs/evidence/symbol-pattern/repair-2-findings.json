@@ -1,0 +1,44 @@
+{
+  "mode": "VERIFY",
+  "status": "FAIL",
+  "defects": [
+    {
+      "id": "generated-pattern-inventory",
+      "evidence": "Unit tests naming-migration-completion and vault-naming-contract fail because adding symbol.css changes the derived pattern inventory.",
+      "repair": "Run repository naming:generate; preserve consumed governance unchanged."
+    },
+    {
+      "id": "docs-custom-element-import",
+      "evidence": "New UISymbol imports ../ui/components/symbol.js, valid in src and dist. .eleventy.js serves elements under vendor/ui-foundations/elements but components under vendor/ui-foundations/components; resolving the new import requests missing vendor/ui-foundations/ui/components/symbol.js.",
+      "repair": "Add narrowly scoped passthrough mapping for this new helper only; verify actual HTTP import."
+    },
+    {
+      "id": "code-only-parameter-registration",
+      "evidence": "After generated naming inventory was refreshed, ci:check reached tokens:usage and reported --uif-symbol-weight unknown. The validator explicitly supports exact code-only extension points; default stroke remains a genuine Figma alias.",
+      "repair": "Register only --uif-symbol-weight beside existing code-only slots; do not relax generic unknown-token checks or create an unapproved weight design scale."
+    },
+    {
+      "id": "overview-card-registration",
+      "evidence": "Existing overview browser checks fail: manually appended card yields17 total but16 inside shared grid, wrong theme/inert behavior.",
+      "repair": "Register Symbol in existing overview preview map, use a scoped preview template; remove manual index HTML; update expected catalogue count to17 without relaxing theme/inert checks."
+    },
+    {
+      "id": "empty-code-tabs",
+      "evidence": "Manual browser check shows Nunjucks/Web Component tabs blank for Symbol, while HTML works. Existing code-generators map has no Symbol entries.",
+      "repair": "Add only Symbol entries to existing generators, matching normalized motif/weight and parent color/line-height."
+    }
+  ],
+  "additional_allowed_paths": [
+    "scripts/vault-naming-contract.generated.js",
+    ".eleventy.js",
+    "scripts/validate-token-usage.mjs",
+    "site/_data/overviewPreviews.json",
+    "site/_includes/overview-previews/patterns-symbol.njk",
+    "site/assets/playground/code-generators.js",
+    "tests/browser/docs-overviews.spec.mjs"
+  ],
+  "rationale": "Required derived pattern inventory and new component docs routing; no shared policy or framework change",
+  "repair_iteration": 2,
+  "budget": 2,
+  "cycle_status": "Integration cycle finalized after persisted overview/card and snippet diagnostics"
+}

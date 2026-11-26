@@ -1,0 +1,14 @@
+{
+  "mode": "VERIFY",
+  "status": "FAIL",
+  "defects": [
+    {
+      "path": "site/_includes/macros/ui.njk",
+      "evidence": "symbol.log target test2 fails: undefined/null passed to string filter throws; independent live Nunjucks probes also show [500] accepted as500 whereas JS defaults400.",
+      "expected": "Missing/null/non-number/non-string weight defaults400 across emitters",
+      "repair": "Type-check before string conversion; preserve all existing decimal validation and clamping."
+    }
+  ],
+  "repair_iteration": 1,
+  "budget": 2
+}

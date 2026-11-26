@@ -1,0 +1,71 @@
+{
+  "task_id": "symbol-first-b9eaf8f458",
+  "prompt": "Implement the approved first Symbol Pattern slice in this Runtime worktree. Read execution-contract.json and applicable AGENTS/DESIGN/IMPLEMENTATION and docs/agentic context. Only edit the listed allowed paths. DO NOT edit root README or any other file even temporarily. Token files/projection and evidence belong to orchestrator; do not touch. Read-only shell inspections are permitted, but no validation, build, install, git mutation, publication, Figma write or delegation. Return exact observed change list and limitations. No dependencies/lockfile, no source SVG changes or Checkbox/Select replacement, no universal compiler or new tokens.\nThe owner approved default stroke token in Figma and says similar to SVGs. Token has now been created: --uif-symbol-default-glyph-stroke-width-default, alias Semantic Size/Border/Default. Generated tokens already exist. Five Figma variants in set3336:3818 preserve source SVG geometry, round caps/joins,24viewBox. Paths: checkmark M4 13L10 19L20 5; dash M6 12H18 (minus.svg); chevron M9 6L15 12L9 18 (chevron.svg, points RIGHT); plus M6 12H18M12 6V18; cross M6.06979 6.06982L17.9302 17.9302M17.9302 6.06982L6.06979 17.9302. Do not rotate chevron to down without explicit property. No SVG assets are rewritten.\nUse native inline SVG root+one trusted path as decorative host, not a background/mask approximation. CSS .uif-symbol in @layer components: inline size/block size contextual1lh (1em fallback), vertical alignment, fill none, stroke currentColor, stroke-linecap/linejoin round, stroke width from approved token times experimental --uif-symbol-weight/400. Bound weight100..900 in emitters, default400. Preserve scalable SVG stroke (no vector-effect non-scaling-stroke). Root aria-hidden=true focusable=false, no role/img label API in this decorative-only slice. Parent owns meaning. No React wrapper.\nCreate src/ui/components/symbol.js for safe fixed geometry and normalization/render helpers; src/elements/ui-symbol.js extends existing UIElement and renders same svg; export in src/elements/index.js and package.json subpath only (no dependencies change). Unknown names render empty and hostile attrs cannot inject HTML/CSS. Weight invalid/nonfinite defaults400, clamp100..900; agree macro and JS semantics. Nunjucks macro in site/_includes/macros/ui.njk emits root SVG+path from fixed allowlist, escapes optional values; avoid adding wrapper. Token font sizing/weight concepts must stay separate. Keep actual SVG geometry exact. Minimal duplicate constants across static macro/browser helper are acceptable only with tests asserting source consistency, not a new compiler.\nAdd renderer in existing IIFE site/assets/playground/renderers.js following renderVanillaIcon style, using proper DOM createElementNS, with controls motif,weight,lineHeight,parent color. Preview actual SVG root, snippet usable and agrees with DOM. No extra layout scripts/imports beyond allowed paths. Docs site/patterns/symbol.md and symbol-playground.md expose hero/native decorative examples and visible semantic parent labels; correct actual renderer name; include experimental status and Figma URL https://www.figma.com/design/uqMsy8fV1fPbQdAzgwlmBA/UI-Foundations?node-id=3336-3818 . Add card to site/patterns/index.md. Keep navigation order sensible; don't claim Figma published, screenreader/E-Ink or WCAG checklists passed. Explain Icon difference: asset mask fixed stroke vs parametrically styled trusted SVG. Explain markup cost, color inheritance already exists in Icon, and no global performance claim.\nCode Connect is NOT published. Its skill requires published component and a separate mapping confirmation, so do not fabricate a connection or author figma.connect template. A reference-only schemas/web-symbol.figma.ts may contain explicit pending-publication comment and real source URL with no executable mapping; schemas/web-symbol.ts may describe actual props. Do not change shared site data loader to force this URL to appear. Docs can link actual Figma URL directly.\nAdd meaningful tests/symbol.test.mjs testing generated geometry exact against source SVGs, macro/JS weight and motif behavior parity, injection/unknown/hostile attributes, correct decorative semantics, token usage and package export. Follow real repository test conventions and avoid new frameworks. Orchestrator runs all checks independently. Existing accepted browser/accessibility scope is bounded; do not add new browser test infrastructure.\n",
+  "parent_task_id": null,
+  "task_kind": "IMPLEMENT",
+  "workspace": "/Users/Thomas.Bielich@tui.com/GitHub/uif/worktrees/runtime-symbol-pattern",
+  "capability_ids": [
+    "coding"
+  ],
+  "constraints": {
+    "allowed_paths": [
+      "src/ui/patterns/symbol.css",
+      "src/ui/components/symbol.js",
+      "src/ui/index.css",
+      "src/elements/ui-symbol.js",
+      "src/elements/index.js",
+      "site/_includes/macros/ui.njk",
+      "site/assets/playground/renderers.js",
+      "site/patterns/symbol.md",
+      "site/patterns/symbol-playground.md",
+      "site/patterns/index.md",
+      "schemas/web-symbol.figma.ts",
+      "schemas/web-symbol.ts",
+      "tests/symbol.test.mjs",
+      "package.json"
+    ],
+    "forbidden_paths": [
+      "figma/",
+      "docs/evidence/",
+      "README.md",
+      "package-lock.json",
+      "src/assets/",
+      ".git/",
+      ".uif/"
+    ],
+    "allowed_actions": [
+      "read",
+      "edit"
+    ],
+    "forbidden_actions": [
+      "validate"
+    ],
+    "required_validations": [
+      "lint",
+      "test:unit",
+      "ci:check"
+    ],
+    "timeout_seconds": 900
+  },
+  "source_refs": [
+    "issue:tbielich/ui-foundations-runtime#368",
+    "pr:tbielich/ui-foundations-runtime#369",
+    "https://figma.com/design/uqMsy8fV1fPbQdAzgwlmBA"
+  ],
+  "trace_id": "trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2",
+  "metadata": {
+    "repo": "tbielich/ui-foundations-runtime",
+    "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+    "validation_bindings": {
+      "lint": "npm run lint",
+      "unit": "npm run test:unit",
+      "ci": "npm run ci:check",
+      "targeted": "node --test tests/symbol.test.mjs",
+      "figma": "token readback and component variable binding, screenshot; actual IDs only"
+    },
+    "figma_set_id": "3336:3818",
+    "figma_stroke_variable_id": "VariableID:3336:3817",
+    "approval": "Owner approved first implementation and Figma token creation; no merge",
+    "repair_budget": 2
+  }
+}

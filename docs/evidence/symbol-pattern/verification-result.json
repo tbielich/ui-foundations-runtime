@@ -1,0 +1,89 @@
+{
+  "outcome": "needs_revision",
+  "claims_checked": [
+    "scope",
+    "figma.binding",
+    "geometry.source_parity",
+    "emitter.safety",
+    "validation.required",
+    "rendering.smoke"
+  ],
+  "supporting_source_ids": [
+    "issue:tbielich/ui-foundations-runtime#368",
+    "pr:tbielich/ui-foundations-runtime#369",
+    "owner:symbol-pattern-approval"
+  ],
+  "evidence": [
+    {
+      "source_id": "repo:tbielich/ui-foundations-runtime",
+      "claim": "scope",
+      "evidence_type": "git_diff",
+      "locator": "docs/evidence/symbol-pattern/candidate-state.json",
+      "summary": "Exact in-scope source changes and frozen out-of-scope paths independently verified.",
+      "supports": true
+    },
+    {
+      "source_id": "figma:uqMsy8fV1fPbQdAzgwlmBA",
+      "claim": "figma.binding",
+      "evidence_type": "live_readback",
+      "locator": "docs/evidence/symbol-pattern/figma-binding-readback.json",
+      "summary": "Five24x24 variants, round caps/joins and1unit stroke bound to approved Symbol alias.",
+      "supports": true
+    },
+    {
+      "source_id": "browser:manual-iab",
+      "claim": "rendering.smoke",
+      "evidence_type": "rendered_state",
+      "locator": "docs/evidence/symbol-pattern/browser-readback.json",
+      "summary": "Package renders five motifs; chromatic inheritance, stroke .25/2.25 and contextual12/48 sizes observed. Code tabs populated after scoped fix.",
+      "supports": true
+    }
+  ],
+  "unsupported_claims": [],
+  "uncertainty": [],
+  "recommendation": "defer",
+  "assumptions": [],
+  "gaps": [
+    "Code Connect is reference-only; library publication and explicit component mapping confirmation were not performed.",
+    "Full DPR1/2/3, zoom100/200%, weight/size and Forced Colors matrix not observed for this new renderer.",
+    "Actual screen-reader and physical E-Ink verification remain unavailable; no WCAG acceptance inferred.",
+    "Performance/footprint from the earlier CSS PoC does not apply automatically to native inline SVG; no new performance claim."
+  ],
+  "conflict_notes": [],
+  "authority": null,
+  "precedence_rank": null,
+  "canonical_source_id": null,
+  "document_type": null,
+  "source_status": null,
+  "metadata": {
+    "candidate_revision": "0f4ffefbbb40f3888b77f6398b1ff490a9bd18c0",
+    "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+    "source_sha256": {
+      ".eleventy.js": "15610cbfa2c147aeeef35b373f8478d7b1b643d014c07d1d7defe3b8289bafa7",
+      "figma/exports/Patterns (UI).tokens.json": "96881b1fd984d02e72ef0c092ce7d6857adafe479d0aaed48ce00b239d94eda9",
+      "figma/token-projection.json": "ce00f51aec4584a854238cf17eccc882464c8b259c03487d04dd1dc7ba7e100b",
+      "package.json": "16cca87e49fc5959e8e97c9e6f402617f87eb084b668871d85f1a65c6b085499",
+      "schemas/web-symbol.figma.ts": "e90e5c9326d7f492f1422f641a6076f823148ae43d36f6fc1839fddc6897c41e",
+      "schemas/web-symbol.ts": "6b3b9521d531b9f4b2eef2ed336995b4a77c166b70ce5fbed0e1d419506c8369",
+      "scripts/validate-token-usage.mjs": "ed8305cd4f240bce3bd619ea0a4beec11b85e9771b59f1ab2012520685310eb3",
+      "scripts/vault-naming-contract.generated.js": "697e3ea6a900383a683c9743e49d29ce373f05ddfe6213dc77977a5b617f3e63",
+      "site/_data/overviewPreviews.json": "23908823575d234669a32600a994f4588cc60ce8b73a43b1ea60a8b036418a39",
+      "site/_includes/macros/ui.njk": "9093ce4b8e1375e8e39c92fd4669a0ad0365e558cb6d0239109b1f335bfec20d",
+      "site/_includes/overview-previews/patterns-symbol.njk": "2bab98fdde24fab1577860dd546964a66de88e0fa742b3671cefef69aa9cadbb",
+      "site/assets/playground/code-generators.js": "1399ca998fd3e1eb60bde8b3e4bcc3f0bb378a85c1706dcd02cd6185520aae71",
+      "site/assets/playground/renderers.js": "745b0162c4ffa28671e05533f032673c85c6b38a5061ad33440a317422a6983e",
+      "site/patterns/symbol-playground.md": "b9e9ce125f6269a8d5bf3e97ff6a82d1fa971d6824997cdef000a742f6c9db1d",
+      "site/patterns/symbol.md": "a2983465a5a1ba15b3977f608f5a6fea3409b257b1e336cdb8173dd92cc5114d",
+      "src/elements/index.js": "9e3a3ea297ba157246573a6c3858242ac68f4cb56292f9927d21b1c6ec6a6e00",
+      "src/elements/ui-symbol.js": "328b73d5f583376ddcbc8f1f53063a22a3e1dc6ad45952743589c8140b09dccd",
+      "src/ui/components/symbol.js": "74f0e8479c762b7e81f3a87e1b35afea19c25e98de0460758d929891caaefe26",
+      "src/ui/index.css": "5feeee3b3d27d35e6437982e3b4833636dd84f11ba81eb243cba98acd3e78b85",
+      "src/ui/patterns/symbol.css": "6f2b921aeed38c249eef92d16a4513b7a53a4348cf5ec1f8129d26dd5a49a4a8",
+      "tests/browser/docs-overviews.spec.mjs": "c9d6298990faef75bf24744cb228c7fa113ec69517951429c520922006d2e73d",
+      "tests/symbol.test.mjs": "261fe9b36ca8e9b54e9afb26ab4c391ab701c3e6a813b2af1684de29b2a58e88"
+    },
+    "repository_checks": "PASS",
+    "runtime_known_defects": "none demonstrated after final checks",
+    "human_gate": "review first experimental slice; no merge/release/library publication authorized"
+  }
+}

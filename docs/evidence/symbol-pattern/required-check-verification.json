@@ -1,0 +1,226 @@
+{
+  "outcome": "accepted",
+  "claims_checked": [
+    "result.identity",
+    "executor.completed",
+    "scope.allowed_paths",
+    "scope.forbidden_paths",
+    "scope.evidence_complete",
+    "scope.changed_paths",
+    "validation.requirements",
+    "validation:lint",
+    "validation:test:unit",
+    "validation:ci:check"
+  ],
+  "supporting_source_ids": [
+    "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+    "agent-task:symbol-first-b9eaf8f458"
+  ],
+  "evidence": [
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "result.identity",
+      "evidence_type": "execution_verification",
+      "locator": "/task_id",
+      "summary": "Result identifies an executor and belongs to the expected task and trace.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "executor.completed",
+      "evidence_type": "execution_verification",
+      "locator": "/status",
+      "summary": "Executor status: completed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:symbol-first-b9eaf8f458",
+      "claim": "scope.allowed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/allowed_paths",
+      "summary": "allowed_paths: ('src/ui/patterns/symbol.css', 'src/ui/components/symbol.js', 'src/ui/index.css', 'src/elements/ui-symbol.js', 'src/elements/index.js', 'site/_includes/macros/ui.njk', 'site/assets/playground/renderers.js', 'site/patterns/symbol.md', 'site/patterns/symbol-playground.md', 'site/patterns/index.md', 'schemas/web-symbol.figma.ts', 'schemas/web-symbol.ts', 'tests/symbol.test.mjs', 'package.json')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:symbol-first-b9eaf8f458",
+      "claim": "scope.forbidden_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/forbidden_paths",
+      "summary": "forbidden_paths: ('figma/', 'docs/evidence/', 'README.md', 'package-lock.json', 'src/assets/', '.git/', '.uif/')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.evidence_complete",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/changes_complete",
+      "summary": "Changed-path evidence is declared complete.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/0",
+      "summary": "Changed path 'package.json': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/1",
+      "summary": "Changed path 'schemas/web-symbol.figma.ts': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/2",
+      "summary": "Changed path 'schemas/web-symbol.ts': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/3",
+      "summary": "Changed path 'site/_includes/macros/ui.njk': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/4",
+      "summary": "Changed path 'site/assets/playground/renderers.js': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/5",
+      "summary": "Changed path 'site/patterns/index.md': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/6",
+      "summary": "Changed path 'site/patterns/symbol-playground.md': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/7",
+      "summary": "Changed path 'site/patterns/symbol.md': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/8",
+      "summary": "Changed path 'src/elements/index.js': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/9",
+      "summary": "Changed path 'src/elements/ui-symbol.js': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/10",
+      "summary": "Changed path 'src/ui/components/symbol.js': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/11",
+      "summary": "Changed path 'src/ui/index.css': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/12",
+      "summary": "Changed path 'src/ui/patterns/symbol.css': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/13",
+      "summary": "Changed path 'tests/symbol.test.mjs': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:symbol-first-b9eaf8f458",
+      "claim": "validation.requirements",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/required_validations",
+      "summary": "Required validations: ('lint', 'test:unit', 'ci:check').",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "validation:lint",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-pattern/lint.log",
+      "summary": "Required check 'lint': passed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "validation:test:unit",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-pattern/test-unit.log",
+      "summary": "Required check 'test:unit': passed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2:symbol-first-b9eaf8f458",
+      "claim": "validation:ci:check",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-pattern/ci-check.log",
+      "summary": "Required check 'ci:check': passed.",
+      "supports": true
+    }
+  ],
+  "unsupported_claims": [],
+  "uncertainty": [],
+  "recommendation": "accept",
+  "assumptions": [],
+  "gaps": [],
+  "conflict_notes": [],
+  "authority": null,
+  "precedence_rank": null,
+  "canonical_source_id": null,
+  "document_type": null,
+  "source_status": null,
+  "metadata": {
+    "source": "agent_result_verifier",
+    "task_id": "symbol-first-b9eaf8f458",
+    "trace_id": "trace-symbol-e0a1a7c2b77345a08dbf82e2481072f2",
+    "executor_id": "codex",
+    "warnings": [],
+    "approval_blockers": [],
+    "evidence_basis": "supplied_result",
+    "executor_status": "completed"
+  }
+}

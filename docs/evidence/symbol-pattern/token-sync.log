@@ -1,0 +1,22 @@
+
+> ui-foundations@1.1.0 tokens:sync
+> node scripts/sync-figma-tokens.mjs
+
+✅ Patterns (UI).tokens.json (1 variables)
+
+📁 1 export files written to figma/exports/
+🔄 Running token pipeline...
+
+
+> ui-foundations@1.1.0 tokens:generate
+> node scripts/extract-tokens.js
+
+✅ Tokens generated from local exports!
+📁 Files created in dist/tokens/
+   • css/*.css, json/*.json, ts/*.ts (per-file files) + tokens.yaml
+📊 Extract report:
+   • missing codeSyntax.WEB: 0
+   • unparseable codeSyntax.WEB: 0
+   • duplicate css var names (same scope): 0
+
+✅ Token sync complete!
