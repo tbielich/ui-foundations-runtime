@@ -1,0 +1,31 @@
+{
+  "monoToken": "",
+  "fontToken": "",
+  "textareaToken": "",
+  "styleSheets": [
+    {
+      "href": "http://127.0.0.1:18800/vendor/ui-foundations/main.css"
+    },
+    {
+      "href": "http://127.0.0.1:18800/assets/brand-fonts.css"
+    },
+    {
+      "href": "http://127.0.0.1:18800/assets/vendor/prism/prism.css"
+    },
+    {
+      "href": "http://127.0.0.1:18800/assets/docs.css"
+    },
+    {
+      "href": "http://127.0.0.1:18800/assets/docs-keytips.css"
+    },
+    {
+      "href": null
+    }
+  ],
+  "supports": {
+    "aspectRatio": true,
+    "overflowWrapAnywhere": true,
+    "fontSizeClamp": true,
+    "dialog": true
+  }
+}

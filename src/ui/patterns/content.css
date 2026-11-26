@@ -1,0 +1,68 @@
+@layer components {
+  .uif-content {
+    min-inline-size: 0;
+    color: var(--uif-semantic-color-content-default);
+    font-family: var(--uif-semantic-font-base);
+    font-size: var(--uif-semantic-typography-body-font-size);
+    line-height: var(--uif-semantic-typography-body-line-height);
+    overflow-wrap: anywhere;
+  }
+
+  .uif-content > * + *,
+  .uif-content li > * + * {
+    margin-block-start: var(--uif-semantic-size-spacing-component);
+  }
+
+  .uif-content :where(h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre) {
+    margin-block-end: 0;
+  }
+
+  .uif-content :where(ul, ol) { padding-inline-start: 2em; }
+  .uif-content blockquote {
+    margin-inline: 0;
+    padding-inline-start: var(--uif-semantic-size-spacing-component);
+    border-inline-start: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-border-default);
+  }
+
+  /* Shared by static code, rendered code and native TextArea output. */
+  .uif-code,
+  .uif-content code {
+    font-family: var(--uif-semantic-scale-font-family-mono), ui-monospace, monospace;
+    font-size: inherit;
+    font-weight: var(--uif-semantic-typography-body-font-weight);
+    font-variant-ligatures: none;
+    letter-spacing: normal;
+    text-transform: none;
+    tab-size: 4;
+  }
+
+  .uif-code {
+    display: block;
+    min-inline-size: 0;
+    max-inline-size: 100%;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow: auto;
+    line-height: var(--uif-semantic-typography-body-line-height);
+  }
+
+  /* A geometric row step for Unicode drawings, not a second typography scale. */
+  .uif-code-grid { line-height: 1; }
+
+  .uif-content pre {
+    padding: var(--uif-semantic-size-spacing-component);
+    color: var(--uif-semantic-color-content-default);
+    background: var(--uif-semantic-color-surface-default);
+    border: var(--uif-semantic-size-border-default) solid var(--uif-semantic-color-border-default);
+  }
+
+  .uif-content-table { max-inline-size: 100%; overflow: auto; }
+  .uif-content-table table { margin: 0; overflow-wrap: normal; }
+  .uif-content-copy-status { display: block; color: inherit; font: inherit; }
+  .uif-content-code-block { min-inline-size: 0; }
+  .uif-content-code-block .uif-button { margin-block-start: var(--uif-semantic-size-spacing-tight); }
+  .uif-content :where(pre, .uif-content-table):focus-visible {
+    outline: var(--uif-semantic-size-border-thick) solid var(--uif-semantic-color-border-brand-focus);
+    outline-offset: var(--uif-semantic-scale-size-spacing-050);
+  }
+}

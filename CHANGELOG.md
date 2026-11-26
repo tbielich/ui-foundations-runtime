@@ -2,6 +2,22 @@
 
 All notable UI Foundations release changes are documented here.
 
+## Unreleased
+
+### Added
+
+- Safe, bounded Markdown rendering through `ui-foundations/behaviors/content`,
+  with source-preserving fallbacks and optional code-copy feedback.
+- Shared code and Unicode output styles, plus an opt-in `legacy.css` bundle
+  for the tested BOOX Chrome 88 WebView.
+
+### Changed
+
+- Content docs now combine four examples in one stable preview with theme,
+  scale and display controls. Shared preview context controls align across docs.
+- Docs load licensed DejaVu Sans Mono for code and the tested drawing characters.
+  Fonts remain consumer-owned and are excluded from the Runtime package.
+
 ## 1.1.0 — 2026-10-02
 
 ### Added

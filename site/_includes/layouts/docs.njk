@@ -2,6 +2,15 @@
 {% import "macros/ui.njk" as uif %}
 <html lang="en" data-brand="a" data-mode="light">
   <head>
+    <script>
+      // Older WebViews ignore layer blocks and layer-qualified imports entirely.
+      if (typeof CSSLayerBlockRule === "undefined") {
+        var fallback = document.createElement("link");
+        fallback.rel = "stylesheet";
+        fallback.href = "{{ '/vendor/ui-foundations/legacy.css' | sitePath }}";
+        document.head.appendChild(fallback);
+      }
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="/assets/preview-preferences.js"></script>

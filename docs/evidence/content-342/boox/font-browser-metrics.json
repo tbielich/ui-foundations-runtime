@@ -1,0 +1,772 @@
+[
+  {
+    "family": "monospace",
+    "advances": [
+      {
+        "character": " ",
+        "width": 19.203125
+      },
+      {
+        "character": "i",
+        "width": 19.203125
+      },
+      {
+        "character": "W",
+        "width": 19.203125
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      122.125,
+      135.9375
+    ]
+  },
+  {
+    "family": "serif-monospace",
+    "advances": [
+      {
+        "character": " ",
+        "width": 19.375
+      },
+      {
+        "character": "i",
+        "width": 19.375
+      },
+      {
+        "character": "W",
+        "width": 19.375
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      122.8125,
+      135.9375
+    ]
+  },
+  {
+    "family": "courier",
+    "advances": [
+      {
+        "character": " ",
+        "width": 19.375
+      },
+      {
+        "character": "i",
+        "width": 19.375
+      },
+      {
+        "character": "W",
+        "width": 19.375
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      122.8125,
+      135.9375
+    ]
+  },
+  {
+    "family": "Courier New",
+    "advances": [
+      {
+        "character": " ",
+        "width": 19.375
+      },
+      {
+        "character": "i",
+        "width": 19.375
+      },
+      {
+        "character": "W",
+        "width": 19.375
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      122.8125,
+      135.9375
+    ]
+  },
+  {
+    "family": "Droid Sans Mono",
+    "advances": [
+      {
+        "character": " ",
+        "width": 7.96875
+      },
+      {
+        "character": "i",
+        "width": 8.171875
+      },
+      {
+        "character": "W",
+        "width": 28.15625
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      77.1875,
+      135.9375
+    ]
+  },
+  {
+    "family": "Cutive Mono",
+    "advances": [
+      {
+        "character": " ",
+        "width": 7.96875
+      },
+      {
+        "character": "i",
+        "width": 8.171875
+      },
+      {
+        "character": "W",
+        "width": 28.15625
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      77.1875,
+      135.9375
+    ]
+  },
+  {
+    "family": "Courier Std",
+    "advances": [
+      {
+        "character": " ",
+        "width": 7.96875
+      },
+      {
+        "character": "i",
+        "width": 8.171875
+      },
+      {
+        "character": "W",
+        "width": 28.15625
+      },
+      {
+        "character": "─",
+        "width": 22.65625
+      },
+      {
+        "character": "│",
+        "width": 22.65625
+      },
+      {
+        "character": "╭",
+        "width": 22.65625
+      },
+      {
+        "character": "╮",
+        "width": 22.65625
+      },
+      {
+        "character": "╰",
+        "width": 22.65625
+      },
+      {
+        "character": "╯",
+        "width": 22.65625
+      },
+      {
+        "character": "◜",
+        "width": 19.328125
+      },
+      {
+        "character": "◝",
+        "width": 19.328125
+      },
+      {
+        "character": "◞",
+        "width": 19.328125
+      },
+      {
+        "character": "◟",
+        "width": 19.328125
+      },
+      {
+        "character": "◠",
+        "width": 19.328125
+      },
+      {
+        "character": "◡",
+        "width": 19.328125
+      },
+      {
+        "character": "▘",
+        "width": 22.65625
+      },
+      {
+        "character": "▝",
+        "width": 22.65625
+      },
+      {
+        "character": "▖",
+        "width": 22.65625
+      },
+      {
+        "character": "▗",
+        "width": 22.65625
+      },
+      {
+        "character": "▀",
+        "width": 22.65625
+      },
+      {
+        "character": "▄",
+        "width": 22.65625
+      },
+      {
+        "character": "▌",
+        "width": 22.65625
+      },
+      {
+        "character": "▐",
+        "width": 22.65625
+      },
+      {
+        "character": "█",
+        "width": 22.65625
+      },
+      {
+        "character": "✓",
+        "width": 26.53125
+      }
+    ],
+    "rows": [
+      135.9375,
+      77.1875,
+      135.9375
+    ]
+  }
+]

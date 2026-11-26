@@ -110,3 +110,15 @@ names are supported only as deprecated override inputs, not generated defaults.
 If both old and current names are explicitly set, the old input retains priority
 for backward compatibility; remove it when migrating to the current name.
 All other Pattern typography tokens already use names without `compat`.
+
+## Read-only content and code
+
+Import `renderContent` from `ui-foundations/behaviors/content` and call it with a target element, an untrusted string and optional `{ headingLevel: 2, format: "markdown", copy: false }`. `format: "text"` retains the original source as preformatted text. The renderer creates semantic DOM without HTML sinks; raw HTML is disabled and link protocols are restricted. See [Content](https://ui-foundations.com/patterns/content/) for the supported subset, size limits, localization, optional clipboard feedback and fallbacks. Set `copy: true` to compose a Copy action with fenced code. The default renders content without actions.
+
+`ui.css` includes `.uif-content`, `.uif-code` and `.uif-code-grid`. Apply `class="uif-textarea uif-code" wrap="off"` for code output, adding `uif-code-grid` for contiguous Unicode rows. Mono consumes the existing `--uif-semantic-scale-font-family-mono` role, with generic monospace fallbacks. No font is automatically loaded. Layout and Unicode glyph metrics remain font-dependent.
+
+### Older WebViews
+
+`ui-foundations/legacy.css` is an opt-in flat CSS bundle for the bounded BOOX Chrome 88 target. It contains the same tokens and patterns in reset → base → tokens → context → components order, without CSS layers. Do not load it alongside the layered entry on browsers that support layers. It does not polyfill JavaScript, fonts or other CSS features, and flattening does not preserve every layer-specific cascade interaction with consumer styles. In particular, normal selector specificity applies and important declarations no longer have reversed layer priority. Test the actual consumer before adoption.
+
+Fonts remain consumer-owned. The Content docs load unmodified DejaVu Sans Mono 2.37, including its licence and source hash, as their reference for code and the tested Unicode drawing repertoire. This does not replace Figma's SF Mono primitive or introduce a new Runtime token. Generic monospace fallback does not guarantee Unicode drawing fidelity. A one-em row step does not imply square glyph cells.

@@ -53,3 +53,13 @@
   font-weight: 200 800;
   font-display: swap;
 }
+
+/* Docs-owned reference font for code and Unicode drawings. */
+@font-face {
+  font-family: "DejaVu Sans Mono";
+  src: url("./fonts/brand/dejavu-sans-mono.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+:root { --uif-semantic-scale-font-family-mono: "DejaVu Sans Mono", monospace; }

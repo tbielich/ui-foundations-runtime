@@ -1,0 +1,30 @@
+{
+  "metrics": {
+    "family": "monospace",
+    "size": "13.3333px",
+    "lineHeight": "normal",
+    "i": 31.99273681640625,
+    "w": 31.99273681640625,
+    "rowWidths": [
+      56.618499755859375,
+      50.865570068359375,
+      50.865570068359375,
+      56.618499755859375
+    ]
+  },
+  "security": {
+    "attack": 0,
+    "executableNodes": 0,
+    "links": [
+      "https://example.com/"
+    ]
+  },
+  "narrow": {
+    "regionWidth": 318,
+    "contentWidth": 2908,
+    "overflowX": "auto"
+  },
+  "originalPageOverflow": false,
+  "copyStatus": "Copy unavailable. Select and copy the code manually.",
+  "copyButtonEnabled": true
+}
