@@ -52,6 +52,8 @@ module.exports = function (eleventyConfig) {
       );
   });
   eleventyConfig.addPassthroughCopy({ "src/elements": "vendor/ui-foundations/elements" });
+  // Preserve the same helper import path in source, package and docs.
+  eleventyConfig.addPassthroughCopy({ "src/ui/components/symbol.js": "vendor/ui-foundations/ui/components/symbol.js" });
   eleventyConfig.addPassthroughCopy({
     "dist/main.css": "vendor/ui-foundations/main.css",
     "dist/base.css": "vendor/ui-foundations/base.css",

@@ -447,3 +447,22 @@
   </svg>
 </span>
 {%- endmacro %}
+
+{# Fixed allowlist mirrors symbol.js; tests enforce geometry/normalization parity. #}
+{% macro symbol(name, weight=400, className='') -%}
+{%- set paths = {'checkmark': 'M4 13L10 19L20 5', 'dash': 'M6 12H18', 'chevron': 'M9 6L15 12L9 18', 'plus': 'M6 12H18M12 6V18', 'cross': 'M6.06979 6.06982L17.9302 17.9302M17.9302 6.06982L6.06979 17.9302'} -%}
+{%- if name is string and name in ['checkmark', 'dash', 'chevron', 'plus', 'cross'] -%}
+{%- set raw = '' -%}
+{%- if weight is number or weight is string -%}{%- set raw = weight | string | trim -%}{%- endif -%}
+{%- set resolved = 400 -%}
+{%- if raw and (raw | replace(r/^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?$/, '')) == '' -%}
+  {%- set number = raw | float -%}
+  {%- if (number - number) == 0 -%}
+    {%- set resolved = number -%}
+    {%- if resolved < 100 -%}{%- set resolved = 100 -%}{%- endif -%}
+    {%- if resolved > 900 -%}{%- set resolved = 900 -%}{%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+<svg xmlns="http://www.w3.org/2000/svg" class="uif-symbol{% if className %} {{ className | escape }}{% endif %}" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="--uif-symbol-weight: {{ resolved }}"><path d="{{ paths[name] }}"></path></svg>
+{%- endif -%}
+{%- endmacro %}

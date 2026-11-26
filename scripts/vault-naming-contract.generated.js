@@ -108,6 +108,7 @@ const VAULT_NAMING_CONTRACT = Object.freeze({
       "select",
       "status-light",
       "switch",
+      "symbol",
       "table",
       "tabs",
       "textarea",

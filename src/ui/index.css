@@ -25,3 +25,4 @@
 @import url("./patterns/progress-bar.css") layer(components);
 @import url("./patterns/inline-alert.css") layer(components);
 @import url("./patterns/illustrated-message.css") layer(components);
+@import url("./patterns/symbol.css") layer(components);

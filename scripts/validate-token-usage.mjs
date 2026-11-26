@@ -27,6 +27,7 @@ const ALLOWLIST = new Set([
   "--uif-field-label-required-color",
   "--uif-icon-src",
   "--uif-progress-circle-value",
+  "--uif-symbol-weight", // Experimental runtime stroke multiplier, not a design token.
   "--uif-tooltip-hide-delay",
   "--uif-tooltip-show-delay",
 ]);
