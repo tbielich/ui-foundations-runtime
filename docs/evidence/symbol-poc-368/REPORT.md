@@ -6,9 +6,17 @@ Baseline: `61347ff8fe93f1749d9dacd9ee23dce2be5897a8`. Candidate implementation r
 
 ## Findings and recommendation
 
-Retain existing SVG/local CSS. Public Symbol Pattern remains HOLD. All five candidate motifs reuse declarations across decorative spans and button::before; checkmark and dash also use native Checkbox::after. Select uses a separate progressive picker-icon adapter and retains native fallback. CSS caps, joins, proportions and dash sizing differ from baseline; these are approximations, not exact Figma or SVG fidelity.
+Continue the internal decorative-host candidate, focusing on adjustable stroke and inherited color. The owner explicitly prefers this host after inspecting the comparison: “Candidate decorative host funktioniert definitiv besser, stroke und color”. This is owner visual feedback; independent computed-style observations are recorded in decorative-host-observations.json. Keep existing Checkbox/Select implementations pending their own evidence. Public Symbol Pattern remains HOLD. All five candidate motifs reuse declarations across decorative spans and button::before; checkmark and dash also use native Checkbox::after. Select uses a separate progressive picker-icon adapter and retains native fallback. CSS caps, joins, proportions and dash sizing differ from baseline; these are approximations, not exact Figma or SVG fidelity.
 
 For the declared modular cold-cache workload (100 repeats, each five decorative motifs plus checked input), footprint.json records baseline 1591 gzip / 1055 Brotli bytes and candidate 1066 gzip / 708 Brotli bytes. Candidate CSS alone costs more: 712 gzip / 600 Brotli bytes versus baseline 617 / 494. These resource-level figures exclude shared control/token CSS and HTTP overhead, assume compression and caching per documented resource, and do not model the production flat bundle. Different geometry and incomplete visual coverage prevent an adoption inference. Conservative whitespace/comment minification is not a production optimizer. Timing is unmeasured.
+
+## Decorative-host follow-up
+
+The owner authorized documenting this preference and focusing the next checks on the decorative host. No CSS, HTML or measurement source changed. Six interactive configurations cover five motifs at five sizes, weights 100/400/900, in light/dark (150 computed-style samples). All inherit the parent color and remain aria-hidden. At size24, checkmark/dash/chevron computed borders change from 0.5 to 1 to 2px; the theoretical stroke is 0.25/1/2.25px, demonstrating browser quantization. Plus/cross paint with currentColor gradients. These observations support parameter control, not complete raster-quality or cross-browser acceptance.
+
+The source SVG mask Icon already supports currentColor; color inheritance is not exclusive to this candidate. The Select data URI is a separate image context. The owner preference concerns the visible decorative-host result and adjustable stroke, not a measured universal color advantage.
+
+Next verification priority: decorative-host legibility/clipping at small sizes and weight extremes; DPR 1/2/3 and 100/200% zoom; Forced Colors; controlled chromatic parent colors. Keep equivalent-geometry and workload cost comparisons explicit. Actual screenreader/E-Ink and other hosts remain separately outstanding. No new browser infrastructure or Select automation is authorized by this focus change.
 
 ## Independent verification
 

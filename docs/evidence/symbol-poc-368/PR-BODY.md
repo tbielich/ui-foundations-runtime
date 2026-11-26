@@ -2,7 +2,7 @@ Adds an isolated comparison of existing Checkbox, Select and Button indicator re
 
 Refs #368. This draft preserves the AgentTask, Kiro/Codex execution traces, measured footprint, screenshots, scoped repair findings and independent VerificationResult. See `REPORT.md` for the evidence and limits.
 
-Recommendation: retain existing SVG/local CSS. Public Symbol Pattern remains HOLD. The candidate is approximate; the full DPR/zoom/weight/Forced Colors matrix, actual screenreader, physical E-Ink and live Figma fidelity remain BLOCKED. Additional Select automation was not introduced. Overall verification remains `needs_revision / defer` for human review despite passing repository checks.
+Recommendation: continue the internal decorative-host candidate, following the owner’s positive visual assessment of stroke and color. Focus remaining checks on this host; retain existing production Checkbox/Select implementations pending their own evidence. Public Symbol Pattern remains HOLD. The candidate is approximate; the full DPR/zoom/weight/Forced Colors matrix, actual screenreader, physical E-Ink and live Figma fidelity remain BLOCKED. Additional Select automation was not introduced. Overall verification remains `needs_revision / defer` for human review despite passing repository checks.
 
 Validation: `npm run lint`, `npm run test:unit` (260 tests) and `npm run ci:check` PASS. Original environment-related failures are retained. Two demonstrated PoC defects were repaired in one bounded iteration. Codex reported a transient root README edit/restoration; final baseline equality was independently checked, and the execution-boundary incident is explicitly retained.
 
