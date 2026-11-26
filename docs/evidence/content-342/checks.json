@@ -3,7 +3,7 @@
   "command": "npm run ci:check",
   "exitCode": 0,
   "unitTests": 267,
-  "chromiumTests": 129,
+  "chromiumTests": 130,
   "accessibilityTests": 12,
   "packageDryRun": true,
   "consumerPatchApplyChecks": true,
@@ -11,6 +11,6 @@
   "booxVerified": true,
   "booxAcceptance": "UIF style fallback, font load, Unicode row widths, stable preview variants and physical Grid toggle passed; screenreader, ghosting and production package adoption excluded",
   "released": false,
-  "finalLogSha256": "7c8933b2400fab83d71048d9d691553d4c58d6cd7bdd6a3d59a8da7f4065a34c",
+  "finalLogSha256": "f7476f344d030d4b622efcb705c33d0e000539be000d0665d63995c0a322d2ab",
   "booxVerificationScope": "bounded content and isolated Studio candidate"
 }

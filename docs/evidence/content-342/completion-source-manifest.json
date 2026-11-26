@@ -15,7 +15,7 @@
     "site/patterns/content.md": "c888fc1ff352d094548b123b0172afb63b5ffcc205b09345ee77c94bb146dadb",
     "src/ui/components/content.js": "4d21c35744d47c34ac2fcf474656b9094d50e0314a08a5e5f469d20d20db4dd7",
     "src/ui/patterns/content.css": "a9bb2f166c2c6f5afe5296933368d42d692544ddf2f3767861c61d6050154b6f",
-    "tests/browser/content.spec.mjs": "a9e85886b5e30d9ac03ae278e1d6f7468f1325f14cb01905c23f30e641c3c039",
+    "tests/browser/content.spec.mjs": "902bacde3656951321b531a67212af2c18cce7af7622ebd7e9a4ec40b2b0e895",
     "tests/content.test.mjs": "e5e4652ab6f77e93e822f2e968028109990b9e307b9ad79f5306c5f9f1239c2a",
     "tests/legacy-css.test.mjs": "34d90d96492024e06965320c110fb471c7fd5291b6edb05d5176f01e46b8153d",
     ".eleventy.js": "9efff36c27444496a54c9932d3db545517deda0d4da400051409b3a386af9183",
@@ -28,7 +28,7 @@
     "site/_includes/layouts/docs.njk": "4e13e1eba6d4b2035678cc7f12e7076fcb0aa17873b5961a65a4593d2d012fb6",
     "site/_includes/macros/component-docs.njk": "ddc2792b620200e3d809afa95f68e49c498efb54330d7bf2680f2480f0d51616",
     "site/assets/brand-fonts.css": "dcb6dc15026ff98dab847ba7aa9f09fc5e4236392f23861f899ff522de08b9d0",
-    "site/assets/docs.css": "3684e8aed90b041024202f5d3f8c8f4bfbccde1e6f14984605c93a4e089b8c19",
+    "site/assets/docs.css": "f26dc3604803d3a0782476366fd96f7c89ee8a7369e5d5a8c9a46f554fe9a9cf",
     "src/ui/index.css": "62626f0e78d5714f914318d3784d33f44108e8e633f987d6ef3d1395d81bd9c2",
     "tests/browser/docs-overviews.spec.mjs": "c9d6298990faef75bf24744cb228c7fa113ec69517951429c520922006d2e73d",
     "tests/font-packaging.test.mjs": "c514c2a5b98b62952a67b2c53e146ad326f64ae5e418e9f6fae36cc68efc931b"

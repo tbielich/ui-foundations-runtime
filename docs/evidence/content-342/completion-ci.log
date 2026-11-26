@@ -23,168 +23,168 @@ TAP version 13
 # Subtest: canonical mixed outcomes are 3/6=50 and FAIL
 ok 1 - canonical mixed outcomes are 3/6=50 and FAIL
   ---
-  duration_ms: 1.385541
+  duration_ms: 0.871084
   ...
 # Subtest: zero denominator and skipped/unknown checks never pass
 ok 2 - zero denominator and skipped/unknown checks never pass
   ---
-  duration_ms: 0.584167
+  duration_ms: 0.194958
   ...
 # Subtest: N/A must have reviewed rationale
 ok 3 - N/A must have reviewed rationale
   ---
-  duration_ms: 0.20425
+  duration_ms: 0.077042
   ...
 # Subtest: axe incomplete/missing states block, violations fail regardless of severity
 ok 4 - axe incomplete/missing states block, violations fail regardless of severity
   ---
-  duration_ms: 0.337416
+  duration_ms: 0.116416
   ...
 # Subtest: matching reports pass; malformed/stale/mismatched reports reject
 ok 5 - matching reports pass; malformed/stale/mismatched reports reject
   ---
-  duration_ms: 5.587875
+  duration_ms: 4.971
   ...
 # Subtest: skipped passing checks and incomplete axe output cannot earn credit
 ok 6 - skipped passing checks and incomplete axe output cannot earn credit
   ---
-  duration_ms: 0.318166
+  duration_ms: 0.65875
   ...
 # Subtest: independent malformed report and provenance mutations fail closed
 ok 7 - independent malformed report and provenance mutations fail closed
   ---
-  duration_ms: 2.71925
+  duration_ms: 1.491417
   ...
 # Subtest: missing or invalid baseline history fails closed and never earns PASS
 ok 8 - missing or invalid baseline history fails closed and never earns PASS
   ---
-  duration_ms: 0.967959
+  duration_ms: 0.459959
   ...
 # Subtest: real detached-HEAD provenance is accepted; contradictory branch provenance rejected
 ok 9 - real detached-HEAD provenance is accepted; contradictory branch provenance rejected
   ---
-  duration_ms: 1.256334
+  duration_ms: 1.07275
   ...
 # Subtest: isolated Git fixture commands retain exact-checkout ownership trust
 ok 10 - isolated Git fixture commands retain exact-checkout ownership trust
   ---
-  duration_ms: 78.293792
+  duration_ms: 80.319292
   ...
 # Subtest: real detached full checkout yields truthful branch:null provenance
 ok 11 - real detached full checkout yields truthful branch:null provenance
   ---
-  duration_ms: 1736.861625
+  duration_ms: 1857.704833
   ...
 # Subtest: real shallow checkout missing baseline renders BLOCKED without crashing
 ok 12 - real shallow checkout missing baseline renders BLOCKED without crashing
   ---
-  duration_ms: 824.478959
+  duration_ms: 907.358958
   ...
 # Subtest: Accordion CSS exposes canonical UIF naming with v1 class aliases
 ok 13 - Accordion CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 5.874458
+  duration_ms: 5.539
   ...
 # Subtest: Accordion Figma export contains canonical tokens without legacy aliases
 ok 14 - Accordion Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 4.040417
+  duration_ms: 2.865458
   ...
 # Subtest: Accordion-owned emitters produce canonical classes
 ok 15 - Accordion-owned emitters produce canonical classes
   ---
-  duration_ms: 5.335458
+  duration_ms: 2.3315
   ...
 # Subtest: Accordion migration guide and registrations use the canonical namespace
 ok 16 - Accordion migration guide and registrations use the canonical namespace
   ---
-  duration_ms: 1.130292
+  duration_ms: 0.806292
   ...
 # Subtest: Avatar CSS exposes canonical UIF naming with v1 class aliases
 ok 17 - Avatar CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 5.035
+  duration_ms: 5.01225
   ...
 # Subtest: Avatar Figma export contains canonical tokens without legacy aliases
 ok 18 - Avatar Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 2.8245
+  duration_ms: 2.205208
   ...
 # Subtest: Avatar-owned emitters produce canonical classes
 ok 19 - Avatar-owned emitters produce canonical classes
   ---
-  duration_ms: 2.072917
+  duration_ms: 2.343125
   ...
 # Subtest: Avatar migration guide and registration use the canonical public namespace
 ok 20 - Avatar migration guide and registration use the canonical public namespace
   ---
-  duration_ms: 0.993458
+  duration_ms: 1.516333
   ...
 # Subtest: Badge CSS exposes canonical UIF naming with a v1 class alias
 ok 21 - Badge CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 4.300708
+  duration_ms: 3.982083
   ...
 # Subtest: Badge Figma export contains canonical tokens without legacy aliases
 ok 22 - Badge Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 1.378667
+  duration_ms: 1.522416
   ...
 # Subtest: Badge-owned emitters use canonical classes
 ok 23 - Badge-owned emitters use canonical classes
   ---
-  duration_ms: 3.001416
+  duration_ms: 1.803917
   ...
 # Subtest: Badge migration guide and registration use the canonical namespace
 ok 24 - Badge migration guide and registration use the canonical namespace
   ---
-  duration_ms: 1.142916
+  duration_ms: 0.945291
   ...
 # Subtest: Base geometry projection rejects font/palette dependencies and missing references
 ok 25 - Base geometry projection rejects font/palette dependencies and missing references
   ---
-  duration_ms: 11.433375
+  duration_ms: 15.010625
   ...
 # Subtest: each selected family stack binds existing Basic IDs without duplicate primary entries
 ok 26 - each selected family stack binds existing Basic IDs without duplicate primary entries
   ---
-  duration_ms: 1.538292
+  duration_ms: 2.548083
   ...
 # Subtest: the existing Mono role gets a terminal without changing its Basic source value
 ok 27 - the existing Mono role gets a terminal without changing its Basic source value
   ---
-  duration_ms: 0.32225
+  duration_ms: 0.299875
   ...
 # Subtest: optional typography binds every source to the exported semantic ID and WEB syntax
 ok 28 - optional typography binds every source to the exported semantic ID and WEB syntax
   ---
-  duration_ms: 10.361084
+  duration_ms: 10.394208
   ...
 # Subtest: stale semantic source identity fails instead of silently activating a guessed value
 ok 29 - stale semantic source identity fails instead of silently activating a guessed value
   ---
-  duration_ms: 132.241125
+  duration_ms: 113.111542
   ...
 # Subtest: selected Brand typography resolves A/B/C families and weights without changing Basic values
 ok 30 - selected Brand typography resolves A/B/C families and weights without changing Basic values
   ---
-  duration_ms: 5.178917
+  duration_ms: 6.23325
   ...
 # Subtest: Build Output
     # Subtest: runs successfully
     ok 1 - runs successfully
       ---
-      duration_ms: 1030.229042
+      duration_ms: 1006.693958
       ...
     # Subtest: prints header with version
     ok 2 - prints header with version
       ---
-      duration_ms: 0.07375
+      duration_ms: 0.068792
       ...
     # Subtest: prints ICONS section with count
     ok 3 - prints ICONS section with count
       ---
-      duration_ms: 0.102125
+      duration_ms: 0.089333
       ...
     # Subtest: prints TOKENS section
     ok 4 - prints TOKENS section
@@ -194,1174 +194,1174 @@ ok 30 - selected Brand typography resolves A/B/C families and weights without ch
     # Subtest: prints INTEGRITY section
     ok 5 - prints INTEGRITY section
       ---
-      duration_ms: 0.046125
+      duration_ms: 0.045209
       ...
     # Subtest: prints DIST section
     ok 6 - prints DIST section
       ---
-      duration_ms: 0.064167
+      duration_ms: 0.063708
       ...
     # Subtest: does not print ONLINE in build mode
     ok 7 - does not print ONLINE in build mode
       ---
-      duration_ms: 0.039417
+      duration_ms: 0.041917
       ...
     # Subtest: does not contain cursor sequences
     ok 8 - does not contain cursor sequences
       ---
-      duration_ms: 0.153959
+      duration_ms: 0.150708
       ...
     # Subtest: does not contain emojis
     ok 9 - does not contain emojis
       ---
-      duration_ms: 0.174583
+      duration_ms: 0.159792
       ...
     # Subtest: uses tree connectors
     ok 10 - uses tree connectors
       ---
-      duration_ms: 0.245084
+      duration_ms: 0.244208
       ...
     # Subtest: uses section separators
     ok 11 - uses section separators
       ---
-      duration_ms: 0.089041
+      duration_ms: 0.083167
       ...
     # Subtest: exits with code 0
     ok 12 - exits with code 0
       ---
-      duration_ms: 0.032291
+      duration_ms: 0.032459
       ...
     1..12
 ok 31 - Build Output
   ---
-  duration_ms: 1032.309708
+  duration_ms: 1008.578209
   type: 'suite'
   ...
 # Subtest: Checkbox mask retains its canonical glyph in modular and bundled package output
 ok 32 - Checkbox mask retains its canonical glyph in modular and bundled package output
   ---
-  duration_ms: 0.713917
+  duration_ms: 0.69525
   ...
 # Subtest: ButtonGroup CSS exposes canonical UIF naming with a v1 class alias
 ok 33 - ButtonGroup CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 3.677292
+  duration_ms: 4.20525
   ...
 # Subtest: ButtonGroup Figma export contains canonical tokens without legacy aliases
 ok 34 - ButtonGroup Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 3.260542
+  duration_ms: 2.920459
   ...
 # Subtest: ButtonGroup-owned emitters produce the canonical root class
 ok 35 - ButtonGroup-owned emitters produce the canonical root class
   ---
-  duration_ms: 2.57425
+  duration_ms: 3.349667
   ...
 # Subtest: Button CSS exposes canonical UIF naming with a v1 class alias
 ok 36 - Button CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 4.628709
+  duration_ms: 5.809875
   ...
 # Subtest: Button token export uses UIF names without legacy token aliases
 ok 37 - Button token export uses UIF names without legacy token aliases
   ---
-  duration_ms: 1.173083
+  duration_ms: 2.349791
   ...
 # Subtest: Button-owned emitters use the canonical root and explicit solid variant
 ok 38 - Button-owned emitters use the canonical root and explicit solid variant
   ---
-  duration_ms: 1.937333
+  duration_ms: 3.076333
   ...
 # Subtest: Input no longer depends on the removed legacy Button token
 ok 39 - Input no longer depends on the removed legacy Button token
   ---
-  duration_ms: 0.943708
+  duration_ms: 1.713459
   ...
 # Subtest: Calendar CSS exposes canonical UIF naming with v1 class aliases
 ok 40 - Calendar CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 4.264875
+  duration_ms: 5.688958
   ...
 # Subtest: Calendar Figma export contains all canonical tokens without legacy aliases
 ok 41 - Calendar Figma export contains all canonical tokens without legacy aliases
   ---
-  duration_ms: 1.763375
+  duration_ms: 1.690458
   ...
 # Subtest: Calendar-owned emitters produce canonical classes and shared dependencies
 ok 42 - Calendar-owned emitters produce canonical classes and shared dependencies
   ---
-  duration_ms: 2.106792
+  duration_ms: 2.423833
   ...
 # Subtest: Calendar behavior accepts legacy markup but renders canonical cells
 ok 43 - Calendar behavior accepts legacy markup but renders canonical cells
   ---
-  duration_ms: 1.439625
+  duration_ms: 1.521333
   ...
 # Subtest: Calendar no longer relies on pending-export token exceptions
 ok 44 - Calendar no longer relies on pending-export token exceptions
   ---
-  duration_ms: 2.069583
+  duration_ms: 1.507041
   ...
 # Subtest: Checkbox CSS exposes canonical UIF naming with v1 class aliases
 ok 45 - Checkbox CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 12.682042
+  duration_ms: 7.604583
   ...
 # Subtest: Checkbox Figma export contains canonical tokens without legacy aliases
 ok 46 - Checkbox Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 3.322458
+  duration_ms: 2.979375
   ...
 # Subtest: Checkbox-owned emitters and behavior use canonical classes
 ok 47 - Checkbox-owned emitters and behavior use canonical classes
   ---
-  duration_ms: 5.997541
+  duration_ms: 4.068
   ...
 # Subtest: Checkbox migration guide and registration use the canonical namespace
 ok 48 - Checkbox migration guide and registration use the canonical namespace
   ---
-  duration_ms: 5.221875
+  duration_ms: 3.248792
   ...
 # Subtest: content parser covers assistant answer blocks and nested ordered/unordered lists
 ok 49 - content parser covers assistant answer blocks and nested ordered/unordered lists
   ---
-  duration_ms: 5.172416
+  duration_ms: 2.235708
   ...
 # Subtest: fenced code retains tabs, blank lines, spaces, CRLF and literal HTML exactly
 ok 50 - fenced code retains tabs, blank lines, spaces, CRLF and literal HTML exactly
   ---
-  duration_ms: 1.285458
+  duration_ms: 0.6965
   ...
 # Subtest: unsafe URL schemes and obfuscation never produce approved hrefs
 ok 51 - unsafe URL schemes and obfuscation never produce approved hrefs
   ---
-  duration_ms: 0.729042
+  duration_ms: 0.59825
   ...
 # Subtest: unsupported input is preserved and long answers use a bounded plain fallback
 ok 52 - unsupported input is preserved and long answers use a bounded plain fallback
   ---
-  duration_ms: 0.367125
+  duration_ms: 0.357125
   ...
 # Subtest: table escaped pipes and ordered start are retained
 ok 53 - table escaped pipes and ordered start are retained
   ---
-  duration_ms: 0.104917
+  duration_ms: 0.137166
   ...
 # Subtest: Dialog uses canonical native naming and behavior
 ok 54 - Dialog uses canonical native naming and behavior
   ---
-  duration_ms: 7.247375
+  duration_ms: 7.637958
   ...
 # Subtest: Dialog integration surfaces use canonical Dialog API
 ok 55 - Dialog integration surfaces use canonical Dialog API
   ---
-  duration_ms: 3.166375
+  duration_ms: 4.37025
   ...
 # Subtest: Divider CSS exposes canonical UIF naming with a v1 class alias
 ok 56 - Divider CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 5.411333
+  duration_ms: 6.467208
   ...
 # Subtest: Divider-owned emitters produce the canonical class
 ok 57 - Divider-owned emitters produce the canonical class
   ---
-  duration_ms: 7.336041
+  duration_ms: 1.945958
   ...
 # Subtest: Divider runtime input stays code-only rather than becoming a Figma token
 ok 58 - Divider runtime input stays code-only rather than becoming a Figma token
   ---
-  duration_ms: 8.967083
+  duration_ms: 2.500791
   ...
 # Subtest: Divider migration guide explains its boundary and canonical registration
 ok 59 - Divider migration guide explains its boundary and canonical registration
   ---
-  duration_ms: 1.329958
+  duration_ms: 1.8305
   ...
-# ✅ Documentation drift check passed (110 documentation files scanned)
+# ✅ Documentation drift check passed (111 documentation files scanned)
 # Subtest: documentation baseline has no detectable drift
 ok 60 - documentation baseline has no detectable drift
   ---
-  duration_ms: 33.10425
+  duration_ms: 50.477292
   ...
 # Subtest: isAltTap: short press within threshold returns true
 ok 61 - isAltTap: short press within threshold returns true
   ---
-  duration_ms: 0.96075
+  duration_ms: 1.354958
   ...
 # Subtest: isAltTap: press exceeding threshold returns false
 ok 62 - isAltTap: press exceeding threshold returns false
   ---
-  duration_ms: 0.14925
+  duration_ms: 0.152583
   ...
 # Subtest: isAltTap: second short tap also returns true (enables toggle)
 ok 63 - isAltTap: second short tap also returns true (enables toggle)
   ---
-  duration_ms: 0.05175
+  duration_ms: 0.051083
   ...
 # Subtest: shouldDismissOnKey: Escape dismisses
 ok 64 - shouldDismissOnKey: Escape dismisses
   ---
-  duration_ms: 0.058917
+  duration_ms: 0.059167
   ...
 # Subtest: getTipFromKey: valid numbers 1–9 return corresponding string
 ok 65 - getTipFromKey: valid numbers 1–9 return corresponding string
   ---
-  duration_ms: 1.188292
+  duration_ms: 0.175458
   ...
 # Subtest: getTipFromKey: 0 returns null
 ok 66 - getTipFromKey: 0 returns null
   ---
-  duration_ms: 0.109
+  duration_ms: 0.132709
   ...
 # Subtest: getTipFromKey: numbers > 9 return null
 ok 67 - getTipFromKey: numbers > 9 return null
   ---
-  duration_ms: 0.062542
+  duration_ms: 0.431542
   ...
 # Subtest: getTipFromKey: letters return null
 ok 68 - getTipFromKey: letters return null
   ---
-  duration_ms: 0.044792
+  duration_ms: 0.131042
   ...
 # Subtest: getTipFromKey: non-numeric keys return null
 ok 69 - getTipFromKey: non-numeric keys return null
   ---
-  duration_ms: 0.680375
+  duration_ms: 0.549416
   ...
 # Subtest: shouldDismissOnKey: does not report pointer events as key dismissal
 ok 70 - shouldDismissOnKey: does not report pointer events as key dismissal
   ---
-  duration_ms: 0.518375
+  duration_ms: 0.572
   ...
 # Subtest: getTipFromKey: returns value regardless of element state (filtering is separate)
 ok 71 - getTipFromKey: returns value regardless of element state (filtering is separate)
   ---
-  duration_ms: 0.160209
+  duration_ms: 0.146333
   ...
 # Subtest: validateTips: detects duplicates
 ok 72 - validateTips: detects duplicates
   ---
-  duration_ms: 0.33925
+  duration_ms: 0.33225
   ...
 # Subtest: validateTips: detects empty values
 ok 73 - validateTips: detects empty values
   ---
-  duration_ms: 0.045792
+  duration_ms: 0.046958
   ...
 # Subtest: validateTips: all valid tips produce no warnings
 ok 74 - validateTips: all valid tips produce no warnings
   ---
-  duration_ms: 0.048833
+  duration_ms: 0.052958
   ...
 # Subtest: shouldDismissOnKey: Tab key dismisses mode (does not interfere with focus)
 ok 75 - shouldDismissOnKey: Tab key dismisses mode (does not interfere with focus)
   ---
-  duration_ms: 0.033959
+  duration_ms: 0.032416
   ...
 # Subtest: isAltTap: combo (another key pressed during Alt) returns false
 ok 76 - isAltTap: combo (another key pressed during Alt) returns false
   ---
-  duration_ms: 0.035292
+  duration_ms: 0.034208
   ...
 # Subtest: isAltTap: zero or negative elapsed returns false
 ok 77 - isAltTap: zero or negative elapsed returns false
   ---
-  duration_ms: 0.032375
+  duration_ms: 0.036333
   ...
 # Subtest: shouldDismissOnKey: modifier keys do not dismiss
 ok 78 - shouldDismissOnKey: modifier keys do not dismiss
   ---
-  duration_ms: 0.037583
+  duration_ms: 0.080292
   ...
 # Subtest: shouldDismissOnKey: letter keys dismiss
 ok 79 - shouldDismissOnKey: letter keys dismiss
   ---
-  duration_ms: 0.029416
+  duration_ms: 0.156209
   ...
 # Subtest: filterIndex: empty query returns empty array
 ok 80 - filterIndex: empty query returns empty array
   ---
-  duration_ms: 0.939542
+  duration_ms: 0.869167
   ...
 # Subtest: filterIndex: whitespace-only query returns empty array
 ok 81 - filterIndex: whitespace-only query returns empty array
   ---
-  duration_ms: 0.094833
+  duration_ms: 0.0645
   ...
 # Subtest: filterIndex: no-match query returns empty array
 ok 82 - filterIndex: no-match query returns empty array
   ---
-  duration_ms: 0.071208
+  duration_ms: 0.061791
   ...
 # Subtest: filterIndex: matches on title (case-insensitive)
 ok 83 - filterIndex: matches on title (case-insensitive)
   ---
-  duration_ms: 0.069834
+  duration_ms: 0.063167
   ...
 # Subtest: filterIndex: matches on description (case-insensitive)
 ok 84 - filterIndex: matches on description (case-insensitive)
   ---
-  duration_ms: 0.130709
+  duration_ms: 0.11225
   ...
 # Subtest: filterIndex: returns multiple matches
 ok 85 - filterIndex: returns multiple matches
   ---
-  duration_ms: 0.049
+  duration_ms: 0.046708
   ...
 # Subtest: filterIndex: preserves entry structure
 ok 86 - filterIndex: preserves entry structure
   ---
-  duration_ms: 0.260958
+  duration_ms: 0.114959
   ...
 # Subtest: navigateIndex: ArrowDown increments (clamped at end)
 ok 87 - navigateIndex: ArrowDown increments (clamped at end)
   ---
-  duration_ms: 0.113541
+  duration_ms: 0.060584
   ...
 # Subtest: navigateIndex: ArrowUp decrements (clamped at 0)
 ok 88 - navigateIndex: ArrowUp decrements (clamped at 0)
   ---
-  duration_ms: 0.441334
+  duration_ms: 0.266583
   ...
 # Subtest: navigateIndex: empty list returns -1
 ok 89 - navigateIndex: empty list returns -1
   ---
-  duration_ms: 0.326
+  duration_ms: 0.247334
   ...
 # Subtest: search index collection: includes foundation pages with title
 ok 90 - search index collection: includes foundation pages with title
   ---
-  duration_ms: 0.210791
+  duration_ms: 0.146084
   ...
 # Subtest: search index collection: excludes playground pages
 ok 91 - search index collection: excludes playground pages
   ---
-  duration_ms: 0.087
+  duration_ms: 0.060875
   ...
 # Subtest: PBT Property 3: filterIndex returns only case-insensitive substring matches
 ok 92 - PBT Property 3: filterIndex returns only case-insensitive substring matches
   ---
-  duration_ms: 41.128958
+  duration_ms: 41.642166
   ...
 # Subtest: PBT Property 5: navigateIndex stays within [0, N-1] for any key sequence
 ok 93 - PBT Property 5: navigateIndex stays within [0, N-1] for any key sequence
   ---
-  duration_ms: 1.041833
+  duration_ms: 1.055916
   ...
 # Subtest: resolveAliasRef resolves target via variable id
 ok 94 - resolveAliasRef resolves target via variable id
   ---
-  duration_ms: 1.875417
+  duration_ms: 1.351125
   ...
 # Subtest: resolveAliasRef reports missing targets
 ok 95 - resolveAliasRef reports missing targets
   ---
-  duration_ms: 1.078958
+  duration_ms: 1.240292
   ...
 # Subtest: resolveAliasRef detects alias cycles
 ok 96 - resolveAliasRef detects alias cycles
   ---
-  duration_ms: 0.119708
+  duration_ms: 0.134875
   ...
 # Subtest: resolveAliasRef resolves targets via normalized path matching
 ok 97 - resolveAliasRef resolves targets via normalized path matching
   ---
-  duration_ms: 0.144583
+  duration_ms: 0.1485
   ...
 # Subtest: buildTokenKey creates kebab-case keys
 ok 98 - buildTokenKey creates kebab-case keys
   ---
-  duration_ms: 0.678292
+  duration_ms: 0.728833
   ...
 # Subtest: classifyTokenGroup maps tokens by path/prefix
 ok 99 - classifyTokenGroup maps tokens by path/prefix
   ---
-  duration_ms: 0.298125
+  duration_ms: 0.295875
   ...
 # Subtest: formatTokenValue preserves layout columns and z-index numbers
 ok 100 - formatTokenValue preserves layout columns and z-index numbers
   ---
-  duration_ms: 0.101792
+  duration_ms: 0.107667
   ...
 # Subtest: scope helpers normalize and resolve selectors
 ok 101 - scope helpers normalize and resolve selectors
   ---
-  duration_ms: 0.43875
+  duration_ms: 0.342833
   ...
 # Subtest: toNumericFontWeight maps named and numeric weights
 ok 102 - toNumericFontWeight maps named and numeric weights
   ---
-  duration_ms: 0.275292
+  duration_ms: 0.476667
   ...
 # Subtest: resolveTokenOutputValue converts unresolved font weight refs to numeric values
 ok 103 - resolveTokenOutputValue converts unresolved font weight refs to numeric values
   ---
-  duration_ms: 0.141833
+  duration_ms: 0.414709
   ...
 # Subtest: resolveTokenOutputValue falls back to CSS var for unresolved non-font aliases
 ok 104 - resolveTokenOutputValue falls back to CSS var for unresolved non-font aliases
   ---
-  duration_ms: 0.478167
+  duration_ms: 0.331125
   ...
 # Subtest: formatTokenValue handles DTCG dimension objects
 ok 105 - formatTokenValue handles DTCG dimension objects
   ---
-  duration_ms: 0.408542
+  duration_ms: 0.269958
   ...
 # Subtest: parseWebSyntax accepts var(...) and raw --token forms
 ok 106 - parseWebSyntax accepts var(...) and raw --token forms
   ---
-  duration_ms: 2.633917
+  duration_ms: 3.217
   ...
 # Subtest: parseWebSyntax rejects invalid values
 ok 107 - parseWebSyntax rejects invalid values
   ---
-  duration_ms: 0.19025
+  duration_ms: 0.368875
   ...
 # Subtest: formatLength converts numbers/px to rem and preserves non-length values
 ok 108 - formatLength converts numbers/px to rem and preserves non-length values
   ---
-  duration_ms: 0.25
+  duration_ms: 0.4765
   ...
 # Subtest: projection resolves same-named cross-collection aliases by stable ID
 ok 109 - projection resolves same-named cross-collection aliases by stable ID
   ---
-  duration_ms: 0.996875
+  duration_ms: 0.97675
   ...
 # Subtest: alpha survives color export in literals and mode overrides
 ok 110 - alpha survives color export in literals and mode overrides
   ---
-  duration_ms: 0.149333
+  duration_ms: 0.538666
   ...
 # Subtest: partial sync preserves code-only sibling projections and replaces incoming leaves
 ok 111 - partial sync preserves code-only sibling projections and replaces incoming leaves
   ---
-  duration_ms: 0.084959
+  duration_ms: 0.115209
   ...
 # Subtest: one concrete Figma catalogue retains explicit legacy JSON views by stable ID
 ok 112 - one concrete Figma catalogue retains explicit legacy JSON views by stable ID
   ---
-  duration_ms: 3.102542
+  duration_ms: 4.869
   ...
 # Subtest: old JSON literal accessors and TypeScript keyed values remain exact
 ok 113 - old JSON literal accessors and TypeScript keyed values remain exact
   ---
-  duration_ms: 1.392583
+  duration_ms: 2.531458
   ...
 # Subtest: an ID/WEB mismatch or occupied legacy key cannot create a compatibility view
 ok 114 - an ID/WEB mismatch or occupied legacy key cannot create a compatibility view
   ---
-  duration_ms: 0.39275
+  duration_ms: 1.121708
   ...
 # Subtest: legacy references are one-way projections while primitive definitions stay concrete
 ok 115 - legacy references are one-way projections while primitive definitions stay concrete
   ---
-  duration_ms: 0.711541
+  duration_ms: 0.196583
   ...
 # Subtest: Runtime source contains no bundled font binaries or automatic font loader
 ok 116 - Runtime source contains no bundled font binaries or automatic font loader
   ---
-  duration_ms: 11.014208
+  duration_ms: 18.408708
   ...
 # Subtest: docs opt into their own relative local font loader
 ok 117 - docs opt into their own relative local font loader
   ---
-  duration_ms: 0.816083
+  duration_ms: 0.590792
   ...
 # Subtest: Form CSS exposes canonical UIF naming with v1 class aliases
 ok 118 - Form CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 4.766042
+  duration_ms: 7.415958
   ...
 # Subtest: Form Figma export contains canonical tokens without legacy aliases
 ok 119 - Form Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 2.453083
+  duration_ms: 2.0195
   ...
 # Subtest: Form-owned emitters and integrations use canonical classes
 ok 120 - Form-owned emitters and integrations use canonical classes
   ---
-  duration_ms: 2.59475
+  duration_ms: 2.276416
   ...
 # Subtest: Form migration guide and registrations use the canonical public namespace
 ok 121 - Form migration guide and registrations use the canonical public namespace
   ---
-  duration_ms: 2.519958
+  duration_ms: 1.649166
   ...
 # Subtest: Icon CSS exposes canonical UIF naming with only the v1 class alias
 ok 122 - Icon CSS exposes canonical UIF naming with only the v1 class alias
   ---
-  duration_ms: 4.604958
+  duration_ms: 4.938666
   ...
 # Subtest: Icon-owned emitters produce only the canonical public API
 ok 123 - Icon-owned emitters produce only the canonical public API
   ---
-  duration_ms: 3.734917
+  duration_ms: 4.188666
   ...
 # Subtest: the MCP pattern generator resolves canonical selectors before legacy aliases
 ok 124 - the MCP pattern generator resolves canonical selectors before legacy aliases
   ---
-  duration_ms: 4.462125
+  duration_ms: 1.788333
   ...
 # Subtest: shared pattern selectors accept canonical and legacy Icon classes
 ok 125 - shared pattern selectors accept canonical and legacy Icon classes
   ---
-  duration_ms: 1.702833
+  duration_ms: 1.759667
   ...
 # Subtest: the namespaced runtime input remains code-only rather than a Figma token
 ok 126 - the namespaced runtime input remains code-only rather than a Figma token
   ---
-  duration_ms: 1.169959
+  duration_ms: 1.353208
   ...
 # Subtest: Illustrated Message CSS exposes canonical UIF naming with v1 class aliases
 ok 127 - Illustrated Message CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 0.829708
+  duration_ms: 1.109917
   ...
 # Subtest: Illustrated Message CSS is imported into the UI index
 ok 128 - Illustrated Message CSS is imported into the UI index
   ---
-  duration_ms: 0.156666
+  duration_ms: 0.167667
   ...
 # Subtest: Illustrated Message Figma export contains canonical tokens aliased to Semantics
 ok 129 - Illustrated Message Figma export contains canonical tokens aliased to Semantics
   ---
-  duration_ms: 3.72675
+  duration_ms: 3.221458
   ...
 # Subtest: Illustrated Message restored tokens are declared as code-only exceptions
 ok 130 - Illustrated Message restored tokens are declared as code-only exceptions
   ---
-  duration_ms: 2.854541
+  duration_ms: 3.317417
   ...
 # Subtest: Illustrated Message-owned emitters produce canonical classes and preset support
 ok 131 - Illustrated Message-owned emitters produce canonical classes and preset support
   ---
-  duration_ms: 0.605459
+  duration_ms: 0.70775
   ...
 # Subtest: Illustrated Message Code Connect stays inactive without a fabricated node id
 ok 132 - Illustrated Message Code Connect stays inactive without a fabricated node id
   ---
-  duration_ms: 0.098583
+  duration_ms: 0.6575
   ...
 # Subtest: Illustrated Message public registration and package export use the canonical namespace
 ok 133 - Illustrated Message public registration and package export use the canonical namespace
   ---
-  duration_ms: 0.261833
+  duration_ms: 0.729709
   ...
 # Subtest: Illustrated Message docs and playground pages exist
 ok 134 - Illustrated Message docs and playground pages exist
   ---
-  duration_ms: 0.164166
+  duration_ms: 0.771167
   ...
 # Subtest: illustrated message macro renders preset defaults and data-preset
 ok 135 - illustrated message macro renders preset defaults and data-preset
   ---
-  duration_ms: 67.912583
+  duration_ms: 57.775916
   ...
 # Subtest: illustrated message macro falls back to the empty preset for unknown values
 ok 136 - illustrated message macro falls back to the empty preset for unknown values
   ---
-  duration_ms: 0.330792
+  duration_ms: 0.32625
   ...
 # Subtest: illustrated message macro renders a button or link action and escapes text
 ok 137 - illustrated message macro renders a button or link action and escapes text
   ---
-  duration_ms: 0.897625
+  duration_ms: 1.906167
   ...
 # Subtest: illustrated message macro honors overrides and the sm local size
 ok 138 - illustrated message macro honors overrides and the sm local size
   ---
-  duration_ms: 0.860792
+  duration_ms: 1.206375
   ...
 # Subtest: illustrated-message action URLs reject executable schemes and escape labels
 ok 139 - illustrated-message action URLs reject executable schemes and escape labels
   ---
-  duration_ms: 5.414625
+  duration_ms: 5.279333
   ...
 # Subtest: InlineAlert CSS exposes canonical UIF naming
 ok 140 - InlineAlert CSS exposes canonical UIF naming
   ---
-  duration_ms: 0.823
+  duration_ms: 0.861292
   ...
 # Subtest: InlineAlert CSS defines info, positive, negative, notice variants
 ok 141 - InlineAlert CSS defines info, positive, negative, notice variants
   ---
-  duration_ms: 0.171125
+  duration_ms: 0.168167
   ...
 # Subtest: InlineAlert CSS includes dismiss and is-hidden support
 ok 142 - InlineAlert CSS includes dismiss and is-hidden support
   ---
-  duration_ms: 0.732375
+  duration_ms: 0.751167
   ...
 # Subtest: InlineAlert CSS is imported into the UI index
 ok 143 - InlineAlert CSS is imported into the UI index
   ---
-  duration_ms: 0.470792
+  duration_ms: 0.5205
   ...
 # Subtest: InlineAlert Figma token export contains canonical tokens aliased to Semantics
 ok 144 - InlineAlert Figma token export contains canonical tokens aliased to Semantics
   ---
-  duration_ms: 3.072625
+  duration_ms: 2.541666
   ...
 # Subtest: InlineAlert restored tokens are declared as code-only exceptions
 ok 145 - InlineAlert restored tokens are declared as code-only exceptions
   ---
-  duration_ms: 3.284459
+  duration_ms: 2.410375
   ...
 # Subtest: InlineAlert-owned emitters use canonical classes
 ok 146 - InlineAlert-owned emitters use canonical classes
   ---
-  duration_ms: 1.163583
+  duration_ms: 0.54075
   ...
 # Subtest: InlineAlert Code Connect stays inactive without a fabricated node id
 ok 147 - InlineAlert Code Connect stays inactive without a fabricated node id
   ---
-  duration_ms: 0.359333
+  duration_ms: 0.096417
   ...
 # Subtest: InlineAlert element is registered and exported
 ok 148 - InlineAlert element is registered and exported
   ---
-  duration_ms: 1.309
+  duration_ms: 1.706875
   ...
 # Subtest: InlineAlert docs and playground pages exist
 ok 149 - InlineAlert docs and playground pages exist
   ---
-  duration_ms: 1.286708
+  duration_ms: 0.928375
   ...
 # Subtest: inline alert macro renders role=alert, variant class and a dismiss button
 ok 150 - inline alert macro renders role=alert, variant class and a dismiss button
   ---
-  duration_ms: 80.20175
+  duration_ms: 47.823125
   ...
 # Subtest: inline alert macro escapes user text and omits empty title and description
 ok 151 - inline alert macro escapes user text and omits empty title and description
   ---
-  duration_ms: 0.698417
+  duration_ms: 1.344084
   ...
 # Subtest: inline alert macro picks the variant default icon and honors an override
 ok 152 - inline alert macro picks the variant default icon and honors an override
   ---
-  duration_ms: 0.77025
+  duration_ms: 0.622167
   ...
 # Subtest: inline alert macro falls back to neutral and renders no icon by default
 ok 153 - inline alert macro falls back to neutral and renders no icon by default
   ---
-  duration_ms: 0.817666
+  duration_ms: 1.154459
   ...
 # Subtest: inline alert macro applies the sm local size class
 ok 154 - inline alert macro applies the sm local size class
   ---
-  duration_ms: 0.319417
+  duration_ms: 0.880292
   ...
 # Subtest: inline-alert action URLs reject executable schemes and escape labels
 ok 155 - inline-alert action URLs reject executable schemes and escape labels
   ---
-  duration_ms: 4.210083
+  duration_ms: 2.841875
   ...
 # Subtest: inline alert optional action supports button, link and omission
 ok 156 - inline alert optional action supports button, link and omission
   ---
-  duration_ms: 1.82225
+  duration_ms: 0.555125
   ...
 # Subtest: Input CSS exposes canonical UIF naming with v1 class aliases
 ok 157 - Input CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 4.5
+  duration_ms: 6.175625
   ...
 # Subtest: Input Figma export contains all canonical tokens without legacy aliases
 ok 158 - Input Figma export contains all canonical tokens without legacy aliases
   ---
-  duration_ms: 2.988875
+  duration_ms: 5.064375
   ...
 # Subtest: Input-owned emitters produce canonical Input, Icon, and Label classes
 ok 159 - Input-owned emitters produce canonical Input, Icon, and Label classes
   ---
-  duration_ms: 2.723417
+  duration_ms: 6.582125
   ...
 # Subtest: Input behavior and Date Input accept canonical and legacy Input markup
 ok 160 - Input behavior and Date Input accept canonical and legacy Input markup
   ---
-  duration_ms: 2.658542
+  duration_ms: 4.464959
   ...
 # Subtest: Input migration guide explains the v1 boundary and canonical registration
 ok 161 - Input migration guide explains the v1 boundary and canonical registration
   ---
-  duration_ms: 1.821833
+  duration_ms: 4.417125
   ...
 # Subtest: Label CSS exposes canonical UIF naming with v1 class aliases
 ok 162 - Label CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 4.73775
+  duration_ms: 7.346167
   ...
 # Subtest: Label-owned emitters produce canonical classes and runtime inputs
 ok 163 - Label-owned emitters produce canonical classes and runtime inputs
   ---
-  duration_ms: 26.235958
+  duration_ms: 8.632417
   ...
 # Subtest: shared Button and Form selectors retain Label-family compatibility
 ok 164 - shared Button and Form selectors retain Label-family compatibility
   ---
-  duration_ms: 18.583125
+  duration_ms: 4.461042
   ...
 # Subtest: Typography Label tokens keep their separately governed namespace
 ok 165 - Typography Label tokens keep their separately governed namespace
   ---
-  duration_ms: 9.90225
+  duration_ms: 5.221292
   ...
 # Subtest: Label migration guide uses the canonical Custom Element tag
 ok 166 - Label migration guide uses the canonical Custom Element tag
   ---
-  duration_ms: 17.042917
+  duration_ms: 7.549
   ...
 # Subtest: legacy bundle orders UIF layers and retains nested rules, comments and quoted braces
 ok 167 - legacy bundle orders UIF layers and retains nested rules, comments and quoted braces
   ---
-  duration_ms: 0.843209
+  duration_ms: 0.832458
   ...
 # Subtest: unsupported layers and malformed sources fail instead of silently losing rules
 ok 168 - unsupported layers and malformed sources fail instead of silently losing rules
   ---
-  duration_ms: 0.165583
+  duration_ms: 0.160875
   ...
 # Subtest: Link CSS exposes canonical UIF naming with the v1 class alias
 ok 169 - Link CSS exposes canonical UIF naming with the v1 class alias
   ---
-  duration_ms: 13.444083
+  duration_ms: 8.476584
   ...
 # Subtest: Link Figma export contains all canonical tokens without legacy aliases
 ok 170 - Link Figma export contains all canonical tokens without legacy aliases
   ---
-  duration_ms: 9.049209
+  duration_ms: 10.214041
   ...
 # Subtest: Link-owned emitters produce the canonical class and shared Icon class
 ok 171 - Link-owned emitters produce the canonical class and shared Icon class
   ---
-  duration_ms: 1.714167
+  duration_ms: 5.97275
   ...
 # Subtest: Link retains Icon and legacy class compatibility without token aliases
 ok 172 - Link retains Icon and legacy class compatibility without token aliases
   ---
-  duration_ms: 1.448917
+  duration_ms: 4.960042
   ...
 # Subtest: Link migration guide explains the v1 boundary and canonical registration
 ok 173 - Link migration guide explains the v1 boundary and canonical registration
   ---
-  duration_ms: 3.007125
+  duration_ms: 6.05825
   ...
 # Subtest: the consumed naming contract reports no repository-owned legacy usage
 ok 174 - the consumed naming contract reports no repository-owned legacy usage
   ---
-  duration_ms: 194.321583
+  duration_ms: 206.284792
   ...
 # Subtest: owned templates, previews, schemas, elements, and MCP fixtures do not emit legacy classes
 ok 175 - owned templates, previews, schemas, elements, and MCP fixtures do not emit legacy classes
   ---
-  duration_ms: 22.1945
+  duration_ms: 36.947542
   ...
 # Subtest: completion guidance defines canonical owned output and v1 CSS-only compatibility
 ok 176 - completion guidance defines canonical owned output and v1 CSS-only compatibility
   ---
-  duration_ms: 0.859833
+  duration_ms: 0.221042
   ...
 # Subtest: migration history lives in the repository guide, not public pattern pages
 ok 177 - migration history lives in the repository guide, not public pattern pages
   ---
-  duration_ms: 6.282166
+  duration_ms: 3.998083
   ...
 # Subtest: pattern hero includes all introduction markup and ends immediately before Anatomy
 ok 178 - pattern hero includes all introduction markup and ends immediately before Anatomy
   ---
-  duration_ms: 0.918875
+  duration_ms: 0.899667
   ...
 # Subtest: other pages and patterns without Anatomy retain their complete body
 ok 179 - other pages and patterns without Anatomy retain their complete body
   ---
-  duration_ms: 0.180209
+  duration_ms: 0.179959
   ...
 # Subtest: pattern previews without Anatomy stay in the hero before Options
 ok 180 - pattern previews without Anatomy stay in the hero before Options
   ---
-  duration_ms: 0.083708
+  duration_ms: 0.083375
   ...
 # Subtest: Calendar content starts at Usage even when Anatomy appears later
 ok 181 - Calendar content starts at Usage even when Anatomy appears later
   ---
-  duration_ms: 0.053166
+  duration_ms: 0.053792
   ...
 # Subtest: expandShortHex expands 3- and 4-digit hex colors
 ok 182 - expandShortHex expands 3- and 4-digit hex colors
   ---
-  duration_ms: 0.736875
+  duration_ms: 0.723667
   ...
 # Subtest: toHex normalizes short and long hex colors consistently
 ok 183 - toHex normalizes short and long hex colors consistently
   ---
-  duration_ms: 0.176958
+  duration_ms: 0.17775
   ...
 # Subtest: valuesMatch treats equivalent short and long hex colors as equal
 ok 184 - valuesMatch treats equivalent short and long hex colors as equal
   ---
-  duration_ms: 0.083666
+  duration_ms: 0.081667
   ...
 # Subtest: ProgressCircle exposes canonical UIF integration surfaces
 ok 185 - ProgressCircle exposes canonical UIF integration surfaces
   ---
-  duration_ms: 13.112
+  duration_ms: 4.207875
   ...
 # Subtest: ProgressCircle tokens are owned by the pattern and reference existing layers
 ok 186 - ProgressCircle tokens are owned by the pattern and reference existing layers
   ---
-  duration_ms: 2.713916
+  duration_ms: 3.015917
   ...
 # Subtest: ProgressCircle component preserves determinate and indeterminate accessibility semantics
 ok 187 - ProgressCircle component preserves determinate and indeterminate accessibility semantics
   ---
-  duration_ms: 5.714875
+  duration_ms: 1.049917
   ...
 # Subtest: element registrations and TypeScript tag names use the canonical namespace
 ok 188 - element registrations and TypeScript tag names use the canonical namespace
   ---
-  duration_ms: 5.316208
+  duration_ms: 4.083584
   ...
 # Subtest: owned public examples and emitters produce only canonical namespace usage
 ok 189 - owned public examples and emitters produce only canonical namespace usage
   ---
-  duration_ms: 15.095959
+  duration_ms: 21.854334
   ...
 # Subtest: module filenames and package entry points remain stable
 ok 190 - module filenames and package entry points remain stable
   ---
-  duration_ms: 0.433459
+  duration_ms: 0.410292
   ...
 # Subtest: consumer migration guide documents every breaking tag rename
 ok 191 - consumer migration guide documents every breaking tag rename
   ---
-  duration_ms: 0.202667
+  duration_ms: 0.197167
   ...
 # Subtest: Radio CSS exposes canonical UIF naming with v1 class aliases
 ok 192 - Radio CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 6.203667
+  duration_ms: 4.067541
   ...
 # Subtest: Radio Figma export contains canonical tokens without legacy aliases
 ok 193 - Radio Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 2.295625
+  duration_ms: 1.768666
   ...
 # Subtest: Radio-owned emitters and behavior use canonical classes
 ok 194 - Radio-owned emitters and behavior use canonical classes
   ---
-  duration_ms: 3.438625
+  duration_ms: 2.227333
   ...
 # Subtest: Radio migration guide and registration use the canonical namespace
 ok 195 - Radio migration guide and registration use the canonical namespace
   ---
-  duration_ms: 7.333583
+  duration_ms: 0.890375
   ...
 # Subtest: deprecated React package exports and source wrappers are removed
 ok 196 - deprecated React package exports and source wrappers are removed
   ---
-  duration_ms: 1.051875
+  duration_ms: 1.043958
   ...
 # Subtest: build and smoke checks do not produce or require a React bundle
 ok 197 - build and smoke checks do not produce or require a React bundle
   ---
-  duration_ms: 0.336625
+  duration_ms: 0.342375
   ...
 # Subtest: consumer migration guide covers every removed public entry point
 ok 198 - consumer migration guide covers every removed public entry point
   ---
-  duration_ms: 0.741125
+  duration_ms: 0.747916
   ...
 # Subtest: argument parsing rejects unknown flags and missing values
 ok 199 - argument parsing rejects unknown flags and missing values
   ---
-  duration_ms: 0.991083
+  duration_ms: 1.902958
   ...
 # Subtest: resolveOutDir refuses an existing output directory and never deletes it
 ok 200 - resolveOutDir refuses an existing output directory and never deletes it
   ---
-  duration_ms: 0.913208
+  duration_ms: 2.285125
   ...
 # Subtest: resolveOutDir refuses to write through a symlinked ancestor under the repo root
 ok 201 - resolveOutDir refuses to write through a symlinked ancestor under the repo root
   ---
-  duration_ms: 1.405792
+  duration_ms: 2.448166
   ...
 # Subtest: default output directory lives outside the repository (no self-dirt)
 ok 202 - default output directory lives outside the repository (no self-dirt)
   ---
-  duration_ms: 1.045125
+  duration_ms: 1.936583
   ...
 # Subtest: passing commands + real tarball bytes produce PASS only when source is clean
 ok 203 - passing commands + real tarball bytes produce PASS only when source is clean
   ---
-  duration_ms: 213.369417
+  duration_ms: 199.173125
   ...
 # Subtest: an empty command list can never earn PASS
 ok 204 - an empty command list can never earn PASS
   ---
-  duration_ms: 225.063084
+  duration_ms: 157.302875
   ...
 # Subtest: a failing command fails closed with preserved logs and real exit code
 ok 205 - a failing command fails closed with preserved logs and real exit code
   ---
-  duration_ms: 159.138584
+  duration_ms: 131.085
   ...
 # Subtest: a failed pack (no tarball / no SHA-256) fails closed
 ok 206 - a failed pack (no tarball / no SHA-256) fails closed
   ---
-  duration_ms: 107.557791
+  duration_ms: 115.113625
   ...
 # Subtest: summary.json has a matching self-checksum sidecar
 ok 207 - summary.json has a matching self-checksum sidecar
   ---
-  duration_ms: 101.542667
+  duration_ms: 96.454166
   ...
 # Subtest: the fixed required command list covers root release:check and MCP build/test
 ok 208 - the fixed required command list covers root release:check and MCP build/test
   ---
-  duration_ms: 0.349041
+  duration_ms: 0.358583
   ...
 # Subtest: missing SHA, dirty source and changes during verification fail closed
 ok 209 - missing SHA, dirty source and changes during verification fail closed
   ---
-  duration_ms: 325.143833
+  duration_ms: 324.897083
   ...
 # Subtest: container ratios derive from current typography anchors and follow source changes
 ok 210 - container ratios derive from current typography anchors and follow source changes
   ---
-  duration_ms: 3.939541
+  duration_ms: 3.593125
   ...
 # Subtest: Select CSS exposes canonical UIF naming with a v1 class alias
 ok 211 - Select CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 13.507542
+  duration_ms: 5.634583
   ...
 # Subtest: Select Figma export contains canonical tokens without legacy aliases
 ok 212 - Select Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 3.88775
+  duration_ms: 2.163833
   ...
 # Subtest: Select-owned emitters and Calendar composition use canonical classes
 ok 213 - Select-owned emitters and Calendar composition use canonical classes
   ---
-  duration_ms: 5.03625
+  duration_ms: 2.964958
   ...
 # Subtest: Select migration guide and registration use the canonical namespace
 ok 214 - Select migration guide and registration use the canonical namespace
   ---
-  duration_ms: 1.475041
+  duration_ms: 2.025917
   ...
 # Subtest: PBT Property 1: Sitemap excludes playground, noindex, and excludeFromCollections pages
 ok 215 - PBT Property 1: Sitemap excludes playground, noindex, and excludeFromCollections pages
   ---
-  duration_ms: 21.330792
+  duration_ms: 39.659791
   ...
 # Subtest: PBT Property 2: Absolute URL is baseUrl + pageUrl with no double slashes in path
 ok 216 - PBT Property 2: Absolute URL is baseUrl + pageUrl with no double slashes in path
   ---
-  duration_ms: 3.821041
+  duration_ms: 2.992375
   ...
 # Subtest: PBT Property 3: Lastmod is present iff page has lastModified or date
 ok 217 - PBT Property 3: Lastmod is present iff page has lastModified or date
   ---
-  duration_ms: 3.871583
+  duration_ms: 5.809875
   ...
 # Subtest: PBT Property 4: Title tag follows format rules
 ok 218 - PBT Property 4: Title tag follows format rules
   ---
-  duration_ms: 1.81475
+  duration_ms: 1.430916
   ...
 # Subtest: PBT Property 5: Meta description renders iff description is non-empty
 ok 219 - PBT Property 5: Meta description renders iff description is non-empty
   ---
-  duration_ms: 0.457458
+  duration_ms: 3.619833
   ...
 # Subtest: PBT Property 6: Robots noindex renders iff noindex or isPlayground is true
 ok 220 - PBT Property 6: Robots noindex renders iff noindex or isPlayground is true
   ---
-  duration_ms: 2.398083
+  duration_ms: 17.59175
   ...
 # Subtest: PBT Property 7: JSON-LD renders only for qualifying /patterns/* pages
 ok 221 - PBT Property 7: JSON-LD renders only for qualifying /patterns/* pages
   ---
-  duration_ms: 2.637417
+  duration_ms: 3.391791
   ...
 # Subtest: PBT Property 8: LLMs.txt includes every page with a title from a collection
 ok 222 - PBT Property 8: LLMs.txt includes every page with a title from a collection
   ---
-  duration_ms: 3.465792
+  duration_ms: 5.853834
   ...
 # Subtest: progress macro preserves zero, clamps finite values and omits fabricated indeterminate percentages
 ok 223 - progress macro preserves zero, clamps finite values and omits fabricated indeterminate percentages
   ---
-  duration_ms: 41.277417
+  duration_ms: 58.049958
   ...
 # Subtest: meter macro keeps native and visual measurements aligned for nonzero, inverted and exceeded ranges
 ok 224 - meter macro keeps native and visual measurements aligned for nonzero, inverted and exceeded ranges
   ---
-  duration_ms: 1.743209
+  duration_ms: 4.960375
   ...
 # Subtest: indicator playground generators preserve all controls and render usable escaped Nunjucks
 ok 225 - indicator playground generators preserve all controls and render usable escaped Nunjucks
   ---
-  duration_ms: 4.859042
+  duration_ms: 2.911334
   ...
 # Subtest: restored tokens use existing semantics and declare source reconciliation explicitly
 ok 226 - restored tokens use existing semantics and declare source reconciliation explicitly
   ---
-  duration_ms: 2.922916
+  duration_ms: 4.930792
   ...
 # Subtest: Switch CSS exposes canonical UIF naming with v1 class aliases
 ok 227 - Switch CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 5.118916
+  duration_ms: 14.281333
   ...
 # Subtest: Switch Figma export contains canonical tokens without legacy aliases
 ok 228 - Switch Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 2.090167
+  duration_ms: 4.825416
   ...
 # Subtest: Switch-owned emitters and behavior use canonical classes
 ok 229 - Switch-owned emitters and behavior use canonical classes
   ---
-  duration_ms: 2.503625
+  duration_ms: 9.383083
   ...
 # Subtest: Switch migration guide and registration use the canonical namespace
 ok 230 - Switch migration guide and registration use the canonical namespace
   ---
-  duration_ms: 2.856625
+  duration_ms: 8.076208
   ...
 # Subtest: Tabs CSS exposes canonical UIF naming with v1 class aliases
 ok 231 - Tabs CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 5.97425
+  duration_ms: 11.989875
   ...
 # Subtest: Tabs Figma export contains canonical tokens without legacy aliases
 ok 232 - Tabs Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 1.329375
+  duration_ms: 3.26375
   ...
 # Subtest: Tabs-owned emitters produce canonical classes
 ok 233 - Tabs-owned emitters produce canonical classes
   ---
-  duration_ms: 3.579375
+  duration_ms: 3.490709
   ...
 # Subtest: Tabs migration guide and registrations use the canonical public namespace
 ok 234 - Tabs migration guide and registrations use the canonical public namespace
   ---
-  duration_ms: 0.758125
+  duration_ms: 1.397083
   ...
 # Subtest: Tabs Web Component implements documented keyboard activation and panel sync
 ok 235 - Tabs Web Component implements documented keyboard activation and panel sync
   ---
-  duration_ms: 1.077375
+  duration_ms: 3.154
   ...
 # Subtest: Tabs use native tab-list overflow without panel scroll-snap switching
 ok 236 - Tabs use native tab-list overflow without panel scroll-snap switching
   ---
-  duration_ms: 1.604209
+  duration_ms: 2.86625
   ...
 # Subtest: Textarea CSS exposes canonical UIF naming with a v1 class alias
 ok 237 - Textarea CSS exposes canonical UIF naming with a v1 class alias
   ---
-  duration_ms: 4.16725
+  duration_ms: 6.731792
   ...
 # Subtest: Textarea Figma export contains canonical tokens without legacy aliases
 ok 238 - Textarea Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 2.093125
+  duration_ms: 1.663166
   ...
 # Subtest: Textarea-owned emitters use the canonical class
 ok 239 - Textarea-owned emitters use the canonical class
   ---
-  duration_ms: 2.863291
+  duration_ms: 2.774
   ...
 # Subtest: Textarea migration guide and registration use the canonical namespace
 ok 240 - Textarea migration guide and registration use the canonical namespace
   ---
-  duration_ms: 0.715958
+  duration_ms: 2.436667
   ...
 # Subtest: Tooltip CSS exposes canonical UIF naming with v1 class aliases
 ok 241 - Tooltip CSS exposes canonical UIF naming with v1 class aliases
   ---
-  duration_ms: 4.865916
+  duration_ms: 11.681666
   ...
 # Subtest: Tooltip Figma export contains canonical tokens without legacy aliases
 ok 242 - Tooltip Figma export contains canonical tokens without legacy aliases
   ---
-  duration_ms: 1.706625
+  duration_ms: 2.464875
   ...
 # Subtest: Tooltip-owned emitters produce canonical classes
 ok 243 - Tooltip-owned emitters produce canonical classes
   ---
-  duration_ms: 2.451875
+  duration_ms: 2.820042
   ...
 # Subtest: Tooltip migration guide and registration use the canonical namespace
 ok 244 - Tooltip migration guide and registration use the canonical namespace
   ---
-  duration_ms: 1.343291
+  duration_ms: 2.983625
   ...
 # Subtest: Tooltip Web Component maintains a stable accessible description relationship
 ok 245 - Tooltip Web Component maintains a stable accessible description relationship
   ---
-  duration_ms: 1.198167
+  duration_ms: 1.905042
   ...
 # Subtest: Tooltip exposes bounded delay and pointer behavior across Runtime surfaces
 ok 246 - Tooltip exposes bounded delay and pointer behavior across Runtime surfaces
   ---
-  duration_ms: 2.467625
+  duration_ms: 2.852875
   ...
 # Subtest: generated contract loads from consumed Vault artifact
 ok 247 - generated contract loads from consumed Vault artifact
   ---
-  duration_ms: 0.726
+  duration_ms: 0.723
   ...
 # Subtest: class prefix validation uses generated contract examples
 ok 248 - class prefix validation uses generated contract examples
   ---
-  duration_ms: 0.349042
+  duration_ms: 0.163416
   ...
 # Subtest: CSS custom property prefix validation uses generated contract examples
 ok 249 - CSS custom property prefix validation uses generated contract examples
   ---
-  duration_ms: 0.491541
+  duration_ms: 0.170875
   ...
 # Subtest: proof and assumption prefixes classify as canonical
 ok 250 - proof and assumption prefixes classify as canonical
   ---
-  duration_ms: 0.082875
+  duration_ms: 0.064834
   ...
 # Subtest: pattern ID prefix classification uses generated contract examples
 ok 251 - pattern ID prefix classification uses generated contract examples
   ---
-  duration_ms: 0.389917
+  duration_ms: 0.154
   ...
 # Subtest: public macro and Custom Element namespaces use the consumed contract
 ok 252 - public macro and Custom Element namespaces use the consumed contract
   ---
-  duration_ms: 0.170125
+  duration_ms: 0.1425
   ...
 # Subtest: deprecated bare class warnings use generated compatibility policy
 ok 253 - deprecated bare class warnings use generated compatibility policy
   ---
-  duration_ms: 0.19225
+  duration_ms: 0.142666
   ...
 # Subtest: deprecated legacy token warnings use generated compatibility policy
 ok 254 - deprecated legacy token warnings use generated compatibility policy
   ---
-  duration_ms: 0.312333
+  duration_ms: 0.070667
   ...
 # Subtest: runtime naming contract validation passes against generated data
 ok 255 - runtime naming contract validation passes against generated data
   ---
-  duration_ms: 208.571625
+  duration_ms: 157.929417
   ...
 # Subtest: stale generated contract detection fails when generated file differs
 ok 256 - stale generated contract detection fails when generated file differs
   ---
-  duration_ms: 88.187459
+  duration_ms: 76.583042
   ...
 1..256
 # tests 267
@@ -1371,13 +1371,13 @@ ok 256 - stale generated contract detection fails when generated file differs
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 2752.806625
+# duration_ms 2941.343625
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
 
 > ui-foundations@1.1.0 docs:lint
 > node scripts/check-docs-drift.mjs
 
-✅ Documentation drift check passed (110 documentation files scanned)
+✅ Documentation drift check passed (111 documentation files scanned)
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
 
 > ui-foundations@1.1.0 naming:check
@@ -1413,7 +1413,7 @@ npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm 
 ├ Macros                           READY
 └ Bundles                          READY
 ────────────────────────────────────────
-BUILD OK · READY · 472ms
+BUILD OK · READY · 479ms
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
 
 > ui-foundations@1.1.0 smoke:check
@@ -1546,149 +1546,150 @@ npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm 
 [11ty] Writing ./_site/components/index.html from ./site/components/index.md (njk)
 [11ty] Writing ./_site/examples/index.html from ./site/examples/index.md (njk)
 [11ty] Writing ./_site/patterns/index.html from ./site/patterns/index.md (njk)
-[11ty] Benchmark    321ms  47%     1× (Data) `./site/_data/accessibilityEvidence.js`
-[11ty] Copied 701 Wrote 85 files in 0.68 seconds (v3.1.6)
+[11ty] Benchmark    480ms  55%     1× (Data) `./site/_data/accessibilityEvidence.js`
+[11ty] Copied 701 Wrote 85 files in 0.87 seconds (v3.1.6)
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
 
 > ui-foundations@1.1.0 test:browser:only
 > playwright test tests/browser/*.spec.mjs
 
-[WebServer] (node:73381) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:78764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
-Running 129 tests using 1 worker
+Running 130 tests using 1 worker
 
-  ✓    1 [chromium] › tests/browser/alert-message-repair.spec.mjs:3:1 › inline alert actions update safely, activate and coexist with dismiss (255ms)
-  ✓    2 [chromium] › tests/browser/alert-message-repair.spec.mjs:35:1 › custom illustrations retain accessible names across rerenders while default icons stay decorative (165ms)
-  ✓    3 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 320px / root 16px (116ms)
-  ✓    4 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 320px / root 20px (118ms)
-  ✓    5 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 1200px / root 16px (113ms)
-  ✓    6 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 1200px / root 20px (114ms)
-  ✓    7 [chromium] › tests/browser/base-native.spec.mjs:7:3 › Base preserves native controls and makes no font requests (light) (251ms)
-  ✓    8 [chromium] › tests/browser/base-native.spec.mjs:7:3 › Base preserves native controls and makes no font requests (dark) (257ms)
-  ✓    9 [chromium] › tests/browser/base-native.spec.mjs:48:1 › Base retains tabs keyboard selection, native details and dialog focus (223ms)
-  ✓   10 [chromium] › tests/browser/base-native.spec.mjs:75:1 › Base retains tooltip, input enhancement, dismiss and date selection (269ms)
-  ✓   11 [chromium] › tests/browser/base-native.spec.mjs:97:1 › Base calendar/table selection stays visible and requests sorting through existing behavior (223ms)
-  ✓   12 [chromium] › tests/browser/base-native.spec.mjs:110:1 › Base month navigation follows the current header and local date values (189ms)
-  ✓   13 [chromium] › tests/browser/base-native.spec.mjs:125:1 › Calendar retains keyboard focus after selection and month rerender (141ms)
-  ✓   14 [chromium] › tests/browser/brand-a-typography.spec.mjs:29:3 › Brand typography applies the explicit A/B/C text roles (light) (204ms)
-  ✓   15 [chromium] › tests/browser/brand-a-typography.spec.mjs:29:3 › Brand typography applies the explicit A/B/C text roles (dark) (197ms)
-  ✓   16 [chromium] › tests/browser/brand-a-typography.spec.mjs:66:1 › docs snapshots clear optional A slots across A→B→C→A while retaining authored geometry (423ms)
-  ✓   17 [chromium] › tests/browser/brand-a-typography.spec.mjs:80:1 › legacy and concrete Basic overrides preserve A routing and the Mono role (288ms)
-  ✓   18 [chromium] › tests/browser/brand-a-typography.spec.mjs:103:1 › stable Pattern font tokens support local overrides and deprecated inputs (149ms)
-  ✓   19 [chromium] › tests/browser/button-text-spacing.spec.mjs:4:3 › long Button labels fit a narrow container with reader text spacing (light) (132ms)
-  ✓   20 [chromium] › tests/browser/button-text-spacing.spec.mjs:4:3 › long Button labels fit a narrow container with reader text spacing (dark) (105ms)
-  ✓   21 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: a / light (413ms)
-  ✓   22 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: a / dark (407ms)
-  ✓   23 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: b / light (439ms)
-  ✓   24 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: b / dark (437ms)
-  ✓   25 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: c / light (439ms)
-  ✓   26 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: c / dark (435ms)
-  ✓   27 [chromium] › tests/browser/container-scale.spec.mjs:39:1 › container scales inherited typography, line height, spacing and radii without scaling track height or borders (188ms)
-  ✓   28 [chromium] › tests/browser/container-scale.spec.mjs:54:1 › local small remains relative, nested context replaces its parent and changes apply without rerender (199ms)
-  ✓   29 [chromium] › tests/browser/container-scale.spec.mjs:74:1 › relative scaling preserves the reader's root font size (187ms)
-  ✓   30 [chromium] › tests/browser/container-scale.spec.mjs:87:1 › static macros inherit container scale without Custom Element JavaScript (128ms)
-  ✓   31 [chromium] › tests/browser/content.spec.mjs:18:1 › content example has semantic headings, nested lists, emphasis, code and a table (270ms)
-  ✓   32 [chromium] › tests/browser/content.spec.mjs:31:1 › untrusted HTML, executable links and images remain inert text (189ms)
-  ✓   33 [chromium] › tests/browser/content.spec.mjs:51:1 › copy is keyboard accessible, exact and announces success and failure (252ms)
-  ✓   34 [chromium] › tests/browser/content.spec.mjs:72:1 › plain output preserves Unicode, whitespace and uses actual monospaced metrics (185ms)
-  ✓   35 [chromium] › tests/browser/content.spec.mjs:92:1 › long code and tables scroll locally at mobile width and large text (215ms)
-  ✓   36 [chromium] › tests/browser/content.spec.mjs:104:1 › heading configuration, oversized fallback and re-render lifecycle preserve source (281ms)
-  ✓   37 [chromium] › tests/browser/content.spec.mjs:124:1 › content has readable code and focus across brand/scheme contexts without motion (250ms)
-  ✓   38 [chromium] › tests/browser/content.spec.mjs:150:1 › Pi chat patch preserves text fallback, upgrades history and formats only assistant messages (201ms)
-  ✓   39 [chromium] › tests/browser/content.spec.mjs:183:1 › content stage switches examples independently of brand and mode (442ms)
-  ✓   40 [chromium] › tests/browser/content.spec.mjs:205:1 › opt-in legacy CSS supplies tokens, controls and the consumer-owned mono font (165ms)
-  ✓   41 [chromium] › tests/browser/datepicker-regression.spec.mjs:20:1 › clicking a calendar day drives day/month/year state and selected DOM state (476ms)
-  ✓   42 [chromium] › tests/browser/docs-foundations.spec.mjs:16:1 › Base preview embeds under its shipped headers while external embedding stays blocked (256ms)
-  ✓   43 [chromium] › tests/browser/docs-foundations.spec.mjs:40:1 › Foundations has four entry points with Base under Theming (231ms)
-  ✓   44 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations architecture has working section navigation on desktop and mobile (234ms)
-  ✓   45 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations accessibility has working section navigation on desktop and mobile (236ms)
-  ✓   46 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations theming has working section navigation on desktop and mobile (259ms)
-  ✓   47 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations content has working section navigation on desktop and mobile (246ms)
-  ✓   48 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations internationalization has working section navigation on desktop and mobile (231ms)
-  ✓   49 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations class-naming has working section navigation on desktop and mobile (231ms)
-  ✓   50 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations design-tokens has working section navigation on desktop and mobile (225ms)
-  ✓   51 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations base has working section navigation on desktop and mobile (273ms)
-  ✓   52 [chromium] › tests/browser/docs-navigation.spec.mjs:5:1 › mobile drawer contains focus and closes through each supported action (682ms)
-  ✓   53 [chromium] › tests/browser/docs-navigation.spec.mjs:37:1 › resize restores the same sidebar and desktop layout (441ms)
-  ✓   54 [chromium] › tests/browser/docs-navigation.spec.mjs:55:1 › without JavaScript mobile navigation remains available (162ms)
-  ✓   55 [chromium] › tests/browser/docs-navigation.spec.mjs:65:1 › page jump navigation stacks below mobile breadcrumbs and beside desktop content (241ms)
-  ✓   56 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › patterns overview uses the shared grid with inert previews and responsive cards (417ms)
-  ✓   57 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for a (611ms)
-  ✓   58 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for b (646ms)
-  ✓   59 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for c (623ms)
-  ✓   60 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › components overview uses the shared grid with inert previews and responsive cards (241ms)
-  ✓   61 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for a (303ms)
-  ✓   62 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for b (323ms)
-  ✓   63 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for c (325ms)
-  ✓   64 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › examples overview uses the shared grid with inert previews and responsive cards (244ms)
-  ✓   65 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for a (317ms)
-  ✓   66 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for b (352ms)
-  ✓   67 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for c (337ms)
-  ✓   68 [chromium] › tests/browser/docs-overviews.spec.mjs:58:1 › UI Foundations search includes tokens, patterns, components, examples and guides (253ms)
-  ✓   69 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:13:1 › color brand selection keeps the docs shell stable and shows each brand's actual swatches (468ms)
-  ✓   70 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:29:1 › typeface brand selection shows only the selected families without changing other sections (365ms)
-  ✓   71 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:48:1 › Examples overview uses linked preview cards without nested interactive controls (243ms)
-  ✓   72 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand A without changing the docs (366ms)
-  ✓   73 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand B without changing the docs (383ms)
-  ✓   74 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand C without changing the docs (361ms)
-  ✓   75 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:98:1 › shared preview URL survives reload, wins over storage and preserves unrelated query/hash state (450ms)
-  ✓   76 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:120:1 › URL preview preferences work when local storage is unavailable and reject invalid context values (329ms)
-  ✓   77 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and selected families (light) (164ms)
-  ✓   78 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and Basic fallbacks (light) (174ms)
-  ✓   79 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and selected families (dark) (164ms)
-  ✓   80 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and Basic fallbacks (dark) (171ms)
-  ✓   81 [chromium] › tests/browser/font-loading.spec.mjs:43:1 › Runtime CSS alone makes no font requests (74ms)
-  ✓   82 [chromium] › tests/browser/illustrated-message-contrast.spec.mjs:8:1 › Illustrated Message text meets contrast in docs and the actual playground (3.1s)
-  ✓   83 [chromium] › tests/browser/input-attribute-safety.spec.mjs:21:1 › search input preserves a quote-breaking value without injecting attributes (170ms)
-  ✓   84 [chromium] › tests/browser/input-attribute-safety.spec.mjs:31:1 › dynamic attributes and host id stay literal for HTML and ampersand strings (165ms)
-  ✓   85 [chromium] › tests/browser/input-attribute-safety.spec.mjs:53:1 › type, min, max and step values stay literal without extra attributes (165ms)
-  ✓   86 [chromium] › tests/browser/input-attribute-safety.spec.mjs:68:1 › attribute updates after mount re-render literally (165ms)
-  ✓   87 [chromium] › tests/browser/input-attribute-safety.spec.mjs:86:1 › disabled and readonly states render and toggle (158ms)
-  ✓   88 [chromium] › tests/browser/input-attribute-safety.spec.mjs:99:1 › number and password controls still render (257ms)
-  ✓   89 [chromium] › tests/browser/page-sections.spec.mjs:3:1 › every page type has a full-width hero on an unpainted page canvas (1.1s)
-  ✓   90 [chromium] › tests/browser/page-sections.spec.mjs:22:1 › pattern preview and introduction stay above the Anatomy section divider (411ms)
-  ✓   91 [chromium] › tests/browser/page-sections.spec.mjs:38:1 › Tooltip preview belongs to the hero while Options starts the content section (154ms)
-  ✓   92 [chromium] › tests/browser/page-sections.spec.mjs:47:1 › Calendar keeps only its preview in the hero and starts its content at Usage (183ms)
-  ✓   93 [chromium] › tests/browser/playground-branding.spec.mjs:3:1 › Meter and Illustrated Message keep selected brand colors after control updates (632ms)
-  ✓   94 [chromium] › tests/browser/playground-branding.spec.mjs:19:1 › selected Tabs follow Solid Button branding in light and Outline Button branding in dark (4.3s)
-  ✓   95 [chromium] › tests/browser/playground-branding.spec.mjs:75:1 › Accordion hover follows each brand and opening items preserves block width (2.5s)
-  ✓   96 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › status-light docs expose isolated, keyboard-operable scale next to the theme switch (376ms)
-  ✓   97 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › status-light playground scale switch synchronizes URL, examples, local size and reset (324ms)
-  ✓   98 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › meter docs expose isolated, keyboard-operable scale next to the theme switch (393ms)
-  ✓   99 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › meter playground scale switch synchronizes URL, examples, local size and reset (341ms)
-  ✓  100 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › progress-bar docs expose isolated, keyboard-operable scale next to the theme switch (395ms)
-  ✓  101 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › progress-bar playground scale switch synchronizes URL, examples, local size and reset (324ms)
-  ✓  102 [chromium] › tests/browser/progress-circle-safety.spec.mjs:4:1 › ProgressCircle treats labels as text when created and updated (126ms)
-  ✓  103 [chromium] › tests/browser/progress-circle-safety.spec.mjs:23:1 › ProgressCircle macro escapes labels and normalizes numeric values (96ms)
-  ✓  104 [chromium] › tests/browser/progress-motion.spec.mjs:3:1 › Reduced motion documentation example stays static without disabling the normal example (490ms)
-  ✓  105 [chromium] › tests/browser/simple-indicators.spec.mjs:12:1 › StatusLight preserves text across updates, label overrides and reconnects (148ms)
-  ✓  106 [chromium] › tests/browser/simple-indicators.spec.mjs:29:1 › Meter exposes the same bounded value as its visual fill and custom spoken measurement (139ms)
-  ✓  107 [chromium] › tests/browser/simple-indicators.spec.mjs:44:1 › ProgressBar handles zero, boundaries, invalid values and changing modes without fabricated percentages (222ms)
-  ✓  108 [chromium] › tests/browser/simple-indicators.spec.mjs:70:1 › all three playgrounds wire controls into the actual exported elements (595ms)
-  ✓  109 [chromium] › tests/browser/simple-indicators.spec.mjs:92:1 › indicator text, dots and fills resolve with sufficient contrast in all six appearance contexts (191ms)
-  ✓  110 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (a/light) (163ms)
-  ✓  111 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (a/dark) (163ms)
-  ✓  112 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (b/light) (168ms)
-  ✓  113 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (b/dark) (162ms)
-  ✓  114 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (c/light) (165ms)
-  ✓  115 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (c/dark) (157ms)
-  ✓  116 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs horizontal keyboard activation, accessible names and disabled skipping (154ms)
-  ✓  117 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs vertical keyboard activation, accessible names and disabled skipping (147ms)
-  ✓  118 [chromium] › tests/browser/tabs-followups.spec.mjs:46:1 › Tabs inherit S/M/L from containers with nested replacement and no DOM rebuild (236ms)
-  ✓  119 [chromium] › tests/browser/tabs-followups.spec.mjs:80:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation (602ms)
-  ✓  120 [chromium] › tests/browser/tabs-followups.spec.mjs:118:1 › Nested tab events do not change the outer selection (168ms)
-  ✓  121 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (149ms)
-  ✓  122 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (229ms)
-  ✓  123 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (149ms)
-  ✓  124 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / light, all enabled variants and states (66ms)
-  ✓  125 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / dark, all enabled variants and states (59ms)
-  ✓  126 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states (64ms)
-  ✓  127 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / dark, all enabled variants and states (64ms)
-  ✓  128 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states (56ms)
-  ✓  129 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / dark, all enabled variants and states (61ms)
+  ✓    1 [chromium] › tests/browser/alert-message-repair.spec.mjs:3:1 › inline alert actions update safely, activate and coexist with dismiss (447ms)
+  ✓    2 [chromium] › tests/browser/alert-message-repair.spec.mjs:35:1 › custom illustrations retain accessible names across rerenders while default icons stay decorative (198ms)
+  ✓    3 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 320px / root 16px (135ms)
+  ✓    4 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 320px / root 20px (124ms)
+  ✓    5 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 1200px / root 16px (108ms)
+  ✓    6 [chromium] › tests/browser/base-geometry.spec.mjs:6:3 › Base shares Brand A geometry at 1200px / root 20px (109ms)
+  ✓    7 [chromium] › tests/browser/base-native.spec.mjs:7:3 › Base preserves native controls and makes no font requests (light) (282ms)
+  ✓    8 [chromium] › tests/browser/base-native.spec.mjs:7:3 › Base preserves native controls and makes no font requests (dark) (255ms)
+  ✓    9 [chromium] › tests/browser/base-native.spec.mjs:48:1 › Base retains tabs keyboard selection, native details and dialog focus (248ms)
+  ✓   10 [chromium] › tests/browser/base-native.spec.mjs:75:1 › Base retains tooltip, input enhancement, dismiss and date selection (352ms)
+  ✓   11 [chromium] › tests/browser/base-native.spec.mjs:97:1 › Base calendar/table selection stays visible and requests sorting through existing behavior (227ms)
+  ✓   12 [chromium] › tests/browser/base-native.spec.mjs:110:1 › Base month navigation follows the current header and local date values (208ms)
+  ✓   13 [chromium] › tests/browser/base-native.spec.mjs:125:1 › Calendar retains keyboard focus after selection and month rerender (145ms)
+  ✓   14 [chromium] › tests/browser/brand-a-typography.spec.mjs:29:3 › Brand typography applies the explicit A/B/C text roles (light) (222ms)
+  ✓   15 [chromium] › tests/browser/brand-a-typography.spec.mjs:29:3 › Brand typography applies the explicit A/B/C text roles (dark) (221ms)
+  ✓   16 [chromium] › tests/browser/brand-a-typography.spec.mjs:66:1 › docs snapshots clear optional A slots across A→B→C→A while retaining authored geometry (507ms)
+  ✓   17 [chromium] › tests/browser/brand-a-typography.spec.mjs:80:1 › legacy and concrete Basic overrides preserve A routing and the Mono role (281ms)
+  ✓   18 [chromium] › tests/browser/brand-a-typography.spec.mjs:103:1 › stable Pattern font tokens support local overrides and deprecated inputs (148ms)
+  ✓   19 [chromium] › tests/browser/button-text-spacing.spec.mjs:4:3 › long Button labels fit a narrow container with reader text spacing (light) (109ms)
+  ✓   20 [chromium] › tests/browser/button-text-spacing.spec.mjs:4:3 › long Button labels fit a narrow container with reader text spacing (dark) (108ms)
+  ✓   21 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: a / light (379ms)
+  ✓   22 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: a / dark (481ms)
+  ✓   23 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: b / light (434ms)
+  ✓   24 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: b / dark (463ms)
+  ✓   25 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: c / light (424ms)
+  ✓   26 [chromium] › tests/browser/checkbox-indicator.spec.mjs:10:3 › Checkbox checkmark loads and paints: c / dark (396ms)
+  ✓   27 [chromium] › tests/browser/container-scale.spec.mjs:39:1 › container scales inherited typography, line height, spacing and radii without scaling track height or borders (180ms)
+  ✓   28 [chromium] › tests/browser/container-scale.spec.mjs:54:1 › local small remains relative, nested context replaces its parent and changes apply without rerender (219ms)
+  ✓   29 [chromium] › tests/browser/container-scale.spec.mjs:74:1 › relative scaling preserves the reader's root font size (191ms)
+  ✓   30 [chromium] › tests/browser/container-scale.spec.mjs:87:1 › static macros inherit container scale without Custom Element JavaScript (122ms)
+  ✓   31 [chromium] › tests/browser/content.spec.mjs:18:1 › content example has semantic headings, nested lists, emphasis, code and a table (216ms)
+  ✓   32 [chromium] › tests/browser/content.spec.mjs:31:1 › untrusted HTML, executable links and images remain inert text (188ms)
+  ✓   33 [chromium] › tests/browser/content.spec.mjs:51:1 › copy is keyboard accessible, exact and announces success and failure (271ms)
+  ✓   34 [chromium] › tests/browser/content.spec.mjs:72:1 › plain output preserves Unicode, whitespace and uses actual monospaced metrics (214ms)
+  ✓   35 [chromium] › tests/browser/content.spec.mjs:92:1 › long code and tables scroll locally at mobile width and large text (214ms)
+  ✓   36 [chromium] › tests/browser/content.spec.mjs:104:1 › heading configuration, oversized fallback and re-render lifecycle preserve source (261ms)
+  ✓   37 [chromium] › tests/browser/content.spec.mjs:124:1 › content has readable code and focus across brand/scheme contexts without motion (346ms)
+  ✓   38 [chromium] › tests/browser/content.spec.mjs:150:1 › Pi chat patch preserves text fallback, upgrades history and formats only assistant messages (224ms)
+  ✓   39 [chromium] › tests/browser/content.spec.mjs:183:1 › content stage switches examples independently of brand and mode (470ms)
+  ✓   40 [chromium] › tests/browser/content.spec.mjs:205:1 › opt-in legacy CSS supplies tokens, controls and the consumer-owned mono font (259ms)
+  ✓   41 [chromium] › tests/browser/content.spec.mjs:223:1 › the real docs stage keeps Runtime code colors and the selected mono font (425ms)
+  ✓   42 [chromium] › tests/browser/datepicker-regression.spec.mjs:20:1 › clicking a calendar day drives day/month/year state and selected DOM state (552ms)
+  ✓   43 [chromium] › tests/browser/docs-foundations.spec.mjs:16:1 › Base preview embeds under its shipped headers while external embedding stays blocked (294ms)
+  ✓   44 [chromium] › tests/browser/docs-foundations.spec.mjs:40:1 › Foundations has four entry points with Base under Theming (273ms)
+  ✓   45 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations architecture has working section navigation on desktop and mobile (243ms)
+  ✓   46 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations accessibility has working section navigation on desktop and mobile (323ms)
+  ✓   47 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations theming has working section navigation on desktop and mobile (249ms)
+  ✓   48 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations content has working section navigation on desktop and mobile (238ms)
+  ✓   49 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations internationalization has working section navigation on desktop and mobile (234ms)
+  ✓   50 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations class-naming has working section navigation on desktop and mobile (289ms)
+  ✓   51 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations design-tokens has working section navigation on desktop and mobile (273ms)
+  ✓   52 [chromium] › tests/browser/docs-foundations.spec.mjs:57:3 › Foundations base has working section navigation on desktop and mobile (292ms)
+  ✓   53 [chromium] › tests/browser/docs-navigation.spec.mjs:5:1 › mobile drawer contains focus and closes through each supported action (746ms)
+  ✓   54 [chromium] › tests/browser/docs-navigation.spec.mjs:37:1 › resize restores the same sidebar and desktop layout (480ms)
+  ✓   55 [chromium] › tests/browser/docs-navigation.spec.mjs:55:1 › without JavaScript mobile navigation remains available (172ms)
+  ✓   56 [chromium] › tests/browser/docs-navigation.spec.mjs:65:1 › page jump navigation stacks below mobile breadcrumbs and beside desktop content (331ms)
+  ✓   57 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › patterns overview uses the shared grid with inert previews and responsive cards (446ms)
+  ✓   58 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for a (665ms)
+  ✓   59 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for b (707ms)
+  ✓   60 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › patterns overview renders all card surfaces and text in both schemes for c (765ms)
+  ✓   61 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › components overview uses the shared grid with inert previews and responsive cards (271ms)
+  ✓   62 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for a (377ms)
+  ✓   63 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for b (345ms)
+  ✓   64 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › components overview renders all card surfaces and text in both schemes for c (332ms)
+  ✓   65 [chromium] › tests/browser/docs-overviews.spec.mjs:4:3 › examples overview uses the shared grid with inert previews and responsive cards (263ms)
+  ✓   66 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for a (375ms)
+  ✓   67 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for b (400ms)
+  ✓   68 [chromium] › tests/browser/docs-overviews.spec.mjs:26:5 › examples overview renders all card surfaces and text in both schemes for c (348ms)
+  ✓   69 [chromium] › tests/browser/docs-overviews.spec.mjs:58:1 › UI Foundations search includes tokens, patterns, components, examples and guides (240ms)
+  ✓   70 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:13:1 › color brand selection keeps the docs shell stable and shows each brand's actual swatches (446ms)
+  ✓   71 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:29:1 › typeface brand selection shows only the selected families without changing other sections (347ms)
+  ✓   72 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:48:1 › Examples overview uses linked preview cards without nested interactive controls (284ms)
+  ✓   73 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand A without changing the docs (438ms)
+  ✓   74 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand B without changing the docs (385ms)
+  ✓   75 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:64:3 › Examples cards follow both schemes inside Brand C without changing the docs (401ms)
+  ✓   76 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:98:1 › shared preview URL survives reload, wins over storage and preserves unrelated query/hash state (486ms)
+  ✓   77 [chromium] › tests/browser/docs-token-preview-scope.spec.mjs:120:1 › URL preview preferences work when local storage is unavailable and reject invalid context values (337ms)
+  ✓   78 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and selected families (light) (171ms)
+  ✓   79 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and Basic fallbacks (light) (180ms)
+  ✓   80 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and selected families (dark) (160ms)
+  ✓   81 [chromium] › tests/browser/font-loading.spec.mjs:8:5 › consumer-loaded docs fonts and Basic fallbacks (dark) (174ms)
+  ✓   82 [chromium] › tests/browser/font-loading.spec.mjs:43:1 › Runtime CSS alone makes no font requests (72ms)
+  ✓   83 [chromium] › tests/browser/illustrated-message-contrast.spec.mjs:8:1 › Illustrated Message text meets contrast in docs and the actual playground (3.1s)
+  ✓   84 [chromium] › tests/browser/input-attribute-safety.spec.mjs:21:1 › search input preserves a quote-breaking value without injecting attributes (180ms)
+  ✓   85 [chromium] › tests/browser/input-attribute-safety.spec.mjs:31:1 › dynamic attributes and host id stay literal for HTML and ampersand strings (162ms)
+  ✓   86 [chromium] › tests/browser/input-attribute-safety.spec.mjs:53:1 › type, min, max and step values stay literal without extra attributes (156ms)
+  ✓   87 [chromium] › tests/browser/input-attribute-safety.spec.mjs:68:1 › attribute updates after mount re-render literally (182ms)
+  ✓   88 [chromium] › tests/browser/input-attribute-safety.spec.mjs:86:1 › disabled and readonly states render and toggle (180ms)
+  ✓   89 [chromium] › tests/browser/input-attribute-safety.spec.mjs:99:1 › number and password controls still render (258ms)
+  ✓   90 [chromium] › tests/browser/page-sections.spec.mjs:3:1 › every page type has a full-width hero on an unpainted page canvas (1.1s)
+  ✓   91 [chromium] › tests/browser/page-sections.spec.mjs:22:1 › pattern preview and introduction stay above the Anatomy section divider (448ms)
+  ✓   92 [chromium] › tests/browser/page-sections.spec.mjs:38:1 › Tooltip preview belongs to the hero while Options starts the content section (157ms)
+  ✓   93 [chromium] › tests/browser/page-sections.spec.mjs:47:1 › Calendar keeps only its preview in the hero and starts its content at Usage (190ms)
+  ✓   94 [chromium] › tests/browser/playground-branding.spec.mjs:3:1 › Meter and Illustrated Message keep selected brand colors after control updates (649ms)
+  ✓   95 [chromium] › tests/browser/playground-branding.spec.mjs:19:1 › selected Tabs follow Solid Button branding in light and Outline Button branding in dark (4.3s)
+  ✓   96 [chromium] › tests/browser/playground-branding.spec.mjs:75:1 › Accordion hover follows each brand and opening items preserves block width (2.5s)
+  ✓   97 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › status-light docs expose isolated, keyboard-operable scale next to the theme switch (393ms)
+  ✓   98 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › status-light playground scale switch synchronizes URL, examples, local size and reset (326ms)
+  ✓   99 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › meter docs expose isolated, keyboard-operable scale next to the theme switch (381ms)
+  ✓  100 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › meter playground scale switch synchronizes URL, examples, local size and reset (342ms)
+  ✓  101 [chromium] › tests/browser/preview-scale-switch.spec.mjs:4:3 › progress-bar docs expose isolated, keyboard-operable scale next to the theme switch (395ms)
+  ✓  102 [chromium] › tests/browser/preview-scale-switch.spec.mjs:32:3 › progress-bar playground scale switch synchronizes URL, examples, local size and reset (341ms)
+  ✓  103 [chromium] › tests/browser/progress-circle-safety.spec.mjs:4:1 › ProgressCircle treats labels as text when created and updated (129ms)
+  ✓  104 [chromium] › tests/browser/progress-circle-safety.spec.mjs:23:1 › ProgressCircle macro escapes labels and normalizes numeric values (98ms)
+  ✓  105 [chromium] › tests/browser/progress-motion.spec.mjs:3:1 › Reduced motion documentation example stays static without disabling the normal example (490ms)
+  ✓  106 [chromium] › tests/browser/simple-indicators.spec.mjs:12:1 › StatusLight preserves text across updates, label overrides and reconnects (154ms)
+  ✓  107 [chromium] › tests/browser/simple-indicators.spec.mjs:29:1 › Meter exposes the same bounded value as its visual fill and custom spoken measurement (152ms)
+  ✓  108 [chromium] › tests/browser/simple-indicators.spec.mjs:44:1 › ProgressBar handles zero, boundaries, invalid values and changing modes without fabricated percentages (232ms)
+  ✓  109 [chromium] › tests/browser/simple-indicators.spec.mjs:70:1 › all three playgrounds wire controls into the actual exported elements (617ms)
+  ✓  110 [chromium] › tests/browser/simple-indicators.spec.mjs:92:1 › indicator text, dots and fills resolve with sufficient contrast in all six appearance contexts (197ms)
+  ✓  111 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (a/light) (170ms)
+  ✓  112 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (a/dark) (159ms)
+  ✓  113 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (b/light) (167ms)
+  ✓  114 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (b/dark) (167ms)
+  ✓  115 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (c/light) (170ms)
+  ✓  116 [chromium] › tests/browser/tabs-color-projection.spec.mjs:7:3 › Tabs selected colors retain the approved baseline (c/dark) (181ms)
+  ✓  117 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs horizontal keyboard activation, accessible names and disabled skipping (154ms)
+  ✓  118 [chromium] › tests/browser/tabs-followups.spec.mjs:7:3 › Tabs vertical keyboard activation, accessible names and disabled skipping (152ms)
+  ✓  119 [chromium] › tests/browser/tabs-followups.spec.mjs:46:1 › Tabs inherit S/M/L from containers with nested replacement and no DOM rebuild (233ms)
+  ✓  120 [chromium] › tests/browser/tabs-followups.spec.mjs:80:1 › Tabs playground works at narrow widths and generated examples retain scale and orientation (607ms)
+  ✓  121 [chromium] › tests/browser/tabs-followups.spec.mjs:118:1 › Nested tab events do not change the outer selection (178ms)
+  ✓  122 [chromium] › tests/browser/tabs-state.spec.mjs:23:1 › TabList attribute updates preserve structure, focus and vertical navigation (147ms)
+  ✓  123 [chromium] › tests/browser/tabs-state.spec.mjs:46:1 › Panel switching retains live input state, DOM identity and event listeners (220ms)
+  ✓  124 [chromium] › tests/browser/tabs-state.spec.mjs:64:1 › Tab attributes update the same button and horizontal navigation skips disabled tabs (157ms)
+  ✓  125 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / light, all enabled variants and states (68ms)
+  ✓  126 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: a / dark, all enabled variants and states (60ms)
+  ✓  127 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / light, all enabled variants and states (66ms)
+  ✓  128 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: b / dark, all enabled variants and states (69ms)
+  ✓  129 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / light, all enabled variants and states (59ms)
+  ✓  130 [chromium] › tests/browser/token-contrast.spec.mjs:22:5 › Button contrast: c / dark, all enabled variants and states (62ms)
 
-  129 passed (45.1s)
+  130 passed (48.0s)
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
 
 > ui-foundations@1.1.0 test:a11y:only
@@ -1697,22 +1698,22 @@ npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm 
 
 Running 12 tests using 1 worker
 
-  ✓   1 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.name (203ms)
-  ✓   2 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.disabled (173ms)
-  ✓   3 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.keyboard (423ms)
-  ✓   4 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.inert (740ms)
+  ✓   1 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.name (200ms)
+  ✓   2 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.disabled (180ms)
+  ✓   3 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.keyboard (471ms)
+  ✓   4 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.inert (692ms)
   ✓   5 [chromium] › tests/browser/accessibility/button.spec.mjs:8:3 › button.axe (609ms)
-  ✓   6 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.name (163ms)
-  ✓   7 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.checked (267ms)
-  ✓   8 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.mixed-disabled (298ms)
-  ✓   9 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.keyboard (468ms)
-  ✓  10 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.inert (656ms)
+  ✓   6 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.name (168ms)
+  ✓   7 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.checked (256ms)
+  ✓   8 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.mixed-disabled (325ms)
+  ✓   9 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.keyboard (497ms)
+  ✓  10 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.inert (688ms)
   ✓  11 [chromium] › tests/browser/accessibility/checkbox.spec.mjs:8:3 › checkbox.axe (1.0s)
-  ✓  12 [chromium] › tests/browser/accessibility/negative-controls.spec.mjs:5:1 › negative controls detect missing name/role and axe violations (818ms)
+  ✓  12 [chromium] › tests/browser/accessibility/negative-controls.spec.mjs:5:1 › negative controls detect missing name/role and axe violations (838ms)
 
-  12 passed (6.5s)
+  12 passed (6.6s)
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
-[WebServer] (node:73908) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (node:79382) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 [WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
 
 > ui-foundations@1.1.0 docs:build
@@ -1725,8 +1726,8 @@ npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm 
 [11ty] Writing ./_site/sitemap.xml from ./site/sitemap.njk
 [11ty] Writing ./_site/assets/fonts/brand/README/index.html from ./site/assets/fonts/brand/README.md (njk)
 [11ty] Writing ./_site/base/index.html from ./site/base.md (njk)
-[11ty] Writing ./_site/getting-started/index.html from ./site/getting-started.md (njk)
 [11ty] Writing ./_site/impressum/index.html from ./site/impressum.md (njk)
+[11ty] Writing ./_site/getting-started/index.html from ./site/getting-started.md (njk)
 [11ty] Writing ./_site/index.html from ./site/index.md (njk)
 [11ty] Writing ./_site/license/index.html from ./site/license.md (njk)
 [11ty] Writing ./_site/release-notes/index.html from ./site/release-notes.md (njk)
@@ -1803,6 +1804,6 @@ npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm 
 [11ty] Writing ./_site/components/index.html from ./site/components/index.md (njk)
 [11ty] Writing ./_site/examples/index.html from ./site/examples/index.md (njk)
 [11ty] Writing ./_site/patterns/index.html from ./site/patterns/index.md (njk)
-[11ty] Copied 701 Wrote 85 files in 0.75 seconds (v3.1.6)
+[11ty] Copied 701 Wrote 85 files in 0.76 seconds (v3.1.6)
 npm warn cli npm v11.19.1 does not support Node.js v22.0.0. This version of npm supports the following node versions: `^20.17.0 || >=22.9.0`. You can find the latest version at https://nodejs.org/.
-[11ty] Benchmark    356ms  48%     1× (Data) `./site/_data/accessibilityEvidence.js`
+[11ty] Benchmark    363ms  48%     1× (Data) `./site/_data/accessibilityEvidence.js`

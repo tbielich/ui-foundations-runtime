@@ -6,7 +6,7 @@ Baseline: Runtime `61347ff8fe93f1749d9dacd9ee23dce2be5897a8`, branch `feat/safe-
 
 Content renders a bounded Markdown subset using semantic DOM and text nodes. It preserves the source, rejects unsafe URL protocols, keeps raw HTML/images inert, and falls back to preformatted source on formatting failure or oversized input. Fenced code preserves line endings and whitespace. Copy is opt-in (`copy: true`), off by default, and reports clipboard failure accessibly. No parser dependency, Code Block toolbar, line numbers or syntax-highlighting capability was introduced.
 
-The docs use one integrated stage: Markdown initially, then selectable Inline code, Code block and Unicode examples in a footer with contextual explanation. Stable stage height prevents variant shifts. There is no extra Playground, Anatomy section, duplicate Options table or external documentation link inside the example. Brand/scheme/optional scale alignment is shared Docs CSS, not a Content-only theme implementation.
+The docs use one integrated stage: Markdown initially, then selectable Inline code, Code block and Unicode examples in a footer with contextual explanation. Stable stage height prevents variant shifts. There is no extra Playground, Anatomy section, duplicate Options table or external documentation link inside the example. Brand/scheme/optional scale alignment is shared Docs CSS, not a Content-only theme implementation. Global docs snippet styling excludes the actual Runtime code preview; a real-page light/dark test verifies its colors and DejaVu font rather than only testing isolated fixtures.
 
 ## Font and legacy CSS
 
@@ -27,7 +27,7 @@ Raw device measurements/screenshots: `boox/completion.json`, `boox/completion.pn
 
 ## Validation
 
-- `npm run ci:check`: exit 0; 267 unit, 129 Chromium and 12 bounded accessibility checks. Includes lint, docs, naming, build, token, asset, font-package and rule checks. `completion-ci.log` is the final serial run; its hash is recorded in `checks.json`.
+- `npm run ci:check`: exit 0; 267 unit, 130 Chromium and 12 bounded accessibility checks. Includes lint, docs, naming, build, token, asset, font-package and rule checks. `completion-ci.log` is the final serial run; its hash is recorded in `checks.json`.
 - Initial runs identified stale fixed expectations for seven docs font faces and sixteen pattern cards. They now account for the added consumer font and Content card; no safety assertion was disabled.
 - `npm pack --dry-run --json --ignore-scripts`: Content behavior/CSS and legacy CSS included; no Runtime font binaries. Full output in `package-dry-run.json`.
 - Studio patch passes `git apply --check` against its recorded input and applies in a disposable fixture. The real Studio source, pinned npm package and public deployment remain unchanged. Pi patch keeps explicit opt-in Copy; consumer files were not overwritten.

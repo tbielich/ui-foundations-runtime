@@ -218,3 +218,26 @@ test("opt-in legacy CSS supplies tokens, controls and the consumer-owned mono fo
   const button = await page.locator("button").evaluate(e => getComputedStyle(e).backgroundColor);
   expect(button).not.toBe("rgba(0, 0, 0, 0)");
 });
+
+
+test("the real docs stage keeps Runtime code colors and the selected mono font", async ({ page }) => {
+  await page.goto("/patterns/content/");
+  await page.locator("[data-content-variant=code]").click();
+  for (const mode of ["light", "dark"]) {
+    await page.locator(`[data-hero-mode=${mode}]`).click();
+    const values = await page.locator("#content-example pre").evaluate(pre => {
+      const marker = document.createElement("span");
+      marker.style.backgroundColor = "var(--uif-semantic-color-surface-default)";
+      marker.style.color = "var(--uif-semantic-color-content-default)";
+      pre.append(marker);
+      const actual = getComputedStyle(pre), expected = getComputedStyle(marker);
+      const result = { background: actual.backgroundColor, expectedBackground: expected.backgroundColor, color: actual.color, expectedColor: expected.color, font: actual.fontFamily, codeFont: getComputedStyle(pre.querySelector("code")).fontFamily };
+      marker.remove();
+      return result;
+    });
+    expect(values.background).toBe(values.expectedBackground);
+    expect(values.color).toBe(values.expectedColor);
+    expect(values.font).toContain("DejaVu Sans Mono");
+    expect(values.codeFont).toContain("DejaVu Sans Mono");
+  }
+});

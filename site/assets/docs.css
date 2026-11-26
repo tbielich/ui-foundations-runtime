@@ -24,7 +24,7 @@
   /* Headline face for docs chrome only (Inter stays the text/UI face). */
   --docs-font-display: "UIF Studio Roboto Slab", "Roboto Slab", Georgia, serif;
   --docs-code-font:
-    var(--font-family-mono, "SFMono-Regular"), Menlo, Monaco, Consolas,
+    var(--uif-semantic-scale-font-family-mono, var(--font-family-mono, "SFMono-Regular")), Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
   --docs-surface-white: #ffffff;
   --docs-surface-0: #f1f3ed;
@@ -759,7 +759,7 @@ pre.playground-code[class*="language-"] > code[class*="language-"] {
   background: #0a0f15;
 }
 
-pre {
+pre:not(.uif-code) {
   overflow: auto;
   border-radius: 12px;
   border: 1px solid var(--docs-border);
