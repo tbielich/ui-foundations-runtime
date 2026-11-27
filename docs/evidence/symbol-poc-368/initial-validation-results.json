@@ -1,0 +1,38 @@
+{
+  "lint": {
+    "status": "passed",
+    "exit_code": 0,
+    "command": "npm run lint",
+    "evidence": "docs/evidence/symbol-poc-368/lint.log",
+    "duration_seconds": 6.44,
+    "environment": {
+      "node": "22.22.1",
+      "SITE_PORT": "8168",
+      "CI": "1"
+    }
+  },
+  "test:unit": {
+    "status": "failed",
+    "exit_code": 1,
+    "command": "npm run test:unit",
+    "evidence": "docs/evidence/symbol-poc-368/test-unit.log",
+    "duration_seconds": 3.39,
+    "environment": {
+      "node": "22.22.1",
+      "SITE_PORT": "8168",
+      "CI": "1"
+    }
+  },
+  "ci:check": {
+    "status": "failed",
+    "exit_code": 1,
+    "command": "npm run ci:check",
+    "evidence": "docs/evidence/symbol-poc-368/ci-check.log",
+    "duration_seconds": 58.81,
+    "environment": {
+      "node": "22.22.1",
+      "SITE_PORT": "8168",
+      "CI": "1"
+    }
+  }
+}

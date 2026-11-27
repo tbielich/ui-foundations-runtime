@@ -1,0 +1,24 @@
+{
+  "method": "CUA manual interactive IAB smoke inspection, not a visual regression system or full Chromium matrix",
+  "url": "http://127.0.0.1:8169/docs/evidence/symbol-poc-368/comparison.html",
+  "screenshots": [
+    "preview-light.png",
+    "preview-dark.png"
+  ],
+  "observed": [
+    "Five motifs at 12/16/24/32/48 visible in full-page light screenshot at weight400",
+    "Light/dark scheme toggle works",
+    "Repaired button::before content empty string, width3.59375px height6.95312px for checkmark12; originally content none",
+    "Candidate checked Space transitions true->false->true",
+    "Candidate mixed Space transitions mixed->checked->unchecked",
+    "AX names retained and disabled candidate exposed disabled",
+    "Approximate caps/proportions differ, especially dash and chevron"
+  ],
+  "not_observed": [
+    "Full size/weight/DPR/zoom/Forced Colors visual matrix not observed. Screenshots are manual IAB smoke evidence only; browser engine and DPR not bound.",
+    "Actual screen-reader and physical E-Ink checks unavailable.",
+    "Live Figma/SVG parity unverified; CSS shapes are visibly approximate with different caps and proportions.",
+    "Select automation needs applicable approval; only native markup/fallback inspected."
+  ],
+  "status": "PASS only listed smoke observations; full visual/semantic acceptance BLOCKED"
+}

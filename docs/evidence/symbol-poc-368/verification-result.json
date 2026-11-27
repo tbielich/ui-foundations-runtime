@@ -1,0 +1,122 @@
+{
+  "outcome": "blocked",
+  "claims_checked": [
+    "result.identity",
+    "executor.completed",
+    "scope.allowed_paths",
+    "scope.forbidden_paths",
+    "scope.evidence_complete",
+    "validation.requirements",
+    "validation:lint",
+    "validation:test:unit",
+    "validation:ci:check"
+  ],
+  "supporting_source_ids": [
+    "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+    "agent-task:uif-run-368-103f5ea5c792"
+  ],
+  "evidence": [
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "result.identity",
+      "evidence_type": "execution_verification",
+      "locator": "/task_id",
+      "summary": "Result identifies an executor and belongs to the expected task and trace.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "executor.completed",
+      "evidence_type": "execution_verification",
+      "locator": "/status",
+      "summary": "Executor status: blocked.",
+      "supports": false
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "scope.allowed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/allowed_paths",
+      "summary": "allowed_paths: ('docs/evidence/symbol-poc-368/candidate.css', 'docs/evidence/symbol-poc-368/comparison.html', 'docs/evidence/symbol-poc-368/measure.mjs', 'docs/evidence/symbol-poc-368/README.md')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "scope.forbidden_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/forbidden_paths",
+      "summary": "forbidden_paths: ('src/', 'figma/', 'dist/', 'site/', 'package.json', 'package-lock.json', '.git/', '.uif/', 'AGENTS.md')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "scope.evidence_complete",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/changes_complete",
+      "summary": "Changed-path evidence is declared complete.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "validation.requirements",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/required_validations",
+      "summary": "Required validations: ('lint', 'test:unit', 'ci:check').",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "validation:lint",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/validation_results/lint",
+      "summary": "Required check 'lint' has no recognized outcome.",
+      "supports": false
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "validation:test:unit",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/validation_results/test:unit",
+      "summary": "Required check 'test:unit' has no recognized outcome.",
+      "supports": false
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd:uif-run-368-103f5ea5c792",
+      "claim": "validation:ci:check",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/validation_results/ci:check",
+      "summary": "Required check 'ci:check' has no recognized outcome.",
+      "supports": false
+    }
+  ],
+  "unsupported_claims": [
+    "executor.completed",
+    "validation:lint",
+    "validation:test:unit",
+    "validation:ci:check"
+  ],
+  "uncertainty": [],
+  "recommendation": "defer",
+  "assumptions": [],
+  "gaps": [
+    "Required check 'lint' has no recognized outcome.",
+    "Required check 'test:unit' has no recognized outcome.",
+    "Required check 'ci:check' has no recognized outcome."
+  ],
+  "conflict_notes": [],
+  "authority": null,
+  "precedence_rank": null,
+  "canonical_source_id": null,
+  "document_type": null,
+  "source_status": null,
+  "metadata": {
+    "source": "agent_result_verifier",
+    "task_id": "uif-run-368-103f5ea5c792",
+    "trace_id": "trace-8a27b825990d4fd89ce3960c325329cd",
+    "executor_id": "kiro",
+    "warnings": [],
+    "approval_blockers": [],
+    "evidence_basis": "supplied_result",
+    "executor_status": "blocked"
+  }
+}

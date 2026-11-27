@@ -1,0 +1,165 @@
+{
+  "outcome": "needs_revision",
+  "claims_checked": [
+    "result.identity",
+    "executor.completed",
+    "scope.allowed_paths",
+    "scope.forbidden_paths",
+    "scope.evidence_complete",
+    "scope.changed_paths",
+    "validation.requirements",
+    "validation:lint",
+    "validation:test:unit",
+    "validation:ci:check"
+  ],
+  "supporting_source_ids": [
+    "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+    "agent-task:uif-run-368-103f5ea5c792"
+  ],
+  "evidence": [
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "result.identity",
+      "evidence_type": "execution_verification",
+      "locator": "/task_id",
+      "summary": "Result identifies an executor and belongs to the expected task and trace.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "executor.completed",
+      "evidence_type": "execution_verification",
+      "locator": "/status",
+      "summary": "Executor status: completed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "scope.allowed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/allowed_paths",
+      "summary": "allowed_paths: ('docs/evidence/symbol-poc-368/candidate.css', 'docs/evidence/symbol-poc-368/comparison.html', 'docs/evidence/symbol-poc-368/measure.mjs', 'docs/evidence/symbol-poc-368/README.md')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "scope.forbidden_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/forbidden_paths",
+      "summary": "forbidden_paths: ('src/', 'figma/', 'dist/', 'site/', 'package.json', 'package-lock.json', '.git/', '.uif/', 'AGENTS.md')",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "scope.evidence_complete",
+      "evidence_type": "execution_verification",
+      "locator": "/metadata/changes_complete",
+      "summary": "Changed-path evidence is declared complete.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/0",
+      "summary": "Changed path 'docs/evidence/symbol-poc-368/README.md': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/1",
+      "summary": "Changed path 'docs/evidence/symbol-poc-368/candidate.css': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/2",
+      "summary": "Changed path 'docs/evidence/symbol-poc-368/comparison.html': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "scope.changed_paths",
+      "evidence_type": "execution_verification",
+      "locator": "/changes/3",
+      "summary": "Changed path 'docs/evidence/symbol-poc-368/measure.mjs': within declared scope.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-task:uif-run-368-103f5ea5c792",
+      "claim": "validation.requirements",
+      "evidence_type": "execution_verification",
+      "locator": "/constraints/required_validations",
+      "summary": "Required validations: ('lint', 'test:unit', 'ci:check').",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "validation:lint",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-poc-368/lint.log",
+      "summary": "Required check 'lint': passed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "validation:test:unit",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-poc-368/test-unit.log",
+      "summary": "Required check 'test:unit': passed.",
+      "supports": true
+    },
+    {
+      "source_id": "agent-result:trace-8a27b825990d4fd89ce3960c325329cd-codex:uif-run-368-103f5ea5c792",
+      "claim": "validation:ci:check",
+      "evidence_type": "execution_verification",
+      "locator": "docs/evidence/symbol-poc-368/ci-check.log",
+      "summary": "Required check 'ci:check': passed.",
+      "supports": true
+    }
+  ],
+  "unsupported_claims": [],
+  "uncertainty": [
+    "Footprint workload models modular source resources, not production flat bundle or pixel-equivalent geometry."
+  ],
+  "recommendation": "defer",
+  "assumptions": [],
+  "gaps": [
+    "Full size/weight/DPR/zoom/Forced Colors visual matrix not observed. Screenshots are manual IAB smoke evidence only; browser engine and DPR not bound.",
+    "Actual screen-reader and physical E-Ink checks unavailable.",
+    "Live Figma/SVG parity unverified; CSS shapes are visibly approximate with different caps and proportions.",
+    "Select automation needs applicable approval; only native markup/fallback inspected.",
+    "Codex reported an unintended root README write and restoration; current baseline equality checked independently. Final workspace snapshot cannot prove transient write compliance."
+  ],
+  "conflict_notes": [],
+  "authority": null,
+  "precedence_rank": null,
+  "canonical_source_id": null,
+  "document_type": null,
+  "source_status": null,
+  "metadata": {
+    "source": "agent_result_verifier",
+    "task_id": "uif-run-368-103f5ea5c792",
+    "trace_id": "trace-8a27b825990d4fd89ce3960c325329cd-codex",
+    "executor_id": "codex",
+    "warnings": [],
+    "approval_blockers": [],
+    "evidence_basis": "supplied_result",
+    "executor_status": "completed",
+    "candidate_revision": "6e75a617e4deb84565de714360776a94d96424c6",
+    "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+    "candidate_sha256": {
+      "docs/evidence/symbol-poc-368/candidate.css": "f4e8312df428fc0badff13c8ff4d30829004a1fca792a71fe2eb1df2132a11a8",
+      "docs/evidence/symbol-poc-368/comparison.html": "61d0c40ce76680530e1dca84c7e84f91f161065e67476012a2db6ed863471b3c",
+      "docs/evidence/symbol-poc-368/measure.mjs": "743ed36b078a9fcc0d9b9618efad7fbdd8df379ce49769f993b93bb3b8cf5e49",
+      "docs/evidence/symbol-poc-368/README.md": "96ca59bc027920c51a49a2f2a1068c9898dd1198130b52fd5c81c10e69fe3b9a"
+    },
+    "scope_incident": "transient root README edit reported and restored; not treated as clean execution",
+    "architectural_recommendation": "retain existing SVG/local CSS; public Symbol HOLD",
+    "human_review_gate": "awaiting human review; no production adoption/merge/release authorized"
+  }
+}

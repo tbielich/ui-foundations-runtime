@@ -1,0 +1,30 @@
+{
+  "source": "owner follow-up: mach das",
+  "mode": "VERIFY",
+  "candidate_revision": "bb1be00df06d6260fe65f90b6155f4b3ae9c1113",
+  "allowed_evidence_paths": [
+    "docs/evidence/symbol-poc-368/decorative-host-observations.json",
+    "docs/evidence/symbol-poc-368/decorative-host-verification.json",
+    "docs/evidence/symbol-poc-368/decorative-host-followup.json",
+    "docs/evidence/symbol-poc-368/REPORT.md",
+    "docs/evidence/symbol-poc-368/README.md",
+    "docs/evidence/symbol-poc-368/STATUS.md",
+    "docs/evidence/symbol-poc-368/PR-BODY.md"
+  ],
+  "frozen_implementation": [
+    "candidate.css",
+    "comparison.html",
+    "measure.mjs"
+  ],
+  "priority": "decorative host only",
+  "confirmed": "150 computed-style samples: parent color inheritance, selected weight, decorative hiding",
+  "not_confirmed": [
+    "DPR/zoom raster quality",
+    "Forced Colors",
+    "arbitrary chromatic colors",
+    "all native-control hosts"
+  ],
+  "required_check_reuse": "Prior lint/unit/ci evidence retained for unchanged executable sources; no new implementation tests for prose/evidence edits",
+  "scope_validation": "PASS executable sources unchanged; JSON assertions 6 configs x25 samples; owner feedback attributed",
+  "publication_note": "PR body update is not exposed by guarded publisher CLI; revised body text is persisted in PR-BODY.md, live description not silently edited via another identity."
+}

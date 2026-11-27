@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "task_id": "uif-run-368-103f5ea5c792",
+  "trace_id": "trace-8a27b825990d4fd89ce3960c325329cd",
+  "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "checks": [
+    "canonical AgentTask constructed",
+    "canonical verifier constraints valid",
+    "exact paths accepted by ACP Scope",
+    "production and manifest write denied",
+    "validation IDs bound to existing npm script names",
+    "direct human authorization checked",
+    "repair budget 2",
+    "worker shell and MCP disabled"
+  ],
+  "write_scope": [
+    "docs/evidence/symbol-poc-368/candidate.css",
+    "docs/evidence/symbol-poc-368/comparison.html",
+    "docs/evidence/symbol-poc-368/measure.mjs",
+    "docs/evidence/symbol-poc-368/README.md"
+  ],
+  "reviewer": "UIF-INT orchestrator"
+}

@@ -1,0 +1,51 @@
+{
+  "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "candidate_revision": "6e75a617e4deb84565de714360776a94d96424c6",
+  "sha256": {
+    "docs/evidence/symbol-poc-368/candidate.css": "f4e8312df428fc0badff13c8ff4d30829004a1fca792a71fe2eb1df2132a11a8",
+    "docs/evidence/symbol-poc-368/comparison.html": "61d0c40ce76680530e1dca84c7e84f91f161065e67476012a2db6ed863471b3c",
+    "docs/evidence/symbol-poc-368/measure.mjs": "743ed36b078a9fcc0d9b9618efad7fbdd8df379ce49769f993b93bb3b8cf5e49",
+    "docs/evidence/symbol-poc-368/README.md": "96ca59bc027920c51a49a2f2a1068c9898dd1198130b52fd5c81c10e69fe3b9a"
+  },
+  "production_diff": [],
+  "required_checks": {
+    "lint": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "npm run lint",
+      "evidence": "docs/evidence/symbol-poc-368/lint.log",
+      "duration_seconds": 6.37,
+      "environment": {
+        "node": "22.22.1",
+        "SITE_PORT": "8099",
+        "CI": "1"
+      }
+    },
+    "test:unit": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "npm run test:unit",
+      "evidence": "docs/evidence/symbol-poc-368/test-unit.log",
+      "duration_seconds": 3.35,
+      "environment": {
+        "node": "22.22.1",
+        "SITE_PORT": "8099",
+        "CI": "1"
+      }
+    },
+    "ci:check": {
+      "status": "passed",
+      "exit_code": 0,
+      "command": "npm run ci:check",
+      "evidence": "docs/evidence/symbol-poc-368/ci-check.log",
+      "duration_seconds": 66.52,
+      "environment": {
+        "node": "22.22.1",
+        "SITE_PORT": "8099",
+        "CI": "1"
+      }
+    }
+  },
+  "repair_iterations_used": 1,
+  "repair_budget": 2
+}

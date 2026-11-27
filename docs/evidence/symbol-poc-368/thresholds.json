@@ -1,0 +1,13 @@
+{
+  "fixed_before_implementation": true,
+  "baseline_revision": "61347ff8fe93f1749d9dacd9ee23dce2be5897a8",
+  "production_changed_paths": 0,
+  "new_dependencies_tokens_public_apis": 0,
+  "native_semantics": "No accessible name, checked/mixed/disabled, keyboard or native select regressions",
+  "visual": "No clipping, missing motifs, loss of currentColor or Forced Colors meaning at 12/16/24/32/48 px, weights 100/400/900, DPR 1/2/3, schemes light/dark, zoom 100/200%; unobserved cells BLOCKED; approx not exact",
+  "utility_recommendation": "Only recommend adoption with demonstrated shared declarations on actual standalone and pseudo-element hosts, no markup regression, total gzip AND Brotli geometry+markup cost no greater than equivalent baseline at 100 repeats, all required quality evidence observed; otherwise retain baseline",
+  "timing": "Not measured unless reproducible methodology supplied",
+  "manual_screenreader": "BLOCKED pending tester",
+  "physical_eink": "BLOCKED pending physical device check",
+  "select_automation": "BLOCKED additional approval required"
+}

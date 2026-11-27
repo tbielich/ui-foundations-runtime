@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-brand="a" data-mode="light">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UIF-RUN 368 internal geometry comparison</title>
+<!-- Optional generated outputs: missing files do not trigger a build. -->
+<link rel="stylesheet" href="../../../dist/tokens/css/core-primitives.tokens.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/semantics-brands.tokens.brand-a.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/appearance-modes.tokens.mode-light.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/appearance-modes.tokens.mode-dark.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/semantics-roles.tokens.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/patterns-ui.tokens.css">
+<link rel="stylesheet" href="../../../dist/tokens/css/typography-fluid.tokens.css">
+<link rel="stylesheet" href="../../../src/ui/patterns/checkbox.css">
+<link rel="stylesheet" href="../../../src/ui/patterns/select.css">
+<link rel="stylesheet" href="../../../src/ui/patterns/button.css">
+<link rel="stylesheet" href="../../../src/ui/patterns/icon.css">
+<link rel="stylesheet" href="candidate.css">
+<style>
+  /* Docs-only layout and neutral fallback, not a token projection. */
+  body { font: 16px/1.5 system-ui; margin: 2rem; background: Canvas; color: CanvasText; }
+  table { border-collapse: collapse; } th, td { padding: .6rem; border: 1px solid GrayText; text-align: left; }
+  .samples { display: flex; align-items: center; gap: 2rem; min-height: 64px; }
+  .slot { display: inline-grid; place-items: center; width: 64px; height: 64px; }
+  .baseline { width: var(--sample-size); height: var(--sample-size); }
+  .baseline-dash { width: .75rem; height: var(--size-border-200, 2px); border-radius: var(--size-radius-full, 999px); background: currentColor; }
+  .controls { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-block: 1rem; }
+  .poc-reuse { display: inline-flex; align-items: center; gap: 1rem; }
+  input.uif-checkbox { min-width: 24px; min-height: 24px; }
+  button, select { font: inherit; }
+  .baseline-chevron { display: inline-block; width: var(--sample-size); height: var(--sample-size); background: center / contain no-repeat; }
+</style>
+<h1>Internal geometry PoC — public Pattern HOLD</h1>
+<p>Approximate border/gradient geometry versus existing sources. No production adoption or acceptance implied.</p>
+<p id="tokens">Generated token availability: BLOCKED until loaded. Missing outputs leave baseline token styling incomplete; no substitute token values are invented.</p>
+<div class="controls">
+<label>Candidate weight hypothesis (100–900) <input id="weight" type="range" min="100" max="900" step="100" value="400"><output id="weight-value">400</output></label>
+<label><input id="dark" type="checkbox"> Dark scheme</label>
+</div>
+<p>400 gives size/24 stroke; this is not font weight or verified optical equivalence. Baselines keep their original stroke and proportions. Change zoom and OS Forced Colors manually.</p>
+<table><thead><tr><th>Motif / size</th><th>Baseline decorative host</th><th>Candidate decorative host</th><th>Candidate actual button::before reuse</th></tr></thead><tbody id="matrix"></tbody></table>
+<h2>Real native controls</h2>
+<div class="controls">
+<label class="uif-checkbox-field"><input class="uif-checkbox" type="checkbox" checked> Baseline checked</label>
+<label class="uif-checkbox-field"><input class="uif-checkbox poc-checkbox" type="checkbox" checked> Candidate checked</label>
+<label class="uif-checkbox-field"><input id="baseline-mixed" class="uif-checkbox" type="checkbox"> Baseline mixed</label>
+<label class="uif-checkbox-field"><input id="candidate-mixed" class="uif-checkbox poc-checkbox" type="checkbox"> Candidate mixed</label>
+<label class="uif-checkbox-field"><input class="uif-checkbox poc-checkbox" type="checkbox" checked disabled> Candidate disabled</label>
+</div>
+<div class="controls">
+<label>Baseline Select <select class="uif-select"><option>First choice</option><option>Second choice</option></select></label>
+<label>Candidate Select, native fallback <select class="uif-select poc-select"><option>First choice</option><option>Second choice</option></select></label>
+</div>
+<p>Select is for manual inspection only. Its picker-icon uses a border directly at fixed 400 hypothesis where supported. No nested pseudo-elements exist. The baseline embedded SVG currentColor has its own image context and may not inherit host color.</p>
+<p>Existing SVG mask already needs one element. Candidate plus/cross also use one element (two background layers); when reused they paint directly on button::before. Checkbox paints directly on input::after; support on appearance:none inputs needs independent browser verification. A native Select cannot portably host the generic ::before utility.</p>
+<script>
+  const root = document.documentElement;
+  const matrix = document.getElementById('matrix');
+  const motifs = ['checkmark', 'dash', 'chevron', 'plus', 'cross'];
+  const selectCss = fetch('../../../src/ui/patterns/select.css').then(r => r.text());
+  async function render() {
+    const css = await selectCss;
+    const chevron = css.match(/background-image:\s*(url\("data:image\/svg\+xml,[^\n]+?"\));/)[1];
+    for (const motif of motifs) for (const size of [12, 16, 24, 32, 48]) {
+      const row = matrix.insertRow();
+      row.insertCell().textContent = `${motif} / ${size}px`;
+      const base = document.createElement('span');
+      base.setAttribute('aria-hidden', 'true');
+      base.className = motif === 'dash' ? 'baseline-dash' : motif === 'chevron' ? 'baseline-chevron' : 'uif-icon baseline';
+      base.style.setProperty('--sample-size', `${size}px`);
+      if (motif === 'chevron') base.style.backgroundImage = chevron;
+      else if (motif !== 'dash') base.style.setProperty('--uif-icon-src', `url('../../../src/assets/icons/${motif}.svg')`);
+      const slot = document.createElement('span'); slot.className = 'slot'; slot.append(base); row.insertCell().append(slot);
+      const geometry = document.createElement('span');
+      geometry.className = `poc-geometry poc-${motif}`; geometry.setAttribute('aria-hidden', 'true');
+      // Set on each real paint host because custom properties inherit into pseudos.
+      geometry.style.setProperty('--poc-size', `${size}px`);
+      const candidateSlot = document.createElement('span'); candidateSlot.className = 'slot'; candidateSlot.append(geometry); row.insertCell().append(candidateSlot);
+      const button = document.createElement('button'); button.type = 'button';
+      button.className = `uif-button outline poc-reuse poc-${motif}`;
+      button.style.setProperty('--poc-size', `${size}px`); button.textContent = `Example ${motif}`;
+      row.insertCell().append(button);
+    }
+    updateWeight();
+  }
+  function updateWeight() {
+    const weight = document.getElementById('weight').value;
+    document.getElementById('weight-value').value = weight;
+    document.querySelectorAll('.poc-geometry').forEach(el => el.style.setProperty('--poc-weight', weight));
+    // A pseudo's defaults must be overridden on its actual host via a local rule.
+    document.getElementById('dynamic-geometry').textContent = `.poc-reuse,.poc-checkbox{--poc-weight:${Number(weight)}}`;
+  }
+  document.getElementById('weight').addEventListener('input', updateWeight);
+  document.getElementById('dark').addEventListener('change', event => {
+    root.dataset.mode = event.target.checked ? 'dark' : 'light';
+    root.style.colorScheme = root.dataset.mode;
+  });
+  document.getElementById('baseline-mixed').indeterminate = true;
+  document.getElementById('candidate-mixed').indeterminate = true;
+  fetch('../../../dist/tokens/css/patterns-ui.tokens.css').then(r => {
+    document.getElementById('tokens').textContent = r.ok ? 'Generated Pattern CSS available; full alias resolution still requires independent verification.' : 'BLOCKED: generated tokens absent; baseline styling incomplete.';
+  }).catch(() => {});
+  render();
+</script>
+<style id="dynamic-geometry"></style>
+</html>

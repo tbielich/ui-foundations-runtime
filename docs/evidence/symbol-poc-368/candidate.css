@@ -1,0 +1,78 @@
+/* Internal experiment only. These parameters are geometry, never public tokens. */
+/* shared:start */
+:where(body) { --poc-size: 24px; --poc-weight: 400; }
+:is(.poc-geometry, .poc-reuse, .poc-checkbox) {
+  --poc-stroke: calc(var(--poc-size) / 24 * var(--poc-weight) / 400);
+}
+.poc-geometry,
+.poc-reuse::before,
+.poc-checkbox:checked::after,
+.poc-checkbox:indeterminate::after {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  flex: none;
+  width: var(--poc-width, var(--poc-size));
+  height: var(--poc-height, var(--poc-size));
+  border: 0 solid currentColor;
+  border-right-width: var(--poc-right, 0px);
+  border-bottom-width: var(--poc-bottom, 0px);
+  background: var(--poc-paint, none);
+  transform: rotate(var(--poc-angle, 0deg));
+  vertical-align: middle;
+  color: inherit;
+}
+/* shared:end */
+:is(.poc-checkmark, .poc-checkbox:checked) {
+  --poc-width: calc(var(--poc-size) * .3);
+  --poc-height: calc(var(--poc-size) * .58);
+  --poc-right: var(--poc-stroke);
+  --poc-bottom: var(--poc-stroke);
+  --poc-angle: 40deg;
+}
+:is(.poc-dash, .poc-checkbox:indeterminate) {
+  --poc-width: calc(var(--poc-size) * .5);
+  --poc-height: var(--poc-stroke);
+  --poc-right: 0px;
+  --poc-bottom: var(--poc-stroke);
+  --poc-angle: 0deg;
+}
+.poc-chevron {
+  --poc-width: calc(var(--poc-size) * .35);
+  --poc-height: calc(var(--poc-size) * .35);
+  --poc-right: var(--poc-stroke);
+  --poc-bottom: var(--poc-stroke);
+  --poc-angle: 45deg;
+}
+:is(.poc-plus, .poc-cross) {
+  --poc-paint: linear-gradient(currentColor, currentColor) center / 50% var(--poc-stroke) no-repeat, linear-gradient(currentColor, currentColor) center / var(--poc-stroke) 50% no-repeat;
+}
+.poc-cross { --poc-angle: 45deg; }
+/* Remove the existing mask only on the isolated candidate Checkbox. */
+.poc-checkbox:is(:checked, :indeterminate)::after {
+  mask: none;
+  -webkit-mask: none;
+  border-radius: 0;
+}
+/* Native fallback remains native; do not fabricate select::after. */
+select.poc-select { appearance: auto; background-image: none; }
+@supports (appearance: base-select) and selector(select::picker-icon) {
+  select.poc-select { appearance: base-select; }
+  select.poc-select::picker-icon {
+    content: "";
+    width: .35em;
+    height: .35em;
+    border-right: calc(1em / 24) solid currentColor;
+    border-bottom: calc(1em / 24) solid currentColor;
+    transform: rotate(45deg);
+  }
+}
+@media (forced-colors: active) {
+  /* Background bars need a narrowly scoped system-color paint exception. */
+  :is(.poc-plus, .poc-cross).poc-geometry,
+  :is(.poc-plus, .poc-cross).poc-reuse::before {
+    forced-color-adjust: none;
+    color: ButtonText;
+  }
+  .poc-checkbox { color: CanvasText; background: Canvas; border-color: CanvasText; }
+}
